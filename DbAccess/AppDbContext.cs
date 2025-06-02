@@ -5,6 +5,11 @@ namespace DbAccess
 {
     public class AppDbContext : DbContext
     {
+        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
+        {
+                
+        }
+
         public DbSet<PriceConfigurationSet> PriceConfigurationSets { get; set; }
         public DbSet<PriceConfigurationEntry> PriceConfigurationEntries { get; set; }
 
