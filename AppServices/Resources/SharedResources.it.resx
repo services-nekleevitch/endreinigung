@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OurServices" xml:space="preserve">
+    <value>servizire italiano</value>
+  </data>
+  <data name="Rooms" xml:space="preserve">
+    <value>Numero di stanze</value>
+  </data>
+  <data name="Bathrooms" xml:space="preserve">
+    <value>Numero di bagni</value>
+  </data>
+  <data name="PollutionLevel" xml:space="preserve">
+    <value>Livello di inquinamento</value>
+  </data>
+  <data name="WindowType" xml:space="preserve">
+    <value>Tipo di finestra</value>
+  </data>
+  <data name="FloorType" xml:space="preserve">
+    <value>Tipo di pavimento</value>
+  </data>
+  <data name="OtherRooms" xml:space="preserve">
+    <value>Altre stanze</value>
+  </data>
+  <data name="Terrace" xml:space="preserve">
+    <value>Terrazza / Balcone</value>
+  </data>
+  <data name="WinterGarden" xml:space="preserve">
+    <value>Giardino d'inverno</value>
+  </data>
+  <data name="WithHandoverGuarantee" xml:space="preserve">
+    <value>Con garanzia di consegna</value>
+  </data>
+  <data name="AdditionalInfoPlaceholder" xml:space="preserve">
+    <value>Informazioni aggiuntive</value>
+  </data>
+  <data name="CalculateButton" xml:space="preserve">
+    <value>Calcolare</value>
+    
+  </data>
+  <data name="RoomCount_One" xml:space="preserve">
+  <value>1</value>
+</data>
+  <data name="RoomCount_OneAndHalf" xml:space="preserve">
+  <value>1.5</value>
+</data>
+  <data name="RoomCount_Two" xml:space="preserve">
+  <value>2</value>
+</data>
+  <data name="RoomCount_TwoAndHalf" xml:space="preserve">
+  <value>2.5</value>
+</data>
+  <data name="RoomCount_Three" xml:space="preserve">
+  <value>3</value>
+</data>
+  <data name="RoomCount_ThreeAndHalf" xml:space="preserve">
+  <value>3.5</value>
+</data>
+  <data name="RoomCount_Four" xml:space="preserve">
+  <value>4</value>
+</data>
+  <data name="RoomCount_FourAndHalf" xml:space="preserve">
+  <value>4.5</value>
+</data>
+  <data name="RoomCount_Five" xml:space="preserve">
+  <value>5</value>
+</data>
+  <data name="RoomCount_FiveAndHalf" xml:space="preserve">
+  <value>5.5</value>
+</data>
+  <data name="RoomCount_Six" xml:space="preserve">
+  <value>6</value>
+</data>
+  <data name="RoomCount_House" xml:space="preserve">
+  <value>Casa</value>
+</data>
+  <data name="BathroomCount_One" xml:space="preserve">
+  <value>1</value>
+</data>
+  <data name="BathroomCount_Two" xml:space="preserve">
+  <value>2</value>
+</data>
+  <data name="BathroomCount_Three" xml:space="preserve">
+  <value>3</value>
+</data>
+  <data name="BathroomCount_Four" xml:space="preserve">
+  <value>4</value>
+</data>
+  <data name="PollutionLevel_Clean" xml:space="preserve">
+  <value>pulito</value>
+</data>
+  <data name="PollutionLevel_Medium" xml:space="preserve">
+  <value>medio</value>
+</data>
+  <data name="PollutionLevel_Dirty" xml:space="preserve">
+  <value>sporco</value>
+</data>
+  <data name="PollutionLevel_VeryDirty" xml:space="preserve">
+  <value>molto sporco</value>
+</data>
+  <data name="WindowType_RollerShutters" xml:space="preserve">
+  <value>Tapparelle</value>
+</data>
+  <data name="WindowType_Blinds" xml:space="preserve">
+  <value>Persiane</value>
+</data>
+  <data name="WindowType_WindowShutters" xml:space="preserve">
+  <value>Scuretti</value>
+</data>
+  <data name="FloorType_ParquetLaminate" xml:space="preserve">
+  <value>Parquet / Laminato</value>
+</data>
+  <data name="FloorType_LinoleumPVC" xml:space="preserve">
+  <value>Linoleum / PVC</value>
+</data>
+  <data name="FloorType_Carpet" xml:space="preserve">
+  <value>Moquette</value>
+</data>
+  <data name="FloorType_TilesCeramic" xml:space="preserve">
+  <value>Piastrelle / Ceramica</value>
+</data>
+  <data name="OtherRoomType_LaundryRoom" xml:space="preserve">
+  <value>Lavanderia</value>
+</data>
+  <data name="OtherRoomType_Basement" xml:space="preserve">
+  <value>Cantina</value>
+</data>
+  <data name="OtherRoomType_Attic" xml:space="preserve">
+  <value>Soffitta</value>
+</data>
+  <data name="OtherRoomType_Garage" xml:space="preserve">
+  <value>Garage</value>
+</data>
+  <data name="OtherRoomType_Mailbox" xml:space="preserve">
+  <value>Cassetta postale</value>
+</data>
+  <data name="TerraceType_SweptClean" xml:space="preserve">
+  <value>Pulito con scopa</value>
+</data>
+  <data name="TerraceType_HighPressure" xml:space="preserve">
+  <value>Alta pressione</value>
+</data>
+  <data name="TerraceType_GlassOrWindowCleaning" xml:space="preserve">
+  <value>Pulizia vetri o finestre</value>
+</data>
+  <data name="WinterGardenType_SweptClean" xml:space="preserve">
+  <value>Pulito con scopa</value>
+</data>
+  <data name="WinterGardenType_HighPressure" xml:space="preserve">
+  <value>Alta pressione</value>
+</data>
+  <data name="WinterGardenType_GlassOrWindowCleaning" xml:space="preserve">
+  <value>Pulizia vetri o finestre</value>
+</data>
+  <data name="CompanyInformation" xml:space="preserve">
+  <value>Informazioni sull'azienda</value>
+</data>
+  <data name="CompanyName" xml:space="preserve">
+  <value>Nome dell'azienda</value>
+</data>
+  <data name="CompanyAddress" xml:space="preserve">
+  <value>Indirizzo dell'azienda</value>
+</data>
+  <data name="City" xml:space="preserve">
+  <value>Città</value>
+</data>
+  <data name="PostCode" xml:space="preserve">
+  <value>Codice postale</value>
+</data>
+  <data name="Email" xml:space="preserve">
+  <value>Email</value>
+</data>
+  <data name="PhoneNumber" xml:space="preserve">
+  <value>Numero di telefono</value>
+</data>
+  <data name="VATNumberOptional" xml:space="preserve">
+  <value>Partita IVA (opzionale)</value>
+</data>
+  <data name="ChoosePassword" xml:space="preserve">
+  <value>Scegli una password</value>
+</data>
+  <data name="ConfirmPassword" xml:space="preserve">
+  <value>Conferma password</value>
+</data>
+  <data name="ContactPersonFirstName" xml:space="preserve">
+  <value>Nome della persona di contatto</value>
+</data>
+  <data name="ContactPersonFamilyName" xml:space="preserve">
+  <value>Cognome della persona di contatto</value>
+</data>
+  <data name="ContactPersonPhoneNumber" xml:space="preserve">
+  <value>Numero di telefono della persona di contatto</value>
+</data>
+  <data name="ContactPersonEmail" xml:space="preserve">
+  <value>Email della persona di contatto</value>
+</data>
+  <data name="PersonalInformation" xml:space="preserve">
+  <value>Le tue informazioni personali</value>
+</data>
+  <data name="FirstName" xml:space="preserve">
+  <value>Nome</value>
+</data>
+  <data name="LastName" xml:space="preserve">
+  <value>Cognome</value>
+</data>
+  <data name="CleaningAddress" xml:space="preserve">
+  <value>Indirizzo di pulizia</value>
+</data>
+  <data name="Street" xml:space="preserve">
+  <value>Via</value>
+</data>
+  <data name="HouseNumber" xml:space="preserve">
+  <value>Numero civico</value>
+</data>
+  <data name="FloorAndDoorOptional" xml:space="preserve">
+  <value>Piano e porta (opzionale)</value>
+</data>
+  <data name="EntryCodeOptional" xml:space="preserve">
+  <value>Codice di ingresso (opzionale)</value>
+</data>
+  <data name="HowToGetKey" xml:space="preserve">
+  <value>Come ottenere la chiave</value>
+</data>
+  <data name="SomeoneAtAddress" xml:space="preserve">
+  <value>Qualcuno sarà all'indirizzo</value>
+</data>
+  <data name="PostKey" xml:space="preserve">
+  <value>Invia chiave</value>
+</data>
+  <data name="HideKey" xml:space="preserve">
+  <value>Nascondi chiave</value>
+</data>
+  <data name="KeyPickUp" xml:space="preserve">
+  <value>Ritiro chiave</value>
+</data>
+<data name="BookNow" xml:space="preserve">
+  <value>Prenota ora</value>
+</data>
+  <data name="ConfirmTermsAndConditions" xml:space="preserve">
+  <value>Confermo di aver letto e accettato i Termini e Condizioni</value>
+</data>
+  <data name="Rooms_Required" xml:space="preserve">
+  <value>Seleziona un valore per Rooms.</value>
+</data>
+  <data name="Bathrooms_Required" xml:space="preserve">
+  <value>Seleziona un valore per Bathrooms.</value>
+</data>
+  <data name="PollutionLevel_Required" xml:space="preserve">
+  <value>Seleziona un valore per PollutionLevel.</value>
+</data>
+  <data name="FloorType_Required" xml:space="preserve">
+  <value>Seleziona un valore per Floor Type.</value>
+</data>
+  <data name="ExtraRooms_Required" xml:space="preserve">
+  <value>Seleziona un valore per ExtraRooms.</value>
+</data>
+<data name="Required" xml:space="preserve">
+  <value>Questo campo è obbligatorio.</value>
+</data>
+<data name="WindowType_Required" xml:space="preserve">
+  <value>Seleziona un tipo di finestra.</value>
+</data>
+
+
+</root>
