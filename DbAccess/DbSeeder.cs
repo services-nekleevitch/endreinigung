@@ -1,133 +1,58 @@
 ﻿using App.Shared;
+using DbAccess;
 using DbAccess.Entities;
 
-namespace DbAccess
+public static class DbSeeder
 {
-    public class DbSeeder
+    public static void SeedInitialPriceConfiguration(AppDbContext context)
     {
-        public static void SeedInitialPriceConfiguration(AppDbContext context)
+        if (context.PriceConfigurationSets.Any())
+            return;
+
+        var set = new PriceConfigurationSet
         {
-            if (context.PriceConfigurationSets.Any())
-                return; // Already seeded
+            VersionName = "Initial",
+            CreatedAt = DateTime.UtcNow
+        };
 
-            var set = new PriceConfigurationSet
-            {
-                VersionName = "Initial",
-                CreatedAt = DateTime.UtcNow
-            };
+        context.PriceConfigurationSets.Add(set);
+        context.SaveChanges(); // get set.Id
 
-            context.PriceConfigurationSets.Add(set);
-            context.SaveChanges(); // Save first to generate ID
+        var entries = new List<PriceConfigurationEntry>();
 
-            var entries = new List<PriceConfigurationEntry>();
-
-            // RoomCount
-            foreach (RoomCount val in Enum.GetValues(typeof(RoomCount)))
+        void AddEnumPrices<T>(string category, Func<T, decimal> priceFunc) where T : Enum
+        {
+            foreach (var value in Enum.GetValues(typeof(T)).Cast<T>())
             {
                 entries.Add(new PriceConfigurationEntry
                 {
                     PriceConfigurationSetId = set.Id,
-                    Category = nameof(RoomCount),
-                    OptionKey = val.ToString(),
-                    Price = 100 + (int)val * 10
+                    Category = category,
+                    OptionKey = value.ToString(),
+                    Price = priceFunc(value)
                 });
             }
-
-            // BathroomCount
-            foreach (BathroomCount val in Enum.GetValues(typeof(BathroomCount)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(BathroomCount),
-                    OptionKey = val.ToString(),
-                    Price = 50 + (int)val * 20
-                });
-            }
-
-            // PollutionLevel
-            foreach (PollutionLevel val in Enum.GetValues(typeof(PollutionLevel)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(PollutionLevel),
-                    OptionKey = val.ToString(),
-                    Price = 30 + (int)val * 25
-                });
-            }
-
-            // WindowType
-            foreach (WindowType val in Enum.GetValues(typeof(WindowType)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(WindowType),
-                    OptionKey = val.ToString(),
-                    Price = 40
-                });
-            }
-
-            // FloorType
-            foreach (FloorType val in Enum.GetValues(typeof(FloorType)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(FloorType),
-                    OptionKey = val.ToString(),
-                    Price = 50
-                });
-            }
-
-            // OtherRoomType
-            foreach (OtherRoomType val in Enum.GetValues(typeof(OtherRoomType)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(OtherRoomType),
-                    OptionKey = val.ToString(),
-                    Price = 25
-                });
-            }
-
-            // TerraceType
-            foreach (TerraceType val in Enum.GetValues(typeof(TerraceType)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(TerraceType),
-                    OptionKey = val.ToString(),
-                    Price = 40
-                });
-            }
-
-            // WinterGardenType
-            foreach (WinterGardenType val in Enum.GetValues(typeof(WinterGardenType)))
-            {
-                entries.Add(new PriceConfigurationEntry
-                {
-                    PriceConfigurationSetId = set.Id,
-                    Category = nameof(WinterGardenType),
-                    OptionKey = val.ToString(),
-                    Price = 40
-                });
-            }
-
-            // Guarantee
-            entries.Add(new PriceConfigurationEntry
-            {
-                PriceConfigurationSetId = set.Id,
-                Category = "Guarantee",
-                OptionKey = "WithGuarantee",
-                Price = 80
-            });
-
-            context.PriceConfigurationEntries.AddRange(entries);
-            context.SaveChanges();
         }
+
+        AddEnumPrices<RoomCount>("RoomCount", val => 100 + Convert.ToInt32(val) * 10);
+        AddEnumPrices<BathroomCount>("BathroomCount", val => 50 + Convert.ToInt32(val) * 15);
+        AddEnumPrices<PollutionLevel>("PollutionLevel", val => 30 + (int)(object)val * 25);
+        AddEnumPrices<WindowType>("WindowType", val => 20);
+        AddEnumPrices<FloorType>("FloorType", val => 30);
+        AddEnumPrices<OtherRoomType>("OtherRoomType", val => 25);
+        AddEnumPrices<TerraceType>("TerraceType", val => 40);
+        AddEnumPrices<WinterGardenType>("WinterGardenType", val => 40);
+
+        // Guarantee
+        entries.Add(new PriceConfigurationEntry
+        {
+            PriceConfigurationSetId = set.Id,
+            Category = "Guarantee",
+            OptionKey = "WithGuarantee",
+            Price = 80
+        });
+
+        context.PriceConfigurationEntries.AddRange(entries);
+        context.SaveChanges();
     }
 }
