@@ -6,8 +6,7 @@ namespace DbAccess
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
-        {
-                
+        {                
         }
 
         public DbSet<PriceConfigurationSet> PriceConfigurationSets { get; set; }
@@ -25,6 +24,5 @@ namespace DbAccess
                 .Property(p => p.Price)
                 .HasPrecision(10, 2);
         }
-
     }
 }
