@@ -11,6 +11,7 @@ namespace DbAccess
 
         public DbSet<PriceConfigurationSet> PriceConfigurationSets { get; set; }
         public DbSet<PriceConfigurationEntry> PriceConfigurationEntries { get; set; }
+        public DbSet<LocationCH> LocationsCH { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +24,14 @@ namespace DbAccess
             modelBuilder.Entity<PriceConfigurationEntry>()
                 .Property(p => p.Price)
                 .HasPrecision(10, 2);
+
+            modelBuilder.Entity<LocationCH>(entity =>
+            {
+                entity.ToTable("LocationsCH");
+                entity.Property(e => e.ZipCode).HasMaxLength(10).IsRequired();
+                entity.Property(e => e.PlaceName).HasMaxLength(150).IsRequired();
+                entity.Property(e => e.Canton).HasMaxLength(2);
+            });
         }
     }
 }
