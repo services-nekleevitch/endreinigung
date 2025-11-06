@@ -1,9 +1,11 @@
-﻿using EndreinigungZurich.Models.Booking;
+﻿using AppServices.Models;
 
 namespace AppServices
 {
     public interface IPriceCalculatorService
     {
-        Task<decimal> CalculateTotalAsync(PropertyConfigurationViewModel config, int priceSetId);
+        decimal CalculateTotal(PropertyConfigurationModel config, int? priceSetId = null);
+    
+        //Task<decimal> CalculateTotalAsync(PropertyConfigurationViewModel config, int priceSetId);
     }
 }

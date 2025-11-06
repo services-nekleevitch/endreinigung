@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using App.Shared;
+﻿using App.Shared;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EndreinigungZurich.Models.Booking
+namespace AppServices.Models
 {
-    public class PropertyConfigurationViewModel
+    public class PropertyConfigurationModel
     {
         [Required(
 ErrorMessageResourceType = typeof(AppServices.Resources.SharedResources),
@@ -31,9 +36,5 @@ ErrorMessageResourceName = "FloorType_Required")]
         public TerraceType? TerraceType { get; set; }
         public WinterGardenType? WinterGardenType { get; set; }
         public bool WithGuarantee { get; set; }
-        public string AdditionalInfo { get; set; }
-
-        public double CalculatedTotalCost { get; set; }
-        public double TotalCost { get; internal set; }
     }
 }
