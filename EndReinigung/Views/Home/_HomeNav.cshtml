@@ -1,0 +1,33 @@
+﻿<nav class="navbar navbar-expand-md navbar-glass fixed-top">
+    <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center gap-2" asp-controller="Home" asp-action="Index">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-gradient-hero text-white fw-bold"
+                  style="width:40px;height:40px;">ZE</span>
+            <span class="d-none d-sm-inline">
+                <span class="fw-bold" style="color:var(--fg);">Zürich</span>
+                <span class="ms-1" style="color:var(--swiss-blue); font-weight:700;">Endreinigung</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+                <li class="nav-item"><a class="nav-link fw-semibold" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="/#pakete">Reinigungspakete</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="/boot-reinigung">Boot Reinigung</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="/extra-services">Extra Services</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Kontakt</a></li>
+
+                <li class="nav-item ms-md-3">
+                    <a class="btn btn-hero btn-sm" href="tel:+41441234567">
+                        Anrufen <span class="d-none d-lg-inline">+41 44 123 45 67</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
