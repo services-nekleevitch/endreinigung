@@ -1,0 +1,50 @@
+<!-- Letzte Endreinigungen Gallery -->
+<section id="galerie" class="py-12 md:py-24 bg-gradient-to-b from-secondary to-background scroll-mt-16 md:scroll-mt-[6.25rem]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 md:mb-12">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+                Letzte <span class="text-primary">Endreinigungen in Zürich</span>
+            </h2>
+            <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                Einblicke in unsere letzten Endreinigungen in Zürich, Winterthur, Dietikon, Uster und dem ganzen Kanton
+            </p>
+        </div>
+
+        <!-- Carousel -->
+        <div id="gallery-carousel" class="relative">
+            <div class="overflow-hidden">
+                <div class="carousel-track flex">
+                    @{
+                        var gallery = new[] {
+                            new { Img = "/img/projects/wohnkueche.jpg", Alt = "Umzugsreinigung 5.5 Zimmer Wohnung Wollishofen", Caption = "Umzugsreinigung 5.5 Zimmer Wohnung in Wollishofen, ZH. Erfolgreiche Wohnungsabgabe im Februar 2026; Kaution ohne Abzüge zurückerhalten." },
+                            new { Img = "/img/projects/kueche.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Oerlikon", Caption = "Endreinigung 3.5 Zimmer Wohnung in Oerlikon, Zürich – Januar 2026. Kaution erfolgreich zurückerhalten." },
+                            new { Img = "/img/projects/wohnzimmer.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Altstetten", Caption = "Endreinigung 4.5 Zimmer Wohnung in Altstetten, Zürich – Januar 2026. Kaution erfolgreich zurückerhalten." },
+                            new { Img = "/img/projects/bad-dusche.jpg", Alt = "Endreinigung 2.5 Zimmer Wohnung Wiedikon", Caption = "Endreinigung 2.5 Zimmer Wohnung in Wiedikon, Zürich – Dezember 2025. Kaution erfolgreich zurückerhalten." },
+                            new { Img = "/img/projects/bad-wanne.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Seefeld", Caption = "Endreinigung 3.5 Zimmer Wohnung in Seefeld, Zürich – Dezember 2025. Kaution erfolgreich zurückerhalten." },
+                            new { Img = "/img/projects/balkon.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Höngg", Caption = "Endreinigung 4.5 Zimmer Wohnung in Höngg, Zürich – November 2025. Kaution erfolgreich zurückerhalten." }
+                        };
+                    }
+                    @foreach (var item in gallery) {
+                        <div class="carousel-slide third pl-4 flex-shrink-0">
+                            <div class="bg-card border border-border rounded-b-xl overflow-hidden h-full flex flex-col">
+                                <div class="aspect-[4/3] bg-muted flex items-center justify-center">
+                                    <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" />
+                                </div>
+                                <div class="p-4 flex-1 flex items-start">
+                                    <p class="text-sm text-muted-foreground leading-relaxed">@item.Caption</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button class="carousel-prev absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 w-10 h-10 rounded-full bg-white border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-next absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 w-10 h-10 rounded-full bg-white border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>

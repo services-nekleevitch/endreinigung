@@ -20,7 +20,14 @@ namespace EndReinigung
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+
+            // Add AVIF MIME type support
+            var contentTypeProvider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
+            contentTypeProvider.Mappings[".avif"] = "image/avif";
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                ContentTypeProvider = contentTypeProvider
+            });
 
             app.UseRouting();
 

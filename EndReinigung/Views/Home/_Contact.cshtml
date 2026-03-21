@@ -1,0 +1,105 @@
+<!-- Contact Form Section -->
+<section id="contact-form" class="py-12 md:py-24" style="background: linear-gradient(135deg, hsl(210 95% 25%), hsl(210 90% 32%))">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 md:mb-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+                Kostenloses Angebot für Ihre Endreinigung in Zürich und Umgebung erhalten
+            </h2>
+            <p class="text-lg md:text-2xl font-semibold text-white/95 max-w-3xl mx-auto mb-2">
+                6+ Zimmer / Haus / Büro / Werkstatt / Spezialobjekt — Zürich und ganzer Kanton
+            </p>
+            <p class="text-base md:text-xl text-white/90 max-w-3xl mx-auto">
+                Kontaktieren Sie uns noch heute für ein unverbindliches Angebot. Wir sind da, um Ihnen zu helfen!
+            </p>
+        </div>
+        <div class="max-w-2xl mx-auto">
+            <div class="p-4 sm:p-6 md:p-8 bg-white/95 backdrop-blur-sm border border-white/20 rounded-lg">
+                <h3 class="text-2xl font-bold text-foreground mb-6">Angebot Anfordern</h3>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-foreground mb-2">Vorname *</label>
+                            <input type="text" id="firstName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-foreground mb-2">Nachname *</label>
+                            <input type="text" id="lastName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-foreground mb-2">E-Mail Adresse *</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-foreground mb-2">Telefonnummer</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
+                    </div>
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-foreground mb-2">Wohnungsadresse *</label>
+                        <input type="text" id="address" placeholder="Strasse, PLZ, Ort" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="rooms" class="block text-sm font-medium text-foreground mb-2">Anzahl Zimmer</label>
+                            <select id="rooms" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors">
+                                <option value="">Wählen Sie...</option>
+                                @for (var r = 1.0; r <= 15; r += 0.5) {
+                                    <option value="@r">@r Zimmer</option>
+                                }
+                            </select>
+                        </div>
+                        <div>
+                            <label for="moveOut" class="block text-sm font-medium text-foreground mb-2">Auszugsdatum</label>
+                            <input type="date" id="moveOut" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label for="objektart" class="block text-sm font-medium text-foreground mb-2">Objektart *</label>
+                            <select id="objektart" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                                <option value="">Bitte wählen</option>
+                                <option value="wohnung">Wohnung</option>
+                                <option value="haus">Haus</option>
+                                <option value="buero">Büro</option>
+                                <option value="praxis">Praxis</option>
+                                <option value="laden">Laden</option>
+                                <option value="restaurant">Restaurant</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="stockwerk" class="block text-sm font-medium text-foreground mb-2">Stockwerk *</label>
+                            <select id="stockwerk" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                                <option value="">Bitte wählen</option>
+                                <option value="eg">Erdgeschoss</option>
+                                <option value="1">1. OG</option>
+                                <option value="2">2. OG</option>
+                                <option value="3">3. OG</option>
+                                <option value="4">4. OG</option>
+                                <option value="5">5. OG+</option>
+                                <option value="dg">Dachgeschoss</option>
+                                <option value="ug">Untergeschoss</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="moebelierung" class="block text-sm font-medium text-foreground mb-2">Art der Möbelierung *</label>
+                            <select id="moebelierung" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                                <option value="">Bitte wählen</option>
+                                <option value="unmoebliert">Unmöbliert</option>
+                                <option value="teilmoebliert">Teilmöbliert</option>
+                                <option value="moebliert">Möbliert</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-foreground mb-2">Zusätzliche Informationen</label>
+                        <textarea id="message" rows="4" placeholder="Besondere Anforderungen, gewünschter Termin, etc." class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-swiss-blue hover:bg-swiss-blue-dark text-white font-bold py-4 text-lg rounded-lg transition-colors">
+                        Kostenloses Angebot Erhalten
+                    </button>
+                    <p class="text-sm text-muted-foreground text-center">* Pflichtfelder. Ihre Daten werden vertraulich behandelt.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

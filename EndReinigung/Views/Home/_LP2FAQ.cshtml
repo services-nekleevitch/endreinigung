@@ -1,0 +1,54 @@
+<!-- FAQ Section -->
+<section class="py-20" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(210 10% 93%) 60%, hsl(0 0% 100%) 100%)">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-swiss-blue mb-4">Häufig gestellte <span class="text-booking-orange">Fragen</span></h2>
+            <p class="text-xl text-swiss-blue/70">Alles, was Sie über unsere Endreinigung im Kanton Zürich wissen müssen</p>
+        </div>
+
+        <div class="space-y-4">
+            @{
+                var faqs = new[] {
+                    new { Q = "Wie viel kostet eine Endreinigung in Zürich?", A = "Die Kosten für eine professionelle Endreinigung in Zürich beginnen bei CHF 320 für eine 1.5-Zimmer-Wohnung. Der Festpreis richtet sich nach der Wohnungsgrösse und gewählten Zusatzleistungen wie Fensterreinigung oder Balkon." },
+                    new { Q = "Ist die Abnahmegarantie wirklich sicher?", A = "Ja, unsere 100% Abnahmegarantie bedeutet, dass wir persönlich bei der Wohnungsübergabe anwesend sind. Sollte der Vermieter Beanstandungen haben, bessern wir kostenlos nach – bis die Abnahme unterschrieben ist." },
+                    new { Q = "Muss ich bei der Wohnungsübergabe dabei sein?", A = "Ja — und wir sind an Ihrer Seite. Wir begleiten Sie persönlich durch den gesamten Übergabeprozess, bis die Verwaltung oder der Vermieter die Reinigung offiziell abgenommen hat. Sie müssen sich um nichts kümmern — wir übernehmen die volle Verantwortung und stehen für die Qualität unserer Arbeit ein. Gemeinsam gehen wir erst, wenn alles stimmt und die Abnahme erteilt ist." },
+                    new { Q = "Wie kurzfristig kann ich einen Termin buchen?", A = "In der Regel können wir innerhalb von 48 Stunden einen Termin anbieten. Bei hoher Nachfrage empfehlen wir eine Buchung mindestens 1 Woche im Voraus, um Ihren Wunschtermin zu sichern." },
+                    new { Q = "Was passiert, wenn der Vermieter nicht zufrieden ist?", A = "Falls bei der Abnahme Mängel festgestellt werden, bessern wir diese kostenlos und sofort nach. Wir bleiben vor Ort, bis der Vermieter das Abnahmeprotokoll unterschreibt – ohne Zusatzkosten für Sie." },
+                    new { Q = "Sind Sie versichert?", A = "Ja, wir sind mit einer Haftpflichtversicherung von 5 Millionen CHF abgesichert. Alle Schäden, die während der Reinigung entstehen könnten, sind vollständig gedeckt." },
+                    new { Q = "Was ist der Unterschied zwischen Endreinigung und Zügelreinigung?", A = "In der Deutschschweiz werden die Begriffe Endreinigung, Zügelreinigung und Schlussreinigung oft als Synonyme verwendet — sie bezeichnen alle dieselbe Dienstleistung: die professionelle Reinigung einer Mietwohnung nach dem Auszug, damit die Wohnungsübergabe an den Vermieter reibungslos klappt und Sie Ihre volle Kaution zurückerhalten. Bei Zürich Endreinigung übernehmen wir alle drei — zu einem transparenten Fixpreis und mit 100% Abnahmegarantie." },
+                    new { Q = "Wie bekomme ich meine Kaution sicher zurück?", A = "Der sicherste Weg, Ihre Kaution zurückzubekommen, ist eine professionelle Endreinigung mit Abnahmegarantie. Das bedeutet: Wir reinigen Ihre Wohnung gründlich nach den Anforderungen der Zürcher Verwaltungen — und wir sind persönlich bei der Wohnungsübergabe dabei. Falls der Vermieter oder die Hausverwaltung einen Mangel feststellt, beheben wir ihn sofort und kostenlos. Keine Nachtermine, keine zusätzlichen Kosten. Ihre Kaution ist damit so gut wie garantiert." },
+                    new { Q = "Arbeiten Sie auch in meinem Zürcher Quartier?", A = "Ja — wir sind in der ganzen Stadt Zürich und im gesamten Kanton Zürich tätig. Wir führen regelmässig Endreinigungen in Oerlikon, Altstetten, Wollishofen, Wiedikon, Seefeld, Schwamendingen, Höngg, Albisrieden und allen weiteren Quartieren durch. Auch in Gemeinden wie Winterthur, Dietikon, Schlieren, Uster und Thalwil sind wir im Einsatz. Geben Sie einfach Ihre Postleitzahl in unseren Preisrechner ein — Sie erhalten sofort Ihren Fixpreis." },
+                    new { Q = "Mein Objekt ist nicht gelistet — was nun?", A = "Kein Problem — wir helfen Ihnen gerne weiter! Für spezielle Objekte und individuelle Anfragen stehen wir Ihnen jederzeit persönlich zur Verfügung. Sie können uns ganz einfach über unser Anfrageformular für Sonderobjekte kontaktieren, uns direkt eine E-Mail an info@zuerich-endreinigung.ch schreiben oder uns unter 076 501 77 38 anrufen. Wir sind für jede Anfrage offen und finden gemeinsam mit Ihnen die passende Lösung." },
+                    new { Q = "Sprechen Sie Englisch — sind Sie Expat-freundlich?", A = "Yes, we are fully bilingual. Our team speaks English and German. We work with expats across Zürich and the canton regularly, handling the complete Endreinigung and apartment handover process in English if needed. Fixpreis, no surprises, deposit back guaranteed. / Ja, wir sprechen Englisch und Deutsch." },
+                    new { Q = "Sind Storen im Fixpreis enthalten und was ist mit der Zugänglichkeit?", A = "Ja. Die Reinigung der Storen (Lamellenstoren / Rollläden) ist im Standard-Fixpreis enthalten, vorausgesetzt sie sind zugänglich. Leistungen: Lamellen und Führungsschienen. Zugbänder und das Innere des Storenkastens werden auf einen sichtbaren Reinigungsstandard gereinigt." },
+                    new { Q = "Muss die Wohnung für die Endreinigung leer und zugänglich sein?", A = "Ja. Die Wohnung muss vollständig geräumt, frei von Möbeln und Abfällen und für das Reinigungsteam zugänglich sein. Wir reinigen nicht um Möbel herum und bewegen keine schweren Gegenstände." },
+                    new { Q = "Sind Teppiche im Fixpreis enthalten?", A = "Das Staubsaugen von Teppichen ist im Fixpreis enthalten. Eine Teppichshampoonierung oder Tiefenreinigung mit einer Extraktionsmaschine gilt als Zusatzleistung und ist nicht im Basispreis enthalten, kann jedoch auf Wunsch dazugebucht werden." },
+                    new { Q = "Muss Wasser und Strom verfügbar sein?", A = "Ja. Fliessendes Wasser sowie Stromanschlüsse müssen funktionsfähig sein, damit die Reinigung durchgeführt werden kann." },
+                    new { Q = "Muss der Kühlschrank vorbereitet werden?", A = "Ja. Kühlschrank und Gefrierfach müssen mindestens 24 Stunden vor der Reinigung ausgeschaltet und vollständig abgetaut sein." },
+                    new { Q = "Entfernen Sie Schimmel in Silikonfugen?", A = "Wir entfernen oberflächliche Verschmutzungen und oberflächlichen Schimmel. Tief sitzender Schimmel oder dauerhaft verfärbte Silikonfugen, die eine Erneuerung der Silikonfuge erfordern, gelten als Reparaturarbeit und sind nicht Teil der Reinigung." },
+                    new { Q = "Entsorgen Sie Müll oder alte Möbel?", A = "Nein. Wir sind ein Reinigungsdienstleister und kein Entsorgungsunternehmen. Die Entsorgung von Möbeln, Sperrgut oder Abfällen kann auf Anfrage als Zusatzleistung organisiert werden." },
+                    new { Q = "Was passiert, wenn die Wohnung nicht leer oder zugänglich ist?", A = "Wenn die Wohnung beim Reinigungsbeginn nicht vollständig geräumt oder zugänglich ist, kann es zu Zusatzkosten oder Terminverschiebungen kommen." },
+                    new { Q = "Was ist der rechtliche Unterschied zwischen «besenrein» und «grundgereinigt»?", A = "Besenrein (OR Art. 267a): Die Wohnung wird lediglich grob gereinigt. Grundgereinigt (Der Zürcher Standard): Jeder Winkel wird intensiv gereinigt, entfettet und entkalkt. Die meisten Zürcher Verwaltungen verlangen eine gründliche Reinigung. Wer nur besenrein abgibt, riskiert teure Nachreinigungen oder Abzüge von der Kaution. Mit unserer Abnahmegarantie übernehmen wir die volle Verantwortung." }
+                };
+            }
+            @foreach (var faq in faqs) {
+                <div class="faq-item bg-swiss-blue rounded-xl px-6 shadow-sm hover:bg-white group transition-colors duration-300">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between text-left font-semibold text-white group-hover:text-gray-700 py-5 transition-colors duration-300">
+                        <span>@faq.Q</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer text-gray-600 font-medium pb-0">
+                        <div class="pb-5">@faq.A</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-swiss-blue/70 mb-4">Haben Sie weitere Fragen?</p>
+            <a href="tel:+41765017738" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
+                📞 +41 76 501 77 38 – Wir beraten Sie gerne
+            </a>
+        </div>
+    </div>
+</section>

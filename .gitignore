@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# Source React project (not needed for MVC)
+rich-lease-temp/
+rich-lease-shine-main*.zip

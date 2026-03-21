@@ -1,16 +1,59 @@
-﻿@{
-    ViewData["Title"] = "Start";
-    Layout = "_Layout";
+@{
+    ViewData["Title"] = "Endreinigung Zürich | Umzugsreinigung mit 100% Abnahmegarantie";
+    ViewData["Description"] = "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreis, persönliche Anwesenheit bei der Übergabe. Jetzt buchen!";
 }
 
-<main class="min-vh-100">
-    @await Html.PartialAsync("_HomeHero")
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Wie viel kostet eine Endreinigung in Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Kosten für eine professionelle Endreinigung in Zürich beginnen bei CHF 320 für eine 1.5-Zimmer-Wohnung."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Ist die Abnahmegarantie wirklich sicher?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, unsere 100% Abnahmegarantie bedeutet, dass wir persönlich bei der Wohnungsübergabe anwesend sind."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie kurzfristig kann ich einen Termin buchen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "In der Regel können wir innerhalb von 48 Stunden einen Termin anbieten."
+                }
+            }
+        ]
+    }
+    </script>
+}
 
-    <section id="pakete">
-        @await Html.PartialAsync("_HomeFixedPricing")
-    </section>
-
-    @await Html.PartialAsync("_HomeServices")
-
-    @await Html.PartialAsync("_HomeFooter")
-</main>
+@await Html.PartialAsync("_HeroH1")
+@await Html.PartialAsync("_TrustBar")
+@await Html.PartialAsync("_FixedPricing")
+@await Html.PartialAsync("_VideoSection")
+@await Html.PartialAsync("_HowItWorks")
+@await Html.PartialAsync("_WhyChooseUs")
+@await Html.PartialAsync("_LetzteEndreinigungen")
+<section class="py-12 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(210 10% 93%) 60%, hsl(0 0% 100%) 100%)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        @await Html.PartialAsync("_EndreinigungInfo")
+    </div>
+</section>
+@await Html.PartialAsync("_PersonalPresenceBanner")
+@await Html.PartialAsync("_Var2Services")
+<div id="faq" class="scroll-mt-16 md:scroll-mt-[6.25rem]">
+    @await Html.PartialAsync("_LP2FAQ")
+</div>
+@await Html.PartialAsync("_Contact")
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

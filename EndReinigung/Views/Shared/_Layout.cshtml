@@ -1,25 +1,137 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication2</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")</title>
+    <meta name="description" content="@(ViewData["Description"] ?? "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreis, persönliche Anwesenheit bei der Übergabe. Jetzt buchen!")" />
+    <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://zuerich-endreinigung.ch/")" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")" />
+    <meta property="og:description" content="@(ViewData["Description"] ?? "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie.")" />
+    <meta property="og:url" content="@(ViewData["Canonical"] ?? "https://zuerich-endreinigung.ch/")" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                            light: 'hsl(var(--primary-light))',
+                            glow: 'hsl(var(--primary-glow))'
+                        },
+                        secondary: { DEFAULT: 'hsl(var(--secondary))', foreground: 'hsl(var(--secondary-foreground))' },
+                        destructive: { DEFAULT: 'hsl(var(--destructive))', foreground: 'hsl(var(--destructive-foreground))' },
+                        muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+                        accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+                        popover: { DEFAULT: 'hsl(var(--popover))', foreground: 'hsl(var(--popover-foreground))' },
+                        card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
+                        'swiss-blue': { DEFAULT: 'hsl(var(--swiss-blue))', light: 'hsl(var(--swiss-blue-light))', dark: 'hsl(var(--swiss-blue-dark))' },
+                        'cleaning-green': 'hsl(var(--cleaning-green))',
+                        'trust-gold': 'hsl(var(--trust-gold))',
+                        'booking-orange': { DEFAULT: 'hsl(var(--booking-orange))', light: 'hsl(var(--booking-orange-light))', dark: 'hsl(var(--booking-orange-dark))' },
+                        'navy': { DEFAULT: 'hsl(var(--navy-bg))', border: 'hsl(var(--navy-border))', muted: 'hsl(var(--navy-muted))', text: 'hsl(var(--navy-text))', light: 'hsl(var(--navy-light))' },
+                        'red-accent': 'hsl(var(--red-accent))',
+                        'gold-rating': 'hsl(var(--gold-rating))'
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)'
+                    },
+                    keyframes: {
+                        'fade-in': { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        'slide-up': { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        'glow': { '0%, 100%': { boxShadow: '0 0 20px hsl(210 100% 60% / 0.3)' }, '50%': { boxShadow: '0 0 30px hsl(210 100% 60% / 0.5)' } }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.6s ease-out',
+                        'slide-up': 'slide-up 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite'
+                    },
+                    backgroundImage: {
+                        'gradient-hero': 'var(--gradient-hero)',
+                        'gradient-card': 'var(--gradient-card)',
+                        'gradient-accent': 'var(--gradient-accent)',
+                        'gradient-pricing': 'var(--gradient-pricing)'
+                    },
+                    boxShadow: {
+                        'card': 'var(--shadow-card)',
+                        'hero': 'var(--shadow-hero)',
+                        'button': 'var(--shadow-button)'
+                    },
+                    fontFamily: {
+                        'heading': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        'body': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Site CSS (variables + base styles) -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    @RenderSection("Head", required: false)
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "HouseCleaningService",
+        "name": "Zürich Endreinigung",
+        "url": "https://zuerich-endreinigung.ch",
+        "telephone": "+41765017738",
+        "email": "info@zuerich-endreinigung.ch",
+        "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "Seewadelstrasse 5",
+            "addressLocality": "Affoltern am Albis",
+            "postalCode": "8910",
+            "addressCountry": "CH"
+        },
+        "areaServed": {
+            "@@type": "State",
+            "name": "Kanton Zürich"
+        },
+        "priceRange": "CHF 320 - CHF 1350+",
+        "aggregateRating": {
+            "@@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "50",
+            "bestRating": "5"
+        }
+    }
+    </script>
 </head>
 <body>
-    @await Html.PartialAsync("_HomeNav")
-    <main role="main" class=" pb-3" style="margin-top: 50px;">
+    @await Html.PartialAsync("_Navigation")
+
+    <main role="main">
         @RenderBody()
     </main>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
