@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"] = "Extra Services | Zusatzservices für Ihre Reinigung | Zürich Endreinigung";
-    ViewData["Description"] = "Ergänzen Sie Ihre Endreinigung mit professionellen Zusatzservices: Baureinigung, Fensterreinigung, Polsterreinigung, Teppichreinigung und mehr.";
+    ViewData["Title"] = "Reinigungsservices Zürich | Bau, Fenster, Teppich & mehr | Zürich Endreinigung";
+    ViewData["Description"] = "Professionelle Reinigungsservices in Zürich: Baureinigung, Fensterreinigung, Teppichreinigung, Polsterreinigung, Airbnb und mehr. Jetzt Offerte anfordern.";
     ViewData["Canonical"] = "https://zuerich-endreinigung.ch/extra-services";
 }
 
@@ -9,21 +9,15 @@
     <!-- Header Section -->
     <section class="pt-20 md:pt-[7.75rem] pb-8 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Back Button -->
             <div class="mb-6">
-                <a href="/" class="inline-flex items-center px-4 py-2 text-sm rounded-lg border border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-swiss-blue text-swiss-blue rounded-md hover:bg-swiss-blue hover:text-white transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                     Zurück
                 </a>
             </div>
-
             <div class="text-center">
-                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4">
-                    Extra Services
-                </h1>
-                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Ergänzen Sie Ihre Endreinigung mit unseren professionellen Zusatzservices
-                </p>
+                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4">Extra Services</h1>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Ergänzen Sie Ihre Endreinigung mit unseren professionellen Zusatzservices</p>
             </div>
         </div>
     </section>
@@ -33,416 +27,331 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-                <!-- Baureinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                <!-- Frühlingsreinigung -->
+                <a href="/fruehlingsputz-zuerich" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
                         <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/baureinigung.avif" alt="Baureinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <img src="/images/fruehlingsreinigung.jpg" alt="Frühlingsreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                         </div>
                         <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"></path><circle cx="16.5" cy="7.5" r=".5"></circle></svg>
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
                         </div>
+                    </div>
+                    <div class="p-6 pt-10 flex flex-col flex-1">
+                        <span class="text-[11px] font-bold tracking-wider mb-1.5" style="color: #E8A838;">SAISONREINIGUNG</span>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Frühlingsreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 390 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">Fixpreis</span>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4-6 Std
+                            </span>
+                        </div>
+                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professioneller Frühlingsputz zum Fixpreis — gründlich, systematisch und stressfrei. Ab CHF 390.</p>
+                        <div class="border-t border-border mb-4"></div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Komplettreinigung aller Räume</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Küche & Bad intensiv</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fenster innen & aussen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Böden & Oberflächen</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">
+                                Mehr erfahren
+                                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Baureinigung -->
+                <a href="/baureinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                    <div class="relative">
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/baureinigung.avif" alt="Baureinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18a1 1 0 001 1h18a1 1 0 001-1v-2a1 1 0 00-1-1H3a1 1 0 00-1 1v2z"/><path d="M10 15V6.5a3.5 3.5 0 117 0V15"/><path d="M4 15v-5a8 8 0 0116 0v5"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
                         <h3 class="text-xl font-bold text-foreground mb-2">Baureinigung</h3>
                         <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 25 CHF</div>
                         <span class="text-xs text-muted-foreground mb-3">pro m²</span>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                4-8 Std
-                            </span>
-                        </div>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4-8 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professionelle Baustellenreinigung nach Renovierungsarbeiten</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Baustaub-Entfernung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Fensterreinigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Grobschmutz-Beseitigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Feinreinigung aller Oberflächen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Baustaub-Entfernung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fensterreinigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Grobschmutz-Beseitigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Feinreinigung aller Oberflächen</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Preise ansehen <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Fensterreinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 100ms;">
+                <!-- Büroreinigung -->
+                <a href="/bueroreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/fensterreinigung.avif" alt="Fensterreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"></path><path d="M9.6 4.6A2 2 0 1 1 11 8H2"></path><path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/bueroreinigung.jpg" alt="Büroreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Fensterreinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 8 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                30-45 Min
-                            </span>
-                            <span class="font-medium">pro Fenster</span>
-                        </div>
+                        <span class="text-[11px] font-bold tracking-wider mb-1.5" style="color: #E8A838;">REINIGUNG</span>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Büroreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">auf Anfrage</div>
+                        <span class="text-xs text-muted-foreground mb-3">monatlich</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1-3 Std</span></div>
+                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Regelmässige Büroreinigung für saubere Arbeitsplätze — flexibel und zuverlässig.</p>
+                        <div class="border-t border-border mb-4"></div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Böden saugen und wischen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Schreibtische reinigen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Küche & Kaffeebereich</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sanitäranlagen desinfizieren</li>
+                        </ul>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+                    </div>
+                </a>
+
+                <!-- Fensterreinigung -->
+                <a href="/fensterreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                    <div class="relative">
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/fensterreinigung.avif" alt="Fensterreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
+                    </div>
+                    <div class="p-6 pt-10 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-foreground mb-2">Fensterreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 249 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Fenster</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30-45 Min</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professionelle Fensterreinigung für kristallklare Sicht</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Innen- und Außenreinigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Rahmen und Fensterbänke</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Streifenfreie Ergebnisse</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Sichere Höhenarbeit</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Innen- und Aussenreinigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Rahmen und Fensterbänke</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Streifenfreie Ergebnisse</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sichere Höhenarbeit</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="/fensterreinigung" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Preise Ansehen <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Tapeten entfernen -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 200ms;">
+                <a href="/tapeten-entfernen" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/tapeten-entfernen.avif" alt="Tapeten entfernen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>
-                        </div>
-                        <div class="absolute top-3 right-3 z-10">
-                            <div class="bg-muted-foreground text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Fixpreis</div>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/tapeten-entfernen.avif" alt="Tapeten entfernen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <div class="absolute top-3 right-3 z-10"><div class="bg-muted-foreground text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-md">Fixpreis</div></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Tapeten entfernen</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 140 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                4-8 Std
-                            </span>
-                            <span class="font-medium">je nach Zimmergrösse & Zustand</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Tapeten entfernen</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 140 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">je nach Zimmergrösse & Zustand</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4-8 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professionelles Entfernen von Tapeten für saubere Wände</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Fachgerechtes Entfernen der Tapeten</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Entfernung von Kleberesten</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Wände besenrein hinterlassen</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Entsorgung der Tapetenreste</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fachgerechtes Entfernen der Tapeten</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Entfernung von Kleberesten</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Wände besenrein hinterlassen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Entsorgung der Tapetenreste</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="/tapeten-entfernen" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Mehr erfahren
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Airbnb Reinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 300ms;">
+                <!-- Praxisreinigung -->
+                <a href="/praxisreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/airbnb-reinigung.avif" alt="Airbnb Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"></path><path d="m21 2-9.6 9.6"></path><circle cx="7.5" cy="15.5" r="5.5"></circle></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/praxisreinigung.jpg" alt="Praxisreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Airbnb Reinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 80 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                1-2 Std
-                            </span>
-                            <span class="font-medium">pro Reinigung</span>
-                        </div>
-                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professionelle Reinigung zwischen Gästewechseln für Ihre Airbnb</p>
+                        <span class="text-[11px] font-bold tracking-wider mb-1.5" style="color: #E8A838;">SPEZIALREINIGUNG</span>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Praxisreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">auf Anfrage</div>
+                        <span class="text-xs text-muted-foreground mb-3">monatlich</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1-3 Std</span></div>
+                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Hygienische Reinigung für Arztpraxen, Zahnarztpraxen und Therapieräume.</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Schneller Service</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Bettwäsche-Service</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Check-out Reinigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Qualitätskontrolle</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Desinfektion Kontaktflächen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Behandlungsräume reinigen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sanitäranlagen desinfizieren</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Medizinische Reinigungsmittel</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Event Reinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 400ms;">
+                <!-- Airbnb Reinigung -->
+                <a href="/airbnb-reinigung-zuerich#pricing" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/event-reinigung.jpg" alt="Event Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"></path><path d="M4 3h.01"></path><path d="M22 8h.01"></path><path d="M15 2h.01"></path><path d="M22 20h.01"></path><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"></path><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11v0c-.11.7-.72 1.22-1.43 1.22H17"></path><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.52 4.9 9 5.52 9 6.23V7"></path><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/airbnb-reinigung.avif" alt="Airbnb Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Event Reinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 200 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                2-4 Std
-                            </span>
-                            <span class="font-medium">pro Event</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Airbnb Reinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 89 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Reinigung</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1-2 Std</span></div>
+                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Hotel-Standard Reinigung zwischen Ihren Gästen — zuverlässig, zum Fixpreis, check-in ready.</p>
+                        <div class="border-t border-border mb-4"></div>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Hotel-Standard Reinigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Bettwäsche & Handtücher</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Schadenskontrolle & Fotoreport</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Check-in ready, jedes Mal</li>
+                        </ul>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Preise ansehen <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+                    </div>
+                </a>
+
+                <!-- Event Reinigung -->
+                <a href="/event-reinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                    <div class="relative">
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/event-reinigung.jpg" alt="Event Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5.8 11.3L2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="M22 2l-2.24.75a2.9 2.9 0 00-1.96 3.12v.01c.09.6-.1 1.2-.54 1.65l-.87.87a2.9 2.9 0 00-.54 3.36l.01.01c.3.57.3 1.25 0 1.83l-.01.01a2.9 2.9 0 00.54 3.36l.87.87c.44.45.63 1.05.54 1.65a2.9 2.9 0 001.96 3.12L22 22"/></svg></div>
+                    </div>
+                    <div class="p-6 pt-10 flex flex-col flex-1">
+                        <h3 class="text-xl font-bold text-foreground mb-2">Event Reinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 200 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Event</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2-4 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Schnelle und gründliche Reinigung nach Events und Veranstaltungen</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Vor- & Nachreinigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Flexible Zeitfenster</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Große Flächen</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Müllentsorgung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Vor- & Nachreinigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Flexible Zeitfenster</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Grosse Flächen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Müllentsorgung</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Boot Reinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 500ms;">
+                <a href="/boot-reinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/boot-reinigung.avif" alt="Boot Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path><path d="M12 10v4"></path><path d="M12 2v3"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/boot-reinigung.avif" alt="Boot Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0021 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 00-2-2H7a2 2 0 00-2 2v6"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Boot Reinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 250 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                3-5 Std
-                            </span>
-                            <span class="font-medium">pro Boot</span>
-                        </div>
-                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Spezialisierte Bootsreinigung für Innen- und Außenbereiche</p>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Boot Reinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 250 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Boot</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3-5 Std</span></div>
+                        <p class="text-sm text-muted-foreground leading-relaxed mb-5">Spezialisierte Bootsreinigung für Innen- und Aussenbereiche</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Deck & Kabine</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Polster & Segel</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Spezialreiniger</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Salz- & Wasserflecken</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Deck & Kabine</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Polster & Segel</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Spezialreiniger</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Salz- & Wasserflecken</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Polster Reinigung (Popular) -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 600ms;">
+                <a href="/polsterreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/polsterreinigung.avif" alt="Polster Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z"></path><path d="M4 18v2"></path><path d="M20 18v2"></path></svg>
-                        </div>
-                        <div class="absolute top-3 right-3 z-10">
-                            <div class="bg-swiss-blue text-white text-xs font-bold px-3 py-1 rounded-full flex items-center shadow-md">
-                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                Beliebt
-                            </div>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/polsterreinigung.avif" alt="Polster Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 00-2-2H6a2 2 0 00-2 2v3"/><path d="M2 11v5a2 2 0 002 2h16a2 2 0 002-2v-5a2 2 0 00-4 0v2H6v-2a2 2 0 00-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/></svg></div>
+                        <div class="absolute top-3 right-3 z-10"><div class="bg-swiss-blue text-primary-foreground text-xs font-bold px-3 py-1 rounded-full flex items-center shadow-md"><svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Beliebt</div></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Polster Reinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 120 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                1-2 Std
-                            </span>
-                            <span class="font-medium">pro Sofa</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Polster Reinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 120 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Sofa</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1-2 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Tiefenreinigung von Polstermöbeln und Sofas</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Alle Polstermaterialien</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Fleckenentfernung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Geruchsneutralisierung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Materialschonend</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Alle Polstermaterialien</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fleckenentfernung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Geruchsneutralisierung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Materialschonend</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="/polster-reinigung" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Preise ansehen <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Teppichreinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 700ms;">
+                <a href="/teppichreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/teppichreinigung.avif" alt="Teppichreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/teppichreinigung.avif" alt="Teppichreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Teppichreinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 18 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                2-3 Std
-                            </span>
-                            <span class="font-medium">pro m²</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Teppichreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 18 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro m²</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2-3 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Professionelle Teppichreinigung mit modernster Technik</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Alle Teppicharten</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Tiefenreinigung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Fleck- & Geruchsentfernung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Schnelltrocknung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Alle Teppicharten</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tiefenreinigung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fleck- & Geruchsentfernung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Schnelltrocknung</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Matratzenreinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 800ms;">
+                <a href="/matratzenreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/matratzenreinigung.avif" alt="Matratzenreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/matratzenreinigung.avif" alt="Matratzenreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 012-2h16a2 2 0 012 2v8"/><path d="M4 10V6a2 2 0 012-2h12a2 2 0 012 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Matratzenreinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 150 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                1-1.5 Std
-                            </span>
-                            <span class="font-medium">pro Matratze</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Matratzenreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 150 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Matratze</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1-1.5 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Hygienische Tiefenreinigung für gesunden Schlaf</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Milbenentfernung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Allergiker-geeignet</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Geruchsneutralisierung</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Hygienische Behandlung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Milbenentfernung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Allergiker-geeignet</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Geruchsneutralisierung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Hygienische Behandlung</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Grundreinigung -->
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee; animation-delay: 900ms;">
+                <a href="/grundreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
-                        <div class="aspect-[16/9] overflow-hidden">
-                            <img src="/img/services/grundreinigung.avif" alt="Grundreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
-                        </div>
+                        <div class="aspect-[16/9] overflow-hidden"><img src="/images/services/grundreinigung.avif" alt="Grundreinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+                        <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg></div>
                     </div>
                     <div class="p-6 pt-10 flex flex-col flex-1">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Grundreinigung</h3>
-                            <span class="text-lg font-bold text-booking-orange whitespace-nowrap ml-3">ab 35 CHF</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-                            <span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 font-medium">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                3-6 Std
-                            </span>
-                            <span class="font-medium">pro Stunde</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Grundreinigung</h3>
+                        <div class="text-2xl font-bold mb-1" style="color: #f5a800;">ab 35 CHF</div>
+                        <span class="text-xs text-muted-foreground mb-3">pro Stunde</span>
+                        <div class="flex items-center gap-3 mb-4"><span class="inline-flex items-center gap-1 bg-secondary rounded-full px-2.5 py-1 text-xs font-medium"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3-6 Std</span></div>
                         <p class="text-sm text-muted-foreground leading-relaxed mb-5">Intensive Grundreinigung für strahlend saubere Räume</p>
                         <div class="border-t border-border mb-4"></div>
                         <ul class="space-y-2 mb-6">
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Tiefenreinigung aller Oberflächen</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Küche & Bad intensiv</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Böden & Sockelleisten</li>
-                            <li class="flex items-center text-sm text-foreground/80"><div class="w-1.5 h-1.5 rounded-full bg-cleaning-green mr-2.5 flex-shrink-0"></div>Staub & Schmutzentfernung</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tiefenreinigung aller Oberflächen</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Küche & Bad intensiv</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Böden & Sockelleisten</li>
+                            <li class="flex items-center text-sm text-foreground/80"><svg class="w-4 h-4 mr-2.5 flex-shrink-0" style="color: #22c374;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Staub & Schmutzentfernung</li>
                         </ul>
-                        <div class="mt-auto">
-                            <a href="tel:+41445525553" class="flex items-center justify-center w-full py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue-light text-white font-medium transition-colors">
-                                Preise ansehen
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                        </div>
+                        <div class="mt-auto"><span class="flex items-center justify-center w-full px-4 py-2 bg-swiss-blue hover:bg-swiss-blue/90 text-white font-medium rounded-md transition-colors">Mehr erfahren <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
                     </div>
-                </div>
+                </a>
 
             </div>
 
             <!-- Combination Offer -->
             <div class="mt-16">
-                <div class="rounded-lg border bg-card text-card-foreground shadow-xl p-8 bg-white border-0">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-xl p-8 border-0">
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold text-foreground mb-4">
-                            Kombi-Angebot: Endreinigung + Extra Services
-                        </h3>
-                        <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                            Sparen Sie bis zu 20% wenn Sie mehrere Services zusammen buchen
-                        </p>
-
+                        <h3 class="text-2xl font-bold text-foreground mb-4">Kombi-Angebot: Endreinigung + Extra Services</h3>
+                        <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">Sparen Sie bis zu 20% wenn Sie mehrere Services zusammen buchen</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                             <div class="bg-gray-50 rounded-xl p-6">
                                 <div class="text-2xl font-bold text-swiss-blue mb-2">10%</div>
@@ -457,14 +366,9 @@
                                 <div class="text-sm font-medium text-foreground">Bei 3+ Extra Services</div>
                             </div>
                         </div>
-
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="tel:+41445525553" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-swiss-blue hover:bg-swiss-blue/90 text-white font-semibold transition-colors">
-                                Kombi-Angebot Anfragen
-                            </a>
-                            <a href="/" class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white font-semibold transition-colors">
-                                Zur Endreinigung
-                            </a>
+                            <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 bg-swiss-blue hover:bg-swiss-blue/90 text-white rounded-md transition-colors">Kombi-Angebot Anfragen</a>
+                            <a href="/" class="inline-flex items-center justify-center px-6 py-3 border border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white rounded-md transition-colors">Zur Endreinigung</a>
                         </div>
                     </div>
                 </div>
@@ -472,6 +376,5 @@
         </div>
     </section>
 
+    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
 </div>
-
-@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
