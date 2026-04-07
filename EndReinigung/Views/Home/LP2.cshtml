@@ -1,0 +1,100 @@
+@{
+    ViewData["Title"] = "Endreinigung Zürich | Umzugsreinigung mit Abnahmegarantie";
+    ViewData["Description"] = "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreis, persönliche Anwesenheit bei der Übergabe.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/lp2";
+}
+
+@section Head {
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "CleaningService",
+        "name": "Zürich Endreinigung",
+        "description": "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie.",
+        "url": "https://zuerich-endreinigung.ch/lp2",
+        "telephone": "+41445525553",
+        "address": {
+            "@@type": "PostalAddress",
+            "addressLocality": "Zürich",
+            "addressCountry": "CH"
+        },
+        "areaServed": "Zürich",
+        "priceRange": "CHF 320 - CHF 1200"
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <!-- LP2 Hero Section -->
+    <section class="relative bg-gradient-hero overflow-hidden py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="inline-block bg-booking-orange text-white font-semibold text-sm px-4 py-1.5 rounded-full">Fixpreis</span>
+                    <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">100% Abnahmegarantie</span>
+                    <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">Expat Friendly</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-heading">
+                    Professionelle Endreinigung Zürich
+                    <br />
+                    <span class="bg-gradient-accent bg-clip-text text-transparent">mit Abnahmegarantie</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl">
+                    Fixpreis, persönliche Anwesenheit bei der Übergabe und kostenlose Nachreinigung bei Mängeln. Ihre Kaution ist sicher.
+                </p>
+
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Schweizer Qualität & faire Fixpreise</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Wir sind persönlich bei der Abgabe dabei</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Kostenlose Nachreinigung bei Beanstandung</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/booking" class="inline-flex items-center justify-center text-lg px-8 h-14 rounded-lg bg-booking-orange text-white font-bold hover:bg-booking-orange-dark transition-colors shadow-button">
+                        Jetzt Fixpreis berechnen
+                    </a>
+                    <a href="tel:+41445525553" class="inline-flex items-center justify-center text-lg px-6 h-14 rounded-lg border-2 border-white text-white hover:bg-white/10 font-semibold transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        044 552 55 53
+                    </a>
+                </div>
+
+                <!-- Google review bar -->
+                <div class="border-t border-white/20 pt-6 mt-8">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        <span class="text-trust-gold text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="text-white/80 text-sm ml-2">4.9/5 Bewertung auf Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    @await Html.PartialAsync("_HowItWorks")
+
+    @await Html.PartialAsync("_FixedPricing")
+
+    @await Html.PartialAsync("_VideoSection")
+
+    @await Html.PartialAsync("_WhyChooseUs")
+
+    @await Html.PartialAsync("_Contact")
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

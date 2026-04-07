@@ -1,0 +1,404 @@
+@{
+    ViewData["Title"] = "Baureinigung Zürich | Professionelle Bauendreinigung ab 25 CHF/m²";
+    ViewData["Description"] = "Professionelle Baureinigung in Zürich nach Umbau oder Renovation. Baustaub-Entfernung, Feinreinigung aller Oberflächen. Fixpreise ab 25 CHF/m².";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/baureinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet eine Baureinigung in Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Eine professionelle Baureinigung kostet ab 25 CHF pro Quadratmeter. Der genaue Preis hängt vom Verschmutzungsgrad und der Fläche ab."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie lange dauert eine Baureinigung?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Eine Baureinigung dauert je nach Fläche und Verschmutzungsgrad zwischen 4 und 8 Stunden. Bei grösseren Objekten kann es auch länger dauern."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was ist der Unterschied zwischen Grob- und Feinreinigung?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Grobreinigung umfasst die Entfernung von grobem Bauschutt, Staub und Schmutz. Die Feinreinigung schliesst die gründliche Reinigung aller Oberflächen, Fenster und Böden ein."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wann sollte eine Baureinigung durchgeführt werden?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Baureinigung sollte nach Abschluss aller Bau- und Renovationsarbeiten durchgeführt werden, bevor die Räume bezogen oder eingerichtet werden."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- Hero Section -->
+    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Button -->
+            <nav class="mb-6" aria-label="Breadcrumb">
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Zurück zu Extra Services
+                </a>
+            </nav>
+
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <!-- HardHat icon -->
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18a1 1 0 001 1h18a1 1 0 001-1v-2a1 1 0 00-1-1H3a1 1 0 00-1 1v2z"/><path d="M10 15V6.5a3.5 3.5 0 117 0V15"/><path d="M4 15v-5a8 8 0 0116 0v5"/></svg>
+                </div>
+                <div class="inline-block bg-booking-orange/10 text-booking-orange text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                    Professionelle Baureinigung
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                    Baureinigung in Zürich – nach Umbau oder Renovation
+                </h1>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Professionelle Baustellenreinigung nach Renovierungsarbeiten im Kanton Zürich.
+                    Baustaub-Entfernung, Feinreinigung aller Oberflächen – staubfrei und bezugsbereit.
+                </p>
+
+                <!-- Trust Signals -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
+                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <span class="text-sm font-medium text-foreground">Fixpreise</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
+                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span class="text-sm font-medium text-foreground">4-8 Stunden</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
+                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-sm font-medium text-foreground">Bezugsbereit</span>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Was ist im Service enthalten -->
+        <section class="mb-16" aria-labelledby="included-services">
+            <div class="rounded-lg bg-card shadow-lg p-8">
+                <h2 id="included-services" class="text-2xl font-bold text-foreground mb-6">
+                    Was ist im Service enthalten
+                </h2>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Baustaub-Entfernung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Fensterreinigung nach Bauarbeiten</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Grobschmutz-Beseitigung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Feinreinigung aller Oberflächen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Bodenreinigung und Pflege</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Sanitärräume und Küche intensiv</span>
+                    </li>
+                </ul>
+                <p class="text-muted-foreground bg-secondary/50 p-4 rounded-lg">
+                    Unsere Baureinigung umfasst sowohl die Grob- als auch die Feinreinigung nach Abschluss aller Bauarbeiten.
+                </p>
+            </div>
+            <div class="text-center mt-6">
+                <a href="/#contact" class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
+                    Kostenlose Offerte anfordern
+                </a>
+            </div>
+        </section>
+
+        <!-- Preise & Abrechnung -->
+        <section class="mb-16" aria-labelledby="pricing">
+            <div class="rounded-lg bg-card shadow-xl p-8">
+                <h2 id="pricing" class="text-2xl font-bold text-foreground mb-6">
+                    Preise & Abrechnung
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Grundpreis -->
+                    <div class="bg-gradient-hero text-primary-foreground p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold mb-2">Grundpreis</h3>
+                        <p class="text-3xl font-bold mb-2">ab 25 CHF <span class="text-lg font-normal opacity-90">pro m²</span></p>
+                        <p class="opacity-90">Inkl. Grob- und Feinreinigung</p>
+                    </div>
+
+                    <!-- Dauer -->
+                    <div class="bg-secondary p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-foreground mb-3">Zeitaufwand</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Die Dauer einer Baureinigung hängt von der Grösse der Fläche und dem Verschmutzungsgrad ab.
+                        </p>
+                        <div class="bg-card p-4 rounded-lg">
+                            <h4 class="font-medium text-foreground mb-2">Durchschnittliche Dauer:</h4>
+                            <p class="text-muted-foreground text-sm">
+                                4-8 Stunden für eine Standard-Wohnung. Bei grösseren Objekten oder starker Verschmutzung entsprechend mehr.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Statement -->
+                    <div class="flex items-center gap-3 bg-cleaning-green/10 p-4 rounded-lg">
+                        <svg class="w-6 h-6 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <p class="text-foreground font-medium">
+                            Der Fixpreis wird nach einer Besichtigung oder Foto-Einschätzung verbindlich festgelegt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                    Kostenlose Offerte anfordern
+                </a>
+            </div>
+        </section>
+
+        <!-- Typische Einsatzbereiche -->
+        <section class="mb-16" aria-labelledby="use-cases">
+            <h2 id="use-cases" class="text-2xl font-bold text-foreground mb-6">
+                Typische Einsatzbereiche
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="rounded-lg bg-card shadow-md p-6 flex items-center gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <span class="font-medium text-foreground">Nach Umbau oder Renovation</span>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6 flex items-center gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                    </div>
+                    <span class="font-medium text-foreground">Neubauten vor Erstbezug</span>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6 flex items-center gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <span class="font-medium text-foreground">Gewerberäume und Büros</span>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6 flex items-center gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <span class="font-medium text-foreground">Praxen und Ladenflächen</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warum professionell -->
+        <section class="mb-16" aria-labelledby="why-professional">
+            <div class="rounded-lg bg-card shadow-lg p-8">
+                <h2 id="why-professional" class="text-2xl font-bold text-foreground mb-6">
+                    Warum eine professionelle Baureinigung?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Spezialgeräte</h3>
+                            <p class="text-muted-foreground text-sm">Industriesauger und professionelle Reinigungsmittel für Baustaub</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Gesundheitsschutz</h3>
+                            <p class="text-muted-foreground text-sm">Fachgerechte Entfernung von gesundheitsschädlichem Feinstaub</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Zeitersparnis</h3>
+                            <p class="text-muted-foreground text-sm">Effiziente Reinigung durch erfahrenes Team</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Bezugsbereit</h3>
+                            <p class="text-muted-foreground text-sm">Räume sofort nutzbar nach der Reinigung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ablauf -->
+        <section class="mb-16" aria-labelledby="process">
+            <h2 id="process" class="text-2xl font-bold text-foreground mb-6">
+                Ablauf
+            </h2>
+            <div class="space-y-4">
+                <div class="rounded-lg bg-card shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Anfrage senden</h3>
+                            <p class="text-muted-foreground text-sm">Kontaktieren Sie uns online oder telefonisch mit Details zum Objekt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Besichtigung oder Foto-Einschätzung</h3>
+                            <p class="text-muted-foreground text-sm">Wir beurteilen den Verschmutzungsgrad und die Fläche</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Fixpreis-Offerte</h3>
+                            <p class="text-muted-foreground text-sm">Sie erhalten eine verbindliche Preisofferte ohne versteckte Kosten</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Grobreinigung</h3>
+                            <p class="text-muted-foreground text-sm">Entfernung von Bauschutt, grobem Staub und Schmutz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg bg-card shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="font-semibold text-foreground">Feinreinigung & Übergabe</h3>
+                            <p class="text-muted-foreground text-sm">Gründliche Reinigung aller Oberflächen – bezugsbereit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16" aria-labelledby="faq">
+            <h2 id="faq" class="text-2xl font-bold text-foreground mb-6">
+                Häufige Fragen
+            </h2>
+            <div class="rounded-lg bg-card shadow-lg overflow-hidden">
+                <details class="border-b border-border group">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
+                        Was kostet eine Baureinigung in Zürich?
+                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <p class="px-6 pb-4 text-muted-foreground">
+                        Eine professionelle Baureinigung kostet ab 25 CHF pro Quadratmeter. Der genaue Preis hängt vom Verschmutzungsgrad und der Fläche ab. Wir erstellen Ihnen gerne eine verbindliche Offerte nach einer Besichtigung oder Foto-Einschätzung.
+                    </p>
+                </details>
+                <details class="border-b border-border group">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
+                        Wie lange dauert eine Baureinigung?
+                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <p class="px-6 pb-4 text-muted-foreground">
+                        Eine Baureinigung dauert je nach Fläche und Verschmutzungsgrad zwischen 4 und 8 Stunden. Bei grösseren Objekten oder starker Verschmutzung kann es auch länger dauern.
+                    </p>
+                </details>
+                <details class="border-b border-border group">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
+                        Was ist der Unterschied zwischen Grob- und Feinreinigung?
+                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <p class="px-6 pb-4 text-muted-foreground">
+                        Die Grobreinigung umfasst die Entfernung von grobem Bauschutt, Staub und Schmutz. Die Feinreinigung schliesst die gründliche Reinigung aller Oberflächen, Fenster und Böden ein. Beide Schritte sind in unserem Service inbegriffen.
+                    </p>
+                </details>
+                <details class="group">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
+                        Wann sollte eine Baureinigung durchgeführt werden?
+                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <p class="px-6 pb-4 text-muted-foreground">
+                        Die Baureinigung sollte nach Abschluss aller Bau- und Renovationsarbeiten durchgeführt werden, bevor die Räume bezogen oder eingerichtet werden.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA Contact Section -->
+        <section class="mb-16" aria-labelledby="contact-cta">
+            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8">
+                <div class="text-center">
+                    <h2 id="contact-cta" class="text-2xl md:text-3xl font-bold mb-4">
+                        Baureinigung gewünscht?
+                    </h2>
+                    <p class="mb-6 opacity-90 max-w-xl mx-auto">
+                        Kontaktieren Sie uns für eine unverbindliche Fixpreis-Offerte. Wir melden uns innerhalb von 24 Stunden.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary hover:bg-gray-100 font-semibold rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Kostenlose Offerte anfordern
+                        </a>
+                        <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white/10 font-semibold rounded-lg transition-colors">
+                            Kontakt aufnehmen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Links -->
+        <section class="mb-8" aria-labelledby="related-links">
+            <h3 id="related-links" class="text-lg font-semibold text-foreground mb-4">
+                Weitere Services
+            </h3>
+            <div class="flex flex-wrap gap-3">
+                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Endreinigung</a>
+                <a href="/grundreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Grundreinigung</a>
+                <a href="/#contact" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Kontakt</a>
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Alle Extra Services</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

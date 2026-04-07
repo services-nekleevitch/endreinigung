@@ -1,0 +1,640 @@
+@{
+    ViewData["Title"] = "Airbnb Reinigung Zürich | Zwischen Gästewechseln | Zürich Endreinigung";
+    ViewData["Description"] = "Zuverlässige Airbnb Reinigung in Zürich zwischen Gästewechseln. Für Top-Bewertungen und zufriedene Gäste. Flexible Zeiten, faire Preise.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/airbnb-reinigung-zuerich";
+}
+
+@section Head {
+    <link rel="alternate" hreflang="de" href="https://zuerich-endreinigung.ch/airbnb-reinigung-zuerich" />
+    <link rel="alternate" hreflang="en" href="https://zuerich-endreinigung.ch/en/airbnb-cleaning-zurich" />
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Wie kurzfristig kann ich eine Reinigung buchen?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Bei regelmässigen Kunden stimmen wir den Reinigungsplan fest auf Ihre Buchungen ab. Kurzfristige Einzelbuchungen sind in der Regel innerhalb von 24-48 Stunden möglich. Same-Day-Einsätze auf Anfrage." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was passiert, wenn der Gast erst am gleichen Tag auscheckt?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Kein Problem. Wir planen genügend Puffer ein und können flexibel reagieren. Informieren Sie uns einfach per WhatsApp über Änderungen — wir passen den Einsatz entsprechend an." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Stellen Sie die Reinigungsmittel?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Ja. Wir bringen alle professionellen Reinigungsmittel und Geräte mit. Sie müssen nichts bereitstellen. Falls Sie bestimmte Produkte bevorzugen (z.B. ökologische Mittel), verwenden wir gerne diese." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Kann ich den Reinigungsplan ändern, wenn meine Buchungslage schwankt?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Natürlich. Wir sind flexibel. Sagen Sie uns einfach Bescheid, wenn sich Ihre Buchungen ändern — wir passen den Plan laufend an. Bei Abo-Kunden berechnen wir nur die tatsächlich durchgeführten Reinigungen." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Bieten Sie auch Wäscheservice an?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Im Turnover- und Full-Service-Paket ist das Waschen und Trocknen der Bettwäsche und Handtücher vor Ort inklusive. Falls Sie einen separaten Abholservice für grössere Mengen benötigen, bieten wir das als Zusatzleistung an." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie funktioniert die Schlüsselübergabe?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Wir arbeiten mit Lockboxen, Schlüsseltresoren oder persönlicher Übergabe — ganz wie es für Ihr Objekt am besten passt. Im Full-Service-Paket übernehmen wir das komplette Schlüsselmanagement." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Kann ich die Reinigungskosten als Reinigungsgebühr an Gäste weitergeben?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Ja, die meisten Hosts verrechnen unsere Fixpreise direkt als Reinigungsgebühr auf Airbnb. Unsere transparenten Preise machen das einfach — Sie wissen genau, was Sie pro Reinigung zahlen und was Sie dem Gast berechnen." }
+            },
+            {
+                "@@type": "Question",
+                "name": "Reinigen Sie auch andere Kurzzeitvermietungen (Booking.com, VRBO)?",
+                "acceptedAnswer": { "@@type": "Answer", "text": "Ja. Unser Service funktioniert für jede Art von Kurzzeitvermietung — Airbnb, Booking.com, VRBO, oder privat vermietete Ferienwohnungen. Der Ablauf ist identisch." }
+            }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen">
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-20 md:pt-[6.25rem] min-h-[70vh] flex items-center overflow-hidden">
+        <!-- Background image + dark overlay -->
+        <div class="absolute inset-0">
+            <img src="/img/airbnb-hero-bg.jpg" alt="" class="w-full h-full object-cover" width="1920" height="1080" />
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, hsla(210,100%,15%,0.88) 0%, hsla(210,95%,25%,0.85) 50%, hsla(210,85%,35%,0.80) 100%)"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in">
+                        <span class="text-white/90 text-sm font-medium">Expat Friendly</span>
+                    </div>
+                    <span class="inline-block bg-trust-gold text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        Fixpreis
+                    </span>
+                    <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        7 Tage / Woche
+                    </span>
+                    <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        Hotel-Standard
+                    </span>
+                </div>
+
+                <!-- H1 -->
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Airbnb Reinigung Zürich — Turnover-Reinigung zum Fixpreis
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl">
+                    Hotel-Standard Reinigung für Airbnb, Booking.com, VRBO und Ferienwohnungen in Zürich, Zug, Aargau und Umgebung. Pünktlich, gründlich, check-in ready — damit Ihre Gäste 5 Sterne vergeben.
+                </p>
+
+                <!-- Checkmarks -->
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Fixpreis pro Reinigung — keine versteckten Kosten</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Bettwäsche, Handtücher, Müll — alles erledigt</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="text-white text-base md:text-lg">Haftpflichtversichert mit 5 Mio. CHF Deckung</span>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-8 items-start">
+                    <a href="#pricing" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                        Paket wählen
+                    </a>
+                    <a href="#service-area" class="inline-flex items-center justify-center text-lg px-6 h-12 rounded-lg border-2 border-white text-swiss-blue bg-white hover:bg-white/90 font-semibold transition-colors gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Einsatzgebiet prüfen
+                    </a>
+                </div>
+
+                <!-- Google review bar -->
+                <div class="border-t border-white/20 pt-6">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <span class="text-white/80 text-sm ml-2">4.9/5 Bewertung auf Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Pain Points Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+                Kennen Sie das?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tight Turnover -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center border-border">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Knappe Turnover-Zeit</h3>
+                    <p class="text-muted-foreground">Check-out um 11, Check-in um 15 Uhr — und dazwischen muss die Wohnung makellos sein. Stress pur.</p>
+                </div>
+                <!-- Inconsistent Quality -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center border-border">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Inkonsistente Qualität</h3>
+                    <p class="text-muted-foreground">Mal gut, mal nicht. Jeder vergessene Fleck kostet Sie eine Stern-Bewertung — und zukünftige Buchungen.</p>
+                </div>
+                <!-- Endless Coordination -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center border-border">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Ständig organisieren</h3>
+                    <p class="text-muted-foreground">Reiniger koordinieren, Absagen managen, nachkontrollieren. Sie wollten passives Einkommen, nicht einen zweiten Job.</p>
+                </div>
+            </div>
+            <p class="text-center text-lg md:text-xl font-semibold text-foreground mt-12 max-w-3xl mx-auto">
+                Wir lösen das. Ein Team, ein Fixpreis, Hotel-Standard — jedes Mal.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Pricing Section — 3 Package Cards -->
+    <section id="pricing" class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(210 10% 93%) 60%, hsl(0 0% 100%) 100%)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+                Reinigungspakete für Airbnb, Booking.com & Kurzzeitvermietungen
+            </h2>
+            <p class="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                Hotel-Standard Reinigung zum transparenten Fixpreis — wählen Sie das Paket, das zu Ihrem Objekt passt.
+            </p>
+
+            <!-- Pricing Cards Placeholder -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Express -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center">
+                    <h3 class="text-xl font-bold text-foreground mb-2">Express</h3>
+                    <p class="text-muted-foreground mb-4">Schnelle Zwischenreinigung</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 80 CHF</div>
+                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
+                        Jetzt anfragen
+                    </a>
+                </div>
+                <!-- Turnover -->
+                <div class="rounded-lg border-2 border-swiss-blue bg-card text-card-foreground shadow-xl p-8 text-center relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-swiss-blue text-white text-xs font-bold px-4 py-1 rounded-full">Beliebt</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Turnover</h3>
+                    <p class="text-muted-foreground mb-4">Komplette Gästewechsel-Reinigung</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 159 CHF</div>
+                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                        Jetzt anfragen
+                    </a>
+                </div>
+                <!-- Full Service -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center">
+                    <h3 class="text-xl font-bold text-foreground mb-2">Full Service</h3>
+                    <p class="text-muted-foreground mb-4">Rundum-Sorglos-Paket</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 249 CHF</div>
+                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
+                        Jetzt anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Custom / Tailored Service Card -->
+    <section class="px-4 sm:px-6 lg:px-8 -mt-4 relative z-10 pb-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-6 sm:p-10 bg-white border-2 border-border hover:shadow-xl transition-all duration-300">
+                <!-- Badge -->
+                <div class="absolute top-4 right-4">
+                    <div class="bg-swiss-blue text-white text-xs font-bold px-3 py-1 rounded-full">
+                        Individuell
+                    </div>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                        Massgeschneiderte Airbnb Reinigung
+                    </h3>
+                    <p class="text-base text-muted-foreground font-medium mb-3">
+                        Für Hosts mit besonderen Anforderungen
+                    </p>
+                    <p class="text-sm text-muted-foreground max-w-2xl mx-auto">
+                        Grössere Objekte, spezielle Ausstattung, eigene Checklisten oder besondere Wünsche? Wir erstellen ein individuelles Reinigungskonzept — exakt auf Ihr Objekt und Ihre Gäste zugeschnitten.
+                    </p>
+                </div>
+
+                <!-- Bullet points -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="flex items-center gap-2 justify-center text-sm text-foreground">
+                        <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Villen, Häuser & grosse Wohnungen</span>
+                    </div>
+                    <div class="flex items-center gap-2 justify-center text-sm text-foreground">
+                        <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
+                        <span>Objekte mit Pool, Sauna oder Garten</span>
+                    </div>
+                    <div class="flex items-center gap-2 justify-center text-sm text-foreground">
+                        <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Eigene Checkliste & Abläufe</span>
+                    </div>
+                    <div class="flex items-center gap-2 justify-center text-sm text-foreground">
+                        <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>Flexible Abrechnungsmodelle</span>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-3">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                        Unverbindlich anfragen
+                    </a>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg border-2 border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white transition-colors font-semibold">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Direkt anrufen: +41 76 501 77 38
+                    </a>
+                </div>
+                <p class="text-center text-xs text-muted-foreground">
+                    Antwort innerhalb von 24 Stunden
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. What's Included — Visual Checklist -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+                Was ist inklusive?
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Küche gründlich reinigen</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Badezimmer desinfizieren</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Böden saugen & wischen</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Staub wischen</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Bettwäsche wechseln</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Handtücher falten & platzieren</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Müll entsorgen</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Amenities nachfüllen</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
+                    <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-foreground font-medium">Qualitätskontrolle mit Fotos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Recurring Discount / Abo Section -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(0 0% 100%) 100%)">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Regelmässige Reinigung? Sparen Sie bis zu 15%
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Je häufiger wir kommen, desto günstiger wird es — und Sie müssen sich um nichts kümmern.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+                <!-- On Demand -->
+                <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 text-center border-border transition-all duration-300 hover:shadow-lg">
+                    <div class="text-2xl font-bold text-white bg-muted-foreground/40 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        0%
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-1">Auf Abruf</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Einzelbuchungen zum regulären Preis</p>
+                    <p class="text-sm font-semibold text-foreground">0% Rabatt</p>
+                </div>
+                <!-- 4+ per month -->
+                <div class="rounded-lg border-2 border-swiss-blue/20 bg-card text-card-foreground shadow-sm p-6 text-center transition-all duration-300 hover:shadow-lg">
+                    <div class="text-2xl font-bold text-white bg-swiss-blue-light w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        10%
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-1">4+ pro Monat</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Regelmässiger Reinigungsplan</p>
+                    <p class="text-sm font-semibold text-foreground">10% Rabatt</p>
+                </div>
+                <!-- 8+ per month -->
+                <div class="rounded-lg border-2 border-swiss-blue/40 bg-card text-card-foreground shadow-sm p-6 text-center transition-all duration-300 hover:shadow-lg">
+                    <div class="text-2xl font-bold text-white bg-swiss-blue w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                        15%
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-1">8+ pro Monat</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Mehrere Objekte oder häufige Turnovers</p>
+                    <p class="text-sm font-semibold text-foreground">15% Rabatt</p>
+                </div>
+            </div>
+
+            <p class="text-center text-sm text-muted-foreground mt-8 max-w-3xl mx-auto">
+                Beispiel: Turnover-Paket, 2 Zimmer, 8x pro Monat = CHF 1'080/Monat statt CHF 1'272 (Sie sparen CHF 192)
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. Service Area -->
+    <section id="service-area" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Unser Einsatzgebiet</h2>
+            <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Wir reinigen Airbnb-Wohnungen in Zürich, Zug, Aargau und Umgebung. Kontaktieren Sie uns, um zu prüfen, ob Ihr Objekt in unserem Einsatzgebiet liegt.
+            </p>
+            <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Einsatzgebiet prüfen
+            </a>
+        </div>
+    </section>
+
+    <!-- 8. So einfach funktioniert es — 3 Steps -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(0 0% 100%) 100%)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+                So einfach funktioniert es
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 1</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Paket & Objekt angeben</h3>
+                    <p class="text-muted-foreground">Sagen Sie uns Ihre Objektgrösse und wie oft Sie Reinigung brauchen — per Telefon, WhatsApp oder Formular.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 2</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Fester Reinigungsplan</h3>
+                    <p class="text-muted-foreground">Wir stimmen den Plan auf Ihre Buchungen ab. Jede Reinigung läuft nach unserer Hotel-Standard-Checkliste.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
+                    </div>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 3</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">5-Sterne Check-in, jedes Mal</h3>
+                    <p class="text-muted-foreground">Ihre Gäste betreten eine makellose Wohnung. Sie lehnen sich zurück und kassieren Top-Bewertungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Trust Signals / Why Hosts Choose Us -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+                Warum Airbnb-Hosts uns vertrauen
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">Haftpflichtversichert</h3>
+                        <p class="text-sm text-muted-foreground">5 Mio. CHF Deckung</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">Immer das gleiche Team</h3>
+                        <p class="text-sm text-muted-foreground">Konsistenz bei jeder Reinigung</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">7 Tage die Woche</h3>
+                        <p class="text-sm text-muted-foreground">Auch Wochenende & Feiertage</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">Kurzfristig verfügbar</h3>
+                        <p class="text-sm text-muted-foreground">Same-Day auf Anfrage</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">WhatsApp-Kommunikation</h3>
+                        <p class="text-sm text-muted-foreground">Direkt mit Ihrem Team</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
+                    <div class="w-12 h-12 rounded-xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-foreground mb-0.5">Fotodokumentation</h3>
+                        <p class="text-sm text-muted-foreground">Nachweis nach jeder Reinigung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9b. Request / Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-background">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Airbnb Reinigung anfragen</h2>
+            <p class="text-muted-foreground mb-8">Kontaktieren Sie uns für ein unverbindliches Angebot — wir melden uns innerhalb von 24 Stunden.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +41 76 501 77 38
+                </a>
+                <a href="https://wa.me/41765017738" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 h-12 rounded-lg border-2 border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white transition-colors font-semibold">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ Accordion -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(0 0% 100%) 100%)">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-3">
+                Häufige Fragen zur Airbnb Reinigung
+            </h2>
+            <p class="text-center text-muted-foreground mb-12">
+                Alles, was Sie als Host wissen müssen
+            </p>
+
+            <div class="space-y-3">
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Wie kurzfristig kann ich eine Reinigung buchen?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Bei regelmässigen Kunden stimmen wir den Reinigungsplan fest auf Ihre Buchungen ab. Kurzfristige Einzelbuchungen sind in der Regel innerhalb von 24-48 Stunden möglich. Same-Day-Einsätze auf Anfrage.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Was passiert, wenn der Gast erst am gleichen Tag auscheckt?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Kein Problem. Wir planen genügend Puffer ein und können flexibel reagieren. Informieren Sie uns einfach per WhatsApp über Änderungen — wir passen den Einsatz entsprechend an.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Stellen Sie die Reinigungsmittel?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Ja. Wir bringen alle professionellen Reinigungsmittel und Geräte mit. Sie müssen nichts bereitstellen. Falls Sie bestimmte Produkte bevorzugen (z.B. ökologische Mittel), verwenden wir gerne diese.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Kann ich den Reinigungsplan ändern, wenn meine Buchungslage schwankt?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Natürlich. Wir sind flexibel. Sagen Sie uns einfach Bescheid, wenn sich Ihre Buchungen ändern — wir passen den Plan laufend an. Bei Abo-Kunden berechnen wir nur die tatsächlich durchgeführten Reinigungen.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Bieten Sie auch Wäscheservice an?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Im Turnover- und Full-Service-Paket ist das Waschen und Trocknen der Bettwäsche und Handtücher vor Ort inklusive. Falls Sie einen separaten Abholservice für grössere Mengen benötigen, bieten wir das als Zusatzleistung an.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Wie funktioniert die Schlüsselübergabe?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Wir arbeiten mit Lockboxen, Schlüsseltresoren oder persönlicher Übergabe — ganz wie es für Ihr Objekt am besten passt. Im Full-Service-Paket übernehmen wir das komplette Schlüsselmanagement.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Kann ich die Reinigungskosten als Reinigungsgebühr an Gäste weitergeben?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Ja, die meisten Hosts verrechnen unsere Fixpreise direkt als Reinigungsgebühr auf Airbnb. Unsere transparenten Preise machen das einfach — Sie wissen genau, was Sie pro Reinigung zahlen und was Sie dem Gast berechnen.</p>
+                </details>
+                <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
+                    <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
+                        Reinigen Sie auch andere Kurzzeitvermietungen (Booking.com, VRBO)?
+                        <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <p class="text-muted-foreground px-6 pb-4">Ja. Unser Service funktioniert für jede Art von Kurzzeitvermietung — Airbnb, Booking.com, VRBO, oder privat vermietete Ferienwohnungen. Der Ablauf ist identisch.</p>
+                </details>
+            </div>
+
+            <div class="text-center mt-10">
+                <p class="text-muted-foreground mb-2">
+                    Haben Sie weitere Fragen?
+                </p>
+                <a href="tel:+41765017738" class="inline-flex items-center gap-2 text-swiss-blue font-semibold hover:underline">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +41 76 501 77 38 — Wir beraten Sie gerne
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(135deg, hsl(210 100% 15%) 0%, hsl(210 95% 25%) 50%, hsl(210 85% 35%) 100%)">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Bereit für stressfreie Gästewechsel?
+            </h2>
+            <p class="text-white/80 text-lg mb-8">
+                Wählen Sie Ihr Paket oder kontaktieren Sie uns für eine persönliche Beratung.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                    Jetzt Paket wählen
+                </a>
+                <a href="https://wa.me/41765017738" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg border border-white text-white hover:bg-white/10 transition-colors font-semibold">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    WhatsApp: +41 76 501 77 38
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

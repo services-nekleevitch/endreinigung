@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Endreinigung Kosten Zürich | Fixpreise ab CHF 550 | Zürich Endreinigung";
+    ViewData["Description"] = "Transparente Fixpreise für Ihre Endreinigung in Zürich. 1-1.5 Zimmer ab CHF 550, alles inklusive. Keine versteckten Kosten. Jetzt Preis berechnen.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/calculator";
+}
+
+<div class="min-h-screen flex flex-col pt-16 md:pt-[6.25rem]">
+    <main class="flex-1">
+        <h1 class="sr-only">Endreinigung Kostenrechner</h1>
+
+        <!-- Calculator Hero -->
+        <section class="py-16 md:py-24 bg-gradient-to-b from-muted/60 to-background">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Endreinigung <span class="text-swiss-blue">Kostenrechner</span>
+                </h2>
+                <p class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
+                    Transparente Fixpreise für Ihre Endreinigung in Zürich. Berechnen Sie jetzt Ihren individuellen Preis — unverbindlich und sofort.
+                </p>
+
+                <!-- Pricing Table -->
+                <div class="max-w-3xl mx-auto">
+                    <div class="rounded-xl border bg-card shadow-card overflow-hidden">
+                        <div class="bg-swiss-blue text-white py-4 px-6">
+                            <h3 class="text-lg font-bold">Fixpreise Endreinigung Zürich</h3>
+                            <p class="text-sm text-white/80">Alle Preise inkl. Abnahmegarantie & MwSt.</p>
+                        </div>
+                        <div class="divide-y">
+                            <div class="flex justify-between items-center px-6 py-4 hover:bg-muted/50 transition-colors">
+                                <span class="font-medium">1 - 1.5 Zimmer</span>
+                                <span class="font-bold text-swiss-blue">ab CHF 550</span>
+                            </div>
+                            <div class="flex justify-between items-center px-6 py-4 hover:bg-muted/50 transition-colors">
+                                <span class="font-medium">2 - 2.5 Zimmer</span>
+                                <span class="font-bold text-swiss-blue">ab CHF 620</span>
+                            </div>
+                            <div class="flex justify-between items-center px-6 py-4 bg-swiss-blue/5 hover:bg-swiss-blue/10 transition-colors">
+                                <div>
+                                    <span class="font-medium">3 - 3.5 Zimmer</span>
+                                    <span class="ml-2 text-xs bg-booking-orange text-white px-2 py-0.5 rounded-full">Beliebt</span>
+                                </div>
+                                <span class="font-bold text-swiss-blue">ab CHF 720</span>
+                            </div>
+                            <div class="flex justify-between items-center px-6 py-4 hover:bg-muted/50 transition-colors">
+                                <span class="font-medium">4 - 4.5 Zimmer</span>
+                                <span class="font-bold text-swiss-blue">ab CHF 850</span>
+                            </div>
+                            <div class="flex justify-between items-center px-6 py-4 hover:bg-muted/50 transition-colors">
+                                <span class="font-medium">5 - 5.5 Zimmer</span>
+                                <span class="font-bold text-swiss-blue">ab CHF 1020</span>
+                            </div>
+                            <div class="flex justify-between items-center px-6 py-4 hover:bg-muted/50 transition-colors">
+                                <span class="font-medium">6+ Zimmer</span>
+                                <span class="font-bold text-swiss-blue">auf Anfrage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mt-10">
+                    <p class="text-muted-foreground mb-4">Für eine genaue Offerte kontaktieren Sie uns direkt:</p>
+                    <a href="tel:+41765017738" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-lg font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Jetzt Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

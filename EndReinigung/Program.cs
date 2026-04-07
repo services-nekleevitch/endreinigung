@@ -37,6 +37,9 @@ namespace EndReinigung
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            // Attribute routing for SEO-friendly URLs
+            app.MapControllers();
+
             app.Run();
         }
     }

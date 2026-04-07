@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"] = "Endreinigung Zürich | Umzugsreinigung mit 100% Abnahmegarantie";
-    ViewData["Description"] = "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreis, persönliche Anwesenheit bei der Übergabe. Jetzt buchen!";
+    ViewData["Title"] = "Endreinigung Zürich | 100% Abnahmegarantie & Fixpreis | Zürich Endreinigung";
+    ViewData["Description"] = "Professionelle Endreinigung & Umzugsreinigung in Zürich mit persönlicher Abnahmebegleitung. Fixpreise ab CHF 550. Jetzt Offerte anfordern.";
 }
 
 @section Head {
@@ -44,7 +44,9 @@
 @await Html.PartialAsync("_VideoSection")
 @await Html.PartialAsync("_HowItWorks")
 @await Html.PartialAsync("_WhyChooseUs")
-@await Html.PartialAsync("_LetzteEndreinigungen")
+<div id="galerie" class="scroll-mt-16 md:scroll-mt-[6.25rem]">
+    @await Html.PartialAsync("_LetzteEndreinigungen")
+</div>
 <section class="py-12 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(210 10% 93%) 60%, hsl(0 0% 100%) 100%)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         @await Html.PartialAsync("_EndreinigungInfo")

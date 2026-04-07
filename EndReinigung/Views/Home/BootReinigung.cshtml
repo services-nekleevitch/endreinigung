@@ -1,0 +1,169 @@
+@{
+    ViewData["Title"] = "Boot Reinigung Zürichsee | Innen & Aussen | Zürich Endreinigung";
+    ViewData["Description"] = "Professionelle Boot Reinigung am Zürichsee. Innen- und Aussenreinigung für Ihr Boot. Jetzt Termin vereinbaren.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/boot-reinigung";
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- Hero -->
+    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="mb-6" aria-label="Breadcrumb">
+                <a href="/extra-services">
+                    <button class="inline-flex items-center px-3 py-1.5 text-sm border rounded-md text-primary border-primary hover:bg-primary hover:text-primary-foreground">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Zurück zu Extra Services
+                    </button>
+                </a>
+            </nav>
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <!-- Ship icon placeholder -->
+                    <svg class="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">Boot Reinigung Zürichsee — Professionelle Innen- & Aussenreinigung</h1>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Professionelle Bootsreinigung am Zürichsee und in der Region Zürich. Innen und aussen — schonend, gründlich und mit Spezialreinigern.</p>
+                <div class="mt-8">
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 text-lg bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Was ist im Service enthalten -->
+        <section class="mb-16">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg p-8 border-0">
+                <h2 class="text-2xl font-bold text-foreground mb-6">Was ist im Service enthalten</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Deck- und Aussenreinigung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Kabine und Innenräume</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Polster- und Sitzreinigung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Salz- und Wasserflecken entfernen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Fenster und Bullaugen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Küche / Pantry reinigen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Spezialreiniger für Bootsmaterialien</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Warum Zürich Endreinigung? -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6 text-center">Warum Zürich Endreinigung?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Flexible Termine</h3>
+                        <p class="text-muted-foreground text-sm">Reinigung am Liegeplatz oder in der Werft.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Boot-Spezialisten</h3>
+                        <p class="text-muted-foreground text-sm">Erfahren im Umgang mit empfindlichen Bootsmaterialien.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Transparente Preise</h3>
+                        <p class="text-muted-foreground text-sm">Festpreis je nach Bootsgrösse.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Haftpflichtversichert</h3>
+                        <p class="text-muted-foreground text-sm">5 Mio. CHF Deckung für Ihre Sicherheit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mb-16">
+            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8 border-0">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Kostenlose Offerte für Ihre Boot Reinigung</h2>
+                    <p class="mb-6 opacity-90 max-w-xl mx-auto">Kontaktieren Sie uns für eine unverbindliche Offerte. Wir melden uns innerhalb von 24 Stunden.</p>
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-white text-primary hover:bg-gray-100 font-semibold rounded-lg transition-all duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6">Häufige Fragen</h2>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg overflow-hidden border-0">
+                <details class="border-b border-border">
+                    <summary class="flex justify-between items-center py-4 px-6 font-medium text-foreground cursor-pointer hover:bg-secondary/50">Reinigen Sie Boote direkt am Zürichsee?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Ja, wir kommen direkt zu Ihrem Liegeplatz am Zürichsee oder in der Region Zürich. Auch Reinigungen in der Werft sind möglich.</div>
+                </details>
+                <details class="border-b border-border">
+                    <summary class="flex justify-between items-center py-4 px-6 font-medium text-foreground cursor-pointer hover:bg-secondary/50">Welche Bootstypen können gereinigt werden?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Wir reinigen Motorboote, Segelboote und Yachten aller Grössen — innen und aussen.</div>
+                </details>
+                <details>
+                    <summary class="flex justify-between items-center py-4 px-6 font-medium text-foreground cursor-pointer hover:bg-secondary/50">Was kostet eine Boot Reinigung?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Die Kosten richten sich nach Bootsgrösse und gewünschtem Leistungsumfang. Kontaktieren Sie uns für eine kostenlose Offerte.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Weitere Services -->
+        <section class="mb-8">
+            <h3 class="text-lg font-semibold text-foreground mb-4">Weitere Services</h3>
+            <div class="flex flex-wrap gap-3">
+                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border rounded-md text-primary hover:bg-primary/5">Endreinigung</a>
+                <a href="/fensterreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border rounded-md text-primary hover:bg-primary/5">Fensterreinigung</a>
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border rounded-md text-primary hover:bg-primary/5">Alle Extra Services</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Html.PartialAsync("_Contact")
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

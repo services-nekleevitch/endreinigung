@@ -1,0 +1,205 @@
+@{
+    ViewData["Title"] = "Matratzenreinigung Zürich | Gegen Milben & Allergene | Zürich Endreinigung";
+    ViewData["Description"] = "Hygienische Matratzenreinigung in Zürich. Tiefenreinigung gegen Milben, Bakterien und Allergene. Jetzt Termin vereinbaren.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/matratzenreinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Wie oft sollte eine Matratze gereinigt werden?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Experten empfehlen eine professionelle Matratzenreinigung mindestens einmal jährlich, bei Allergikern alle 6 Monate."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Ist die Reinigung für Allergiker geeignet?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, unsere Reinigung ist speziell auf die Entfernung von Milben und Allergenen ausgelegt und für Allergiker besonders empfehlenswert."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie lange dauert die Reinigung?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Reinigung dauert ca. 1–1.5 Stunden pro Matratze. Danach ist die Matratze innerhalb weniger Stunden wieder nutzbar."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- Hero Section -->
+    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="mb-6" aria-label="Breadcrumb">
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Zurück zu Extra Services
+                </a>
+            </nav>
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <!-- BedDouble icon -->
+                    <svg class="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 012-2h16a2 2 0 012 2v8"/><path d="M4 10V6a2 2 0 012-2h12a2 2 0 012 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                    Matratzenreinigung Zürich — Hygienisch rein, gegen Milben
+                </h1>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Professionelle Matratzenreinigung für gesunden Schlaf. Wir entfernen Milben, Allergene und Gerüche — hygienisch und materialschonend.
+                </p>
+                <div class="mt-8">
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 text-lg bg-booking-orange hover:bg-booking-orange-dark text-white rounded-md transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Was ist im Service enthalten -->
+        <section class="mb-16">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg p-8 border-0">
+                <h2 class="text-2xl font-bold text-foreground mb-6">Was ist im Service enthalten</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Milbenentfernung und Allergiker-Behandlung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Tiefenreinigung der gesamten Matratze</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Fleckenentfernung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Geruchsneutralisierung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Hygienische Desinfektion</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Materialschonende Behandlung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Schnelle Trocknung</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Warum Zürich Endreinigung -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6 text-center">Warum Zürich Endreinigung?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Vor-Ort-Service</h3>
+                        <p class="text-muted-foreground text-sm">Wir reinigen Ihre Matratze direkt bei Ihnen zu Hause.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Hygiene-Experten</h3>
+                        <p class="text-muted-foreground text-sm">Spezialisiert auf hygienische Matratzenreinigung.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Transparente Preise</h3>
+                        <p class="text-muted-foreground text-sm">Festpreis pro Matratze — keine versteckten Kosten.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Haftpflichtversichert</h3>
+                        <p class="text-muted-foreground text-sm">5 Mio. CHF Deckung für Ihre Sicherheit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="mb-16">
+            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8 border-0">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Kostenlose Offerte für Ihre Matratzenreinigung</h2>
+                    <p class="mb-6 opacity-90 max-w-xl mx-auto">Kontaktieren Sie uns für eine unverbindliche Offerte. Wir melden uns innerhalb von 24 Stunden.</p>
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-white text-primary hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6">Häufige Fragen</h2>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg overflow-hidden border-0">
+                <details class="border-b border-border">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Wie oft sollte eine Matratze gereinigt werden?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Experten empfehlen eine professionelle Matratzenreinigung mindestens einmal jährlich, bei Allergikern alle 6 Monate.</div>
+                </details>
+                <details class="border-b border-border">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Ist die Reinigung für Allergiker geeignet?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Ja, unsere Reinigung ist speziell auf die Entfernung von Milben und Allergenen ausgelegt und für Allergiker besonders empfehlenswert.</div>
+                </details>
+                <details class="border-b border-border last:border-b-0">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Wie lange dauert die Reinigung?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Die Reinigung dauert ca. 1–1.5 Stunden pro Matratze. Danach ist die Matratze innerhalb weniger Stunden wieder nutzbar.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Weitere Services -->
+        <section class="mb-8">
+            <h3 class="text-lg font-semibold text-foreground mb-4">Weitere Services</h3>
+            <div class="flex flex-wrap gap-3">
+                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Endreinigung</a>
+                <a href="/polsterreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Polsterreinigung</a>
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Alle Extra Services</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Html.PartialAsync("_Contact")
+    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+</div>

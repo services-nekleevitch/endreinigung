@@ -1,0 +1,209 @@
+@{
+    ViewData["Title"] = "Praxisreinigung Zürich | Arztpraxis & Zahnarztpraxis | Zürich Endreinigung";
+    ViewData["Description"] = "Hygienische Praxisreinigung in Zürich für Arzt-, Zahnarzt- und Therapiepraxen. Geschultes Personal, flexible Zeiten. Jetzt Offerte anfordern.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/praxisreinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Welche Hygienestandards erfüllen Sie?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir arbeiten nach den gängigen Hygienerichtlinien für medizinische Einrichtungen. Unsere Reinigungskräfte sind im Umgang mit Desinfektionsmitteln und der Reinigung sensibler Bereiche geschult. Auf Wunsch erstellen wir einen individuellen Hygieneplan für Ihre Praxis."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Reinigen Sie auch Zahnarztpraxen und Therapiepraxen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, wir reinigen Arztpraxen, Zahnarztpraxen, Physiotherapie-Praxen, Psychotherapie-Praxen und weitere medizinische Einrichtungen. Wir passen unsere Reinigung an die spezifischen Anforderungen Ihrer Praxis an."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie oft sollte eine Arztpraxis gereinigt werden?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir empfehlen eine tägliche Reinigung für Arztpraxen mit hohem Patientenaufkommen. Für kleinere Praxen kann auch eine Reinigung alle zwei bis drei Tage ausreichend sein. Wir beraten Sie gerne individuell."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- Hero Section -->
+    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="mb-6" aria-label="Breadcrumb">
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Zurück zu Extra Services
+                </a>
+            </nav>
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <!-- HeartPulse icon -->
+                    <svg class="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 12.572l-7.5 7.428-7.5-7.428A5 5 0 1112 6.006a5 5 0 017.5 6.572z"/><path d="M5 12h2l2 4 4-8 2 4h2"/></svg>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                    Praxisreinigung in Zürich — Hygiene für Arzt- und Zahnarztpraxen
+                </h1>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Medizinische Praxen brauchen mehr als eine Standardreinigung. Wir reinigen Ihre
+                    Arztpraxis, Zahnarztpraxis oder Therapiepraxis nach höchsten Hygienestandards —
+                    regelmässig, diskret und mit geschultem Personal.
+                </p>
+                <div class="mt-8">
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 text-lg bg-booking-orange hover:bg-booking-orange-dark text-white rounded-md transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Was ist im Service enthalten -->
+        <section class="mb-16">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg p-8 border-0">
+                <h2 class="text-2xl font-bold text-foreground mb-6">Was ist im Service enthalten</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Desinfektion aller Kontaktflächen (Türklinken, Schalter, Armlehnen)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Wartezimmer und Empfangsbereich reinigen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Behandlungsräume reinigen und desinfizieren</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Sanitäranlagen gründlich reinigen und desinfizieren</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Böden fachgerecht reinigen (auch empfindliche Beläge)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Abfallentsorgung nach Vorgaben</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground">Staubfreie Oberflächen in allen Räumen</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Warum Zürich Endreinigung -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6 text-center">Warum Zürich Endreinigung?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <!-- GraduationCap icon -->
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Geschultes Personal</h3>
+                        <p class="text-muted-foreground text-sm">Speziell geschultes Personal für medizinische Umgebungen.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Flexible Reinigungszeiten</h3>
+                        <p class="text-muted-foreground text-sm">Reinigung nach Praxisschluss oder vor Praxisöffnung.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <!-- FlaskConical icon -->
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 01-.211.896L4.72 20.55a1 1 0 00.9 1.45h12.76a1 1 0 00.9-1.45l-5.069-10.127A2 2 0 0114 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16.5h10"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Geprüfte Reinigungsmittel</h3>
+                        <p class="text-muted-foreground text-sm">Verwendung medizinisch geprüfter Reinigungsmittel.</p>
+                    </div>
+                </div>
+                <div class="rounded-lg border bg-card text-card-foreground shadow-md p-6 border-0 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-foreground mb-1">Haftpflichtversichert</h3>
+                        <p class="text-muted-foreground text-sm">5 Mio. CHF Deckung für Ihre Sicherheit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="mb-16">
+            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8 border-0">
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Kostenlose Offerte für Ihre Praxisreinigung anfordern</h2>
+                    <p class="mb-6 opacity-90 max-w-xl mx-auto">Kontaktieren Sie uns für eine unverbindliche Offerte. Wir melden uns innerhalb von 24 Stunden.</p>
+                    <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-white text-primary hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-foreground mb-6">Häufige Fragen</h2>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-lg overflow-hidden border-0">
+                <details class="border-b border-border">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Welche Hygienestandards erfüllen Sie?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Wir arbeiten nach den gängigen Hygienerichtlinien für medizinische Einrichtungen. Unsere Reinigungskräfte sind im Umgang mit Desinfektionsmitteln und der Reinigung sensibler Bereiche geschult. Auf Wunsch erstellen wir einen individuellen Hygieneplan für Ihre Praxis.</div>
+                </details>
+                <details class="border-b border-border">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Reinigen Sie auch Zahnarztpraxen und Therapiepraxen?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Ja, wir reinigen Arztpraxen, Zahnarztpraxen, Physiotherapie-Praxen, Psychotherapie-Praxen und weitere medizinische Einrichtungen. Wir passen unsere Reinigung an die spezifischen Anforderungen Ihrer Praxis an.</div>
+                </details>
+                <details class="border-b border-border last:border-b-0">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50">Wie oft sollte eine Arztpraxis gereinigt werden?</summary>
+                    <div class="px-6 pb-4 text-muted-foreground">Wir empfehlen eine tägliche Reinigung für Arztpraxen mit hohem Patientenaufkommen. Für kleinere Praxen kann auch eine Reinigung alle zwei bis drei Tage ausreichend sein. Wir beraten Sie gerne individuell.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Weitere Services -->
+        <section class="mb-8">
+            <h3 class="text-lg font-semibold text-foreground mb-4">Weitere Services</h3>
+            <div class="flex flex-wrap gap-3">
+                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Endreinigung</a>
+                <a href="/bueroreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Büroreinigung</a>
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Alle Extra Services</a>
+            </div>
+        </section>
+
+    </main>
+
+    @await Html.PartialAsync("_Contact")
+    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+</div>

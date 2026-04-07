@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Häufige Fragen zur Endreinigung Zürich | Zürich Endreinigung";
+    ViewData["Description"] = "Antworten auf die wichtigsten Fragen zu Endreinigung, Kosten, Abnahmegarantie, Wohnungsübergabe und Umzugsreinigung in Zürich.";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/faq";
+}
+
+<div class="pt-16 md:pt-[6.25rem]">
+    <div class="text-center pt-12 md:pt-16 px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground">Häufig gestellte Fragen</h1>
+    </div>
+    @await Html.PartialAsync("_LP2FAQ")
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
