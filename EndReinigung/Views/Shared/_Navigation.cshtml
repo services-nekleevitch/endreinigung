@@ -1,3 +1,9 @@
+@using System.Globalization
+@{
+    var currentCulture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isDE = currentCulture == "de";
+    var isEN = currentCulture == "en";
+}
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,23 +18,23 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                <a href="/#pakete" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Preise</a>
-                <a href="/extra-services" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Extra Services</a>
-                <a href="/abnahmegarantie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Abnahmegarantie</a>
-                <a href="/faq" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">FAQ</a>
-                <a href="/#galerie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Galerie</a>
-                <a href="/ratgeber" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Ratgeber</a>
-                <a href="#contact" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">Kontakt</a>
+                <a href="/#pakete" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.prices"]</a>
+                <a href="/extra-services" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.extra_services"]</a>
+                <a href="/abnahmegarantie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.guarantee"]</a>
+                <a href="/faq" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.faq"]</a>
+                <a href="/#galerie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.gallery"]</a>
+                <a href="/ratgeber" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.guide"]</a>
+                <a href="#contact" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.contact"]</a>
 
                 <!-- Language Dropdown -->
                 <div class="relative ml-2" id="lang-dropdown">
                     <button onclick="document.getElementById('lang-menu').classList.toggle('hidden')" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-foreground border border-border rounded-md hover:bg-muted transition-colors">
-                        DE
+                        @(currentCulture.ToUpper())
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div id="lang-menu" class="absolute right-0 mt-1 bg-white border border-border rounded-md shadow-lg overflow-hidden z-50 hidden">
-                        <a href="/" class="block w-full text-left px-4 py-2 text-sm font-bold text-swiss-blue transition-colors hover:bg-muted">DE</a>
-                        <a href="/en/airbnb-cleaning-zurich" class="block w-full text-left px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted">EN</a>
+                        <a href="javascript:void(0)" onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isDE ? "font-bold text-swiss-blue" : "text-foreground")">DE</a>
+                        <a href="javascript:void(0)" onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isEN ? "font-bold text-swiss-blue" : "text-foreground")">EN</a>
                     </div>
                 </div>
 
@@ -36,7 +42,7 @@
                 <a href="tel:+41765017738" class="ml-4 mr-[30px] inline-flex items-center px-4 py-2 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-sm font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                     <span class="hidden lg:inline">+41 76 501 77 38</span>
-                    <span class="lg:hidden">Anrufen</span>
+                    <span class="lg:hidden">@SharedLocalizer["nav.call"]</span>
                 </a>
             </div>
 
@@ -55,24 +61,31 @@
                 <!-- Language Toggle -->
                 <div class="flex items-center justify-end px-3 py-2 border-b border-border mb-2">
                     <div class="flex items-center gap-2 text-sm">
-                        <a href="/" class="px-3 py-1.5 rounded-md border font-bold text-swiss-blue border-swiss-blue bg-muted">DE</a>
-                        <a href="/en/airbnb-cleaning-zurich" class="px-3 py-1.5 rounded-md border text-muted-foreground border-border hover:text-foreground">EN</a>
+                        <a href="javascript:void(0)" onclick="setLanguage('de')" class="px-3 py-1.5 rounded-md border @(isDE ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">DE</a>
+                        <a href="javascript:void(0)" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</a>
                     </div>
                 </div>
-                <a href="/#pakete" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Preise</a>
-                <a href="/extra-services" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Extra Services</a>
-                <a href="/abnahmegarantie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Abnahmegarantie</a>
-                <a href="/faq" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">FAQ</a>
-                <a href="/#galerie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Galerie</a>
-                <a href="/ratgeber" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Ratgeber</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">Kontakt</a>
+                <a href="/#pakete" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.prices"]</a>
+                <a href="/extra-services" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.extra_services"]</a>
+                <a href="/abnahmegarantie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.guarantee"]</a>
+                <a href="/faq" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.faq"]</a>
+                <a href="/#galerie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.gallery"]</a>
+                <a href="/ratgeber" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.guide"]</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.contact"]</a>
                 <div class="px-3 py-2">
                     <a href="tel:+41765017738" class="w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-sm font-semibold rounded-lg">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        Sofort Anrufen
+                        @SharedLocalizer["nav.call_now"]
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+
+<script>
+function setLanguage(culture) {
+    document.cookie = '.AspNetCore.Culture=c=' + culture + '|uic=' + culture + ';path=/;max-age=31536000;SameSite=Lax';
+    location.reload();
+}
+</script>

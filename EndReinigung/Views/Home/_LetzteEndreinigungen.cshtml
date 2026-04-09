@@ -1,12 +1,54 @@
+@using System.Globalization
+@{
+    var lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var gallery = new[] {
+        new {
+            Img = "/img/projects/wohnkueche.jpg",
+            Alt = "Umzugsreinigung 5.5 Zimmer Wohnung Wollishofen",
+            CaptionDe = "Umzugsreinigung 5.5 Zimmer Wohnung in Wollishofen, ZH. Erfolgreiche Wohnungsabgabe; Kaution ohne Abzüge zurückerhalten.",
+            CaptionEn = "Move-out cleaning 5.5-room apartment in Wollishofen, ZH. Successful handover; deposit returned in full."
+        },
+        new {
+            Img = "/img/projects/kueche.jpg",
+            Alt = "Endreinigung 3.5 Zimmer Wohnung Oerlikon",
+            CaptionDe = "Endreinigung 3.5 Zimmer Wohnung in Oerlikon, Zürich. Kaution erfolgreich zurückerhalten.",
+            CaptionEn = "End-of-lease cleaning 3.5-room apartment in Oerlikon, Zürich. Deposit successfully returned."
+        },
+        new {
+            Img = "/img/projects/wohnzimmer.jpg",
+            Alt = "Endreinigung 4.5 Zimmer Wohnung Altstetten",
+            CaptionDe = "Endreinigung 4.5 Zimmer Wohnung in Altstetten, Zürich. Kaution erfolgreich zurückerhalten.",
+            CaptionEn = "End-of-lease cleaning 4.5-room apartment in Altstetten, Zürich. Deposit successfully returned."
+        },
+        new {
+            Img = "/img/projects/bad-dusche.jpg",
+            Alt = "Endreinigung 2.5 Zimmer Wohnung Wiedikon",
+            CaptionDe = "Endreinigung 2.5 Zimmer Wohnung in Wiedikon, Zürich. Kaution erfolgreich zurückerhalten.",
+            CaptionEn = "End-of-lease cleaning 2.5-room apartment in Wiedikon, Zürich. Deposit successfully returned."
+        },
+        new {
+            Img = "/img/projects/bad-wanne.jpg",
+            Alt = "Endreinigung 3.5 Zimmer Wohnung Seefeld",
+            CaptionDe = "Endreinigung 3.5 Zimmer Wohnung in Seefeld, Zürich. Kaution erfolgreich zurückerhalten.",
+            CaptionEn = "End-of-lease cleaning 3.5-room apartment in Seefeld, Zürich. Deposit successfully returned."
+        },
+        new {
+            Img = "/img/projects/balkon.jpg",
+            Alt = "Endreinigung 4.5 Zimmer Wohnung Höngg",
+            CaptionDe = "Endreinigung 4.5 Zimmer Wohnung in Höngg, Zürich. Kaution erfolgreich zurückerhalten.",
+            CaptionEn = "End-of-lease cleaning 4.5-room apartment in Höngg, Zürich. Deposit successfully returned."
+        }
+    };
+}
 <!-- Letzte Endreinigungen Gallery -->
 <section id="galerie" class="py-12 md:py-24 bg-gradient-to-b from-secondary to-background scroll-mt-16 md:scroll-mt-[6.25rem]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-8 md:mb-12">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                Letzte <span class="text-primary">Endreinigungen in Zürich</span>
+                @SharedLocalizer["gallery.title_1"] <span class="text-primary">@SharedLocalizer["gallery.title_2"]</span>
             </h2>
             <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Einblicke in unsere letzten Endreinigungen in Zürich, Winterthur, Dietikon, Uster und dem ganzen Kanton
+                @SharedLocalizer["gallery.subtitle"]
             </p>
         </div>
 
@@ -14,16 +56,6 @@
         <div id="gallery-carousel" class="relative">
             <div class="overflow-hidden">
                 <div class="carousel-track flex">
-                    @{
-                        var gallery = new[] {
-                            new { Img = "/img/projects/wohnkueche.jpg", Alt = "Umzugsreinigung 5.5 Zimmer Wohnung Wollishofen", Caption = "Umzugsreinigung 5.5 Zimmer Wohnung in Wollishofen, ZH. Erfolgreiche Wohnungsabgabe im Februar 2026; Kaution ohne Abzüge zurückerhalten." },
-                            new { Img = "/img/projects/kueche.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Oerlikon", Caption = "Endreinigung 3.5 Zimmer Wohnung in Oerlikon, Zürich – Januar 2026. Kaution erfolgreich zurückerhalten." },
-                            new { Img = "/img/projects/wohnzimmer.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Altstetten", Caption = "Endreinigung 4.5 Zimmer Wohnung in Altstetten, Zürich – Januar 2026. Kaution erfolgreich zurückerhalten." },
-                            new { Img = "/img/projects/bad-dusche.jpg", Alt = "Endreinigung 2.5 Zimmer Wohnung Wiedikon", Caption = "Endreinigung 2.5 Zimmer Wohnung in Wiedikon, Zürich – Dezember 2025. Kaution erfolgreich zurückerhalten." },
-                            new { Img = "/img/projects/bad-wanne.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Seefeld", Caption = "Endreinigung 3.5 Zimmer Wohnung in Seefeld, Zürich – Dezember 2025. Kaution erfolgreich zurückerhalten." },
-                            new { Img = "/img/projects/balkon.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Höngg", Caption = "Endreinigung 4.5 Zimmer Wohnung in Höngg, Zürich – November 2025. Kaution erfolgreich zurückerhalten." }
-                        };
-                    }
                     @foreach (var item in gallery) {
                         <div class="carousel-slide third pl-4 flex-shrink-0">
                             <div class="bg-card border border-border rounded-b-xl overflow-hidden h-full flex flex-col">
@@ -31,7 +63,7 @@
                                     <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" />
                                 </div>
                                 <div class="p-4 flex-1 flex items-start">
-                                    <p class="text-sm text-muted-foreground leading-relaxed">@item.Caption</p>
+                                    <p class="text-sm text-muted-foreground leading-relaxed">@(lang == "en" ? item.CaptionEn : item.CaptionDe)</p>
                                 </div>
                             </div>
                         </div>

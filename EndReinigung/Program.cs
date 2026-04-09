@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
+
 namespace EndReinigung
 {
     public class Program
@@ -6,10 +9,24 @@ namespace EndReinigung
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            // Add localization services
+            builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+            builder.Services.AddControllersWithViews()
+                .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
 
             var app = builder.Build();
+
+            // Configure supported cultures
+            var supportedCultures = new[] { new CultureInfo("de"), new CultureInfo("en") };
+            var locOptions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("de"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+            locOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider());
+            app.UseRequestLocalization(locOptions);
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

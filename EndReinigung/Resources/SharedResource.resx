@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Navigation -->
+  <data name="nav.prices" xml:space="preserve">
+    <value>Preise</value>
+  </data>
+  <data name="nav.extra_services" xml:space="preserve">
+    <value>Extra Services</value>
+  </data>
+  <data name="nav.airbnb" xml:space="preserve">
+    <value>Airbnb Reinigung</value>
+  </data>
+  <data name="nav.gallery" xml:space="preserve">
+    <value>Galerie</value>
+  </data>
+  <data name="nav.guarantee" xml:space="preserve">
+    <value>Abnahmegarantie</value>
+  </data>
+  <data name="nav.faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="nav.guide" xml:space="preserve">
+    <value>Ratgeber</value>
+  </data>
+  <data name="nav.contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="nav.call_now" xml:space="preserve">
+    <value>Sofort Anrufen</value>
+  </data>
+  <data name="nav.call" xml:space="preserve">
+    <value>Anrufen</value>
+  </data>
+
+  <!-- Hero -->
+  <data name="hero.badge_handover" xml:space="preserve">
+    <value>&#x2713; Wir sind bei der Abgabe dabei</value>
+  </data>
+  <data name="hero.badge_fixed" xml:space="preserve">
+    <value>Fixpreis</value>
+  </data>
+  <data name="hero.headline_1_de" xml:space="preserve">
+    <value>Endreinigung Z&#252;rich &#x2713;</value>
+  </data>
+  <data name="hero.headline_2_de" xml:space="preserve">
+    <value>Umzugsreinigung mit 100% Abnahmegarantie</value>
+  </data>
+  <data name="hero.benefit_1" xml:space="preserve">
+    <value>Schweizer Qualit&#228;t &amp; faire Preise</value>
+  </data>
+  <data name="hero.benefit_2" xml:space="preserve">
+    <value>Kaution zur&#252;ck nach Ihrer Umzugsreinigung &#8212; garantiert</value>
+  </data>
+  <data name="hero.benefit_3" xml:space="preserve">
+    <value>Professionelle Endreinigung in Z&#252;rich &amp; Umgebung</value>
+  </data>
+  <data name="hero.room_size" xml:space="preserve">
+    <value>Wohnungsgr&#246;sse</value>
+  </data>
+  <data name="hero.select_rooms" xml:space="preserve">
+    <value>Zimmeranzahl w&#228;hlen</value>
+  </data>
+  <data name="hero.rooms" xml:space="preserve">
+    <value>Zimmer</value>
+  </data>
+  <data name="hero.cta" xml:space="preserve">
+    <value>Jetzt Fixpreis sehen</value>
+  </data>
+  <data name="hero.instant_price" xml:space="preserve">
+    <value>SOFORT PREIS!</value>
+  </data>
+  <data name="hero.rating_on" xml:space="preserve">
+    <value>Bewertung auf</value>
+  </data>
+  <data name="hero.error_both" xml:space="preserve">
+    <value>Bitte w&#228;hlen Sie die Zimmeranzahl und die Postleitzahl aus.</value>
+  </data>
+  <data name="hero.error_room" xml:space="preserve">
+    <value>Bitte w&#228;hlen Sie die Zimmeranzahl aus.</value>
+  </data>
+  <data name="hero.error_plz" xml:space="preserve">
+    <value>Bitte geben Sie Ihre Postleitzahl ein.</value>
+  </data>
+  <data name="hero.error_service_area" xml:space="preserve">
+    <value>Diese Postleitzahl liegt nicht in unserem Servicegebiet (Kanton Z&#252;rich).</value>
+  </data>
+  <data name="hero.outside_area_title" xml:space="preserve">
+    <value>Ausserhalb unseres Servicegebiets</value>
+  </data>
+  <data name="hero.outside_area_desc" xml:space="preserve">
+    <value>Diese Postleitzahl liegt nicht in unserem Servicegebiet (Kanton Z&#252;rich). Bitte geben Sie eine g&#252;ltige Z&#252;rcher Postleitzahl ein.</value>
+  </data>
+  <data name="hero.understood" xml:space="preserve">
+    <value>Verstanden</value>
+  </data>
+
+  <!-- Trust -->
+  <data name="trust.insured" xml:space="preserve">
+    <value>Haftpflichtversichert</value>
+  </data>
+  <data name="trust.insured_sub" xml:space="preserve">
+    <value>5 Mio. CHF Deckung</value>
+  </data>
+  <data name="trust.guarantee" xml:space="preserve">
+    <value>100% Abnahmegarantie</value>
+  </data>
+  <data name="trust.guarantee_sub" xml:space="preserve">
+    <value>Mit pers&#246;nlicher Anwesenheit</value>
+  </data>
+  <data name="trust.expat" xml:space="preserve">
+    <value>Expat-Friendly</value>
+  </data>
+  <data name="trust.expat_sub" xml:space="preserve">
+    <value>English &amp; Deutsch</value>
+  </data>
+  <data name="trust.booking" xml:space="preserve">
+    <value>Sofort-Buchung</value>
+  </data>
+  <data name="trust.booking_sub" xml:space="preserve">
+    <value>Online in 2 Minuten</value>
+  </data>
+
+  <!-- Pricing -->
+  <data name="pricing.title" xml:space="preserve">
+    <value>Fixpreise Endreinigung besenrein inkl. Wohnungsabgabe</value>
+  </data>
+  <data name="pricing.subtitle" xml:space="preserve">
+    <value>Transparente Festpreise f&#252;r Ihre Endreinigung und Wohnungs&#252;bergabe in Z&#252;rich &#8212; alles inklusive.</value>
+  </data>
+  <data name="pricing.most_popular" xml:space="preserve">
+    <value>Am beliebtesten</value>
+  </data>
+  <data name="pricing.fixed_price" xml:space="preserve">
+    <value>Fixpreis</value>
+  </data>
+  <data name="pricing.cleaning_zurich" xml:space="preserve">
+    <value>Endreinigung in Z&#252;rich und Kanton</value>
+  </data>
+  <data name="pricing.all_incl" xml:space="preserve">
+    <value>alles inkl.</value>
+  </data>
+  <data name="pricing.presence" xml:space="preserve">
+    <value>Pers&#246;nliche Anwesenheit bei der &#220;bergabe</value>
+  </data>
+  <data name="pricing.calculate" xml:space="preserve">
+    <value>Jetzt Fixpreis berechnen</value>
+  </data>
+  <data name="pricing.custom_size" xml:space="preserve">
+    <value>7+ Zimmer / Haus / Spezialobjekt</value>
+  </data>
+  <data name="pricing.custom_badge" xml:space="preserve">
+    <value>Individuelles Angebot</value>
+  </data>
+  <data name="pricing.custom_price" xml:space="preserve">
+    <value>Individueller Preis</value>
+  </data>
+  <data name="pricing.custom_sub1" xml:space="preserve">
+    <value>Individuelle Endreinigung in Z&#252;rich und Kanton</value>
+  </data>
+  <data name="pricing.custom_sub2" xml:space="preserve">
+    <value>basierend auf Gr&#246;sse &amp; Zustand</value>
+  </data>
+  <data name="pricing.request_quote" xml:space="preserve">
+    <value>Kostenlose Offerte anfordern</value>
+  </data>
+  <data name="pricing.response_time" xml:space="preserve">
+    <value>Antwort innerhalb von 24 Stunden</value>
+  </data>
+  <data name="pricing.included_title" xml:space="preserve">
+    <value>Im Preis enthalten &#8212; Ihre Endreinigung in Z&#252;rich</value>
+  </data>
+  <data name="pricing.feat_complete" xml:space="preserve">
+    <value>Komplettreinigung</value>
+  </data>
+  <data name="pricing.feat_complete_sub" xml:space="preserve">
+    <value>Alle R&#228;ume gr&#252;ndlich gereinigt</value>
+  </data>
+  <data name="pricing.feat_kitchen" xml:space="preserve">
+    <value>K&#252;che &amp; Badezimmer</value>
+  </data>
+  <data name="pricing.feat_kitchen_sub" xml:space="preserve">
+    <value>Tiefenreinigung inklusive</value>
+  </data>
+  <data name="pricing.feat_windows" xml:space="preserve">
+    <value>Fenster</value>
+  </data>
+  <data name="pricing.feat_windows_sub" xml:space="preserve">
+    <value>Innen &amp; aussen streifenfrei</value>
+  </data>
+  <data name="pricing.feat_guarantee" xml:space="preserve">
+    <value>100% Abnahmegarantie</value>
+  </data>
+  <data name="pricing.feat_guarantee_sub" xml:space="preserve">
+    <value>Mit pers&#246;nlicher Anwesenheit</value>
+  </data>
+  <data name="pricing.feat_blinds" xml:space="preserve">
+    <value>Rolll&#228;den &amp; Storen</value>
+  </data>
+  <data name="pricing.feat_blinds_sub" xml:space="preserve">
+    <value>Gr&#252;ndliche Reinigung inklusive</value>
+  </data>
+  <data name="pricing.feat_fixed" xml:space="preserve">
+    <value>Festpreis</value>
+  </data>
+  <data name="pricing.feat_fixed_sub" xml:space="preserve">
+    <value>Keine versteckten Kosten</value>
+  </data>
+  <data name="pricing.f_complete" xml:space="preserve">
+    <value>Komplettreinigung</value>
+  </data>
+  <data name="pricing.f_ready" xml:space="preserve">
+    <value>Wohnungsabgabe-fertig</value>
+  </data>
+  <data name="pricing.f_all_rooms" xml:space="preserve">
+    <value>Alle R&#228;ume, K&#252;che &amp; Bad</value>
+  </data>
+  <data name="pricing.f_complete_cleaning" xml:space="preserve">
+    <value>Komplettreinigung alle R&#228;ume</value>
+  </data>
+  <data name="pricing.f_bathroom" xml:space="preserve">
+    <value>Bad, WC &amp; Entkalkung</value>
+  </data>
+  <data name="pricing.f_kitchen_appliances" xml:space="preserve">
+    <value>K&#252;che &amp; alle Ger&#228;te</value>
+  </data>
+  <data name="pricing.f_windows_blinds_balcony" xml:space="preserve">
+    <value>Fenster, Storen &amp; Balkon</value>
+  </data>
+  <data name="pricing.f_basement_mailbox" xml:space="preserve">
+    <value>Keller &amp; Briefkasten</value>
+  </data>
+  <data name="pricing.f_windows" xml:space="preserve">
+    <value>Fenster, Fensterrahmen &amp; Fensterb&#228;nke</value>
+  </data>
+  <data name="pricing.f_blinds" xml:space="preserve">
+    <value>Storen / Jalousien</value>
+  </data>
+  <data name="pricing.f_guarantee" xml:space="preserve">
+    <value>100% Abnahmegarantie</value>
+  </data>
+  <data name="pricing.f_balcony" xml:space="preserve">
+    <value>Balkon / Terrasse</value>
+  </data>
+  <data name="pricing.f_mailbox" xml:space="preserve">
+    <value>Briefkasten innen &amp; aussen</value>
+  </data>
+  <data name="pricing.f_basement" xml:space="preserve">
+    <value>Keller (falls vorhanden)</value>
+  </data>
+  <data name="pricing.f_basement_full" xml:space="preserve">
+    <value>Keller, Estrich, Garage (falls vorhanden)</value>
+  </data>
+
+  <!-- Video -->
+  <data name="video.title_1" xml:space="preserve">
+    <value>Sehen Sie uns</value>
+  </data>
+  <data name="video.title_2" xml:space="preserve">
+    <value>in Aktion</value>
+  </data>
+  <data name="video.subtitle" xml:space="preserve">
+    <value>Erfahren Sie in 2 Minuten, wie wir Ihre Endreinigung und Z&#252;gelreinigung in Z&#252;rich stressfrei erledigen.</value>
+  </data>
+
+  <!-- HowItWorks -->
+  <data name="how.title_1" xml:space="preserve">
+    <value>So einfach</value>
+  </data>
+  <data name="how.title_2" xml:space="preserve">
+    <value>funktioniert es</value>
+  </data>
+  <data name="how.step1_title" xml:space="preserve">
+    <value>Schritt 1: Angaben eingeben</value>
+  </data>
+  <data name="how.step1_desc" xml:space="preserve">
+    <value>Geben Sie Ihre Postleitzahl und die gew&#252;nschte Serviceart in unseren Preisrechner ein.</value>
+  </data>
+  <data name="how.step2_title" xml:space="preserve">
+    <value>Schritt 2: Fixpreis sofort erhalten</value>
+  </data>
+  <data name="how.step2_desc" xml:space="preserve">
+    <value>Erhalten Sie basierend auf Ihren Angaben sofort ein transparentes Angebot &#8211; ohne versteckte Kosten.</value>
+  </data>
+  <data name="how.step3_title" xml:space="preserve">
+    <value>Schritt 3: Buchen, Schl&#252;ssel abgeben &amp; entspannen</value>
+  </data>
+  <data name="how.step3_desc" xml:space="preserve">
+    <value>Wir k&#252;mmern uns um die Reinigung, Abnahme und &#220;bergabe. Lehnen Sie sich zur&#252;ck, w&#228;hrend wir Ihren Umzug stressfrei machen.</value>
+  </data>
+
+  <!-- WhyChooseUs -->
+  <data name="why.title" xml:space="preserve">
+    <value>Warum</value>
+  </data>
+  <data name="why.title_brand" xml:space="preserve">
+    <value>Z&#252;rich Endreinigung</value>
+  </data>
+  <data name="why.subtitle" xml:space="preserve">
+    <value>Vertrauen Sie auf unsere Expertise und erhalten Sie Ihre volle Kaution zur&#252;ck. Wir sind Ihr zuverl&#228;ssiger Partner f&#252;r Umzugsreinigung und Z&#252;gelreinigung in Z&#252;rich.</value>
+  </data>
+  <data name="why.b1_title" xml:space="preserve">
+    <value>Pers&#246;nliche Abnahmebegleitung</value>
+  </data>
+  <data name="why.b1_desc" xml:space="preserve">
+    <value>Wir sind bei der &#220;bergabe dabei. Nicht auf dem Papier &#8212; pers&#246;nlich. Bis zum Schluss.</value>
+  </data>
+  <data name="why.b1_highlight" xml:space="preserve">
+    <value>100% Garantie</value>
+  </data>
+  <data name="why.b2_title" xml:space="preserve">
+    <value>Probleme? Gel&#246;st. Direkt.</value>
+  </data>
+  <data name="why.b2_desc" xml:space="preserve">
+    <value>Taucht ein Mangel auf, beheben wir ihn auf der Stelle &#8212; keine R&#252;ckrufe, keine Wartezeit, kein neuer Termin.</value>
+  </data>
+  <data name="why.b2_highlight" xml:space="preserve">
+    <value>Sofort vor Ort</value>
+  </data>
+  <data name="why.b3_title" xml:space="preserve">
+    <value>Wir kennen Z&#252;rich</value>
+  </data>
+  <data name="why.b3_desc" xml:space="preserve">
+    <value>Als lokale Reinigungsfirma in Z&#252;rich kennen wir die Anforderungen der Z&#252;rcher Verwaltungen &#8212; und sorgen daf&#252;r, dass Ihre &#220;bergabe beim ersten Mal klappt.</value>
+  </data>
+  <data name="why.b3_highlight" xml:space="preserve">
+    <value>Z&#252;rich Experten</value>
+  </data>
+  <data name="why.b4_title" xml:space="preserve">
+    <value>Kein Stress. Kein Risiko.</value>
+  </data>
+  <data name="why.b4_desc" xml:space="preserve">
+    <value>Ein fairer Fixpreis, ein eingespieltes Team, ein Ziel: dass Sie entspannt ausziehen &#8212; wir k&#252;mmern uns um den Rest.</value>
+  </data>
+  <data name="why.b4_highlight" xml:space="preserve">
+    <value>Fixpreis</value>
+  </data>
+
+  <!-- Presence -->
+  <data name="presence.title" xml:space="preserve">
+    <value>Wir sind bei der &#220;bergabe dabei.</value>
+  </data>
+  <data name="presence.highlight" xml:space="preserve">
+    <value>Pers&#246;nlich.</value>
+  </data>
+  <data name="presence.subtitle" xml:space="preserve">
+    <value>Bis die &#220;bergabe unterschrieben ist.</value>
+  </data>
+
+  <!-- Gallery -->
+  <data name="gallery.title_1" xml:space="preserve">
+    <value>Letzte</value>
+  </data>
+  <data name="gallery.title_2" xml:space="preserve">
+    <value>Endreinigungen in Z&#252;rich</value>
+  </data>
+  <data name="gallery.subtitle" xml:space="preserve">
+    <value>Einblicke in unsere letzten Endreinigungen in Z&#252;rich, Winterthur, Dietikon, Uster und dem ganzen Kanton</value>
+  </data>
+
+  <!-- Services -->
+  <data name="services.title_1" xml:space="preserve">
+    <value>Weitere</value>
+  </data>
+  <data name="services.title_2" xml:space="preserve">
+    <value>Reinigungsservices in Z&#252;rich und Umgebung</value>
+  </data>
+  <data name="services.subtitle" xml:space="preserve">
+    <value>Entdecken Sie unser vollst&#228;ndiges Reinigungsangebot</value>
+  </data>
+  <data name="services.learn_more" xml:space="preserve">
+    <value>Mehr erfahren</value>
+  </data>
+
+  <!-- Contact -->
+  <data name="contact.title" xml:space="preserve">
+    <value>Kostenloses Angebot f&#252;r Ihre Endreinigung in Z&#252;rich und Umgebung erhalten</value>
+  </data>
+  <data name="contact.subtitle_1" xml:space="preserve">
+    <value>6+ Zimmer / Haus / B&#252;ro / Werkstatt / Spezialobjekt &#8212; Z&#252;rich und ganzer Kanton</value>
+  </data>
+  <data name="contact.subtitle_2" xml:space="preserve">
+    <value>Kontaktieren Sie uns noch heute f&#252;r ein unverbindliches Angebot. Wir sind da, um Ihnen zu helfen!</value>
+  </data>
+  <data name="contact.form_title" xml:space="preserve">
+    <value>Angebot Anfordern</value>
+  </data>
+  <data name="contact.first_name" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="contact.last_name" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="contact.email" xml:space="preserve">
+    <value>E-Mail Adresse</value>
+  </data>
+  <data name="contact.phone" xml:space="preserve">
+    <value>Telefonnummer</value>
+  </data>
+  <data name="contact.address" xml:space="preserve">
+    <value>Wohnungsadresse</value>
+  </data>
+  <data name="contact.address_placeholder" xml:space="preserve">
+    <value>Strasse, PLZ, Ort</value>
+  </data>
+  <data name="contact.rooms" xml:space="preserve">
+    <value>Anzahl Zimmer</value>
+  </data>
+  <data name="contact.select" xml:space="preserve">
+    <value>W&#228;hlen Sie...</value>
+  </data>
+  <data name="contact.move_date" xml:space="preserve">
+    <value>Auszugsdatum</value>
+  </data>
+  <data name="contact.property_type" xml:space="preserve">
+    <value>Objektart</value>
+  </data>
+  <data name="contact.select_please" xml:space="preserve">
+    <value>Bitte w&#228;hlen</value>
+  </data>
+  <data name="contact.apartment" xml:space="preserve">
+    <value>Wohnung</value>
+  </data>
+  <data name="contact.house" xml:space="preserve">
+    <value>Haus</value>
+  </data>
+  <data name="contact.office" xml:space="preserve">
+    <value>B&#252;ro</value>
+  </data>
+  <data name="contact.practice" xml:space="preserve">
+    <value>Praxis</value>
+  </data>
+  <data name="contact.shop" xml:space="preserve">
+    <value>Laden</value>
+  </data>
+  <data name="contact.restaurant" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="contact.floor" xml:space="preserve">
+    <value>Stockwerk</value>
+  </data>
+  <data name="contact.ground" xml:space="preserve">
+    <value>Erdgeschoss</value>
+  </data>
+  <data name="contact.attic" xml:space="preserve">
+    <value>Dachgeschoss</value>
+  </data>
+  <data name="contact.basement" xml:space="preserve">
+    <value>Untergeschoss</value>
+  </data>
+  <data name="contact.furnishing" xml:space="preserve">
+    <value>Art der M&#246;belierung</value>
+  </data>
+  <data name="contact.unfurnished" xml:space="preserve">
+    <value>Unm&#246;bliert</value>
+  </data>
+  <data name="contact.partly_furnished" xml:space="preserve">
+    <value>Teilm&#246;bliert</value>
+  </data>
+  <data name="contact.furnished" xml:space="preserve">
+    <value>M&#246;bliert</value>
+  </data>
+  <data name="contact.additional_info" xml:space="preserve">
+    <value>Zus&#228;tzliche Informationen</value>
+  </data>
+  <data name="contact.additional_placeholder" xml:space="preserve">
+    <value>Besondere Anforderungen, gew&#252;nschter Termin, etc.</value>
+  </data>
+  <data name="contact.submit" xml:space="preserve">
+    <value>Kostenloses Angebot Erhalten</value>
+  </data>
+  <data name="contact.required" xml:space="preserve">
+    <value>* Pflichtfelder. Ihre Daten werden vertraulich behandelt.</value>
+  </data>
+
+  <!-- Footer -->
+  <data name="footer.company" xml:space="preserve">
+    <value>Unser Unternehmen</value>
+  </data>
+  <data name="footer.contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="footer.about" xml:space="preserve">
+    <value>&#220;ber uns</value>
+  </data>
+  <data name="footer.guide" xml:space="preserve">
+    <value>Ratgeber</value>
+  </data>
+  <data name="footer.social" xml:space="preserve">
+    <value>Social Medien</value>
+  </data>
+  <data name="footer.cleaning_info" xml:space="preserve">
+    <value>Infos zur Reinigung</value>
+  </data>
+  <data name="footer.calculator" xml:space="preserve">
+    <value>Preisrechner</value>
+  </data>
+  <data name="footer.extras" xml:space="preserve">
+    <value>Zusatzservices</value>
+  </data>
+  <data name="footer.more_services" xml:space="preserve">
+    <value>Weitere Services</value>
+  </data>
+  <data name="footer.legal" xml:space="preserve">
+    <value>Rechtliches</value>
+  </data>
+  <data name="footer.phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="footer.email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="footer.hours" xml:space="preserve">
+    <value>&#214;ffnungszeiten</value>
+  </data>
+  <data name="footer.address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="footer.about_text" xml:space="preserve">
+    <value>Professionelle Endreinigung &amp; Umzugsreinigung in Z&#252;rich, Winterthur, Dietikon, Schlieren, Uster und dem ganzen Kanton Z&#252;rich &#8211; besenrein, zuverl&#228;ssig und mit Abnahmegarantie.</value>
+  </data>
+  <data name="footer.reviews" xml:space="preserve">
+    <value>Kundenbewertung</value>
+  </data>
+  <data name="footer.rating_google" xml:space="preserve">
+    <value>Bewertung auf Google</value>
+  </data>
+  <data name="footer.payment" xml:space="preserve">
+    <value>Zahlungsm&#246;glichkeiten</value>
+  </data>
+  <data name="footer.bank_transfer" xml:space="preserve">
+    <value>Bank &#220;berweisung</value>
+  </data>
+  <data name="footer.cash" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="footer.guarantee_incl" xml:space="preserve">
+    <value>Abnahmegarantie inklusive</value>
+  </data>
+  <data name="footer.insured" xml:space="preserve">
+    <value>Haftpflichtversichert</value>
+  </data>
+  <data name="footer.swiss_company" xml:space="preserve">
+    <value>Schweizer Unternehmen</value>
+  </data>
+  <data name="footer.quote_24h" xml:space="preserve">
+    <value>Offerte innert 24h</value>
+  </data>
+  <data name="footer.experienced_team" xml:space="preserve">
+    <value>Erfahrenes Reinigungsteam</value>
+  </data>
+  <data name="footer.service_areas" xml:space="preserve">
+    <value>Unsere Einsatzgebiete</value>
+  </data>
+  <data name="footer.show_all" xml:space="preserve">
+    <value>Alle 160 Gemeinden anzeigen &#8594;</value>
+  </data>
+  <data name="footer.service_intro" xml:space="preserve">
+    <value>Professional End of Lease Cleaning with inspection guarantee throughout Z&#252;rich and nearby districts.</value>
+  </data>
+
+  <!-- FAQ -->
+  <data name="faq.title_1" xml:space="preserve">
+    <value>H&#228;ufig gestellte</value>
+  </data>
+  <data name="faq.title_2" xml:space="preserve">
+    <value>Fragen</value>
+  </data>
+  <data name="faq.subtitle" xml:space="preserve">
+    <value>Alles, was Sie &#252;ber unsere Endreinigung im Kanton Z&#252;rich wissen m&#252;ssen</value>
+  </data>
+  <data name="faq.more_questions" xml:space="preserve">
+    <value>Haben Sie weitere Fragen?</value>
+  </data>
+  <data name="faq.call_us" xml:space="preserve">
+    <value>&#x1F4DE; +41 76 501 77 38 &#8211; Wir beraten Sie gerne</value>
+  </data>
+
+  <!-- Calculator -->
+  <data name="calc.apartment_size" xml:space="preserve">
+    <value>Wohnungsgr&#246;sse w&#228;hlen</value>
+  </data>
+  <data name="calc.house_size" xml:space="preserve">
+    <value>Hausgr&#246;sse w&#228;hlen</value>
+  </data>
+  <data name="calc.apartment" xml:space="preserve">
+    <value>Wohnung</value>
+  </data>
+  <data name="calc.house" xml:space="preserve">
+    <value>Haus</value>
+  </data>
+  <data name="calc.next_extras" xml:space="preserve">
+    <value>Weiter zu Extras</value>
+  </data>
+  <data name="calc.choose_extras" xml:space="preserve">
+    <value>Extras w&#228;hlen</value>
+  </data>
+  <data name="calc.zurich_guarantee" xml:space="preserve">
+    <value>Unsere Z&#252;rich-Garantie</value>
+  </data>
+  <data name="calc.guarantee_100" xml:space="preserve">
+    <value>100% Abnahme-Garantie inklusive</value>
+  </data>
+  <data name="calc.optional_extras" xml:space="preserve">
+    <value>Optionale Zusatzleistungen</value>
+  </data>
+  <data name="calc.back" xml:space="preserve">
+    <value>Zur&#252;ck</value>
+  </data>
+  <data name="calc.next_price" xml:space="preserve">
+    <value>Weiter zu Festpreis</value>
+  </data>
+  <data name="calc.your_price" xml:space="preserve">
+    <value>Ihr Festpreis</value>
+  </data>
+  <data name="calc.no_hidden" xml:space="preserve">
+    <value>Keine versteckten Kosten &#8226; Alles inklusive</value>
+  </data>
+  <data name="calc.fixed_incl" xml:space="preserve">
+    <value>Fixpreis inkl. Anfahrt, Material</value>
+  </data>
+  <data name="calc.insured" xml:space="preserve">
+    <value>Versichert</value>
+  </data>
+  <data name="calc.guaranteed" xml:space="preserve">
+    <value>Garantiert</value>
+  </data>
+  <data name="calc.punctual" xml:space="preserve">
+    <value>P&#252;nktlich</value>
+  </data>
+  <data name="calc.summary" xml:space="preserve">
+    <value>Zusammenfassung</value>
+  </data>
+  <data name="calc.apartment_size_label" xml:space="preserve">
+    <value>Wohnungsgr&#246;sse</value>
+  </data>
+  <data name="calc.house_size_label" xml:space="preserve">
+    <value>Hausgr&#246;sse</value>
+  </data>
+  <data name="calc.extras_label" xml:space="preserve">
+    <value>Zusatzleistungen:</value>
+  </data>
+  <data name="calc.cleaning_date" xml:space="preserve">
+    <value>Wunschtermin Reinigung</value>
+  </data>
+  <data name="calc.handover_date" xml:space="preserve">
+    <value>Wunschtermin &#220;bergabe</value>
+  </data>
+  <data name="calc.select_date" xml:space="preserve">
+    <value>Datum ausw&#228;hlen</value>
+  </data>
+  <data name="calc.time" xml:space="preserve">
+    <value>Uhrzeit</value>
+  </data>
+  <data name="calc.handover_before_cleaning" xml:space="preserve">
+    <value>Das &#220;bergabedatum muss am selben Tag oder nach dem Reinigungsdatum liegen.</value>
+  </data>
+  <data name="calc.date_not_fixed" xml:space="preserve">
+    <value>Datum und Zeit noch nicht fixiert.</value>
+  </data>
+  <data name="calc.date_popup_title" xml:space="preserve">
+    <value>Datum noch nicht fixiert?</value>
+  </data>
+  <data name="calc.date_popup_p1" xml:space="preserve">
+    <value>Kein Problem! Falls Sie Ihren Termin noch nicht genau wissen, k&#246;nnen Sie diesen bequem zu einem sp&#228;teren Zeitpunkt nachreichen &#8211; jedoch sp&#228;testens bis 14 Tage vor dem geplanten Reinigungstermin.</value>
+  </data>
+  <data name="calc.date_popup_p2" xml:space="preserve">
+    <value>So funktioniert es: Nach Abschluss der Buchung erhalten Sie von uns eine Best&#228;tigungsemail mit einem pers&#246;nlichen Link. &#220;ber diesen Link k&#246;nnen Sie Ihr &#220;bergabedatum und die Uhrzeit jederzeit bis zwei Wochen vor dem Reinigungstermin eintragen oder &#228;ndern.</value>
+  </data>
+  <data name="calc.date_popup_p3" xml:space="preserve">
+    <value>Alternativ k&#246;nnen Sie uns die Details auch ganz einfach per E-Mail senden oder uns kurz anrufen, um den Termin pers&#246;nlich mit uns zu fixieren.</value>
+  </data>
+  <data name="calc.next_booking" xml:space="preserve">
+    <value>Weiter zu Buchung</value>
+  </data>
+  <data name="calc.free_cancel" xml:space="preserve">
+    <value>Kostenlose Stornierung bis 48h vor dem Termin</value>
+  </data>
+  <data name="calc.step_size" xml:space="preserve">
+    <value>Gr&#246;sse</value>
+  </data>
+  <data name="calc.step_extras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="calc.step_price" xml:space="preserve">
+    <value>Festpreis &amp; Termine</value>
+  </data>
+  <data name="calc.step_booking" xml:space="preserve">
+    <value>Buchung</value>
+  </data>
+  <data name="calc.error_room" xml:space="preserve">
+    <value>Bitte w&#228;hlen Sie die Zimmeranzahl aus.</value>
+  </data>
+  <data name="calc.error_plz" xml:space="preserve">
+    <value>Bitte geben Sie Ihre Postleitzahl ein.</value>
+  </data>
+  <data name="calc.error_service_area" xml:space="preserve">
+    <value>Diese Postleitzahl liegt nicht in unserem Servicegebiet (Kanton Z&#252;rich).</value>
+  </data>
+  <data name="calc.incl_grundreinigung" xml:space="preserve">
+    <value>Grundreinigung aller R&#228;ume</value>
+  </data>
+  <data name="calc.incl_kitchen_bath" xml:space="preserve">
+    <value>K&#252;che &amp; Bad reinigen</value>
+  </data>
+  <data name="calc.incl_floors" xml:space="preserve">
+    <value>B&#246;den saugen &amp; wischen</value>
+  </data>
+  <data name="calc.incl_surfaces" xml:space="preserve">
+    <value>Oberfl&#228;chen abstauben</value>
+  </data>
+  <data name="calc.incl_window_frames" xml:space="preserve">
+    <value>Fensterrahmen &amp; Fensterb&#228;nke</value>
+  </data>
+  <data name="calc.incl_blinds" xml:space="preserve">
+    <value>Storen / Jalousien</value>
+  </data>
+  <data name="calc.incl_oven_fridge" xml:space="preserve">
+    <value>Backofen &amp; K&#252;hlschrank</value>
+  </data>
+  <data name="calc.incl_oven_detail" xml:space="preserve">
+    <value>innen &amp; aussen</value>
+  </data>
+  <data name="calc.incl_mailbox" xml:space="preserve">
+    <value>Briefkasten innen &amp; aussen</value>
+  </data>
+  <data name="calc.incl_balcony" xml:space="preserve">
+    <value>1&#215; Balkon / Terrasse</value>
+  </data>
+  <data name="calc.incl_handover" xml:space="preserve">
+    <value>Anwesenheit bei &#220;bergabe</value>
+  </data>
+  <data name="calc.incl_fix" xml:space="preserve">
+    <value>Nachbesserung bei Beanstandung</value>
+  </data>
+  <data name="calc.incl_presence" xml:space="preserve">
+    <value>Pers&#246;nliche Anwesenheit bei der Abnahme</value>
+  </data>
+  <data name="calc.incl_bathroom" xml:space="preserve">
+    <value>Badezimmer</value>
+  </data>
+  <data name="calc.incl_balkon" xml:space="preserve">
+    <value>Balkon</value>
+  </data>
+  <data name="calc.incl_utility_balkon" xml:space="preserve">
+    <value>Reduit-Balkon</value>
+  </data>
+  <data name="calc.extra_balcony" xml:space="preserve">
+    <value>+ Extra Balkon / Terrasse</value>
+  </data>
+  <data name="calc.extra_utility_balcony" xml:space="preserve">
+    <value>+ Extra Reduit-Balkon</value>
+  </data>
+  <data name="calc.extra_bath" xml:space="preserve">
+    <value>Anzahl Badezimmer</value>
+  </data>
+  <data name="calc.extra_wc" xml:space="preserve">
+    <value>Separates WC</value>
+  </data>
+  <data name="calc.extra_carpet" xml:space="preserve">
+    <value>Teppich Shampoo-Reinigung</value>
+  </data>
+  <data name="calc.extra_balcony_pressure" xml:space="preserve">
+    <value>Balkon / Terrasse Hochdruckreinigung</value>
+  </data>
+  <data name="calc.extra_garage_pressure" xml:space="preserve">
+    <value>Garage / Carport Hochdruckreinigung</value>
+  </data>
+
+  <!-- Booking -->
+  <data name="booking.your_booking" xml:space="preserve">
+    <value>Ihre Buchung</value>
+  </data>
+  <data name="booking.apartment" xml:space="preserve">
+    <value>Wohnung</value>
+  </data>
+  <data name="booking.date" xml:space="preserve">
+    <value>Termin</value>
+  </data>
+  <data name="booking.total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="booking.your_data" xml:space="preserve">
+    <value>Ihre Daten</value>
+  </data>
+  <data name="booking.first_name" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="booking.last_name" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="booking.email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="booking.phone" xml:space="preserve">
+    <value>Telefonnummer</value>
+  </data>
+  <data name="booking.customer_address" xml:space="preserve">
+    <value>Kundenadresse</value>
+  </data>
+  <data name="booking.street" xml:space="preserve">
+    <value>Strasse &amp; Nr.</value>
+  </data>
+  <data name="booking.plz" xml:space="preserve">
+    <value>PLZ</value>
+  </data>
+  <data name="booking.city" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="booking.same_address" xml:space="preserve">
+    <value>Objektadresse ist gleich wie Kundenadresse</value>
+  </data>
+  <data name="booking.object_address" xml:space="preserve">
+    <value>Objektadresse</value>
+  </data>
+  <data name="booking.notes" xml:space="preserve">
+    <value>Zus&#228;tzliche Informationen</value>
+  </data>
+  <data name="booking.notes_placeholder" xml:space="preserve">
+    <value>Besondere W&#252;nsche, Zugangsinformationen, etc.</value>
+  </data>
+  <data name="booking.payment" xml:space="preserve">
+    <value>Zahlungsmethode</value>
+  </data>
+  <data name="booking.twint" xml:space="preserve">
+    <value>TWINT</value>
+  </data>
+  <data name="booking.prepayment" xml:space="preserve">
+    <value>Vorzahlung</value>
+  </data>
+  <data name="booking.cash" xml:space="preserve">
+    <value>Barzahlung</value>
+  </data>
+  <data name="booking.payment_note" xml:space="preserve">
+    <value>F&#252;r Neukunden: Zahlung erfolgt bei der &#220;bergabe per TWINT oder Bar.</value>
+  </data>
+  <data name="booking.terms_prefix" xml:space="preserve">
+    <value>Ich habe die</value>
+  </data>
+  <data name="booking.terms_link" xml:space="preserve">
+    <value>Nutzungsbedingungen</value>
+  </data>
+  <data name="booking.terms_suffix" xml:space="preserve">
+    <value>gelesen und akzeptiere diese.</value>
+  </data>
+  <data name="booking.back" xml:space="preserve">
+    <value>Zur&#252;ck</value>
+  </data>
+  <data name="booking.confirm" xml:space="preserve">
+    <value>Buchung best&#228;tigen</value>
+  </data>
+
+</root>

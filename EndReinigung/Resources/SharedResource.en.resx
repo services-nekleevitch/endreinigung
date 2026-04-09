@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Navigation -->
+  <data name="nav.prices" xml:space="preserve">
+    <value>Prices</value>
+  </data>
+  <data name="nav.extra_services" xml:space="preserve">
+    <value>Extra Services</value>
+  </data>
+  <data name="nav.airbnb" xml:space="preserve">
+    <value>Airbnb Cleaning</value>
+  </data>
+  <data name="nav.gallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="nav.guarantee" xml:space="preserve">
+    <value>Handover Guarantee</value>
+  </data>
+  <data name="nav.faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="nav.guide" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+  <data name="nav.contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="nav.call_now" xml:space="preserve">
+    <value>Call Now</value>
+  </data>
+  <data name="nav.call" xml:space="preserve">
+    <value>Call</value>
+  </data>
+
+  <!-- Hero -->
+  <data name="hero.badge_handover" xml:space="preserve">
+    <value>&#x2713; We attend the handover</value>
+  </data>
+  <data name="hero.badge_fixed" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="hero.headline_1_de" xml:space="preserve">
+    <value>End-of-Lease</value>
+  </data>
+  <data name="hero.headline_2_de" xml:space="preserve">
+    <value>Cleaning Perfection</value>
+  </data>
+  <data name="hero.benefit_1" xml:space="preserve">
+    <value>Swiss Quality &amp; Fair Prices</value>
+  </data>
+  <data name="hero.benefit_2" xml:space="preserve">
+    <value>Deposit back after your move-out cleaning — guaranteed</value>
+  </data>
+  <data name="hero.benefit_3" xml:space="preserve">
+    <value>Professional end-of-lease cleaning in Zürich &amp; surroundings</value>
+  </data>
+  <data name="hero.room_size" xml:space="preserve">
+    <value>Apartment Size</value>
+  </data>
+  <data name="hero.select_rooms" xml:space="preserve">
+    <value>Select number of rooms</value>
+  </data>
+  <data name="hero.rooms" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="hero.cta" xml:space="preserve">
+    <value>See Fixed Price Now</value>
+  </data>
+  <data name="hero.instant_price" xml:space="preserve">
+    <value>INSTANT PRICE!</value>
+  </data>
+  <data name="hero.rating_on" xml:space="preserve">
+    <value>Rating on</value>
+  </data>
+  <data name="hero.error_both" xml:space="preserve">
+    <value>Please select the number of rooms and enter your postal code.</value>
+  </data>
+  <data name="hero.error_room" xml:space="preserve">
+    <value>Please select the number of rooms.</value>
+  </data>
+  <data name="hero.error_plz" xml:space="preserve">
+    <value>Please enter your postal code.</value>
+  </data>
+  <data name="hero.error_service_area" xml:space="preserve">
+    <value>This postal code is not in our service area (Canton Zürich).</value>
+  </data>
+  <data name="hero.outside_area_title" xml:space="preserve">
+    <value>Outside Our Service Area</value>
+  </data>
+  <data name="hero.outside_area_desc" xml:space="preserve">
+    <value>This postal code is not in our service area (Canton Zürich). Please enter a valid Zürich postal code.</value>
+  </data>
+  <data name="hero.understood" xml:space="preserve">
+    <value>Understood</value>
+  </data>
+
+  <!-- Trust -->
+  <data name="trust.insured" xml:space="preserve">
+    <value>Liability Insured</value>
+  </data>
+  <data name="trust.insured_sub" xml:space="preserve">
+    <value>CHF 5M Coverage</value>
+  </data>
+  <data name="trust.guarantee" xml:space="preserve">
+    <value>100% Handover Guarantee</value>
+  </data>
+  <data name="trust.guarantee_sub" xml:space="preserve">
+    <value>With personal attendance</value>
+  </data>
+  <data name="trust.expat" xml:space="preserve">
+    <value>Expat-Friendly</value>
+  </data>
+  <data name="trust.expat_sub" xml:space="preserve">
+    <value>English &amp; German</value>
+  </data>
+  <data name="trust.booking" xml:space="preserve">
+    <value>Instant Booking</value>
+  </data>
+  <data name="trust.booking_sub" xml:space="preserve">
+    <value>Online in 2 minutes</value>
+  </data>
+
+  <!-- Pricing -->
+  <data name="pricing.title" xml:space="preserve">
+    <value>Fixed Prices End-of-Lease Cleaning incl. Handover</value>
+  </data>
+  <data name="pricing.subtitle" xml:space="preserve">
+    <value>Transparent fixed prices for your end-of-lease cleaning and apartment handover in Zürich — all inclusive.</value>
+  </data>
+  <data name="pricing.most_popular" xml:space="preserve">
+    <value>Most Popular</value>
+  </data>
+  <data name="pricing.fixed_price" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="pricing.cleaning_zurich" xml:space="preserve">
+    <value>End-of-lease cleaning in Zürich and canton</value>
+  </data>
+  <data name="pricing.all_incl" xml:space="preserve">
+    <value>all incl.</value>
+  </data>
+  <data name="pricing.presence" xml:space="preserve">
+    <value>Personal attendance at handover</value>
+  </data>
+  <data name="pricing.calculate" xml:space="preserve">
+    <value>Calculate Fixed Price Now</value>
+  </data>
+  <data name="pricing.custom_size" xml:space="preserve">
+    <value>7+ Rooms / House / Special Property</value>
+  </data>
+  <data name="pricing.custom_badge" xml:space="preserve">
+    <value>Custom Quote</value>
+  </data>
+  <data name="pricing.custom_price" xml:space="preserve">
+    <value>Custom Price</value>
+  </data>
+  <data name="pricing.custom_sub1" xml:space="preserve">
+    <value>Custom end-of-lease cleaning in Zürich and canton</value>
+  </data>
+  <data name="pricing.custom_sub2" xml:space="preserve">
+    <value>based on size &amp; condition</value>
+  </data>
+  <data name="pricing.request_quote" xml:space="preserve">
+    <value>Request Free Quote</value>
+  </data>
+  <data name="pricing.response_time" xml:space="preserve">
+    <value>Response within 24 hours</value>
+  </data>
+  <data name="pricing.included_title" xml:space="preserve">
+    <value>Included — Your End-of-Lease Cleaning in Zürich</value>
+  </data>
+  <data name="pricing.feat_complete" xml:space="preserve">
+    <value>Complete Cleaning</value>
+  </data>
+  <data name="pricing.feat_complete_sub" xml:space="preserve">
+    <value>All rooms thoroughly cleaned</value>
+  </data>
+  <data name="pricing.feat_kitchen" xml:space="preserve">
+    <value>Kitchen &amp; Bathroom</value>
+  </data>
+  <data name="pricing.feat_kitchen_sub" xml:space="preserve">
+    <value>Deep cleaning included</value>
+  </data>
+  <data name="pricing.feat_windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="pricing.feat_windows_sub" xml:space="preserve">
+    <value>Inside &amp; outside streak-free</value>
+  </data>
+  <data name="pricing.feat_guarantee" xml:space="preserve">
+    <value>100% Handover Guarantee</value>
+  </data>
+  <data name="pricing.feat_guarantee_sub" xml:space="preserve">
+    <value>With personal attendance</value>
+  </data>
+  <data name="pricing.feat_blinds" xml:space="preserve">
+    <value>Shutters &amp; Blinds</value>
+  </data>
+  <data name="pricing.feat_blinds_sub" xml:space="preserve">
+    <value>Thorough cleaning included</value>
+  </data>
+  <data name="pricing.feat_fixed" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+  <data name="pricing.feat_fixed_sub" xml:space="preserve">
+    <value>No hidden costs</value>
+  </data>
+  <data name="pricing.f_complete" xml:space="preserve">
+    <value>Complete cleaning</value>
+  </data>
+  <data name="pricing.f_ready" xml:space="preserve">
+    <value>Move-out ready</value>
+  </data>
+  <data name="pricing.f_all_rooms" xml:space="preserve">
+    <value>All rooms, kitchen &amp; bathroom</value>
+  </data>
+  <data name="pricing.f_complete_cleaning" xml:space="preserve">
+    <value>Complete cleaning all rooms</value>
+  </data>
+  <data name="pricing.f_bathroom" xml:space="preserve">
+    <value>Bathroom, WC &amp; descaling</value>
+  </data>
+  <data name="pricing.f_kitchen_appliances" xml:space="preserve">
+    <value>Kitchen &amp; all appliances</value>
+  </data>
+  <data name="pricing.f_windows_blinds_balcony" xml:space="preserve">
+    <value>Windows, blinds &amp; balcony</value>
+  </data>
+  <data name="pricing.f_basement_mailbox" xml:space="preserve">
+    <value>Basement &amp; mailbox</value>
+  </data>
+  <data name="pricing.f_windows" xml:space="preserve">
+    <value>Windows, window frames &amp; sills</value>
+  </data>
+  <data name="pricing.f_blinds" xml:space="preserve">
+    <value>Shutters / blinds</value>
+  </data>
+  <data name="pricing.f_guarantee" xml:space="preserve">
+    <value>100% Handover guarantee</value>
+  </data>
+  <data name="pricing.f_balcony" xml:space="preserve">
+    <value>Balcony / terrace</value>
+  </data>
+  <data name="pricing.f_mailbox" xml:space="preserve">
+    <value>Mailbox inside &amp; outside</value>
+  </data>
+  <data name="pricing.f_basement" xml:space="preserve">
+    <value>Basement (if applicable)</value>
+  </data>
+  <data name="pricing.f_basement_full" xml:space="preserve">
+    <value>Basement, attic, garage (if applicable)</value>
+  </data>
+
+  <!-- Video -->
+  <data name="video.title_1" xml:space="preserve">
+    <value>See Us</value>
+  </data>
+  <data name="video.title_2" xml:space="preserve">
+    <value>in Action</value>
+  </data>
+  <data name="video.subtitle" xml:space="preserve">
+    <value>Learn in 2 minutes how we handle your end-of-lease cleaning in Zürich stress-free.</value>
+  </data>
+
+  <!-- HowItWorks -->
+  <data name="how.title_1" xml:space="preserve">
+    <value>It's That</value>
+  </data>
+  <data name="how.title_2" xml:space="preserve">
+    <value>Simple</value>
+  </data>
+  <data name="how.step1_title" xml:space="preserve">
+    <value>Step 1: Enter Details</value>
+  </data>
+  <data name="how.step1_desc" xml:space="preserve">
+    <value>Enter your postal code and desired service type into our price calculator.</value>
+  </data>
+  <data name="how.step2_title" xml:space="preserve">
+    <value>Step 2: Get Fixed Price Instantly</value>
+  </data>
+  <data name="how.step2_desc" xml:space="preserve">
+    <value>Get a transparent quote instantly based on your details — no hidden costs.</value>
+  </data>
+  <data name="how.step3_title" xml:space="preserve">
+    <value>Step 3: Book, Hand Over Keys &amp; Relax</value>
+  </data>
+  <data name="how.step3_desc" xml:space="preserve">
+    <value>We handle the cleaning, inspection, and handover. Sit back while we make your move stress-free.</value>
+  </data>
+
+  <!-- WhyChooseUs -->
+  <data name="why.title" xml:space="preserve">
+    <value>Why</value>
+  </data>
+  <data name="why.title_brand" xml:space="preserve">
+    <value>Zürich Endreinigung</value>
+  </data>
+  <data name="why.subtitle" xml:space="preserve">
+    <value>Trust our expertise and get your full deposit back. We are your reliable partner for move-out cleaning in Zürich.</value>
+  </data>
+  <data name="why.b1_title" xml:space="preserve">
+    <value>Personal Inspection Attendance</value>
+  </data>
+  <data name="why.b1_desc" xml:space="preserve">
+    <value>We attend the handover. Not on paper — in person. Until the very end.</value>
+  </data>
+  <data name="why.b1_highlight" xml:space="preserve">
+    <value>100% Guarantee</value>
+  </data>
+  <data name="why.b2_title" xml:space="preserve">
+    <value>Problems? Solved. Instantly.</value>
+  </data>
+  <data name="why.b2_desc" xml:space="preserve">
+    <value>If a defect appears, we fix it on the spot — no callbacks, no waiting, no new appointment.</value>
+  </data>
+  <data name="why.b2_highlight" xml:space="preserve">
+    <value>On-site immediately</value>
+  </data>
+  <data name="why.b3_title" xml:space="preserve">
+    <value>We Know Zürich</value>
+  </data>
+  <data name="why.b3_desc" xml:space="preserve">
+    <value>As a local cleaning company in Zürich, we know the requirements of Zürich property managers — ensuring your handover succeeds the first time.</value>
+  </data>
+  <data name="why.b3_highlight" xml:space="preserve">
+    <value>Zürich Experts</value>
+  </data>
+  <data name="why.b4_title" xml:space="preserve">
+    <value>No Stress. No Risk.</value>
+  </data>
+  <data name="why.b4_desc" xml:space="preserve">
+    <value>A fair fixed price, an experienced team, one goal: you move out relaxed — we take care of the rest.</value>
+  </data>
+  <data name="why.b4_highlight" xml:space="preserve">
+    <value>Fixed Price</value>
+  </data>
+
+  <!-- Presence -->
+  <data name="presence.title" xml:space="preserve">
+    <value>We attend the handover.</value>
+  </data>
+  <data name="presence.highlight" xml:space="preserve">
+    <value>In Person.</value>
+  </data>
+  <data name="presence.subtitle" xml:space="preserve">
+    <value>Until the handover is signed.</value>
+  </data>
+
+  <!-- Gallery -->
+  <data name="gallery.title_1" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="gallery.title_2" xml:space="preserve">
+    <value>Cleanings in Zürich</value>
+  </data>
+  <data name="gallery.subtitle" xml:space="preserve">
+    <value>Insights from our recent end-of-lease cleanings in Zürich, Winterthur, Dietikon, Uster and the entire canton</value>
+  </data>
+
+  <!-- Services -->
+  <data name="services.title_1" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="services.title_2" xml:space="preserve">
+    <value>Cleaning Services in Zürich and Surroundings</value>
+  </data>
+  <data name="services.subtitle" xml:space="preserve">
+    <value>Discover our complete range of cleaning services</value>
+  </data>
+  <data name="services.learn_more" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
+
+  <!-- Contact -->
+  <data name="contact.title" xml:space="preserve">
+    <value>Get a Free Quote for Your End-of-Lease Cleaning in Zürich and Surroundings</value>
+  </data>
+  <data name="contact.subtitle_1" xml:space="preserve">
+    <value>6+ Rooms / House / Office / Workshop / Special Property — Zürich and entire canton</value>
+  </data>
+  <data name="contact.subtitle_2" xml:space="preserve">
+    <value>Contact us today for a non-binding quote. We are here to help!</value>
+  </data>
+  <data name="contact.form_title" xml:space="preserve">
+    <value>Request Quote</value>
+  </data>
+  <data name="contact.first_name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="contact.last_name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="contact.email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="contact.phone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="contact.address" xml:space="preserve">
+    <value>Apartment Address</value>
+  </data>
+  <data name="contact.address_placeholder" xml:space="preserve">
+    <value>Street, Postal Code, City</value>
+  </data>
+  <data name="contact.rooms" xml:space="preserve">
+    <value>Number of Rooms</value>
+  </data>
+  <data name="contact.select" xml:space="preserve">
+    <value>Select...</value>
+  </data>
+  <data name="contact.move_date" xml:space="preserve">
+    <value>Move-out Date</value>
+  </data>
+  <data name="contact.property_type" xml:space="preserve">
+    <value>Property Type</value>
+  </data>
+  <data name="contact.select_please" xml:space="preserve">
+    <value>Please select</value>
+  </data>
+  <data name="contact.apartment" xml:space="preserve">
+    <value>Apartment</value>
+  </data>
+  <data name="contact.house" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="contact.office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="contact.practice" xml:space="preserve">
+    <value>Practice</value>
+  </data>
+  <data name="contact.shop" xml:space="preserve">
+    <value>Shop</value>
+  </data>
+  <data name="contact.restaurant" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="contact.floor" xml:space="preserve">
+    <value>Floor</value>
+  </data>
+  <data name="contact.ground" xml:space="preserve">
+    <value>Ground Floor</value>
+  </data>
+  <data name="contact.attic" xml:space="preserve">
+    <value>Attic</value>
+  </data>
+  <data name="contact.basement" xml:space="preserve">
+    <value>Basement</value>
+  </data>
+  <data name="contact.furnishing" xml:space="preserve">
+    <value>Furnishing Type</value>
+  </data>
+  <data name="contact.unfurnished" xml:space="preserve">
+    <value>Unfurnished</value>
+  </data>
+  <data name="contact.partly_furnished" xml:space="preserve">
+    <value>Partly Furnished</value>
+  </data>
+  <data name="contact.furnished" xml:space="preserve">
+    <value>Furnished</value>
+  </data>
+  <data name="contact.additional_info" xml:space="preserve">
+    <value>Additional Information</value>
+  </data>
+  <data name="contact.additional_placeholder" xml:space="preserve">
+    <value>Special requirements, preferred date, etc.</value>
+  </data>
+  <data name="contact.submit" xml:space="preserve">
+    <value>Get Free Quote</value>
+  </data>
+  <data name="contact.required" xml:space="preserve">
+    <value>* Required fields. Your data is treated confidentially.</value>
+  </data>
+
+  <!-- Footer -->
+  <data name="footer.company" xml:space="preserve">
+    <value>Our Company</value>
+  </data>
+  <data name="footer.contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="footer.about" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="footer.guide" xml:space="preserve">
+    <value>Guide</value>
+  </data>
+  <data name="footer.social" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
+  <data name="footer.cleaning_info" xml:space="preserve">
+    <value>Cleaning Info</value>
+  </data>
+  <data name="footer.calculator" xml:space="preserve">
+    <value>Price Calculator</value>
+  </data>
+  <data name="footer.extras" xml:space="preserve">
+    <value>Extra Services</value>
+  </data>
+  <data name="footer.more_services" xml:space="preserve">
+    <value>More Services</value>
+  </data>
+  <data name="footer.legal" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="footer.phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="footer.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="footer.hours" xml:space="preserve">
+    <value>Opening Hours</value>
+  </data>
+  <data name="footer.address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="footer.about_text" xml:space="preserve">
+    <value>Professional end-of-lease &amp; move-out cleaning in Zürich, Winterthur, Dietikon, Schlieren, Uster and the entire Canton Zürich — broom-clean, reliable and with handover guarantee.</value>
+  </data>
+  <data name="footer.reviews" xml:space="preserve">
+    <value>Customer Reviews</value>
+  </data>
+  <data name="footer.rating_google" xml:space="preserve">
+    <value>Rating on Google</value>
+  </data>
+  <data name="footer.payment" xml:space="preserve">
+    <value>Payment Methods</value>
+  </data>
+  <data name="footer.bank_transfer" xml:space="preserve">
+    <value>Bank Transfer</value>
+  </data>
+  <data name="footer.cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="footer.guarantee_incl" xml:space="preserve">
+    <value>Handover guarantee included</value>
+  </data>
+  <data name="footer.insured" xml:space="preserve">
+    <value>Liability insured</value>
+  </data>
+  <data name="footer.swiss_company" xml:space="preserve">
+    <value>Swiss Company</value>
+  </data>
+  <data name="footer.quote_24h" xml:space="preserve">
+    <value>Quote within 24h</value>
+  </data>
+  <data name="footer.experienced_team" xml:space="preserve">
+    <value>Experienced cleaning team</value>
+  </data>
+  <data name="footer.service_areas" xml:space="preserve">
+    <value>Our Service Areas</value>
+  </data>
+  <data name="footer.show_all" xml:space="preserve">
+    <value>Show all 160 municipalities →</value>
+  </data>
+  <data name="footer.service_intro" xml:space="preserve">
+    <value>Professional End of Lease Cleaning with inspection guarantee throughout Zürich and nearby districts.</value>
+  </data>
+
+  <!-- FAQ -->
+  <data name="faq.title_1" xml:space="preserve">
+    <value>Frequently Asked</value>
+  </data>
+  <data name="faq.title_2" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="faq.subtitle" xml:space="preserve">
+    <value>Everything you need to know about our end-of-lease cleaning in Canton Zürich</value>
+  </data>
+  <data name="faq.more_questions" xml:space="preserve">
+    <value>Have more questions?</value>
+  </data>
+  <data name="faq.call_us" xml:space="preserve">
+    <value>&#x1F4DE; +41 76 501 77 38 – We're happy to help</value>
+  </data>
+
+  <!-- Calculator -->
+  <data name="calc.apartment_size" xml:space="preserve">
+    <value>Choose Apartment Size</value>
+  </data>
+  <data name="calc.house_size" xml:space="preserve">
+    <value>Choose House Size</value>
+  </data>
+  <data name="calc.apartment" xml:space="preserve">
+    <value>Apartment</value>
+  </data>
+  <data name="calc.house" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="calc.next_extras" xml:space="preserve">
+    <value>Continue to Extras</value>
+  </data>
+  <data name="calc.choose_extras" xml:space="preserve">
+    <value>Choose Extras</value>
+  </data>
+  <data name="calc.zurich_guarantee" xml:space="preserve">
+    <value>Our Zürich Guarantee</value>
+  </data>
+  <data name="calc.guarantee_100" xml:space="preserve">
+    <value>100% Handover guarantee included</value>
+  </data>
+  <data name="calc.optional_extras" xml:space="preserve">
+    <value>Optional Extra Services</value>
+  </data>
+  <data name="calc.back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="calc.next_price" xml:space="preserve">
+    <value>Continue to Fixed Price</value>
+  </data>
+  <data name="calc.your_price" xml:space="preserve">
+    <value>Your Fixed Price</value>
+  </data>
+  <data name="calc.no_hidden" xml:space="preserve">
+    <value>No hidden costs • All inclusive</value>
+  </data>
+  <data name="calc.fixed_incl" xml:space="preserve">
+    <value>Fixed price incl. travel, materials</value>
+  </data>
+  <data name="calc.insured" xml:space="preserve">
+    <value>Insured</value>
+  </data>
+  <data name="calc.guaranteed" xml:space="preserve">
+    <value>Guaranteed</value>
+  </data>
+  <data name="calc.punctual" xml:space="preserve">
+    <value>Punctual</value>
+  </data>
+  <data name="calc.summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="calc.apartment_size_label" xml:space="preserve">
+    <value>Apartment Size</value>
+  </data>
+  <data name="calc.house_size_label" xml:space="preserve">
+    <value>House Size</value>
+  </data>
+  <data name="calc.extras_label" xml:space="preserve">
+    <value>Extra services:</value>
+  </data>
+  <data name="calc.cleaning_date" xml:space="preserve">
+    <value>Preferred Cleaning Date</value>
+  </data>
+  <data name="calc.handover_date" xml:space="preserve">
+    <value>Preferred Handover Date</value>
+  </data>
+  <data name="calc.select_date" xml:space="preserve">
+    <value>Select date</value>
+  </data>
+  <data name="calc.time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="calc.handover_before_cleaning" xml:space="preserve">
+    <value>The handover date must be on or after the cleaning date.</value>
+  </data>
+  <data name="calc.date_not_fixed" xml:space="preserve">
+    <value>Date and time not yet fixed.</value>
+  </data>
+  <data name="calc.date_popup_title" xml:space="preserve">
+    <value>Date not yet fixed?</value>
+  </data>
+  <data name="calc.date_popup_p1" xml:space="preserve">
+    <value>No problem! If you don't know your exact date yet, you can submit it later — but no later than 14 days before the planned cleaning date.</value>
+  </data>
+  <data name="calc.date_popup_p2" xml:space="preserve">
+    <value>Here's how it works: After completing the booking, you'll receive a confirmation email with a personal link. Through this link, you can enter or change your handover date and time at any time up to two weeks before the cleaning date.</value>
+  </data>
+  <data name="calc.date_popup_p3" xml:space="preserve">
+    <value>Alternatively, you can also simply send us the details by email or give us a quick call to fix the date personally with us.</value>
+  </data>
+  <data name="calc.next_booking" xml:space="preserve">
+    <value>Continue to Booking</value>
+  </data>
+  <data name="calc.free_cancel" xml:space="preserve">
+    <value>Free cancellation up to 48h before the appointment</value>
+  </data>
+  <data name="calc.step_size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="calc.step_extras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="calc.step_price" xml:space="preserve">
+    <value>Fixed Price &amp; Dates</value>
+  </data>
+  <data name="calc.step_booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
+  <data name="calc.error_room" xml:space="preserve">
+    <value>Please select the number of rooms.</value>
+  </data>
+  <data name="calc.error_plz" xml:space="preserve">
+    <value>Please enter your postal code.</value>
+  </data>
+  <data name="calc.error_service_area" xml:space="preserve">
+    <value>This postal code is not in our service area (Canton Zürich).</value>
+  </data>
+  <data name="calc.incl_grundreinigung" xml:space="preserve">
+    <value>Deep cleaning of all rooms</value>
+  </data>
+  <data name="calc.incl_kitchen_bath" xml:space="preserve">
+    <value>Kitchen &amp; bathroom cleaning</value>
+  </data>
+  <data name="calc.incl_floors" xml:space="preserve">
+    <value>Vacuum &amp; mop floors</value>
+  </data>
+  <data name="calc.incl_surfaces" xml:space="preserve">
+    <value>Dust all surfaces</value>
+  </data>
+  <data name="calc.incl_window_frames" xml:space="preserve">
+    <value>Window frames &amp; sills</value>
+  </data>
+  <data name="calc.incl_blinds" xml:space="preserve">
+    <value>Shutters / Blinds</value>
+  </data>
+  <data name="calc.incl_oven_fridge" xml:space="preserve">
+    <value>Oven &amp; Fridge</value>
+  </data>
+  <data name="calc.incl_oven_detail" xml:space="preserve">
+    <value>inside &amp; outside</value>
+  </data>
+  <data name="calc.incl_mailbox" xml:space="preserve">
+    <value>Mailbox inside &amp; outside</value>
+  </data>
+  <data name="calc.incl_balcony" xml:space="preserve">
+    <value>1× Balcony / Terrace</value>
+  </data>
+  <data name="calc.incl_handover" xml:space="preserve">
+    <value>Attendance at handover</value>
+  </data>
+  <data name="calc.incl_fix" xml:space="preserve">
+    <value>Touch-ups if issues arise</value>
+  </data>
+  <data name="calc.incl_presence" xml:space="preserve">
+    <value>Personal attendance at inspection</value>
+  </data>
+  <data name="calc.incl_bathroom" xml:space="preserve">
+    <value>Bathroom</value>
+  </data>
+  <data name="calc.incl_balkon" xml:space="preserve">
+    <value>Balcony</value>
+  </data>
+  <data name="calc.incl_utility_balkon" xml:space="preserve">
+    <value>Utility Balcony</value>
+  </data>
+  <data name="calc.extra_balcony" xml:space="preserve">
+    <value>+ Extra Balcony / Terrace</value>
+  </data>
+  <data name="calc.extra_utility_balcony" xml:space="preserve">
+    <value>+ Extra Utility Balcony</value>
+  </data>
+  <data name="calc.extra_bath" xml:space="preserve">
+    <value>Number of Bathrooms</value>
+  </data>
+  <data name="calc.extra_wc" xml:space="preserve">
+    <value>Separate WC</value>
+  </data>
+  <data name="calc.extra_carpet" xml:space="preserve">
+    <value>Carpet Shampoo Cleaning</value>
+  </data>
+  <data name="calc.extra_balcony_pressure" xml:space="preserve">
+    <value>Balcony / Terrace Pressure Washing</value>
+  </data>
+  <data name="calc.extra_garage_pressure" xml:space="preserve">
+    <value>Garage / Carport Pressure Washing</value>
+  </data>
+
+  <!-- Booking -->
+  <data name="booking.your_booking" xml:space="preserve">
+    <value>Your Booking</value>
+  </data>
+  <data name="booking.apartment" xml:space="preserve">
+    <value>Apartment</value>
+  </data>
+  <data name="booking.date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="booking.total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="booking.your_data" xml:space="preserve">
+    <value>Your Details</value>
+  </data>
+  <data name="booking.first_name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="booking.last_name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="booking.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="booking.phone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="booking.customer_address" xml:space="preserve">
+    <value>Customer Address</value>
+  </data>
+  <data name="booking.street" xml:space="preserve">
+    <value>Street &amp; No.</value>
+  </data>
+  <data name="booking.plz" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="booking.city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="booking.same_address" xml:space="preserve">
+    <value>Property address is the same as customer address</value>
+  </data>
+  <data name="booking.object_address" xml:space="preserve">
+    <value>Property Address</value>
+  </data>
+  <data name="booking.notes" xml:space="preserve">
+    <value>Additional Information</value>
+  </data>
+  <data name="booking.notes_placeholder" xml:space="preserve">
+    <value>Special requests, access information, etc.</value>
+  </data>
+  <data name="booking.payment" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="booking.twint" xml:space="preserve">
+    <value>TWINT</value>
+  </data>
+  <data name="booking.prepayment" xml:space="preserve">
+    <value>Prepayment</value>
+  </data>
+  <data name="booking.cash" xml:space="preserve">
+    <value>Cash Payment</value>
+  </data>
+  <data name="booking.payment_note" xml:space="preserve">
+    <value>For new customers: Payment at handover via TWINT or cash.</value>
+  </data>
+  <data name="booking.terms_prefix" xml:space="preserve">
+    <value>I have read the</value>
+  </data>
+  <data name="booking.terms_link" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="booking.terms_suffix" xml:space="preserve">
+    <value>and accept them.</value>
+  </data>
+  <data name="booking.back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="booking.confirm" xml:space="preserve">
+    <value>Confirm Booking</value>
+  </data>
+
+</root>

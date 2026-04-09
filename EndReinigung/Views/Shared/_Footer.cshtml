@@ -8,7 +8,7 @@
                     <svg class="w-5 h-5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 </div>
                 <div>
-                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">Telefon</div>
+                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.phone"]</div>
                     <a href="tel:+41765017738" class="text-sm font-semibold text-foreground hover:underline">+41 76 501 77 38</a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <svg class="w-5 h-5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
                 </div>
                 <div>
-                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">E-Mail</div>
+                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.email"]</div>
                     <a href="mailto:info@zuerich-endreinigung.ch" class="text-sm font-semibold text-foreground hover:underline">info@zuerich-endreinigung.ch</a>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <svg class="w-5 h-5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <div>
-                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">Öffnungszeiten</div>
+                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.hours"]</div>
                     <div class="text-[13px] text-muted-foreground leading-relaxed">Mo–Fr 08:00–19:00<br/>Sa 08:00–16:00</div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <svg class="w-5 h-5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
                 <div>
-                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">Adresse</div>
+                    <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.address"]</div>
                     <div class="text-sm font-semibold text-foreground">Zürich Endreinigung</div>
                     <div class="text-[13px] text-muted-foreground leading-relaxed">Seewadelstrasse 5, 8910 Affoltern am Albis</div>
                 </div>
@@ -53,13 +53,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-12 lg:pb-16 border-b border-navy-border">
                 <!-- Col 1 - Unternehmen -->
                 <div>
-                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">Unser Unternehmen</h4>
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.company"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/#contact" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Kontakt</a></li>
-                        <li><a href="/ueber-uns" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Über uns</a></li>
-                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Ratgeber</a></li>
+                        <li><a href="/#contact" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.contact"]</a></li>
+                        <li><a href="/ueber-uns" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.about"]</a></li>
+                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
                     </ul>
-                    <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3 mt-10">Social Medien</div>
+                    <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3 mt-10">@SharedLocalizer["footer.social"]</div>
                     <div class="flex flex-wrap gap-1.5">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-navy-border flex items-center justify-center text-navy-light/80 hover:text-red-accent hover:bg-navy-border/80 transition-colors" aria-label="Facebook">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -77,16 +77,16 @@
                 </div>
                 <!-- Col 2 - Infos -->
                 <div>
-                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">Infos zur Reinigung</h4>
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.cleaning_info"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Ratgeber</a></li>
-                        <li><a href="/calculator" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Preisrechner</a></li>
-                        <li><a href="/extra-services" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Zusatzservices</a></li>
+                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
+                        <li><a href="/calculator" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.calculator"]</a></li>
+                        <li><a href="/extra-services" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.extras"]</a></li>
                     </ul>
                 </div>
                 <!-- Col 3 - Services -->
                 <div>
-                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">Weitere Services</h4>
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.more_services"]</h4>
                     <ul class="space-y-2.5">
                         <li><a href="/baureinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Baureinigung</a></li>
                         <li><a href="/fensterreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Fensterreinigung</a></li>
@@ -104,7 +104,7 @@
                 </div>
                 <!-- Col 4 - Legal -->
                 <div>
-                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">Rechtliches</h4>
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.legal"]</h4>
                     <ul class="space-y-2.5">
                         <li><a href="/agb" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">AGB</a></li>
                         <li><a href="/datenschutz" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Datenschutz</a></li>
@@ -114,19 +114,19 @@
                 <!-- Col 5 - About -->
                 <div>
                     <p class="text-[13.5px] text-navy-text leading-[1.7] mb-5">
-                        Professionelle Endreinigung &amp; Umzugsreinigung in Zürich, Winterthur, Dietikon, Schlieren, Uster und dem ganzen Kanton Zürich – besenrein, zuverlässig und mit Abnahmegarantie.
+                        @SharedLocalizer["footer.about_text"]
                     </p>
                     <div class="mb-6">
-                        <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-2">Kundenbewertung</div>
+                        <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-2">@SharedLocalizer["footer.reviews"]</div>
                         <div class="text-lg tracking-wider text-gold-rating">★★★★★</div>
-                        <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="text-xs text-gold-rating hover:underline mt-1 inline-block">4.9 — Bewertung auf Google</a>
+                        <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="text-xs text-gold-rating hover:underline mt-1 inline-block">4.9 — @SharedLocalizer["footer.rating_google"]</a>
                     </div>
                     <div>
-                        <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3">Zahlungsmöglichkeiten</div>
+                        <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3">@SharedLocalizer["footer.payment"]</div>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="bg-black text-white text-[11px] font-bold px-2.5 py-1 rounded-md h-7 flex items-center">TWINT</span>
-                            <span class="bg-navy-border text-navy-light text-[11px] font-bold px-2.5 py-1 rounded-md h-7 flex items-center">🏦 Bank Überweisung</span>
-                            <span class="bg-navy-border text-navy-light text-[11px] font-bold px-2.5 py-1 rounded-md h-7 flex items-center">💵 Bar</span>
+                            <span class="bg-navy-border text-navy-light text-[11px] font-bold px-2.5 py-1 rounded-md h-7 flex items-center">🏦 @SharedLocalizer["footer.bank_transfer"]</span>
+                            <span class="bg-navy-border text-navy-light text-[11px] font-bold px-2.5 py-1 rounded-md h-7 flex items-center">💵 @SharedLocalizer["footer.cash"]</span>
                         </div>
                     </div>
                 </div>
@@ -136,23 +136,23 @@
             <div class="flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4 md:gap-6 lg:gap-8 py-6 border-b border-navy-border">
                 <div class="flex items-center gap-2 text-[12.5px] text-navy-text">
                     <svg class="w-4 h-4 text-red-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                    <span><strong class="text-navy-light">Abnahmegarantie</strong> inklusive</span>
+                    <span>@SharedLocalizer["footer.guarantee_incl"]</span>
                 </div>
                 <div class="flex items-center gap-2 text-[12.5px] text-navy-text">
                     <svg class="w-4 h-4 text-red-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span><strong class="text-navy-light">Haftpflichtversichert</strong></span>
+                    <span><strong class="text-navy-light">@SharedLocalizer["footer.insured"]</strong></span>
                 </div>
                 <div class="flex items-center gap-2 text-[12.5px] text-navy-text">
                     <svg class="w-4 h-4 text-red-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                    <span><strong class="text-navy-light">Schweizer Unternehmen</strong> 🇨🇭</span>
+                    <span><strong class="text-navy-light">@SharedLocalizer["footer.swiss_company"]</strong> 🇨🇭</span>
                 </div>
                 <div class="flex items-center gap-2 text-[12.5px] text-navy-text">
                     <svg class="w-4 h-4 text-red-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Offerte <strong class="text-navy-light">innert 24h</strong></span>
+                    <span>@SharedLocalizer["footer.quote_24h"]</span>
                 </div>
                 <div class="flex items-center gap-2 text-[12.5px] text-navy-text">
                     <svg class="w-4 h-4 text-red-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                    <span>Erfahrenes <strong class="text-navy-light">Reinigungsteam</strong></span>
+                    <span>@SharedLocalizer["footer.experienced_team"]</span>
                 </div>
             </div>
 
@@ -173,10 +173,10 @@
             <!-- Service Areas -->
             <div class="pt-9 pb-2 border-b border-navy-border">
                 <div class="flex items-baseline gap-5 mb-2.5">
-                    <span class="text-xs font-bold tracking-[0.12em] uppercase text-navy-muted">Unsere Einsatzgebiete</span>
+                    <span class="text-xs font-bold tracking-[0.12em] uppercase text-navy-muted">@SharedLocalizer["footer.service_areas"]</span>
                 </div>
                 <p class="text-[13px] text-navy-muted leading-relaxed mb-6 max-w-[580px]">
-                    Professional End of Lease Cleaning with inspection guarantee throughout Zürich and nearby districts.
+                    @SharedLocalizer["footer.service_intro"]
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="flex flex-col gap-5">
