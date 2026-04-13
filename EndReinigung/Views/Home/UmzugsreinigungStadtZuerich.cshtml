@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"]       = "Endreinigung Zürich Stadt | Fixpreis ab CHF 550 | Abnahmegarantie";
+    ViewData["Description"] = "Professionelle Endreinigung & Umzugsreinigung in Zürich Stadt. Fixpreise für alle 12 Stadtkreise, persönliche Abnahmebegleitung und 100% Abnahmegarantie. Jetzt Offerte anfordern.";
+    ViewData["Canonical"]   = "https://zuerich-endreinigung.ch/umzugsreinigung-stadt-zuerich";
+
+    ViewData["BezirkName"]        = "Zürich Stadt";
+    ViewData["BezirkBadgeLabel"]  = "Zürich Stadt";
+    ViewData["H1"]                = "Endreinigung in Zürich Stadt — Umzugsreinigung mit 100% Abnahmegarantie";
+    ViewData["H2"]                = "Ihr Reinigungspartner für alle 12 Stadtkreise in Zürich";
+    ViewData["LocalValueProp"]    = "Professionelle Endreinigung in allen Zürcher Quartieren";
+    ViewData["ExamplePlz"]        = "8001";
+    ViewData["GemeindenSubtitle"] = "Wir reinigen in allen 12 Stadtkreisen — von Altstadt bis Schwamendingen.";
+    ViewData["Gemeinden"]         = "Kreis 1:8001,Kreis 2:8002,Kreis 3:8003,Kreis 4:8004,Kreis 5:8005,Kreis 6:8006,Kreis 7:8032,Kreis 8:8008,Kreis 9:8048,Kreis 10:8037,Kreis 11:8050,Kreis 12:8051";
+    ViewData["Paragraphs"]        = new string[]
+    {
+        "Zürich Stadt ist mit über 440'000 Einwohnerinnen und Einwohnern die grösste Stadt der Schweiz — und unser Haupteinsatzgebiet. Von der Altstadt im <strong>Kreis 1 (8001)</strong> über die Trendquartiere Langstrasse (<strong>Kreis 4</strong>) und Zürich-West (<strong>Kreis 5</strong>) bis nach Schwamendingen (<strong>Kreis 12, 8051</strong>) reinigen wir täglich Dutzende von Wohnungen vor der Rückgabe an den Vermieter. Unser Team kennt die spezifischen Standards der Zürcher Hausverwaltungen und sorgt dafür, dass Ihre Wohnung den Abnahmeprotokollen entspricht.",
+        "Besonders häufig arbeiten wir mit Mietern zusammen, die bei grossen Verwaltungen wie <strong>Livit</strong>, <strong>Wincasa</strong> oder <strong>SPG Intercity</strong> mieten. Diese Verwaltungen stellen hohe Anforderungen an die Sauberkeit bei der Wohnungsübergabe. Mit unserer 100% Abnahmegarantie gehen Sie kein Risiko ein: Sollte die Verwaltung Mängel beanstanden, reinigen wir kostenlos nach — ohne zusätzliche Rechnung. Ihre Kaution ist bei uns in sicheren Händen.",
+        "Ob Altbauwohnung mit Parkettböden in Wipkingen, moderne Neubauwohnung in Zürich-Altstetten oder Design-Loft im Seefeld — wir haben die Erfahrung und die Mittel für jede Liegenschaft. Unsere Fixpreise sind transparent und gelten für alle 12 Stadtkreise in Zürich, ohne Anfahrtskosten oder versteckte Zuschläge. Fordern Sie jetzt Ihre kostenlose Offerte an und profitieren Sie von unserem lokalen Know-how."
+    };
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "CleaningService",
+        "name": "Zürich Endreinigung - Zürich Stadt",
+        "areaServed": ["8001","8002","8003","8004","8005","8006","8032","8008","8048","8037","8050","8051"],
+        "description": "Professionelle Endreinigung mit Abgabegarantie in allen 12 Stadtkreisen von Zürich.",
+        "url": "https://zuerich-endreinigung.ch/umzugsreinigung-stadt-zuerich",
+        "telephone": "+41765017738",
+        "priceRange": "CHF 550 - CHF 1200"
+    }
+    </script>
+}
+
+@* Render the shared bezirk template — ViewData set above is inherited by the partial *@
+@await Html.PartialAsync("UmzugsreinigungBezirk")
