@@ -8,7 +8,6 @@ namespace EndReinigung
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //8_Y&gVbIe6bh7cok
             // Add localization services
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
             builder.Services.AddControllersWithViews()
