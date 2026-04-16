@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")</title>
     <meta name="description" content="@(ViewData["Description"] ?? "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreis, persönliche Anwesenheit bei der Übergabe. Jetzt buchen!")" />
-    <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://zuerich-endreinigung.ch/")" />
+    @if (ViewData["Keywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["Keywords"]" />
+    }
+    <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/")" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")" />
     <meta property="og:description" content="@(ViewData["Description"] ?? "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie.")" />
-    <meta property="og:url" content="@(ViewData["Canonical"] ?? "https://zuerich-endreinigung.ch/")" />
+    <meta property="og:url" content="@(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/")" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
 
@@ -36,9 +40,9 @@
         "@@context": "https://schema.org",
         "@@type": "HouseCleaningService",
         "name": "Zürich Endreinigung",
-        "url": "https://zuerich-endreinigung.ch",
+        "url": "https://zurich-endreinigung.ch",
         "telephone": "+41765017738",
-        "email": "info@zuerich-endreinigung.ch",
+        "email": "info@zurich-endreinigung.ch",
         "address": {
             "@@type": "PostalAddress",
             "streetAddress": "Seewadelstrasse 5",

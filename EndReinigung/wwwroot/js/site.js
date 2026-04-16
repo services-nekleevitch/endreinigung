@@ -81,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Simple Carousel
+    // Gallery Carousel — 1 on mobile, 2 on tablet, 3 on desktop, infinite loop
     initCarousel('gallery-carousel', { slidesPerView: { base: 1, md: 2, lg: 3 } });
+
+    // Reviews Carousel
     initCarousel('reviews-carousel', { slidesPerView: { base: 1 }, autoplay: 6000 });
 });
 
@@ -115,7 +117,9 @@ function initCarousel(id, options) {
     var slides = container.querySelectorAll('.carousel-slide');
     var prevBtn = container.querySelector('.carousel-prev');
     var nextBtn = container.querySelector('.carousel-next');
+    var dotsContainer = document.getElementById(id + '-dots');
     var currentIndex = 0;
+    var totalSlides = slides.length;
 
     function getSlidesPerView() {
         var w = window.innerWidth;
@@ -124,53 +128,111 @@ function initCarousel(id, options) {
         return options.slidesPerView.base || 1;
     }
 
+    function getMaxIndex() {
+        return Math.max(0, totalSlides - getSlidesPerView());
+    }
+
+    // Dot indicators
+    function buildDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        var count = getMaxIndex() + 1;
+        for (var i = 0; i < count; i++) {
+            var dot = document.createElement('button');
+            dot.className = i === currentIndex
+                ? 'w-6 h-2 rounded-full bg-primary transition-all duration-300'
+                : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.dataset.index = i;
+            dot.addEventListener('click', function () {
+                currentIndex = parseInt(this.dataset.index);
+                updatePosition();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateDots() {
+        if (!dotsContainer) return;
+        var dots = dotsContainer.children;
+        for (var i = 0; i < dots.length; i++) {
+            dots[i].className = i === currentIndex
+                ? 'w-6 h-2 rounded-full bg-primary transition-all duration-300'
+                : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+        }
+    }
+
     function updatePosition() {
-        var spv = getSlidesPerView();
-        var maxIndex = Math.max(0, slides.length - spv);
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        var pct = (currentIndex * 100) / slides.length;
-        track.style.transform = 'translateX(-' + pct + '%)';
+        var maxIdx = getMaxIndex();
+        if (currentIndex > maxIdx) currentIndex = maxIdx;
+        if (currentIndex < 0) currentIndex = 0;
+        // Each slide is (100 / totalSlides)% of track width
+        var offset = currentIndex * (100 / totalSlides);
+        track.style.transform = 'translateX(-' + offset + '%)';
+        updateDots();
     }
 
     function next() {
-        var spv = getSlidesPerView();
-        var maxIndex = Math.max(0, slides.length - spv);
-        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        currentIndex = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
         updatePosition();
     }
 
     function prev() {
-        var spv = getSlidesPerView();
-        var maxIndex = Math.max(0, slides.length - spv);
-        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        currentIndex = currentIndex <= 0 ? getMaxIndex() : currentIndex - 1;
         updatePosition();
     }
 
     if (prevBtn) prevBtn.addEventListener('click', prev);
     if (nextBtn) nextBtn.addEventListener('click', next);
 
-    // Set slide widths
-    slides.forEach(function (slide) {
-        slide.style.flex = '0 0 ' + (100 / slides.length) + '%';
+    // Touch / swipe
+    var touchStartX = 0;
+    var touchEndX = 0;
+    var swiping = false;
+
+    track.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchEndX = touchStartX;
+        swiping = true;
+        track.style.transition = 'none';
+    }, { passive: true });
+
+    track.addEventListener('touchmove', function (e) {
+        if (!swiping) return;
+        touchEndX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', function () {
+        if (!swiping) return;
+        swiping = false;
+        track.style.transition = 'transform 0.4s ease';
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            if (diff > 0) next(); else prev();
+        }
     });
 
-    // Responsive update
-    function updateSlideWidths() {
+    // Layout: track is wide, each slide is sized for slidesPerView
+    function layout() {
         var spv = getSlidesPerView();
-        slides.forEach(function (slide) {
-            slide.style.flex = '0 0 ' + (100 / spv) + '%';
-        });
-        track.style.width = (slides.length / spv * 100) + '%';
+        // Track width = (totalSlides / spv) * 100% of container
+        track.style.width = (totalSlides / spv * 100) + '%';
+        // Each slide = equal fraction of track
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.width = (100 / totalSlides) + '%';
+            slides[i].style.flex = 'none';
+        }
+        buildDots();
         updatePosition();
     }
 
-    updateSlideWidths();
-    window.addEventListener('resize', updateSlideWidths);
+    layout();
+    window.addEventListener('resize', layout);
 
     // Autoplay
     if (options.autoplay) {
-        var interval = setInterval(next, options.autoplay);
-        container.addEventListener('mouseenter', function () { clearInterval(interval); });
-        container.addEventListener('mouseleave', function () { interval = setInterval(next, options.autoplay); });
+        var iv = setInterval(next, options.autoplay);
+        container.addEventListener('mouseenter', function () { clearInterval(iv); });
+        container.addEventListener('mouseleave', function () { iv = setInterval(next, options.autoplay); });
     }
 }

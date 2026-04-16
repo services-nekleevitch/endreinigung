@@ -108,6 +108,8 @@ a:visited h3 {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .carousel-slide {
     flex: 0 0 100%;
@@ -123,3 +125,9 @@ a:visited h3 {
         flex: 0 0 33.333%;
     }
 }
+/* Mobile gallery: prevent image drag */
+.carousel-track img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+

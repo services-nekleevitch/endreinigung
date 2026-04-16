@@ -132,10 +132,16 @@ namespace EndReinigung.Controllers
             return View();
         }
 
-        [Route("praxisreinigung")]
+        [Route("praxisreinigung-zuerich")]
         public IActionResult Praxisreinigung()
         {
             return View();
+        }
+
+        [Route("praxisreinigung")]
+        public IActionResult PraxisreinigungRedirect()
+        {
+            return RedirectPermanent("/praxisreinigung-zuerich");
         }
 
         [Route("baureinigung")]
@@ -197,7 +203,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8910";
             ViewData["Title"] = "Endreinigung Bezirk Affoltern | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Affoltern — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-affoltern";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-affoltern";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Affoltern.";
             ViewData["Gemeinden"] = "Affoltern am Albis:8910,Bonstetten:8906,Hausen am Albis:8915,Hedingen:8908,Kappel am Albis:8926,Knonau:8934,Maschwanden:8933,Mettmenstetten:8932,Obfelden:8912,Ottenbach:8913,Rifferswil:8911,Stallikon:8143,Wettswil am Albis:8907,Aeugst am Albis:8914";
             return View("UmzugsreinigungBezirk");
@@ -214,7 +220,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8450";
             ViewData["Title"] = "Endreinigung Bezirk Andelfingen | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Andelfingen — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-andelfingen";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-andelfingen";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Andelfingen.";
             ViewData["Gemeinden"] = "Andelfingen:8450,Adlikon:8452,Benken:8463,Berg am Irchel:8415,Buch am Irchel:8414,Dachsen:8447,Dorf:8458,Feuerthalen:8245,Flaach:8416,Flurlingen:8247,Henggart:8444,Humlikon:8457,Kleinandelfingen:8451,Laufen-Uhwiesen:8248,Marthalen:8460,Oberstammheim:8477,Ossingen:8475,Rheinau:8462,Stammheim:8476,Thalheim an der Thur:8478,Trüllikon:8466,Truttikon:8467,Volken:8459";
             return View("UmzugsreinigungBezirk");
@@ -231,7 +237,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8180";
             ViewData["Title"] = "Endreinigung Bezirk Bülach | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Bülach — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-buelach";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-buelach";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Bülach.";
             ViewData["Gemeinden"] = "Bülach:8180,Bachenbülach:8184,Bassersdorf:8303,Dietlikon:8305,Eglisau:8193,Embrach:8424,Freienstein-Teufen:8427,Glattfelden:8192,Hochfelden:8182,Höri:8181,Kloten:8302,Lufingen:8426,Nürensdorf:8309,Oberembrach:8425,Opfikon:8152,Rafz:8197,Rorbas:8427,Wallisellen:8304,Wasterkingen:8195,Wil:8196,Winkel:8185";
             return View("UmzugsreinigungBezirk");
@@ -248,7 +254,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8157";
             ViewData["Title"] = "Endreinigung Bezirk Dielsdorf | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Dielsdorf — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-dielsdorf";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dielsdorf";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Dielsdorf.";
             ViewData["Gemeinden"] = "Dielsdorf:8157,Bachs:8164,Buchs:8107,Dällikon:8108,Dänikon:8114,Hüttikon:8115,Neerach:8173,Niederglatt:8172,Niederhasli:8155,Niederweningen:8166,Oberglatt:8154,Oberweningen:8165,Otelfingen:8112,Regensberg:8158,Regensdorf:8105,Rümlang:8153,Schleinikon:8167,Schöfflisdorf:8165,Stadel:8174,Steinmaur:8162,Weiach:8187";
             return View("UmzugsreinigungBezirk");
@@ -265,7 +271,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8953";
             ViewData["Title"] = "Endreinigung Bezirk Dietikon | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Dietikon — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-dietikon";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dietikon";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Dietikon.";
             ViewData["Gemeinden"] = "Dietikon:8953,Aesch:8904,Birmensdorf:8903,Geroldswil:8954,Oberengstringen:8102,Oetwil an der Limmat:8955,Schlieren:8952,Spreitenbach:8957,Uitikon:8142,Unterengstringen:8103,Urdorf:8902,Weiningen:8104";
             return View("UmzugsreinigungBezirk");
@@ -282,7 +288,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8340";
             ViewData["Title"] = "Endreinigung Bezirk Hinwil | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Hinwil — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-hinwil";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-hinwil";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Hinwil.";
             ViewData["Gemeinden"] = "Hinwil:8340,Bäretswil:8344,Bubikon:8608,Dürnten:8635,Fischenthal:8497,Gossau:8625,Grüningen:8627,Rüti:8630,Seegräben:8607,Wald:8636,Wetzikon:8620";
             return View("UmzugsreinigungBezirk");
@@ -299,7 +305,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8706";
             ViewData["Title"] = "Endreinigung Bezirk Meilen | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Meilen — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-meilen";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-meilen";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Meilen.";
             ViewData["Gemeinden"] = "Meilen:8706,Erlenbach:8703,Herrliberg:8704,Hombrechtikon:8634,Küsnacht:8700,Männedorf:8708,Oetwil am See:8618,Stäfa:8712,Uetikon am See:8707,Zollikon:8702,Zumikon:8126";
             return View("UmzugsreinigungBezirk");
@@ -316,7 +322,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8330";
             ViewData["Title"] = "Endreinigung Bezirk Pfäffikon | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Pfäffikon — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-pfaeffikon";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-pfaeffikon";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Pfäffikon.";
             ViewData["Gemeinden"] = "Pfäffikon:8330,Bauma:8494,Fehraltorf:8320,Hittnau:8335,Illnau-Effretikon:8307,Kyburg:8314,Lindau:8315,Russikon:8332,Sternenberg:8499,Weisslingen:8484,Wila:8492,Wildberg:8489";
             return View("UmzugsreinigungBezirk");
@@ -333,7 +339,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8610";
             ViewData["Title"] = "Endreinigung Bezirk Uster | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Uster — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-uster";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-uster";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Uster.";
             ViewData["Gemeinden"] = "Uster:8610,Dübendorf:8600,Egg:8132,Fällanden:8117,Greifensee:8606,Maur:8124,Mönchaltorf:8617,Schwerzenbach:8603,Volketswil:8604,Wangen-Brüttisellen:8306";
             return View("UmzugsreinigungBezirk");
@@ -350,7 +356,7 @@ namespace EndReinigung.Controllers
             ViewData["ExamplePlz"] = "8400";
             ViewData["Title"] = "Endreinigung Bezirk Winterthur | Fixpreis ab CHF 550 | Abnahmegarantie";
             ViewData["Description"] = "Professionelle Endreinigung im Bezirk Winterthur — Fixpreis, persönliche Abnahmebegleitung, 100% Garantie.";
-            ViewData["Canonical"] = "https://zuerich-endreinigung.ch/umzugsreinigung-bezirk-winterthur";
+            ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-winterthur";
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen Gemeinden des Bezirks Winterthur.";
             ViewData["Gemeinden"] = "Winterthur:8400,Brütten:8311,Dättlikon:8421,Dinhard:8474,Elgg:8353,Elsau:8352,Hettlingen:8442,Neftenbach:8413,Pfungen:8422,Rickenbach:8545,Seuzach:8472,Turbenthal:8488,Wiesendangen:8542,Zell:8468";
             return View("UmzugsreinigungBezirk");
@@ -361,6 +367,54 @@ namespace EndReinigung.Controllers
         {
             return RedirectPermanent("/umzugsreinigung-stadt-zuerich");
         }
+
+        [Route("reinigung-stadt-zuerich")]
+        public IActionResult ReinigungStadtZuerichRedirect() => RedirectPermanent("/umzugsreinigung-stadt-zuerich");
+
+        [Route("reinigung-affoltern")]
+        public IActionResult ReinigungAffolternRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-affoltern");
+
+        [Route("reinigung-andelfingen")]
+        public IActionResult ReinigungAndelfingenRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-andelfingen");
+
+        [Route("reinigung-buelach")]
+        public IActionResult ReinigungBuelachRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-buelach");
+
+        [Route("reinigung-dielsdorf")]
+        public IActionResult ReinigungDielsdorfRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-dielsdorf");
+
+        [Route("reinigung-dietikon")]
+        public IActionResult ReinigungDietikonRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-dietikon");
+
+        [Route("reinigung-hinwil")]
+        public IActionResult ReinigungHinwilRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-hinwil");
+
+        [Route("reinigung-meilen")]
+        public IActionResult ReinigungMeilenRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-meilen");
+
+        [Route("reinigung-pfaeffikon")]
+        public IActionResult ReinigungPfaeffikonRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-pfaeffikon");
+
+        [Route("reinigung-uster")]
+        public IActionResult ReinigungUsterRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-uster");
+
+        [Route("reinigung-winterthur")]
+        public IActionResult ReinigungWinterthurRedirect() => RedirectPermanent("/umzugsreinigung-bezirk-winterthur");
+
+        [Route("umzugsreinigung-bezirk-horgen")]
+        public IActionResult UmzugsreinigungBezirkHorgen() => View("BezirkHorgen");
+
+        [Route("abgabegarantie")]
+        public IActionResult AbgabegarantieRedirect() => RedirectPermanent("/abnahmegarantie");
+
+        [Route("polster-reinigung")]
+        public IActionResult PolsterReinigungRedirect() => RedirectPermanent("/polsterreinigung");
+
+        [Route("reinigungsdienste-zuerich")]
+        public IActionResult ReinigungsdiensteRedirect() => RedirectPermanent("/");
+
+        [Route("booking")]
+        public IActionResult BookingRedirect() => RedirectPermanent("/calculator");
 
         [Route("event-reinigung")]
         public IActionResult EventReinigung()

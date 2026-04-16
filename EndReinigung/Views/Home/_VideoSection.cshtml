@@ -9,8 +9,26 @@
                 @SharedLocalizer["video.subtitle"]
             </p>
         </div>
-        <div class="aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-border">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/wzJ0-m9MToc?hl=de&amp;cc_lang_pref=de" title="Endreinigung Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div id="video-container" class="aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-border relative bg-black">
+            <button id="video-play-btn" type="button" class="w-full h-full relative group cursor-pointer" aria-label="Video abspielen">
+                <img src="https://img.youtube.com/vi/wzJ0-m9MToc/hqdefault.jpg" alt="Endreinigung Video" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                    <div class="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
+            </button>
         </div>
+        <script>
+            (function() {
+                var btn = document.getElementById('video-play-btn');
+                var container = document.getElementById('video-container');
+                if (btn && container) {
+                    btn.addEventListener('click', function() {
+                        container.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/wzJ0-m9MToc?hl=de&amp;cc_lang_pref=de&amp;autoplay=1" title="Endreinigung Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    });
+                }
+            })();
+        </script>
     </div>
 </section>

@@ -52,31 +52,32 @@
             </p>
         </div>
 
-        <!-- Carousel -->
         <div id="gallery-carousel" class="relative">
             <div class="overflow-hidden">
-                <div class="carousel-track flex">
+                <div class="carousel-track flex" id="gallery-track">
                     @foreach (var item in gallery) {
-                        <div class="carousel-slide third pl-4 flex-shrink-0">
-                            <div class="bg-card border border-border rounded-b-xl overflow-hidden h-full flex flex-col">
-                                <div class="aspect-[4/3] bg-muted flex items-center justify-center">
+                        <div class="carousel-slide third px-2 flex-shrink-0">
+                            <div class="bg-card border border-border rounded-xl overflow-hidden h-full flex flex-col">
+                                <div class="aspect-[4/3] overflow-hidden">
                                     <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" />
                                 </div>
-                                <div class="p-4 flex-1 flex items-start">
-                                    <p class="text-sm text-muted-foreground leading-relaxed">@(lang == "en" ? item.CaptionEn : item.CaptionDe)</p>
+                                <div class="p-3 sm:p-4 flex-1">
+                                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">@(lang == "en" ? item.CaptionEn : item.CaptionDe)</p>
                                 </div>
                             </div>
                         </div>
                     }
                 </div>
             </div>
-            <!-- Navigation Buttons -->
-            <button class="carousel-prev absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 w-10 h-10 rounded-full bg-white border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            <!-- Prev / Next -->
+            <button class="carousel-prev absolute top-[40%] -translate-y-1/2 left-1 sm:-left-4 lg:-left-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-border shadow flex items-center justify-center hover:bg-muted transition-colors z-10" aria-label="Previous">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <button class="carousel-next absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 w-10 h-10 rounded-full bg-white border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            <button class="carousel-next absolute top-[40%] -translate-y-1/2 right-1 sm:-right-4 lg:-right-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-border shadow flex items-center justify-center hover:bg-muted transition-colors z-10" aria-label="Next">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
+            <!-- Dots -->
+            <div class="flex justify-center gap-2 mt-6" id="gallery-dots"></div>
         </div>
     </div>
 </section>

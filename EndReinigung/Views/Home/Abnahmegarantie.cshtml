@@ -1,21 +1,146 @@
 @{
-    ViewData["Title"] = "100% Abnahmegarantie | Persönliche Übergabe | Zürich Endreinigung";
-    ViewData["Description"] = "Unsere Abnahmegarantie: Wir sind persönlich bei der Wohnungsübergabe dabei. Wird die Reinigung nicht akzeptiert, reinigen wir kostenlos nach.";
-    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/abnahmegarantie";
+    ViewData["Title"] = "Abnahmegarantie & Abgabegarantie Zürich | 100% Garantierte Wohnungsübergabe";
+    ViewData["Description"] = "100% Abnahmegarantie (Abgabegarantie) bei jeder Umzugsreinigung in Zürich. Wir sind persönlich bei der Wohnungsübergabe dabei — kostenlose Nachbesserung garantiert.";
+    ViewData["Keywords"] = "Abnahmegarantie Zürich, Abgabegarantie, Wohnungsübergabe Garantie, Endreinigung Garantie";
+    ViewData["Canonical"] = "https://zurich-endreinigung.ch/abnahmegarantie";
 }
 
-<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Ist eine Abgabegarantie dasselbe wie eine Abnahmegarantie?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Die beiden Begriffe werden synonym verwendet. 'Abnahmegarantie' betont die erfolgreiche Abnahme der Wohnung durch die Verwaltung, 'Abgabegarantie' die erfolgreiche Abgabe durch den Mieter. Bei Zürich Endreinigung ist beides im selben Paket enthalten — ohne Aufpreis."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was beinhaltet die Abnahmegarantie?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Unsere 100% Abnahmegarantie umfasst: professionelle Reinigung nach kantonalen Richtlinien, persönliche Anwesenheit bei der Wohnungsübergabe, sofortige kostenlose Nachbesserung bei Beanstandungen und vollständige Garantie bis zur unterschriebenen Abnahme."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Muss ich bei der Wohnungsübergabe dabei sein?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Nein. Unser erfahrener Teamleiter vertritt Ihre Interessen professionell bei der Übergabe. Sie können dabei sein, müssen aber nicht — wir kümmern uns um alles."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was kostet die Abnahmegarantie?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Abnahmegarantie ist bei jeder unserer Umzugsreinigungen im Fixpreis enthalten. Keine Zusatzkosten, keine versteckten Gebühren."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] bg-gradient-hero overflow-hidden flex items-center pt-16 md:pt-[6.25rem]">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="/img/abnahmegarantie-hero.jpg" alt="Abnahmegarantie bei der Wohnungsübergabe in Zürich" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="inline-flex items-center px-4 py-2 bg-primary rounded-full text-white text-sm font-bold shadow-lg">
+                        ✅ 100% Garantie
+                    </span>
+                    <span class="inline-flex items-center px-4 py-2 border-2 border-white rounded-full text-white text-sm font-semibold">
+                        🛡️ 5 Mio. CHF versichert
+                    </span>
+                    <span class="inline-flex items-center px-4 py-2 bg-cleaning-green rounded-full text-white text-sm font-bold shadow-lg">
+                        👤 Wir sind bei der Abgabe dabei
+                    </span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    100% Abnahmegarantie für Ihre Wohnungsübergabe in Zürich
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl text-white/85 mb-8 max-w-2xl leading-relaxed">
+                    Auch bekannt als Abgabegarantie — wir garantieren die erfolgreiche Abnahme Ihrer Wohnung durch Verwaltung oder Vermieter.
+                </p>
+
+                <!-- Checkmarks -->
+                <ul class="space-y-3 mb-10">
+                    <li class="flex items-center gap-3 text-white text-base md:text-lg">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="font-medium">Persönliche Anwesenheit bei der Übergabe</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-white text-base md:text-lg">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="font-medium">Kostenlose sofortige Nachbesserung bei Beanstandungen</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-white text-base md:text-lg">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="font-medium">Im Fixpreis enthalten — keine Zusatzkosten</span>
+                    </li>
+                </ul>
+
+                <!-- CTA -->
+                <a href="/calculator"
+                   class="inline-flex items-center justify-center px-8 h-14 rounded-lg bg-booking-orange text-white text-lg font-bold hover:bg-booking-orange-dark transition-colors shadow-button">
+                    Jetzt Preis berechnen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Synonym Section -->
+    <section class="py-14 md:py-20 bg-muted/40 px-6 md:px-10 lg:px-20">
+        <div class="max-w-4xl mx-auto">
+            <div class="rounded-xl border bg-card text-card-foreground shadow-sm p-8 md:p-10 flex gap-6 items-start">
+                <!-- HelpCircle icon -->
+                <div class="w-14 h-14 rounded-2xl bg-swiss-blue/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-7 h-7 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-foreground mb-4">
+                        Abnahmegarantie oder Abgabegarantie — was ist der Unterschied?
+                    </h2>
+                    <p class="text-muted-foreground text-base md:text-lg leading-relaxed">
+                        Die beiden Begriffe werden in der Schweiz synonym verwendet. <strong class="text-foreground">«Abnahmegarantie»</strong> betont die erfolgreiche Abnahme der Wohnung durch Verwaltung oder Vermieter — <strong class="text-foreground">«Abgabegarantie»</strong> die erfolgreiche Abgabe durch den Mieter. Bei Zürich Endreinigung ist beides im selben Paket enthalten: eine einzige professionelle Reinigung, persönliche Begleitung bei der Übergabe und kostenlose Nachbesserung, falls nötig. Ohne Aufpreis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Endreinigung Info Partial -->
     <section class="py-16 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-10 text-center">
-                100% Abnahmegarantie
-            </h1>
             @await Html.PartialAsync("_EndreinigungInfo")
         </div>
     </section>
 
-    <!-- AbnahmegarantieDetail inlined -->
-    <!-- 4-Step Process -->
+    <!-- Abnahmegarantie Detail: Steps -->
     <section class="py-16 md:py-24 bg-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-12 md:mb-16">
@@ -48,7 +173,7 @@
                             Schritt 2: Persönliche Präsenz bei der Übergabe
                         </h3>
                         <p class="text-muted-foreground leading-relaxed">
-                            Dies ist unser grösster Vorteil: Ein erfahrener Teamleiter unserer Firma ist bei der offiziellen Inspektion durch die Verwaltung oder den Vermieter persönlich anwesend. Sie müssen keine schwierigen Fragen beantworten – das übernehmen wir für Sie.
+                            Ein erfahrener Teamleiter unserer Firma ist bei der offiziellen Inspektion durch die Verwaltung oder den Vermieter persönlich anwesend. Sie müssen keine schwierigen Fragen beantworten – das übernehmen wir für Sie.
                         </p>
                     </div>
                 </div>
@@ -63,7 +188,7 @@
                             Schritt 3: Sofortige Nachreinigung vor Ort
                         </h3>
                         <p class="text-muted-foreground leading-relaxed">
-                            Sollte die Verwaltung bei der Abnahme eine Beanstandung haben, beheben wir diese sofort und ohne Aufpreis noch während des Termins. Unser Ziel ist es, dass das Protokoll mängelfrei unterschrieben wird.
+                            Sollte die Verwaltung bei der Abnahme eine Beanstandung haben, beheben wir diese sofort und ohne Aufpreis noch während des Termins. Dank unserer Abgabegarantie wird das Protokoll mängelfrei unterschrieben.
                         </p>
                     </div>
                 </div>
@@ -78,7 +203,7 @@
                             Schritt 4: 100% Abnahmegarantie
                         </h3>
                         <p class="text-muted-foreground leading-relaxed">
-                            Unsere Garantie endet erst, wenn der Vermieter zufrieden ist und Sie Ihr Übergabeprotokoll in den Händen halten. Keine versteckten Kosten, kein Risiko.
+                            Unsere Abnahmegarantie (auch Abgabegarantie genannt) endet erst, wenn der Vermieter zufrieden ist und Sie Ihr Übergabeprotokoll in den Händen halten. Keine versteckten Kosten, kein Risiko.
                         </p>
                     </div>
                 </div>
@@ -99,11 +224,16 @@
                     <div class="relative mx-auto w-20 h-20 mb-6">
                         <div class="absolute inset-0 bg-gradient-hero rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                         <div class="relative bg-white rounded-2xl w-full h-full flex items-center justify-center shadow-card group-hover:shadow-hero transition-all duration-300">
-                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3l-4 4-4-4"/><path d="M4 14l8 8 8-8"/><line x1="12" y1="3" x2="12" y2="22"/></svg>
+                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-foreground mb-3">Rechtssicherheit</h3>
-                    <p class="text-muted-foreground leading-relaxed">Wir kennen die Anforderungen der Zürcher Immobilienverwaltungen genau.</p>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Wir kennen die Anforderungen der Zürcher Immobilienverwaltungen genau. Mit unserer Abnahmegarantie sind Sie rechtlich auf der sicheren Seite.
+                    </p>
                 </div>
 
                 <!-- Zeitersparnis -->
@@ -111,11 +241,16 @@
                     <div class="relative mx-auto w-20 h-20 mb-6">
                         <div class="absolute inset-0 bg-gradient-hero rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                         <div class="relative bg-white rounded-2xl w-full h-full flex items-center justify-center shadow-card group-hover:shadow-hero transition-all duration-300">
-                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-foreground mb-3">Zeitersparnis</h3>
-                    <p class="text-muted-foreground leading-relaxed">Sie müssen nicht am Übergabetermin teilnehmen, wenn Sie nicht möchten – wir vertreten Ihre Interessen professionell.</p>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Sie müssen nicht am Übergabetermin teilnehmen, wenn Sie nicht möchten – wir vertreten Ihre Interessen professionell.
+                    </p>
                 </div>
 
                 <!-- Finanzieller Schutz -->
@@ -123,15 +258,76 @@
                     <div class="relative mx-auto w-20 h-20 mb-6">
                         <div class="absolute inset-0 bg-gradient-hero rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                         <div class="relative bg-white rounded-2xl w-full h-full flex items-center justify-center shadow-card group-hover:shadow-hero transition-all duration-300">
-                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                <path d="M1 10h22"/>
+                            </svg>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-foreground mb-3">Finanzieller Schutz</h3>
-                    <p class="text-muted-foreground leading-relaxed">Mit unserer Garantie schützen Sie Ihre Kaution vor ungerechtfertigten Abzügen durch Reinigungsbehelfe.</p>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Mit unserer Abgabegarantie schützen Sie Ihre Kaution vor ungerechtfertigten Abzügen durch Reinigungsbehelfe.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-</main>
+
+    <!-- FAQ Accordion -->
+    <section class="py-16 md:py-24 bg-background px-6 md:px-10 lg:px-20">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-10 md:mb-14">
+                Häufige Fragen zur <span class="text-swiss-blue">Abnahmegarantie</span>
+            </h2>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground hover:bg-muted/40 transition-colors list-none">
+                        <span>Ist eine Abgabegarantie dasselbe wie eine Abnahmegarantie?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-muted-foreground leading-relaxed">
+                        Ja. Die beiden Begriffe werden synonym verwendet. «Abnahmegarantie» betont die erfolgreiche Abnahme der Wohnung durch die Verwaltung, «Abgabegarantie» die erfolgreiche Abgabe durch den Mieter. Bei Zürich Endreinigung ist beides im selben Paket enthalten — ohne Aufpreis.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground hover:bg-muted/40 transition-colors list-none">
+                        <span>Was beinhaltet die Abnahmegarantie?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-muted-foreground leading-relaxed">
+                        Unsere 100% Abnahmegarantie umfasst: professionelle Reinigung nach kantonalen Richtlinien, persönliche Anwesenheit bei der Wohnungsübergabe, sofortige kostenlose Nachbesserung bei Beanstandungen und vollständige Garantie bis zur unterschriebenen Abnahme.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground hover:bg-muted/40 transition-colors list-none">
+                        <span>Muss ich bei der Wohnungsübergabe dabei sein?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-muted-foreground leading-relaxed">
+                        Nein. Unser erfahrener Teamleiter vertritt Ihre Interessen professionell bei der Übergabe. Sie können dabei sein, müssen aber nicht — wir kümmern uns um alles.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="group rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground hover:bg-muted/40 transition-colors list-none">
+                        <span>Was kostet die Abnahmegarantie?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-muted-foreground leading-relaxed">
+                        Die Abnahmegarantie ist bei jeder unserer Umzugsreinigungen im Fixpreis enthalten. Keine Zusatzkosten, keine versteckten Gebühren.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+</div>
 
 @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
