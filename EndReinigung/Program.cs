@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Rewrite;
 using System.Globalization;
 
 namespace EndReinigung
@@ -34,6 +35,24 @@ namespace EndReinigung
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Canonicalize host: 301 redirect www.zurich-endreinigung.ch -> zurich-endreinigung.ch.
+            // Keeps sitemap/canonical tags (non-www) aligned with what Google indexes.
+            app.UseRewriter(new RewriteOptions().Add(ctx =>
+            {
+                var req = ctx.HttpContext.Request;
+                if (req.Host.Host.StartsWith("www.", StringComparison.OrdinalIgnoreCase))
+                {
+                    var newHost = req.Host.Host.Substring(4);
+                    var newHostString = req.Host.Port.HasValue
+                        ? new HostString(newHost, req.Host.Port.Value)
+                        : new HostString(newHost);
+                    var newUrl = $"{req.Scheme}://{newHostString}{req.PathBase}{req.Path}{req.QueryString}";
+                    ctx.HttpContext.Response.StatusCode = StatusCodes.Status301MovedPermanently;
+                    ctx.HttpContext.Response.Headers.Location = newUrl;
+                    ctx.Result = RuleResult.EndResponse;
+                }
+            }));
 
             app.UseHttpsRedirection();
 
