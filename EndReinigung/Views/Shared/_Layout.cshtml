@@ -9,7 +9,15 @@
     {
         <meta name="keywords" content="@ViewData["Keywords"]" />
     }
-    <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/")" />
+    @{
+        var canonicalUrl = (string)(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/");
+        var canonicalBase = canonicalUrl.Contains('?') ? canonicalUrl.Substring(0, canonicalUrl.IndexOf('?')) : canonicalUrl;
+        var sep = canonicalBase.Contains('?') ? "&" : "?";
+    }
+    <link rel="canonical" href="@canonicalUrl" />
+    <link rel="alternate" hreflang="de" href="@(canonicalBase)@(sep)culture=de" />
+    <link rel="alternate" hreflang="en" href="@(canonicalBase)@(sep)culture=en" />
+    <link rel="alternate" hreflang="x-default" href="@(canonicalBase)@(sep)culture=de" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")" />
