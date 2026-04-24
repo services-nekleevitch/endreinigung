@@ -1,3 +1,4 @@
+using EndReinigung.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Rewrite;
 using System.Globalization;
@@ -14,6 +15,10 @@ namespace EndReinigung
             builder.Services.AddControllersWithViews()
                 .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
+
+            // Contact form email
+            builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+            builder.Services.AddScoped<IEmailService, EmailService>();
 
             var app = builder.Build();
 

@@ -1,3 +1,6 @@
+@{
+    var contactStatus = TempData["Contact.Status"] as string;
+}
 <!-- Contact Form Section -->
 <section id="contact-form" class="py-12 md:py-24" style="background: linear-gradient(135deg, hsl(210 95% 25%), hsl(210 90% 32%))">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,33 +18,57 @@
         <div class="max-w-2xl mx-auto">
             <div class="p-4 sm:p-6 md:p-8 bg-white/95 backdrop-blur-sm border border-white/20 rounded-lg">
                 <h3 class="text-2xl font-bold text-foreground mb-6">@SharedLocalizer["contact.form_title"]</h3>
-                <form class="space-y-6">
+
+                @if (contactStatus == "success")
+                {
+                    <div role="alert" class="mb-6 p-4 rounded-lg bg-green-50 border border-green-300 text-green-900">
+                        <div class="font-semibold">Vielen Dank für Ihre Anfrage!</div>
+                        <div class="text-sm">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</div>
+                    </div>
+                }
+                else if (contactStatus == "error")
+                {
+                    <div role="alert" class="mb-6 p-4 rounded-lg bg-red-50 border border-red-300 text-red-900">
+                        <div class="font-semibold">Anfrage konnte nicht gesendet werden.</div>
+                        <div class="text-sm">Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an <a class="underline" href="mailto:info@zurich-endreinigung.ch">info@zurich-endreinigung.ch</a>.</div>
+                    </div>
+                }
+                else if (contactStatus == "invalid")
+                {
+                    <div role="alert" class="mb-6 p-4 rounded-lg bg-amber-50 border border-amber-300 text-amber-900">
+                        <div class="font-semibold">Bitte prüfen Sie Ihre Angaben.</div>
+                        <div class="text-sm">Einige Pflichtfelder fehlen oder sind ungültig.</div>
+                    </div>
+                }
+
+                <form asp-controller="Contact" asp-action="Send" method="post" class="space-y-6">
+                    <input type="hidden" name="ReturnUrl" value="@Context.Request.Path" />
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="firstName" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.first_name"] *</label>
-                            <input type="text" id="firstName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                            <input type="text" id="firstName" name="FirstName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
                         </div>
                         <div>
                             <label for="lastName" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.last_name"] *</label>
-                            <input type="text" id="lastName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                            <input type="text" id="lastName" name="LastName" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
                         </div>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.email"] *</label>
-                        <input type="email" id="email" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                        <input type="email" id="email" name="Email" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.phone"]</label>
-                        <input type="tel" id="phone" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
+                        <input type="tel" id="phone" name="Phone" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
                     </div>
                     <div>
                         <label for="address" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.address"] *</label>
-                        <input type="text" id="address" placeholder="@SharedLocalizer["contact.address_placeholder"]" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
+                        <input type="text" id="address" name="Address" placeholder="@SharedLocalizer["contact.address_placeholder"]" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required />
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="rooms" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.rooms"]</label>
-                            <select id="rooms" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors">
+                            <select id="rooms" name="Rooms" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors">
                                 <option value="">@SharedLocalizer["contact.select"]</option>
                                 @for (var r = 1.0; r <= 15; r += 0.5) {
                                     <option value="@r">@r @SharedLocalizer["hero.rooms"]</option>
@@ -50,13 +77,13 @@
                         </div>
                         <div>
                             <label for="moveOut" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.move_date"]</label>
-                            <input type="date" id="moveOut" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
+                            <input type="date" id="moveOut" name="MoveOut" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" />
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
                             <label for="objektart" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.property_type"] *</label>
-                            <select id="objektart" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                            <select id="objektart" name="Objektart" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
                                 <option value="">@SharedLocalizer["contact.select_please"]</option>
                                 <option value="wohnung">@SharedLocalizer["contact.apartment"]</option>
                                 <option value="haus">@SharedLocalizer["contact.house"]</option>
@@ -68,7 +95,7 @@
                         </div>
                         <div>
                             <label for="stockwerk" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.floor"] *</label>
-                            <select id="stockwerk" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                            <select id="stockwerk" name="Stockwerk" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
                                 <option value="">@SharedLocalizer["contact.select_please"]</option>
                                 <option value="eg">@SharedLocalizer["contact.ground"]</option>
                                 <option value="1">1. OG</option>
@@ -82,7 +109,7 @@
                         </div>
                         <div>
                             <label for="moebelierung" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.furnishing"] *</label>
-                            <select id="moebelierung" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
+                            <select id="moebelierung" name="Moebelierung" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors" required>
                                 <option value="">@SharedLocalizer["contact.select_please"]</option>
                                 <option value="unmoebliert">@SharedLocalizer["contact.unfurnished"]</option>
                                 <option value="teilmoebliert">@SharedLocalizer["contact.partly_furnished"]</option>
@@ -92,7 +119,7 @@
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium text-foreground mb-2">@SharedLocalizer["contact.additional_info"]</label>
-                        <textarea id="message" rows="4" placeholder="@SharedLocalizer["contact.additional_placeholder"]" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors resize-none"></textarea>
+                        <textarea id="message" name="Message" rows="4" placeholder="@SharedLocalizer["contact.additional_placeholder"]" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-swiss-blue focus:border-transparent transition-colors resize-none"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-swiss-blue hover:bg-swiss-blue-dark text-white font-bold py-4 text-lg rounded-lg transition-colors">
                         @SharedLocalizer["contact.submit"]
