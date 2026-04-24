@@ -1,6 +1,8 @@
+using EndReinigung.DataAccess;
 using EndReinigung.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace EndReinigung
@@ -20,7 +22,22 @@ namespace EndReinigung
             builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
             builder.Services.AddScoped<IEmailService, EmailService>();
 
+            // Database (SQLite). Swap UseSqlite -> UseMySql / UseNpgsql if you change providers.
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+                ?? "Data Source=App_Data/endreinigung.db";
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+
             var app = builder.Build();
+
+            // Ensure App_Data directory exists and DB schema is created.
+            // TODO: replace EnsureCreated with Database.Migrate() once `dotnet ef migrations add Initial` is run.
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbDir = Path.Combine(app.Environment.ContentRootPath, "App_Data");
+                Directory.CreateDirectory(dbDir);
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                db.Database.EnsureCreated();
+            }
 
             // Configure supported cultures
             var supportedCultures = new[] { new CultureInfo("de"), new CultureInfo("en") };

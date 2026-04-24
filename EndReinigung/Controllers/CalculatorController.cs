@@ -1,7 +1,10 @@
 using System.Text;
+using EndReinigung.DataAccess;
+using EndReinigung.DataAccess.Entities;
 using EndReinigung.Models;
 using EndReinigung.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace EndReinigung.Controllers
@@ -11,15 +14,18 @@ namespace EndReinigung.Controllers
     {
         private readonly IEmailService _emailService;
         private readonly SmtpSettings _smtp;
+        private readonly AppDbContext _db;
         private readonly ILogger<CalculatorController> _logger;
 
         public CalculatorController(
             IEmailService emailService,
             IOptions<SmtpSettings> smtpOptions,
+            AppDbContext db,
             ILogger<CalculatorController> logger)
         {
             _emailService = emailService;
             _smtp = smtpOptions.Value;
+            _db = db;
             _logger = logger;
         }
 
@@ -42,42 +48,134 @@ namespace EndReinigung.Controllers
                 return BadRequest(new { ok = false, errors = new { RoomSize = new[] { "Ungültige Wohnungsgrösse." } } });
             }
 
-            _logger.LogInformation(
-                "Booking: {FirstName} {LastName} <{Email}> {Property}/{Rooms} ZIP {Zip} -> CHF {Price} (client quoted {Quoted})",
-                model.FirstName, model.LastName, model.Email, model.PropertyType, model.RoomSize,
-                model.ZipCode, authoritativePrice, model.QuotedTotal);
+            var bookingNumber = await GenerateUniqueBookingNumberAsync();
 
-            var recipient = !string.IsNullOrWhiteSpace(_smtp.RecipientEmail) ? _smtp.RecipientEmail : _smtp.SenderEmail;
-            if (string.IsNullOrWhiteSpace(recipient))
-            {
-                _logger.LogError("Calculator booking: no recipient email configured.");
-                return StatusCode(500, new { ok = false, error = "Email configuration missing." });
-            }
-
-            var bookingId = $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
-            var subject = $"Buchung {bookingId} — {model.FirstName} {model.LastName} — CHF {authoritativePrice:N0}";
-            var body = BuildBookingEmail(model, authoritativePrice, bookingId);
-
+            // Persist FIRST, email SECOND — a booking in the DB is the source of truth;
+            // email is a best-effort notification that can be retried later.
+            var booking = MapToBooking(model, authoritativePrice, bookingNumber);
+            _db.Bookings.Add(booking);
             try
             {
-                await _emailService.SendContactEmailAsync(recipient, subject, body, model.Email);
+                await _db.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Calculator booking email failed for {BookingId}", bookingId);
-                return StatusCode(500, new { ok = false, error = "Buchung konnte nicht gesendet werden." });
+                _logger.LogError(ex, "Booking DB save failed for {Email}", model.Email);
+                return StatusCode(500, new { ok = false, error = "Buchung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut." });
             }
+
+            _logger.LogInformation(
+                "Booking {BookingNumber} saved: {FirstName} {LastName} <{Email}> {Property}/{Rooms} ZIP {Zip} -> CHF {Price}",
+                bookingNumber, model.FirstName, model.LastName, model.Email, model.PropertyType, model.RoomSize,
+                model.ZipCode, authoritativePrice);
+
+            // Fire email notifications. Failures do NOT fail the booking — lead is already saved.
+            // 1) Internal notification to ops (info@)
+            var opsRecipient = !string.IsNullOrWhiteSpace(_smtp.RecipientEmail) ? _smtp.RecipientEmail : _smtp.SenderEmail;
+            if (!string.IsNullOrWhiteSpace(opsRecipient))
+            {
+                var subject = $"Buchung {bookingNumber} — {model.FirstName} {model.LastName} — CHF {authoritativePrice:N0}";
+                var body = BuildOpsNotificationEmail(model, authoritativePrice, bookingNumber);
+                try
+                {
+                    await _emailService.SendContactEmailAsync(opsRecipient, subject, body, model.Email);
+                    booking.EmailSent = true;
+                    booking.EmailSentAt = DateTime.UtcNow;
+                    booking.Status = BookingStatus.EmailSent;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Ops notification email failed for {BookingNumber}", bookingNumber);
+                    booking.EmailError = ex.Message.Length > 1000 ? ex.Message[..1000] : ex.Message;
+                }
+            }
+            else
+            {
+                _logger.LogWarning("Booking {BookingNumber} saved but no ops recipient configured.", bookingNumber);
+                booking.EmailError = "No recipient configured.";
+            }
+
+            // 2) Customer confirmation to the booker's email address
+            if (!string.IsNullOrWhiteSpace(model.Email))
+            {
+                var custSubject = $"Ihre Buchungsbestätigung {bookingNumber} — Zürich Endreinigung";
+                var custBody = BuildCustomerConfirmationEmail(model, authoritativePrice, bookingNumber);
+                try
+                {
+                    await _emailService.SendContactEmailAsync(model.Email, custSubject, custBody);
+                    booking.CustomerEmailSent = true;
+                    booking.CustomerEmailSentAt = DateTime.UtcNow;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Customer confirmation email failed for {BookingNumber}", bookingNumber);
+                    booking.CustomerEmailError = ex.Message.Length > 1000 ? ex.Message[..1000] : ex.Message;
+                }
+            }
+
+            try { await _db.SaveChangesAsync(); }
+            catch (Exception ex) { _logger.LogError(ex, "Failed to update email status for {BookingNumber}", bookingNumber); }
 
             return Ok(new
             {
                 ok = true,
-                bookingId,
+                bookingId = bookingNumber,
                 total = authoritativePrice,
                 cleaningDate = model.CleaningDate?.ToString("yyyy-MM-dd"),
             });
         }
 
-        private static string BuildBookingEmail(BookingViewModel m, decimal total, string bookingId)
+        private async Task<string> GenerateUniqueBookingNumberAsync()
+        {
+            // 1 in 16.7M collision chance per day; retry if we're unlucky.
+            for (var i = 0; i < 5; i++)
+            {
+                var candidate = $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
+                var exists = await _db.Bookings.AnyAsync(b => b.BookingNumber == candidate);
+                if (!exists) return candidate;
+            }
+            // Fall back to a longer suffix — collision effectively impossible.
+            return $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..10].ToUpper()}";
+        }
+
+        private static Booking MapToBooking(BookingViewModel m, decimal serverPrice, string bookingNumber) => new Booking
+        {
+            BookingNumber = bookingNumber,
+            CreatedAt = DateTime.UtcNow,
+            PropertyType = m.PropertyType,
+            RoomSize = m.RoomSize,
+            ZipCode = m.ZipCode,
+            Balcony = m.Balcony,
+            UtilityBalcony = m.UtilityBalcony,
+            Bath = m.Bath,
+            Wc = m.Wc,
+            Carpet = m.Carpet,
+            BalconyPressure = m.BalconyPressure,
+            GaragePressure = m.GaragePressure,
+            Basement = m.Basement,
+            CleaningDate = m.CleaningDate,
+            HandoverDate = m.HandoverDate,
+            HandoverTime = m.HandoverTime,
+            HandoverDateNotFixed = m.HandoverDateNotFixed,
+            FirstName = m.FirstName,
+            LastName = m.LastName,
+            Email = m.Email,
+            Phone = m.Phone,
+            CustomerStreet = m.CustomerStreet,
+            CustomerPlz = m.CustomerPlz,
+            CustomerCity = m.CustomerCity,
+            SameAsCustomer = m.SameAsCustomer,
+            ObjectStreet = m.SameAsCustomer ? null : m.ObjectStreet,
+            ObjectPlz = m.SameAsCustomer ? null : m.ObjectPlz,
+            ObjectCity = m.SameAsCustomer ? null : m.ObjectCity,
+            Notes = m.Notes,
+            PaymentMethod = m.PaymentMethod,
+            ServerPrice = serverPrice,
+            ClientQuotedPrice = m.QuotedTotal,
+            Status = BookingStatus.New,
+        };
+
+        private static string BuildOpsNotificationEmail(BookingViewModel m, decimal total, string bookingId)
         {
             var sb = new StringBuilder();
             sb.Append($"<h2 style=\"font-family:sans-serif;\">Neue Buchung {Enc(bookingId)}</h2>");
@@ -138,6 +236,83 @@ namespace EndReinigung.Controllers
             }
             return sb.ToString();
         }
+
+        private static string BuildCustomerConfirmationEmail(BookingViewModel m, decimal total, string bookingNumber)
+        {
+            var propertyLabel = m.PropertyType == "house" ? "Haus" : "Wohnung";
+            var cleaningDate = m.CleaningDate?.ToString("dd.MM.yyyy") ?? "wird bestätigt";
+
+            var sb = new StringBuilder();
+            sb.Append("<div style=\"font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a;\">");
+            sb.Append("<div style=\"background:linear-gradient(135deg,#1e4a8a,#2a66b8);padding:28px 32px;color:white;border-radius:8px 8px 0 0;\">");
+            sb.Append("<h1 style=\"margin:0;font-size:22px;font-weight:700;\">Vielen Dank für Ihre Buchung!</h1>");
+            sb.Append($"<p style=\"margin:8px 0 0;opacity:0.9;font-size:14px;\">Buchungsnummer: <strong>{Enc(bookingNumber)}</strong></p>");
+            sb.Append("</div>");
+
+            sb.Append("<div style=\"padding:28px 32px;background:#ffffff;border:1px solid #e5e7eb;border-top:none;\">");
+            sb.Append($"<p>Hallo {Enc(m.FirstName)} {Enc(m.LastName)},</p>");
+            sb.Append("<p>wir haben Ihre Anfrage erhalten. Ein Mitarbeiter meldet sich innerhalb von 24 Stunden mit der Terminbestätigung bei Ihnen.</p>");
+
+            sb.Append("<h2 style=\"font-size:16px;margin:24px 0 12px;color:#1e4a8a;\">Ihre Buchung im Überblick</h2>");
+            sb.Append("<table style=\"border-collapse:collapse;width:100%;font-size:14px;\">");
+            Row(sb, "Objekt", $"{propertyLabel} • {Enc(m.RoomSize)} Zimmer");
+            Row(sb, "Adresse", Enc($"{m.CustomerStreet}, {m.CustomerPlz} {m.CustomerCity}"));
+            Row(sb, "Reinigungstermin", cleaningDate);
+            if (!m.HandoverDateNotFixed && m.HandoverDate.HasValue)
+            {
+                var handover = m.HandoverDate.Value.ToString("dd.MM.yyyy");
+                if (!string.IsNullOrWhiteSpace(m.HandoverTime)) handover += $", {Enc(m.HandoverTime)}";
+                Row(sb, "Übergabe", handover);
+            }
+            Row(sb, "Zahlungsart", PaymentLabel(m.PaymentMethod));
+            sb.Append("</table>");
+
+            var hasExtras = m.Basement || m.Balcony > 0 || m.UtilityBalcony > 0 || m.Bath > 0 || m.Wc > 0
+                            || m.Carpet > 0 || m.BalconyPressure > 0 || m.GaragePressure > 0;
+            if (hasExtras)
+            {
+                sb.Append("<h2 style=\"font-size:16px;margin:24px 0 12px;color:#1e4a8a;\">Gewählte Extras</h2>");
+                sb.Append("<table style=\"border-collapse:collapse;width:100%;font-size:14px;\">");
+                if (m.Basement) Row(sb, "Estrich", $"CHF {PriceCalculator.PriceBasement:N0}");
+                if (m.Balcony > 0) Row(sb, $"Extra Balkon / Terrasse ({m.Balcony}×)", $"CHF {m.Balcony * PriceCalculator.PriceBalcony:N0}");
+                if (m.UtilityBalcony > 0) Row(sb, $"Nebenbalkon ({m.UtilityBalcony}×)", $"CHF {m.UtilityBalcony * PriceCalculator.PriceUtilityBalcony:N0}");
+                if (m.Bath > 0) Row(sb, $"Zusätzliche Badezimmer ({m.Bath}×)", $"CHF {m.Bath * PriceCalculator.PriceBath:N0}");
+                if (m.Wc > 0) Row(sb, $"Separates WC ({m.Wc}×)", $"CHF {m.Wc * PriceCalculator.PriceWc:N0}");
+                if (m.Carpet > 0) Row(sb, $"Teppich-Shampoo ({m.Carpet} Zimmer)", $"CHF {m.Carpet * PriceCalculator.PriceCarpet:N0}");
+                if (m.BalconyPressure > 0) Row(sb, $"Balkon Hochdruckreinigung ({m.BalconyPressure}×)", $"CHF {m.BalconyPressure * PriceCalculator.PriceBalconyPressure:N0}");
+                if (m.GaragePressure > 0) Row(sb, $"Garage Hochdruckreinigung ({m.GaragePressure}×)", $"CHF {m.GaragePressure * PriceCalculator.PriceGaragePressure:N0}");
+                sb.Append("</table>");
+            }
+
+            sb.Append("<div style=\"margin-top:24px;padding:16px;background:#ecfdf5;border-left:4px solid #0a7a2f;border-radius:4px;\">");
+            sb.Append($"<div style=\"font-size:13px;color:#065f2b;margin-bottom:4px;\">Fixpreis inkl. MwSt. &amp; Abnahmegarantie</div>");
+            sb.Append($"<div style=\"font-size:24px;font-weight:700;color:#065f2b;\">CHF {total:N0}</div>");
+            sb.Append("</div>");
+
+            sb.Append("<h2 style=\"font-size:16px;margin:24px 0 12px;color:#1e4a8a;\">Was passiert jetzt?</h2>");
+            sb.Append("<ol style=\"padding-left:20px;margin:0;font-size:14px;line-height:1.6;\">");
+            sb.Append("<li>Wir prüfen Ihre Anfrage und melden uns innerhalb von 24 h mit der Terminbestätigung.</li>");
+            sb.Append("<li>Am Reinigungstag erscheint unser Team pünktlich vor Ort.</li>");
+            sb.Append("<li>Bei der Übergabe sind wir persönlich dabei — und reinigen bei Beanstandungen kostenlos nach.</li>");
+            sb.Append("</ol>");
+
+            sb.Append("<div style=\"margin-top:28px;padding-top:20px;border-top:1px solid #e5e7eb;font-size:13px;color:#6b7280;\">");
+            sb.Append("<p style=\"margin:0 0 8px;\"><strong>Fragen?</strong> Antworten Sie einfach auf diese E-Mail oder rufen Sie uns an:</p>");
+            sb.Append("<p style=\"margin:0;\">📞 <a href=\"tel:+41765017738\" style=\"color:#1e4a8a;text-decoration:none;\">+41 76 501 77 38</a> &nbsp;·&nbsp; ✉️ <a href=\"mailto:info@zurich-endreinigung.ch\" style=\"color:#1e4a8a;text-decoration:none;\">info@zurich-endreinigung.ch</a></p>");
+            sb.Append("</div>");
+
+            sb.Append("<p style=\"margin-top:24px;font-size:13px;color:#6b7280;\">Herzliche Grüsse<br><strong>Ihr Team von Zürich Endreinigung</strong></p>");
+            sb.Append("</div></div>");
+            return sb.ToString();
+        }
+
+        private static string PaymentLabel(string method) => method switch
+        {
+            "twint" => "TWINT",
+            "bank" => "Banküberweisung (Vorauszahlung)",
+            "cash" => "Barzahlung bei Übergabe",
+            _ => method ?? "-"
+        };
 
         private static void Row(StringBuilder sb, string label, string value)
         {

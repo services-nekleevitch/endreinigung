@@ -130,7 +130,9 @@
                 btn.classList.add('cursor-default');
                 btn.disabled = true;
             }
-            btn.textContent = isDone ? '✓' : String(i);
+            btn.innerHTML = isDone
+                ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+                : String(i);
 
             if (label) {
                 label.classList.toggle('text-primary', isDone || isCurrent);
@@ -271,12 +273,13 @@
             const baths = 1 + (state.extraCounts.bath || 0);
             const wcs = state.extraCounts.wc || 0;
             const n = parseFloat(state.selectedRoom || '0');
-            const hasUtility = n >= 4;
-            let html = `Inkl. <span class="font-bold text-booking-orange">${baths} Badezimmer</span>`;
-            if (wcs > 0) html += `, <span class="font-bold text-booking-orange">${wcs} WC</span>`;
-            html += `, <span class="font-bold text-booking-orange">1 Balkon</span>`;
-            if (hasUtility) html += ` und <span class="font-bold text-booking-orange">1 Nebenbalkon</span>`;
-            incl.innerHTML = html;
+            const balkone = 1 + (n >= 4 ? 1 : 0); // base balcony + auto-included Nebenbalkon for 4+ rooms
+            const parts = [`<span class="font-bold text-booking-orange">${baths} Badezimmer</span>`];
+            if (wcs > 0) parts.push(`<span class="font-bold text-booking-orange">${wcs} WC</span>`);
+            parts.push(`<span class="font-bold text-booking-orange">${balkone} Balkon</span>`);
+            // Join: all but last with ", ", last with " und "
+            const last = parts.pop();
+            incl.innerHTML = `Inkl. ${parts.join(', ')} und ${last}`;
         }
     }
 
@@ -446,16 +449,23 @@
         // Countable extras
         $$('[data-extra-countable]').forEach((card) => {
             const key = card.getAttribute('data-extra-countable');
-            card.addEventListener('click', (e) => {
-                // If a count button was clicked, handle that instead
-                const countBtn = e.target.closest('[data-count]');
-                if (countBtn) {
+
+            // Swallow clicks inside the counter area so they don't bubble to the card
+            // (matches the React source: onClick={(e) => e.stopPropagation()} on the counter div)
+            const counter = $('[data-extra-counter]', card);
+            if (counter) {
+                counter.addEventListener('click', (e) => {
+                    const countBtn = e.target.closest('[data-count]');
+                    if (countBtn) {
+                        state.extraCounts[key] = parseInt(countBtn.getAttribute('data-count'), 10);
+                        renderExtras();
+                    }
                     e.stopPropagation();
-                    state.extraCounts[key] = parseInt(countBtn.getAttribute('data-count'), 10);
-                    renderExtras();
-                    return;
-                }
-                // Toggle: 0 -> 1 (or prior non-zero), >0 -> 0
+                });
+            }
+
+            // Outer card toggles 0 <-> 1
+            card.addEventListener('click', () => {
                 const current = state.extraCounts[key] || 0;
                 state.extraCounts[key] = current > 0 ? 0 : 1;
                 renderExtras();

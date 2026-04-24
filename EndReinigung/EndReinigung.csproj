@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources\SharedResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -23,7 +32,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
+
+  <!-- Rebuild Tailwind CSS on every build so new classes added to .cshtml or .js files get picked up.
+       Only runs if node_modules exists; skip silently otherwise. -->
+  <Target Name="BuildTailwindCss" BeforeTargets="Build" Condition="Exists('node_modules\.bin\tailwindcss.cmd')">
+    <Exec Command="node_modules\.bin\tailwindcss.cmd -i wwwroot/css/tailwind-input.css -o wwwroot/css/tailwind.css --minify"
+          ContinueOnError="true" />
+  </Target>
 
 </Project>
