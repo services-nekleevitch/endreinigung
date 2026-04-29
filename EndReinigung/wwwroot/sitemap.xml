@@ -6,6 +6,28 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Pillar Hubs (Topic Cluster anchors) -->
+  <url>
+    <loc>https://zurich-endreinigung.ch/spezialreinigung</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/gewerbereinigung</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/standorte</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/hochdruckreinigung-zuerich</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://zurich-endreinigung.ch/calculator</loc>
     <changefreq>monthly</changefreq>

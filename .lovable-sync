@@ -2,12 +2,13 @@
 # After each migration, update the commit hash from the Lovable GitHub repo.
 # Next time, diff only what changed: git diff <hash>..lovable/main -- src/
 
-last_migrated_date=2026-04-20
-last_migrated_commit=2ff6adbb170358f7c6b9c37b7eccdcb0ee97a152
+last_migrated_date=2026-04-28
+last_migrated_commit=39a0eabf78af6ea73f0c1c7dd71ad2585ebc8e31
 lovable_repo=https://github.com/services-nekleevitch/rich-lease-shine.git
 
 # Previous baselines:
+# 2026-04-20 / 2ff6adbb170358f7c6b9c37b7eccdcb0ee97a152 (265 commits — pillar hubs, bezirk hyper-local rewrite, Hochdruckreinigung, Bueroreinigung + Polsterreinigung rebuild, schema rollout)
 # 2026-04-15 / 4214ee6bc501971c8b914bd396138730d0df0d58
 # 2026-04-13 / 3ce27095decbab1a2bcf225ed24e8bd89be23151 (rich-lease-shine-main (4).zip)
 #
-# Next time: cd rich-lease-shine && git pull && git diff 2ff6adbb..HEAD --stat -- src/ public/
+# Next time: cd rich-lease-shine && git pull && git diff 39a0eab..HEAD --stat -- src/ public/

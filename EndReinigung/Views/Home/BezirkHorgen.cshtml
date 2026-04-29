@@ -1,7 +1,7 @@
 @{
-    ViewData["Title"] = "Endreinigung Horgen | Umzugsreinigung mit Abnahmegarantie | Zürich Endreinigung";
-    ViewData["Description"] = "Professionelle Endreinigung und Umzugsreinigung in Horgen mit 100% Abnahmegarantie. Fixpreise, persönliche Übergabe. Jetzt Offerte anfordern.";
-    ViewData["Canonical"] = "https://zurich-endreinigung.ch/reinigung-horgen";
+    ViewData["Title"]       = "Umzugsreinigung Bezirk Horgen | Zürichsee | Abnahmegarantie";
+    ViewData["Description"] = "Umzugsreinigung Bezirk Horgen — Endreinigung mit Abnahmegarantie am linken Zürichseeufer. Thalwil, Wädenswil, Kilchberg, Rüschlikon. Reinigungsfirma vor Ort.";
+    ViewData["Canonical"]   = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen";
 }
 
 @section Head {
@@ -11,24 +11,99 @@
         "@@type": "CleaningService",
         "name": "Zürich Endreinigung - Bezirk Horgen",
         "areaServed": ["8810", "8800", "8820", "8134", "8803", "8802", "8805"],
-        "description": "Premium Endreinigung mit Abgabegarantie für den gesamten Bezirk Horgen und Zürichsee Region.",
-        "url": "https://zurich-endreinigung.ch/reinigung-horgen"
+        "description": "Premium Endreinigung mit Abnahmegarantie für den gesamten Bezirk Horgen und Zürichsee Region.",
+        "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen",
+        "telephone": "+41765017738",
+        "priceRange": "CHF 550 - CHF 1290"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@@type": "ListItem",
+                "position": 1,
+                "name": "Start",
+                "item": "https://zurich-endreinigung.ch/"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 2,
+                "name": "Einsatzgebiete",
+                "item": "https://zurich-endreinigung.ch/einsatzgebiete"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 3,
+                "name": "Bezirk Horgen",
+                "item": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Offer",
+        "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen",
+        "priceCurrency": "CHF",
+        "priceSpecification": [
+            {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
+        ],
+        "seller": {
+            "@@type": "LocalBusiness",
+            "name": "Zürich Endreinigung",
+            "url": "https://zurich-endreinigung.ch/"
+        }
     }
     </script>
 }
 
 <div class="min-h-screen flex flex-col">
+
+    <!-- Breadcrumb -->
+    <nav class="bg-background border-b border-border pt-20 md:pt-[6.5rem]" aria-label="Breadcrumb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+                <li>
+                    <a href="/" class="hover:text-swiss-blue transition-colors">Home</a>
+                </li>
+                <li>
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </li>
+                <li>
+                    <a href="/einsatzgebiete" class="hover:text-swiss-blue transition-colors">Einsatzgebiete</a>
+                </li>
+                <li>
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </li>
+                <li class="font-medium text-foreground" aria-current="page">Bezirk Horgen</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-hero overflow-hidden">
-        <div class="absolute inset-0 bg-swiss-blue-dark/30"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="relative pt-20 md:pt-[7.75rem] pb-12 overflow-hidden">
+        <img src="/img/bezirke/umzugsreinigung-bezirk-horgen-zuerich-hero.avif"
+             alt="Bezirk Horgen – Umzugsreinigung mit Abnahmegarantie"
+             loading="eager" fetchpriority="high" width="1920" height="1080"
+             class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-hero opacity-75"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="max-w-3xl">
                 <!-- Badges -->
                 <div class="flex flex-wrap gap-3 mb-3 sm:mb-6">
                     <div class="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20 animate-fade-in">
                         <span class="text-primary-foreground/90 text-sm font-medium">🌍 Expat Friendly</span>
                     </div>
-                    <div class="inline-flex items-center px-4 py-2 bg-booking-orange rounded-full border border-booking-orange shadow-lg animate-fade-in">
+                    <div class="inline-flex items-center px-4 py-2 bg-booking-orange rounded-full border border-booking-orange shadow-lg animate-fade-in animate-pulse">
                         <span class="text-primary-foreground text-sm font-bold">🏠 Wir sind bei der Abgabe dabei</span>
                     </div>
                     <div class="inline-flex items-center px-4 py-2 bg-cleaning-green rounded-full border border-cleaning-green shadow-lg animate-fade-in">
@@ -40,14 +115,18 @@
                     </div>
                 </div>
 
-                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-6 leading-tight animate-slide-up font-heading">
-                    Professionelle Endreinigung im Bezirk Horgen
+                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-4 leading-tight animate-slide-up font-heading">
+                    Umzugsreinigung Bezirk Horgen
                     <br />
-                    <span class="bg-gradient-accent bg-clip-text text-transparent">mit Abgabegarantie</span>
+                    <span class="bg-gradient-accent bg-clip-text text-transparent">Endreinigung mit Abnahmegarantie am Zürichsee</span>
                 </h1>
 
+                <p class="text-primary-foreground/90 text-base md:text-lg mb-6 animate-slide-up" style="animation-delay: 100ms">
+                    Die <strong>Umzugsreinigung Bezirk Horgen</strong> deckt das gesamte linke Zürichseeufer ab — <strong>von Adliswil und Kilchberg bis Wädenswil und Richterswil</strong>. Wir sind die <strong>Reinigungsfirma Bezirk Horgen</strong> für anspruchsvolle Wohnungsabgaben am See.
+                </p>
+
                 <!-- Bulleted Benefits -->
-                <ul class="space-y-1.5 sm:space-y-3 mb-8 md:mb-10 animate-slide-up">
+                <ul class="space-y-1.5 sm:space-y-3 mb-8 md:mb-10 animate-slide-up" style="animation-delay: 200ms">
                     <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
                         <span class="mr-3 text-lg">✅</span>
                         <span class="font-medium">Schweizer Qualität &amp; faire Preise</span>
@@ -62,16 +141,42 @@
                     </li>
                 </ul>
 
-                <!-- CTA -->
-                <div class="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl border border-primary-foreground/20 p-4 sm:p-6 max-w-2xl animate-slide-up">
-                    <a href="/calculator" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-lg font-semibold rounded-xl shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Jetzt Fixpreis berechnen
-                    </a>
+                <!-- Mini Calculator Form -->
+                <div class="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl border border-primary-foreground/20 p-4 sm:p-6 max-w-2xl animate-slide-up" style="animation-delay: 400ms">
+                    <p class="text-primary-foreground/80 text-sm font-medium mb-4">Fixpreis sofort berechnen:</p>
+                    <form id="horgen-hero-form" class="grid grid-cols-1 sm:grid-cols-[1.5fr_1fr_auto] gap-3">
+                        <div class="relative">
+                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none z-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            <select id="horgen-room-size" class="w-full h-12 rounded-xl bg-white text-foreground pl-10 pr-4 border-2 border-border focus:ring-2 focus:ring-booking-orange focus:border-booking-orange outline-none appearance-none text-sm cursor-pointer">
+                                <option value="">Zimmerzahl wählen</option>
+                                <option value="1.5">1.5 Zimmer</option>
+                                <option value="2">2 Zimmer</option>
+                                <option value="2.5">2.5 Zimmer</option>
+                                <option value="3">3 Zimmer</option>
+                                <option value="3.5">3.5 Zimmer</option>
+                                <option value="4">4 Zimmer</option>
+                                <option value="4.5">4.5 Zimmer</option>
+                                <option value="5">5 Zimmer</option>
+                                <option value="5.5">5.5 Zimmer</option>
+                                <option value="6">6 Zimmer</option>
+                                <option value="6.5+">6.5+ Zimmer</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <input type="text" id="horgen-zip-code" placeholder="z.B. 8810" maxlength="4"
+                                   class="w-full h-12 rounded-xl border-2 bg-white text-foreground pl-10 pr-4 placeholder:text-muted-foreground focus:ring-2 focus:ring-booking-orange focus:border-booking-orange outline-none text-sm border-border" />
+                        </div>
+                        <button type="submit" class="h-12 px-6 text-sm rounded-xl bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white font-semibold shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105 whitespace-nowrap">
+                            Preis berechnen
+                        </button>
+                    </form>
+                    <p id="horgen-hero-error" class="text-[13px] font-medium text-booking-orange-dark mt-2 min-h-[1.25rem]"></p>
 
                     <!-- Google Rating -->
-                    <div class="mt-4 sm:mt-8 pt-4 sm:pt-8 border-t border-primary-foreground/20">
-                        <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                    <div class="mt-4 pt-4 border-t border-primary-foreground/20">
+                        <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-1 hover:opacity-80 transition-opacity">
                             <span class="text-trust-gold text-lg">★★★★★</span>
                             <span class="text-primary-foreground/80 text-sm ml-2">4.9/5 Bewertung auf Google</span>
                         </a>
@@ -79,9 +184,38 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
     @await Html.PartialAsync("_TrustBar")
+
+    <!-- TLDR Section -->
+    <section class="py-10 md:py-12 bg-muted/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">✅</span>
+                    <div>
+                        <span class="font-bold text-foreground">Fixpreise ab CHF 550</span>
+                        <p class="text-sm text-muted-foreground">Transparente Preise — keine versteckten Kosten</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">🏅</span>
+                    <div>
+                        <span class="font-bold text-foreground">100% Abnahmegarantie</span>
+                        <p class="text-sm text-muted-foreground">Wir sind bei der Wohnungsabgabe persönlich dabei</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">🛡️</span>
+                    <div>
+                        <span class="font-bold text-foreground">5 Mio. CHF Versicherung</span>
+                        <p class="text-sm text-muted-foreground">Vollversicherter Betrieb für Ihre Sicherheit</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Local Content Block -->
     <section class="py-16 md:py-20 bg-background">
@@ -111,13 +245,41 @@
         </div>
     </section>
 
+    <!-- Logistics Section -->
+    <section class="py-14 md:py-18 bg-muted/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-xl md:text-2xl font-bold text-foreground mb-4 font-heading">
+                Lokale Logistik im Bezirk Horgen: Verwaltungen, Zufahrt, Parkplätze
+            </h2>
+            <div class="prose prose-base max-w-none text-muted-foreground">
+                <p>
+                    Im Bezirk Horgen arbeiten wir mit <strong>Premium-Verwaltungen wie Wincasa, Livit und spezialisierten Liegenschaftsverwaltern</strong> am linken Zürichseeufer, die hochwertige Seeobjekte mit hohen Übergabe-Standards betreuen. In Kilchberg und Rüschlikon sind die Hangliegenschaften über schmale Privatstrassen erschlossen — wir planen die Anfahrt sorgfältig und bringen das Equipment in einem Gang mit. In <strong>Thalwil und Adliswil</strong> sind Liftreservationen und Anwohnerparkkarten für die Wohnüberbauungen Standard. In den ländlicheren Gemeinden wie Hirzel, Hütten und Oberrieden können wir direkt am Hauseingang halten — was die Wohnungsabgabe entspannter macht.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Availability Section -->
+    <section class="py-14 md:py-18 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-xl md:text-2xl font-bold text-foreground mb-4 font-heading">
+                Regional verfügbar im Bezirk Horgen
+            </h2>
+            <div class="prose prose-base max-w-none text-muted-foreground">
+                <p>
+                    Im gesamten Bezirk Horgen bieten wir neben der Umzugsreinigung auch <strong>Premium-Fensterreinigung für bodentiefe Seesicht-Fenster, Spezialreinigung für Marmor und Naturstein, Reinigung von Wintergärten und Terrassen sowie Abo-Reinigungen für Villen, Apartments und Mehrfamilienhäuser</strong> an. Alle Reinigungsleistungen aus einer Hand — von der wöchentlichen Unterhaltsreinigung bis zur kompletten Wohnungsabgabe.
+                </p>
+            </div>
+        </div>
+    </section>
+
     @await Html.PartialAsync("_FixedPricing")
 
     <!-- Municipality Links -->
     <section class="py-16 md:py-20 bg-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-3 font-heading text-center">
-                Alle Gemeinden im Bezirk Horgen
+                Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Horgen
             </h2>
             <p class="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
                 Wir reinigen in allen 11 Gemeinden am linken Zürichseeufer
@@ -172,6 +334,24 @@
     </section>
 
     @await Html.PartialAsync("_Var2Services")
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-20 bg-swiss-blue">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary-foreground mb-4 font-heading">
+                Bereit für Ihre Endreinigung im Bezirk Horgen?
+            </h2>
+            <p class="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
+                Fixpreis, persönliche Abnahmebegleitung und 100% Abnahmegarantie — ohne Risiko.
+            </p>
+            <a href="/calculator"
+               class="inline-flex items-center justify-center px-8 py-4 bg-booking-orange text-white text-lg font-bold rounded-xl shadow-button hover:bg-booking-orange-dark transition-colors duration-200 hover:scale-105">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Kostenlose Offerte anfordern
+            </a>
+        </div>
+    </section>
+
 </div>
 
 @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
@@ -181,3 +361,21 @@
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     Jetzt anrufen
 </a>
+
+<script>
+    (function () {
+        var form = document.getElementById('horgen-hero-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var rooms = document.getElementById('horgen-room-size').value;
+            var zip   = document.getElementById('horgen-zip-code').value.trim();
+            var err   = document.getElementById('horgen-hero-error');
+            if (!rooms && !zip) { err.textContent = 'Bitte Zimmerzahl und PLZ eingeben.'; return; }
+            if (!rooms) { err.textContent = 'Bitte Zimmerzahl wählen.'; return; }
+            if (!zip)   { err.textContent = 'Bitte PLZ eingeben.'; return; }
+            err.textContent = '';
+            window.location.href = '/calculator?rooms=' + encodeURIComponent(rooms) + '&zip=' + encodeURIComponent(zip);
+        });
+    })();
+</script>

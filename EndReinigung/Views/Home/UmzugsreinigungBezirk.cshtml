@@ -3,11 +3,17 @@
     var badgeLabel       = ViewData["BezirkBadgeLabel"]  as string ?? bezirkName;
     var h1               = ViewData["H1"]                as string ?? $"Endreinigung im {bezirkName} — Umzugsreinigung mit 100% Abnahmegarantie";
     var h2               = ViewData["H2"]                as string ?? $"Ihr Reinigungspartner im {bezirkName}";
+    var hyperLocalH2     = ViewData["HyperLocalH2"]      as string ?? $"Alle Gemeinden im {bezirkName}";
     var localValueProp   = ViewData["LocalValueProp"]    as string ?? $"Lokale Reinigungsprofis im gesamten {bezirkName}";
     var examplePlz       = ViewData["ExamplePlz"]        as string ?? "8000";
+    var heroImage        = ViewData["HeroImage"]         as string ?? "";
+    var heroIntroLine    = ViewData["HeroIntroLine"]     as string ?? "";
+    var logisticsParagraph = ViewData["LogisticsParagraph"] as string ?? "";
+    var regionalAvailability = ViewData["RegionalAvailability"] as string ?? "";
     var paragraphs       = ViewData["Paragraphs"]        as string[] ?? Array.Empty<string>();
     var gemeindenSubtitle= ViewData["GemeindenSubtitle"] as string ?? $"Wir reinigen in allen Gemeinden im {bezirkName}.";
     var gemeindenRaw     = ViewData["Gemeinden"]         as string ?? "";
+    var canonical        = ViewData["Canonical"]         as string ?? "";
 
     // Parse "Name:PLZ,Name:PLZ" pairs
     var gemeinden = gemeindenRaw
@@ -22,6 +28,55 @@
     var h1Parts = h1.Split('—', 2);
     var h1Line1 = h1Parts[0].TrimEnd();
     var h1Line2 = h1Parts.Length > 1 ? h1Parts[1].TrimStart() : "";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@@type": "ListItem",
+                "position": 1,
+                "name": "Start",
+                "item": "https://zurich-endreinigung.ch/"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 2,
+                "name": "Einsatzgebiete",
+                "item": "https://zurich-endreinigung.ch/einsatzgebiete"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 3,
+                "name": "@bezirkName",
+                "item": "@canonical"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Offer",
+        "url": "@canonical",
+        "priceCurrency": "CHF",
+        "priceSpecification": [
+            {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
+            {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
+        ],
+        "seller": {
+            "@@type": "LocalBusiness",
+            "name": "Zürich Endreinigung",
+            "url": "https://zurich-endreinigung.ch/"
+        }
+    }
+    </script>
 }
 
 <div class="min-h-screen flex flex-col">
@@ -48,9 +103,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-12 md:pt-20 pb-16 md:pb-24 bg-gradient-hero overflow-hidden">
-        <div class="absolute inset-0 bg-swiss-blue-dark/30"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="relative pt-20 md:pt-[7.75rem] pb-12 overflow-hidden">
+        @if (!string.IsNullOrEmpty(heroImage))
+        {
+            <img src="@heroImage" alt="Umzugsreinigung @bezirkName" loading="eager" fetchpriority="high" width="1920" height="1080" class="absolute inset-0 w-full h-full object-cover" />
+        }
+        <div class="absolute inset-0 bg-gradient-hero opacity-75"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="max-w-3xl">
 
                 <!-- Badges -->
@@ -71,7 +131,7 @@
                 </div>
 
                 <!-- H1 Headline -->
-                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-6 leading-tight animate-slide-up font-heading">
+                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-4 leading-tight animate-slide-up font-heading">
                     @h1Line1
                     @if (!string.IsNullOrEmpty(h1Line2))
                     {
@@ -79,6 +139,14 @@
                         <span class="bg-gradient-accent bg-clip-text text-transparent">@h1Line2</span>
                     }
                 </h1>
+
+                <!-- Hero Intro Line -->
+                @if (!string.IsNullOrEmpty(heroIntroLine))
+                {
+                    <p class="text-primary-foreground/90 text-base md:text-lg mb-6 animate-slide-up" style="animation-delay: 100ms">
+                        @Html.Raw(heroIntroLine)
+                    </p>
+                }
 
                 <!-- Bulleted Benefits -->
                 <ul class="space-y-1.5 sm:space-y-3 mb-8 md:mb-10 animate-slide-up" style="animation-delay: 200ms">
@@ -143,9 +211,38 @@
 
             </div>
         </div>
-    </section>
+    </header>
 
     @await Html.PartialAsync("_TrustBar")
+
+    <!-- TLDR Section -->
+    <section class="py-10 md:py-12 bg-muted/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">✅</span>
+                    <div>
+                        <span class="font-bold text-foreground">Fixpreise ab CHF 550</span>
+                        <p class="text-sm text-muted-foreground">Transparente Preise — keine versteckten Kosten</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">🏅</span>
+                    <div>
+                        <span class="font-bold text-foreground">100% Abnahmegarantie</span>
+                        <p class="text-sm text-muted-foreground">Wir sind bei der Wohnungsabgabe persönlich dabei</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-2xl leading-none mt-0.5">🛡️</span>
+                    <div>
+                        <span class="font-bold text-foreground">5 Mio. CHF Versicherung</span>
+                        <p class="text-sm text-muted-foreground">Vollversicherter Betrieb für Ihre Sicherheit</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Local Content Block -->
     <section class="py-16 md:py-20 bg-background">
@@ -162,6 +259,36 @@
         </div>
     </section>
 
+    <!-- Logistics Section -->
+    @if (!string.IsNullOrEmpty(logisticsParagraph))
+    {
+        <section class="py-14 md:py-18 bg-muted/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-xl md:text-2xl font-bold text-foreground mb-4 font-heading">
+                    Lokale Logistik im @badgeLabel: Verwaltungen, Zufahrt, Parkplätze
+                </h2>
+                <div class="prose prose-base max-w-none text-muted-foreground">
+                    <p>@Html.Raw(logisticsParagraph)</p>
+                </div>
+            </div>
+        </section>
+    }
+
+    <!-- Regional Availability Section -->
+    @if (!string.IsNullOrEmpty(regionalAvailability))
+    {
+        <section class="py-14 md:py-18 bg-background">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-xl md:text-2xl font-bold text-foreground mb-4 font-heading">
+                    Regional verfügbar im @badgeLabel
+                </h2>
+                <div class="prose prose-base max-w-none text-muted-foreground">
+                    <p>@Html.Raw(regionalAvailability)</p>
+                </div>
+            </div>
+        </section>
+    }
+
     @await Html.PartialAsync("_FixedPricing")
 
     <!-- Municipality Links Grid -->
@@ -170,7 +297,7 @@
         <section class="py-16 md:py-20 bg-background">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-3 font-heading text-center">
-                    Alle Gemeinden im @bezirkName
+                    @hyperLocalH2
                 </h2>
                 <p class="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
                     @gemeindenSubtitle

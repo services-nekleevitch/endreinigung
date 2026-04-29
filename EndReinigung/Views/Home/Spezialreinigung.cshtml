@@ -1,0 +1,471 @@
+@{
+    ViewData["Title"] = "Spezialreinigung Zürich – Fenster, Polster, Teppich & mehr | Fixpreise";
+    ViewData["Description"] = "Alle Spezialreinigungen aus einer Hand: Fensterreinigung, Polsterreinigung, Teppich, Matratzen, Hochdruck, Tapeten entfernen u.v.m. Fixpreise, 5 Mio. CHF versichert.";
+    ViewData["Keywords"] = "Spezialreinigung Zürich, Fensterreinigung, Polsterreinigung, Teppichreinigung, Matratzenreinigung, Hochdruckreinigung";
+    ViewData["Canonical"] = "https://zurich-endreinigung.ch/spezialreinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@@type": "ListItem",
+                "position": 1,
+                "name": "Start",
+                "item": "https://zurich-endreinigung.ch/"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 2,
+                "name": "Spezialreinigung",
+                "item": "https://zurich-endreinigung.ch/spezialreinigung"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "name": "Spezialreinigung Zürich – Fixpreise pro Service",
+        "description": "Spezialisierte Einzelreinigungen für Privat und Gewerbe — Fenster, Polster, Teppich, Matratzen, Hochdruck, Tapeten entfernen, Frühlingsputz, Event- und Boot-Reinigung.",
+        "provider": {
+            "@@type": "ProfessionalService",
+            "@@id": "https://zurich-endreinigung.ch/#business",
+            "name": "Zürich Endreinigung"
+        },
+        "areaServed": {
+            "@@type": "AdministrativeArea",
+            "name": "Kanton Zürich"
+        },
+        "url": "https://zurich-endreinigung.ch/spezialreinigung",
+        "hasOfferCatalog": {
+            "@@type": "OfferCatalog",
+            "name": "Spezialreinigung im Kanton Zürich",
+            "itemListElement": [
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Fensterreinigung", "url": "https://zurich-endreinigung.ch/fensterreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "CHF" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Polsterreinigung", "url": "https://zurich-endreinigung.ch/polsterreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "55", "priceCurrency": "CHF" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Matratzenreinigung", "url": "https://zurich-endreinigung.ch/matratzenreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "95", "priceCurrency": "CHF" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Hochdruckreinigung", "url": "https://zurich-endreinigung.ch/hochdruckreinigung-zuerich" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "270", "priceCurrency": "CHF" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Boot-Reinigung", "url": "https://zurich-endreinigung.ch/boot-reinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "280", "priceCurrency": "CHF" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Frühlingsputz Bundle", "url": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "350", "priceCurrency": "CHF" }
+                }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was zählt zur Spezialreinigung?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Spezialreinigung umfasst alle nicht-routinemässigen Reinigungen: Fenster, Polster, Teppich, Matratzen, Hochdruck, Tapeten entfernen, Frühlingsputz, Event- und Boot-Reinigung. Im Gegensatz zur Endreinigung sind diese Services einzeln buchbar."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Erhalte ich auch bei Spezialreinigungen einen Fixpreis?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Für die meisten Spezialreinigungen gibt es transparente Fixpreise oder eine Foto-Offerte innert 24 Stunden — ohne Vor-Ort-Termin und ohne versteckte Kosten."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind Spezialreinigungen versichert?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Alle Spezialreinigungen sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Schäden an Möbeln, Böden oder Inventar sind vollständig versichert."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Kann ich mehrere Spezialreinigungen kombinieren?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, und es lohnt sich. Bei Kombinationen (z. B. Fenster + Polster + Teppich oder unser Frühlingsputz-Bundle) gewähren wir Mengenrabatt. Senden Sie uns einfach eine Anfrage mit allen gewünschten Services."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="bg-gradient-to-b from-primary/5 to-background pt-20 md:pt-28 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground mb-4">
+                <a href="/" class="hover:text-primary">Start</a>
+                <span class="mx-2">/</span>
+                <span class="text-foreground">Spezialreinigung</span>
+            </nav>
+
+            <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Spezialreinigung in Zürich — alle Services aus einer Hand
+            </h1>
+
+            <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mb-8">
+                Von der Fensterreinigung bis zur Boot-Reinigung: 10 spezialisierte Reinigungsservices
+                mit transparenten Fixpreisen, schweizweit bekannter Qualität und 5 Mio. CHF Versicherung.
+            </p>
+
+            <!-- TLDR box -->
+            <div class="rounded-xl border border-border bg-card p-6 max-w-3xl">
+                <ul class="space-y-2 mb-4">
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        10 Spezialreinigungen — einzeln oder kombiniert buchbar
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Fixpreise oder Foto-Offerte innert 24 Stunden
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        5 Mio. CHF Betriebshaftpflichtversicherung
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Mengenrabatt bei Kombi-Buchungen
+                    </li>
+                </ul>
+                <p class="text-sm text-muted-foreground leading-relaxed">
+                    <strong class="text-foreground">Spezialreinigung in Zürich</strong> umfasst alle nicht-routinemässigen
+                    Reinigungen — von Fenster und Polster bis Hochdruck und Boot. Buchen Sie einzeln zum
+                    Fixpreis oder kombinieren Sie mehrere Services für Mengenrabatt. Persönliches Team,
+                    vollständig versichert.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICE GRID ═══ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Welche Spezialreinigung brauchen Sie?
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- Fensterreinigung -->
+                <a href="/fensterreinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/fensterreinigung.jpg" alt="Fensterreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Wind icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Fensterreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Innen, aussen, Rahmen &amp; Storen — streifenfrei.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 249</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Polsterreinigung -->
+                <a href="/polsterreinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/polsterreinigung.jpg" alt="Polsterreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Sofa icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Polsterreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Sofas, Sessel &amp; Stühle — Tiefenreinigung mit Sprühextraktion.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 55/Sitz</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Teppichreinigung -->
+                <a href="/teppichreinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/teppichreinigung.jpg" alt="Teppichreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Layers icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Teppichreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Tiefenreinigung mit Sprühextraktion — fleckenfrei &amp; desinfiziert.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 8/m²</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Matratzenreinigung -->
+                <a href="/matratzenreinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/matratzenreinigung.jpg" alt="Matratzenreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- BedDouble icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 10v10"/><path d="M2 16h20"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Matratzenreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Milben-, Flecken- und Geruchsentfernung mit Profi-Geräten.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 95</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Grundreinigung -->
+                <a href="/grundreinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/grundreinigung.jpg" alt="Grundreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Sparkles icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Grundreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Komplette Tiefenreinigung für Privathaushalt &amp; Gewerbe.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 45/Std</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tapeten entfernen -->
+                <a href="/tapeten-entfernen" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/tapeten-entfernen.jpg" alt="Tapeten entfernen Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Wallpaper icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="8" cy="9" r="2"/><path d="m9 17 6.1-6.1a2 2 0 0 1 2.81.01L22 15V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Tapeten entfernen</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Pauschalpreis pro m² — inkl. Entsorgung.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 12/m²</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hochdruckreinigung -->
+                <a href="/hochdruckreinigung-zuerich" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/hochdruckreinigung-zuerich.webp" alt="Hochdruckreinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Droplets icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Hochdruckreinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Terrassen, Balkone, Fassaden, Einfahrten — Foto-Offerte in 24h.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 270</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Frühlingsputz -->
+                <a href="/fruehlingsputz-zuerich" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/fruehlingsreinigung.jpg" alt="Frühlingsputz Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Flower2 icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V13m-4.5-1a4.5 4.5 0 1 0 4.5 4.5M7.5 12H13m4.5 0a4.5 4.5 0 1 1-4.5 4.5M17.5 12H12m0 4.5V21"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Frühlingsputz Zürich</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Saisonale Komplettreinigung inkl. Fenster, Polster &amp; Boden.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 350</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Event-Reinigung -->
+                <a href="/event-reinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/event-reinigung.jpg" alt="Event-Reinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- PartyPopper icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11v0c-.1.6-.53 1.1-1.12 1.3L17 15.6"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.61 4.9 9.1 5.34 8.9 5.93L8.4 7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Event-Reinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Vor- und Nachreinigung für Anlässe, Hochzeiten &amp; Firmenevents.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 45/Std</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Boot-Reinigung -->
+                <a href="/boot-reinigung" class="group">
+                    <div class="rounded-lg border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40">
+                        <div class="aspect-[16/10] overflow-hidden rounded-t-lg">
+                            <img src="/img/services/boot-reinigung.jpg" alt="Boot-Reinigung Zürich" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        </div>
+                        <div class="p-6">
+                            <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                                <!-- Anchor icon -->
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Boot-Reinigung</h3>
+                            <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Innen- und Aussenreinigung für Yachten und Motorboote.</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-border">
+                                <span class="text-sm font-semibold text-primary">ab CHF 280</span>
+                                <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="py-12 md:py-16 bg-muted/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Häufige Fragen zur Spezialreinigung
+            </h2>
+
+            <div class="rounded-lg bg-card shadow-lg overflow-hidden">
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Was zählt zur Spezialreinigung?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Spezialreinigung umfasst alle nicht-routinemässigen Reinigungen: Fenster, Polster, Teppich, Matratzen, Hochdruck, Tapeten entfernen, Frühlingsputz, Event- und Boot-Reinigung. Im Gegensatz zur Endreinigung sind diese Services einzeln buchbar.
+                    </div>
+                </details>
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Erhalte ich auch bei Spezialreinigungen einen Fixpreis?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Ja. Für die meisten Spezialreinigungen gibt es transparente Fixpreise oder eine Foto-Offerte innert 24 Stunden — ohne Vor-Ort-Termin und ohne versteckte Kosten.
+                    </div>
+                </details>
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Sind Spezialreinigungen versichert?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Alle Spezialreinigungen sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Schäden an Möbeln, Böden oder Inventar sind vollständig versichert.
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Kann ich mehrere Spezialreinigungen kombinieren?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Ja, und es lohnt sich. Bei Kombinationen (z. B. Fenster + Polster + Teppich oder unser Frühlingsputz-Bundle) gewähren wir Mengenrabatt. Senden Sie uns einfach eine Anfrage mit allen gewünschten Services.
+                    </div>
+                </details>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="/calculator"
+                   class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors shadow-sm">
+                    Preis in 60 Sekunden berechnen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT CTA ═══ -->
+    <section class="py-12 md:py-16 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Bereit für Ihre Spezialreinigung?
+            </h2>
+            <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Kontaktieren Sie uns — Fixpreis oder Foto-Offerte innert 24 Stunden, kein Vor-Ort-Termin nötig.
+            </p>
+            <a href="/#contact"
+               class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold text-lg transition-colors shadow-button">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Jetzt Anfrage senden
+            </a>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+</main>

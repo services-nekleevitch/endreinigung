@@ -9,6 +9,91 @@
     ViewData["Keywords"] = T("Reinigungsservices Zürich, Baureinigung, Fensterreinigung, Teppichreinigung, Polsterreinigung, Zusatzleistungen Reinigung", "Cleaning Services Zurich, Construction Cleaning, Window Cleaning, Carpet Cleaning, Upholstery Cleaning, Additional Services");
 }
 
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Zusatzservices", "item": "https://zurich-endreinigung.ch/extra-services" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "AggregateOffer",
+        "name": "Zusatzservices Zürich – Komplettkatalog",
+        "priceCurrency": "CHF",
+        "lowPrice": "18",
+        "highPrice": "1190",
+        "offerCount": "11",
+        "offers": [
+            { "@@type": "Offer", "name": "Umzugsreinigung", "price": "550", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-zuerich" },
+            { "@@type": "Offer", "name": "Frühlingsreinigung", "price": "390", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
+            { "@@type": "Offer", "name": "Baureinigung", "price": "25", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/extra-services" },
+            { "@@type": "Offer", "name": "Fensterreinigung", "price": "249", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fensterreinigung" },
+            { "@@type": "Offer", "name": "Tapeten entfernen", "price": "140", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/tapeten-entfernen" },
+            { "@@type": "Offer", "name": "Airbnb Reinigung", "price": "89", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
+            { "@@type": "Offer", "name": "Event Reinigung", "price": "200", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/event-reinigung" },
+            { "@@type": "Offer", "name": "Boot Reinigung", "price": "250", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/boot-reinigung" },
+            { "@@type": "Offer", "name": "Polsterreinigung", "price": "120", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/polsterreinigung" },
+            { "@@type": "Offer", "name": "Teppichreinigung", "price": "18", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/teppichreinigung-zuerich" },
+            { "@@type": "Offer", "name": "Matratzenreinigung", "price": "150", "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/matratzenreinigung-zuerich" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Wie buche ich mehrere Services gleichzeitig?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Über den Online-Preisrechner wählen Sie alle gewünschten Services aus und erhalten in unter 60 Sekunden einen Gesamtpreis. Bei Kombi-Buchungen sparen Sie bis zu 20 %. Alternativ nutzen Sie unser Kontaktformular für eine individuelle Offerte innert 24 h."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind alle Preise inkl. Anfahrt und Material?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Alle Fixpreise auf dieser Seite enthalten Anfahrt im gesamten Kanton Zürich, alle Reinigungsmittel, Geräte und Verbrauchsmaterial. Es gibt keine versteckten Zuschläge — der Preis im Rechner ist der Preis auf der Rechnung."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Gibt es Paketrabatte bei Kombi-Buchungen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja: 10 % Rabatt bei einem Extra-Service zusätzlich zur Endreinigung, 15 % bei zwei und 20 % ab drei Extra-Services. Der Rabatt wird automatisch im Preisrechner angezeigt und gilt für alle hier gelisteten Services."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind die Services MWST-frei?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir sind Kleinunternehmer im Sinne des MWSTG und stellen Rechnung ohne MWST. Das spart Ihnen 8.1 % gegenüber MWST-pflichtigen Anbietern. Geschäftskunden können die Rechnung trotzdem voll als Aufwand verbuchen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Welche Versicherung deckt eventuelle Schäden?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Alle Reinigungsservices sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Schäden an Mobiliar, Böden, Sanitär, Elektrogeräten oder Inventar werden vollständig ersetzt — unabhängig vom gebuchten Service."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
 <div class="min-h-screen bg-gray-50">
 
     <!-- Header Section -->
@@ -23,6 +108,24 @@
             <div class="text-center">
                 <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4">Extra Services</h1>
                 <p class="text-lg text-muted-foreground max-w-2xl mx-auto">@T("Ergänzen Sie Ihre Endreinigung mit unseren professionellen Zusatzservices", "Complement your end-of-lease cleaning with our professional extra services")</p>
+            </div>
+
+            <!-- TL;DR -->
+            <div class="mt-6">
+                <div class="rounded-xl border border-primary/20 bg-white/60 backdrop-blur p-5 md:p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">Kurz erklärt</span>
+                    </div>
+                    <p class="text-sm md:text-[15px] text-foreground/80 leading-relaxed mb-4">Über 14 <strong>Reinigungsservices in Zürich</strong> zum Fixpreis — von Umzugs- und Frühlingsreinigung bis Hochdruck-, Polster-, Event- und Bootreinigung. Alle Preise inkl. Anfahrt und Material, mit 100 % Abnahmegarantie und 5 Mio. CHF Versicherung. Buchung in unter 60 Sekunden, Termin innert 24 h möglich.</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2 text-sm text-foreground/80">
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Fixpreise ab CHF 89</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>100 % Abnahmegarantie</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>5 Mio. CHF Versicherung</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Termin innert 24 Stunden</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Kombinierbar mit Endreinigung — bis 20 % Rabatt</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

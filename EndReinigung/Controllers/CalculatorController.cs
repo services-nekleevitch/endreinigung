@@ -1,10 +1,7 @@
 using System.Text;
-using EndReinigung.DataAccess;
-using EndReinigung.DataAccess.Entities;
 using EndReinigung.Models;
 using EndReinigung.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace EndReinigung.Controllers
@@ -14,18 +11,15 @@ namespace EndReinigung.Controllers
     {
         private readonly IEmailService _emailService;
         private readonly SmtpSettings _smtp;
-        private readonly AppDbContext _db;
         private readonly ILogger<CalculatorController> _logger;
 
         public CalculatorController(
             IEmailService emailService,
             IOptions<SmtpSettings> smtpOptions,
-            AppDbContext db,
             ILogger<CalculatorController> logger)
         {
             _emailService = emailService;
             _smtp = smtpOptions.Value;
-            _db = db;
             _logger = logger;
         }
 
@@ -48,29 +42,15 @@ namespace EndReinigung.Controllers
                 return BadRequest(new { ok = false, errors = new { RoomSize = new[] { "Ungültige Wohnungsgrösse." } } });
             }
 
-            var bookingNumber = await GenerateUniqueBookingNumberAsync();
-
-            // Persist FIRST, email SECOND — a booking in the DB is the source of truth;
-            // email is a best-effort notification that can be retried later.
-            var booking = MapToBooking(model, authoritativePrice, bookingNumber);
-            _db.Bookings.Add(booking);
-            try
-            {
-                await _db.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Booking DB save failed for {Email}", model.Email);
-                return StatusCode(500, new { ok = false, error = "Buchung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut." });
-            }
+            var bookingNumber = $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
 
             _logger.LogInformation(
-                "Booking {BookingNumber} saved: {FirstName} {LastName} <{Email}> {Property}/{Rooms} ZIP {Zip} -> CHF {Price}",
+                "Booking {BookingNumber}: {FirstName} {LastName} <{Email}> {Property}/{Rooms} ZIP {Zip} -> CHF {Price}",
                 bookingNumber, model.FirstName, model.LastName, model.Email, model.PropertyType, model.RoomSize,
                 model.ZipCode, authoritativePrice);
 
-            // Fire email notifications. Failures do NOT fail the booking — lead is already saved.
-            // 1) Internal notification to ops (info@)
+            // DB persistence is disabled for now; rely entirely on email until re-enabled.
+            // Ops notification to info@
             var opsRecipient = !string.IsNullOrWhiteSpace(_smtp.RecipientEmail) ? _smtp.RecipientEmail : _smtp.SenderEmail;
             if (!string.IsNullOrWhiteSpace(opsRecipient))
             {
@@ -79,23 +59,20 @@ namespace EndReinigung.Controllers
                 try
                 {
                     await _emailService.SendContactEmailAsync(opsRecipient, subject, body, model.Email);
-                    booking.EmailSent = true;
-                    booking.EmailSentAt = DateTime.UtcNow;
-                    booking.Status = BookingStatus.EmailSent;
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Ops notification email failed for {BookingNumber}", bookingNumber);
-                    booking.EmailError = ex.Message.Length > 1000 ? ex.Message[..1000] : ex.Message;
+                    return StatusCode(500, new { ok = false, error = "Buchung konnte nicht gesendet werden. Bitte versuchen Sie es erneut." });
                 }
             }
             else
             {
-                _logger.LogWarning("Booking {BookingNumber} saved but no ops recipient configured.", bookingNumber);
-                booking.EmailError = "No recipient configured.";
+                _logger.LogError("Calculator booking: no recipient email configured.");
+                return StatusCode(500, new { ok = false, error = "Email configuration missing." });
             }
 
-            // 2) Customer confirmation to the booker's email address
+            // Customer confirmation — best-effort
             if (!string.IsNullOrWhiteSpace(model.Email))
             {
                 var custSubject = $"Ihre Buchungsbestätigung {bookingNumber} — Zürich Endreinigung";
@@ -103,18 +80,13 @@ namespace EndReinigung.Controllers
                 try
                 {
                     await _emailService.SendContactEmailAsync(model.Email, custSubject, custBody);
-                    booking.CustomerEmailSent = true;
-                    booking.CustomerEmailSentAt = DateTime.UtcNow;
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Customer confirmation email failed for {BookingNumber}", bookingNumber);
-                    booking.CustomerEmailError = ex.Message.Length > 1000 ? ex.Message[..1000] : ex.Message;
+                    // Do not fail the booking — ops already got their copy.
                 }
             }
-
-            try { await _db.SaveChangesAsync(); }
-            catch (Exception ex) { _logger.LogError(ex, "Failed to update email status for {BookingNumber}", bookingNumber); }
 
             return Ok(new
             {
@@ -124,56 +96,6 @@ namespace EndReinigung.Controllers
                 cleaningDate = model.CleaningDate?.ToString("yyyy-MM-dd"),
             });
         }
-
-        private async Task<string> GenerateUniqueBookingNumberAsync()
-        {
-            // 1 in 16.7M collision chance per day; retry if we're unlucky.
-            for (var i = 0; i < 5; i++)
-            {
-                var candidate = $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
-                var exists = await _db.Bookings.AnyAsync(b => b.BookingNumber == candidate);
-                if (!exists) return candidate;
-            }
-            // Fall back to a longer suffix — collision effectively impossible.
-            return $"ZR-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..10].ToUpper()}";
-        }
-
-        private static Booking MapToBooking(BookingViewModel m, decimal serverPrice, string bookingNumber) => new Booking
-        {
-            BookingNumber = bookingNumber,
-            CreatedAt = DateTime.UtcNow,
-            PropertyType = m.PropertyType,
-            RoomSize = m.RoomSize,
-            ZipCode = m.ZipCode,
-            Balcony = m.Balcony,
-            UtilityBalcony = m.UtilityBalcony,
-            Bath = m.Bath,
-            Wc = m.Wc,
-            Carpet = m.Carpet,
-            BalconyPressure = m.BalconyPressure,
-            GaragePressure = m.GaragePressure,
-            Basement = m.Basement,
-            CleaningDate = m.CleaningDate,
-            HandoverDate = m.HandoverDate,
-            HandoverTime = m.HandoverTime,
-            HandoverDateNotFixed = m.HandoverDateNotFixed,
-            FirstName = m.FirstName,
-            LastName = m.LastName,
-            Email = m.Email,
-            Phone = m.Phone,
-            CustomerStreet = m.CustomerStreet,
-            CustomerPlz = m.CustomerPlz,
-            CustomerCity = m.CustomerCity,
-            SameAsCustomer = m.SameAsCustomer,
-            ObjectStreet = m.SameAsCustomer ? null : m.ObjectStreet,
-            ObjectPlz = m.SameAsCustomer ? null : m.ObjectPlz,
-            ObjectCity = m.SameAsCustomer ? null : m.ObjectCity,
-            Notes = m.Notes,
-            PaymentMethod = m.PaymentMethod,
-            ServerPrice = serverPrice,
-            ClientQuotedPrice = m.QuotedTotal,
-            Status = BookingStatus.New,
-        };
 
         private static string BuildOpsNotificationEmail(BookingViewModel m, decimal total, string bookingId)
         {

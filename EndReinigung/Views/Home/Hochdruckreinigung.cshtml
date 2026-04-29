@@ -1,0 +1,738 @@
+@{
+    ViewData["Title"] = "Hochdruckreinigung Zürich – Terrasse, Balkon, Einfahrt | Festpreis in 24 h";
+    ViewData["Description"] = "Professionelle Hochdruckreinigung für Terrasse, Balkon, Sitzplatz, Einfahrt und Hauseingang im Kanton Zürich. Festpreis ab CHF 320. Foto-Offerte innert 24 h.";
+    ViewData["Keywords"] = "Hochdruckreinigung Zürich, Terrassenreinigung, Balkonreinigung, Pflastersteinreinigung, Grünbelag entfernen, Einfahrt reinigen, Profi-Hochdruck";
+    ViewData["Canonical"] = "https://zurich-endreinigung.ch/hochdruckreinigung-zuerich";
+}
+
+@section Head {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "Service",
+    "name": "Hochdruckreinigung Zürich",
+    "description": "Professionelle Hochdruckreinigung für Terrasse, Balkon, Sitzplatz, Einfahrt und Hauseingang im Kanton Zürich. Festpreis ab CHF 320, Foto-Offerte innert 24 h.",
+    "provider": {
+        "@@type": "HouseCleaningService",
+        "@@id": "https://zurich-endreinigung.ch/#business",
+        "name": "Zürich Endreinigung",
+        "priceRange": "CHF 320–1180"
+    },
+    "areaServed": { "@@type": "AdministrativeArea", "name": "Kanton Zürich" },
+    "url": "https://zurich-endreinigung.ch/hochdruckreinigung-zuerich",
+    "offers": {
+        "@@type": "AggregateOffer",
+        "priceCurrency": "CHF",
+        "lowPrice": "320",
+        "highPrice": "1180"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+        { "@@type": "ListItem", "position": 2, "name": "Spezialreinigung", "item": "https://zurich-endreinigung.ch/extra-services" },
+        { "@@type": "ListItem", "position": 3, "name": "Hochdruckreinigung", "item": "https://zurich-endreinigung.ch/hochdruckreinigung-zuerich" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@@type": "Question",
+            "name": "Wie lange dauert die Reinigung einer 30 m²-Terrasse?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Ca. 2 Stunden inkl. Vor- und Nachbereitung." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Beschädigt der Hochdruck meine Holzterrasse?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Nein – wir arbeiten bei Holz mit reduziertem Druck und einem Flachstrahl-Aufsatz." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Was passiert mit dem Fugensand?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Wir prüfen nach der Reinigung und füllen bei Bedarf auf (Option im Paket Terrasse L und Sitzplatz M)." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Muss ich zu Hause sein?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Nein, wir brauchen nur einen Wasseranschluss und eine Steckdose 230 V." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Welche Zahlungsmittel akzeptieren Sie?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Rechnung 30 Tage, TWINT oder Bar am selben Tag." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Wie weit fahren Sie?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "20 km um Zürich HB gratis, danach Staffel (siehe Rechner)." }
+        }
+    ]
+}
+</script>
+}
+
+<div class="min-h-screen bg-background">
+
+<!-- ═══ HERO ═══ -->
+<section class="relative pt-20 md:pt-[6.25rem] min-h-[48vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="/img/services/hochdruckreinigung-zuerich.webp"
+             alt="Hochdruckreinigung einer Terrasse in Zürich – sichtbares Vorher-/Nachher-Ergebnis"
+             class="w-full h-full object-cover" width="1920" height="1080"
+             fetchpriority="high" />
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+        <div class="max-w-3xl">
+            <div class="flex flex-wrap gap-2 mb-3">
+                <span class="inline-block text-white font-semibold text-sm px-4 py-1.5 rounded-full bg-primary">
+                    &#128167; Privatkunden &middot; Kanton Zürich
+                </span>
+                <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                    &#128737;&#65039; Versichert
+                </span>
+                <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                    &#10003; Festpreis-Garantie
+                </span>
+            </div>
+            <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg">
+                Hochdruckreinigung mit sichtbarem Ergebnis
+            </h1>
+            <p class="text-base md:text-lg text-white font-medium mb-4 max-w-2xl drop-shadow-md">
+                Terrasse, Balkon, Sitzplatz, Einfahrt oder Hauseingang — wir reinigen mit professionellem Hochdruck und geben Ihnen den Festpreis innert 24 h per Foto-Offerte.
+            </p>
+            <div class="space-y-1.5 mb-5">
+                @foreach (var item in new[] { "&#9733;&#9733;&#9733;&#9733;&#9733; Google-Bewertungen", "Versichert mit voller Haftungsdeckung", "Festpreis-Garantie nach Foto-Offerte" })
+                {
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-white font-semibold text-base md:text-lg drop-shadow-md">@Html.Raw(item)</span>
+                    </div>
+                }
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="#offerte" class="inline-flex items-center px-8 py-3 text-lg font-semibold bg-booking-orange hover:bg-booking-orange-dark text-white rounded-lg shadow-button transition-all">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Foto-Offerte anfordern
+                </a>
+                <a href="#pakete" class="inline-flex items-center px-8 py-3 text-lg font-semibold border-2 border-white text-white bg-white/10 hover:bg-white hover:text-foreground rounded-lg transition-all">
+                    Pakete ansehen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TLDR + TRUST BAR ═══ -->
+<section class="py-5 md:py-8 bg-background border-y border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-xl bg-secondary/30 p-4 md:p-6 mb-6">
+            <h2 class="text-base font-bold text-foreground mb-2">Kurz erklärt</h2>
+            <p class="text-sm text-foreground leading-relaxed mb-3">
+                <strong>Hochdruckreinigung in Zürich</strong> für Terrasse, Balkon, Sitzplatz, Einfahrt und Hauseingang. Wir reinigen mit professionellem Hochdruck, prüfen den Fugensand und liefern sichtbare Vorher-/Nachher-Ergebnisse. Foto-Offerte innert 24 h, Festpreis-Garantie nach Bestätigung — keine Überraschungen am Ende.
+            </p>
+            <ul class="space-y-1">
+                @foreach (var b in new[] {
+                    "Festpreise ab CHF 270 (Balkon) bis CHF 970 (Frühlingsputz Bundle)",
+                    "Foto-Offerte innert 24 h, Festpreis-Garantie nach Bestätigung",
+                    "Versichert mit 5 Mio. CHF Haftpflichtdeckung"
+                })
+                {
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        @b
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            @{
+                var trustItems = new[] {
+                    new { Icon = "shield", Title = "Vollversichert", Sub = "Volldeckung" },
+                    new { Icon = "award", Title = "Lokale Profis", Sub = "Im Kanton Zürich" },
+                    new { Icon = "clock", Title = "Festpreis in 24 h", Sub = "Per Foto-Offerte" },
+                    new { Icon = "grad", Title = "Geschultes Personal", Sub = "Hochdruck-Profis" },
+                };
+            }
+            @foreach (var t in trustItems)
+            {
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        @if (t.Icon == "shield")
+                        {
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        }
+                        else if (t.Icon == "award")
+                        {
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        }
+                        else if (t.Icon == "clock")
+                        {
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        }
+                        else
+                        {
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        }
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">@t.Title</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">@t.Sub</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FÜR WELCHE OBJEKTE ═══ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Für welche Objekte?</h2>
+            <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Vom Balkon bis zur Pool-Umrandung — wir bringen jede Aussenfläche zurück in Form.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @{
+                var objektCards = new[] {
+                    new { Title = "Terrasse", Desc = "Stein- oder Holzterrasse, tiefe Reinigung bis in die Fuge" },
+                    new { Title = "Balkon", Desc = "Diskrete, nachbarschaftsfreundliche Reinigung mit Spritzschutz" },
+                    new { Title = "Sitzplatz / Pflaster", Desc = "Grünbelag und Moos raus, Steine frisch" },
+                    new { Title = "Garageneinfahrt", Desc = "Ölflecken, Reifenspuren, Rost — gründlich gelöst" },
+                    new { Title = "Hauseingang &amp; Treppe", Desc = "Erster Eindruck zählt, auch bei Mietobjekten" },
+                    new { Title = "Pool-Umrandung", Desc = "Algen und Kalk vor der Badesaison entfernen" },
+                    new { Title = "Gartenmauer", Desc = "Bis 3 m Höhe, Natur- oder Kunststein" },
+                    new { Title = "Frühlingsputz XL", Desc = "Ganzes Aussen-Set in einem Termin, mit Rabatt" },
+                };
+            }
+            @foreach (var card in objektCards)
+            {
+                <div class="rounded-lg border-0 shadow-md bg-card p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-primary/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h3 class="font-bold text-foreground mb-2">@Html.Raw(card.Title)</h3>
+                    <p class="text-muted-foreground text-sm">@card.Desc</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SO FUNKTIONIERTS ═══ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">So funktioniert's in 3 Schritten</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @{
+                var steps = new[] {
+                    new { Num = "1", Title = "Fotos senden via WhatsApp / Formular", Desc = "2–4 Bilder reichen für die Offerte." },
+                    new { Num = "2", Title = "Festpreis innert 24 h", Desc = "Schriftlich, verbindlich, ohne Vor-Ort-Termin." },
+                    new { Num = "3", Title = "Wir reinigen — Sie geniessen", Desc = "Ergebnis-Foto nach der Arbeit." },
+                };
+            }
+            @foreach (var step in steps)
+            {
+                <div class="text-center">
+                    <div class="bg-gradient-hero text-primary-foreground rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center font-extrabold text-3xl">@step.Num</div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">@step.Title</h3>
+                    <p class="text-muted-foreground">@step.Desc</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PAKETE ═══ -->
+<section id="pakete" class="py-16 px-4 sm:px-6 lg:px-8 scroll-mt-16 md:scroll-mt-[6.25rem]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Unsere Pauschal-Pakete</h2>
+            <p class="text-base text-muted-foreground max-w-3xl mx-auto">
+                Alle Preise inkl. Anreise im 20 km-Umkreis Zürich HB, Maschine, Personal, Pflanzenschutz und Endkontrolle. Gültig bei normaler Verschmutzung und Standardmaterial (Stein/Beton).
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
+            @{
+                var pakete = new[] {
+                    new { Category = "Balkon",     Name = "Balkon S",              Limit = "Bis 8 m²",   Price = "270",  Inkl = new[]{"Boden","Geländer","Spritzschutz Nachbarn"},               Addon = "+50 bei Imprägnierung" },
+                    new { Category = "Balkon",     Name = "Balkon M",              Limit = "Bis 15 m²",  Price = "350",  Inkl = new[]{"Boden","Geländer","Spritzschutz","Möbel zur Seite"},       Addon = "+90 bei Imprägnierung" },
+                    new { Category = "Terrasse",   Name = "Terrasse S",            Limit = "Bis 20 m²",  Price = "390",  Inkl = new[]{"Profi-Hochdruck","Pflanzen-Schutz","Endkontrolle"},        Addon = "+120 bei Naturstein" },
+                    new { Category = "Terrasse",   Name = "Terrasse M",            Limit = "Bis 40 m²",  Price = "560",  Inkl = new[]{"Profi-Hochdruck","Fugensand-Check","Endkontrolle"},        Addon = "+220 bei Imprägnierung" },
+                    new { Category = "Terrasse",   Name = "Terrasse L",            Limit = "Bis 70 m²",  Price = "790",  Inkl = new[]{"Profi-Hochdruck","Fugensand","Imprägnierung optional"},    Addon = "+380 bei Imprägnierung" },
+                    new { Category = "Pflaster",   Name = "Sitzplatz S",           Limit = "Bis 25 m²",  Price = "350",  Inkl = new[]{"Pflaster","Fugen","Grünbelag entfernen"},                  Addon = "+120 bei Fugensand-Neu" },
+                    new { Category = "Pflaster",   Name = "Sitzplatz M",           Limit = "Bis 50 m²",  Price = "560",  Inkl = new[]{"Pflaster","Fugen","Fugensand-Check"},                      Addon = "+180 bei Fugensand-Neu" },
+                    new { Category = "Einfahrt",   Name = "Einfahrt S",            Limit = "Bis 40 m²",  Price = "430",  Inkl = new[]{"Beton/Pflaster","Endkontrolle"},                           Addon = "+150 bei Ölflecken" },
+                    new { Category = "Einfahrt",   Name = "Einfahrt M",            Limit = "Bis 70 m²",  Price = "670",  Inkl = new[]{"Beton/Pflaster","Ölfleck-Check","Endkontrolle"},           Addon = "+180 bei Ölflecken" },
+                    new { Category = "Hauseingang",Name = "Hauseingang &amp; Treppe",Limit = "Pauschal", Price = "240",  Inkl = new[]{"Eingang + 1 Treppe bis 8 Stufen"},                         Addon = "+60 pro zusätzl. Treppe" },
+                    new { Category = "Pool",       Name = "Pool-Umrandung",        Limit = "Bis 30 m²",  Price = "720",  Inkl = new[]{"Alge/Kalk entfernen","Saisonal"},                          Addon = "+150 bei Naturstein" },
+                    new { Category = "Bundle",     Name = "Frühlingsputz XL",      Limit = "Bundle",     Price = "970",  Inkl = new[]{"Terrasse + Balkon + Hauseingang"},                         Addon = "−10 % Frühlingsrabatt inkl." },
+                };
+            }
+            @foreach (var p in pakete)
+            {
+                bool isBundle = p.Category == "Bundle";
+                <div class="relative rounded-lg border-2 @(isBundle ? "border-primary shadow-lg" : "border-gray-200") bg-white p-4 sm:p-6 flex flex-col hover:shadow-xl transition-shadow">
+                    @if (isBundle)
+                    {
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <span class="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">Am beliebtesten</span>
+                        </div>
+                    }
+                    <div class="absolute top-4 right-4">
+                        <span class="@(isBundle ? "bg-cleaning-green" : "bg-trust-gold") text-white text-xs font-bold px-3 py-1 rounded-full">Fixpreis</span>
+                    </div>
+                    <div class="text-center mb-4 mt-2">
+                        <h3 class="text-xl font-bold text-foreground mb-1 leading-tight">@Html.Raw(p.Name)</h3>
+                        <p class="text-xs text-muted-foreground mb-2">@p.Limit</p>
+                        <div class="text-3xl font-bold text-primary mb-1">@p.Price CHF</div>
+                        <p class="text-xs text-muted-foreground">alles inkl.</p>
+                    </div>
+                    <ul class="space-y-2 mb-4 flex-1">
+                        @foreach (var item in p.Inkl)
+                        {
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span class="text-xs text-foreground">@item</span>
+                            </li>
+                        }
+                        <li class="flex items-start pt-2 border-t border-gray-100">
+                            <svg class="w-4 h-4 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span class="text-xs font-semibold text-foreground">Add-on: @p.Addon</span>
+                        </li>
+                    </ul>
+                    <a href="#offerte" class="block w-full text-center py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-lg mt-auto">
+                        Dieses Paket buchen
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="mt-10 p-8 bg-gradient-hero text-primary-foreground rounded-2xl shadow-xl">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-1">Ihr Objekt passt in kein Paket?</h3>
+                    <p class="text-sm opacity-90">Wir rechnen individuell — in 30 Sekunden mit dem Preis-Rechner.</p>
+                </div>
+                <a href="#rechner" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg transition-all">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+                    Zum Preis-Rechner
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ RECHNER ═══ -->
+<section id="rechner" class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 scroll-mt-16 md:scroll-mt-[6.25rem]">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Transparenter Preis-Rechner</h2>
+            <p class="text-base text-muted-foreground max-w-2xl mx-auto">Schätzen Sie Ihren Richtpreis in 30 Sekunden. Mindestauftrag CHF 290.–.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6">
+            <!-- Inputs -->
+            <div class="rounded-2xl bg-card shadow-lg p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-semibold text-foreground mb-1.5 block" for="calc-objekt">Objekt-Typ</label>
+                        <select id="calc-objekt" onchange="calcUpdate()" class="w-full h-12 rounded-xl bg-muted/50 border-0 px-3 text-sm text-foreground">
+                            <option value="Terrasse">Terrasse</option>
+                            <option value="Sitzplatz/Pflaster">Sitzplatz/Pflaster</option>
+                            <option value="Balkon">Balkon</option>
+                            <option value="Einfahrt">Einfahrt</option>
+                            <option value="Hauseingang">Hauseingang</option>
+                            <option value="Pool">Pool</option>
+                            <option value="Gartenmauer">Gartenmauer</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-foreground mb-1.5 block" for="calc-flaeche">Fläche (m²)</label>
+                        <input id="calc-flaeche" type="number" min="0" value="30" onchange="calcUpdate()" oninput="calcUpdate()"
+                               class="w-full h-12 rounded-xl bg-muted/50 border-0 px-3 text-sm text-foreground" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-foreground mb-1.5 block" for="calc-verschmutzung">Verschmutzung</label>
+                        <select id="calc-verschmutzung" onchange="calcUpdate()" class="w-full h-12 rounded-xl bg-muted/50 border-0 px-3 text-sm text-foreground">
+                            <option value="0">Leicht</option>
+                            <option value="0.15" selected>Normal +15 %</option>
+                            <option value="0.35">Stark +35 %</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm font-semibold text-foreground mb-1.5 block" for="calc-material">Material</label>
+                        <select id="calc-material" onchange="calcUpdate()" class="w-full h-12 rounded-xl bg-muted/50 border-0 px-3 text-sm text-foreground">
+                            <option value="0">Standard</option>
+                            <option value="0.20">Holz / WPC +20 %</option>
+                            <option value="0.20b">Naturstein +20 %</option>
+                            <option value="0.30">Travertin +30 %</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="text-sm font-semibold text-foreground mb-1.5 block" for="calc-anfahrt">Anfahrt</label>
+                        <select id="calc-anfahrt" onchange="calcUpdate()" class="w-full h-12 rounded-xl bg-muted/50 border-0 px-3 text-sm text-foreground">
+                            <option value="0">0–10 km (CHF 0)</option>
+                            <option value="30">10–20 km (CHF 30)</option>
+                            <option value="60">20–30 km (CHF 60)</option>
+                            <option value="anfragen">30+ km — bitte anfragen</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <p class="text-sm font-semibold text-foreground mb-2">Zusatzleistungen</p>
+                    <div class="space-y-2.5">
+                        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                            <input id="calc-impraegnierung" type="checkbox" onchange="calcUpdate()" class="w-4 h-4 rounded" />
+                            <span class="text-sm text-foreground">Imprägnierung (CHF 7/m²)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                            <input id="calc-fugensand" type="checkbox" onchange="calcUpdate()" class="w-4 h-4 rounded" />
+                            <span class="text-sm text-foreground">Fugensand-Neu (CHF 5/m²)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                            <input id="calc-oelfleck" type="checkbox" onchange="calcUpdate()" class="w-4 h-4 rounded" />
+                            <span class="text-sm text-foreground">Ölfleck-Pauschal (CHF 100.–)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-5 pt-5 border-t border-border">
+                    <p class="text-sm font-semibold text-foreground mb-2">Rabatte</p>
+                    <div class="space-y-2.5">
+                        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                            <input id="calc-fruehling" type="checkbox" onchange="calcUpdate()" class="w-4 h-4 rounded" />
+                            <span class="text-sm text-foreground">Frühlingsrabatt −10 % (nur März/April)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+                            <input id="calc-buendel" type="checkbox" onchange="calcUpdate()" class="w-4 h-4 rounded" />
+                            <span class="text-sm text-foreground">Bündel-Rabatt −5 % (ab 2 Objekten)</span>
+                        </label>
+                    </div>
+                </div>
+                <details class="mt-5">
+                    <summary class="text-sm text-primary font-semibold cursor-pointer hover:underline">Wie rechnen wir?</summary>
+                    <div class="mt-3 p-4 bg-muted/50 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <p class="font-mono mb-2">ENDPREIS = MAX(290, (G + V + M) + Z + A + R)</p>
+                        <ul class="space-y-1">
+                            <li><strong>G</strong> = m² × Objekt-Satz (Terrasse 12, Sitzplatz/Pflaster 10, Balkon 18, Einfahrt 9, Hauseingang 15, Pool 15, Gartenmauer 13)</li>
+                            <li><strong>V</strong> = G × Verschmutzungs-%, <strong>M</strong> = G × Material-%</li>
+                            <li><strong>Z</strong> = Imprägnierung 7/m² + Fugensand 5/m² + Ölfleck 100.–</li>
+                            <li><strong>A</strong> = Anfahrt-Staffel, <strong>R</strong> = −10 % Frühling, −5 % Bündel (auf G)</li>
+                            <li>Mindestauftrag: CHF 290.–</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <!-- Result -->
+            <div class="rounded-2xl bg-card shadow-lg p-6 flex flex-col justify-center">
+                <p class="text-sm font-semibold text-muted-foreground mb-2">Ihr Richtpreis</p>
+                <p id="calc-result" class="text-4xl md:text-5xl font-extrabold text-primary mb-3">CHF 459.–</p>
+                <p class="text-sm text-muted-foreground mb-6">Richtpreis – definitive Offerte nach 2–4 Fotos oder Vor-Ort-Termin.</p>
+                <a href="#offerte" id="calc-cta" class="w-full text-center py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-xl text-base transition-all">
+                    Jetzt als Offerte anfragen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VERGLEICH ═══ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Wir vs. Heimwerker-Miete</h2>
+            <p class="text-base text-muted-foreground max-w-2xl mx-auto">Warum sich der Profi-Einsatz fast immer rechnet — auch finanziell.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="rounded-lg bg-card shadow-lg p-8 border-l-4 border-l-cleaning-green">
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-7 h-7 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <h3 class="text-xl font-bold text-foreground">Profi-Service (wir)</h3>
+                </div>
+                <ul class="space-y-3">
+                    @foreach (var item in new[] {
+                        "Profi-Hochdruckgeräte mit passendem Druck pro Material",
+                        "Grünbelag in 1 Durchgang weg",
+                        "Fugen geschont und nachgefüllt",
+                        "Zeit für 40 m² Terrasse: ca. 2 h",
+                        "Versichert — wir haften",
+                        "Kosten inkl. Anfahrt & Material: ab CHF 390.–"
+                    })
+                    {
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span class="text-foreground text-sm">@item</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="rounded-lg bg-card shadow-lg p-8 border-l-4 border-l-destructive">
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-7 h-7 text-destructive" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <h3 class="text-xl font-bold text-foreground">Miet-Hochdruck aus dem Baumarkt</h3>
+                </div>
+                <ul class="space-y-3">
+                    @foreach (var item in new[] {
+                        "Druck: 100–150 bar Kaltwasser",
+                        "Grünbelag: mehrere Durchgänge, oft unvollständig",
+                        "Fugen werden häufig ausgespült",
+                        "Zeit für 40 m² Terrasse: 4–6 h",
+                        "Sie haften für Schäden",
+                        "Kosten: CHF 120.– Miete + Zeit + Risiko"
+                    })
+                    {
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <span class="text-foreground text-sm">@item</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ REFERENZEN ═══ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Referenzen — Vorher / Nachher</h2>
+            <p class="text-base text-muted-foreground max-w-2xl mx-auto">Echte Resultate aus dem Kanton Zürich.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @{
+                var refs = new[] {
+                    new { Title = "Terrasse Küsnacht",        Size = "35 m²", Before = "hochdruck-terrasse-vorher.jpg",  After = "hochdruck-terrasse-nachher.jpg" },
+                    new { Title = "Balkon Zürich-Seefeld",    Size = "12 m²", Before = "hochdruck-balkon-vorher.jpg",    After = "hochdruck-balkon-nachher.jpg" },
+                    new { Title = "Pflastersteine Uster",     Size = "60 m²", Before = "hochdruck-pflaster-vorher.jpg",  After = "hochdruck-pflaster-nachher.jpg" },
+                    new { Title = "Einfahrt Wallisellen",     Size = "55 m²", Before = "hochdruck-einfahrt-vorher.jpg",  After = "hochdruck-einfahrt-nachher.jpg" },
+                };
+            }
+            @foreach (var r in refs)
+            {
+                <div class="rounded-lg bg-card shadow-md p-4 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div class="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+                            <img src="/img/services/@r.Before" alt="@r.Title vor der Hochdruckreinigung"
+                                 class="w-full h-full object-cover" width="1024" height="768" loading="lazy" />
+                            <span class="absolute top-2 left-2 bg-red-600/90 text-white text-xs font-semibold px-2 py-0.5 rounded">Vorher</span>
+                        </div>
+                        <div class="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+                            <img src="/img/services/@r.After" alt="@r.Title nach der Hochdruckreinigung"
+                                 class="w-full h-full object-cover" width="1024" height="768" loading="lazy" />
+                            <span class="absolute top-2 left-2 bg-cleaning-green/90 text-white text-xs font-semibold px-2 py-0.5 rounded">Nachher</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-foreground">@r.Title</h3>
+                    <p class="text-sm text-muted-foreground">@r.Size</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ═══ OFFERTE FORM ═══ -->
+<section id="offerte" class="py-16 px-4 sm:px-6 lg:px-8 bg-background scroll-mt-16 md:scroll-mt-[6.25rem]">
+    <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8">
+            <!-- Left: Info -->
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">Offerte innert 24 h — ohne Termin vor Ort.</h2>
+                <p class="text-muted-foreground mb-6 leading-relaxed">
+                    Senden Sie uns 2–4 Fotos Ihres Objekts via WhatsApp (+41 76 501 77 38) oder per E-Mail an
+                    <a href="mailto:info@zurich-endreinigung.ch" class="text-primary hover:underline">info@zurich-endreinigung.ch</a>
+                    — den Rest übernehmen wir. Sie erhalten innert 24 h einen verbindlichen Festpreis.
+                </p>
+                <div class="space-y-4 mb-6">
+                    @foreach (var pt in new[] {
+                        "2–4 Fotos genügen für die Offerte",
+                        "Schriftlicher Festpreis innert 24 h",
+                        "Vollversichert mit Haftungsdeckung",
+                        "Profi-Hochdruck für jedes Material"
+                    })
+                    {
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span class="text-foreground">@pt</span>
+                        </div>
+                    }
+                </div>
+                <div class="p-6 bg-gradient-hero text-primary-foreground rounded-2xl shadow-xl text-center">
+                    <svg class="w-10 h-10 mx-auto mb-3 opacity-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <h3 class="text-xl font-bold mb-2">Festpreis-Garantie</h3>
+                    <p class="text-sm opacity-90">Was wir Ihnen offerieren, das gilt — keine Überraschungen, keine versteckten Kosten.</p>
+                </div>
+            </div>
+            <!-- Right: Form -->
+            <!-- TODO: wire up to controller POST action for server-side send; currently uses mailto fallback -->
+            <div class="rounded-2xl bg-card shadow-lg p-6">
+                <h3 class="text-lg font-bold text-foreground mb-4">Unverbindliche Offerte anfordern</h3>
+                <form id="hochdruck-form" onsubmit="hochdruckSubmit(event)" class="space-y-3">
+                    <input name="name" placeholder="Name *" required maxlength="100"
+                           class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground placeholder:text-muted-foreground" />
+                    <input type="email" name="email" placeholder="E-Mail *" required maxlength="255"
+                           class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground placeholder:text-muted-foreground" />
+                    <input type="tel" name="phone" placeholder="Telefonnummer" maxlength="30"
+                           class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground placeholder:text-muted-foreground" />
+                    <select name="objektTyp" required
+                            class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground">
+                        <option value="">Objekt-Typ *</option>
+                        <option>Terrasse</option>
+                        <option>Balkon</option>
+                        <option>Sitzplatz/Pflaster</option>
+                        <option>Einfahrt</option>
+                        <option>Hauseingang</option>
+                        <option>Pool</option>
+                        <option>Andere</option>
+                    </select>
+                    <input type="number" name="flaeche" placeholder="Fläche (m²) *" required
+                           class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground placeholder:text-muted-foreground" />
+                    <select name="paket" id="form-paket" required
+                            class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground">
+                        <option value="">Gewünschtes Paket *</option>
+                        <option>Balkon S — CHF 270.–</option>
+                        <option>Balkon M — CHF 350.–</option>
+                        <option>Terrasse S — CHF 390.–</option>
+                        <option>Terrasse M — CHF 560.–</option>
+                        <option>Terrasse L — CHF 790.–</option>
+                        <option>Sitzplatz S — CHF 350.–</option>
+                        <option>Sitzplatz M — CHF 560.–</option>
+                        <option>Einfahrt S — CHF 430.–</option>
+                        <option>Einfahrt M — CHF 670.–</option>
+                        <option>Hauseingang &amp; Treppe — CHF 240.–</option>
+                        <option>Pool-Umrandung — CHF 720.–</option>
+                        <option>Frühlingsputz XL — CHF 970.–</option>
+                        <option>Individuelle Offerte (Rechner-Ergebnis)</option>
+                    </select>
+                    <input type="number" name="plz" placeholder="PLZ (Kanton Zürich) *" required maxlength="4" pattern="[0-9]{4}"
+                           class="w-full h-12 rounded-xl bg-muted/50 border-0 px-4 text-sm text-foreground placeholder:text-muted-foreground" />
+                    <textarea name="message" placeholder="Nachricht / Foto-Link (optional)" maxlength="600" rows="3"
+                              class="w-full rounded-xl bg-muted/50 border-0 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground resize-none"></textarea>
+                    <button type="submit"
+                            class="w-full h-12 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-xl text-base transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        Foto-Offerte anfordern
+                    </button>
+                </form>
+                <p class="text-center text-xs text-muted-foreground mt-3">Unverbindlich · Antwort innert 24 h</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Häufige Fragen zur Hochdruckreinigung</h2>
+        </div>
+        <div class="rounded-lg bg-card shadow-lg overflow-hidden">
+            @{
+                var faqs = new[] {
+                    new { Q = "Wie lange dauert die Reinigung einer 30 m²-Terrasse?",
+                          A = "Ca. 2 Stunden inkl. Vor- und Nachbereitung." },
+                    new { Q = "Beschädigt der Hochdruck meine Holzterrasse?",
+                          A = "Nein – wir arbeiten bei Holz mit reduziertem Druck und einem Flachstrahl-Aufsatz." },
+                    new { Q = "Was passiert mit dem Fugensand?",
+                          A = "Wir prüfen nach der Reinigung und füllen bei Bedarf auf (Option im Paket Terrasse L und Sitzplatz M)." },
+                    new { Q = "Muss ich zu Hause sein?",
+                          A = "Nein, wir brauchen nur einen Wasseranschluss und eine Steckdose 230 V." },
+                    new { Q = "Welche Zahlungsmittel akzeptieren Sie?",
+                          A = "Rechnung 30 Tage, TWINT oder Bar am selben Tag." },
+                    new { Q = "Wie weit fahren Sie?",
+                          A = "20 km um Zürich HB gratis, danach Staffel (siehe Rechner)." },
+                };
+            }
+            @for (int fi = 0; fi < faqs.Length; fi++)
+            {
+                bool last = fi == faqs.Length - 1;
+                <details class="@(last ? "" : "border-b border-border") group">
+                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
+                        @faqs[fi].Q
+                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">@faqs[fi].A</div>
+                </details>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Related Services -->
+<section class="py-10 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-lg font-semibold text-foreground mb-4">Weitere Services</h3>
+        <div class="flex flex-wrap gap-3">
+            <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Endreinigung</a>
+            <a href="/praxisreinigung-zuerich" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Praxisreinigung</a>
+            <a href="/bueroreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Büroreinigung</a>
+            <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Alle Extra Services</a>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("_Contact")
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+<script>
+(function () {
+    var rates = { Terrasse: 12, "Sitzplatz/Pflaster": 10, Balkon: 18, Einfahrt: 9, Hauseingang: 15, Pool: 15, Gartenmauer: 13 };
+
+    function calcUpdate() {
+        var m2 = Math.max(0, parseFloat(document.getElementById('calc-flaeche').value) || 0);
+        var objekt = document.getElementById('calc-objekt').value;
+        var rate = rates[objekt] || 14;
+        var G = m2 * rate;
+        var V = G * (parseFloat(document.getElementById('calc-verschmutzung').value) || 0);
+        var matVal = document.getElementById('calc-material').value;
+        var matPct = matVal === '0.20b' ? 0.20 : parseFloat(matVal) || 0;
+        var M = G * matPct;
+        var m2f = m2;
+        var Z = 0;
+        if (document.getElementById('calc-impraegnierung').checked) Z += m2f * 7;
+        if (document.getElementById('calc-fugensand').checked) Z += m2f * 5;
+        if (document.getElementById('calc-oelfleck').checked) Z += 100;
+        var anfahrtVal = document.getElementById('calc-anfahrt').value;
+        var anfrage = anfahrtVal === 'anfragen';
+        var A = anfrage ? 0 : (parseFloat(anfahrtVal) || 0);
+        var RFruehling = document.getElementById('calc-fruehling').checked ? -G * 0.1 : 0;
+        var RBuendel = document.getElementById('calc-buendel').checked ? -G * 0.05 : 0;
+        var sum = G + V + M + Z + A + RFruehling + RBuendel;
+        var final = Math.max(290, sum);
+        var el = document.getElementById('calc-result');
+        if (anfrage) {
+            el.textContent = 'Bitte anfragen';
+        } else {
+            el.textContent = 'CHF ' + Math.round(final).toLocaleString('de-CH').replace(/ /g, "'") + '.–';
+        }
+    }
+    window.calcUpdate = calcUpdate;
+    calcUpdate();
+
+    window.hochdruckSubmit = function (e) {
+        e.preventDefault();
+        var f = e.target;
+        var subject = encodeURIComponent('[Hochdruckreinigung] Offerte von ' + f.name.value);
+        var body = encodeURIComponent(
+            'Name: ' + f.name.value + '\n' +
+            'E-Mail: ' + f.email.value + '\n' +
+            'Telefon: ' + (f.phone.value || '—') + '\n' +
+            'Objekt-Typ: ' + f.objektTyp.value + '\n' +
+            'Fläche: ' + f.flaeche.value + ' m²\n' +
+            'Paket: ' + f.paket.value + '\n' +
+            'PLZ: ' + f.plz.value + '\n' +
+            'Nachricht: ' + (f.message.value || '—')
+        );
+        window.location.href = 'mailto:info@zurich-endreinigung.ch?subject=' + subject + '&body=' + body;
+    };
+})();
+</script>
+
+</div>

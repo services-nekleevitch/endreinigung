@@ -1,0 +1,416 @@
+@{
+    ViewData["Title"] = "Gewerbereinigung Zürich – Büro, Praxis, Bau & Airbnb | Schweizer Anbieter";
+    ViewData["Description"] = "Professionelle Gewerbereinigung im Kanton Zürich: Büroreinigung ab CHF 50/Std, Praxisreinigung, Baureinigung ab CHF 435, Airbnb-Turnover. Rechnung ohne MWST.";
+    ViewData["Keywords"] = "Gewerbereinigung Zürich, Büroreinigung, Praxisreinigung, Baureinigung, Airbnb Cleaning";
+    ViewData["Canonical"] = "https://zurich-endreinigung.ch/gewerbereinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@@type": "ListItem",
+                "position": 1,
+                "name": "Start",
+                "item": "https://zurich-endreinigung.ch/"
+            },
+            {
+                "@@type": "ListItem",
+                "position": 2,
+                "name": "Gewerbereinigung",
+                "item": "https://zurich-endreinigung.ch/gewerbereinigung"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "name": "Gewerbereinigung Zürich – Preise pro Service",
+        "description": "Gewerbliche Reinigungsservices für Büros, Arztpraxen, Baustellen und Kurzzeitvermietungen — mit flexiblen Verträgen und Rechnung ohne MWST.",
+        "provider": {
+            "@@type": "ProfessionalService",
+            "@@id": "https://zurich-endreinigung.ch/#business",
+            "name": "Zürich Endreinigung"
+        },
+        "areaServed": {
+            "@@type": "AdministrativeArea",
+            "name": "Kanton Zürich"
+        },
+        "hasOfferCatalog": {
+            "@@type": "OfferCatalog",
+            "name": "Gewerbereinigung Services",
+            "itemListElement": [
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "Büroreinigung (pro Stunde)",
+                        "url": "https://zurich-endreinigung.ch/bueroreinigung"
+                    },
+                    "price": "50",
+                    "priceCurrency": "CHF"
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "Airbnb-Turnover ab",
+                        "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich"
+                    },
+                    "price": "89",
+                    "priceCurrency": "CHF"
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "Baureinigung ab",
+                        "url": "https://zurich-endreinigung.ch/baureinigung"
+                    },
+                    "price": "435",
+                    "priceCurrency": "CHF"
+                }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Stellen Sie eine Rechnung mit MWST aus?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir sind Kleinunternehmer im Sinne des MWSTG und stellen ohne MWST Rechnung. Das spart Ihnen 8.1% gegenüber MWST-pflichtigen Anbietern. Die Rechnung ist trotzdem als Geschäftsaufwand voll abziehbar."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie lange läuft ein Wartungsvertrag?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir arbeiten mit kurzen Kündigungsfristen (1 Monat). Es gibt keine Langzeitbindung — Sie können den Service jederzeit pausieren oder anpassen, wenn sich Ihre Anforderungen ändern."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie regeln Sie die Schlüsselübergabe?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir verwenden ein dokumentiertes Schlüsselprotokoll. Schlüssel werden persönlich übergeben, in einem Safe verwahrt und nur dem zuständigen Reinigungsteam ausgehändigt. Auf Wunsch arbeiten wir auch mit Schlüsseltresoren oder Zutrittscodes."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind gewerbliche Reinigungen versichert?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Alle Gewerbereinigungen sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Das umfasst Schäden an Mobiliar, IT-Geräten, Sanitäranlagen und allen Einrichtungsgegenständen."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="bg-gradient-to-b from-primary/5 to-background pt-20 md:pt-28 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground mb-4">
+                <a href="/" class="hover:text-primary">Start</a>
+                <span class="mx-2">/</span>
+                <span class="text-foreground">Gewerbereinigung</span>
+            </nav>
+
+            <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Gewerbereinigung in Zürich — Büro, Praxis, Bau &amp; Airbnb
+            </h1>
+            <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mb-8">
+                Vom einzelnen Büro bis zur Baustelle: vier spezialisierte B2B-Reinigungsservices mit
+                Schweizer Qualität, transparenter Rechnung und 5 Mio. CHF Versicherung.
+            </p>
+
+            <!-- TLDR box -->
+            <div class="rounded-xl border border-border bg-card shadow-sm p-5 md:p-6 max-w-3xl">
+                <p class="text-sm md:text-base text-foreground/90 mb-4">
+                    <strong>Gewerbereinigung in Zürich</strong> für Büros, Praxen, Baustellen und Airbnb-Wohnungen.
+                    Wir stellen Rechnung ohne MWST (Sie sparen 8.1%), arbeiten mit flexiblen Verträgen und übernehmen Schlüsselverwaltung.
+                    Erste Offerte innert 24h.
+                </p>
+                <ul class="space-y-1.5">
+                    <li class="flex items-center gap-2 text-sm text-foreground/80">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Rechnung auf Firmenname — ohne MWST (Kleinunternehmer)
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-foreground/80">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Kurze Kündigungsfristen, keine Langzeitbindung
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-foreground/80">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Dokumentiertes Schlüsselprotokoll &amp; Zutrittsmanagement
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-foreground/80">
+                        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        5 Mio. CHF Betriebshaftpflichtversicherung
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICE GRID ═══ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Welche gewerbliche Reinigung passt zu Ihnen?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Büroreinigung -->
+                <a href="/bueroreinigung" class="group rounded-lg border border-border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40 overflow-hidden flex flex-col">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="/img/services/bueroreinigung-zuerich.webp"
+                             alt="Büroreinigung Zürich"
+                             class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                             width="600" height="338" loading="lazy" />
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-1">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <!-- Building2 -->
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">Büroreinigung</h3>
+                                <span class="text-sm font-semibold text-primary">ab CHF 50/Std</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+                            Unterhaltsreinigung für Büros aller Grössen — wöchentlich, täglich oder nach Mass.
+                        </p>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Flexible Intervalle
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Schlüsselverwaltung
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Reinigungsplan inkl.
+                            </li>
+                        </ul>
+                        <div class="flex items-center text-sm font-medium text-primary pt-3 border-t border-border mt-auto">
+                            Mehr erfahren
+                            <!-- ArrowRight -->
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Praxisreinigung -->
+                <a href="/praxisreinigung-zuerich" class="group rounded-lg border border-border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40 overflow-hidden flex flex-col">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="/img/services/praxisreinigung-zuerich.webp"
+                             alt="Praxisreinigung Zürich"
+                             class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                             width="600" height="338" loading="lazy" />
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-1">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <!-- Stethoscope -->
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">Praxisreinigung</h3>
+                                <span class="text-sm font-semibold text-primary">Auf Anfrage</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+                            Hygienische Reinigung für Arzt-, Zahnarzt- und Therapiepraxen nach SUVA-Standards.
+                        </p>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Desinfektion
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Diskretion
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Ausserhalb Sprechzeiten
+                            </li>
+                        </ul>
+                        <div class="flex items-center text-sm font-medium text-primary pt-3 border-t border-border mt-auto">
+                            Mehr erfahren
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Baureinigung -->
+                <a href="/baureinigung" class="group rounded-lg border border-border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40 overflow-hidden flex flex-col">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="/img/services/baureinigung.webp"
+                             alt="Baureinigung Zürich"
+                             class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                             width="600" height="338" loading="lazy" />
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-1">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <!-- HardHat -->
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15V9a8 8 0 0 1 16 0v6"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">Baureinigung</h3>
+                                <span class="text-sm font-semibold text-primary">ab CHF 435</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+                            Bau-End- und Bauschlussreinigung für Neubauten, Sanierungen &amp; Umbauten.
+                        </p>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Grobreinigung
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Bauendreinigung
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Bauschlussreinigung
+                            </li>
+                        </ul>
+                        <div class="flex items-center text-sm font-medium text-primary pt-3 border-t border-border mt-auto">
+                            Mehr erfahren
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Airbnb-Reinigung -->
+                <a href="/airbnb-reinigung-zuerich" class="group rounded-lg border border-border bg-card shadow-sm h-full transition-all hover:shadow-lg hover:border-primary/40 overflow-hidden flex flex-col">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="/img/services/airbnb-reinigung.avif"
+                             alt="Airbnb Reinigung Zürich"
+                             class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                             width="600" height="338" loading="lazy" />
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-1">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <!-- Home -->
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">Airbnb-Reinigung</h3>
+                                <span class="text-sm font-semibold text-primary">ab CHF 89</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+                            Turnover-Cleaning für Kurzzeitvermietung — Wäschewechsel &amp; Restock inklusive.
+                        </p>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Same-Day Service
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Wäschewechsel
+                            </li>
+                            <li class="flex gap-2 text-sm text-foreground/80">
+                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"></span>
+                                Foto-Reporting
+                            </li>
+                        </ul>
+                        <div class="flex items-center text-sm font-medium text-primary pt-3 border-t border-border mt-auto">
+                            Mehr erfahren
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="py-12 md:py-16 bg-muted/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Häufige Fragen zur Gewerbereinigung
+            </h2>
+
+            <div class="rounded-lg bg-card shadow-lg overflow-hidden">
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Stellen Sie eine Rechnung mit MWST aus?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Wir sind Kleinunternehmer im Sinne des MWSTG und stellen ohne MWST Rechnung. Das spart Ihnen 8.1% gegenüber MWST-pflichtigen Anbietern. Die Rechnung ist trotzdem als Geschäftsaufwand voll abziehbar.
+                    </div>
+                </details>
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie lange läuft ein Wartungsvertrag?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Wir arbeiten mit kurzen Kündigungsfristen (1 Monat). Es gibt keine Langzeitbindung — Sie können den Service jederzeit pausieren oder anpassen, wenn sich Ihre Anforderungen ändern.
+                    </div>
+                </details>
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie regeln Sie die Schlüsselübergabe?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Wir verwenden ein dokumentiertes Schlüsselprotokoll. Schlüssel werden persönlich übergeben, in einem Safe verwahrt und nur dem zuständigen Reinigungsteam ausgehändigt. Auf Wunsch arbeiten wir auch mit Schlüsseltresoren oder Zutrittscodes.
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Sind gewerbliche Reinigungen versichert?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground leading-relaxed">
+                        Ja. Alle Gewerbereinigungen sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Das umfasst Schäden an Mobiliar, IT-Geräten, Sanitäranlagen und allen Einrichtungsgegenständen.
+                    </div>
+                </details>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="mt-10 text-center">
+                <a href="/#contact"
+                   class="inline-flex items-center justify-center px-8 py-3 text-lg bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button transition-colors">
+                    Offerte für Ihr Unternehmen anfragen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_Contact")
+    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+</div>

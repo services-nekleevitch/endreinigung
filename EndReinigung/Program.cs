@@ -1,8 +1,6 @@
-using EndReinigung.DataAccess;
 using EndReinigung.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Rewrite;
-using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace EndReinigung
@@ -22,22 +20,21 @@ namespace EndReinigung
             builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
             builder.Services.AddScoped<IEmailService, EmailService>();
 
-            // Database (SQLite). Swap UseSqlite -> UseMySql / UseNpgsql if you change providers.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-                ?? "Data Source=App_Data/endreinigung.db";
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+            // DB wiring is disabled for now.
+            // End goal: share the same MySQL database with the legacy EndreinigungZurich project.
+            // To re-enable, do NOT un-comment the previous EndReinigung/DataAccess/ context — instead:
+            //   1. Move EndReinigung/DataAccess/Entities/Booking.cs into the existing DbAccess project
+            //      (..\DbAccess\Entities\Booking.cs) and add DbSet<Booking> to DbAccess/AppDbContext.cs.
+            //   2. Add a ProjectReference to ..\DbAccess\DbAccess.csproj in EndReinigung.csproj.
+            //   3. Swap Microsoft.EntityFrameworkCore.Sqlite for Pomelo.EntityFrameworkCore.MySql.
+            //   4. Register the shared AppDbContext here using UseMySql + the same connection string
+            //      format as EndreinigungZurich/appsettings.json.
+            //   5. Add EF migrations (dotnet ef migrations add AddBookings -p ..\DbAccess) so schema
+            //      changes are tracked across both projects.
+            //   6. Restore the AppDbContext dependency in CalculatorController and the save logic.
+            //   7. Delete EndReinigung/DataAccess/ once everything has moved.
 
             var app = builder.Build();
-
-            // Ensure App_Data directory exists and DB schema is created.
-            // TODO: replace EnsureCreated with Database.Migrate() once `dotnet ef migrations add Initial` is run.
-            using (var scope = app.Services.CreateScope())
-            {
-                var dbDir = Path.Combine(app.Environment.ContentRootPath, "App_Data");
-                Directory.CreateDirectory(dbDir);
-                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                db.Database.EnsureCreated();
-            }
 
             // Configure supported cultures
             var supportedCultures = new[] { new CultureInfo("de"), new CultureInfo("en") };

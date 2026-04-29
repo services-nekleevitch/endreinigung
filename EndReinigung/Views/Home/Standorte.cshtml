@@ -1,0 +1,244 @@
+@{
+    ViewData["Title"]       = "Endreinigung im Kanton Zürich – Stadt & 11 Bezirke | Lokal vor Ort";
+    ViewData["Description"] = "Professionelle Endreinigung in der ganzen Region: Stadt Zürich und alle 11 Bezirke des Kantons. Anfahrt im Fixpreis enthalten, oft in 30 Minuten vor Ort.";
+    ViewData["Keywords"]    = "Endreinigung Zürich, Reinigung Bezirk, Umzugsreinigung Kanton Zürich, lokal";
+    ViewData["Canonical"]   = "https://zurich-endreinigung.ch/standorte";
+
+    var bezirke = new[]
+    {
+        new { Slug = "zuerich",     BezirkName = "Zürich Stadt",  BadgeLabel = "Stadt Zürich",      LocalValueProp = "Umzugsreinigung Stadt Zürich – in jedem Kreis vor Ort",              GemeindenCount = 12, Link = "/umzugsreinigung-stadt-zuerich",        HeroImg = "/img/bezirke/umzugsreinigung-stadt-zuerich-hero.avif" },
+        new { Slug = "affoltern",   BezirkName = "Affoltern",     BadgeLabel = "Bezirk Affoltern",  LocalValueProp = "Umzugsreinigung Bezirk Affoltern – Büro vor Ort in 8910",            GemeindenCount = 14, Link = "/umzugsreinigung-bezirk-affoltern",      HeroImg = "/img/bezirke/umzugsreinigung-bezirk-affoltern-zuerich-hero.avif" },
+        new { Slug = "andelfingen", BezirkName = "Andelfingen",   BadgeLabel = "Bezirk Andelfingen",LocalValueProp = "Umzugsreinigung Bezirk Andelfingen – im ganzen Zürcher Weinland",    GemeindenCount = 23, Link = "/umzugsreinigung-bezirk-andelfingen",    HeroImg = "/img/bezirke/umzugsreinigung-bezirk-andelfingen-zuerich-hero.avif" },
+        new { Slug = "buelach",     BezirkName = "Bülach",        BadgeLabel = "Bezirk Bülach",     LocalValueProp = "Umzugsreinigung Bezirk Bülach – Flughafenregion und Unterland",      GemeindenCount = 22, Link = "/umzugsreinigung-bezirk-buelach",         HeroImg = "/img/bezirke/umzugsreinigung-bezirk-buelach-zuerich-hero.avif" },
+        new { Slug = "dielsdorf",   BezirkName = "Dielsdorf",     BadgeLabel = "Bezirk Dielsdorf",  LocalValueProp = "Umzugsreinigung Bezirk Dielsdorf – Furttal, Wehntal und Rafzerfeld-Vorland", GemeindenCount = 22, Link = "/umzugsreinigung-bezirk-dielsdorf",   HeroImg = "/img/bezirke/umzugsreinigung-bezirk-dielsdorf-zuerich-hero.avif" },
+        new { Slug = "dietikon",    BezirkName = "Dietikon",      BadgeLabel = "Bezirk Dietikon",   LocalValueProp = "Umzugsreinigung Bezirk Dietikon – im ganzen Limmattal",              GemeindenCount = 11, Link = "/umzugsreinigung-bezirk-dietikon",       HeroImg = "/img/bezirke/umzugsreinigung-bezirk-dietikon-zuerich-hero.avif" },
+        new { Slug = "hinwil",      BezirkName = "Hinwil",        BadgeLabel = "Bezirk Hinwil",     LocalValueProp = "Umzugsreinigung Bezirk Hinwil – im ganzen Zürcher Oberland",         GemeindenCount = 11, Link = "/umzugsreinigung-bezirk-hinwil",          HeroImg = "/img/bezirke/umzugsreinigung-bezirk-hinwil-zuerich-hero.avif" },
+        new { Slug = "horgen",      BezirkName = "Horgen",        BadgeLabel = "Bezirk Horgen",     LocalValueProp = "Endreinigung am linken Zürichseeufer",                               GemeindenCount = 11, Link = "/umzugsreinigung-bezirk-horgen",          HeroImg = "/img/bezirke/umzugsreinigung-bezirk-horgen-zuerich-hero.avif" },
+        new { Slug = "meilen",      BezirkName = "Meilen",        BadgeLabel = "Bezirk Meilen",     LocalValueProp = "Umzugsreinigung Bezirk Meilen – an der ganzen Goldküste",            GemeindenCount = 11, Link = "/umzugsreinigung-bezirk-meilen",          HeroImg = "/img/bezirke/umzugsreinigung-bezirk-meilen-zuerich-hero.avif" },
+        new { Slug = "pfaeffikon",  BezirkName = "Pfäffikon",     BadgeLabel = "Bezirk Pfäffikon",  LocalValueProp = "Umzugsreinigung Bezirk Pfäffikon – am Pfäffikersee und im Tösstal", GemeindenCount = 12, Link = "/umzugsreinigung-bezirk-pfaeffikon",      HeroImg = "/img/bezirke/umzugsreinigung-bezirk-pfaeffikon-zuerich-hero.avif" },
+        new { Slug = "uster",       BezirkName = "Uster",         BadgeLabel = "Bezirk Uster",      LocalValueProp = "Umzugsreinigung Bezirk Uster – im ganzen Greifensee-Gebiet",         GemeindenCount = 10, Link = "/umzugsreinigung-bezirk-uster",           HeroImg = "/img/bezirke/umzugsreinigung-bezirk-uster-zuerich-hero.avif" },
+        new { Slug = "winterthur",  BezirkName = "Winterthur",    BadgeLabel = "Bezirk Winterthur", LocalValueProp = "Umzugsreinigung Bezirk Winterthur – Stadt und Umland",               GemeindenCount = 16, Link = "/umzugsreinigung-bezirk-winterthur",      HeroImg = "/img/bezirke/umzugsreinigung-bezirk-winterthur-zuerich-hero.avif" },
+    };
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start",     "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Standorte", "item": "https://zurich-endreinigung.ch/standorte" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Berechnen Sie Anfahrtskosten?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Nein. Anfahrt ist im Fixpreis enthalten — egal ob Stadt Zürich oder am Bezirksrand (z. B. Andelfingen oder Pfäffikon). Es gibt keine Zuschläge für Distanz oder ländliche Lagen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Gibt es einen Mindestauftragswert?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Für Endreinigungen liegt der Mindestauftragswert bei CHF 550 (1–1.5 Zimmer). Für Spezialreinigungen wie Fenster oder Polster gelten serviceabhängige Mindestpreise ab CHF 249. Für Gewerbeverträge gibt es keinen Mindestumfang."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Reinigen Sie auch ausserhalb des Kantons Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir bedienen primär den Kanton Zürich (Stadt Zürich + 11 Bezirke). Aufträge in angrenzenden Kantonen (Aargau, Schwyz, Schaffhausen, Thurgau, Zug) prüfen wir individuell — fragen Sie einfach an, oft ist es möglich."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen bg-background">
+
+    <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+    <section class="bg-gradient-to-b from-primary/5 to-background py-12 md:py-20 pt-24 md:pt-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground mb-4">
+                <a href="/" class="hover:text-primary transition-colors">Start</a>
+                <span class="mx-2">/</span>
+                <span class="text-foreground font-medium">Standorte</span>
+            </nav>
+
+            <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Unser Einsatzgebiet — Stadt Zürich &amp; alle 11 Bezirke
+            </h1>
+            <p class="text-lg md:text-xl text-muted-foreground max-w-3xl">
+                Mit Hauptsitz in Affoltern am Albis sind wir im gesamten Kanton Zürich zuhause. Wählen Sie
+                Ihre Stadt oder Ihren Bezirk und sehen Sie alle Details zu unserem lokalen Service.
+            </p>
+
+            <!-- TLDR box -->
+            <div class="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-5 max-w-3xl">
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Auf einen Blick</p>
+                <ul class="space-y-1.5 mb-4">
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Stadt Zürich + 11 Bezirke abgedeckt
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Hauptsitz: Seewadelstrasse 5, 8910 Affoltern am Albis
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Anfahrt im Fixpreis enthalten — keine Distanzzuschläge
+                    </li>
+                    <li class="flex items-start gap-2 text-sm text-foreground">
+                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        Oft in 30 Minuten vor Ort
+                    </li>
+                </ul>
+                <p class="text-sm text-muted-foreground leading-relaxed">
+                    <strong class="text-foreground">Endreinigung im ganzen Kanton Zürich</strong> — Stadt Zürich und alle 11
+                    Bezirke. Unser Hauptsitz liegt zentral in Affoltern am Albis. Wir reinigen ohne Anfahrtszuschlag,
+                    auch in ländlichen Gemeinden, und sind bei kurzfristigen Terminen oft in 48 Stunden verfügbar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════ LOCATIONS GRID ════════════════════════════════ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Wählen Sie Ihre Region
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach (var loc in bezirke)
+                {
+                    <a href="@loc.Link" class="group">
+                        <div class="h-full rounded-lg border border-border bg-card shadow-sm transition-all hover:shadow-lg hover:border-primary/40">
+                            <!-- Thumbnail -->
+                            <div class="aspect-video w-full overflow-hidden rounded-t-lg bg-muted">
+                                <img src="@loc.HeroImg"
+                                     alt="Endreinigung @loc.BezirkName"
+                                     class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                                     loading="lazy"
+                                     width="480" height="270" />
+                            </div>
+                            <!-- Card body -->
+                            <div class="p-6">
+                                <div class="flex items-start gap-3 mb-3">
+                                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                        <!-- MapPin icon -->
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418-4.418-7-7.582-7-10.5a7 7 0 0 1 14 0C19 13.418 16.418 16.582 12 21z"/>
+                                            <circle cx="12" cy="10.5" r="2.5" fill="currentColor" stroke="none"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-xs font-semibold uppercase tracking-wide text-primary mb-0.5">
+                                            @loc.BadgeLabel
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                                            @loc.BezirkName
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+                                    @loc.LocalValueProp
+                                </p>
+                                <div class="flex items-center justify-between pt-3 border-t border-border">
+                                    <span class="text-sm text-muted-foreground">
+                                        @loc.GemeindenCount Gemeinden · ab CHF 550
+                                    </span>
+                                    <!-- ArrowRight icon -->
+                                    <svg class="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ FAQ ═══════════════════════════════════════ -->
+    <section class="py-12 md:py-16 bg-muted/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Häufige Fragen zu unserem Einsatzgebiet
+            </h2>
+
+            <div class="space-y-4">
+
+                <details class="group bg-background rounded-xl border border-border overflow-hidden">
+                    <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+                        <span class="text-lg font-semibold text-foreground">Berechnen Sie Anfahrtskosten?</span>
+                        <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+                        Nein. Anfahrt ist im Fixpreis enthalten — egal ob Stadt Zürich oder am Bezirksrand
+                        (z.&nbsp;B. Andelfingen oder Pfäffikon). Es gibt keine Zuschläge für Distanz oder ländliche Lagen.
+                    </div>
+                </details>
+
+                <details class="group bg-background rounded-xl border border-border overflow-hidden">
+                    <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+                        <span class="text-lg font-semibold text-foreground">Gibt es einen Mindestauftragswert?</span>
+                        <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+                        Für Endreinigungen liegt der Mindestauftragswert bei CHF&nbsp;550 (1–1.5&nbsp;Zimmer).
+                        Für Spezialreinigungen wie Fenster oder Polster gelten serviceabhängige Mindestpreise ab CHF&nbsp;249.
+                        Für Gewerbeverträge gibt es keinen Mindestumfang.
+                    </div>
+                </details>
+
+                <details class="group bg-background rounded-xl border border-border overflow-hidden">
+                    <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+                        <span class="text-lg font-semibold text-foreground">Reinigen Sie auch ausserhalb des Kantons Zürich?</span>
+                        <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted-foreground leading-relaxed">
+                        Wir bedienen primär den Kanton Zürich (Stadt Zürich + 11 Bezirke). Aufträge in angrenzenden
+                        Kantonen (Aargau, Schwyz, Schaffhausen, Thurgau, Zug) prüfen wir individuell —
+                        fragen Sie einfach an, oft ist es möglich.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-10 text-center">
+                <a href="/calculator"
+                   class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
+                    Preis für meine Adresse berechnen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_Contact")
+
+</div>
+
+@await Html.PartialAsync("_Footer")

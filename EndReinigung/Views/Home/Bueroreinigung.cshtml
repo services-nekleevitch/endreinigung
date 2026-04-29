@@ -1,11 +1,61 @@
 @{
-    ViewData["Title"] = "Büroreinigung Zürich | Professionelle Büroreinigung & Unterhaltsreinigung";
-    ViewData["Description"] = "Professionelle Büroreinigung in Zürich. Regelmässige Unterhaltsreinigung, Grundreinigung und Sonderreinigung für Büros und Gewerberäume. Jetzt Offerte anfordern.";
+    ViewData["Title"] = "Büroreinigung Zürich ab CHF 50/h | Versichert | Zürich Endreinigung";
+    ViewData["Description"] = "Professionelle Büroreinigung in Zürich ab CHF 50/Std. Transparente Richtpreise, individuelle Offerte in 2 Stunden. Pünktlich und versichert.";
+    ViewData["Keywords"] = "Büroreinigung Zürich, Büro Reinigung, Gewerbereinigung Zürich, Unterhaltsreinigung Büro, Praxisreinigung";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/bueroreinigung";
-    ViewData["Keywords"] = "Büroreinigung Zürich, Büro Reinigung, Gewerbereinigung Zürich, Unterhaltsreinigung Büro";
 }
 
 @section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Büroreinigung Zürich", "item": "https://zurich-endreinigung.ch/bueroreinigung" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "name": "Büroreinigung Zürich",
+        "provider": {
+            "@@type": "ProfessionalService",
+            "@@id": "https://zurich-endreinigung.ch/bueroreinigung#business",
+            "name": "Zürich Endreinigung"
+        },
+        "areaServed": { "@@type": "AdministrativeArea", "name": "Kanton Zürich" },
+        "priceRange": "CHF 50–60",
+        "hasOfferCatalog": {
+            "@@type": "OfferCatalog",
+            "name": "Büroreinigungsdienstleistungen",
+            "itemListElement": [
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Unterhaltsreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "50-60", "priceCurrency": "CHF", "unitCode": "HUR" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Grundreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "6-9", "priceCurrency": "CHF", "unitCode": "MTK" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Fensterreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "5-7", "priceCurrency": "CHF", "unitCode": "MTK" }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": { "@@type": "Service", "name": "Desinfektionsreinigung" },
+                    "priceSpecification": { "@@type": "UnitPriceSpecification", "price": "8-12", "priceCurrency": "CHF", "unitCode": "MTK" }
+                }
+            ]
+        }
+    }
+    </script>
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
@@ -13,34 +63,74 @@
         "mainEntity": [
             {
                 "@@type": "Question",
-                "name": "Was kostet eine Büroreinigung in Zürich?",
+                "name": "Wie viel kostet Büroreinigung in Zürich?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Die Kosten für eine Büroreinigung hängen von der Bürogrösse, dem Reinigungsintervall und dem Umfang ab. Wir erstellen Ihnen eine individuelle Offerte nach einer Besichtigung."
+                    "text": "Unser Stundenansatz beginnt bei CHF 50. Die Preise variieren je nach Büroaufteilung, Anzahl Sanitärbereichen, Verschmutzungsgrad und Reinigungsfrequenz. Ein 150 m² Büro 3×/Woche kostet je nach Ausstattung CHF 1'300–1'950/Monat. Ihre exakte Offerte erhalten Sie innerhalb von 2 Stunden — kostenlos und unverbindlich."
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Wie oft sollte ein Büro gereinigt werden?",
+                "name": "Warum erhalte ich keinen Fixpreis auf der Website?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Die empfohlene Reinigungsfrequenz hängt von der Nutzung ab. Stark frequentierte Büros sollten täglich, normale Büros 2-3 Mal pro Woche gereinigt werden."
+                    "text": "Jedes Büro ist anders. Büroaufteilung, Sanitärbereiche, Bodenbeläge und Nutzung beeinflussen den Aufwand stark. Unsere Richtpreise geben Orientierung, die verbindliche Offerte erstellen wir nach kurzer Besichtigung oder telefonischer Abklärung — kostenlos und unverbindlich innerhalb von 2 Stunden."
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Wird die Büroreinigung ausserhalb der Geschäftszeiten durchgeführt?",
+                "name": "Wie oft sollte mein Büro gereinigt werden?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Ja, wir bieten flexible Reinigungszeiten an – auch frühmorgens, abends oder am Wochenende, damit Ihr Betrieb nicht gestört wird."
+                    "text": "Das hängt von Bürogrösse, Mitarbeiterzahl und Branche ab. Für die meisten Büros empfehlen wir eine Unterhaltsreinigung 1–3× pro Woche, ergänzt durch eine jährliche Grundreinigung."
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Können wir die Reinigung auch kurzfristig anpassen?",
+                "name": "Können Sie nachts oder am Wochenende reinigen?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Ja, wir sind flexibel. Zusätzliche Reinigungen vor Events oder nach Umzügen können kurzfristig organisiert werden."
+                    "text": "Ja. Einsätze ausserhalb der Geschäftszeiten (vor 07:00, nach 18:00) oder am Wochenende haben einen Aufschlag von 20–30%. So stören wir Ihre Mitarbeitenden nicht und Sie starten täglich in saubere Räume."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind Ihre Mitarbeiter versichert?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, wir sind vollständig betriebshaftpflichtversichert mit einer Deckung von CHF 5 Mio. Alle unsere Mitarbeitenden verfügen über einen aktuellen Strafregisterauszug und werden persönlich von uns geschult."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was mache ich, wenn ich nicht zufrieden bin?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Unsere 100% Zufriedenheitsgarantie greift sofort: Melden Sie sich innerhalb von 24 Stunden, und wir reinigen kostenlos nach. Ohne Diskussion, ohne zusätzliche Kosten."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie lange dauert eine Büroreinigung?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Als Richtwert: ca. 45–60 Minuten pro 50 m² und 90–120 Minuten pro 150 m² für die Unterhaltsreinigung. Eine Grundreinigung dauert deutlich länger und wird im Voraus geplant."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Kann ich den Vertrag jederzeit kündigen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Unsere Verträge sind monatlich kündbar — keine Mindestlaufzeit, keine Kündigungsfristen über einen Monat hinaus."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie schnell erhalte ich eine Offerte?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Innerhalb von 2 Stunden während unserer Geschäftszeiten (Mo–Fr 08:00–19:00, Sa 08:00–16:00). Bei Anfragen ausserhalb dieser Zeiten am nächsten Werktag bis spätestens 10:00 Uhr."
                 }
             }
         ]
@@ -48,301 +138,965 @@
     </script>
 }
 
-<div class="min-h-screen bg-background">
+<main class="min-h-screen">
 
-    <!-- Hero Section -->
-    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="mb-6" aria-label="Breadcrumb">
-                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                    Zurück zu Extra Services
-                </a>
-            </nav>
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-20 md:pt-[6.25rem] min-h-[60vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img
+                src="/img/services/bueroreinigung-zuerich.webp"
+                alt="Sauberes, modernes Büro in Zürich nach professioneller Büroreinigung"
+                class="w-full h-full object-cover"
+                width="1920"
+                height="1080" />
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
 
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                    <!-- Building icon -->
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 w-full">
+            <div class="max-w-3xl">
+                <!-- Trust badges -->
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="inline-flex items-center text-white font-semibold text-sm px-4 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm">
+                        ✓ Pünktlichkeits-Garantie
+                    </span>
+                    <span class="inline-flex items-center text-white font-semibold text-sm px-4 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm">
+                        ✓ 100% Zufriedenheitsgarantie
+                    </span>
+                    <span class="inline-flex items-center text-white font-semibold text-sm px-4 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm">
+                        ✓ Versichert bis CHF 5 Mio.
+                    </span>
                 </div>
-                <div class="inline-block bg-cleaning-green/10 text-cleaning-green text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                    Regelmässige Büroreinigung
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                    Büroreinigung in Zürich – sauber, zuverlässig, diskret
+
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg">
+                    Büroreinigung Zürich — Pünktlich. Zuverlässig. Inhabergeführt.
                 </h1>
-                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Professionelle Büroreinigung und Unterhaltsreinigung für Unternehmen im Kanton Zürich.
-                    Regelmässig oder einmalig – flexible Zeiten, zuverlässiges Team, transparente Preise.
+
+                <p class="text-base md:text-lg text-white font-medium mb-6 max-w-2xl drop-shadow-md">
+                    Wir sorgen für saubere Büros in Zürich und im ganzen Kanton.
+                    Geprüfte Mitarbeiter. Versichert bis CHF 5 Mio. 100% Zufriedenheitsgarantie.
                 </p>
 
-                <!-- Trust Signals -->
-                <div class="flex flex-wrap justify-center gap-4 mt-8">
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        <span class="text-sm font-medium text-foreground">Zuverlässig</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span class="text-sm font-medium text-foreground">Flexible Zeiten</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-sm font-medium text-foreground">Diskret</span>
-                    </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#offerte"
+                       class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Kostenlose Offerte anfordern
+                    </a>
+                    <a href="tel:+41765017738"
+                       class="text-white font-semibold underline-offset-4 hover:underline drop-shadow-md inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Oder rufen Sie direkt +41 76 501 77 38
+                    </a>
                 </div>
 
-                <div class="mt-8">
-                    <a href="/#contact" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Kostenlose Offerte anfordern
+                <!-- Google Rating Badge -->
+                <div class="mt-6 pt-6 border-t border-white/20">
+                    <a href="https://share.google/f60Gr7soQQux5lExT"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <span class="text-white/90 text-sm ml-2 drop-shadow-md">4.9/5 · 100+ Bewertungen auf Google</span>
                     </a>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Unsere Leistungen -->
-        <section class="mb-16" aria-labelledby="services">
-            <div class="rounded-lg bg-card shadow-lg p-8">
-                <h2 id="services" class="text-2xl font-bold text-foreground mb-6">
-                    Unsere Leistungen
-                </h2>
-                <ul class="space-y-4 mb-6">
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Regelmässige Unterhaltsreinigung (täglich, wöchentlich, nach Bedarf)</span>
+    <!-- ═══ TLDR ═══ -->
+    <section class="bg-background pt-6 pb-2">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-xl border border-border bg-card shadow-sm p-5">
+                <p class="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Auf einen Blick</p>
+                <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+                    <strong class="text-foreground">Büroreinigung in Zürich</strong> ab CHF 50/Std. oder CHF 6–10/m²/Monat.
+                    Pünktlichkeitsgarantie (5% Rabatt bei Verspätung), 100% Zufriedenheitsgarantie
+                    mit kostenloser Nachreinigung, 5 Mio. CHF Haftpflichtversicherung. Inhabergeführt
+                    mit direktem Kontakt — keine anonyme Hotline.
+                </p>
+                <ul class="space-y-1">
+                    <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                        <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Stundenansatz ab CHF 50, m²-Tarif CHF 6–10/Monat (2× wöchentlich)
                     </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Bodenreinigung und -pflege (Parkett, Laminat, Fliesen, Teppich)</span>
+                    <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                        <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Monatlich kündbar, keine Mindestlaufzeit, keine versteckten Kosten
                     </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Sanitärreinigung (WC, Waschbecken, Spiegel)</span>
+                    <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                        <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Festes Team, Strafregisterauszug, persönlich von Inhaberin geschult
                     </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Küche und Gemeinschaftsräume</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Staubwischen, Abfallentsorgung und Papierkorbleerung</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Fensterreinigung (auf Wunsch)</span>
+                    <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                        <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Offerte innert 2 Stunden während Geschäftszeiten
                     </li>
                 </ul>
-                <p class="text-muted-foreground bg-secondary/50 p-4 rounded-lg">
-                    Alle Leistungen werden individuell auf Ihre Bedürfnisse abgestimmt. Wir erstellen ein massgeschneidertes Reinigungskonzept.
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TRUST BAR ═══ -->
+    <section class="py-5 md:py-8 bg-background border-y border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Pünktlich</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">5-Minuten-Regel</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Versichert</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">5 Mio. CHF Deckung</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Garantie</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">100% Zufriedenheit</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Inhabergeführt</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">Direkter Kontakt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 1: SERVICES GRID ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Unsere Büroreinigungsdienstleistungen in Zürich
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Vom täglichen Unterhalt bis zur jährlichen Tiefenreinigung — alles aus einer Hand.
                 </p>
             </div>
-            <div class="text-center mt-6">
-                <a href="/#contact" class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
-                    Kostenlose Offerte anfordern
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Unterhaltsreinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- SprayCan -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Unterhaltsreinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Tägliche oder wöchentliche Pflege Ihrer Büroräume — saubere Arbeitsflächen, Böden und Sanitäranlagen.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+                <!-- Grundreinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- Sparkles -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1M4.22 4.22l.71.71m14.14 14.14.71.71M3 12H2m20 0h-1M4.22 19.78l.71-.71M18.36 5.64l.71-.71M12 7a5 5 0 100 10A5 5 0 0012 7z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Grundreinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Intensive Tiefenreinigung 1–2× jährlich für einen frischen, hygienischen Neustart Ihrer Räume.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+                <!-- Fensterreinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- Window / Square -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Fensterreinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Streifenfrei und professionell — innen und aussen, inklusive Rahmen und Fensterbänke.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+                <!-- Desinfektionsreinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- Shield -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Desinfektionsreinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Hygiene auf höchstem Niveau mit geprüften Desinfektionsmitteln für sensible Bereiche.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+                <!-- Baureinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- Hammer -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3l8.5-8.5"/><path d="M17.64 15L22 10.64"/><path d="M20.35 6.35L17.64 9.07 15 6.36l2.72-2.72a4 4 0 015.6 5.6l-.97.97"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Baureinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Nach Renovation oder Umzug — wir bringen Ihre neuen Räume bezugsfertig auf Hochglanz.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+                <!-- Teppichreinigung -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <!-- Layers -->
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Teppichreinigung</h3>
+                    <p class="text-muted-foreground text-sm mb-4 flex-grow">Fleckenentfernung und Tiefenreinigung mit professionellen Geräten — werterhaltend und gründlich.</p>
+                    <a href="#offerte" class="text-primary font-semibold text-sm hover:underline">Mehr erfahren →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 2: PRICING ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Büroreinigung Preise: Transparente Kostenübersicht
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Faire, transparente Preise für den Grossraum Zürich. Stundenansatz ab CHF 50. Keine versteckten Kosten.
+                </p>
+            </div>
+
+            <!-- Pricing table -->
+            <div class="rounded-lg bg-card border-0 shadow-lg overflow-hidden mb-8">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-primary/5">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold text-foreground">Service</th>
+                                <th class="px-4 py-3 text-left font-semibold text-foreground">Einheit</th>
+                                <th class="px-4 py-3 text-left font-semibold text-foreground">Preis</th>
+                                <th class="px-4 py-3 text-left font-semibold text-foreground">Häufigkeit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Unterhaltsreinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pro Stunde</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 50–60</td>
+                                <td class="px-4 py-3 text-muted-foreground">1–5×/Woche</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Unterhaltsreinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pro m²/Monat</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 6–10</td>
+                                <td class="px-4 py-3 text-muted-foreground">2×/Woche</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Grundreinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pro m²</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 6–9</td>
+                                <td class="px-4 py-3 text-muted-foreground">1–2× jährlich</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Fensterreinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pro m²</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 5–7</td>
+                                <td class="px-4 py-3 text-muted-foreground">2–4× jährlich</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Desinfektionsreinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pro m²</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 8–12</td>
+                                <td class="px-4 py-3 text-muted-foreground">nach Bedarf</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Baureinigung</td>
+                                <td class="px-4 py-3 text-muted-foreground">pauschal</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">CHF 980–2'075</td>
+                                <td class="px-4 py-3 text-muted-foreground">einmalig</td>
+                            </tr>
+                            <tr class="border-t border-border">
+                                <td class="px-4 py-3 font-medium text-foreground">Wochenende/Abendstunden</td>
+                                <td class="px-4 py-3 text-muted-foreground">Aufschlag</td>
+                                <td class="px-4 py-3 font-bold text-primary whitespace-nowrap">+20–30%</td>
+                                <td class="px-4 py-3 text-muted-foreground">auf Wunsch</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="text-sm text-muted-foreground text-center mb-6 font-medium">
+                Beispielhafte Richtpreise — Ihre exakte Offerte erhalten Sie in 2 Stunden
+            </p>
+
+            <!-- Scenario cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Kleine Praxis (50 m²)</h3>
+                    <p class="text-muted-foreground text-sm mb-3">2× wöchentlich Unterhaltsreinigung</p>
+                    <p class="text-2xl font-extrabold text-primary mb-2">CHF 350–550 / Monat</p>
+                    <p class="text-xs text-muted-foreground">Richtwert — exakter Preis je nach Büroaufteilung</p>
+                </div>
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Kleines Büro (80 m²)</h3>
+                    <p class="text-muted-foreground text-sm mb-3">2× wöchentlich Unterhaltsreinigung</p>
+                    <p class="text-2xl font-extrabold text-primary mb-2">CHF 550–850 / Monat</p>
+                    <p class="text-xs text-muted-foreground">Richtwert — exakter Preis je nach Büroaufteilung</p>
+                </div>
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Mittleres Büro (150 m²)</h3>
+                    <p class="text-muted-foreground text-sm mb-3">3× wöchentlich Unterhaltsreinigung</p>
+                    <p class="text-2xl font-extrabold text-primary mb-2">CHF 1'300–1'950 / Monat</p>
+                    <p class="text-xs text-muted-foreground">Richtwert — exakter Preis je nach Büroaufteilung</p>
+                </div>
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Grösseres Büro (250 m²)</h3>
+                    <p class="text-muted-foreground text-sm mb-3">3× wöchentlich Unterhaltsreinigung</p>
+                    <p class="text-2xl font-extrabold text-primary mb-2">CHF 2'250–3'200 / Monat</p>
+                    <p class="text-xs text-muted-foreground">Richtwert — exakter Preis je nach Büroaufteilung</p>
+                </div>
+            </div>
+
+            <!-- Why prices vary -->
+            <div class="rounded-lg bg-card border-0 shadow-lg p-8 mb-8">
+                <h3 class="text-xl font-bold text-foreground mb-3">
+                    Warum unsere Preise variieren — Transparenz zahlt sich aus
+                </h3>
+                <p class="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    Jedes Büro ist anders. Zwei 150 m² Büros können sich im Reinigungsaufwand stark unterscheiden.
+                    Darum arbeiten wir mit Richtpreisen und kalkulieren Ihre genaue Offerte individuell.
+                    Folgende Faktoren beeinflussen den Preis:
+                </p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Büroaufteilung</p>
+                            <p class="text-muted-foreground text-sm">Offene Räume lassen sich schneller reinigen als viele kleine Einzelbüros mit separaten Türen und Ecken.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Anzahl Sanitärbereiche</p>
+                            <p class="text-muted-foreground text-sm">WCs, Waschbecken und Duschen erfordern intensive Hygienearbeit und verlängern die Reinigungszeit spürbar.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Küche und Pausenbereich</p>
+                            <p class="text-muted-foreground text-sm">Grössere Küchen mit Geschirrspüler, Kühlschrank und Essbereich benötigen deutlich mehr Pflege als eine kleine Kaffeeecke.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Bodenbeläge</p>
+                            <p class="text-muted-foreground text-sm">Teppich, Parkett, Fliesen und Vinyl haben jeweils eigene Pflegeanforderungen und unterschiedliche Reinigungszeiten.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Verschmutzungsgrad und Nutzung</p>
+                            <p class="text-muted-foreground text-sm">Eine Arztpraxis mit viel Publikumsverkehr braucht intensivere Reinigung als ein reines Entwicklerbüro mit 5 Personen.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Zugänglichkeit und Einsatzzeit</p>
+                            <p class="text-muted-foreground text-sm">Reinigung ausserhalb der Geschäftszeiten (vor 07:00, nach 18:00) oder am Wochenende hat einen Aufschlag von 20–30%.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Mitarbeiteranzahl und Frequenz</p>
+                            <p class="text-muted-foreground text-sm">Mehr Mitarbeitende und häufigere Reinigung senken den Preis pro Quadratmeter durch Skaleneffekte.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <p class="font-semibold text-foreground text-sm mb-1">Zusatzleistungen</p>
+                            <p class="text-muted-foreground text-sm">Fensterreinigung, Grundreinigung, Desinfektion oder Teppichpflege werden separat kalkuliert oder als Paket kombiniert.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- What's included -->
+            <div class="rounded-lg bg-card border-0 shadow-lg p-8 mb-8">
+                <h3 class="text-xl font-bold text-foreground mb-6">Was ist inbegriffen?</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Material und Reinigungsmittel inklusive</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Anfahrt im Kanton Zürich inklusive</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Feste Ansprechperson für Ihr Büro</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Monatliche, transparente Rechnung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Keine versteckten Kosten</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-foreground text-sm">Inhabergeführt — direkter Kontakt</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <a href="#offerte"
+                   class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Kostenlose Besichtigung vereinbaren
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Reinigungsmodelle -->
-        <section class="mb-16" aria-labelledby="models">
-            <h2 id="models" class="text-2xl font-bold text-foreground mb-6">
-                Reinigungsmodelle
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="rounded-lg bg-card shadow-lg p-6 text-center">
-                    <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-foreground mb-2">Tägliche Reinigung</h3>
-                    <p class="text-muted-foreground text-sm">Für stark frequentierte Büros mit hohem Publikumsverkehr</p>
-                </div>
-                <div class="rounded-lg bg-card shadow-lg p-6 text-center border-2 border-primary">
-                    <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-foreground mb-2">2-3x pro Woche</h3>
-                    <p class="text-muted-foreground text-sm">Der Standard für die meisten Büros – ideal für Teams von 5-20 Personen</p>
-                    <span class="inline-block mt-3 text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">Empfohlen</span>
-                </div>
-                <div class="rounded-lg bg-card shadow-lg p-6 text-center">
-                    <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-foreground mb-2">Wöchentlich</h3>
-                    <p class="text-muted-foreground text-sm">Für kleinere Büros oder Co-Working-Spaces</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Warum uns wählen -->
-        <section class="mb-16" aria-labelledby="why-us">
-            <div class="rounded-lg bg-card shadow-lg p-8">
-                <h2 id="why-us" class="text-2xl font-bold text-foreground mb-6">
-                    Warum unsere Büroreinigung?
+    <!-- ═══ SECTION 3: WHY US ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Warum Unternehmen in Zürich uns wählen
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="flex items-start gap-4">
-                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Flexible Reinigungszeiten</h3>
-                            <p class="text-muted-foreground text-sm">Frühmorgens, abends oder am Wochenende – wir stören Ihren Betrieb nicht</p>
-                        </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Pünktlichkeits-Garantie -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Gleiches Reinigungsteam</h3>
-                            <p class="text-muted-foreground text-sm">Vertrauenswürdiges, geschultes Personal – immer die gleichen Personen</p>
-                        </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Pünktlichkeits-Garantie</h3>
+                    <p class="text-muted-foreground text-sm">5-Minuten-Regel: Sind wir später, erhalten Sie 5% Rabatt auf den Einsatz.</p>
+                </div>
+
+                <!-- Zufriedenheitsgarantie -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Transparente Abrechnung</h3>
-                            <p class="text-muted-foreground text-sm">Monatliche Pauschale oder Abrechnung nach Aufwand</p>
-                        </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">100% Zufriedenheitsgarantie</h3>
+                    <p class="text-muted-foreground text-sm">Nicht zufrieden? Wir reinigen kostenlos nach — ohne Diskussion.</p>
+                </div>
+
+                <!-- Geprüfte Mitarbeiter -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Qualitätskontrolle</h3>
-                            <p class="text-muted-foreground text-sm">Regelmässige Kontrollen für gleichbleibend hohe Qualität</p>
-                        </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Geprüfte Mitarbeiter</h3>
+                    <p class="text-muted-foreground text-sm">Strafregisterauszug, persönlich geschult, festes Team für Ihr Büro.</p>
+                </div>
+
+                <!-- Versichert -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">5 Mio. CHF Versicherung</h3>
+                    <p class="text-muted-foreground text-sm">Betriebshaftpflicht über CHF 5 Mio. — für Ihre und unsere Sicherheit.</p>
+                </div>
+
+                <!-- Inhabergeführt -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Inhabergeführt</h3>
+                    <p class="text-muted-foreground text-sm">Direkter Kontakt zur Inhaberin — keine anonyme Hotline, keine Umwege.</p>
+                </div>
+
+                <!-- Flexible Verträge -->
+                <div class="rounded-lg bg-card border-0 shadow-md p-6">
+                    <div class="bg-primary/10 rounded-2xl p-3 w-14 h-14 mb-4 flex items-center justify-center">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Flexible Verträge</h3>
+                    <p class="text-muted-foreground text-sm">Monatlich kündbar, keine Mindestlaufzeit, keine versteckten Kosten.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 4: TESTIMONIALS ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Das sagen unsere Kunden
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="flex gap-1 mb-3">
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-foreground text-sm mb-4 flex-grow leading-relaxed">"Seit zwei Jahren reinigen sie unsere Praxis zweimal pro Woche — immer pünktlich, immer gründlich. Ich muss mich um nichts kümmern."</p>
+                    <div class="border-t border-border pt-3">
+                        <p class="font-semibold text-foreground text-sm">Kunde aus Gesundheitsbranche, Zürich</p>
+                        <p class="text-muted-foreground text-xs mt-1">Zahnarztpraxis, 80 m² · Seit 2 Jahren Kunde</p>
+                    </div>
+                </div>
+
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="flex gap-1 mb-3">
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-foreground text-sm mb-4 flex-grow leading-relaxed">"Wir haben drei Reinigungsfirmen durchprobiert. Mit Zürich Endreinigung haben wir endlich einen verlässlichen Partner gefunden — auch nach Feiertagen ist alles makellos."</p>
+                    <div class="border-t border-border pt-3">
+                        <p class="font-semibold text-foreground text-sm">Kunde aus IT-Branche, Zürich</p>
+                        <p class="text-muted-foreground text-xs mt-1">Coworking-Büro, 220 m² · Seit 18 Monaten Kunde</p>
+                    </div>
+                </div>
+
+                <div class="rounded-lg bg-card border-0 shadow-md p-6 flex flex-col">
+                    <div class="flex gap-1 mb-3">
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 fill-trust-gold text-trust-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-foreground text-sm mb-4 flex-grow leading-relaxed">"Direkter Kontakt zur Inhaberin, klare Absprachen, faire Preise. Genau das, was ich von einem Schweizer Dienstleister erwarte."</p>
+                    <div class="border-t border-border pt-3">
+                        <p class="font-semibold text-foreground text-sm">Kundin aus Beratungsbranche, Zürich</p>
+                        <p class="text-muted-foreground text-xs mt-1">Anwaltskanzlei, 150 m² · Seit 1 Jahr Kundin</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 5: SERVICE AREA ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Unser Einzugsgebiet — Stadt Zürich und Kanton
+                </h2>
+                <p class="text-lg text-muted-foreground">
+                    Gleiche Qualitätsstandards überall. Keine Aufschläge für den Ort.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Stadt Zürich
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Altstadt</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Oerlikon</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Altstetten</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Wiedikon</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Seefeld</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Enge</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Wipkingen</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Schwamendingen</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Affoltern</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Höngg</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Witikon</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Leimbach</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Kanton Zürich
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Winterthur</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Uster</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Dübendorf</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Kloten</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Wetzikon</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Horgen</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Thalwil</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Meilen</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Rüti</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Adliswil</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Glattbrugg</span>
+                        <span class="inline-flex items-center text-foreground font-medium text-sm px-4 py-1.5 rounded-full bg-primary/10">Opfikon</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Ablauf -->
-        <section class="mb-16" aria-labelledby="process">
-            <h2 id="process" class="text-2xl font-bold text-foreground mb-6">
-                So starten wir zusammen
-            </h2>
-            <div class="space-y-4">
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Kostenlose Besichtigung</h3>
-                            <p class="text-muted-foreground text-sm">Wir besichtigen Ihre Räumlichkeiten und besprechen Ihre Anforderungen</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Individuelles Angebot</h3>
-                            <p class="text-muted-foreground text-sm">Sie erhalten ein massgeschneidertes Reinigungskonzept mit transparenten Kosten</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Probereinigung</h3>
-                            <p class="text-muted-foreground text-sm">Auf Wunsch eine unverbindliche Probereinigung zur Qualitätsprüfung</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Regelmässige Reinigung</h3>
-                            <p class="text-muted-foreground text-sm">Start der regelmässigen Reinigung nach Ihrem Zeitplan</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- ═══ SECTION 6: FAQ ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Häufig gestellte Fragen zur Büroreinigung
+                </h2>
             </div>
-        </section>
+            <div class="rounded-lg bg-card border-0 shadow-lg overflow-hidden">
 
-        <!-- FAQ -->
-        <section class="mb-16" aria-labelledby="faq">
-            <h2 id="faq" class="text-2xl font-bold text-foreground mb-6">
-                Häufige Fragen
-            </h2>
-            <div class="rounded-lg bg-card shadow-lg overflow-hidden">
-                <details class="border-b border-border group">
-                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                        Was kostet eine Büroreinigung in Zürich?
-                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie viel kostet Büroreinigung in Zürich?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </summary>
-                    <p class="px-6 pb-4 text-muted-foreground">
-                        Die Kosten hängen von der Bürogrösse, dem Reinigungsintervall und dem gewünschten Leistungsumfang ab. Wir erstellen Ihnen nach einer kostenlosen Besichtigung eine individuelle Offerte.
-                    </p>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Unser Stundenansatz beginnt bei CHF 50. Die Preise variieren je nach Büroaufteilung, Anzahl Sanitärbereichen, Verschmutzungsgrad und Reinigungsfrequenz. Ein 150 m² Büro 3×/Woche kostet je nach Ausstattung CHF 1'300–1'950/Monat. Ihre exakte Offerte erhalten Sie innerhalb von 2 Stunden — kostenlos und unverbindlich.
+                    </div>
                 </details>
-                <details class="border-b border-border group">
-                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                        Wie oft sollte ein Büro gereinigt werden?
-                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Warum erhalte ich keinen Fixpreis auf der Website?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </summary>
-                    <p class="px-6 pb-4 text-muted-foreground">
-                        Die empfohlene Reinigungsfrequenz hängt von der Nutzung ab. Stark frequentierte Büros sollten täglich, normale Büros 2-3 Mal pro Woche gereinigt werden. Für kleinere Büros reicht oft eine wöchentliche Reinigung.
-                    </p>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Jedes Büro ist anders. Büroaufteilung, Sanitärbereiche, Bodenbeläge und Nutzung beeinflussen den Aufwand stark. Unsere Richtpreise geben Orientierung, die verbindliche Offerte erstellen wir nach kurzer Besichtigung oder telefonischer Abklärung — kostenlos und unverbindlich innerhalb von 2 Stunden.
+                    </div>
                 </details>
-                <details class="border-b border-border group">
-                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                        Wird die Reinigung ausserhalb der Geschäftszeiten durchgeführt?
-                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie oft sollte mein Büro gereinigt werden?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </summary>
-                    <p class="px-6 pb-4 text-muted-foreground">
-                        Ja, wir bieten flexible Reinigungszeiten an – auch frühmorgens, abends oder am Wochenende, damit Ihr Betrieb nicht gestört wird.
-                    </p>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Das hängt von Bürogrösse, Mitarbeiterzahl und Branche ab. Für die meisten Büros empfehlen wir eine Unterhaltsreinigung 1–3× pro Woche, ergänzt durch eine jährliche Grundreinigung. Wir beraten Sie gerne unverbindlich.
+                    </div>
                 </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Können Sie nachts oder am Wochenende reinigen?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Ja. Einsätze ausserhalb der Geschäftszeiten (vor 07:00, nach 18:00) oder am Wochenende haben einen Aufschlag von 20–30%. So stören wir Ihre Mitarbeitenden nicht und Sie starten täglich in saubere Räume.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Sind Ihre Mitarbeiter versichert?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Ja, wir sind vollständig betriebshaftpflichtversichert mit einer Deckung von CHF 5 Mio. Alle unsere Mitarbeitenden verfügen über einen aktuellen Strafregisterauszug und werden persönlich von uns geschult.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Was mache ich, wenn ich nicht zufrieden bin?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Unsere 100% Zufriedenheitsgarantie greift sofort: Melden Sie sich innerhalb von 24 Stunden, und wir reinigen kostenlos nach. Ohne Diskussion, ohne zusätzliche Kosten.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie lange dauert eine Büroreinigung?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Als Richtwert: ca. 45–60 Minuten pro 50 m² und 90–120 Minuten pro 150 m² für die Unterhaltsreinigung. Eine Grundreinigung dauert deutlich länger und wird im Voraus geplant. Die genaue Dauer kalkulieren wir in Ihrer Offerte.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Kann ich den Vertrag jederzeit kündigen?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Ja. Unsere Verträge sind monatlich kündbar — keine Mindestlaufzeit, keine Kündigungsfristen über einen Monat hinaus. Wir wollen Sie mit Leistung überzeugen, nicht mit Verträgen binden.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Wie schnell erhalte ich eine Offerte?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Innerhalb von 2 Stunden während unserer Geschäftszeiten (Mo–Fr 08:00–19:00, Sa 08:00–16:00). Bei Anfragen ausserhalb dieser Zeiten am nächsten Werktag bis spätestens 10:00 Uhr.
+                    </div>
+                </details>
+
+                <details class="group border-b border-border">
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Verwenden Sie ökologische Reinigungsmittel?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Wo immer möglich, ja. Wir setzen auf umweltschonende, aber leistungsstarke Produkte und reduzieren Chemie auf das Notwendige. Auf Wunsch reinigen wir komplett mit Öko-Mitteln.
+                    </div>
+                </details>
+
                 <details class="group">
-                    <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                        Können wir die Reinigung auch kurzfristig anpassen?
-                        <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    <summary class="cursor-pointer list-none flex justify-between items-center px-6 py-4 font-medium text-foreground hover:bg-secondary/50">
+                        <span>Gibt es Rabatte für Langzeitverträge?</span>
+                        <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </summary>
-                    <p class="px-6 pb-4 text-muted-foreground">
-                        Ja, wir sind flexibel. Zusätzliche Reinigungen vor Events, nach Umzügen oder bei besonderen Anlässen können kurzfristig organisiert werden.
-                    </p>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        Wir bieten attraktive Konditionen für regelmässige Aufträge — ohne Vertragsbindung. Bei mehrmals wöchentlicher Reinigung verbessern sich die Stundensätze automatisch. Details in Ihrer persönlichen Offerte.
+                    </div>
                 </details>
-            </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="mb-16" aria-labelledby="contact-cta">
-            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8">
-                <div class="text-center">
-                    <h2 id="contact-cta" class="text-2xl md:text-3xl font-bold mb-4">
-                        Saubere Büros, zufriedene Mitarbeiter
-                    </h2>
-                    <p class="mb-6 opacity-90 max-w-xl mx-auto">
-                        Kontaktieren Sie uns für eine unverbindliche Besichtigung und Offerte. Wir melden uns innerhalb von 24 Stunden.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary hover:bg-gray-100 font-semibold rounded-lg transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 7: OFFERTE FORM ═══ -->
+    <!-- TODO: wire to controller POST when contact backend exists -->
+    <section id="offerte" class="py-16 px-4 sm:px-6 lg:px-8 bg-background scroll-mt-16 md:scroll-mt-[6.25rem]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Kostenlose Offerte in 2 Stunden
+                </h2>
+                <p class="text-lg text-muted-foreground">
+                    Senden Sie uns Ihre Eckdaten — wir melden uns innerhalb von 2 Stunden während der Geschäftszeiten.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8">
+
+                <!-- LEFT: Form -->
+                <div class="rounded-2xl bg-card shadow-lg p-6 md:p-8">
+                    <form id="bueroreinigung-form" class="space-y-3" novalidate>
+                        <input
+                            type="text"
+                            id="form-name"
+                            name="name"
+                            placeholder="Name *"
+                            required
+                            maxlength="100"
+                            class="w-full bg-muted/50 border-0 h-12 rounded-xl px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                        <input
+                            type="tel"
+                            id="form-phone"
+                            name="phone"
+                            placeholder="Telefon *"
+                            required
+                            maxlength="30"
+                            class="w-full bg-muted/50 border-0 h-12 rounded-xl px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                        <input
+                            type="email"
+                            id="form-email"
+                            name="email"
+                            placeholder="E-Mail *"
+                            required
+                            maxlength="255"
+                            class="w-full bg-muted/50 border-0 h-12 rounded-xl px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
+                        <select
+                            id="form-size"
+                            name="size"
+                            required
+                            class="w-full bg-muted/50 border-0 h-12 rounded-xl px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="" disabled selected>Bürofläche *</option>
+                            <option value="unter 100 m²">unter 100 m²</option>
+                            <option value="100–200 m²">100–200 m²</option>
+                            <option value="200–500 m²">200–500 m²</option>
+                            <option value="über 500 m²">über 500 m²</option>
+                        </select>
+
+                        <div class="bg-muted/50 rounded-xl p-4">
+                            <p class="text-sm font-medium text-foreground mb-3">Reinigungstyp * <span id="services-error" class="text-red-500 text-xs hidden">(mindestens 1 auswählen)</span></p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="checkbox" name="services" value="Unterhaltsreinigung" class="service-checkbox rounded" />
+                                    <span class="text-foreground">Unterhaltsreinigung</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="checkbox" name="services" value="Grundreinigung" class="service-checkbox rounded" />
+                                    <span class="text-foreground">Grundreinigung</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="checkbox" name="services" value="Fensterreinigung" class="service-checkbox rounded" />
+                                    <span class="text-foreground">Fensterreinigung</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="checkbox" name="services" value="Desinfektion" class="service-checkbox rounded" />
+                                    <span class="text-foreground">Desinfektion</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <textarea
+                            id="form-message"
+                            name="message"
+                            placeholder="Nachricht (optional)"
+                            maxlength="500"
+                            rows="3"
+                            class="w-full bg-muted/50 border-0 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+
+                        <button
+                            type="submit"
+                            class="w-full inline-flex items-center justify-center h-12 rounded-xl bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold text-base transition-colors">
+                            <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                             Kostenlose Offerte anfordern
-                        </a>
-                        <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white/10 font-semibold rounded-lg transition-colors">
-                            Kontakt aufnehmen
-                        </a>
+                        </button>
+                        <p class="text-center text-xs text-muted-foreground">Unverbindlich · Antwort innerhalb von 2 Stunden</p>
+                    </form>
+                </div>
+
+                <!-- RIGHT: Direct contact -->
+                <div class="space-y-6">
+                    <div class="rounded-2xl bg-gradient-hero text-primary-foreground shadow-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Direkter Kontakt</h3>
+                        <div class="space-y-4">
+                            <a href="tel:+41765017738" class="flex items-center gap-3 hover:opacity-90">
+                                <div class="bg-white/15 rounded-full p-2.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs opacity-80">Telefon</p>
+                                    <p class="font-bold">+41 76 501 77 38</p>
+                                </div>
+                            </a>
+                            <a href="mailto:info@zurich-endreinigung.ch" class="flex items-center gap-3 hover:opacity-90">
+                                <div class="bg-white/15 rounded-full p-2.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs opacity-80">E-Mail</p>
+                                    <p class="font-bold text-sm break-all">info@zurich-endreinigung.ch</p>
+                                </div>
+                            </a>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-white/15 rounded-full p-2.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs opacity-80">Öffnungszeiten</p>
+                                    <p class="font-semibold text-sm">Mo–Fr 08:00–19:00 · Sa 08:00–16:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-card shadow-lg overflow-hidden">
+                        <iframe
+                            title="Standort Zürich Endreinigung"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10825.4!2d8.4516!3d47.2772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAffoltern%20am%20Albis!5e0!3m2!1sde!2sch!4v1700000000000"
+                            width="100%"
+                            height="220"
+                            style="border:0;"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Related Links -->
-        <section class="mb-8" aria-labelledby="related-links">
-            <h3 id="related-links" class="text-lg font-semibold text-foreground mb-4">
-                Weitere Services
-            </h3>
-            <div class="flex flex-wrap gap-3">
-                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Endreinigung</a>
-                <a href="/praxisreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Praxisreinigung</a>
-                <a href="/grundreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Grundreinigung</a>
-                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Alle Extra Services</a>
             </div>
-        </section>
-    </main>
-</div>
+        </div>
+    </section>
+
+    <!-- ═══ RELATED SERVICES ═══ -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-lg font-semibold text-foreground mb-4">Weitere Services</h3>
+            <div class="flex flex-wrap gap-3">
+                <a href="/praxisreinigung-zuerich" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Praxisreinigung</a>
+                <a href="/grundreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Grundreinigung</a>
+                <a href="/fensterreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Fensterreinigung</a>
+                <a href="/teppichreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Teppichreinigung</a>
+                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-input text-primary rounded-md hover:bg-accent hover:text-accent-foreground transition-colors">Alle Extra Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ STICKY MOBILE CTA ═══ -->
+    <div class="fixed bottom-4 left-4 right-4 z-40 md:hidden">
+        <a href="#offerte"
+           class="w-full inline-flex items-center justify-center text-base h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-2xl">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Offerte anfordern
+        </a>
+    </div>
+
+</main>
+
+<script>
+    (function () {
+        var form = document.getElementById('bueroreinigung-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Basic HTML5 validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Checkbox group: at least 1 required
+            var checked = form.querySelectorAll('.service-checkbox:checked');
+            var errEl = document.getElementById('services-error');
+            if (checked.length === 0) {
+                if (errEl) errEl.classList.remove('hidden');
+                return;
+            }
+            if (errEl) errEl.classList.add('hidden');
+
+            // Collect values
+            var name    = document.getElementById('form-name').value.trim();
+            var phone   = document.getElementById('form-phone').value.trim();
+            var email   = document.getElementById('form-email').value.trim();
+            var size    = document.getElementById('form-size').value;
+            var message = document.getElementById('form-message').value.trim();
+            var services = Array.from(checked).map(function(cb){ return cb.value; }).join(', ');
+
+            var body = '[Büroreinigung Anfrage]\n'
+                + 'Name: ' + name + '\n'
+                + 'Telefon: ' + phone + '\n'
+                + 'E-Mail: ' + email + '\n'
+                + 'Bürofläche: ' + size + '\n'
+                + 'Reinigungstyp: ' + services + '\n'
+                + (message ? 'Nachricht: ' + message : '');
+
+            var mailto = 'mailto:info@zurich-endreinigung.ch'
+                + '?subject=' + encodeURIComponent('Büroreinigung Anfrage – zurich-endreinigung.ch')
+                + '&body='    + encodeURIComponent(body);
+
+            window.location.href = mailto;
+        });
+    })();
+</script>
 
 @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
