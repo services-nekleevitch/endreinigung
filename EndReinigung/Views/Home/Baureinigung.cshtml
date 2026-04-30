@@ -1,8 +1,52 @@
 @{
-    ViewData["Title"] = "Baureinigung Zürich | Professionelle Bauendreinigung ab 25 CHF/m²";
-    ViewData["Description"] = "Professionelle Baureinigung in Zürich nach Umbau oder Renovation. Baustaub-Entfernung, Feinreinigung aller Oberflächen. Fixpreise ab 25 CHF/m².";
+    ViewData["Title"] = "Baureinigung Zürich | Nach Umbau staubfrei & bezugsbereit | Zürich Endreinigung";
+    ViewData["Description"] = "Professionelle Baureinigung in Zürich nach Umbau oder Renovation. Staubfrei, bezugsbereit, zum Fixpreis. Jetzt Offerte anfordern.";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/baureinigung";
     ViewData["Keywords"] = "Baureinigung Zürich, Baureinigung Kosten, Baureinigung nach Umbau, Bauendreinigung, Baufeinreinigung Zürich";
+
+    var wohnungPrices = new (string Size, int Price, string Area, bool Popular)[] {
+        ("1-1.5 Zimmer", 435, "Bis ca. 50m²", false),
+        ("2-2.5 Zimmer", 565, "Bis ca. 75m²", false),
+        ("3-3.5 Zimmer", 725, "Bis ca. 100m²", true),
+        ("4-4.5 Zimmer", 895, "Bis ca. 125m²", false),
+        ("5-5.5 Zimmer", 1095, "Bis ca. 150m²", false),
+    };
+    var hausPrices = new (string Size, int Price, string Area, bool Popular)[] {
+        ("3-3.5 Zimmer", 1289, "Bis ca. 130m²", false),
+        ("4-4.5 Zimmer", 1589, "Bis ca. 170m²", false),
+        ("5-5.5 Zimmer", 1889, "Bis ca. 210m²", false),
+    };
+    var includedItems = new[] {
+        "Baustaub komplett entfernen",
+        "Grobschmutz und Bauschutt beseitigen",
+        "Fenster innen & aussen reinigen",
+        "Böden schleifen und wischen",
+        "Sanitäranlagen reinigen",
+        "Feinreinigung aller Oberflächen",
+        "Küchengeräte reinigen",
+    };
+    var faqItems = new (string Q, string A)[] {
+        ("Was kostet eine Baureinigung in Zürich?", "Die Kosten hängen von der Objektgrösse und dem Verschmutzungsgrad ab. Für Wohnungen in Zürich und Kanton beginnen unsere Fixpreise ab CHF 435 für 1–1.5 Zimmer. Grössere Objekte wie 3.5-Zimmer-Wohnungen kosten ab CHF 745. Im Preis inbegriffen sind Anfahrt und Material — keine versteckten Kosten. Für Gewerbe- und Grossprojekte erstellen wir eine individuelle Offerte innert 24 Stunden."),
+        ("Was umfasst eine professionelle Baureinigung?", "Eine professionelle Baureinigung umfasst die komplette Reinigung nach Bau-, Umbau- oder Renovierungsarbeiten. Dazu gehören: Entfernung von Baustaub auf allen Oberflächen, Beseitigung von Zement-, Mörtel- und Gipsresten, Reinigung aller Böden (Parkett, Plättli, Laminat), Fensterreinigung innen und aussen, Reinigung von Küche und Sanitäranlagen sowie Feinreinigung aller Oberflächen. Ziel ist eine bezugsfertige Übergabe."),
+        ("Wie lange dauert eine Baureinigung?", "Für eine Wohnung (1–3.5 Zimmer) dauert eine Baureinigung in der Regel 4–8 Stunden. Grössere Wohnungen und Einfamilienhäuser benötigen 1–2 Arbeitstage. Bei Gewerbe- und Grossprojekten planen wir die Dauer individuell. Wir koordinieren uns direkt mit Ihrer Bauleitung, damit die Reinigung termingerecht zum Bauabschluss stattfindet."),
+        ("Baureinigung selber machen oder Profis beauftragen?", "Eine Baureinigung nach Umbau oder Neubau erfordert Spezialgeräte und Fachwissen. Baustaub setzt sich in Fugen und Ritzen fest, Zementreste auf Glas und Parkett müssen fachgerecht entfernt werden — falsche Reinigungsmittel können teure Oberflächen beschädigen. Eine professionelle Baureinigung spart Zeit, vermeidet Schäden und garantiert ein bezugsfertiges Ergebnis. Bei uns sind Sie zudem haftpflichtversichert mit 5 Mio. CHF Deckung."),
+        ("Was ist der Unterschied zwischen Baugrobreinigung und Bauendreinigung?", "Die Baugrobreinigung findet während der Bauphase statt — grober Schmutz, Bauschutt und Abfälle werden laufend beseitigt. Die Bauendreinigung (auch Baufeinreinigung) erfolgt nach Abschluss aller Bauarbeiten und umfasst die gründliche Feinreinigung des gesamten Objekts: Staub, Reste, Flecken — alles wird entfernt, bis das Objekt bezugsfertig ist. Wir bieten beide Leistungen an."),
+        ("Wann sollte ich die Baureinigung planen?", "Idealerweise kontaktieren Sie uns bereits während der Bauphase, damit wir den Termin auf Ihren Bauzeitplan abstimmen können. Kurzfristige Einsätze sind ebenfalls möglich — wir sind in der Regel innert 48 Stunden verfügbar. Nach Ihrer Anfrage erhalten Sie innerhalb von 24 Stunden eine Offerte oder können direkt online Ihren Fixpreis berechnen."),
+    };
+    var bezirke = new (string Slug, string Name, string Hauptort)[] {
+        ("affoltern", "Bezirk Affoltern", "Affoltern am Albis"),
+        ("andelfingen", "Bezirk Andelfingen", "Andelfingen"),
+        ("buelach", "Bezirk Bülach", "Bülach"),
+        ("dielsdorf", "Bezirk Dielsdorf", "Dielsdorf"),
+        ("dietikon", "Bezirk Dietikon", "Dietikon"),
+        ("hinwil", "Bezirk Hinwil", "Hinwil"),
+        ("horgen", "Bezirk Horgen", "Horgen"),
+        ("meilen", "Bezirk Meilen", "Meilen"),
+        ("pfaeffikon", "Bezirk Pfäffikon", "Pfäffikon ZH"),
+        ("uster", "Bezirk Uster", "Uster"),
+        ("winterthur", "Bezirk Winterthur", "Winterthur"),
+        ("zuerich", "Bezirk Zürich", "Zürich"),
+    };
 }
 
 @section Head {
@@ -11,520 +55,529 @@
         "@@context": "https://schema.org",
         "@@type": "FAQPage",
         "mainEntity": [
+            @for (var i = 0; i < faqItems.Length; i++)
             {
-                "@@type": "Question",
-                "name": "Was kostet eine Baureinigung in Zürich?",
-                "acceptedAnswer": {
-                    "@@type": "Answer",
-                    "text": "Eine professionelle Baureinigung für eine Wohnung beginnt ab 435 CHF. Der genaue Preis hängt von der Zimmerzahl und dem Objekt ab."
-                }
-            },
-            {
-                "@@type": "Question",
-                "name": "Wie lange dauert eine Baureinigung?",
-                "acceptedAnswer": {
-                    "@@type": "Answer",
-                    "text": "Eine Baureinigung dauert je nach Fläche und Verschmutzungsgrad zwischen 4 und 8 Stunden. Bei grösseren Objekten kann es auch länger dauern."
-                }
-            },
-            {
-                "@@type": "Question",
-                "name": "Was ist der Unterschied zwischen Grob- und Feinreinigung?",
-                "acceptedAnswer": {
-                    "@@type": "Answer",
-                    "text": "Die Grobreinigung umfasst die Entfernung von grobem Bauschutt, Staub und Schmutz. Die Feinreinigung schliesst die gründliche Reinigung aller Oberflächen, Fenster und Böden ein."
-                }
-            },
-            {
-                "@@type": "Question",
-                "name": "Wann sollte eine Baureinigung durchgeführt werden?",
-                "acceptedAnswer": {
-                    "@@type": "Answer",
-                    "text": "Die Baureinigung sollte nach Abschluss aller Bau- und Renovationsarbeiten durchgeführt werden, bevor die Räume bezogen oder eingerichtet werden."
-                }
+                var (q, a) = faqItems[i];
+                @:{ "@@type": "Question", "name": "@q", "acceptedAnswer": { "@@type": "Answer", "text": "@a" } }@(i < faqItems.Length - 1 ? "," : "")
             }
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "serviceType": "Baureinigung",
+        "name": "Baureinigung Zürich – Fixpreise nach Objektgrösse",
+        "provider": {
+            "@@type": "CleaningService",
+            "name": "Zürich Endreinigung",
+            "telephone": "+41765017738",
+            "email": "info@zurich-endreinigung.ch",
+            "url": "https://zurich-endreinigung.ch",
+            "areaServed": { "@@type": "State", "name": "Kanton Zürich" }
+        },
+        "offers": {
+            "@@type": "AggregateOffer",
+            "priceCurrency": "CHF",
+            "lowPrice": "435",
+            "highPrice": "1989",
+            "offerCount": @(wohnungPrices.Length + hausPrices.Length)
+        }
+    }
+    </script>
 }
 
-<div class="min-h-screen bg-background">
+<main class="min-h-screen">
 
-    <!-- Hero Section -->
-    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Back Button -->
-            <nav class="mb-6" aria-label="Breadcrumb">
-                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                    Zurück zu Extra Services
-                </a>
-            </nav>
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-20 md:pt-[6.25rem] min-h-[48vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/img/services/baureinigung-hero.jpg" alt="Professionelle Baureinigung in Zürich" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" />
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, hsla(210,100%,15%,0.88) 0%, hsla(210,95%,25%,0.85) 50%, hsla(210,85%,35%,0.80) 100%)"></div>
+        </div>
 
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                    <!-- HardHat icon -->
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18a1 1 0 001 1h18a1 1 0 001-1v-2a1 1 0 00-1-1H3a1 1 0 00-1 1v2z"/><path d="M10 15V6.5a3.5 3.5 0 117 0V15"/><path d="M4 15v-5a8 8 0 0116 0v5"/></svg>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-block bg-trust-gold text-white font-semibold text-sm px-4 py-1.5 rounded-full">💰 Fixpreis</span>
+                    <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">🛡️ Haftpflichtversichert</span>
+                    <span class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white/90 text-sm font-medium">🌍 Expat Friendly</span>
                 </div>
-                <div class="inline-block bg-booking-orange/10 text-booking-orange text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                    Professionelle Baureinigung
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                    Baureinigung in Zürich – nach Umbau oder Renovation
+
+                <h1 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight">
+                    Baureinigung Zürich — Staubfrei und bezugsbereit nach Umbau
                 </h1>
-                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Professionelle Baustellenreinigung nach Renovierungsarbeiten im Kanton Zürich.
-                    Baustaub-Entfernung, Feinreinigung aller Oberflächen – staubfrei und bezugsbereit.
+
+                <p class="text-base md:text-lg text-white/80 mb-4 max-w-2xl">
+                    Nach Umbau oder Renovation sorgen wir für staubfreie, bezugsbereite Räume. Professionelle Baureinigung mit Erfahrung, Fixpreis und Qualitätsgarantie.
                 </p>
 
-                <!-- Trust Signals -->
-                <div class="flex flex-wrap justify-center gap-4 mt-8">
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        <span class="text-sm font-medium text-foreground">Fixpreise</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span class="text-sm font-medium text-foreground">4-8 Stunden</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-sm font-medium text-foreground">Bezugsbereit</span>
+                <div class="space-y-1.5 mb-5">
+                    @foreach (var item in new[] { "Fixpreis — keine versteckten Kosten", "Baustaub, Grobschmutz & Feinreinigung inklusive", "Haftpflichtversichert mit 5 Mio. CHF Deckung" })
+                    {
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span class="text-white text-base md:text-lg">@item</span>
+                        </div>
+                    }
+                </div>
+
+                <a href="#pakete" class="inline-flex items-center text-lg px-8 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Jetzt Preise sehen
+                </a>
+
+                <!-- Quality seal -->
+                <div class="mt-5 flex">
+                    <div class="inline-flex items-center gap-2.5 bg-white/95 backdrop-blur-sm border-2 border-trust-gold/70 rounded-full pl-2 pr-4 py-1.5 shadow-lg">
+                        <div class="flex items-center justify-center w-7 h-7 rounded-full bg-trust-gold/15 ring-1 ring-trust-gold/40">
+                            <svg class="w-4 h-4 text-trust-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-foreground tracking-wide uppercase">Spezialisiert auf hochwertige Bodenbeläge & Parkett</span>
                     </div>
                 </div>
 
-                <div class="mt-8">
-                    <a href="#contact-form" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Kostenlose Offerte anfordern
+                <!-- Google Rating -->
+                <div class="mt-6 pt-6 border-t border-white/20">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        @for (var i = 0; i < 5; i++)
+                        {
+                            <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        }
+                        <span class="text-white/80 text-sm ml-2 inline-flex items-center gap-1.5">
+                            4.9/5 Bewertung auf
+                            <svg class="w-16 h-5 inline-block" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
+                                <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
+                                <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
+                                <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
+                                <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
+                                <path d="M35.29 41.19V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.01z" fill="#4285F4"/>
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-
-        <!-- Pricing Section -->
-        <section class="py-16 bg-background" aria-labelledby="pricing-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <h2 id="pricing-heading" class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                        Transparente Fixpreise
-                    </h2>
-                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Wählen Sie Ihr Objekt und erhalten Sie sofort einen Fixpreis — alles inklusive, keine versteckten Kosten.
-                    </p>
+    <!-- ═══ TLDR / KURZ ERKLÄRT + TRUST BAR ═══ -->
+    <section class="bg-background pt-2 md:pt-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-secondary/40 border border-border rounded-2xl p-6 md:p-8 mt-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7L12 17l-5.5 4 2-7L3 10h7z"/></svg>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-primary">Kurz erklärt</span>
                 </div>
-
-                <!-- Tab Toggle -->
-                <div class="flex justify-center mb-8" role="tablist" aria-label="Objektart wählen">
-                    <div class="inline-flex rounded-lg border border-border bg-muted p-1 gap-1">
-                        <button id="tab-wohnung" role="tab" aria-selected="true" aria-controls="panel-wohnung"
-                                onclick="switchTab('wohnung')"
-                                class="tab-btn px-5 py-2 rounded-md text-sm font-semibold transition-colors bg-card shadow text-foreground">
-                            Wohnung
-                        </button>
-                        <button id="tab-haus" role="tab" aria-selected="false" aria-controls="panel-haus"
-                                onclick="switchTab('haus')"
-                                class="tab-btn px-5 py-2 rounded-md text-sm font-semibold transition-colors text-muted-foreground hover:text-foreground">
-                            Haus
-                        </button>
-                        <button id="tab-gewerbe" role="tab" aria-selected="false" aria-controls="panel-gewerbe"
-                                onclick="switchTab('gewerbe')"
-                                class="tab-btn px-5 py-2 rounded-md text-sm font-semibold transition-colors text-muted-foreground hover:text-foreground">
-                            Gewerbe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Wohnung Panel -->
-                <div id="panel-wohnung" role="tabpanel" aria-labelledby="tab-wohnung">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">1 – 1.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">435 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">2 – 2.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">565 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-xl hover:shadow-2xl ring-2 ring-primary hover:ring-primary/80 transition-all duration-200 p-6 text-center relative">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                                <span class="bg-booking-orange text-white text-xs font-bold px-3 py-1 rounded-full">Beliebt</span>
+                <p class="mb-6 text-foreground leading-relaxed">
+                    <strong>Professionelle Baureinigung in Zürich – Staubfrei zur Schlüsselübergabe.</strong>
+                    Ob Neubau oder Renovation: Wir übernehmen die komplette Baugrobreinigung und Baufeinreinigung,
+                    damit Ihr Objekt pünktlich bezugsbereit ist. Unser Team entfernt Baustaub, Farbreste und
+                    Zementschleier fachgerecht. Mit 100% Abnahmegarantie und Fixpreisen ab CHF 435 sorgen wir
+                    für eine stressfreie Bauabnahme im gesamten Kanton Zürich.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-6 mt-6 border-t border-border/60">
+                    @{
+                        var trustBar = new (string Icon, string Title, string Subtitle)[] {
+                            ("shield",   "Haftpflichtversichert",      "5 Mio. CHF Deckung"),
+                            ("award",    "Bezugsfertige Übergabe",     "Qualitätskontrolle garantiert"),
+                            ("clock",    "Fixpreis sofort berechnen",  "Online in 2 Minuten"),
+                            ("file",     "Spezialobjekt?",             "Individuelle Offerte innert 24h"),
+                        };
+                    }
+                    @foreach (var (icon, title, subtitle) in trustBar)
+                    {
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                                @switch (icon)
+                                {
+                                    case "shield":
+                                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                        break;
+                                    case "award":
+                                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                                        break;
+                                    case "clock":
+                                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        break;
+                                    case "file":
+                                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                        break;
+                                }
                             </div>
-                            <div class="text-base font-semibold text-foreground mb-1">3 – 3.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">725 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">4 – 4.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">895 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">5 – 5.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">1'095 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                    </div>
+                            <h3 class="text-xs md:text-sm font-semibold text-foreground">@title</h3>
+                            <p class="text-[11px] md:text-xs text-muted-foreground mt-1">@subtitle</p>
+                        </div>
+                    }
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Haus Panel -->
-                <div id="panel-haus" role="tabpanel" aria-labelledby="tab-haus" class="hidden">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">3 – 3.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">1'289 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-xl hover:shadow-2xl ring-2 ring-primary hover:ring-primary/80 transition-all duration-200 p-6 text-center relative">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                                <span class="bg-booking-orange text-white text-xs font-bold px-3 py-1 rounded-full">Beliebt</span>
-                            </div>
-                            <div class="text-base font-semibold text-foreground mb-1">4 – 4.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">1'589 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-6 text-center">
-                            <div class="text-base font-semibold text-foreground mb-1">5 – 5.5 Zimmer</div>
-                            <div class="text-3xl font-bold text-primary mb-1">1'889 <span class="text-base font-normal text-muted-foreground">CHF</span></div>
-                            <div class="text-xs text-muted-foreground">Fixpreis MWST-frei</div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Gewerbe Panel -->
-                <div id="panel-gewerbe" role="tabpanel" aria-labelledby="tab-gewerbe" class="hidden">
-                    <div class="max-w-md mx-auto">
-                        <a href="/baureinigung-calculator" class="group block rounded-xl border border-border bg-card shadow-md hover:shadow-lg hover:border-primary transition-all duration-200 p-8 text-center">
-                            <div class="text-xl font-semibold text-foreground mb-2">Gewerbe & Büro</div>
-                            <div class="text-3xl font-bold text-primary mb-2">Auf Anfrage</div>
-                            <div class="text-sm text-muted-foreground">Wir erstellen Ihnen ein individuelles Angebot.</div>
-                            <div class="mt-4 inline-flex items-center text-sm font-semibold text-primary">
-                                Preis berechnen
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <p class="text-center text-sm text-muted-foreground mt-6">
-                    Klicken Sie auf eine Karte um den Preis zu berechnen und zu buchen.
+    <!-- ═══ PRICING CARDS ═══ -->
+    <section id="pakete" class="py-16 px-4 sm:px-6 lg:px-8 scroll-mt-16 md:scroll-mt-[6.25rem] bg-[#e0e0e0]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Fixpreise Baureinigung</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Transparente Festpreise für Ihre Baureinigung in Zürich — alles inklusive.
                 </p>
             </div>
-        </section>
 
-        <!-- Was ist im Service enthalten -->
-        <section class="py-16 bg-secondary/30" aria-labelledby="included-services">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="included-services" class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                    Was ist im Service enthalten
-                </h2>
-                <div class="rounded-lg bg-card shadow-lg p-8">
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Baustaub-Entfernung</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Fensterreinigung nach Bauarbeiten</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Grobschmutz-Beseitigung</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Feinreinigung aller Oberflächen</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Bodenreinigung und Pflege</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span class="text-foreground">Sanitärräume und Küche intensiv</span>
-                        </li>
-                    </ul>
+            <!-- Property type toggle -->
+            <div class="flex justify-center gap-3 mb-8" id="bau-type-toggle">
+                <button type="button" data-bau-type="wohnung" class="bau-type-btn inline-flex items-center px-5 py-2.5 rounded-lg font-medium transition-colors bg-primary text-primary-foreground">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                    Wohnung
+                </button>
+                <button type="button" data-bau-type="haus" class="bau-type-btn inline-flex items-center px-5 py-2.5 rounded-lg font-medium transition-colors border-2 border-border bg-card text-foreground hover:border-booking-orange/50">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Einfamilienhaus
+                </button>
+                <button type="button" data-bau-type="gewerbe" class="bau-type-btn inline-flex items-center px-5 py-2.5 rounded-lg font-medium transition-colors border-2 border-border bg-card text-foreground hover:border-muted-foreground">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 15V6.5a3.5 3.5 0 1 1 7 0V15"/><path d="M4 15v-5a8 8 0 0 1 16 0v5"/></svg>
+                    Gewerbe
+                </button>
+            </div>
+
+            <!-- Wohnung cards -->
+            <div data-bau-panel="wohnung" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                @foreach (var (size, price, area, popular) in wohnungPrices)
+                {
+                    <div class="relative p-4 sm:p-6 bg-white rounded-xl border-2 @(popular ? "border-swiss-blue shadow-lg" : "border-border") hover:shadow-xl transition-all duration-300">
+                        @if (popular)
+                        {
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <div class="bg-swiss-blue text-white text-xs font-bold px-4 py-1.5 rounded-full">Beliebt</div>
+                            </div>
+                        }
+                        <div class="absolute top-4 right-4">
+                            <div class="@(popular ? "bg-cleaning-green" : "bg-trust-gold") text-white text-xs font-bold px-3 py-1 rounded-full">Fixpreis</div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center mb-4">
+                                <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-foreground mb-1">@size</h3>
+                            <p class="text-xs text-muted-foreground mb-2">Baureinigung in Zürich und Kanton</p>
+                            <div class="text-3xl font-bold text-swiss-blue mb-1">ab @price.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("de-CH")).Replace("'", "'") CHF</div>
+                            <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            @foreach (var feature in includedItems.Take(6))
+                            {
+                                <div class="flex items-start">
+                                    <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span class="text-xs text-foreground">@feature</span>
+                                </div>
+                            }
+                        </div>
+                        <a href="/baureinigung-calculator" class="block w-full text-center bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Jetzt Fixpreis berechnen
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <!-- Haus cards -->
+            <div data-bau-panel="haus" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                @foreach (var (size, price, area, popular) in hausPrices)
+                {
+                    <div class="relative p-4 sm:p-6 bg-white rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300">
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-trust-gold text-white text-xs font-bold px-3 py-1 rounded-full">Fixpreis</div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center mb-4">
+                                <svg class="w-8 h-8 text-booking-orange" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-foreground mb-1">@size</h3>
+                            <p class="text-xs text-muted-foreground mb-2">Baureinigung in Zürich und Kanton</p>
+                            <div class="text-3xl font-bold text-swiss-blue mb-1">ab @price.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("de-CH")).Replace("'", "'") CHF</div>
+                            <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            @foreach (var feature in includedItems.Take(6))
+                            {
+                                <div class="flex items-start">
+                                    <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span class="text-xs text-foreground">@feature</span>
+                                </div>
+                            }
+                        </div>
+                        <a href="/baureinigung-calculator" class="block w-full text-center bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Jetzt Fixpreis berechnen
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <!-- Gewerbe panel -->
+            <div data-bau-panel="gewerbe" class="hidden">
+                <div class="max-w-md mx-auto p-6 bg-white rounded-xl border-2 border-border hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-4 right-4"></div>
+                    <div class="text-center mb-6">
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Gewerbe / Grossprojekt</h3>
+                        <div class="text-2xl font-bold text-swiss-blue mb-1">auf Anfrage</div>
+                        <p class="text-xs text-muted-foreground mb-1">Individuelle Baureinigung in Zürich und Kanton</p>
+                        <p class="text-xs text-muted-foreground">Büros, Praxen, Gewerberäume, Neubauten</p>
+                    </div>
+                    <div class="space-y-2 mb-6">
+                        @foreach (var feature in includedItems)
+                        {
+                            <div class="flex items-start">
+                                <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span class="text-xs text-foreground">@feature</span>
+                            </div>
+                        }
+                    </div>
+                    <a href="#contact-form" class="block w-full text-center bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors">
+                        <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Offerte anfordern
+                    </a>
+                    <p class="text-center text-[10px] text-muted-foreground mt-2">Wir melden uns innerhalb von 24h</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- How It Works -->
-        <section class="py-16 bg-background" aria-labelledby="how-it-works">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="how-it-works" class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                    So einfach funktioniert es
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="rounded-lg bg-card shadow-md p-6 text-center">
-                        <div class="bg-gradient-hero text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
-                        <h3 class="font-semibold text-foreground mb-2">Objekt auswählen</h3>
-                        <p class="text-muted-foreground text-sm">Wählen Sie Wohnung, Haus oder Gewerbe und geben Sie die Zimmerzahl an.</p>
-                    </div>
-                    <div class="rounded-lg bg-card shadow-md p-6 text-center">
-                        <div class="bg-gradient-hero text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
-                        <h3 class="font-semibold text-foreground mb-2">Fixpreis erhalten</h3>
-                        <p class="text-muted-foreground text-sm">Sie erhalten sofort einen transparenten Fixpreis — alles inklusive.</p>
-                    </div>
-                    <div class="rounded-lg bg-card shadow-md p-6 text-center">
-                        <div class="bg-gradient-hero text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
-                        <h3 class="font-semibold text-foreground mb-2">Termin vereinbaren</h3>
-                        <p class="text-muted-foreground text-sm">Wir kommen zum Wunschtermin und hinterlassen Ihr Objekt staubfrei und bezugsbereit.</p>
-                    </div>
-                </div>
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">So funktioniert's</h2>
+                <p class="text-lg text-muted-foreground">In 3 einfachen Schritten zur sauberen Baustelle</p>
             </div>
-        </section>
-
-        <!-- Detailed Checklist -->
-        <section class="py-16 bg-secondary/30" aria-labelledby="checklist-heading">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="checklist-heading" class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                    Detaillierte Reinigungsliste
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <!-- Küche -->
-                    <div class="rounded-lg bg-card shadow-md p-6">
-                        <h3 class="font-bold text-foreground mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-                            Küche
-                        </h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Backofen innen & aussen reinigen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Kochfeld und Dunstabzug entfetten
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Schränke aussen auswischen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Kühlschrank innen reinigen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Arbeitsplatten und Spüle desinfizieren
-                            </li>
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                @{
+                    var steps = new (string Bg, string Color, string Title, string Desc, string IconKey)[] {
+                        ("bg-primary/10",         "text-primary",         "1. Grösse wählen",   "Wählen Sie die Zimmergrösse und den Objekttyp — Wohnung oder Einfamilienhaus.", "clipboard"),
+                        ("bg-booking-orange/10",  "text-booking-orange",  "2. Fixpreis erhalten", "Sie erhalten sofort einen transparenten Fixpreis — alles inklusive.", "tag"),
+                        ("bg-cleaning-green/15",  "text-cleaning-green",  "3. Bezugsbereit",    "Wir reinigen Ihre Räume gründlich und hinterlassen sie staubfrei und bezugsbereit.", "key"),
+                    };
+                }
+                @foreach (var (bg, color, title, desc, iconKey) in steps)
+                {
+                    <div class="text-center">
+                        <div class="@bg rounded-2xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            @switch (iconKey)
+                            {
+                                case "clipboard":
+                                    <svg class="w-10 h-10 @color" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                                    break;
+                                case "tag":
+                                    <svg class="w-10 h-10 @color" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    break;
+                                case "key":
+                                    <svg class="w-10 h-10 @color" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+                                    break;
+                            }
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">@title</h3>
+                        <p class="text-muted-foreground">@desc</p>
                     </div>
-
-                    <!-- Bad & WC -->
-                    <div class="rounded-lg bg-card shadow-md p-6">
-                        <h3 class="font-bold text-foreground mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6 6.5 3.5a1.5 1.5 0 00-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 002 2h12a2 2 0 002-2v-5"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                            Bad & WC
-                        </h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Dusche / Badewanne entkalken
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                WC innen & aussen desinfizieren
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Lavabo und Armaturen polieren
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Spiegel streifenfrei reinigen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Fugen und Silikon intensiv reinigen
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Böden & Oberflächen -->
-                    <div class="rounded-lg bg-card shadow-md p-6">
-                        <h3 class="font-bold text-foreground mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-                            Böden & Oberflächen
-                        </h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Böden wischen (alle Bodenbeläge)
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Sockelleisten abstauben & wischen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Türen & Türrahmen wischen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Heizkörper entstauben
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Lichtschalter & Steckdosen reinigen
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Fenster & Balkone -->
-                    <div class="rounded-lg bg-card shadow-md p-6">
-                        <h3 class="font-bold text-foreground mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
-                            Fenster & Balkone
-                        </h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Fenster innen streifenfrei reinigen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Fensterbänke wischen (innen & aussen)
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Balkon fegen und reinigen
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Jalousien & Rollläden abstauben
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-foreground">
-                                <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                Baustaub von Fensterflächen entfernen
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
+                }
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Bezirk Links -->
-        <section class="py-12 bg-background" aria-labelledby="bezirke-heading">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="bezirke-heading" class="text-xl font-bold text-foreground mb-6 text-center">
-                    Baureinigung in Zürich — Wir sind im ganzen Kanton tätig
-                </h2>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Zürich Stadt</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Winterthur</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Uster</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Dübendorf</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Dietikon</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Horgen</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Meilen</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Pfäffikon</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Bülach</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Kloten</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Opfikon</span>
-                    <span class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-foreground rounded-md bg-card">Regensdorf</span>
-                </div>
+    <!-- ═══ WHY US ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Warum Zürich Endreinigung?</h2>
             </div>
-        </section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                @{
+                    var usps = new (string IconKey, string Title, string Desc, string Highlight)[] {
+                        ("clock",   "Schnelle Verfügbarkeit", "Kurzfristige Einsätze auch nach Bauabschluss möglich.", "Innert 48h"),
+                        ("user",    "Erfahrenes Team",        "Spezialisiert auf Bau- und Renovationsreinigungen.",    "10+ Jahre"),
+                        ("card",    "Transparenter Fixpreis", "Keine versteckten Kosten — alles klar kalkuliert.",      "Keine Extras"),
+                        ("shield",  "Haftpflichtversichert",  "Vollumfänglich versichert für Ihre Sicherheit.",         "5 Mio. CHF"),
+                    };
+                }
+                @foreach (var (iconKey, title, desc, highlight) in usps)
+                {
+                    <div class="p-6 bg-white rounded-xl shadow-md text-center">
+                        <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            @switch (iconKey)
+                            {
+                                case "clock":
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    break;
+                                case "user":
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    break;
+                                case "card":
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                    break;
+                                case "shield":
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    break;
+                            }
+                        </div>
+                        <h3 class="font-bold text-foreground mb-1">@title</h3>
+                        <p class="text-muted-foreground text-sm mb-3">@desc</p>
+                        <span class="text-primary font-bold text-sm">@highlight</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
 
-        <!-- FAQ -->
-        <section class="py-16 bg-secondary/30" aria-labelledby="faq-heading">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                    Häufige Fragen
-                </h2>
-                <div class="rounded-lg bg-card shadow-lg overflow-hidden">
-                    <details class="border-b border-border group">
+    <!-- ═══ WHAT'S INCLUDED ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Im Preis enthalten — Ihre Baureinigung in Zürich</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                @{
+                    var includedCards = new (string Title, string[] Items)[] {
+                        ("Baustaub & Grobschmutz", new[] {
+                            "Entfernung von Baustaub auf allen Oberflächen",
+                            "Zement-, Mörtel- und Gipsreste beseitigen",
+                            "Farb- und Klebereste entfernen",
+                            "Grober Schmutz und Bauschutt-Reste beseitigen",
+                        }),
+                        ("Böden & Oberflächen", new[] {
+                            "Alle Böden gründlich reinigen (Parkett, Plättli, Laminat)",
+                            "Sockelleisten und Türrahmen reinigen",
+                            "Heizkörper und Lüftungsgitter entstauben",
+                            "Steckdosen und Lichtschalter reinigen",
+                        }),
+                        ("Fenster & Glas", new[] {
+                            "Fenster innen & aussen reinigen",
+                            "Fensterrahmen und Fenstersims",
+                            "Glasflächen und Spiegel streifenfrei",
+                            "Schutzfolien von Fenstern entfernen",
+                        }),
+                        ("Küche & Sanitär", new[] {
+                            "Küche komplett: Arbeitsflächen, Spüle, Armaturen",
+                            "Schränke aussen auswischen",
+                            "Bad & WC gründlich reinigen",
+                            "Alle Armaturen polieren",
+                        }),
+                    };
+                }
+                @foreach (var (title, items) in includedCards)
+                {
+                    <div class="p-6 bg-white rounded-xl shadow-md">
+                        <h3 class="text-lg font-bold text-foreground mb-4">@title</h3>
+                        <div class="space-y-3">
+                            @foreach (var item in items)
+                            {
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span class="text-sm text-foreground">@item</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ WAS IST EINE BAUREINIGUNG ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6">Was ist eine Baureinigung?</h2>
+            <p class="text-base text-muted-foreground mb-4 leading-relaxed">
+                Eine Baureinigung — auch Bauendreinigung genannt — ist die professionelle Reinigung eines Gebäudes nach Abschluss von Bau-, Umbau- oder Renovierungsarbeiten. In Zürich und im gesamten Kanton Zürich ist eine gründliche Baureinigung nach der Fertigstellung Pflicht, damit ein Objekt termingerecht <strong>bezugsbereit</strong> übergeben werden kann. Dabei werden Baustaub, Mörtelreste, Farbrückstände sowie hartnäckige Zementschleier auf Glas, Fliesen und Sanitärflächen fachgerecht entfernt — die sogenannte <strong>Zementschleierentfernung</strong> gehört zu den anspruchsvollsten Arbeiten und erfordert spezielles Know-how und geprüfte Reinigungsmittel.
+            </p>
+            <p class="text-base text-muted-foreground leading-relaxed">
+                Ob nach Neubau, Umbau, Renovation oder Sanierung — Baustaub setzt sich in allen Ritzen und Fugen fest. Unser Leistungsumfang umfasst neben der Feinreinigung aller Oberflächen auch die <strong>Fensterreinigung inkl. Rahmen</strong>, Falze und Fensterbänke, damit kein Bauschmutz zurückbleibt. Für Bauherren, Eigentümer und Verwaltungen in Zürich bedeutet eine professionelle Baureinigung: termingerechte Übergabe, kein Risiko und ein makelloses, sofort <strong>bezugsbereit</strong>es Ergebnis — vom Keller bis zum Dachgeschoss.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Häufige Fragen zur Baureinigung</h2>
+            </div>
+            <div class="bg-card rounded-xl shadow-lg overflow-hidden">
+                @foreach (var (q, a) in faqItems)
+                {
+                    <details class="border-b border-border last:border-b-0 group">
                         <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                            Was kostet eine Baureinigung in Zürich?
+                            <span>@q</span>
                             <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
-                        <div class="px-6 pb-4 text-muted-foreground">
-                            Eine professionelle Baureinigung für eine Wohnung beginnt ab 435 CHF. Der genaue Preis hängt von der Zimmerzahl und dem Objekt ab. Nutzen Sie unseren Preisrechner für ein sofortiges Fixpreisangebot.
-                        </div>
+                        <div class="px-6 pb-4 text-muted-foreground">@a</div>
                     </details>
-                    <details class="border-b border-border group">
-                        <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                            Wie lange dauert eine Baureinigung?
-                            <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </summary>
-                        <div class="px-6 pb-4 text-muted-foreground">
-                            Eine Baureinigung dauert je nach Fläche und Verschmutzungsgrad zwischen 4 und 8 Stunden. Bei grösseren Objekten oder starker Verschmutzung kann es auch länger dauern.
-                        </div>
-                    </details>
-                    <details class="border-b border-border group">
-                        <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                            Was ist der Unterschied zwischen Grob- und Feinreinigung?
-                            <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </summary>
-                        <div class="px-6 pb-4 text-muted-foreground">
-                            Die Grobreinigung umfasst die Entfernung von grobem Bauschutt, Staub und Schmutz. Die Feinreinigung schliesst die gründliche Reinigung aller Oberflächen, Fenster und Böden ein. Beide Schritte sind in unserem Service inbegriffen.
-                        </div>
-                    </details>
-                    <details class="group">
-                        <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
-                            Wann sollte eine Baureinigung durchgeführt werden?
-                            <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </summary>
-                        <div class="px-6 pb-4 text-muted-foreground">
-                            Die Baureinigung sollte nach Abschluss aller Bau- und Renovationsarbeiten durchgeführt werden, bevor die Räume bezogen oder eingerichtet werden.
-                        </div>
-                    </details>
-                </div>
+                }
             </div>
-        </section>
+        </div>
+    </section>
 
-        @await Html.PartialAsync("_Contact")
-
-        <!-- Related Links -->
-        <section class="py-10 bg-background" aria-labelledby="related-links">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 id="related-links" class="text-lg font-semibold text-foreground mb-4">
-                    Weitere Services
-                </h3>
-                <div class="flex flex-wrap gap-3">
-                    <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Endreinigung</a>
-                    <a href="/grundreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Grundreinigung</a>
-                    <a href="#contact-form" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Kontakt</a>
-                    <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Alle Extra Services</a>
-                </div>
+    <!-- ═══ REGION SELECTOR ═══ -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Baureinigung in Ihrer Region</h2>
+                <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    Wir sind im gesamten Kanton Zürich für Sie im Einsatz. Wählen Sie Ihre Region für lokale Informationen.
+                </p>
             </div>
-        </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach (var (slug, name, hauptort) in bezirke)
+                {
+                    <a href="/baureinigung/@slug" class="flex items-center justify-between p-5 rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/30 transition-all group">
+                        <div>
+                            <span class="font-semibold text-foreground group-hover:text-primary transition-colors">@hauptort</span>
+                            <span class="block text-sm text-muted-foreground mt-0.5">@name</span>
+                        </div>
+                        <svg class="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                }
+            </div>
+        </div>
+    </section>
 
-    </main>
-</div>
-
-<script>
-    function switchTab(tab) {
-        // Hide all panels
-        document.getElementById('panel-wohnung').classList.add('hidden');
-        document.getElementById('panel-haus').classList.add('hidden');
-        document.getElementById('panel-gewerbe').classList.add('hidden');
-
-        // Reset all tab buttons
-        document.querySelectorAll('.tab-btn').forEach(function(btn) {
-            btn.classList.remove('bg-card', 'shadow', 'text-foreground');
-            btn.classList.add('text-muted-foreground');
-            btn.setAttribute('aria-selected', 'false');
-        });
-
-        // Show selected panel
-        document.getElementById('panel-' + tab).classList.remove('hidden');
-
-        // Activate selected tab button
-        var activeBtn = document.getElementById('tab-' + tab);
-        activeBtn.classList.add('bg-card', 'shadow', 'text-foreground');
-        activeBtn.classList.remove('text-muted-foreground');
-        activeBtn.setAttribute('aria-selected', 'true');
-    }
-</script>
+    @await Html.PartialAsync("_Contact")
+</main>
 
 @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+@section Scripts {
+    <script>
+        (function () {
+            const buttons = document.querySelectorAll('[data-bau-type]');
+            const panels = document.querySelectorAll('[data-bau-panel]');
+            const activeWohnung = ['bg-primary', 'text-primary-foreground'];
+            const activeHaus = ['bg-booking-orange', 'text-white'];
+            const activeGewerbe = ['bg-muted-foreground', 'text-white'];
+            const inactive = ['border-2', 'border-border', 'bg-card', 'text-foreground'];
+
+            function setType(type) {
+                buttons.forEach(b => {
+                    const isActive = b.getAttribute('data-bau-type') === type;
+                    b.classList.remove(...activeWohnung, ...activeHaus, ...activeGewerbe, ...inactive);
+                    if (isActive) {
+                        if (type === 'wohnung') b.classList.add(...activeWohnung);
+                        else if (type === 'haus') b.classList.add(...activeHaus);
+                        else b.classList.add(...activeGewerbe);
+                    } else {
+                        b.classList.add(...inactive);
+                    }
+                });
+                panels.forEach(p => {
+                    const match = p.getAttribute('data-bau-panel') === type;
+                    p.classList.toggle('hidden', !match);
+                    if (match && type !== 'gewerbe') p.classList.add('grid');
+                    else p.classList.remove('grid');
+                });
+            }
+
+            buttons.forEach(b => b.addEventListener('click', () => setType(b.getAttribute('data-bau-type'))));
+        })();
+    </script>
+}

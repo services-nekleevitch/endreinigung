@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug EndReinigung",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build EndReinigung",
+      "program": "${workspaceFolder}/EndReinigung/bin/Debug/net8.0/EndReinigung.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/EndReinigung",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/EndReinigung/Views"
+      }
+    }
+  ]
+}

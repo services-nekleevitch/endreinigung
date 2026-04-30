@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"] = "Endreinigung Kosten Zürich | Fixpreise ab CHF 345 | Zürich Endreinigung";
-    ViewData["Description"] = "Endreinigung Kosten in Zürich sofort berechnen. Fixpreis für Umzugsreinigung mit 100% Abnahmegarantie, inkl. Backofen, Fenster, Balkon — ab CHF 345.";
+    ViewData["Title"] = "Endreinigung Kosten Zürich | Fixpreise ab CHF 550 | Zürich Endreinigung";
+    ViewData["Description"] = "Endreinigung Kosten in Zürich sofort berechnen. Fixpreis für Umzugsreinigung mit 100% Abnahmegarantie, inkl. Backofen, Fenster, Balkon — ab CHF 550.";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/calculator";
     ViewData["Keywords"] = "Endreinigung Kosten Zürich, Endreinigung Preise, Umzugsreinigung Fixpreis, Endreinigung Rechner, Kostenrechner Reinigung";
 }
@@ -24,20 +24,20 @@
         "offers": {
             "@@type": "AggregateOffer",
             "priceCurrency": "CHF",
-            "lowPrice": "345",
+            "lowPrice": "550",
             "highPrice": "3099",
             "offerCount": 24,
             "offers": [
-                { "@@type": "Offer", "name": "Wohnung 1 Zimmer", "price": "345", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 1.5 Zimmer", "price": "385", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 2 Zimmer", "price": "495", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 2.5 Zimmer", "price": "535", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 3 Zimmer", "price": "645", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 3.5 Zimmer", "price": "685", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 4 Zimmer", "price": "780", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 4.5 Zimmer", "price": "839", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 5 Zimmer", "price": "940", "priceCurrency": "CHF" },
-                { "@@type": "Offer", "name": "Wohnung 5.5 Zimmer", "price": "990", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 1 Zimmer", "price": "550", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 1.5 Zimmer", "price": "550", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 2 Zimmer", "price": "650", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 2.5 Zimmer", "price": "650", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 3 Zimmer", "price": "850", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 3.5 Zimmer", "price": "850", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 4 Zimmer", "price": "970", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 4.5 Zimmer", "price": "970", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 5 Zimmer", "price": "1150", "priceCurrency": "CHF" },
+                { "@@type": "Offer", "name": "Wohnung 5.5 Zimmer", "price": "1150", "priceCurrency": "CHF" },
                 { "@@type": "Offer", "name": "Wohnung 6 Zimmer", "price": "1350", "priceCurrency": "CHF" },
                 { "@@type": "Offer", "name": "Haus 3 Zimmer", "price": "1299", "priceCurrency": "CHF" },
                 { "@@type": "Offer", "name": "Haus 4 Zimmer", "price": "1599", "priceCurrency": "CHF" },
@@ -54,7 +54,7 @@
             {
                 "@@type": "Question",
                 "name": "Was kostet eine Endreinigung in Zürich?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Eine professionelle Endreinigung in Zürich kostet ab CHF 345 für eine 1-Zimmer-Wohnung. Der Fixpreis richtet sich nach Zimmerzahl und gewählten Extras wie Balkon, Badezimmer oder Teppichreinigung." }
+                "acceptedAnswer": { "@@type": "Answer", "text": "Eine professionelle Endreinigung in Zürich kostet ab CHF 550 für eine 1-Zimmer-Wohnung. Der Fixpreis richtet sich nach Zimmerzahl und gewählten Extras wie Balkon, Badezimmer oder Teppichreinigung." }
             },
             {
                 "@@type": "Question",
@@ -144,9 +144,9 @@
                     <div data-room-grid="apartment" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                         @{
                             var apartments = new (string Value, string Label, int Price)[] {
-                                ("1", "1 Zimmer", 345), ("1.5", "1.5 Zimmer", 385), ("2", "2 Zimmer", 495), ("2.5", "2.5 Zimmer", 535),
-                                ("3", "3 Zimmer", 645), ("3.5", "3.5 Zimmer", 685), ("4", "4 Zimmer", 780), ("4.5", "4.5 Zimmer", 839),
-                                ("5", "5 Zimmer", 940), ("5.5", "5.5 Zimmer", 990), ("6", "6 Zimmer", 1350), ("6.5", "6.5 Zimmer", 1450),
+                                ("1", "1 Zimmer", 550), ("1.5", "1.5 Zimmer", 550), ("2", "2 Zimmer", 650), ("2.5", "2.5 Zimmer", 650),
+                                ("3", "3 Zimmer", 850), ("3.5", "3.5 Zimmer", 850), ("4", "4 Zimmer", 970), ("4.5", "4.5 Zimmer", 970),
+                                ("5", "5 Zimmer", 1150), ("5.5", "5.5 Zimmer", 1150), ("6", "6 Zimmer", 1350), ("6.5", "6.5 Zimmer", 1450),
                             };
                             foreach (var (value, label, price) in apartments)
                             {

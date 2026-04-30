@@ -13,6 +13,11 @@
         var canonicalUrl = (string)(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/");
         var canonicalBase = canonicalUrl.Contains('?') ? canonicalUrl.Substring(0, canonicalUrl.IndexOf('?')) : canonicalUrl;
         var sep = canonicalBase.Contains('?') ? "&" : "?";
+        var hasNonCultureQuery = Context.Request.Query.Any(q => !string.Equals(q.Key, "culture", StringComparison.OrdinalIgnoreCase));
+    }
+    @if (hasNonCultureQuery)
+    {
+        <meta name="robots" content="noindex,follow" />
     }
     <link rel="canonical" href="@canonicalUrl" />
     <link rel="alternate" hreflang="de" href="@(canonicalBase)@(sep)culture=de" />
