@@ -73,6 +73,26 @@ namespace EndReinigung
                 }
             }));
 
+            // Canonicalize home: 301 redirect /Home, /Home/Index -> /.
+            // The default MVC route exposes both as duplicates of "/" in Google's index.
+            app.UseRewriter(new RewriteOptions().Add(ctx =>
+            {
+                var req = ctx.HttpContext.Request;
+                var path = req.Path.Value ?? string.Empty;
+                var isHomeIndex =
+                    path.Equals("/Home", StringComparison.OrdinalIgnoreCase) ||
+                    path.Equals("/Home/", StringComparison.OrdinalIgnoreCase) ||
+                    path.Equals("/Home/Index", StringComparison.OrdinalIgnoreCase) ||
+                    path.Equals("/Home/Index/", StringComparison.OrdinalIgnoreCase);
+                if (isHomeIndex)
+                {
+                    var newUrl = $"{req.PathBase}/{req.QueryString}";
+                    ctx.HttpContext.Response.StatusCode = StatusCodes.Status301MovedPermanently;
+                    ctx.HttpContext.Response.Headers.Location = newUrl;
+                    ctx.Result = RuleResult.EndResponse;
+                }
+            }));
+
             app.UseHttpsRedirection();
 
             // Add AVIF MIME type support

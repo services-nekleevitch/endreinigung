@@ -1,0 +1,215 @@
+@model EndReinigung.Models.Bezirk
+@{
+    var bezirkName = Model.Name;
+    var slug = Model.Slug;
+    var pageUrl = $"https://zurich-endreinigung.ch/fruehlingsputz-bezirk-{slug}";
+    var gemeindenNames = string.Join(", ", Model.Gemeinden.Select(g => g.Name));
+
+    ViewData["Title"] = $"Frühlingsputz {bezirkName} — Frühlingsreinigung ab CHF 390 | Zürich Endreinigung";
+    ViewData["Description"] = $"Professioneller Frühlingsputz im {bezirkName} zum Fixpreis. Ab CHF 390, inkl. Küche, Bad & Fenster. Jetzt buchen!";
+    ViewData["Canonical"] = pageUrl;
+    ViewData["Keywords"] = $"Frühlingsputz {bezirkName}, Frühlingsreinigung {Model.Hauptort}, Putzfrau {bezirkName}, Reinigungsfirma Zürich";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "CleaningService",
+        "name": "Zürich Endreinigung - Frühlingsreinigung @bezirkName",
+        "description": "Professioneller Frühlingsputz im @bezirkName zum Fixpreis. Ab CHF 390.",
+        "areaServed": {
+            "@@type": "AdministrativeArea",
+            "name": "@bezirkName"
+        },
+        "url": "@pageUrl",
+        "provider": {
+            "@@type": "HouseCleaningService",
+            "@@id": "https://zurich-endreinigung.ch/#business",
+            "name": "Zürich Endreinigung"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Frühlingsreinigung", "item": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
+            { "@@type": "ListItem", "position": 3, "name": "@bezirkName", "item": "@pageUrl" }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen flex flex-col">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-hero overflow-hidden">
+        <div class="absolute inset-0 bg-swiss-blue-dark/30"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap gap-3 mb-3 sm:mb-6">
+                    <div class="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+                        <span class="text-primary-foreground/90 text-sm font-medium">🌍 Expat Friendly</span>
+                    </div>
+                    <div class="inline-flex items-center px-4 py-2 bg-cleaning-green rounded-full border border-cleaning-green shadow-lg">
+                        <span class="text-primary-foreground text-sm font-bold">💰 Fixpreis</span>
+                    </div>
+                    <div class="inline-flex items-center px-4 py-2 bg-booking-orange rounded-full">
+                        <svg class="w-4 h-4 text-primary-foreground mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span class="text-primary-foreground text-sm font-bold">@bezirkName</span>
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-6 leading-tight font-heading">
+                    Frühlingsputz @bezirkName
+                    <br />
+                    <span class="bg-gradient-accent bg-clip-text text-transparent">Professionelle Frühlingsreinigung zum Fixpreis</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-primary-foreground/90 mb-6 md:mb-8">
+                    Ihr professioneller Frühlingsputz in @bezirkName und Umgebung. Gründliche Reinigung zum Fixpreis — von Ihrem lokalen Team aus Zürich.
+                </p>
+
+                <ul class="space-y-1.5 sm:space-y-3 mb-8 md:mb-10">
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Gründlicher Frühlingsputz — Küche, Bad &amp; alle Räume</span>
+                    </li>
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Faire Fixpreise ab CHF 390 — keine versteckten Kosten</span>
+                    </li>
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Professionelles Team in @bezirkName &amp; Umgebung</span>
+                    </li>
+                </ul>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/calculator" class="inline-flex items-center justify-center text-base px-8 py-6 rounded-xl bg-booking-orange hover:bg-booking-orange-dark text-white font-bold transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Jetzt Fixpreis berechnen
+                    </a>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-bold hover:bg-primary-foreground/10 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Jetzt anrufen
+                    </a>
+                </div>
+
+                <div class="mt-4 sm:mt-8 pt-4 sm:pt-8 border-t border-primary-foreground/20">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        @for (var i = 0; i < 5; i++)
+                        {
+                            <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        }
+                        <span class="text-primary-foreground/80 text-sm ml-2">4.9/5 auf Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    <!-- ═══ LOCAL CONTENT ═══ -->
+    <section class="py-16 md:py-20 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6 font-heading">Ihre Frühlingsreinigung in @bezirkName</h2>
+            <div class="prose prose-lg max-w-none text-muted-foreground space-y-4">
+                <p>Wir sind Ihr lokaler Partner für professionelle Frühlingsreinigung im @bezirkName. Unser erfahrenes Team ist in @gemeindenNames und der gesamten Region regelmässig im Einsatz.</p>
+                <p>Als Reinigungsfirma mit Sitz in Zürich kennen wir die Bedürfnisse unserer Kunden im @bezirkName genau. Ob Wohnung, Haus oder Büro — wir bringen Ihre Räume zum Strahlen. Zum fairen Fixpreis, ohne versteckte Kosten.</p>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mt-10 mb-6 font-heading">Frühlingsreinigung in folgenden Gemeinden</h3>
+            <div class="flex flex-wrap gap-2">
+                @foreach (var g in Model.Gemeinden)
+                {
+                    <span class="inline-flex items-center text-sm px-4 py-2 rounded-full bg-secondary text-secondary-foreground">@g.Name</span>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PRICING ═══ -->
+    <section class="py-16 md:py-20 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-3 font-heading text-center">Unsere Frühlingsreinigung-Pakete</h2>
+            <p class="text-center text-muted-foreground mb-10 max-w-xl mx-auto">Faire Fixpreise für Ihren Frühlingsputz im @bezirkName</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Basis-Paket -->
+                <div class="bg-card border border-border rounded-2xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Basis-Paket</h3>
+                    <p class="text-muted-foreground text-sm mb-4">Für Wohnungen bis 2.5 Zimmer</p>
+                    <div class="text-3xl font-bold text-foreground mb-1">CHF 390</div>
+                    <p class="text-xs text-muted-foreground mb-6">Fixpreis, keine versteckten Kosten</p>
+                    <ul class="space-y-2 mb-8 text-sm text-muted-foreground">
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Küche &amp; Bad gründlich</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Alle Böden &amp; Oberflächen</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Fenster innen</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Staubsaugen &amp; Wischen</li>
+                    </ul>
+                    <a href="/calculator" class="flex items-center justify-center w-full px-4 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-xl transition-colors">Jetzt buchen</a>
+                </div>
+
+                <!-- Komfort-Paket -->
+                <div class="bg-card border-2 border-primary rounded-2xl p-6 md:p-8 hover:shadow-lg transition-shadow relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                        <span class="inline-flex items-center bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold">Beliebt</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-foreground mb-2">Komfort-Paket</h3>
+                    <p class="text-muted-foreground text-sm mb-4">Für Wohnungen bis 4.5 Zimmer</p>
+                    <div class="text-3xl font-bold text-foreground mb-1">CHF 590</div>
+                    <p class="text-xs text-muted-foreground mb-6">Fixpreis, keine versteckten Kosten</p>
+                    <ul class="space-y-2 mb-8 text-sm text-muted-foreground">
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Alles aus Basis-Paket</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Fenster innen &amp; aussen</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Backofen &amp; Kühlschrank</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Balkon / Terrasse</li>
+                    </ul>
+                    <a href="/calculator" class="flex items-center justify-center w-full px-4 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-xl transition-colors">Jetzt buchen</a>
+                </div>
+
+                <!-- Premium-Paket -->
+                <div class="bg-card border border-border rounded-2xl p-6 md:p-8 hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-bold text-foreground mb-2">Premium-Paket</h3>
+                    <p class="text-muted-foreground text-sm mb-4">Für Häuser &amp; grosse Wohnungen</p>
+                    <div class="text-3xl font-bold text-foreground mb-1">CHF 890</div>
+                    <p class="text-xs text-muted-foreground mb-6">Fixpreis, keine versteckten Kosten</p>
+                    <ul class="space-y-2 mb-8 text-sm text-muted-foreground">
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Alles aus Komfort-Paket</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Keller &amp; Garage</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Jalousien &amp; Rollläden</li>
+                        <li class="flex items-start gap-2"><span class="text-cleaning-green mt-0.5">✓</span> Garten-Terrasse</li>
+                    </ul>
+                    <a href="/calculator" class="flex items-center justify-center w-full px-4 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-xl transition-colors">Jetzt buchen</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="py-16 md:py-20 bg-gradient-hero">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-primary-foreground mb-4 font-heading">Bereit für Ihren Frühlingsputz?</h2>
+            <p class="text-primary-foreground/80 text-lg mb-8">Berechnen Sie jetzt Ihren Fixpreis oder rufen Sie uns direkt an — wir beraten Sie gerne.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/calculator" class="inline-flex items-center justify-center text-base px-8 py-6 rounded-xl bg-booking-orange hover:bg-booking-orange-dark text-white font-bold transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Fixpreis berechnen
+                </a>
+                <a href="tel:+41765017738" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-bold hover:bg-primary-foreground/10 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    +41 76 501 77 38
+                </a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

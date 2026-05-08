@@ -87,6 +87,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Baureinigung Bezirk landing pages -->
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/affoltern</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/andelfingen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/buelach</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/dielsdorf</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/dietikon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/hinwil</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/horgen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/meilen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/pfaeffikon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/uster</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/winterthur</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/zuerich</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url>
     <loc>https://zurich-endreinigung.ch/fensterreinigung</loc>
     <changefreq>monthly</changefreq>
@@ -149,6 +162,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Frühlingsputz Bezirk landing pages -->
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-affoltern</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-andelfingen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-buelach</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dielsdorf</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dietikon</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-hinwil</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-horgen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-meilen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-pfaeffikon</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-uster</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-winterthur</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-zuerich</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- English pages -->
   <url>

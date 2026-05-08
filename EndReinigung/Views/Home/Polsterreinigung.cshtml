@@ -692,8 +692,12 @@
                             </div>
                             <div id="calc-result-price" class="hidden">
                                 <div id="calc-total" class="text-4xl sm:text-5xl font-extrabold mb-1 leading-none">CHF 0.–</div>
-                                <div class="text-xs opacity-90 mb-4">Fixpreis inkl. Anfahrt, Material — MWST-frei</div>
-                                <div id="calc-min-notice" class="hidden text-xs bg-white/15 rounded-lg px-3 py-2 mb-4">
+                                <div class="text-xs opacity-90 mb-3">Fixpreis inkl. Anfahrt, Material — MWST-frei</div>
+                                <div id="calc-breakdown" class="bg-white/10 rounded-lg p-3 mb-3 space-y-1.5 text-xs"></div>
+                                <div id="calc-quantity-tip" class="hidden text-[11px] bg-white/10 rounded-lg px-3 py-2 mb-3 opacity-90">
+                                    Tipp: 10 % Rabatt ab 2 Möbelstücken, 20 % ab 3+ Möbelstücken.
+                                </div>
+                                <div id="calc-min-notice" class="hidden text-xs bg-white/15 rounded-lg px-3 py-2 mb-3">
                                     Mindestauftragswert CHF 220.– wird angewendet.
                                 </div>
                             </div>
@@ -1046,17 +1050,17 @@
 
     // ── Piece definitions ──────────────────────────────────────────────────────
     var PIECES = {
-        sofa2:       { price: 180, seats: 2 },
-        sofa3:       { price: 240, seats: 3 },
-        eckKlein:    { price: 330, seats: 4 },
-        eckGross:    { price: 420, seats: 6 },
-        sessel:      { price: 110, seats: 1 },
-        hocker:      { price:  70, seats: 1 },
-        stuhlLehne:  { price:  55, seats: 1 },
-        stuhlOhne:   { price:  50, seats: 1 },
-        buero:       { price:  75, seats: 1 },
-        matratze:    { price: 120, seats: 2 },
-        individuell: { price:   0, seats: 0, onRequest: true },
+        sofa2:       { price: 180, seats: 2, label: '2-Sitzer Sofa' },
+        sofa3:       { price: 240, seats: 3, label: '3-Sitzer Sofa' },
+        eckKlein:    { price: 330, seats: 4, label: 'Eck-Couch (L-Form)' },
+        eckGross:    { price: 420, seats: 6, label: 'Eck-Couch gross (U-Form)' },
+        sessel:      { price: 110, seats: 1, label: 'Sessel' },
+        hocker:      { price:  70, seats: 1, label: 'Hocker' },
+        stuhlLehne:  { price:  55, seats: 1, label: 'Esszimmerstuhl (mit Lehne)' },
+        stuhlOhne:   { price:  50, seats: 1, label: 'Polsterhocker (ohne Lehne)' },
+        buero:       { price:  75, seats: 1, label: 'Bürostuhl' },
+        matratze:    { price: 120, seats: 2, label: 'Matratze (Einzel)' },
+        individuell: { price:   0, seats: 0, label: 'Couch individuell', onRequest: true },
     };
     var MIN_ORDER = 220;
 
@@ -1065,11 +1069,19 @@
     Object.keys(PIECES).forEach(function (k) { counts[k] = 0; });
 
     // ── DOM refs ───────────────────────────────────────────────────────────────
-    var elEmpty    = document.getElementById('calc-result-empty');
-    var elOnReq    = document.getElementById('calc-result-onrequest');
-    var elPrice    = document.getElementById('calc-result-price');
-    var elTotal    = document.getElementById('calc-total');
-    var elMinNote  = document.getElementById('calc-min-notice');
+    var elEmpty     = document.getElementById('calc-result-empty');
+    var elOnReq     = document.getElementById('calc-result-onrequest');
+    var elPrice     = document.getElementById('calc-result-price');
+    var elTotal     = document.getElementById('calc-total');
+    var elMinNote   = document.getElementById('calc-min-notice');
+    var elBreakdown = document.getElementById('calc-breakdown');
+    var elQtyTip    = document.getElementById('calc-quantity-tip');
+
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+            return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+        });
+    }
 
     // ── Recalculate & render ───────────────────────────────────────────────────
     function render() {
@@ -1079,17 +1091,32 @@
         var impreg     = document.getElementById('opt-impreg').checked;
         var hasOnReq   = counts['individuell'] > 0;
 
-        // Update card styles
+        // Update piece-card styles
         document.querySelectorAll('.calc-piece').forEach(function (el) {
             var k = el.dataset.key;
             var active = counts[k] > 0;
+            el.classList.toggle('bg-swiss-blue/10', active);
             el.classList.toggle('border-swiss-blue', active);
-            el.classList.toggle('ring-1', active);
+            el.classList.toggle('ring-2', active);
+            el.classList.toggle('ring-swiss-blue/30', active);
+            el.classList.toggle('bg-white', !active);
+            el.classList.toggle('border-border', !active);
             var icon = el.querySelector('.piece-icon');
             if (icon) {
                 icon.classList.toggle('text-swiss-blue', active);
-                icon.classList.toggle('text-foreground\\/70', !active);
+                icon.classList.toggle('text-foreground/70', !active);
             }
+        });
+
+        // Update option-label styles
+        document.querySelectorAll('.calc-option').forEach(function (chk) {
+            var label = chk.closest('label');
+            if (!label) return;
+            var on = chk.checked;
+            label.classList.toggle('bg-swiss-blue/10', on);
+            label.classList.toggle('border-swiss-blue', on);
+            label.classList.toggle('bg-white', !on);
+            label.classList.toggle('border-border', !on);
         });
 
         if (totalItems === 0) {
@@ -1106,24 +1133,84 @@
             return;
         }
 
-        // Calculate
-        var base = 0;
+        // Build itemized breakdown
+        var items = [];
+        var piecesSubtotal = 0;
         Object.keys(PIECES).forEach(function (k) {
-            if (!PIECES[k].onRequest) base += counts[k] * PIECES[k].price;
+            var p = PIECES[k];
+            if (p.onRequest || counts[k] === 0) return;
+            var sub = counts[k] * p.price;
+            items.push({ label: p.label, qty: counts[k], subtotal: sub });
+            piecesSubtotal += sub;
         });
-        if (leather) base *= 1.20;
-        if (eco)     base *= 1.25;
-        if (impreg) {
-            var seatSum = 0;
-            Object.keys(PIECES).forEach(function (k) { seatSum += counts[k] * PIECES[k].seats; });
-            base += seatSum * 25;
-        }
-        var rounded = Math.round(base);
-        var final   = Math.max(rounded, MIN_ORDER);
+
+        // Mengenrabatt: 10 % bei 2 Möbelstücken, 20 % bei 3+
+        var pieceCount = items.reduce(function (s, it) { return s + it.qty; }, 0);
+        var quantityDiscountPct = pieceCount >= 3 ? 0.20 : pieceCount === 2 ? 0.10 : 0;
+
+        // Apply multipliers in order: leather → eco → impregnation
+        var running = piecesSubtotal;
+        var leatherExtra = leather ? running * 0.20 : 0;
+        running += leatherExtra;
+        var ecoExtra = eco ? running * 0.25 : 0;
+        running += ecoExtra;
+
+        var seatSum = 0;
+        Object.keys(PIECES).forEach(function (k) { seatSum += counts[k] * PIECES[k].seats; });
+        var impregExtra = impreg ? seatSum * 25 : 0;
+        running += impregExtra;
+
+        var discountAmount = running * quantityDiscountPct;
+        var afterDiscount = running - discountAmount;
+
+        var rounded  = Math.round(afterDiscount);
+        var final    = Math.max(rounded, MIN_ORDER);
         var belowMin = rounded < MIN_ORDER;
 
         elTotal.textContent = 'CHF ' + final + '.–';
         elMinNote.classList.toggle('hidden', !belowMin);
+
+        // Render breakdown
+        var bdHtml = '';
+        items.forEach(function (it) {
+            bdHtml +=
+                '<div class="flex justify-between gap-2">' +
+                    '<span class="opacity-90">' + it.qty + '× ' + escapeHtml(it.label) + '</span>' +
+                    '<span class="font-semibold tabular-nums">CHF ' + it.subtotal + '.–</span>' +
+                '</div>';
+        });
+        if (leatherExtra > 0) {
+            bdHtml +=
+                '<div class="flex justify-between gap-2">' +
+                    '<span class="opacity-90">Lederpflege +20 %</span>' +
+                    '<span class="font-semibold tabular-nums">+CHF ' + Math.round(leatherExtra) + '.–</span>' +
+                '</div>';
+        }
+        if (ecoExtra > 0) {
+            bdHtml +=
+                '<div class="flex justify-between gap-2">' +
+                    '<span class="opacity-90">ECO +25 %</span>' +
+                    '<span class="font-semibold tabular-nums">+CHF ' + Math.round(ecoExtra) + '.–</span>' +
+                '</div>';
+        }
+        if (impregExtra > 0) {
+            bdHtml +=
+                '<div class="flex justify-between gap-2">' +
+                    '<span class="opacity-90">Imprägnierung</span>' +
+                    '<span class="font-semibold tabular-nums">+CHF ' + Math.round(impregExtra) + '.–</span>' +
+                '</div>';
+        }
+        if (quantityDiscountPct > 0) {
+            bdHtml +=
+                '<div class="flex justify-between gap-2 pt-1.5 mt-1.5 border-t border-white/20">' +
+                    '<span class="font-semibold">Mengenrabatt −' + Math.round(quantityDiscountPct * 100) + ' %</span>' +
+                    '<span class="font-bold tabular-nums">−CHF ' + Math.round(discountAmount) + '.–</span>' +
+                '</div>';
+        }
+        elBreakdown.innerHTML = bdHtml;
+
+        // Quantity tip when only 1 piece selected
+        elQtyTip.classList.toggle('hidden', pieceCount !== 1);
 
         elEmpty.classList.add('hidden');
         elOnReq.classList.add('hidden');

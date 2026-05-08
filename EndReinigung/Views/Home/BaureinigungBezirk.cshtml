@@ -1,0 +1,331 @@
+@model EndReinigung.Models.Bezirk
+@using EndReinigung.Models
+@{
+    var bezirkName = Model.Name;
+    var hauptort = Model.Hauptort;
+    var slug = Model.Slug;
+    var startingPrice = BaureinigungPricing.WohnungStartingPrice;
+    var startingPriceLabel = $"CHF {BaureinigungPricing.FormatChf(startingPrice)}";
+    var pageUrl = $"https://zurich-endreinigung.ch/baureinigung/{slug}";
+    var gemeindenNames = string.Join(", ", Model.Gemeinden.Select(g => g.Name));
+
+    ViewData["Title"] = $"Baureinigung {bezirkName} — Professionelle Bauendreinigung ab {startingPriceLabel} | Zürich Endreinigung";
+    ViewData["Description"] = $"Professionelle Baureinigung im {bezirkName} zum Fixpreis. Ab {startingPriceLabel}, inkl. Baustaub, Fenster & Böden. Jetzt buchen!";
+    ViewData["Canonical"] = pageUrl;
+    ViewData["Keywords"] = $"Baureinigung {bezirkName}, Bauendreinigung {hauptort}, Bauschlussreinigung Zürich, Baufeinreinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "CleaningService",
+        "name": "Zürich Endreinigung - Baureinigung @bezirkName",
+        "description": "Professionelle Baureinigung im @bezirkName zum Fixpreis. Ab @startingPriceLabel.",
+        "areaServed": {
+            "@@type": "AdministrativeArea",
+            "name": "@bezirkName"
+        },
+        "url": "@pageUrl",
+        "provider": {
+            "@@type": "HouseCleaningService",
+            "@@id": "https://zurich-endreinigung.ch/#business",
+            "name": "Zürich Endreinigung"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Baureinigung", "item": "https://zurich-endreinigung.ch/baureinigung" },
+            { "@@type": "ListItem", "position": 3, "name": "@bezirkName", "item": "@pageUrl" }
+        ]
+    }
+    </script>
+}
+
+<div class="min-h-screen flex flex-col">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-hero overflow-hidden">
+        <div class="absolute inset-0 bg-swiss-blue-dark/30"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3 mb-3 sm:mb-6">
+                    <div class="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+                        <span class="text-primary-foreground/90 text-sm font-medium">🌍 Expat Friendly</span>
+                    </div>
+                    <div class="inline-flex items-center px-4 py-2 bg-cleaning-green rounded-full border border-cleaning-green shadow-lg">
+                        <span class="text-primary-foreground text-sm font-bold">💰 Fixpreis</span>
+                    </div>
+                    <div class="inline-flex items-center px-4 py-2 bg-booking-orange rounded-full">
+                        <svg class="w-4 h-4 text-primary-foreground mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span class="text-primary-foreground text-sm font-bold">@bezirkName</span>
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-2 md:mb-6 leading-tight font-heading">
+                    Baureinigung @bezirkName
+                    <br />
+                    <span class="bg-gradient-accent bg-clip-text text-transparent">Professionelle Bauendreinigung zum Fixpreis</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-primary-foreground/90 mb-6 md:mb-8">
+                    Ihre professionelle Baureinigung in @bezirkName und Umgebung. Gründliche Entfernung von Baustaub &amp; Schmutz — von Ihrem lokalen Team aus Zürich.
+                </p>
+
+                <ul class="space-y-1.5 sm:space-y-3 mb-8 md:mb-10">
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Baustaub &amp; Zementreste gründlich entfernt</span>
+                    </li>
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Faire Fixpreise ab @startingPriceLabel — keine versteckten Kosten</span>
+                    </li>
+                    <li class="flex items-center text-primary-foreground/90 text-base md:text-xl">
+                        <span class="mr-3 text-lg">✅</span>
+                        <span class="font-medium">Professionelles Team in @bezirkName &amp; Umgebung</span>
+                    </li>
+                </ul>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/calculator" class="inline-flex items-center justify-center text-base px-8 py-6 rounded-xl bg-booking-orange hover:bg-booking-orange-dark text-white font-bold transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Jetzt Fixpreis berechnen
+                    </a>
+                    <a href="tel:+41765017738" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-bold hover:bg-primary-foreground/10 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Jetzt anrufen
+                    </a>
+                </div>
+
+                <!-- Google Rating -->
+                <div class="mt-4 sm:mt-8 pt-4 sm:pt-8 border-t border-primary-foreground/20">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        @for (var i = 0; i < 5; i++)
+                        {
+                            <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        }
+                        <span class="text-primary-foreground/80 text-sm ml-2">4.9/5 auf Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_TrustBar")
+
+    <!-- ═══ LOCAL CONTENT ═══ -->
+    <section class="py-16 md:py-20 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6 font-heading">Ihre Baureinigung in @bezirkName</h2>
+            <div class="prose prose-lg max-w-none text-muted-foreground space-y-4">
+                <p>Wir sind Ihr lokaler Partner für professionelle Baureinigung im @bezirkName. Unser erfahrenes Team ist in @gemeindenNames und der gesamten Region regelmässig im Einsatz.</p>
+                <p>Nach Umbau, Renovation oder Neubau entfernen wir Baustaub, Zementreste, Farbrückstände und Schutzfolien — gründlich und zuverlässig. Zum fairen Fixpreis, ohne versteckte Kosten.</p>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold text-foreground mt-10 mb-6 font-heading">Baureinigung in folgenden Gemeinden</h3>
+            <div class="flex flex-wrap gap-2">
+                @foreach (var g in Model.Gemeinden)
+                {
+                    <span class="inline-flex items-center text-sm px-4 py-2 rounded-full bg-secondary text-secondary-foreground">@g.Name</span>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PRICING ═══ -->
+    <section class="py-16 md:py-20 bg-muted/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-3 font-heading">Fixpreise Baureinigung @bezirkName</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Transparente Festpreise für Ihre Baureinigung im @bezirkName — alles inklusive.</p>
+            </div>
+
+            <!-- Property type toggle -->
+            <div class="flex justify-center gap-3 mb-8" data-bezirk-tabs>
+                <button type="button" data-tab="wohnung" class="inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors bg-primary text-primary-foreground">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/></svg>
+                    Wohnung
+                </button>
+                <button type="button" data-tab="haus" class="inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors border border-border bg-background text-foreground hover:bg-muted">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Einfamilienhaus
+                </button>
+                <button type="button" data-tab="gewerbe" class="inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors border border-border bg-background text-foreground hover:bg-muted">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 18h20"/><path d="M6 18V8a4 4 0 014-4h4a4 4 0 014 4v10"/><path d="M9 13h6"/></svg>
+                    Gewerbe
+                </button>
+            </div>
+
+            <!-- Pricing cards (server-rendered for both wohnung and haus, JS toggles visibility) -->
+            <div data-bezirk-pricing="wohnung" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                @foreach (var option in BaureinigungPricing.Wohnung)
+                {
+                    <div class="relative p-4 sm:p-6 bg-white rounded-lg border-2 hover:shadow-xl transition-all duration-300 cursor-pointer @(option.Popular ? "border-swiss-blue shadow-lg" : "border-border")"
+                         onclick="window.location.href='/calculator'">
+                        @if (option.Popular)
+                        {
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <div class="bg-swiss-blue text-white text-xs font-bold px-4 py-1.5 rounded-full">Beliebt</div>
+                            </div>
+                        }
+                        <div class="absolute top-4 right-4">
+                            <div class="text-white text-xs font-bold px-3 py-1 rounded-full @(option.Popular ? "bg-cleaning-green" : "bg-trust-gold")">Fixpreis</div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center mb-4">
+                                <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-foreground mb-1">@option.Size</h3>
+                            <p class="text-xs text-muted-foreground mb-2">Baureinigung in @bezirkName</p>
+                            <div class="text-3xl font-bold text-swiss-blue mb-0.5">ab @BaureinigungPricing.FormatChf(option.Standard) CHF</div>
+                            <p class="text-xs font-medium text-muted-foreground/90 mb-1">@option.Area</p>
+                            <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            @foreach (var feature in BaureinigungPricing.IncludedServices.Take(6))
+                            {
+                                <div class="flex items-start">
+                                    <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span class="text-xs text-foreground">@feature</span>
+                                </div>
+                            }
+                        </div>
+                        <a href="/calculator" class="flex items-center justify-center w-full bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Jetzt Fixpreis berechnen
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <div data-bezirk-pricing="haus" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                @foreach (var option in BaureinigungPricing.Haus)
+                {
+                    <div class="relative p-4 sm:p-6 bg-white rounded-lg border-2 border-border hover:shadow-xl transition-all duration-300 cursor-pointer"
+                         onclick="window.location.href='/calculator'">
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-trust-gold text-white text-xs font-bold px-3 py-1 rounded-full">Fixpreis</div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center mb-4">
+                                <svg class="w-8 h-8 text-booking-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-foreground mb-1">@option.Size</h3>
+                            <p class="text-xs text-muted-foreground mb-2">Baureinigung in @bezirkName</p>
+                            <div class="text-3xl font-bold text-swiss-blue mb-0.5">ab @BaureinigungPricing.FormatChf(option.Standard) CHF</div>
+                            <p class="text-xs font-medium text-muted-foreground/90 mb-1">@option.Area</p>
+                            <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                        </div>
+                        <div class="space-y-2 mb-6">
+                            @foreach (var feature in BaureinigungPricing.IncludedServices.Take(6))
+                            {
+                                <div class="flex items-start">
+                                    <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span class="text-xs text-foreground">@feature</span>
+                                </div>
+                            }
+                        </div>
+                        <a href="/calculator" class="flex items-center justify-center w-full bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Jetzt Fixpreis berechnen
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <div data-bezirk-pricing="gewerbe" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div class="relative p-4 sm:p-6 bg-white rounded-lg border-2 border-border hover:shadow-xl hover:border-swiss-blue transition-all duration-300 cursor-pointer sm:col-span-2 lg:col-span-3 max-w-md mx-auto"
+                     onclick="window.location.href='/baureinigung#bau-contact'">
+                    <div class="absolute top-4 right-4">
+                        <div class="bg-muted-foreground text-white text-xs font-bold px-3 py-1 rounded-full">Individuell</div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground mb-2 leading-tight">Gewerbe / Grossprojekt</h3>
+                        <div class="text-2xl font-bold text-swiss-blue mb-1">auf Anfrage</div>
+                        <p class="text-xs text-muted-foreground mb-1">Individuelle Baureinigung in @bezirkName</p>
+                        <p class="text-xs text-muted-foreground">Büros, Praxen, Gewerberäume, Neubauten</p>
+                    </div>
+                    <div class="space-y-2 mb-6">
+                        @foreach (var feature in BaureinigungPricing.IncludedServices)
+                        {
+                            <div class="flex items-start">
+                                <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span class="text-xs text-foreground">@feature</span>
+                            </div>
+                        }
+                    </div>
+                    <a href="/baureinigung#bau-contact" class="flex items-center justify-center w-full bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Offerte anfordern
+                    </a>
+                    <p class="text-center text-[10px] text-muted-foreground mt-2">Wir melden uns innerhalb von 24h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="py-16 md:py-20 bg-gradient-hero">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-primary-foreground mb-4 font-heading">Bereit für Ihre Baureinigung?</h2>
+            <p class="text-primary-foreground/80 text-lg mb-8">Berechnen Sie jetzt Ihren Fixpreis oder rufen Sie uns direkt an — wir beraten Sie gerne.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/calculator" class="inline-flex items-center justify-center text-base px-8 py-6 rounded-xl bg-booking-orange hover:bg-booking-orange-dark text-white font-bold transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Fixpreis berechnen
+                </a>
+                <a href="tel:+41765017738" class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-bold hover:bg-primary-foreground/10 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    +41 76 501 77 38
+                </a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+@section Scripts {
+    <script>
+        (function () {
+            const tabs = document.querySelectorAll('[data-bezirk-tabs] [data-tab]');
+            const panels = document.querySelectorAll('[data-bezirk-pricing]');
+            const activeWohnung = ['bg-primary', 'text-primary-foreground'];
+            const activeHaus = ['bg-booking-orange', 'text-white'];
+            const activeGewerbe = ['bg-muted-foreground', 'text-white'];
+            const inactive = ['border', 'border-border', 'bg-background', 'text-foreground'];
+
+            function setTab(name) {
+                tabs.forEach(b => {
+                    const isActive = b.getAttribute('data-tab') === name;
+                    b.classList.remove(...activeWohnung, ...activeHaus, ...activeGewerbe, ...inactive, 'hover:bg-muted', 'hover:bg-booking-orange-dark');
+                    if (isActive) {
+                        if (name === 'wohnung') b.classList.add(...activeWohnung);
+                        else if (name === 'haus') b.classList.add(...activeHaus);
+                        else b.classList.add(...activeGewerbe);
+                    } else {
+                        b.classList.add(...inactive, 'hover:bg-muted');
+                    }
+                });
+                panels.forEach(p => {
+                    const show = p.getAttribute('data-bezirk-pricing') === name;
+                    p.classList.toggle('hidden', !show);
+                    p.classList.toggle('grid', show);
+                });
+            }
+
+            tabs.forEach(b => b.addEventListener('click', () => setTab(b.getAttribute('data-tab'))));
+        })();
+    </script>
+}

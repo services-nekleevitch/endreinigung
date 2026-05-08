@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(perl -ne 'while \\(/border-white\\\\\\\\\\\\/\\(\\\\d+\\)/g\\) { print \"border-white/$1\\\\n\"; }' wwwroot/css/tailwind.css)",
+      "Bash(python3)"
+    ]
+  }
+}

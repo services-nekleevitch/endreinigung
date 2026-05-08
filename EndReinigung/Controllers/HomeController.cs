@@ -150,6 +150,17 @@ namespace EndReinigung.Controllers
             return View();
         }
 
+        [Route("baureinigung/{slug}")]
+        public IActionResult BaureinigungBezirk(string slug)
+        {
+            var bezirk = BezirkData.FindBySlug(slug);
+            if (bezirk == null)
+            {
+                return RedirectPermanent("/baureinigung");
+            }
+            return View(bezirk);
+        }
+
         [Route("baureinigung-calculator")]
         public IActionResult BaureinigunCalculator()
         {
@@ -184,6 +195,17 @@ namespace EndReinigung.Controllers
         public IActionResult Fruehlingsreinigung()
         {
             return View();
+        }
+
+        [Route("fruehlingsputz-bezirk-{slug}")]
+        public IActionResult FruehlingsputzBezirk(string slug)
+        {
+            var bezirk = BezirkData.FindBySlug(slug);
+            if (bezirk == null)
+            {
+                return RedirectPermanent("/fruehlingsputz-zuerich");
+            }
+            return View(bezirk);
         }
 
         [Route("umzugsreinigung-stadt-zuerich")]

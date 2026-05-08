@@ -9,9 +9,9 @@ namespace EndReinigung.Services
     {
         private static readonly Dictionary<string, decimal> ApartmentPrices = new()
         {
-            { "1", 345 }, { "1.5", 385 }, { "2", 495 }, { "2.5", 535 },
-            { "3", 645 }, { "3.5", 685 }, { "4", 780 }, { "4.5", 839 },
-            { "5", 940 }, { "5.5", 990 }, { "6", 1350 }, { "6.5", 1450 },
+            { "1", 500 }, { "1.5", 550 }, { "2", 600 }, { "2.5", 650 },
+            { "3", 800 }, { "3.5", 850 }, { "4", 920 }, { "4.5", 970 },
+            { "5", 1100 }, { "5.5", 1150 }, { "6", 1300 }, { "6.5", 1350 },
         };
 
         private static readonly Dictionary<string, decimal> HousePrices = new()
