@@ -1,8 +1,9 @@
 @{
-    ViewData["Title"] = "Frühlingsreinigung Zürich | Professioneller Frühlingsputz ab CHF 390";
-    ViewData["Description"] = "Professionelle Frühlingsreinigung in Zürich. Gründliche Komplettreinigung zum Fixpreis. Fenster, Böden, Küche & Bad — jetzt Termin buchen.";
+    ViewData["Title"] = "Frühlingsreinigung Zürich | Gründlicher Frühlingsputz zum Fixpreis";
+    ViewData["Description"] = "Professionelle Frühlingsreinigung in Zürich zum Fixpreis. Fenster, Böden, Küche & Bad — alles inklusive. Jetzt Preis berechnen.";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/fruehlingsputz-zuerich";
     ViewData["Keywords"] = "Frühlingsreinigung Zürich, Frühlingsputz Zürich, Frühjahrsputz, Grundreinigung Frühling";
+    ViewData["Contact.Title"] = "Kostenloses Angebot für Ihre Frühlingsreinigung in Zürich und Umgebung erhalten";
 }
 
 @section Head {
@@ -97,60 +98,61 @@
 
 <div class="min-h-screen bg-background">
 
-    <!-- Hero Section -->
-    <header class="pt-20 md:pt-[7.75rem] pb-12 bg-gradient-to-b from-secondary to-background">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Back Button -->
-            <nav class="mb-6" aria-label="Breadcrumb">
-                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                    Zurück zu Extra Services
-                </a>
-            </nav>
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-20 md:pt-[6.25rem] min-h-[48vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/img/fruehlingsreinigung.jpg" alt="Frühlingputz und Frühlingsreinigung in Zürich" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
 
-            <div class="text-center max-w-4xl mx-auto">
-                <!-- Flower2 icon -->
-                <div class="bg-gradient-hero rounded-2xl p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V3m0 9a4.5 4.5 0 1 0 4.5 4.5M12 12a4.5 4.5 0 1 1-4.5 4.5M12 12v4.5m0-4.5 3 3m-3-3-3 3M12 12l3-3m-3 3-3-3"/>
-                    </svg>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-block bg-trust-gold text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        💰 Fixpreis
+                    </span>
+                    <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        🛡️ Haftpflichtversichert
+                    </span>
+                    <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">
+                        🌿 ECO Option
+                    </span>
+                    <span class="inline-block bg-white/10 backdrop-blur-sm text-white/90 font-medium text-sm px-4 py-2 rounded-full border border-white/20">
+                        🌸 Saisonangebot
+                    </span>
                 </div>
-                <div class="inline-block bg-booking-orange/10 text-booking-orange text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                    Professionelle Frühlingsreinigung
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                    Frühlingsreinigung in Zürich — Gründlicher Frühlingsputz zum Fixpreis
+
+                <h1 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight">
+                    Frühlingsreinigung Zürich — Gründlicher Frühlingsputz für Ihr Zuhause
                 </h1>
-                <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Professionelle Frühlingsreinigung für Wohnungen und Häuser in Zürich.
-                    Fenster, Böden, Küche &amp; Bad — rundum sauber zum fairen Fixpreis.
+
+                <p class="text-base md:text-lg text-white/80 mb-4 max-w-2xl">
+                    Nach dem Winter verdient Ihre Wohnung eine gründliche Reinigung. Professioneller Frühlingsputz mit Fixpreis, Qualitätsgarantie und ECO-Option.
                 </p>
 
-                <!-- Trust Signals / Badges -->
-                <div class="flex flex-wrap justify-center gap-4 mt-8">
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        <span class="text-sm font-medium text-foreground">Fixpreise</span>
+                <div class="space-y-1.5 mb-5">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-white text-base md:text-lg">Fixpreis — keine versteckten Kosten</span>
                     </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span class="text-sm font-medium text-foreground">4-8 Stunden</span>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-white text-base md:text-lg">Fenster, Böden, Küche &amp; Bad inklusive</span>
                     </div>
-                    <div class="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm">
-                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-sm font-medium text-foreground">Komplettreinigung</span>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span class="text-white text-base md:text-lg">Haftpflichtversichert mit 5 Mio. CHF Deckung</span>
                     </div>
                 </div>
 
-                <div class="mt-8">
-                    <a href="#preise" class="inline-flex items-center px-6 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Jetzt Preis berechnen
-                    </a>
-                </div>
+                <a href="#preise" class="inline-flex items-center text-lg px-8 py-3 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Jetzt Preise sehen
+                </a>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- TL;DR -->
     <section class="py-6 bg-gradient-to-b from-primary/5 to-transparent border-b border-border/40">
@@ -171,415 +173,349 @@
         </div>
     </section>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Was ist im Service enthalten -->
-        <section class="mb-16" aria-labelledby="included-services">
-            <div class="rounded-lg bg-card shadow-lg p-8">
-                <h2 id="included-services" class="text-2xl font-bold text-foreground mb-6">
-                    Was ist im Service enthalten
-                </h2>
-                <ul class="space-y-4 mb-6">
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Gründliche Reinigung aller Räume</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Fenster innen &amp; aussen</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Böden wischen &amp; pflegen</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Küche &amp; Sanitär intensiv reinigen</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Staub &amp; Spinnweben entfernen</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Schränke aussen abwischen</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 text-cleaning-green mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        <span class="text-foreground">Heizkörper &amp; Lüftungsgitter reinigen</span>
-                    </li>
-                </ul>
-                <p class="text-muted-foreground bg-secondary/50 p-4 rounded-lg">
-                    Unser Frühlingsputz-Team reinigt Ihr Zuhause von Keller bis Dach — damit Sie frisch und sauber in die neue Jahreszeit starten.
-                </p>
-            </div>
-        </section>
-
-        <!-- Preise -->
-        <section id="preise" class="mb-16 scroll-mt-24" aria-labelledby="pricing-heading">
-            <h2 id="pricing-heading" class="text-2xl font-bold text-foreground mb-2">
-                Preise für die Frühlingsreinigung
-            </h2>
-            <p class="text-muted-foreground mb-8">Wählen Sie Ihr Objekt und Ihr bevorzugtes Reinigungspaket.</p>
-
-            <!-- Wohnung / Haus Toggle -->
-            <div class="flex justify-center mb-8">
-                <div class="inline-flex rounded-lg border border-border bg-secondary p-1">
-                    <button id="btn-wohnung"
-                            onclick="showTab('wohnung')"
-                            class="px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 bg-card text-foreground shadow-sm">
-                        Wohnung
-                    </button>
-                    <button id="btn-haus"
-                            onclick="showTab('haus')"
-                            class="px-6 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 text-muted-foreground hover:text-foreground">
-                        Haus
-                    </button>
+    <!-- ═══ TRUST BAR ═══ -->
+    <section class="py-5 md:py-8 bg-background border-y border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Haftpflichtversichert</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">5 Mio. CHF Deckung</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Qualitätsgarantie</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">Zufriedenheit garantiert</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Fixpreis sofort berechnen</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">Online in 2 Minuten</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-9 h-9 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2.5">
+                        <svg class="w-[18px] h-[18px] md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V3m0 9a4.5 4.5 0 1 0 4.5 4.5M12 12a4.5 4.5 0 1 1-4.5 4.5M12 12v4.5m0-4.5 3 3m-3-3-3 3M12 12l3-3m-3 3-3-3"/></svg>
+                    </div>
+                    <h3 class="text-xs md:text-sm font-semibold text-foreground">Saisonangebot</h3>
+                    <p class="text-[11px] md:text-xs text-muted-foreground mt-1">Jetzt für den Frühling buchen</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Wohnung Cards -->
-            <div id="tab-wohnung">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+    <main>
 
-                    <!-- 1-1.5 Zimmer -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">1 – 1.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">390 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">490 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 2-2.5 Zimmer -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">2 – 2.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">490 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">610 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 3-3.5 Zimmer (popular) -->
-                    <div class="relative rounded-xl bg-card border-2 border-primary shadow-lg p-6 hover:shadow-xl transition-shadow">
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                            <span class="bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">Beliebteste Grösse</span>
-                        </div>
-                        <div class="text-center mb-4 pt-2">
-                            <h3 class="text-lg font-bold text-foreground">3 – 3.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">590 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">740 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-booking-orange hover:bg-booking-orange-dark text-white text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 4-4.5 Zimmer -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">4 – 4.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">740 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">920 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 5-5.5 Zimmer -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">5 – 5.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">890 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">1110 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Haus Cards -->
-            <div id="tab-haus" class="hidden">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-
-                    <!-- 3-3.5 Zimmer Haus -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">3 – 3.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">790 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">990 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 4-4.5 Zimmer Haus -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">4 – 4.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">990 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">1240 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                    <!-- 5-5.5 Zimmer Haus -->
-                    <div class="relative rounded-xl bg-card border border-border shadow-md p-6 hover:shadow-lg transition-shadow">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg font-bold text-foreground">5 – 5.5 Zimmer</h3>
-                            <div class="mt-3 space-y-1">
-                                <p class="text-2xl font-bold text-primary">1190 CHF <span class="text-sm font-normal text-muted-foreground">Standard</span></p>
-                                <p class="text-lg font-semibold text-cleaning-green">1490 CHF <span class="text-sm font-normal text-muted-foreground">ECO</span></p>
-                            </div>
-                        </div>
-                        <a href="#contact-form" class="block w-full text-center px-4 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold rounded-lg transition-colors">
-                            Termin anfragen
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- ECO Info Banner -->
-            <div class="flex items-start gap-3 bg-cleaning-green/10 border border-cleaning-green/20 p-4 rounded-lg mb-8">
-                <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                <p class="text-foreground text-sm">
-                    <strong>ECO-Option:</strong> Wir reinigen ausschliesslich mit biologisch abbaubaren, umweltfreundlichen Reinigungsmitteln — schonend für Mensch, Tier und Natur.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- So funktioniert es (How it works) -->
-        <section class="mb-16" aria-labelledby="how-it-works">
-            <h2 id="how-it-works" class="text-2xl font-bold text-foreground mb-6">
-                So funktioniert Ihr Frühlingsputz
-            </h2>
-            <div class="space-y-4">
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Grösse wählen</h3>
-                            <p class="text-muted-foreground text-sm">Wählen Sie Wohnung oder Haus, die Zimmeranzahl und Ihr bevorzugtes Paket (Standard oder ECO).</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Fixpreis erhalten</h3>
-                            <p class="text-muted-foreground text-sm">Sie erhalten sofort einen verbindlichen Fixpreis — keine versteckten Kosten, keine bösen Überraschungen.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gradient-hero text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                        <div>
-                            <h3 class="font-semibold text-foreground">Sauberes Zuhause</h3>
-                            <p class="text-muted-foreground text-sm">Unser Team reinigt Ihr Zuhause gründlich von oben bis unten — Sie kommen heim und strahlen lassen.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Detaillierte Checkliste -->
-        <section class="mb-16" aria-labelledby="checklist">
-            <h2 id="checklist" class="text-2xl font-bold text-foreground mb-6">
-                Detaillierte Checkliste
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-                <!-- Küche -->
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-                        </div>
-                        <h3 class="font-bold text-foreground">Küche</h3>
-                    </div>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Herd, Backofen &amp; Dunstabzug entfetten
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Kühlschrank innen &amp; aussen reinigen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Schränke &amp; Fronten abwischen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Arbeitsflächen &amp; Spüle polieren
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Boden feucht wischen
-                        </li>
-                    </ul>
+        <!-- ═══ PRICING ═══ -->
+        <section id="preise" class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 scroll-mt-16 md:scroll-mt-[6.25rem]">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Fixpreise Frühlingsreinigung</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Transparente Festpreise für Ihre Frühlingsreinigung in Zürich — alles inklusive.</p>
                 </div>
 
-                <!-- Badezimmer -->
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                        </div>
-                        <h3 class="font-bold text-foreground">Badezimmer</h3>
-                    </div>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Dusche, Badewanne &amp; WC desinfizieren
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Kalk &amp; Schimmel entfernen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Armaturen polieren
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Spiegel &amp; Ablagen reinigen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Boden wischen &amp; desinfizieren
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Wohnräume -->
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                        </div>
-                        <h3 class="font-bold text-foreground">Wohnräume</h3>
-                    </div>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Staub von allen Oberflächen entfernen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Böden saugen &amp; feucht wischen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Spinnweben entfernen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Türen &amp; Rahmen abwischen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Sockelleisten reinigen
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Extras -->
-                <div class="rounded-lg bg-card shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-primary/10 p-2 rounded-lg">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                        <h3 class="font-bold text-foreground">Extras</h3>
-                    </div>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Fenster innen &amp; aussen putzen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Heizkörper &amp; Lüftungsgitter abstauben
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Schränke aussen abwischen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Lichtschalter &amp; Steckdosen reinigen
-                        </li>
-                        <li class="flex items-start gap-2 text-sm text-foreground">
-                            <svg class="w-4 h-4 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            Balkontür &amp; Rahmen säubern
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Region Selector -->
-        <section class="mb-16" aria-labelledby="region-links">
-            <div class="text-center mb-10">
-                <h2 id="region-links" class="text-3xl md:text-4xl font-bold text-foreground mb-4">Frühlingsreinigung in Ihrer Region</h2>
-                <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-                    Wir sind im gesamten Kanton Zürich für Sie im Einsatz. Wählen Sie Ihre Region für lokale Informationen.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                @foreach (var b in EndReinigung.Models.BezirkData.All)
-                {
-                    var firstGemeinde = b.Gemeinden.Count > 0 ? b.Gemeinden[0].Name : b.Name;
-                    <a href="/fruehlingsputz-bezirk-@b.Slug" class="flex items-center justify-between p-5 rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/30 transition-all group">
-                        <div>
-                            <span class="font-semibold text-foreground group-hover:text-primary transition-colors">@firstGemeinde</span>
-                            <span class="block text-sm text-muted-foreground mt-0.5">@b.Name</span>
-                        </div>
-                        <svg class="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
+                @{
+                    var includedServices = new[] {
+                        "Gründliche Reinigung aller Räume",
+                        "Fenster innen & aussen reinigen",
+                        "Böden gründlich wischen & pflegen",
+                        "Küche & Sanitäranlagen intensiv reinigen",
+                        "Staub & Spinnweben entfernen",
+                        "Schränke aussen auswischen",
+                    };
+                    var wohnungPricing = new (string Size, int Standard, int Eco, bool Popular)[] {
+                        ("1-1.5 Zimmer", 390, 490, false),
+                        ("2-2.5 Zimmer", 490, 610, false),
+                        ("3-3.5 Zimmer", 590, 740, true),
+                        ("4-4.5 Zimmer", 740, 920, false),
+                        ("5-5.5 Zimmer", 890, 1110, false),
+                    };
+                    var hausPricing = new (string Size, int Standard, int Eco)[] {
+                        ("3-3.5 Zimmer", 790, 990),
+                        ("4-4.5 Zimmer", 990, 1240),
+                        ("5-5.5 Zimmer", 1190, 1490),
+                    };
                 }
+
+                <!-- Wohnung cards -->
+                <div id="section-wohnung" class="scroll-mt-24 mb-16">
+                    <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">Frühlingsreinigung für Wohnungen</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        @foreach (var p in wohnungPricing)
+                        {
+                            <button type="button"
+                                    data-pricing-card data-property-type="wohnung"
+                                    data-size="@p.Size" data-standard="@p.Standard" data-eco="@p.Eco"
+                                    class="relative p-4 sm:p-6 bg-white rounded-lg border-2 hover:shadow-xl transition-all duration-300 cursor-pointer text-left @(p.Popular ? "border-swiss-blue shadow-lg" : "border-border")">
+                                @if (p.Popular)
+                                {
+                                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                        <div class="bg-swiss-blue text-white text-xs font-bold px-4 py-1.5 rounded-full">Beliebt</div>
+                                    </div>
+                                }
+                                <div class="absolute top-4 right-4">
+                                    <div class="text-white text-xs font-bold px-3 py-1 rounded-full @(p.Popular ? "bg-cleaning-green" : "bg-trust-gold")">Fixpreis</div>
+                                </div>
+                                <div class="text-center mb-6">
+                                    <div class="flex items-center justify-center mb-4">
+                                        <svg class="w-8 h-8 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/></svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-foreground mb-1">@p.Size</h3>
+                                    <p class="text-xs text-muted-foreground mb-2">Frühlingsreinigung in Zürich und Kanton</p>
+                                    <div class="text-3xl font-bold text-swiss-blue mb-1">@p.Standard CHF</div>
+                                    <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                                </div>
+                                <div class="space-y-2 mb-6">
+                                    @foreach (var feature in includedServices)
+                                    {
+                                        <div class="flex items-start">
+                                            <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            <span class="text-xs text-foreground">@feature</span>
+                                        </div>
+                                    }
+                                </div>
+                                <span class="flex items-center justify-center w-full bg-swiss-blue hover:bg-swiss-blue/90 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    Jetzt Fixpreis berechnen
+                                </span>
+                            </button>
+                        }
+                    </div>
+                </div>
+
+                <!-- Einfamilienhaus cards -->
+                <div id="section-haus" class="scroll-mt-24">
+                    <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">Frühlingsreinigung für Einfamilienhäuser</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        @foreach (var p in hausPricing)
+                        {
+                            <button type="button"
+                                    data-pricing-card data-property-type="haus"
+                                    data-size="@p.Size" data-standard="@p.Standard" data-eco="@p.Eco"
+                                    class="relative p-4 sm:p-6 bg-white rounded-lg border-2 border-border hover:shadow-xl transition-all duration-300 cursor-pointer text-left">
+                                <div class="absolute top-4 right-4">
+                                    <div class="bg-trust-gold text-white text-xs font-bold px-3 py-1 rounded-full">Fixpreis</div>
+                                </div>
+                                <div class="text-center mb-6">
+                                    <div class="flex items-center justify-center mb-4">
+                                        <svg class="w-8 h-8 text-booking-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-foreground mb-1">@p.Size</h3>
+                                    <p class="text-xs text-muted-foreground mb-2">Frühlingsreinigung in Zürich und Kanton</p>
+                                    <div class="text-3xl font-bold text-booking-orange mb-1">@p.Standard CHF</div>
+                                    <p class="text-xs text-muted-foreground">Fixpreis inkl. Anfahrt, Material</p>
+                                </div>
+                                <div class="space-y-2 mb-6">
+                                    @foreach (var feature in includedServices)
+                                    {
+                                        <div class="flex items-start">
+                                            <svg class="w-4 h-4 text-cleaning-green mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            <span class="text-xs text-foreground">@feature</span>
+                                        </div>
+                                    }
+                                </div>
+                                <span class="flex items-center justify-center w-full bg-booking-orange hover:bg-booking-orange/90 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    Jetzt Fixpreis berechnen
+                                </span>
+                            </button>
+                        }
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="mb-16" aria-labelledby="faq">
-            <h2 id="faq" class="text-2xl font-bold text-foreground mb-6">
-                Häufige Fragen zur Frühlingsreinigung
-            </h2>
-            <div class="rounded-lg bg-card shadow-lg overflow-hidden">
+        <!-- ═══ CLEANING TYPE + FORM (revealed after card click) ═══ -->
+        <section id="cleaning-type" class="py-16 px-4 sm:px-6 lg:px-8 scroll-mt-16 md:scroll-mt-[6.25rem] hidden">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-2">Reinigungsart wählen</h2>
+                    <p class="text-muted-foreground"><span data-selected-type-label>Wohnung</span> — <span data-selected-size-label>—</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8">
+                    <!-- Cleaning type selector -->
+                    <div class="rounded-lg p-6 border border-border shadow-lg bg-white">
+                        <h3 class="text-xl font-bold text-foreground mb-5">Reinigungsart — <span data-selected-size-label>—</span></h3>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <button type="button" data-cleaning-type="standard" class="p-5 rounded-xl border-2 text-center transition-all duration-200 border-border hover:border-primary/50">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-muted-foreground" data-icon-standard fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V3m0 9a4.5 4.5 0 1 0 4.5 4.5M12 12a4.5 4.5 0 1 1-4.5 4.5M12 12v4.5m0-4.5 3 3m-3-3-3 3M12 12l3-3m-3 3-3-3"/></svg>
+                                <span class="text-base font-bold block mb-1 text-foreground" data-label-standard>Standard</span>
+                                <span class="text-2xl font-bold block text-foreground" data-price-standard>— CHF</span>
+                            </button>
+                            <button type="button" data-cleaning-type="eco" class="p-5 rounded-xl border-2 text-center transition-all duration-200 border-border hover:border-cleaning-green/50">
+                                <svg class="w-8 h-8 mx-auto mb-2 text-muted-foreground" data-icon-eco fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"/></svg>
+                                <span class="text-base font-bold block mb-1 text-foreground" data-label-eco>ECO (+25%)</span>
+                                <span class="text-2xl font-bold block text-foreground" data-price-eco>— CHF</span>
+                            </button>
+                        </div>
+
+                        <div class="mt-4 space-y-3 text-base">
+                            <div class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V3"/></svg>
+                                <p class="text-muted-foreground"><span class="font-semibold text-foreground">Standard Reinigung:</span> Gründliche Frühlingsreinigung mit bewährten, hochwirksamen Reinigungsmitteln.</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"/></svg>
+                                <p class="text-muted-foreground"><span class="font-semibold text-cleaning-green">ECO Reinigung:</span> <span class="text-cleaning-green">Umweltfreundliche, biologisch abbaubare Reinigungsmittel</span> — ideal für Allergiker, Familien mit Kindern oder Haustierbesitzer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final price + jump-to-contact CTA -->
+                    <div class="space-y-6">
+                        <div class="rounded-2xl p-6 bg-gradient-hero text-primary-foreground border-0 shadow-xl">
+                            <div class="text-center">
+                                <p class="text-sm opacity-90 mb-1">Ihr Preis</p>
+                                <div class="text-4xl md:text-5xl font-bold mb-1">CHF <span data-final-price>—</span></div>
+                                <p class="text-sm opacity-80" data-final-type-label>Bitte Reinigungsart wählen</p>
+                            </div>
+                        </div>
+
+                        <a href="#contact-form" class="flex items-center justify-center w-full px-4 py-4 bg-booking-orange hover:bg-booking-orange-dark text-white font-bold rounded-xl transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                            Anfrage senden
+                        </a>
+                        <p class="text-center text-xs text-muted-foreground">Unverbindlich · Wir melden uns innerhalb von 24h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ HOW IT WORKS ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="how-it-works">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 id="how-it-works" class="text-3xl md:text-4xl font-bold text-foreground mb-4">So funktioniert's</h2>
+                    <p class="text-lg text-muted-foreground">In 3 einfachen Schritten zum strahlend sauberen Zuhause</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-primary/10 rounded-2xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">1. Grösse wählen</h3>
+                        <p class="text-muted-foreground">Wählen Sie die Zimmergrösse und den Objekttyp — Wohnung oder Einfamilienhaus.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-booking-orange/10 rounded-2xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-booking-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">2. Fixpreis erhalten</h3>
+                        <p class="text-muted-foreground">Sie erhalten sofort einen transparenten Fixpreis — Standard oder ECO Reinigung.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-cleaning-green/15 rounded-2xl p-6 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">3. Sauber geniessen</h3>
+                        <p class="text-muted-foreground">Wir reinigen Ihr Zuhause gründlich und Sie geniessen den frischen Frühlingsglanz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ WHY CHOOSE US ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30" aria-labelledby="why-us">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 id="why-us" class="text-3xl md:text-4xl font-bold text-foreground mb-4">Warum Zürich Endreinigung?</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-lg p-6 bg-white border-0 shadow-md text-center">
+                        <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3 class="font-bold text-foreground mb-1">Flexible Termine</h3>
+                        <p class="text-muted-foreground text-sm mb-3">Wunschtermin online wählen — auch kurzfristig verfügbar.</p>
+                        <span class="text-primary font-bold text-sm">Innert 48h</span>
+                    </div>
+                    <div class="rounded-lg p-6 bg-white border-0 shadow-md text-center">
+                        <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <h3 class="font-bold text-foreground mb-1">Erfahrenes Team</h3>
+                        <p class="text-muted-foreground text-sm mb-3">Spezialisiert auf gründliche Wohnungsreinigungen.</p>
+                        <span class="text-primary font-bold text-sm">10+ Jahre</span>
+                    </div>
+                    <div class="rounded-lg p-6 bg-white border-0 shadow-md text-center">
+                        <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <h3 class="font-bold text-foreground mb-1">Transparenter Fixpreis</h3>
+                        <p class="text-muted-foreground text-sm mb-3">Keine versteckten Kosten — alles klar kalkuliert.</p>
+                        <span class="text-primary font-bold text-sm">Keine Extras</span>
+                    </div>
+                    <div class="rounded-lg p-6 bg-white border-0 shadow-md text-center">
+                        <div class="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-foreground mb-1">Haftpflichtversichert</h3>
+                        <p class="text-muted-foreground text-sm mb-3">Vollumfänglich versichert für Ihre Sicherheit.</p>
+                        <span class="text-primary font-bold text-sm">5 Mio. CHF</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ DETAILED CHECKLIST (Im Preis enthalten) ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="included-services">
+            <div class="max-w-5xl mx-auto">
+                <h2 id="included-services" class="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Im Preis enthalten — Ihre Frühlingsreinigung</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @{
+                        var checklist = new (string Title, string[] Items)[] {
+                            ("Wohnräume & Schlafzimmer", new[] { "Gründliches Staubwischen aller Oberflächen", "Spinnweben und Winterstaub entfernen", "Böden saugen und feucht wischen", "Heizkörper und Lüftungsgitter reinigen" }),
+                            ("Küche", new[] { "Arbeitsflächen, Spüle und Armaturen reinigen", "Schränke aussen auswischen", "Gerätefronten und Dunstabzug reinigen", "Fliesen und Fugen intensiv reinigen" }),
+                            ("Bad & WC", new[] { "Sanitäranlagen gründlich reinigen und entkalken", "Spiegel und Glasflächen streifenfrei putzen", "Fliesen und Fugen intensiv reinigen", "Armaturen polieren" }),
+                            ("Fenster & Extras", new[] { "Fenster innen und aussen reinigen", "Fensterrahmen und Fenstersims", "Türen und Türrahmen abwischen", "Sockelleisten reinigen" }),
+                        };
+                    }
+                    @foreach (var card in checklist)
+                    {
+                        <div class="rounded-lg p-6 bg-white border-0 shadow-md">
+                            <h3 class="text-lg font-bold text-foreground mb-4">@card.Title</h3>
+                            <div class="space-y-3">
+                                @foreach (var item in card.Items)
+                                {
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-cleaning-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        <span class="text-sm text-foreground">@item</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ WAS IST EINE FRÜHLINGSREINIGUNG ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6">Was ist eine Frühlingsreinigung?</h2>
+                <p class="text-base text-muted-foreground mb-4 leading-relaxed">
+                    Eine Frühlingsreinigung — auch Frühlingsputz genannt — ist eine gründliche, saisonale Reinigung Ihrer Wohnung oder Ihres Hauses. Nach den Wintermonaten sammeln sich Staub, Pollen und Schmutz an, die bei der regulären Reinigung oft übersehen werden. Eine professionelle Frühlingsreinigung geht über den normalen Putz hinaus: Fenster werden innen und aussen gereinigt, Heizkörper entstaubt, Schränke ausgewischt und alle Oberflächen gründlich behandelt.
+                </p>
+                <p class="text-base text-muted-foreground leading-relaxed">
+                    Besonders in Zürich, wo die Pollensaison früh beginnt, ist ein gründlicher Frühlingsputz wichtig für Allergiker und alle, die ein frisches, sauberes Zuhause schätzen. Unsere professionelle Frühlingsreinigung spart Ihnen Zeit und Aufwand — Sie geniessen das Ergebnis, wir erledigen die Arbeit.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ═══ FAQ ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30" aria-labelledby="faq">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 id="faq" class="text-3xl md:text-4xl font-bold text-foreground mb-4">Häufige Fragen zur Frühlingsreinigung</h2>
+                </div>
+                <div class="rounded-lg bg-card shadow-lg overflow-hidden border-0">
                 <details class="border-b border-border group">
                     <summary class="px-6 py-4 text-left font-medium text-foreground cursor-pointer hover:bg-secondary/50 flex items-center justify-between">
                         Was kostet eine Frühlingsreinigung in Zürich?
@@ -634,73 +570,129 @@
                         Der ideale Zeitraum ist von März bis Mai, wenn die Tage länger werden und man frisch in den Frühling starten möchte. Da dieser Zeitraum sehr gefragt ist, empfehlen wir eine frühzeitige Buchung. Wir sind aber das ganze Jahr verfügbar — auch ausserhalb der klassischen Frühlingszeit.
                     </p>
                 </details>
-            </div>
-        </section>
-
-        <!-- CTA Contact Section -->
-        <section class="mb-16" aria-labelledby="contact-cta">
-            <div class="rounded-lg bg-gradient-hero text-primary-foreground shadow-xl p-8">
-                <div class="text-center">
-                    <h2 id="contact-cta" class="text-2xl md:text-3xl font-bold mb-4">
-                        Jetzt Frühlingsreinigung buchen
-                    </h2>
-                    <p class="mb-6 opacity-90 max-w-xl mx-auto">
-                        Frisch in den Frühling starten — kontaktieren Sie uns für Ihre Wunschtermin. Wir melden uns innerhalb von 24 Stunden.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary hover:bg-gray-100 font-semibold rounded-lg transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            Termin anfragen
-                        </a>
-                        <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white/10 font-semibold rounded-lg transition-colors">
-                            Kontakt aufnehmen
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Related Links -->
-        <section class="mb-8" aria-labelledby="related-links">
-            <h3 id="related-links" class="text-lg font-semibold text-foreground mb-4">
-                Weitere Services
-            </h3>
-            <div class="flex flex-wrap gap-3">
-                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Endreinigung</a>
-                <a href="/grundreinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Grundreinigung</a>
-                <a href="/baureinigung" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Baureinigung</a>
-                <a href="/extra-services" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Alle Extra Services</a>
-                <a href="#contact-form" class="inline-flex items-center px-3 py-1.5 text-sm border border-border text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors">Kontakt</a>
+        <!-- ═══ REGION SELECTOR ═══ -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="region-links">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 id="region-links" class="text-3xl md:text-4xl font-bold text-foreground mb-4">Frühlingsreinigung in Ihrer Region</h2>
+                    <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+                        Wir sind im gesamten Kanton Zürich für Sie im Einsatz. Wählen Sie Ihre Region für lokale Informationen.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    @foreach (var b in EndReinigung.Models.BezirkData.All)
+                    {
+                        var firstGemeinde = b.Gemeinden.Count > 0 ? b.Gemeinden[0].Name : b.Name;
+                        <a href="/fruehlingsputz-bezirk-@b.Slug" class="flex items-center justify-between p-5 rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/30 transition-all group">
+                            <div>
+                                <span class="font-semibold text-foreground group-hover:text-primary transition-colors">@firstGemeinde</span>
+                                <span class="block text-sm text-muted-foreground mt-0.5">@b.Name</span>
+                            </div>
+                            <svg class="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    }
+                </div>
             </div>
         </section>
 
     </main>
 </div>
 
-<script>
-    function showTab(tab) {
-        var wohnungTab = document.getElementById('tab-wohnung');
-        var hausTab = document.getElementById('tab-haus');
-        var btnWohnung = document.getElementById('btn-wohnung');
-        var btnHaus = document.getElementById('btn-haus');
+@await Html.PartialAsync("_Contact")
 
-        if (tab === 'wohnung') {
-            wohnungTab.classList.remove('hidden');
-            hausTab.classList.add('hidden');
-            btnWohnung.classList.add('bg-card', 'text-foreground', 'shadow-sm');
-            btnWohnung.classList.remove('text-muted-foreground');
-            btnHaus.classList.remove('bg-card', 'text-foreground', 'shadow-sm');
-            btnHaus.classList.add('text-muted-foreground');
-        } else {
-            hausTab.classList.remove('hidden');
-            wohnungTab.classList.add('hidden');
-            btnHaus.classList.add('bg-card', 'text-foreground', 'shadow-sm');
-            btnHaus.classList.remove('text-muted-foreground');
-            btnWohnung.classList.remove('bg-card', 'text-foreground', 'shadow-sm');
-            btnWohnung.classList.add('text-muted-foreground');
+<!-- ═══ LOCAL SEO — Bezirk Affoltern paragraph ═══ -->
+<section class="w-full bg-[#f8f9fa] py-14 md:py-20 px-6 md:px-10 lg:px-20">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6">Ihr Reinigungspartner im Bezirk Affoltern</h2>
+        <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
+            Als Ihr lokaler Reinigungsexperte sind wir im gesamten Bezirk Affoltern für Sie im Einsatz. Ob eine gründliche Umzugsreinigung in
+            <strong class="text-foreground">Hedingen</strong>, eine professionelle Endreinigung in
+            <strong class="text-foreground">Obfelden</strong> oder Baureinigungen in
+            <strong class="text-foreground">Mettmenstetten</strong> – wir garantieren höchste Qualität mit Abnahmegarantie. Auch in
+            <strong class="text-foreground">Aeugst am Albis</strong>,
+            <strong class="text-foreground">Bonstetten</strong> und den umliegenden Gemeinden sorgen wir für strahlende Sauberkeit.
+        </p>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const cards = document.querySelectorAll('[data-pricing-card]');
+        const cleaningSection = document.getElementById('cleaning-type');
+        const typeBtns = document.querySelectorAll('[data-cleaning-type]');
+        const sizeLabels = document.querySelectorAll('[data-selected-size-label]');
+        const typeLabel = document.querySelector('[data-selected-type-label]');
+        const priceStandardEl = document.querySelector('[data-price-standard]');
+        const priceEcoEl = document.querySelector('[data-price-eco]');
+        const finalPriceEl = document.querySelector('[data-final-price]');
+        const finalTypeLabel = document.querySelector('[data-final-type-label]');
+
+        let state = { size: null, type: null, standard: 0, eco: 0, cleaning: null };
+
+        function setPriceLabels() {
+            priceStandardEl.textContent = state.standard + ' CHF';
+            priceEcoEl.textContent = state.eco + ' CHF';
         }
-    }
+
+        function updateFinal() {
+            if (!state.cleaning) {
+                finalPriceEl.textContent = '—';
+                finalTypeLabel.textContent = 'Bitte Reinigungsart wählen';
+                return;
+            }
+            const price = state.cleaning === 'eco' ? state.eco : state.standard;
+            finalPriceEl.textContent = price;
+            finalTypeLabel.textContent = state.cleaning === 'eco' ? 'ECO Reinigung' : 'Standard Reinigung';
+        }
+
+        function setCleaningButtonsActive() {
+            typeBtns.forEach(b => {
+                const isActive = b.getAttribute('data-cleaning-type') === state.cleaning;
+                b.classList.remove('border-primary', 'bg-primary/5', 'shadow-md', 'border-cleaning-green', 'bg-cleaning-green/5');
+                if (isActive) {
+                    if (state.cleaning === 'eco') b.classList.add('border-cleaning-green', 'bg-cleaning-green/5', 'shadow-md');
+                    else b.classList.add('border-primary', 'bg-primary/5', 'shadow-md');
+                }
+            });
+        }
+
+        function selectCard(card) {
+            state.size = card.getAttribute('data-size');
+            state.type = card.getAttribute('data-property-type');
+            state.standard = parseInt(card.getAttribute('data-standard'), 10);
+            state.eco = parseInt(card.getAttribute('data-eco'), 10);
+            state.cleaning = null;
+
+            sizeLabels.forEach(el => { el.textContent = state.size; });
+            if (typeLabel) typeLabel.textContent = state.type === 'haus' ? 'Einfamilienhaus' : 'Wohnung';
+            setPriceLabels();
+            setCleaningButtonsActive();
+            updateFinal();
+
+            cleaningSection.classList.remove('hidden');
+            setTimeout(() => {
+                cleaningSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 80);
+
+            // Highlight selected card
+            cards.forEach(c => {
+                c.classList.remove('ring-2', 'ring-primary/20', 'ring-booking-orange/20');
+            });
+            if (state.type === 'haus') card.classList.add('ring-2', 'ring-booking-orange/20');
+            else card.classList.add('ring-2', 'ring-primary/20');
+        }
+
+        cards.forEach(c => c.addEventListener('click', () => selectCard(c)));
+        typeBtns.forEach(b => b.addEventListener('click', () => {
+            state.cleaning = b.getAttribute('data-cleaning-type');
+            setCleaningButtonsActive();
+            updateFinal();
+        }));
+    })();
 </script>
 
-@await Html.PartialAsync("_Contact")
 @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

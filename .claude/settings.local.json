@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(perl -ne 'while \\(/border-white\\\\\\\\\\\\/\\(\\\\d+\\)/g\\) { print \"border-white/$1\\\\n\"; }' wwwroot/css/tailwind.css)",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(curl -s 'https://nloismbsvjijoagsmhod.supabase.co/rest/v1/ratgeber_articles?select=*,ratgeber_categories\\(name_de,name_en,slug\\)&is_published=eq.true&order=sort_order' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sb2lzbWJzdmppam9hZ3NtaG9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1NjcyNDQsImV4cCI6MjA3OTE0MzI0NH0.ksVvo5Lk7KivlYkA7XlLmTIJEpGTR2hZL6PoZkcvUUA' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sb2lzbWJzdmppam9hZ3NtaG9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1NjcyNDQsImV4cCI6MjA3OTE0MzI0NH0.ksVvo5Lk7KivlYkA7XlLmTIJEpGTR2hZL6PoZkcvUUA' -o ../articles.json)",
+      "Bash(sed -i.bak '510,886d' c:/Users/STN-Work/source/repos/EndreinigungZurich/EndReinigung/Views/Home/Fruehlingsreinigung.cshtml && wc -l c:/Users/STN-Work/source/repos/EndreinigungZurich/EndReinigung/Views/Home/Fruehlingsreinigung.cshtml*)",
+      "Bash(python)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\STN-Work\\source\\repos\\EndreinigungZurich\\EndReinigung\\Views\\Home"
     ]
   }
 }

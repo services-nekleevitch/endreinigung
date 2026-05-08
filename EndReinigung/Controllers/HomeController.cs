@@ -60,6 +60,17 @@ namespace EndReinigung.Controllers
             return View();
         }
 
+        [Route("ratgeber/{slug}")]
+        public IActionResult RatgeberArticle(string slug)
+        {
+            var article = RatgeberArticleData.FindBySlug(slug);
+            if (article == null)
+            {
+                return RedirectPermanent("/ratgeber");
+            }
+            return View(article);
+        }
+
         [Route("abnahmegarantie")]
         public IActionResult Abnahmegarantie()
         {

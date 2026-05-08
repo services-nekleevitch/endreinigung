@@ -48,6 +48,63 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Ratgeber articles -->
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-kosten-zuerich</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/kaution-zurueckbekommen-abnahme</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-selber-machen-oder-firma</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/hauswart-abnahme-pruefung</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-tipps-expats-zuerich</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/baureinigung-zuerich-kosten</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/polsterreinigung-zuerich-preise-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/fensterreinigung-zuerich-tipps-preise</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/umzug-zuerich-checkliste-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zurich-endreinigung.ch/ratgeber/abmeldung-gemeinde-umzug-schweiz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://zurich-endreinigung.ch/faq</loc>
     <changefreq>monthly</changefreq>

@@ -36,6 +36,12 @@
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="App_Data\ratgeber-articles.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <!-- Rebuild Tailwind CSS on every build so new classes added to .cshtml or .js files get picked up.
        Only runs if node_modules exists; skip silently otherwise. -->
   <Target Name="BuildTailwindCss" BeforeTargets="Build" Condition="Exists('node_modules\.bin\tailwindcss.cmd')">
