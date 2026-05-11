@@ -12,24 +12,18 @@
     @{
         var canonicalUrl = (string)(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/");
         var canonicalBase = canonicalUrl.Contains('?') ? canonicalUrl.Substring(0, canonicalUrl.IndexOf('?')) : canonicalUrl;
-        var sep = canonicalBase.Contains('?') ? "&" : "?";
-        var hasNonCultureQuery = Context.Request.Query.Any(q => !string.Equals(q.Key, "culture", StringComparison.OrdinalIgnoreCase));
-        var isEnglish = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
-        var canonicalHref = isEnglish ? $"{canonicalBase}{sep}culture=en" : canonicalBase;
+        var hasQuery = Context.Request.Query.Any();
     }
-    @if (hasNonCultureQuery)
+    @if (hasQuery)
     {
         <meta name="robots" content="noindex,follow" />
     }
-    <link rel="canonical" href="@canonicalHref" />
-    <link rel="alternate" hreflang="de" href="@canonicalBase" />
-    <link rel="alternate" hreflang="en" href="@(canonicalBase)@(sep)culture=en" />
-    <link rel="alternate" hreflang="x-default" href="@canonicalBase" />
+    <link rel="canonical" href="@canonicalBase" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")" />
     <meta property="og:description" content="@(ViewData["Description"] ?? "Professionelle Endreinigung & Umzugsreinigung in Zürich mit 100% Abnahmegarantie.")" />
-    <meta property="og:url" content="@canonicalHref" />
+    <meta property="og:url" content="@canonicalBase" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
 

@@ -93,6 +93,29 @@ namespace EndReinigung
                 }
             }));
 
+            // Strip ?culture=... query strings with 301 redirect.
+            // The site's views are German-only — ?culture=en just flips CurrentUICulture but
+            // doesn't translate page content, so these URLs are duplicates of the clean path.
+            // The DE/EN switcher in _Navigation.cshtml uses cookies, not the query string,
+            // so removing this param does not break language switching.
+            app.UseRewriter(new RewriteOptions().Add(ctx =>
+            {
+                var req = ctx.HttpContext.Request;
+                if (!req.Query.ContainsKey("culture")) return;
+
+                var kept = req.Query
+                    .Where(q => !string.Equals(q.Key, "culture", StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                var query = kept.Count == 0
+                    ? string.Empty
+                    : QueryString.Create(kept.Select(q =>
+                        new KeyValuePair<string, string?>(q.Key, q.Value.ToString()))).ToString();
+                var newUrl = $"{req.PathBase}{req.Path}{query}";
+                ctx.HttpContext.Response.StatusCode = StatusCodes.Status301MovedPermanently;
+                ctx.HttpContext.Response.Headers.Location = newUrl;
+                ctx.Result = RuleResult.EndResponse;
+            }));
+
             app.UseHttpsRedirection();
 
             // Add AVIF MIME type support
