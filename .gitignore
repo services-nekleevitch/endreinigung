@@ -364,3 +364,7 @@ FodyWeavers.xsd
 # Source React project (not needed for MVC)
 rich-lease-temp/
 rich-lease-shine-main*.zip
+
+# Deployment artifacts
+publish.zip
+publish/
