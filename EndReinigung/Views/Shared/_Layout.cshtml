@@ -61,11 +61,19 @@
 
     @{
         var heroPreload = (string?)ViewData["HeroPreload"];
+        var heroPreloadMobile = (string?)ViewData["HeroPreloadMobile"];
         var heroPreloadType = (string?)ViewData["HeroPreloadType"] ?? "image/webp";
     }
     @if (!string.IsNullOrEmpty(heroPreload))
     {
-        <link rel="preload" as="image" href="@heroPreload" type="@heroPreloadType" fetchpriority="high" />
+        if (!string.IsNullOrEmpty(heroPreloadMobile))
+        {
+            <link rel="preload" as="image" imagesrcset="@heroPreloadMobile 768w, @heroPreload 1920w" imagesizes="100vw" type="@heroPreloadType" fetchpriority="high" />
+        }
+        else
+        {
+            <link rel="preload" as="image" href="@heroPreload" type="@heroPreloadType" fetchpriority="high" />
+        }
     }
 
     @RenderSection("Head", required: false)

@@ -3,6 +3,8 @@
     ViewData["Description"] = "Professionelle Umzugsreinigung in Zürich mit 100% Abnahmegarantie. Fixpreise, persönliche Abnahmebegleitung bei der Wohnungsübergabe. Kaution zurück garantiert.";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-zuerich";
     ViewData["Keywords"] = "Umzugsreinigung Zürich, Zügelreinigung Zürich, Wohnungsreinigung Zürich, Umzugsreinigung Kosten, Umzugsreinigung Abnahmegarantie, Wohnungsabgabe Reinigung, Auszugsreinigung Zürich";
+    ViewData["HeroPreload"] = "/img/zurich-cityscape.webp";
+    ViewData["HeroPreloadMobile"] = "/img/zurich-cityscape-mobile.webp";
 }
 
 @section Head {
@@ -147,6 +149,7 @@
         <!-- Background Image -->
         <div class="absolute inset-0">
             <picture>
+                <source media="(max-width: 768px)" srcset="/img/zurich-cityscape-mobile.webp" type="image/webp" />
                 <source srcset="/img/zurich-cityscape.webp" type="image/webp" />
                 <img src="/img/zurich-cityscape.jpg" alt="Zürich Stadtpanorama — professionelle Umzugsreinigung Zürich" class="w-full h-full object-cover" />
             </picture>
