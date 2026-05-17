@@ -907,5 +907,19 @@
   <data name="booking.confirm" xml:space="preserve">
     <value>Confirm Booking</value>
   </data>
-
+  <data name="cookie.title" xml:space="preserve">
+    <value>We use cookies</value>
+  </data>
+  <data name="cookie.message" xml:space="preserve">
+    <value>This website uses cookies to enhance your experience, analyse traffic, and personalise content. By clicking &#8220;Accept all&#8221; you consent to the use of all cookies.</value>
+  </data>
+  <data name="cookie.accept" xml:space="preserve">
+    <value>Accept all</value>
+  </data>
+  <data name="cookie.decline" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="cookie.more_info" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
 </root>

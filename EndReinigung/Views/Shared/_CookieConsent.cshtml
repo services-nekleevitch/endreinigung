@@ -1,0 +1,72 @@
+<div id="cookie-consent"
+     class="fixed bottom-0 left-0 right-0 z-[100] hidden p-4 md:p-6"
+     role="dialog"
+     aria-live="polite"
+     aria-label="@SharedLocalizer["cookie.title"]">
+    <div class="max-w-5xl mx-auto bg-white shadow-[0_-4px_30px_rgba(0,0,0,0.15)] rounded-xl border border-gray-200 p-5 md:p-6">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+            <div class="flex-1">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-full bg-swiss-blue/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.54 11.05A10 10 0 1112 2a3 3 0 003 3 3 3 0 003 3 3 3 0 003 3 3 3 0 00.54.05z"/>
+                            <circle cx="8" cy="14" r="1"/>
+                            <circle cx="12" cy="17" r="1"/>
+                            <circle cx="15" cy="11" r="1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-base md:text-lg font-semibold text-foreground mb-1">@SharedLocalizer["cookie.title"]</h2>
+                        <p class="text-sm text-muted-foreground leading-relaxed">
+                            @SharedLocalizer["cookie.message"]
+                            <a href="/datenschutz" class="text-swiss-blue underline underline-offset-2 hover:text-red-accent transition-colors font-medium ml-1">@SharedLocalizer["cookie.more_info"]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:shrink-0">
+                <button type="button"
+                        id="cookie-decline"
+                        class="px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 text-foreground hover:bg-gray-50 transition-colors">
+                    @SharedLocalizer["cookie.decline"]
+                </button>
+                <button type="button"
+                        id="cookie-accept"
+                        class="px-5 py-2.5 text-sm font-semibold rounded-lg bg-swiss-blue text-white hover:bg-swiss-blue/90 transition-colors shadow-sm">
+                    @SharedLocalizer["cookie.accept"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        var KEY = 'cookie-consent-v1';
+        var banner = document.getElementById('cookie-consent');
+        if (!banner) return;
+        try {
+            if (!localStorage.getItem(KEY)) {
+                banner.classList.remove('hidden');
+            }
+        } catch (e) {
+            banner.classList.remove('hidden');
+        }
+        function close(value) {
+            try { localStorage.setItem(KEY, value); } catch (e) { }
+            banner.classList.add('hidden');
+            if (typeof gtag === 'function') {
+                var granted = value === 'accepted' ? 'granted' : 'denied';
+                gtag('consent', 'update', {
+                    'ad_storage': granted,
+                    'ad_user_data': granted,
+                    'ad_personalization': granted,
+                    'analytics_storage': granted
+                });
+            }
+        }
+        var acceptBtn = document.getElementById('cookie-accept');
+        var declineBtn = document.getElementById('cookie-decline');
+        if (acceptBtn) acceptBtn.addEventListener('click', function () { close('accepted'); });
+        if (declineBtn) declineBtn.addEventListener('click', function () { close('declined'); });
+    })();
+</script>

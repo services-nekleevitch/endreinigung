@@ -30,6 +30,26 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
+    <!-- Google Analytics (gtag.js) with Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('cookie-consent-v1'); } catch (e) { }
+            var state = stored === 'accepted' ? 'granted' : 'denied';
+            gtag('consent', 'default', {
+                'ad_storage': state,
+                'ad_user_data': state,
+                'ad_personalization': state,
+                'analytics_storage': state
+            });
+        })();
+        gtag('js', new Date());
+        gtag('config', 'G-Q2D26W6J66', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2D26W6J66"></script>
+
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,6 +60,15 @@
 
     <!-- Site CSS (variables + base styles) -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    @{
+        var heroPreload = (string?)ViewData["HeroPreload"];
+        var heroPreloadType = (string?)ViewData["HeroPreloadType"] ?? "image/webp";
+    }
+    @if (!string.IsNullOrEmpty(heroPreload))
+    {
+        <link rel="preload" as="image" href="@heroPreload" type="@heroPreloadType" fetchpriority="high" />
+    }
 
     @RenderSection("Head", required: false)
 
@@ -81,7 +110,9 @@
         @RenderBody()
     </main>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true" defer></script>
+    @await Html.PartialAsync("_WhatsAppFloat")
+    @await Html.PartialAsync("_CookieConsent")
     @RenderSection("Scripts", required: false)
 </body>
 </html>

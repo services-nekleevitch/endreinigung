@@ -907,5 +907,19 @@
   <data name="booking.confirm" xml:space="preserve">
     <value>Buchung best&#228;tigen</value>
   </data>
-
+  <data name="cookie.title" xml:space="preserve">
+    <value>Wir verwenden Cookies</value>
+  </data>
+  <data name="cookie.message" xml:space="preserve">
+    <value>Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern, den Datenverkehr zu analysieren und Inhalte zu personalisieren. Mit &#8222;Alle akzeptieren&#8220; stimmen Sie der Verwendung aller Cookies zu.</value>
+  </data>
+  <data name="cookie.accept" xml:space="preserve">
+    <value>Alle akzeptieren</value>
+  </data>
+  <data name="cookie.decline" xml:space="preserve">
+    <value>Ablehnen</value>
+  </data>
+  <data name="cookie.more_info" xml:space="preserve">
+    <value>Mehr erfahren</value>
+  </data>
 </root>

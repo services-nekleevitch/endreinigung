@@ -56,10 +56,14 @@
             <div class="overflow-hidden">
                 <div class="carousel-track flex" id="gallery-track">
                     @foreach (var item in gallery) {
+                        var webp = System.IO.Path.ChangeExtension(item.Img, ".webp");
                         <div class="carousel-slide third px-2 flex-shrink-0">
                             <div class="bg-card border border-border rounded-xl overflow-hidden h-full flex flex-col">
                                 <div class="aspect-[4/3] overflow-hidden">
-                                    <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" />
+                                    <picture>
+                                        <source srcset="@webp" type="image/webp" />
+                                        <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="600" />
+                                    </picture>
                                 </div>
                                 <div class="p-3 sm:p-4 flex-1">
                                     <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">@(lang == "en" ? item.CaptionEn : item.CaptionDe)</p>
