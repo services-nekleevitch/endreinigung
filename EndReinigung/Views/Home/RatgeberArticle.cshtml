@@ -1,6 +1,6 @@
 @model EndReinigung.Models.RatgeberArticle
 @{
-    var titleTag = $"{Model.TitleDe} | Ratgeber Endreinigung Zürich";
+    var titleTag = $"{Model.TitleDe} | Ratgeber Zürich Endreinigung";
     var description = Model.IntroDe.Length > 160 ? Model.IntroDe.Substring(0, 157) + "..." : Model.IntroDe;
     ViewData["Title"] = titleTag;
     ViewData["Description"] = description;

@@ -235,7 +235,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Affoltern";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Affoltern – Büro vor Ort in 8910";
             ViewData["ExamplePlz"] = "8910";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Affoltern | Knonaueramt | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Affoltern am Albis ✓ Fixpreis, dabei vor Ort";
             ViewData["Description"] = "Umzugsreinigung Bezirk Affoltern (Knonaueramt) — alle 14 Gemeinden, Endreinigung mit Abnahmegarantie, persönliche Wohnungsabgabe. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-affoltern";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-affoltern-zuerich-hero.avif";
@@ -259,7 +259,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Andelfingen";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Andelfingen – im ganzen Zürcher Weinland";
             ViewData["ExamplePlz"] = "8450";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Andelfingen | Zürcher Weinland | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Zürcher Weinland ✓ Festpreis & Übergabe dabei";
             ViewData["Description"] = "Umzugsreinigung Bezirk Andelfingen — Endreinigung mit Abnahmegarantie im Zürcher Weinland. Vom Riegelbau bis zum modernen Wohnhaus. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-andelfingen";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-andelfingen-zuerich-hero.avif";
@@ -283,7 +283,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Bülach";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Bülach – Flughafenregion und Unterland";
             ViewData["ExamplePlz"] = "8180";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Bülach | Zürcher Unterland | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Bülach & Kloten ✓ Fixpreis bei der Übergabe";
             ViewData["Description"] = "Umzugsreinigung Bezirk Bülach — Endreinigung mit Abnahmegarantie im Zürcher Unterland. Kloten, Opfikon, Bülach, Embrach. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-buelach";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-buelach-zuerich-hero.avif";
@@ -307,7 +307,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Dielsdorf";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Dielsdorf – Furttal, Wehntal und Rafzerfeld-Vorland";
             ViewData["ExamplePlz"] = "8157";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Dielsdorf | Furttal & Wehntal | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Regensdorf & Dielsdorf ✓ Fixpreis & Abnahme";
             ViewData["Description"] = "Umzugsreinigung Bezirk Dielsdorf — Endreinigung mit Abnahmegarantie im Furttal und Wehntal. Regensdorf, Niederweningen, Dielsdorf. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dielsdorf";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-dielsdorf-zuerich-hero.avif";
@@ -331,7 +331,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Dietikon";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Dietikon – im ganzen Limmattal";
             ViewData["ExamplePlz"] = "8953";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Dietikon | Limmattal | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Dietikon & Schlieren ✓ Fixpreis & Abnahme dabei";
             ViewData["Description"] = "Umzugsreinigung Bezirk Dietikon — Endreinigung mit Abnahmegarantie im Limmattal. Dietikon, Schlieren, Urdorf, Birmensdorf. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dietikon";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-dietikon-zuerich-hero.avif";
@@ -355,7 +355,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Hinwil";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Hinwil – im ganzen Zürcher Oberland";
             ViewData["ExamplePlz"] = "8340";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Hinwil | Zürcher Oberland | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Wetzikon & Hinwil ✓ Fixpreis bei Übergabe";
             ViewData["Description"] = "Umzugsreinigung Bezirk Hinwil — Endreinigung mit Abnahmegarantie im Zürcher Oberland. Wetzikon, Hinwil, Rüti, Bubikon. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-hinwil";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-hinwil-zuerich-hero.avif";
@@ -379,7 +379,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Meilen";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Meilen – an der ganzen Goldküste";
             ViewData["ExamplePlz"] = "8706";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Meilen | Goldküste | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Goldküste ✓ Festpreis & persönliche Übergabe";
             ViewData["Description"] = "Umzugsreinigung Bezirk Meilen — Endreinigung mit Abnahmegarantie an der Goldküste. Küsnacht, Zollikon, Meilen, Stäfa. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-meilen";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-meilen-zuerich-hero.avif";
@@ -403,7 +403,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Pfäffikon";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Pfäffikon – am Pfäffikersee und im Tösstal";
             ViewData["ExamplePlz"] = "8330";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Pfäffikon | Abnahmegarantie | Fixpreis";
+            ViewData["Title"] = "Umzugsreinigung Pfäffikon ZH ✓ Fixpreis, dabei bei der Abnahme";
             ViewData["Description"] = "Umzugsreinigung Bezirk Pfäffikon — Endreinigung mit Abnahmegarantie. Illnau-Effretikon, Pfäffikon, Fehraltorf, Hittnau. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-pfaeffikon";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-pfaeffikon-zuerich-hero.avif";
@@ -427,7 +427,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Uster";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Uster – im ganzen Greifensee-Gebiet";
             ViewData["ExamplePlz"] = "8610";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Uster | Greifensee-Region | Abnahmegarantie";
+            ViewData["Title"] = "Umzugsreinigung Uster & Dübendorf ✓ Fixpreis, dabei bei Abnahme";
             ViewData["Description"] = "Umzugsreinigung Bezirk Uster — Endreinigung mit Abnahmegarantie. Uster, Dübendorf, Volketswil, Greifensee. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-uster";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-uster-zuerich-hero.avif";
@@ -451,7 +451,7 @@ namespace EndReinigung.Controllers
             ViewData["HyperLocalH2"] = "Ihr Partner für Reinigungen in allen Gemeinden des Bezirks Winterthur";
             ViewData["LocalValueProp"] = "Umzugsreinigung Bezirk Winterthur – Stadt und Umland";
             ViewData["ExamplePlz"] = "8400";
-            ViewData["Title"] = "Umzugsreinigung Bezirk Winterthur | Abnahmegarantie | Fixpreis";
+            ViewData["Title"] = "Umzugsreinigung Winterthur ✓ Fixpreis & dabei bei der Übergabe";
             ViewData["Description"] = "Umzugsreinigung Bezirk Winterthur — Endreinigung mit Abnahmegarantie in Stadt und Umland. Altstadt, Töss, Seen, Wülflingen. Reinigungsfirma vor Ort.";
             ViewData["Canonical"] = "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-winterthur";
             ViewData["HeroImage"] = "/img/bezirke/umzugsreinigung-bezirk-winterthur-zuerich-hero.avif";
@@ -567,6 +567,14 @@ namespace EndReinigung.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Route("Home/NotFound")]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public new IActionResult NotFound()
+        {
+            Response.StatusCode = StatusCodes.Status404NotFound;
+            return View();
         }
     }
 }

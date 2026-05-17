@@ -55,6 +55,8 @@ namespace EndReinigung
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/Home/NotFound", "?code={0}");
+
             // Canonicalize host: 301 redirect www.zurich-endreinigung.ch -> zurich-endreinigung.ch.
             // Keeps sitemap/canonical tags (non-www) aligned with what Google indexes.
             app.UseRewriter(new RewriteOptions().Add(ctx =>
