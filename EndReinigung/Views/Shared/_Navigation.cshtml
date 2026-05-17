@@ -33,8 +33,8 @@
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div id="lang-menu" class="absolute right-0 mt-1 bg-white border border-border rounded-md shadow-lg overflow-hidden z-50 hidden">
-                        <a href="javascript:void(0)" onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isDE ? "font-bold text-swiss-blue" : "text-foreground")">DE</a>
-                        <a href="javascript:void(0)" onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isEN ? "font-bold text-swiss-blue" : "text-foreground")">EN</a>
+                        <button type="button" onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isDE ? "font-bold text-swiss-blue" : "text-foreground")">DE</button>
+                        <button type="button" onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isEN ? "font-bold text-swiss-blue" : "text-foreground")">EN</button>
                     </div>
                 </div>
 
@@ -61,8 +61,8 @@
                 <!-- Language Toggle -->
                 <div class="flex items-center justify-end px-3 py-2 border-b border-border mb-2">
                     <div class="flex items-center gap-2 text-sm">
-                        <a href="javascript:void(0)" onclick="setLanguage('de')" class="px-3 py-1.5 rounded-md border @(isDE ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">DE</a>
-                        <a href="javascript:void(0)" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</a>
+                        <button type="button" onclick="setLanguage('de')" class="px-3 py-1.5 rounded-md border @(isDE ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">DE</button>
+                        <button type="button" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</button>
                     </div>
                 </div>
                 <a href="/#pakete" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.prices"]</a>

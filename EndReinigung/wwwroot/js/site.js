@@ -121,11 +121,18 @@ function initCarousel(id, options) {
     var currentIndex = 0;
     var totalSlides = slides.length;
 
+    // Cached slides-per-view: avoids re-reading window.innerWidth after style writes,
+    // which would force a synchronous layout recalculation (layout thrashing).
+    // Invalidated at the start of layout() so resize handling picks up the new viewport.
+    var cachedSpv = null;
+
     function getSlidesPerView() {
+        if (cachedSpv !== null) return cachedSpv;
         var w = window.innerWidth;
-        if (options.slidesPerView.lg && w >= 1024) return options.slidesPerView.lg;
-        if (options.slidesPerView.md && w >= 768) return options.slidesPerView.md;
-        return options.slidesPerView.base || 1;
+        if (options.slidesPerView.lg && w >= 1024) cachedSpv = options.slidesPerView.lg;
+        else if (options.slidesPerView.md && w >= 768) cachedSpv = options.slidesPerView.md;
+        else cachedSpv = options.slidesPerView.base || 1;
+        return cachedSpv;
     }
 
     function getMaxIndex() {
@@ -214,6 +221,7 @@ function initCarousel(id, options) {
 
     // Layout: track is wide, each slide is sized for slidesPerView
     function layout() {
+        cachedSpv = null;
         var spv = getSlidesPerView();
         // Track width = (totalSlides / spv) * 100% of container
         track.style.width = (totalSlides / spv * 100) + '%';
