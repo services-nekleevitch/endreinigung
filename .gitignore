@@ -368,3 +368,6 @@ rich-lease-shine-main*.zip
 # Deployment artifacts
 publish.zip
 publish/
+
+# Rider/ReSharper csproj cache
+*.csproj.lscache
