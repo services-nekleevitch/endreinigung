@@ -70,7 +70,7 @@
                     <form id="hero-form" class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-6">
                         <!-- Wohnungsgröße Field -->
                         <div class="relative space-y-2">
-                            <label class="text-white/90 text-sm font-medium">@SharedLocalizer["hero.room_size"]</label>
+                            <label for="hero-room-size" class="text-white/90 text-sm font-medium">@SharedLocalizer["hero.room_size"]</label>
                             <div class="relative">
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none z-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 <select id="hero-room-size" class="w-full h-14 rounded-2xl bg-white text-foreground pl-12 pr-4 focus:ring-2 focus:ring-booking-orange focus:border-booking-orange hover:border-booking-orange/50 transition-all duration-200 outline-none appearance-none text-base cursor-pointer border-2 border-border">
@@ -92,7 +92,7 @@
 
                         <!-- PLZ Field -->
                         <div class="relative space-y-2">
-                            <label class="text-white/90 text-sm font-medium">PLZ</label>
+                            <label for="hero-zip-code" class="text-white/90 text-sm font-medium">PLZ</label>
                             <div class="relative">
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 <input type="text" id="hero-zip-code" placeholder="z.B. 8001" maxlength="4" class="w-full h-14 rounded-2xl border-2 bg-white text-foreground pl-12 pr-4 placeholder:text-muted-foreground focus:ring-2 focus:ring-booking-orange focus:border-booking-orange hover:border-booking-orange/50 transition-all duration-200 outline-none text-base border-border" />

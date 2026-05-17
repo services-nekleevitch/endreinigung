@@ -90,6 +90,9 @@
   <data name="nav.call" xml:space="preserve">
     <value>Anrufen</value>
   </data>
+  <data name="nav.menu_toggle" xml:space="preserve">
+    <value>Menü öffnen</value>
+  </data>
 
   <!-- Hero -->
   <data name="hero.badge_handover" xml:space="preserve">
