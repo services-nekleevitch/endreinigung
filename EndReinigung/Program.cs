@@ -58,6 +58,27 @@ namespace EndReinigung
             // Compression must run before static files so static assets get compressed too.
             app.UseResponseCompression();
 
+            // Override Cache-Control on HTML 200 responses to allow bfcache (back/forward cache).
+            // Form Tag Helpers + antiforgery cookie injection cause ASP.NET to default to
+            // `Cache-Control: no-store` on pages with forms (e.g. the homepage contact form),
+            // which prevents browsers from restoring the page on back navigation.
+            // `must-revalidate` keeps content fresh while letting bfcache work.
+            app.Use(async (context, next) =>
+            {
+                context.Response.OnStarting(() =>
+                {
+                    var ct = context.Response.ContentType;
+                    if (context.Response.StatusCode == StatusCodes.Status200OK
+                        && ct != null
+                        && ct.StartsWith("text/html", StringComparison.OrdinalIgnoreCase))
+                    {
+                        context.Response.Headers["Cache-Control"] = "private, max-age=0, must-revalidate";
+                    }
+                    return Task.CompletedTask;
+                });
+                await next();
+            });
+
             // Configure supported cultures
             var supportedCultures = new[] { new CultureInfo("de"), new CultureInfo("en") };
             var locOptions = new RequestLocalizationOptions

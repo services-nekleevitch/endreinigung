@@ -42,28 +42,49 @@
 <script>
     (function () {
         var KEY = 'cookie-consent-v1';
+        var GA_ID = 'G-Q2D26W6J66';
+        var gaLoaded = false;
         var banner = document.getElementById('cookie-consent');
-        if (!banner) return;
-        try {
-            if (!localStorage.getItem(KEY)) {
-                banner.classList.remove('hidden');
-            }
-        } catch (e) {
+
+        function loadGtag() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', GA_ID, { anonymize_ip: true });
+        }
+
+        var stored = null;
+        try { stored = localStorage.getItem(KEY); } catch (e) { }
+
+        if (stored === 'accepted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            loadGtag();
+        } else if (stored === null && banner) {
             banner.classList.remove('hidden');
         }
+
         function close(value) {
             try { localStorage.setItem(KEY, value); } catch (e) { }
-            banner.classList.add('hidden');
-            if (typeof gtag === 'function') {
-                var granted = value === 'accepted' ? 'granted' : 'denied';
-                gtag('consent', 'update', {
-                    'ad_storage': granted,
-                    'ad_user_data': granted,
-                    'ad_personalization': granted,
-                    'analytics_storage': granted
-                });
-            }
+            if (banner) banner.classList.add('hidden');
+            var granted = value === 'accepted' ? 'granted' : 'denied';
+            gtag('consent', 'update', {
+                'ad_storage': granted,
+                'ad_user_data': granted,
+                'ad_personalization': granted,
+                'analytics_storage': granted
+            });
+            if (value === 'accepted') loadGtag();
         }
+
         var acceptBtn = document.getElementById('cookie-accept');
         var declineBtn = document.getElementById('cookie-decline');
         if (acceptBtn) acceptBtn.addEventListener('click', function () { close('accepted'); });

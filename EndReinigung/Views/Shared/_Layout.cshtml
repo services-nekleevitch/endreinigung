@@ -30,30 +30,28 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <!-- Google Analytics (gtag.js) with Consent Mode v2 -->
+    <!-- Google Analytics: stub functions + Consent Mode v2 defaults only.
+         The gtag.js script itself is injected by _CookieConsent.cshtml after the
+         user accepts cookies, so visitors who decline (or haven't decided yet)
+         never download or execute the ~50 KiB tag manager script. -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        (function () {
-            var stored = null;
-            try { stored = localStorage.getItem('cookie-consent-v1'); } catch (e) { }
-            var state = stored === 'accepted' ? 'granted' : 'denied';
-            gtag('consent', 'default', {
-                'ad_storage': state,
-                'ad_user_data': state,
-                'ad_personalization': state,
-                'analytics_storage': state
-            });
-        })();
-        gtag('js', new Date());
-        gtag('config', 'G-Q2D26W6J66', { anonymize_ip: true });
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2D26W6J66"></script>
 
-    <!-- Inter Font -->
+    <!-- Inter Font: non-blocking via media="print" + onload swap.
+         display=swap renders fallback text immediately; this avoids blocking the
+         critical render path on the 200ms+ Google Fonts chain. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
 
     <!-- Tailwind CSS (pre-built) -->
     <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
