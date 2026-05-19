@@ -54,7 +54,8 @@ namespace EndReinigung.Controllers
             var opsRecipient = !string.IsNullOrWhiteSpace(_smtp.RecipientEmail) ? _smtp.RecipientEmail : _smtp.SenderEmail;
             if (!string.IsNullOrWhiteSpace(opsRecipient))
             {
-                var subject = $"Buchung {bookingNumber} — {model.FirstName} {model.LastName} — CHF {authoritativePrice:N0}";
+                var servicePrefix = model.Service == "baureinigung" ? "Baureinigung — " : "";
+                var subject = $"{servicePrefix}Buchung {bookingNumber} — {model.FirstName} {model.LastName} — CHF {authoritativePrice:N0}";
                 var body = BuildOpsNotificationEmail(model, authoritativePrice, bookingNumber);
                 try
                 {
@@ -111,6 +112,8 @@ namespace EndReinigung.Controllers
             sb.Append("<h3 style=\"font-family:sans-serif;margin-top:16px;\">Extras</h3>");
             sb.Append("<table style=\"border-collapse:collapse;font-family:sans-serif;font-size:14px;\">");
             if (m.Basement) Row(sb, "Estrich", $"+CHF {PriceCalculator.PriceBasement:N0}");
+            if (m.Bauschutt) Row(sb, "Bauschutt-Entsorgung", $"+CHF {BaureinigungPricing.PriceBauschutt:N0}");
+            if (m.Fassade) Row(sb, "Fassadenreinigung", $"+CHF {BaureinigungPricing.PriceFassade:N0}");
             if (m.Balcony > 0) Row(sb, $"Extra Balkon / Terrasse ({m.Balcony}×)", $"+CHF {m.Balcony * PriceCalculator.PriceBalcony:N0}");
             if (m.UtilityBalcony > 0) Row(sb, $"Nebenbalkon ({m.UtilityBalcony}×)", $"+CHF {m.UtilityBalcony * PriceCalculator.PriceUtilityBalcony:N0}");
             if (m.Bath > 0) Row(sb, $"Anzahl Badezimmer ({m.Bath}×)", $"+CHF {m.Bath * PriceCalculator.PriceBath:N0}");
@@ -123,14 +126,17 @@ namespace EndReinigung.Controllers
             sb.Append("<h3 style=\"font-family:sans-serif;margin-top:16px;\">Termine</h3>");
             sb.Append("<table style=\"border-collapse:collapse;font-family:sans-serif;font-size:14px;\">");
             Row(sb, "Reinigungstermin", m.CleaningDate?.ToString("dd.MM.yyyy") ?? "-");
-            if (m.HandoverDateNotFixed)
+            if (m.Service != "baureinigung")
             {
-                Row(sb, "Übergabe", "Datum noch nicht fix");
-            }
-            else
-            {
-                Row(sb, "Übergabetermin", m.HandoverDate?.ToString("dd.MM.yyyy") ?? "-");
-                Row(sb, "Übergabezeit", m.HandoverTime ?? "-");
+                if (m.HandoverDateNotFixed)
+                {
+                    Row(sb, "Übergabe", "Datum noch nicht fix");
+                }
+                else
+                {
+                    Row(sb, "Übergabetermin", m.HandoverDate?.ToString("dd.MM.yyyy") ?? "-");
+                    Row(sb, "Übergabezeit", m.HandoverTime ?? "-");
+                }
             }
             sb.Append("</table>");
 
@@ -189,13 +195,16 @@ namespace EndReinigung.Controllers
             Row(sb, "Zahlungsart", PaymentLabel(m.PaymentMethod));
             sb.Append("</table>");
 
-            var hasExtras = m.Basement || m.Balcony > 0 || m.UtilityBalcony > 0 || m.Bath > 0 || m.Wc > 0
+            var hasExtras = m.Basement || m.Bauschutt || m.Fassade
+                            || m.Balcony > 0 || m.UtilityBalcony > 0 || m.Bath > 0 || m.Wc > 0
                             || m.Carpet > 0 || m.BalconyPressure > 0 || m.GaragePressure > 0;
             if (hasExtras)
             {
                 sb.Append("<h2 style=\"font-size:16px;margin:24px 0 12px;color:#1e4a8a;\">Gewählte Extras</h2>");
                 sb.Append("<table style=\"border-collapse:collapse;width:100%;font-size:14px;\">");
                 if (m.Basement) Row(sb, "Estrich", $"CHF {PriceCalculator.PriceBasement:N0}");
+                if (m.Bauschutt) Row(sb, "Bauschutt-Entsorgung", $"CHF {BaureinigungPricing.PriceBauschutt:N0}");
+                if (m.Fassade) Row(sb, "Fassadenreinigung", $"CHF {BaureinigungPricing.PriceFassade:N0}");
                 if (m.Balcony > 0) Row(sb, $"Extra Balkon / Terrasse ({m.Balcony}×)", $"CHF {m.Balcony * PriceCalculator.PriceBalcony:N0}");
                 if (m.UtilityBalcony > 0) Row(sb, $"Nebenbalkon ({m.UtilityBalcony}×)", $"CHF {m.UtilityBalcony * PriceCalculator.PriceUtilityBalcony:N0}");
                 if (m.Bath > 0) Row(sb, $"Zusätzliche Badezimmer ({m.Bath}×)", $"CHF {m.Bath * PriceCalculator.PriceBath:N0}");

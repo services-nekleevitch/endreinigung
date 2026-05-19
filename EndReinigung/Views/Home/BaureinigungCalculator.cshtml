@@ -1,0 +1,503 @@
+@using EndReinigung.Models
+@{
+    ViewData["Title"] = "Baureinigung Kosten Zürich | Fixpreise berechnen | Zürich Endreinigung";
+    ViewData["Description"] = $"Transparente Fixpreise für Ihre Baureinigung in Zürich. Wohnung ab CHF {BaureinigungPricing.FormatChf(BaureinigungPricing.WohnungStartingPrice)}, Haus ab CHF {BaureinigungPricing.FormatChf(BaureinigungPricing.HausStartingPrice)}. Baustaub, Feinreinigung & mehr. Jetzt Preis berechnen.";
+    ViewData["Keywords"] = "Baureinigung Kosten, Baureinigung Preise Zürich, Baureinigung Rechner, Bauendreinigung Fixpreis";
+    ViewData["Canonical"] = "https://zuerich-endreinigung.ch/baureinigung-calculator";
+
+    var wohnungLow = BaureinigungPricing.WohnungRoomSizes[0].Price;
+    var wohnungMid = BaureinigungPricing.WohnungRoomSizes[4].Price; // 3 Zimmer
+    var hausLow = BaureinigungPricing.HausRoomSizes[0].Price;
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zuerich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Baureinigung", "item": "https://zuerich-endreinigung.ch/baureinigung" },
+            { "@@type": "ListItem", "position": 3, "name": "Kostenrechner", "item": "https://zuerich-endreinigung.ch/baureinigung-calculator" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "inLanguage": "de-CH",
+        "serviceType": "Baureinigung",
+        "provider": {
+            "@@type": "LocalBusiness",
+            "additionalType": "https://schema.org/HouseCleaningService",
+            "name": "Zürich Endreinigung",
+            "telephone": "+41765017738",
+            "email": "info@zurich-endreinigung.ch",
+            "url": "https://zurich-endreinigung.ch",
+            "areaServed": { "@@type": "State", "name": "Kanton Zürich" }
+        },
+        "name": "Baureinigung Zürich – Fixpreise",
+        "description": "Professionelle Baureinigung in Zürich zum Fixpreis: Baustaub komplett entfernen, Feinreinigung aller Oberflächen, Sanitär- und Küchenreinigung.",
+        "offers": {
+            "@@type": "AggregateOffer",
+            "priceCurrency": "CHF",
+            "lowPrice": "@wohnungLow",
+            "highPrice": "@(BaureinigungPricing.HausRoomSizes[^1].Price)",
+            "offerCount": "@(BaureinigungPricing.WohnungRoomSizes.Count + BaureinigungPricing.HausRoomSizes.Count)",
+            "offers": [
+                { "@@type": "Offer", "name": "Baureinigung Wohnung (klein)",  "price": "@wohnungLow", "priceCurrency": "CHF", "description": "Fixpreis inkl. Baustaub & Feinreinigung" },
+                { "@@type": "Offer", "name": "Baureinigung Wohnung (mittel)", "price": "@wohnungMid", "priceCurrency": "CHF", "description": "Fixpreis inkl. Baustaub & Feinreinigung" },
+                { "@@type": "Offer", "name": "Baureinigung Haus",             "price": "@hausLow",    "priceCurrency": "CHF", "description": "Fixpreis inkl. Baustaub & Feinreinigung" }
+            ]
+        }
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem] bg-background">
+
+    <h1 class="sr-only">Baureinigung Kostenrechner Zürich</h1>
+
+    <section id="baureinigung-calculator" class="py-10 md:py-16 bg-secondary">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Progress steps -->
+            <div id="bau-calc-progress" class="flex items-center justify-center mb-6">
+                @for (var i = 1; i <= 4; i++)
+                {
+                    <div class="flex items-center">
+                        <button type="button" data-progress-step="@i" aria-label="Schritt @i"
+                                class="w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all bg-border text-muted-foreground">
+                            @i
+                        </button>
+                        @if (i < 4)
+                        {
+                            <div data-progress-bar="@i" class="w-8 sm:w-14 h-1 mx-1 transition-all bg-border"></div>
+                        }
+                    </div>
+                }
+            </div>
+
+            <!-- Step labels -->
+            <div class="flex justify-between mb-6 text-sm">
+                <button type="button" data-progress-label="1" class="flex-1 text-center font-medium text-primary">Grösse</button>
+                <button type="button" data-progress-label="2" class="flex-1 text-center text-muted-foreground">Extras</button>
+                <button type="button" data-progress-label="3" class="flex-1 text-center text-muted-foreground">Festpreis &amp; Termin</button>
+                <button type="button" data-progress-label="4" class="flex-1 text-center text-muted-foreground">Buchung</button>
+            </div>
+
+            <div class="bg-card rounded-2xl shadow-hero border border-border p-6 sm:p-8">
+
+                <!-- STEP 1 — Size -->
+                <section data-step="1" class="space-y-6">
+                    <div class="text-center mb-2">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1Z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-foreground" data-label-size-title>Wohnungsgrösse wählen</h2>
+                        <p class="text-muted-foreground mt-1 text-sm">Baureinigung — Fixpreis berechnen</p>
+                    </div>
+
+                    <div class="flex justify-center gap-3">
+                        <button type="button" data-property-type="apartment"
+                                class="flex items-center gap-2 px-5 py-3 rounded-xl border-2 font-medium transition-all border-primary bg-primary/10 text-primary">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                            Wohnung
+                        </button>
+                        <button type="button" data-property-type="house"
+                                class="flex items-center gap-2 px-5 py-3 rounded-xl border-2 font-medium transition-all border-border bg-card text-muted-foreground hover:border-booking-orange/50">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            Haus
+                        </button>
+                    </div>
+
+                    <!-- Apartment room grid -->
+                    <div data-room-grid="apartment" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        @foreach (var room in BaureinigungPricing.WohnungRoomSizes)
+                        {
+                            <button type="button" data-room="@room.Value" data-price="@room.Price"
+                                    class="p-4 rounded-xl border-2 border-border bg-card transition-all text-center hover:border-primary/50">
+                                <div class="font-semibold text-foreground">@room.Label</div>
+                                <div class="text-sm text-muted-foreground mt-1">CHF @BaureinigungPricing.FormatChf(room.Price)</div>
+                            </button>
+                        }
+                    </div>
+
+                    <!-- House room grid -->
+                    <div data-room-grid="house" class="hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        @foreach (var room in BaureinigungPricing.HausRoomSizes)
+                        {
+                            <button type="button" data-room="@room.Value" data-price="@room.Price"
+                                    class="p-4 rounded-xl border-2 border-border bg-card transition-all text-center hover:border-booking-orange/50">
+                                <div class="font-semibold text-foreground">@room.Label</div>
+                                <div class="text-sm text-muted-foreground mt-1">CHF @BaureinigungPricing.FormatChf(room.Price)</div>
+                            </button>
+                        }
+                    </div>
+
+                    <p data-room-error class="text-sm text-red-600 hidden"></p>
+
+                    <div class="max-w-[160px]">
+                        <label for="bau-calc-zip" class="text-2xl font-bold text-navy mb-2 block">PLZ</label>
+                        <input type="text" inputmode="numeric" maxlength="4" id="bau-calc-zip" placeholder="z.B. 8001"
+                               class="w-full h-12 px-4 text-lg rounded-xl border-2 border-border focus:border-booking-orange outline-none transition-colors" />
+                        <p data-zip-error class="text-sm text-red-600 mt-1 hidden"></p>
+                    </div>
+
+                    <button type="button" data-action="next-1"
+                            class="w-full h-14 text-lg font-semibold bg-booking-orange hover:bg-booking-orange-dark text-white rounded-lg transition-colors">
+                        Weiter zu Extras →
+                    </button>
+                </section>
+
+                <!-- STEP 2 — Extras -->
+                <section data-step="2" class="space-y-6 hidden">
+                    <div class="text-center mb-2">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-foreground">Extras wählen</h2>
+                        <div class="mt-3 inline-flex items-center gap-3 bg-cleaning-green/10 text-cleaning-green rounded-2xl px-6 py-3 text-lg font-bold border border-cleaning-green/30">
+                            <svg class="w-5 h-5" data-summary-icon="apartment" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                            <svg class="w-5 h-5 hidden" data-summary-icon="house" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            <span data-summary-line>—</span>
+                        </div>
+                        <p class="text-sm text-muted-foreground mt-1" data-summary-incl>—</p>
+                    </div>
+
+                    <!-- Baureinigung inclusions -->
+                    <div class="bg-secondary rounded-xl p-5 border border-border">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-5 h-5 text-booking-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <h3 class="font-semibold text-foreground">Baureinigung — Alles inklusive</h3>
+                        </div>
+                        <p class="text-amber-500 font-bold text-sm mb-4">100% Qualitätsgarantie</p>
+
+                        @{
+                            var bauIncludedItems = new[]
+                            {
+                                "Baustaub komplett entfernen",
+                                "Grobschmutz beseitigen",
+                                "Böden schleifen & wischen",
+                                "Sanitäranlagen reinigen",
+                                "Fenster innen & aussen",
+                                "Feinreinigung aller Oberflächen",
+                                "Küchengeräte reinigen",
+                                "Fixpreis — keine versteckten Kosten",
+                            };
+                        }
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-foreground/80">
+                            <ul class="space-y-2.5">
+                                @foreach (var item in bauIncludedItems.Take(4))
+                                {
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-4 h-4 text-cleaning-green mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        <span>@item</span>
+                                    </li>
+                                }
+                            </ul>
+                            <ul class="space-y-2.5">
+                                @foreach (var item in bauIncludedItems.Skip(4))
+                                {
+                                    <li class="flex items-start gap-2">
+                                        <svg class="w-4 h-4 text-cleaning-green mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        <span>@item</span>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Optional extras -->
+                    <div>
+                        <label class="text-base font-medium text-foreground mb-3 block">Optionale Zusatzleistungen</label>
+                        <div class="grid gap-3" data-extras-container>
+                            @{
+                                var toggles = new (string Key, string Label, int Price)[] {
+                                    ("bauschutt", "Bauschutt-Entsorgung", (int)BaureinigungPricing.PriceBauschutt),
+                                    ("fassade",   "Fassadenreinigung",    (int)BaureinigungPricing.PriceFassade),
+                                };
+                                foreach (var (key, label, price) in toggles)
+                                {
+                                    <div data-extra-toggle="@key" data-extra-price="@price"
+                                         class="flex items-center justify-between p-4 rounded-xl border-2 border-border bg-card cursor-pointer transition-all hover:border-booking-orange/50">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-4 h-4 rounded border-2 border-slate-300 flex items-center justify-center shrink-0" data-check></div>
+                                            <span class="font-medium text-foreground">@label</span>
+                                        </div>
+                                        <span class="text-orange-600 font-semibold">+CHF @price</span>
+                                    </div>
+                                }
+
+                                var countables = new (string Key, string Label, int Price)[] {
+                                    ("balcony", "+ Extra Balkon / Terrasse", 45),
+                                    ("bath", "Anzahl Badezimmer", 65),
+                                    ("wc", "Separates WC", 40),
+                                    ("garage_pressure", "Garage / Carport Hochdruckreinigung", 65),
+                                };
+                                foreach (var (key, label, price) in countables)
+                                {
+                                    <div data-extra-countable="@key" data-extra-price="@price" data-max="3"
+                                         class="p-4 rounded-xl border-2 border-slate-200 bg-white cursor-pointer transition-all hover:border-orange-300">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-4 h-4 rounded border-2 border-slate-300 flex items-center justify-center" data-check></div>
+                                                <span class="font-medium text-slate-900">@label</span>
+                                            </div>
+                                            <span class="text-orange-600 font-semibold" data-extra-price-label>+CHF @price</span>
+                                        </div>
+                                        <div data-extra-counter class="hidden items-center gap-3 mt-3 pt-3 border-t border-orange-200">
+                                            <span class="text-sm text-slate-600">Anzahl:</span>
+                                            <div class="flex items-center gap-1">
+                                                @for (var n = 1; n <= 3; n++)
+                                                {
+                                                    <button type="button" data-count="@n"
+                                                            class="w-10 h-10 rounded-lg font-semibold text-sm transition-all bg-slate-100 text-slate-700 hover:bg-slate-200">
+                                                        @n
+                                                    </button>
+                                                }
+                                            </div>
+                                            <span class="text-sm text-orange-600 font-medium ml-auto" data-extra-total>+CHF 0</span>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" data-action="back-2" class="h-14 px-6 rounded-lg border-2 border-border bg-card text-foreground font-medium hover:bg-muted transition-colors">← Zurück</button>
+                        <button type="button" data-action="next-2" class="flex-1 h-14 text-lg font-semibold bg-booking-orange hover:bg-booking-orange-dark text-white rounded-lg transition-colors">Weiter zum Preis →</button>
+                    </div>
+                </section>
+
+                <!-- STEP 3 — Price & Date -->
+                <section data-step="3" class="space-y-6 hidden">
+                    <div class="text-center mb-2">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-cleaning-green/15 rounded-full mb-3">
+                            <svg class="w-6 h-6 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-foreground">Ihr Fixpreis</h2>
+                        <p class="text-muted-foreground mt-1">Keine versteckten Kosten. Alles inklusive.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cleaning-green/15 to-cleaning-green/5 rounded-2xl p-8 text-center text-foreground">
+                        <div class="text-5xl font-bold mb-2">CHF <span data-price-total>0</span></div>
+                        <p class="text-cleaning-green font-medium">Fixpreis inkl. MwSt. &amp; Qualitätsgarantie</p>
+                        <div class="mt-6 pt-6 border-t border-cleaning-green/20 grid grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <svg class="w-5 h-5 mx-auto mb-1 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span class="text-muted-foreground">Haftpflicht­versichert</span>
+                            </div>
+                            <div>
+                                <svg class="w-5 h-5 mx-auto mb-1 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l2 7h7l-5.5 4 2 7L12 17l-5.5 4 2-7L3 10h7z"/></svg>
+                                <span class="text-muted-foreground">Qualitäts­garantiert</span>
+                            </div>
+                            <div>
+                                <svg class="w-5 h-5 mx-auto mb-1 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span class="text-muted-foreground">Pünktlich</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-secondary border-0 rounded-xl">
+                        <h3 class="font-semibold text-foreground mb-3">Zusammenfassung</h3>
+                        <div class="space-y-2 text-sm" data-summary-list>
+                            <!-- populated by JS -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-base font-bold text-primary mb-2 block">Wunschtermin Reinigung *</label>
+                        <input type="date" id="bau-calc-cleaning-date" class="w-full h-14 px-4 text-base rounded-xl border-2 border-border focus:border-primary outline-none transition-colors" />
+                        <p data-cleaning-date-error class="text-sm text-red-600 mt-1 hidden"></p>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" data-action="back-3" class="h-14 px-6 rounded-lg border-2 border-border bg-card text-foreground font-medium hover:bg-muted transition-colors">← Zurück</button>
+                        <button type="button" data-action="next-3" class="flex-1 h-14 text-lg font-semibold bg-booking-orange hover:bg-booking-orange-dark text-white rounded-lg transition-colors">Weiter zur Buchung →</button>
+                    </div>
+                    <p class="text-center text-xs text-muted-foreground">Kostenlose Stornierung bis 48 h vor dem Termin.</p>
+                </section>
+
+                <!-- STEP 4 — Booking -->
+                <section data-step="4" class="space-y-6 hidden">
+                    <form id="bau-calc-booking-form" asp-controller="Calculator" asp-action="Book" method="post" class="space-y-6">
+                        <!-- Hidden state populated by JS -->
+                        <input type="hidden" name="Service" value="baureinigung" />
+                        <input type="hidden" name="PropertyType" data-hidden="PropertyType" />
+                        <input type="hidden" name="RoomSize" data-hidden="RoomSize" />
+                        <input type="hidden" name="ZipCode" data-hidden="ZipCode" />
+                        <input type="hidden" name="Bauschutt" data-hidden="Bauschutt" value="false" />
+                        <input type="hidden" name="Fassade" data-hidden="Fassade" value="false" />
+                        <input type="hidden" name="Balcony" data-hidden="Balcony" value="0" />
+                        <input type="hidden" name="Bath" data-hidden="Bath" value="0" />
+                        <input type="hidden" name="Wc" data-hidden="Wc" value="0" />
+                        <input type="hidden" name="GaragePressure" data-hidden="GaragePressure" value="0" />
+                        <input type="hidden" name="CleaningDate" data-hidden="CleaningDate" />
+                        <input type="hidden" name="QuotedTotal" data-hidden="QuotedTotal" value="0" />
+                        <input type="hidden" name="PaymentMethod" data-hidden="PaymentMethod" />
+                        <input type="hidden" name="SameAsCustomer" data-hidden="SameAsCustomer" value="false" />
+
+                        <!-- Compact summary -->
+                        <div class="p-4 bg-secondary border-0 rounded-xl text-sm space-y-1.5">
+                            <div class="flex justify-between"><span class="text-muted-foreground">Objekt</span><span class="font-medium" data-booking-room>—</span></div>
+                            <div class="flex justify-between"><span class="text-muted-foreground">Termin</span><span class="font-medium" data-booking-date>—</span></div>
+                            <div class="flex justify-between"><span class="text-muted-foreground">PLZ</span><span class="font-medium" data-booking-zip>—</span></div>
+                            <div class="pt-2 border-t border-border flex justify-between font-semibold text-base">
+                                <span>Total</span><span class="text-cleaning-green">CHF <span data-booking-total>0</span></span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-foreground mb-4">Ihre Kontaktdaten</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="bau-bk-firstname" class="block text-sm font-medium text-foreground mb-1.5">Vorname *</label>
+                                    <input type="text" id="bau-bk-firstname" name="FirstName" required placeholder="Max"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-lastname" class="block text-sm font-medium text-foreground mb-1.5">Nachname *</label>
+                                    <input type="text" id="bau-bk-lastname" name="LastName" required placeholder="Muster"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-email" class="block text-sm font-medium text-foreground mb-1.5">E-Mail *</label>
+                                    <input type="email" id="bau-bk-email" name="Email" required placeholder="max@beispiel.ch"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-phone" class="block text-sm font-medium text-foreground mb-1.5">Telefon *</label>
+                                    <input type="tel" id="bau-bk-phone" name="Phone" required placeholder="+41 79 123 45 67"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-foreground mb-4">Rechnungsadresse</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label for="bau-bk-cstreet" class="block text-sm font-medium text-foreground mb-1.5">Strasse &amp; Nr. *</label>
+                                    <input type="text" id="bau-bk-cstreet" name="CustomerStreet" required placeholder="Bahnhofstrasse 1"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-cplz" class="block text-sm font-medium text-foreground mb-1.5">PLZ *</label>
+                                    <input type="text" id="bau-bk-cplz" name="CustomerPlz" required inputmode="numeric" maxlength="4" placeholder="8000"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-ccity" class="block text-sm font-medium text-foreground mb-1.5">Ort *</label>
+                                    <input type="text" id="bau-bk-ccity" name="CustomerCity" required placeholder="Zürich"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="flex items-center gap-3 py-3 px-4 bg-secondary rounded-xl border border-border cursor-pointer">
+                            <input type="checkbox" id="bau-bk-same-address" class="w-4 h-4 rounded border-border accent-primary" />
+                            <span class="text-sm">Objektadresse entspricht der Rechnungsadresse</span>
+                        </label>
+
+                        <div data-object-address>
+                            <h3 class="text-lg font-bold text-foreground mb-4">Objektadresse (zu reinigendes Objekt)</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label for="bau-bk-ostreet" class="block text-sm font-medium text-foreground mb-1.5">Strasse &amp; Nr. *</label>
+                                    <input type="text" id="bau-bk-ostreet" name="ObjectStreet" placeholder="Musterstrasse 10"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-oplz" class="block text-sm font-medium text-foreground mb-1.5">PLZ *</label>
+                                    <input type="text" id="bau-bk-oplz" name="ObjectPlz" inputmode="numeric" maxlength="4" placeholder="8000"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                                <div>
+                                    <label for="bau-bk-ocity" class="block text-sm font-medium text-foreground mb-1.5">Ort *</label>
+                                    <input type="text" id="bau-bk-ocity" name="ObjectCity" placeholder="Zürich"
+                                           class="w-full h-12 px-4 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="bau-bk-notes" class="block text-sm font-medium text-foreground mb-1.5">Anmerkungen</label>
+                            <textarea id="bau-bk-notes" name="Notes" rows="3" placeholder="z.B. Bauphase, Zugang, besondere Verschmutzung …"
+                                      class="w-full px-4 py-3 rounded-lg border-2 border-input focus:border-primary outline-none transition-colors resize-none"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="text-base font-medium text-foreground mb-3 block">Zahlungsart *</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" data-payment="twint" class="p-3 sm:p-4 rounded-xl border-2 border-border bg-card transition-all text-center hover:border-booking-orange/50">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1.5 text-foreground/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                    <div class="font-medium text-[11px] sm:text-sm text-foreground">TWINT</div>
+                                </button>
+                                <button type="button" data-payment="bank" class="p-3 sm:p-4 rounded-xl border-2 border-border bg-card transition-all text-center hover:border-booking-orange/50">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1.5 text-foreground/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                    <div class="font-medium text-[11px] sm:text-sm text-foreground">Vorzahlung</div>
+                                </button>
+                                <button type="button" data-payment="cash" class="p-3 sm:p-4 rounded-xl border-2 border-border bg-card transition-all text-center hover:border-booking-orange/50">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1.5 text-foreground/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <div class="font-medium text-[11px] sm:text-sm text-foreground">Barzahlung</div>
+                                </button>
+                            </div>
+                            <p data-payment-error class="text-sm text-red-600 mt-2 hidden">Bitte wählen Sie eine Zahlungsart.</p>
+                            <p class="text-sm text-muted-foreground mt-3 italic">Die Zahlung erfolgt nach erfolgreicher Übergabe — unabhängig von der gewählten Zahlungsart.</p>
+                        </div>
+
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="bau-bk-terms" name="TermsAccepted" value="true" required class="mt-1 w-4 h-4 rounded border-border accent-primary" />
+                            <span class="text-sm leading-relaxed">
+                                Ich akzeptiere die <a href="/agb" target="_blank" rel="noopener" class="text-primary underline">Allgemeinen Geschäftsbedingungen</a> und die <a href="/datenschutz" target="_blank" rel="noopener" class="text-primary underline">Datenschutzerklärung</a>.
+                            </span>
+                        </label>
+
+                        <div data-submit-error class="hidden p-3 rounded-lg bg-red-50 border border-red-300 text-red-900 text-sm"></div>
+
+                        <div class="flex gap-3">
+                            <button type="button" data-action="back-4" class="h-14 px-6 rounded-lg border-2 border-border bg-card text-foreground font-medium hover:bg-muted transition-colors">← Zurück</button>
+                            <button type="submit" data-action="submit" class="flex-1 h-14 text-lg font-semibold bg-booking-orange hover:bg-booking-orange-dark text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                Buchung bestätigen ✓
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- STEP 5 — Success -->
+                <section data-step="5" class="space-y-6 hidden text-center py-8">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-cleaning-green/15 rounded-full mb-2">
+                        <svg class="w-10 h-10 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-foreground">Vielen Dank für Ihre Buchung!</h2>
+                    <p class="text-muted-foreground max-w-lg mx-auto">
+                        Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden mit der Terminbestätigung.
+                    </p>
+                    <div class="max-w-md mx-auto p-5 bg-secondary rounded-xl text-left text-sm space-y-2">
+                        <div class="flex justify-between"><span class="text-muted-foreground">Buchungsnummer</span><span class="font-semibold" data-success-id>—</span></div>
+                        <div class="flex justify-between"><span class="text-muted-foreground">Reinigungstermin</span><span class="font-semibold" data-success-date>—</span></div>
+                        <div class="flex justify-between"><span class="text-muted-foreground">Total</span><span class="font-semibold text-cleaning-green">CHF <span data-success-total>0</span></span></div>
+                    </div>
+                    <a href="/" class="inline-flex items-center gap-2 mt-4 text-primary font-medium hover:underline">← Zurück zur Startseite</a>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <noscript>
+        <div class="max-w-2xl mx-auto text-center py-10 px-4">
+            <p class="text-amber-900 font-medium">Der interaktive Kostenrechner benötigt JavaScript. Bitte aktivieren Sie JavaScript oder rufen Sie uns an:</p>
+            <a href="tel:+41765017738" class="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-booking-orange text-white font-semibold rounded-lg">📞 +41 76 501 77 38</a>
+        </div>
+    </noscript>
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+@section Scripts {
+    <script src="~/js/baureinigung-calculator.js" asp-append-version="true" defer></script>
+}

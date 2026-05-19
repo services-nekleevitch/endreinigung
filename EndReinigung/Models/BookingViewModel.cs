@@ -4,6 +4,11 @@ namespace EndReinigung.Models
 {
     public class BookingViewModel
     {
+        // Discriminator: "endreinigung" (default) or "baureinigung". Selects the pricing table
+        // and the extras layout used in confirmation emails.
+        [StringLength(20)]
+        public string Service { get; set; } = "endreinigung";
+
         [Required, StringLength(20)]
         public string PropertyType { get; set; } = "apartment";
 
@@ -22,6 +27,10 @@ namespace EndReinigung.Models
         [Range(0, 10)] public int GaragePressure { get; set; }
 
         public bool Basement { get; set; }
+
+        // Baureinigung-only toggle add-ons.
+        public bool Bauschutt { get; set; }
+        public bool Fassade { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime? CleaningDate { get; set; }

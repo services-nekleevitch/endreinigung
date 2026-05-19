@@ -32,6 +32,11 @@ namespace EndReinigung.Services
 
         public static decimal Compute(BookingViewModel b)
         {
+            if (b.Service == "baureinigung")
+            {
+                return ComputeBaureinigung(b);
+            }
+
             var table = b.PropertyType == "house" ? HousePrices : ApartmentPrices;
             if (!table.TryGetValue(b.RoomSize, out var basePrice))
             {
@@ -49,6 +54,24 @@ namespace EndReinigung.Services
             extras += b.GaragePressure * PriceGaragePressure;
 
             return basePrice + extras;
+        }
+
+        private static decimal ComputeBaureinigung(BookingViewModel b)
+        {
+            var table = b.PropertyType == "house" ? BaureinigungPricing.HausRoomSizes : BaureinigungPricing.WohnungRoomSizes;
+            var match = table.FirstOrDefault(r => r.Value == b.RoomSize);
+            if (match is null) return 0m;
+
+            decimal extras = 0m;
+            if (b.Bauschutt) extras += BaureinigungPricing.PriceBauschutt;
+            if (b.Fassade) extras += BaureinigungPricing.PriceFassade;
+            // Reuse shared countables — same per-unit prices on both services.
+            extras += b.Balcony * PriceBalcony;
+            extras += b.Bath * PriceBath;
+            extras += b.Wc * PriceWc;
+            extras += b.GaragePressure * PriceGaragePressure;
+
+            return match.Price + extras;
         }
     }
 }

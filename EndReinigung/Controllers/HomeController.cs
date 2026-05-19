@@ -114,10 +114,7 @@ namespace EndReinigung.Controllers
         }
 
         [Route("reinigung-horgen")]
-        public IActionResult BezirkHorgen()
-        {
-            return View();
-        }
+        public IActionResult BezirkHorgen() => RedirectPermanent("/umzugsreinigung-bezirk-horgen");
 
         [Route("airbnb-reinigung-zuerich")]
         public IActionResult AirbnbReinigung()
@@ -173,9 +170,9 @@ namespace EndReinigung.Controllers
         }
 
         [Route("baureinigung-calculator")]
-        public IActionResult BaureinigunCalculator()
+        public IActionResult BaureinigungCalculator()
         {
-            return RedirectToAction("Calculator");
+            return View();
         }
 
         [Route("teppichreinigung")]
