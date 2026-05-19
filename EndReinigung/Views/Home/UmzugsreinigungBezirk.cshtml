@@ -60,20 +60,38 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": "Offer",
-        "url": "@canonical",
-        "priceCurrency": "CHF",
-        "priceSpecification": [
-            {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
-            {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
-            {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
-            {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
-            {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
-        ],
-        "seller": {
+        "@@type": "Service",
+        "inLanguage": "de-CH",
+        "serviceType": "Umzugsreinigung",
+        "name": "Umzugsreinigung – Fixpreise nach Wohnungsgrösse",
+        "provider": {
             "@@type": "LocalBusiness",
+            "additionalType": "https://schema.org/HouseCleaningService",
             "name": "Zürich Endreinigung",
-            "url": "https://zurich-endreinigung.ch/"
+            "telephone": "+41765017738",
+            "email": "info@zurich-endreinigung.ch",
+            "url": "https://zurich-endreinigung.ch",
+            "areaServed": { "@@type": "State", "name": "Kanton Zürich" }
+        },
+        "offers": {
+            "@@type": "AggregateOffer",
+            "url": "@canonical",
+            "priceCurrency": "CHF",
+            "lowPrice": "550",
+            "highPrice": "1290",
+            "offerCount": "5",
+            "priceSpecification": [
+                {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
+                {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
+                {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
+                {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
+                {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
+            ],
+            "seller": {
+                "@@type": "LocalBusiness",
+                "name": "Zürich Endreinigung",
+                "url": "https://zurich-endreinigung.ch/"
+            }
         }
     }
     </script>
