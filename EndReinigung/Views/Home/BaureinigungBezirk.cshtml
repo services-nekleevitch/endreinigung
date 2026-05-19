@@ -19,8 +19,9 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": "LocalBusiness",
-        "additionalType": "https://schema.org/HouseCleaningService",
+        "@@type": ["LocalBusiness", "HouseCleaningService"],
+        "@@id": "@(pageUrl)#business",
+        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "inLanguage": "de-CH",
         "name": "Zürich Endreinigung - Baureinigung @bezirkName",
         "description": "Professionelle Baureinigung im @bezirkName zum Fixpreis. Ab @startingPriceLabel.",
@@ -28,12 +29,7 @@
             "@@type": "AdministrativeArea",
             "name": "@bezirkName"
         },
-        "url": "@pageUrl",
-        "provider": {
-            "@@type": "HouseCleaningService",
-            "@@id": "https://zurich-endreinigung.ch/#business",
-            "name": "Zürich Endreinigung"
-        }
+        "url": "@pageUrl"
     }
     </script>
     <script type="application/ld+json">
@@ -44,6 +40,47 @@
             { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
             { "@@type": "ListItem", "position": 2, "name": "Baureinigung", "item": "https://zurich-endreinigung.ch/baureinigung" },
             { "@@type": "ListItem", "position": 3, "name": "@bezirkName", "item": "@pageUrl" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet eine Baureinigung im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Im @bezirkName beginnen unsere Fixpreise bei @startingPriceLabel für eine 1–1.5-Zimmer-Wohnung. Grössere Objekte und Einfamilienhäuser gehen bis CHF 1'989. Anfahrt sowie Bauschutt- und Feinstaubentfernung sind im Preis inbegriffen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was umfasst eine professionelle Baureinigung im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir entfernen Baustaub, Zement-, Mörtel- und Gipsreste auf allen Oberflächen, reinigen Fenster innen und aussen, Böden (Parkett, Plättli, Laminat), Küche und Sanitäranlagen. Ziel ist eine bezugsfertige Übergabe, ohne dass die Bauherrschaft im @bezirkName noch nacharbeiten muss."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wann sollte die Baureinigung im @bezirkName geplant werden?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Idealerweise stimmen wir den Reinigungstermin im @bezirkName direkt mit Ihrer Bauleitung ab, sodass die Baufeinreinigung unmittelbar nach Abschluss der letzten Gewerke erfolgt. Kurzfristige Einsätze sind in der Regel innerhalb von 48 Stunden möglich."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Bieten Sie Übergabebegleitung nach der Baureinigung im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Auf Wunsch ist unsere Bauleitung bei der Bauabnahme im @bezirkName persönlich anwesend. Sollte die Bauherrschaft oder der Architekt Mängel feststellen, beheben wir diese mittels Nachreinigung kostenlos — meist noch am gleichen Tag."
+                }
+            }
         ]
     }
     </script>

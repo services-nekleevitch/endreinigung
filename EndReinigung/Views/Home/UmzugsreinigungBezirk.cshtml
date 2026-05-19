@@ -61,38 +61,77 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
+        "@@id": "@(canonical)#service",
+        "url": "@canonical",
         "inLanguage": "de-CH",
         "serviceType": "Umzugsreinigung",
-        "name": "Umzugsreinigung – Fixpreise nach Wohnungsgrösse",
-        "provider": {
-            "@@type": "LocalBusiness",
-            "additionalType": "https://schema.org/HouseCleaningService",
-            "name": "Zürich Endreinigung",
-            "telephone": "+41765017738",
-            "email": "info@zurich-endreinigung.ch",
-            "url": "https://zurich-endreinigung.ch",
-            "areaServed": { "@@type": "State", "name": "Kanton Zürich" }
-        },
+        "name": "Umzugsreinigung @bezirkName – Fixpreise nach Wohnungsgrösse",
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "areaServed": { "@@type": "AdministrativeArea", "name": "@bezirkName" },
         "offers": {
             "@@type": "AggregateOffer",
             "url": "@canonical",
             "priceCurrency": "CHF",
-            "lowPrice": "550",
-            "highPrice": "1290",
-            "offerCount": "5",
-            "priceSpecification": [
-                {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
-            ],
-            "seller": {
-                "@@type": "LocalBusiness",
-                "name": "Zürich Endreinigung",
-                "url": "https://zurich-endreinigung.ch/"
-            }
+            "lowPrice": 550,
+            "highPrice": 1290,
+            "offerCount": 5,
+            "offers": [
+                { "@@type": "Offer", "name": "1.5–2 Zimmer", "price": 550,  "priceCurrency": "CHF", "url": "@canonical" },
+                { "@@type": "Offer", "name": "2.5–3 Zimmer", "price": 690,  "priceCurrency": "CHF", "url": "@canonical" },
+                { "@@type": "Offer", "name": "3.5–4 Zimmer", "price": 850,  "priceCurrency": "CHF", "url": "@canonical" },
+                { "@@type": "Offer", "name": "4.5–5 Zimmer", "price": 1050, "priceCurrency": "CHF", "url": "@canonical" },
+                { "@@type": "Offer", "name": "5.5+ Zimmer",  "price": 1290, "priceCurrency": "CHF", "url": "@canonical" }
+            ]
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet eine Umzugsreinigung im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Unsere Fixpreise im @bezirkName beginnen bei CHF 550 für 1.5–2 Zimmer und gehen bis CHF 1'290 für 5.5+ Zimmer. Anfahrt und Material sind im Preis enthalten — auch bei Einsätzen in entlegeneren Gemeinden des @bezirkName."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie funktioniert die Abnahmegarantie im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir nehmen den Übergabetermin im @bezirkName persönlich wahr. Beanstandet der Vermieter Mängel, reinigen wir innerhalb von 24 Stunden kostenlos nach. So bleibt Ihre Mietkaution geschützt — typische Kautionsabzüge in der Region liegen zwischen CHF 500 und CHF 1'500."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Welche Gemeinden im @bezirkName decken Sie ab?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "@(localValueProp). Wir reinigen in sämtlichen Gemeinden des @bezirkName — von kleinen Ortschaften bis zu den grösseren Zentren. Die Anfahrt ist im Fixpreis inkludiert, unabhängig von der PLZ."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie schnell ist eine Nachreinigung im @bezirkName möglich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Bei Beanstandungen durch die Verwaltung sind wir im @bezirkName in der Regel innerhalb von 24 Stunden wieder vor Ort. An Werktagen halten wir Reserve-Kapazitäten ausschliesslich für Nachreinigungen bereit, damit der Übergabeprozess nicht verzögert wird."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Müssen wir bei der Wohnungsübergabe selbst anwesend sein?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Nein — viele Kundinnen und Kunden im @bezirkName übergeben uns die Schlüssel im Voraus und sind bei der Abnahme nicht selbst dabei (z. B. wegen Auslandumzug). Wir führen die Übergabe mit der Verwaltung durch und stellen Ihnen das Übergabeprotokoll digital zu."
+                }
+            }
+        ]
     }
     </script>
 }

@@ -15,8 +15,9 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": "LocalBusiness",
-        "additionalType": "https://schema.org/HouseCleaningService",
+        "@@type": ["LocalBusiness", "HouseCleaningService"],
+        "@@id": "@(pageUrl)#business",
+        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "inLanguage": "de-CH",
         "name": "Zürich Endreinigung - Frühlingsreinigung @bezirkName",
         "description": "Professioneller Frühlingsputz im @bezirkName zum Fixpreis. Ab CHF 390.",
@@ -24,12 +25,7 @@
             "@@type": "AdministrativeArea",
             "name": "@bezirkName"
         },
-        "url": "@pageUrl",
-        "provider": {
-            "@@type": "HouseCleaningService",
-            "@@id": "https://zurich-endreinigung.ch/#business",
-            "name": "Zürich Endreinigung"
-        }
+        "url": "@pageUrl"
     }
     </script>
     <script type="application/ld+json">
@@ -40,6 +36,47 @@
             { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
             { "@@type": "ListItem", "position": 2, "name": "Frühlingsreinigung", "item": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
             { "@@type": "ListItem", "position": 3, "name": "@bezirkName", "item": "@pageUrl" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet ein Frühlingsputz im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Im @bezirkName beginnen unsere Fixpreise für die Frühlingsreinigung bei CHF 390 für eine 1–1.5-Zimmer-Wohnung. Grössere Wohnungen und Einfamilienhäuser gehen bis CHF 1'190. Anfahrt sowie ECO- oder Standard-Reinigungsmittel sind im Preis inbegriffen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Was umfasst eine professionelle Frühlingsreinigung im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir reinigen Böden, Fenster (innen und aussen), Storen, Küche inklusive Backofen und Kühlschrank, Bad und Sanitäranlagen sowie sämtliche Oberflächen. Auf Wunsch entkalken wir Armaturen und reinigen Polstermöbel. Eine Frühlingsreinigung im @bezirkName dauert je nach Wohnungsgrösse 3–8 Stunden."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wann ist der beste Zeitpunkt für einen Frühlingsputz im @bezirkName?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Klassischerweise wird der Frühlingsputz im @bezirkName zwischen März und Mai gebucht. In dieser Zeit empfehlen wir, frühzeitig zu reservieren — kurzfristige Termine sind in der Saison nur eingeschränkt verfügbar. Ausserhalb der Saison sind wir oft innerhalb von 48 Stunden bei Ihnen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Bieten Sie ECO-Reinigung im @bezirkName an?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Auf Wunsch verwenden wir im @bezirkName ausschliesslich biologisch abbaubare ECO-Reinigungsmittel ohne aggressive Chemie. Das ist besonders bei Haushalten mit Kleinkindern, Allergikern und Haustieren beliebt — gegen einen geringen Aufpreis."
+                }
+            }
         ]
     }
     </script>

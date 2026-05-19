@@ -8,11 +8,12 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": "LocalBusiness",
-        "additionalType": "https://schema.org/HouseCleaningService",
+        "@@type": ["LocalBusiness", "HouseCleaningService"],
+        "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen#business",
+        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "inLanguage": "de-CH",
         "name": "Zürich Endreinigung - Bezirk Horgen",
-        "areaServed": ["8810", "8800", "8820", "8134", "8803", "8802", "8805"],
+        "areaServed": { "@@type": "AdministrativeArea", "name": "Bezirk Horgen", "containsPlace": ["8810", "8800", "8820", "8134", "8803", "8802", "8805"] },
         "description": "Premium Endreinigung mit Abnahmegarantie für den gesamten Bezirk Horgen und Zürichsee Region.",
         "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen",
         "telephone": "+41765017738",
@@ -49,38 +50,77 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
+        "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen#service",
+        "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen",
         "inLanguage": "de-CH",
         "serviceType": "Umzugsreinigung",
         "name": "Umzugsreinigung Bezirk Horgen – Fixpreise nach Wohnungsgrösse",
-        "provider": {
-            "@@type": "LocalBusiness",
-            "additionalType": "https://schema.org/HouseCleaningService",
-            "name": "Zürich Endreinigung",
-            "telephone": "+41765017738",
-            "email": "info@zurich-endreinigung.ch",
-            "url": "https://zurich-endreinigung.ch",
-            "areaServed": { "@@type": "AdministrativeArea", "name": "Bezirk Horgen" }
-        },
+        "provider": { "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen#business" },
+        "areaServed": { "@@type": "AdministrativeArea", "name": "Bezirk Horgen" },
         "offers": {
             "@@type": "AggregateOffer",
             "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen",
             "priceCurrency": "CHF",
-            "lowPrice": "550",
-            "highPrice": "1290",
-            "offerCount": "5",
-            "priceSpecification": [
-                {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
-            ],
-            "seller": {
-                "@@type": "LocalBusiness",
-                "name": "Zürich Endreinigung",
-                "url": "https://zurich-endreinigung.ch/"
-            }
+            "lowPrice": 550,
+            "highPrice": 1290,
+            "offerCount": 5,
+            "offers": [
+                { "@@type": "Offer", "name": "1.5–2 Zimmer", "price": 550,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen" },
+                { "@@type": "Offer", "name": "2.5–3 Zimmer", "price": 690,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen" },
+                { "@@type": "Offer", "name": "3.5–4 Zimmer", "price": 850,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen" },
+                { "@@type": "Offer", "name": "4.5–5 Zimmer", "price": 1050, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen" },
+                { "@@type": "Offer", "name": "5.5+ Zimmer",  "price": 1290, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen" }
+            ]
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet eine Umzugsreinigung im Bezirk Horgen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Unsere Fixpreise im Bezirk Horgen reichen von CHF 550 für eine 1.5–2-Zimmer-Wohnung bis CHF 1'290 für 5.5+ Zimmer. Anfahrt nach Wädenswil, Thalwil, Horgen, Kilchberg und in alle weiteren Gemeinden ist im Preis inbegriffen — keine Zuschläge für die Zürichsee-Region."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie funktioniert die Abnahmegarantie bei der Wohnungsübergabe?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir sind bei der Übergabe an die Verwaltung im Bezirk Horgen persönlich anwesend. Beanstandet der Vermieter Mängel, reinigen wir noch am gleichen Tag oder innerhalb von 24 Stunden kostenlos nach — bis die Wohnung abgenommen wird. So bleibt Ihre Mietkaution vollständig erhalten."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie schnell ist eine Nachreinigung im Bezirk Horgen möglich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Für Nachreinigungen nach der Wohnungsabnahme sind wir in der Regel innerhalb von 24 Stunden vor Ort. Unsere Teams sind in Horgen, Thalwil und Wädenswil stationiert, sodass kurze Anfahrtswege im gesamten Bezirk garantiert sind."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Welche Gemeinden im Bezirk Horgen reinigen Sie?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir bedienen alle Gemeinden im Bezirk Horgen — Adliswil, Horgen, Kilchberg, Langnau am Albis, Oberrieden, Richterswil, Rüschlikon, Thalwil, Wädenswil sowie das Säuliamt-Grenzgebiet (PLZ 8810, 8800, 8820, 8134, 8803, 8802, 8805)."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Muss ich bei der Wohnungsübergabe selbst anwesend sein?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Nein — viele unserer Kundinnen und Kunden im Bezirk Horgen sind bei der Übergabe nicht vor Ort (z. B. wegen eines Umzugs ins Ausland). Wir übernehmen die komplette Übergabe inklusive Schlüsselrückgabe und protokollieren das Ergebnis schriftlich."
+                }
+            }
+        ]
     }
     </script>
 }

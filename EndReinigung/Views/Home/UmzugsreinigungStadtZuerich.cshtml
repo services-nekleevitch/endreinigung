@@ -30,11 +30,12 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": "LocalBusiness",
-        "additionalType": "https://schema.org/HouseCleaningService",
+        "@@type": ["LocalBusiness", "HouseCleaningService"],
+        "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich#business",
+        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "inLanguage": "de-CH",
         "name": "Zürich Endreinigung - Stadt Zürich",
-        "areaServed": ["8001","8002","8003","8004","8005","8006","8032","8008","8047","8037","8050","8051"],
+        "areaServed": { "@@type": "City", "name": "Zürich", "containsPlace": ["8001","8002","8003","8004","8005","8006","8032","8008","8047","8037","8050","8051"] },
         "description": "Professionelle Endreinigung mit Abnahmegarantie in allen 12 Stadtkreisen von Zürich.",
         "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich",
         "telephone": "+41765017738",
@@ -71,38 +72,77 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
+        "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich#service",
+        "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich",
         "inLanguage": "de-CH",
         "serviceType": "Umzugsreinigung",
         "name": "Umzugsreinigung Stadt Zürich – Fixpreise nach Wohnungsgrösse",
-        "provider": {
-            "@@type": "LocalBusiness",
-            "additionalType": "https://schema.org/HouseCleaningService",
-            "name": "Zürich Endreinigung",
-            "telephone": "+41765017738",
-            "email": "info@zurich-endreinigung.ch",
-            "url": "https://zurich-endreinigung.ch",
-            "areaServed": { "@@type": "City", "name": "Zürich" }
-        },
+        "provider": { "@@id": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich#business" },
+        "areaServed": { "@@type": "City", "name": "Zürich" },
         "offers": {
             "@@type": "AggregateOffer",
             "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich",
             "priceCurrency": "CHF",
-            "lowPrice": "550",
-            "highPrice": "1290",
-            "offerCount": "5",
-            "priceSpecification": [
-                {"@@type": "UnitPriceSpecification", "price": "550", "priceCurrency": "CHF", "name": "1.5–2 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "690", "priceCurrency": "CHF", "name": "2.5–3 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "850", "priceCurrency": "CHF", "name": "3.5–4 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1050", "priceCurrency": "CHF", "name": "4.5–5 Zimmer"},
-                {"@@type": "UnitPriceSpecification", "price": "1290", "priceCurrency": "CHF", "name": "5.5+ Zimmer"}
-            ],
-            "seller": {
-                "@@type": "LocalBusiness",
-                "name": "Zürich Endreinigung",
-                "url": "https://zurich-endreinigung.ch/"
-            }
+            "lowPrice": 550,
+            "highPrice": 1290,
+            "offerCount": 5,
+            "offers": [
+                { "@@type": "Offer", "name": "1.5–2 Zimmer", "price": 550,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
+                { "@@type": "Offer", "name": "2.5–3 Zimmer", "price": 690,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
+                { "@@type": "Offer", "name": "3.5–4 Zimmer", "price": 850,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
+                { "@@type": "Offer", "name": "4.5–5 Zimmer", "price": 1050, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
+                { "@@type": "Offer", "name": "5.5+ Zimmer",  "price": 1290, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" }
+            ]
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Was kostet eine Umzugsreinigung in der Stadt Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Unsere Fixpreise in der Stadt Zürich beginnen bei CHF 550 für 1.5–2 Zimmer und gehen bis CHF 1'290 für 5.5+ Zimmer. Diese Preise gelten in allen 12 Stadtkreisen — von der Altstadt bis Schwamendingen — ohne Zuschläge für Innenstadt oder schwierige Parkplatzsituationen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie funktioniert die Abnahmegarantie in Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir begleiten die Übergabe an Verwaltungen wie Livit, Wincasa, Mobimo und Allreal persönlich. Stellen sie Mängel fest, reinigen wir noch am selben oder folgenden Tag kostenlos nach. So vermeiden Mieterinnen und Mieter in Zürich Kautionsabzüge zwischen CHF 500 und CHF 1'500."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Welche Stadtkreise in Zürich decken Sie ab?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Wir bedienen alle 12 Stadtkreise — Altstadt, Enge, Wiedikon, Aussersihl, Industriequartier, Oberstrass, Hottingen, Seefeld, Albisrieden, Höngg, Affoltern und Schwamendingen. Termine sind in der Stadt Zürich oft innerhalb von 48 Stunden möglich."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie schnell kann eine Nachreinigung in Zürich erfolgen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "In der Stadt Zürich sind wir bei einer Beanstandung in der Regel innerhalb von 4–24 Stunden vor Ort. Da viele Übergabetermine kurzfristig anberaumt werden, halten wir an Werktagen Reserve-Kapazitäten ausschliesslich für Nachreinigungen bereit."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sind kurzfristige Termine in der Stadt Zürich verfügbar?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Innerhalb der Stadt Zürich bieten wir regelmässig Termine innerhalb von 48 Stunden an, in dringenden Fällen auch am Folgetag oder Same-Day. Kontaktieren Sie uns telefonisch unter +41 76 501 77 38, um die nächste freie Slot-Zeit zu prüfen."
+                }
+            }
+        ]
     }
     </script>
 }
