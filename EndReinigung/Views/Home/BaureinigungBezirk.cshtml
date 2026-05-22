@@ -19,12 +19,13 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": ["LocalBusiness", "HouseCleaningService"],
-        "@@id": "@(pageUrl)#business",
-        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "@@type": "Service",
+        "@@id": "@(pageUrl)#service",
         "inLanguage": "de-CH",
+        "serviceType": "Baureinigung",
         "name": "Zürich Endreinigung - Baureinigung @bezirkName",
         "description": "Professionelle Baureinigung im @bezirkName zum Fixpreis. Ab @startingPriceLabel.",
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "areaServed": {
             "@@type": "AdministrativeArea",
             "name": "@bezirkName"

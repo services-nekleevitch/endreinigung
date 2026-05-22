@@ -15,12 +15,13 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": ["LocalBusiness", "HouseCleaningService"],
-        "@@id": "@(pageUrl)#business",
-        "parentOrganization": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "@@type": "Service",
+        "@@id": "@(pageUrl)#service",
         "inLanguage": "de-CH",
+        "serviceType": "Frühlingsreinigung",
         "name": "Zürich Endreinigung - Frühlingsreinigung @bezirkName",
         "description": "Professioneller Frühlingsputz im @bezirkName zum Fixpreis. Ab CHF 390.",
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
         "areaServed": {
             "@@type": "AdministrativeArea",
             "name": "@bezirkName"
