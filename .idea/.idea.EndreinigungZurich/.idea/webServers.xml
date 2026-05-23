@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c324f02d-f697-4e7e-b941-abdd11493a07" name="FTP zurich-endreinigung.ch" url="http://zurich-endreinigung.ch">
+        <fileTransfer rootFolder="/httpdocs" accessType="FTPS" host="zurich-endreinigung.ch" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

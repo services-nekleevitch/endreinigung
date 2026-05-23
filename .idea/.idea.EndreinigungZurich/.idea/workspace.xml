@@ -4,58 +4,40 @@
     <projectFile profileName="IIS Express">EndReinigung/EndReinigung.csproj</projectFile>
     <projectFile profileName="http">EndReinigung/EndReinigung.csproj</projectFile>
     <projectFile profileName="https">EndReinigung/EndReinigung.csproj</projectFile>
+    <projectFile pubXmlPath="EndReinigung/Properties/PublishProfiles/Endreinigung.pubxml">EndReinigung/EndReinigung.csproj</projectFile>
+    <projectFile pubXmlPath="EndReinigung/Properties/PublishProfiles/HostFactory_PublishProfile.pubxml">EndReinigung/EndReinigung.csproj</projectFile>
+    <projectFile pubXmlPath="EndReinigung/Properties/PublishProfiles/T1.pubxml">EndReinigung/EndReinigung.csproj</projectFile>
+    <projectFile pubXmlPath="EndReinigung/Properties/PublishProfiles/zurich-endreinigung-webdeploy.pubxml">EndReinigung/EndReinigung.csproj</projectFile>
     <projectFile profileName="IIS Express">EndreinigungZurich/EndreinigungZurich.csproj</projectFile>
     <projectFile profileName="http">EndreinigungZurich/EndreinigungZurich.csproj</projectFile>
     <projectFile profileName="https">EndreinigungZurich/EndreinigungZurich.csproj</projectFile>
     <projectFile pubXmlPath="EndreinigungZurich/Properties/PublishProfiles/zurich-endreinigung.ch - Web Deploy.pubxml">EndreinigungZurich/EndreinigungZurich.csproj</projectFile>
     <projectFile pubXmlPath="EndreinigungZurich/Properties/PublishProfiles/zurich-endreinigung.pubxml">EndreinigungZurich/EndreinigungZurich.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="59fbdc09-701e-4976-9490-66931929c85a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EndreinigungZurich/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EndreinigungZurich/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.lovable-sync" beforeDir="false" afterPath="$PROJECT_DIR$/.lovable-sync" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/App_Data/ratgeber-articles.json" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/App_Data/ratgeber-articles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EndReinigung/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/AGB.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/AGB.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Abnahmegarantie.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Abnahmegarantie.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/AirbnbReinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/AirbnbReinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Baureinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Baureinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/BaureinigungBezirk.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/BaureinigungBezirk.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/BezirkHorgen.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/BezirkHorgen.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/BootReinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/BootReinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Bueroreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Bueroreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Calculator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Calculator.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Datenschutz.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Datenschutz.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/EventReinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/EventReinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/ExtraServices.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/ExtraServices.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/FAQ.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/FAQ.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Fensterreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Fensterreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/FruehlingsputzBezirk.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/FruehlingsputzBezirk.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Garantie.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Garantie.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Gewerbereinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Gewerbereinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Grundreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Grundreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Hochdruckreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Hochdruckreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Impressum.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Impressum.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/LP2.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/LP2.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Matratzenreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Matratzenreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/NotFound.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/NotFound.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Polsterreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Polsterreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Praxisreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Praxisreinigung.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/EndReinigung.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/EndReinigung.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/Models/RatgeberArticleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Models/RatgeberArticleData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.de.resx" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.de.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.en.resx" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.en.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Ratgeber.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Ratgeber.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/RatgeberArticle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/RatgeberArticle.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Spezialreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Spezialreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Standorte.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Standorte.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/TapetenEntfernen.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/TapetenEntfernen.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Teppichreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Teppichreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/UeberUns.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/UeberUns.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Umzugsreinigung.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Umzugsreinigung.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/UmzugsreinigungBezirk.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/UmzugsreinigungBezirk.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/UmzugsreinigungStadtZuerich.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/UmzugsreinigungStadtZuerich.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/_HeroH1.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/_HeroH1.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Shared/_Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Shared/_Footer.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/_ViewImports.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndReinigung/wwwroot/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/wwwroot/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rich-lease-shine" beforeDir="false" afterPath="$PROJECT_DIR$/rich-lease-shine" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +46,9 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="6" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +59,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="AISelfReview" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -90,6 +75,8 @@
     ".NET Launch Settings Profile.EndReinigung: http.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Publish to IIS.Publish EndReinigung to IIS.executor": "Run",
+    "Publish to custom server.FTP Single File.executor": "Run",
+    "Publish to custom server.Publish EndReinigung to custom server.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -102,12 +89,16 @@
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/stn/repos/endreinigung/EndreinigungZurich.sln",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Publish to IIS.EndreinigungZurich: zurich-endreinigung.ch - Web Deploy">
+  <component name="RunManager" selected="Publish to custom server.Publish EndReinigung to custom server">
     <configuration name="EndreinigungZurich: zurich-endreinigung" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish configuration="Release" platform="Any CPU" publish_profile="zurich-endreinigung.pubxml" pubxml_path="$PROJECT_DIR$/EndreinigungZurich/Properties/PublishProfiles/zurich-endreinigung.pubxml" uuid_high="6800810626741454148" uuid_low="-8376458092119397921" />
       <method v="2" />
@@ -118,6 +109,23 @@
     </configuration>
     <configuration name="Publish EndReinigung to IIS" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish configuration="Release" platform="Any CPU" publish_profile="&lt;no publish profile&gt;" uuid_high="3193805343310235934" uuid_low="-6208888211565096063" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FTP Single File" type="DotNetPublishAndUpload" factoryName="Publish to custom server">
+      <riderPublish configuration="Release" platform="Any CPU" produce_single_file="true" self_contained="true" server_id="c324f02d-f697-4e7e-b941-abdd11493a07" serverName="FTP zurich-endreinigung.ch" target_framework="net8.0" uuid_high="3193805343310235934" uuid_low="-6208888211565096063">
+        <runtimes>
+          <item value="win-x64" />
+        </runtimes>
+      </riderPublish>
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish EndReinigung to custom server" type="DotNetPublishAndUpload" factoryName="Publish to custom server">
+      <riderPublish configuration="Release" include_native_libs_for_self_extract="true" platform="Any CPU" produce_single_file="true" self_contained="true" server_id="c324f02d-f697-4e7e-b941-abdd11493a07" serverName="FTP zurich-endreinigung.ch" target_framework="net8.0" uuid_high="3193805343310235934" uuid_low="-6208888211565096063">
+        <runtimes>
+          <item value="win-x64" />
+          <item value="win-x86" />
+        </runtimes>
+      </riderPublish>
       <method v="2" />
     </configuration>
     <configuration name="EndReinigung: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -223,6 +231,8 @@
       <item itemvalue=".NET Launch Settings Profile.EndreinigungZurich: http" />
       <item itemvalue=".NET Launch Settings Profile.EndreinigungZurich: https" />
       <item itemvalue=".NET Launch Settings Profile.EndreinigungZurich: IIS Express" />
+      <item itemvalue="Publish to custom server.FTP Single File" />
+      <item itemvalue="Publish to custom server.Publish EndReinigung to custom server" />
       <item itemvalue="Publish to IIS.EndreinigungZurich: zurich-endreinigung" />
       <item itemvalue="Publish to IIS.EndreinigungZurich: zurich-endreinigung.ch - Web Deploy" />
       <item itemvalue="Publish to IIS.Publish EndReinigung to IIS" />
@@ -237,6 +247,7 @@
       <updated>1775828712246</updated>
       <workItem from="1775828714531" duration="301000" />
       <workItem from="1778842967145" duration="69000" />
+      <workItem from="1779568855232" duration="2615000" />
     </task>
     <servers />
   </component>

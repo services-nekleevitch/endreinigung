@@ -1,89 +1,354 @@
 @model EndReinigung.Models.RatgeberArticle
+@using System.Text
+@using System.Text.Json
+@using System.Text.RegularExpressions
 @{
-    var titleTag = $"{Model.TitleDe} | Ratgeber Zürich Endreinigung";
-    var description = Model.IntroDe.Length > 160 ? Model.IntroDe.Substring(0, 157) + "..." : Model.IntroDe;
-    ViewData["Title"] = titleTag;
-    ViewData["Description"] = description;
-    ViewData["Canonical"] = $"https://zurich-endreinigung.ch/ratgeber/{Model.Slug}";
-    ViewData["Keywords"] = $"Ratgeber Endreinigung, {Model.CategoryName}, Endreinigung Zürich";
+    var isEn = string.Equals(ViewData["Lang"] as string, "en", StringComparison.OrdinalIgnoreCase);
+    var title = isEn && !string.IsNullOrEmpty(Model.TitleEn) ? Model.TitleEn : Model.TitleDe;
+    var intro = isEn && !string.IsNullOrEmpty(Model.IntroEn) ? Model.IntroEn : Model.IntroDe;
+    var categoryName = isEn && !string.IsNullOrEmpty(Model.CategoryNameEn) ? Model.CategoryNameEn : Model.CategoryName;
+    var authorByline = isEn ? Model.AuthorBylineEn : Model.AuthorBylineDe;
+    var heroAlt = isEn && !string.IsNullOrEmpty(Model.HeroAltEn) ? Model.HeroAltEn : Model.HeroAltDe;
+    if (string.IsNullOrEmpty(heroAlt)) { heroAlt = $"{title} – Zürich Endreinigung"; }
+    var blocks = isEn && Model.BlocksEn.Count > 0 ? Model.BlocksEn : Model.Blocks;
+    var howTo = isEn ? Model.HowToEn : Model.HowToDe;
 
-    int wordCount = 0;
-    foreach (var b in Model.Blocks)
+    var metaTitle = isEn && !string.IsNullOrEmpty(Model.MetaTitleEn) ? Model.MetaTitleEn
+        : !isEn && !string.IsNullOrEmpty(Model.MetaTitleDe) ? Model.MetaTitleDe
+        : $"{title} | Ratgeber Zürich Endreinigung";
+    var metaDescription = isEn && !string.IsNullOrEmpty(Model.MetaDescriptionEn) ? Model.MetaDescriptionEn
+        : !isEn && !string.IsNullOrEmpty(Model.MetaDescriptionDe) ? Model.MetaDescriptionDe
+        : (intro.Length > 160 ? intro.Substring(0, 157) + "..." : intro);
+
+    var SITE_URL = "https://zurich-endreinigung.ch";
+    var dePath = $"/ratgeber/{Model.Slug}";
+    var enPath = !string.IsNullOrEmpty(Model.EnSlug) ? $"/en/guide/{Model.EnSlug}" : null;
+    var canonicalPath = isEn && enPath != null ? enPath : dePath;
+
+    ViewData["Title"] = metaTitle;
+    ViewData["Description"] = metaDescription;
+    ViewData["Canonical"] = SITE_URL + canonicalPath;
+    ViewData["Keywords"] = isEn
+        ? $"guide cleaning Zurich, {categoryName}, end of tenancy cleaning Zurich"
+        : $"Ratgeber Endreinigung, {categoryName}, Endreinigung Zürich";
+
+    // Reading time: use override if present, else estimate
+    int readingTime;
+    if (Model.ReadingTimeMinutes.HasValue && Model.ReadingTimeMinutes.Value > 0)
     {
-        if (!string.IsNullOrEmpty(b.Body))
-            wordCount += b.Body.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
-        foreach (var item in b.Items)
-            wordCount += item.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
+        readingTime = Model.ReadingTimeMinutes.Value;
     }
-    int readingTime = Math.Max(1, (int)Math.Round(wordCount / 200.0));
+    else
+    {
+        int wordCount = 0;
+        foreach (var b in blocks)
+        {
+            if (!string.IsNullOrEmpty(b.Body))
+                wordCount += b.Body.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
+            foreach (var item in b.Items)
+                wordCount += item.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
+            foreach (var faq in b.Faqs)
+                wordCount += (faq.Q + " " + faq.A).Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
+        }
+        readingTime = Math.Max(1, (int)Math.Round(wordCount / 200.0));
+    }
+
+    // Updated date display
+    string updatedDisplay = "";
+    if (!string.IsNullOrEmpty(Model.DateModified) && DateTime.TryParse(Model.DateModified, out var dm))
+    {
+        var culture = isEn ? new System.Globalization.CultureInfo("en-GB") : new System.Globalization.CultureInfo("de-CH");
+        updatedDisplay = dm.ToString("d. MMMM yyyy", culture);
+    }
+
+    // Collect all FAQs across blocks for FAQ JSON-LD
+    var allFaqs = blocks.Where(b => b.Type == "faq").SelectMany(b => b.Faqs).ToList();
+
+    // Helper: slugify heading for anchor
+    string Slugify(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return "";
+        var s = text.ToLowerInvariant()
+            .Replace("ä", "ae").Replace("ö", "oe").Replace("ü", "ue").Replace("ß", "ss");
+        s = Regex.Replace(s, "[^a-z0-9]+", "-");
+        s = s.Trim('-');
+        return s;
+    }
+
+    // Helper: render inline markdown ([text](url) and **bold**) → HTML.
+    // Strips raw input through HtmlEncoder around literal text segments.
+    string InlineMd(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return "";
+        var sb = new StringBuilder();
+        var rx = new Regex(@"\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)");
+        int last = 0;
+        foreach (Match m in rx.Matches(text))
+        {
+            if (m.Index > last)
+            {
+                sb.Append(System.Net.WebUtility.HtmlEncode(text.Substring(last, m.Index - last)));
+            }
+            if (m.Groups[1].Success)
+            {
+                sb.Append("<strong>")
+                  .Append(System.Net.WebUtility.HtmlEncode(m.Groups[1].Value))
+                  .Append("</strong>");
+            }
+            else if (m.Groups[2].Success && m.Groups[3].Success)
+            {
+                var label = m.Groups[2].Value;
+                var href = m.Groups[3].Value;
+                var isExternal = href.StartsWith("http");
+                var encodedHref = System.Net.WebUtility.HtmlEncode(href);
+                sb.Append("<a href=\"").Append(encodedHref).Append("\"");
+                sb.Append(" class=\"text-primary underline underline-offset-2 hover:text-primary/80\"");
+                if (isExternal)
+                {
+                    sb.Append(" target=\"_blank\" rel=\"noopener noreferrer\"");
+                }
+                sb.Append(">")
+                  .Append(System.Net.WebUtility.HtmlEncode(label))
+                  .Append("</a>");
+            }
+            last = m.Index + m.Length;
+        }
+        if (last < text.Length)
+        {
+            sb.Append(System.Net.WebUtility.HtmlEncode(text.Substring(last)));
+        }
+        return sb.ToString();
+    }
+
+    // Strip markdown from text for use inside JSON-LD answers
+    string StripMd(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return "";
+        var s = Regex.Replace(text, @"\[([^\]]+)\]\(([^)]+)\)", "$1");
+        s = Regex.Replace(s, @"\*\*([^*]+)\*\*", "$1");
+        return s;
+    }
+
+    // TOC items (text/checklist/faq with heading)
+    var tocItems = blocks
+        .Where(b => !string.IsNullOrEmpty(b.Heading) && b.Type != "table")
+        .Select(b => new { Title = b.Heading, Id = Slugify(b.Heading) })
+        .ToList();
+
+    var coverImageUrl = !string.IsNullOrEmpty(Model.CoverImage)
+        ? (Model.CoverImage.StartsWith("http") ? Model.CoverImage : SITE_URL + Model.CoverImage)
+        : null;
+
+    var datePublished = !string.IsNullOrEmpty(Model.DatePublished) ? Model.DatePublished : "2026-01-01";
+    var dateModified = !string.IsNullOrEmpty(Model.DateModified) ? Model.DateModified : datePublished;
+
+    var jsonOpts = new JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+
+    // Build Article schema
+    var articleSchema = new Dictionary<string, object?>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "Article",
+        ["inLanguage"] = isEn ? "en" : "de-CH",
+        ["headline"] = title,
+        ["description"] = metaDescription,
+        ["image"] = coverImageUrl,
+        ["author"] = new Dictionary<string, object> { ["@type"] = "Organization", ["name"] = "Zürich Endreinigung" },
+        ["publisher"] = new Dictionary<string, object>
+        {
+            ["@type"] = "Organization",
+            ["name"] = "Zürich Endreinigung",
+            ["logo"] = new Dictionary<string, object> { ["@type"] = "ImageObject", ["url"] = SITE_URL + "/favicon.png" }
+        },
+        ["datePublished"] = datePublished,
+        ["dateModified"] = dateModified,
+        ["mainEntityOfPage"] = SITE_URL + canonicalPath
+    };
+
+    // Build Breadcrumb schema
+    var breadcrumbSchema = new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "BreadcrumbList",
+        ["itemListElement"] = new object[]
+        {
+            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = isEn ? "Home" : "Start", ["item"] = SITE_URL + "/" },
+            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = isEn ? "Guide" : "Ratgeber", ["item"] = SITE_URL + "/ratgeber" },
+            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 3, ["name"] = title, ["item"] = SITE_URL + canonicalPath }
+        }
+    };
+
+    // Build FAQ schema (if any FAQs)
+    Dictionary<string, object>? faqSchema = null;
+    if (allFaqs.Count > 0)
+    {
+        faqSchema = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "FAQPage",
+            ["mainEntity"] = allFaqs.Select(f => new Dictionary<string, object>
+            {
+                ["@type"] = "Question",
+                ["name"] = f.Q,
+                ["acceptedAnswer"] = new Dictionary<string, object>
+                {
+                    ["@type"] = "Answer",
+                    ["text"] = StripMd(f.A)
+                }
+            }).ToArray()
+        };
+    }
+
+    // Build HowTo schema
+    Dictionary<string, object>? howToSchema = null;
+    if (howTo != null && howTo.Steps.Count > 0)
+    {
+        howToSchema = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "HowTo",
+            ["name"] = howTo.Name,
+            ["description"] = howTo.Description,
+            ["totalTime"] = howTo.TotalTime,
+            ["step"] = howTo.Steps.Select((s, i) => new Dictionary<string, object>
+            {
+                ["@type"] = "HowToStep",
+                ["position"] = i + 1,
+                ["name"] = s.Name,
+                ["text"] = s.Text
+            }).ToArray()
+        };
+    }
 }
 
 @section Head {
-    <script type="application/ld+json">
+    @if (enPath != null)
     {
-        "@@context": "https://schema.org",
-        "@@type": "Article",
-        "inLanguage": "de-CH",
-        "headline": "@Model.TitleDe",
-        "description": "@description",
-        "image": "https://zurich-endreinigung.ch@Model.CoverImage",
-        "author": { "@@type": "Organization", "name": "Zürich Endreinigung" },
-        "publisher": { "@@type": "Organization", "name": "Zürich Endreinigung", "logo": { "@@type": "ImageObject", "url": "https://zurich-endreinigung.ch/favicon.png" } },
-        "mainEntityOfPage": "https://zurich-endreinigung.ch/ratgeber/@Model.Slug"
+        <link rel="alternate" hreflang="de-CH" href="@(SITE_URL + dePath)" />
+        <link rel="alternate" hreflang="en" href="@(SITE_URL + enPath)" />
+        <link rel="alternate" hreflang="x-default" href="@(SITE_URL + dePath)" />
     }
-    </script>
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="@(isEn ? "en_CH" : "de_CH")" />
+    @if (enPath != null)
+    {
+        <meta property="og:locale:alternate" content="@(isEn ? "de_CH" : "en_CH")" />
+    }
+    @if (coverImageUrl != null)
+    {
+        <meta property="og:image" content="@coverImageUrl" />
+        <meta name="twitter:image" content="@coverImageUrl" />
+    }
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">@Html.Raw(JsonSerializer.Serialize(articleSchema, jsonOpts))</script>
+    <script type="application/ld+json">@Html.Raw(JsonSerializer.Serialize(breadcrumbSchema, jsonOpts))</script>
+    @if (faqSchema != null)
+    {
+        <script type="application/ld+json">@Html.Raw(JsonSerializer.Serialize(faqSchema, jsonOpts))</script>
+    }
+    @if (howToSchema != null)
+    {
+        <script type="application/ld+json">@Html.Raw(JsonSerializer.Serialize(howToSchema, jsonOpts))</script>
+    }
 }
 
 <div class="min-h-screen flex flex-col">
     <article class="flex-1 pt-20 md:pt-[7.75rem] pb-10">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb (visible) -->
+            <nav aria-label="Breadcrumb" class="mb-3 text-xs text-muted-foreground">
+                <ol class="flex flex-wrap items-center gap-1.5">
+                    <li><a href="/" class="hover:text-primary">@(isEn ? "Home" : "Start")</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="/ratgeber" class="hover:text-primary">@(isEn ? "Guide" : "Ratgeber")</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li class="text-foreground/80 line-clamp-1">@title</li>
+                </ol>
+            </nav>
+
             <!-- Back link -->
             <a href="/ratgeber" class="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4 transition-colors">
                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Zurück zum Ratgeber
+                @(isEn ? "Back to guide" : "Zurück zum Ratgeber")
             </a>
 
             <!-- Category badge -->
-            @if (!string.IsNullOrEmpty(Model.CategoryName))
+            @if (!string.IsNullOrEmpty(categoryName))
             {
                 <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-                    @Model.CategoryName
+                    @categoryName
                 </span>
             }
 
-            <!-- Reading time -->
-            <div class="flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
-                <span>@readingTime min Lesezeit</span>
+            <!-- Reading time + last updated + author -->
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
+                <span class="inline-flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+                    @readingTime min @(isEn ? "read" : "Lesezeit")
+                </span>
+                @if (!string.IsNullOrEmpty(updatedDisplay))
+                {
+                    <span class="inline-flex items-center gap-1.5">
+                        <span aria-hidden="true">·</span>
+                        <time datetime="@Model.DateModified">
+                            @(isEn ? "Updated " : "Aktualisiert am ")@updatedDisplay
+                        </time>
+                    </span>
+                }
+                @if (!string.IsNullOrEmpty(authorByline))
+                {
+                    <span class="inline-flex items-center gap-1.5">
+                        <span aria-hidden="true">·</span>
+                        <span>@authorByline</span>
+                    </span>
+                }
             </div>
 
             <!-- Title -->
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-swiss-blue mb-4">
-                @Model.TitleDe
+                @title
             </h1>
 
             <!-- Intro -->
             <p class="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
-                @Model.IntroDe
+                @intro
             </p>
+
+            <!-- Table of contents -->
+            @if (tocItems.Count >= 3)
+            {
+                <nav aria-label="@(isEn ? "Contents" : "Inhalt")" class="bg-muted/40 border border-border rounded-xl p-5 mb-8">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                        @(isEn ? "Contents" : "Inhalt")
+                    </p>
+                    <ol class="space-y-1.5 list-decimal list-inside text-sm">
+                        @foreach (var it in tocItems)
+                        {
+                            <li>
+                                <a href="#@it.Id" class="text-primary hover:underline underline-offset-2">@it.Title</a>
+                            </li>
+                        }
+                    </ol>
+                </nav>
+            }
 
             <!-- Cover image -->
             @if (!string.IsNullOrEmpty(Model.CoverImage))
             {
-                <img src="@Model.CoverImage" alt="@Model.TitleDe" class="w-full rounded-xl mb-8 object-cover max-h-96" />
+                <img src="@Model.CoverImage" alt="@heroAlt" class="w-full rounded-xl mb-8 object-cover max-h-96" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async" />
             }
 
             <!-- Content blocks -->
             <div class="space-y-6">
-                @foreach (var block in Model.Blocks)
+                @foreach (var block in blocks)
                 {
                     if (block.Type == "tip")
                     {
                         <div class="flex gap-3 bg-primary/5 border border-primary/20 rounded-lg p-4">
                             <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0012 2z"/></svg>
                             <div>
-                                <p class="text-sm font-semibold text-primary mb-1">Profi-Tipp</p>
-                                <p class="text-sm text-foreground">@block.Body</p>
+                                <p class="text-sm font-semibold text-primary mb-1">@(isEn ? "Professional Tip" : "Profi-Tipp")</p>
+                                <p class="text-sm text-foreground">@Html.Raw(InlineMd(block.Body))</p>
                             </div>
                         </div>
                     }
@@ -92,27 +357,54 @@
                         <div>
                             @if (!string.IsNullOrEmpty(block.Heading))
                             {
-                                <h2 class="text-xl font-bold text-foreground mb-3 mt-2">@block.Heading</h2>
+                                <h2 id="@Slugify(block.Heading)" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
                             }
                             <div class="bg-muted/50 rounded-lg p-4 space-y-2">
                                 @foreach (var item in block.Items)
                                 {
                                     <div class="flex items-start gap-2">
                                         <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                        <span class="text-sm text-foreground">@item</span>
+                                        <span class="text-sm text-foreground">@Html.Raw(InlineMd(item))</span>
                                     </div>
                                 }
                             </div>
                         </div>
+                    }
+                    else if (block.Type == "faq" && block.Faqs.Count > 0)
+                    {
+                        var sectionId = !string.IsNullOrEmpty(block.Heading) ? Slugify(block.Heading) : null;
+                        <section aria-labelledby="@sectionId">
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h2 id="@sectionId" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
+                            }
+                            <div class="w-full divide-y divide-border border border-border rounded-lg">
+                                @foreach (var f in block.Faqs)
+                                {
+                                    <details class="group">
+                                        <summary class="flex items-center justify-between cursor-pointer px-4 py-3 hover:bg-muted/30 transition-colors list-none [&::-webkit-details-marker]:hidden">
+                                            <h3 class="text-base font-semibold text-foreground m-0">@f.Q</h3>
+                                            <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+                                        </summary>
+                                        <div class="px-4 pb-4">
+                                            <p class="text-foreground/90 leading-relaxed">@Html.Raw(InlineMd(f.A))</p>
+                                        </div>
+                                    </details>
+                                }
+                            </div>
+                        </section>
                     }
                     else
                     {
                         <div>
                             @if (!string.IsNullOrEmpty(block.Heading))
                             {
-                                <h2 class="text-xl font-bold text-foreground mb-3 mt-2">@block.Heading</h2>
+                                <h2 id="@Slugify(block.Heading)" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
                             }
-                            <p class="text-foreground leading-relaxed">@block.Body</p>
+                            @if (!string.IsNullOrEmpty(block.Body))
+                            {
+                                <p class="text-foreground leading-relaxed">@Html.Raw(InlineMd(block.Body))</p>
+                            }
                         </div>
                     }
                 }
@@ -123,14 +415,16 @@
             <!-- CTA -->
             <div class="mt-10 bg-primary/5 border border-primary/20 rounded-xl p-5 md:p-8 text-center">
                 <h2 class="text-lg font-bold text-foreground mb-2">
-                    Professionelle Reinigung gewünscht?
+                    @(isEn ? "Want a professional clean?" : "Professionelle Reinigung gewünscht?")
                 </h2>
                 <p class="text-sm text-muted-foreground mb-4">
-                    Jetzt kostenloses und unverbindliches Angebot einholen.
+                    @(isEn
+                        ? "Check our fixed prices for end-of-lease cleaning in Zürich in just 30 seconds with our online calculator."
+                        : "Prüfen Sie unsere Fixpreise für die Endreinigung in Zürich – in nur 30 Sekunden mit unserem Online-Kostenrechner.")
                 </p>
-                <a href="tel:+41765017738" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Angebot anfordern
+                <a href="/calculator" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/></svg>
+                    @(isEn ? "See Fixed Price Now" : "Jetzt Fixpreis sehen")
                 </a>
             </div>
         </div>
