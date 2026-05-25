@@ -25,19 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59fbdc09-701e-4976-9490-66931929c85a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EndreinigungZurich/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EndreinigungZurich/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.lovable-sync" beforeDir="false" afterPath="$PROJECT_DIR$/.lovable-sync" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/App_Data/ratgeber-articles.json" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/App_Data/ratgeber-articles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/EndReinigung.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/EndReinigung.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Models/RatgeberArticleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Models/RatgeberArticleData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.de.resx" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.de.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.en.resx" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Resources/SharedResource.en.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/Ratgeber.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/Ratgeber.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/Views/Home/RatgeberArticle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/Views/Home/RatgeberArticle.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndReinigung/wwwroot/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EndReinigung/wwwroot/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rich-lease-shine" beforeDir="false" afterPath="$PROJECT_DIR$/rich-lease-shine" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +235,7 @@
       <updated>1775828712246</updated>
       <workItem from="1775828714531" duration="301000" />
       <workItem from="1778842967145" duration="69000" />
-      <workItem from="1779568855232" duration="2615000" />
+      <workItem from="1779568855232" duration="3805000" />
     </task>
     <servers />
   </component>

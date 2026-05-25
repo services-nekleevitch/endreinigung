@@ -10,8 +10,25 @@
         <meta name="keywords" content="@ViewData["Keywords"]" />
     }
     @{
-        var canonicalUrl = (string)(ViewData["Canonical"] ?? "https://zurich-endreinigung.ch/");
+        const string siteUrl = "https://zurich-endreinigung.ch";
+        var requestPath = Context.Request.Path.Value ?? "/";
+        var normalizedPath = requestPath.Length > 1 ? requestPath.TrimEnd('/') : "/";
+        var rawCanonicalUrl = (string)(ViewData["Canonical"] ?? siteUrl + normalizedPath);
+        var canonicalUrl = rawCanonicalUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+            ? rawCanonicalUrl
+            : siteUrl + (rawCanonicalUrl.StartsWith("/") ? rawCanonicalUrl : "/" + rawCanonicalUrl);
         var canonicalBase = canonicalUrl.Contains('?') ? canonicalUrl.Substring(0, canonicalUrl.IndexOf('?')) : canonicalUrl;
+        var languageAlternates = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["/airbnb-reinigung-zuerich"] = "/en/airbnb-cleaning-zurich",
+            ["/polsterreinigung"] = "/en/upholstery-cleaning-zurich",
+            ["/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026"] = "/en/guide/apartment-handover-checklist-zurich-2026"
+        };
+        var reverseAlternates = languageAlternates.ToDictionary(kvp => kvp.Value, kvp => kvp.Key, StringComparer.OrdinalIgnoreCase);
+        var deAlternatePath = languageAlternates.ContainsKey(normalizedPath) ? normalizedPath : reverseAlternates.GetValueOrDefault(normalizedPath);
+        var enAlternatePath = languageAlternates.GetValueOrDefault(normalizedPath)
+            ?? (reverseAlternates.ContainsKey(normalizedPath) ? normalizedPath : null);
+        var hasCustomHreflang = (bool?)ViewData["HasCustomHreflang"] == true;
         var hasQuery = Context.Request.Query.Any();
     }
     @if (hasQuery)
@@ -19,6 +36,12 @@
         <meta name="robots" content="noindex,follow" />
     }
     <link rel="canonical" href="@canonicalBase" />
+    @if (!hasCustomHreflang && !string.IsNullOrEmpty(deAlternatePath) && !string.IsNullOrEmpty(enAlternatePath))
+    {
+        <link rel="alternate" hreflang="de-CH" href="@(siteUrl + deAlternatePath)" />
+        <link rel="alternate" hreflang="en" href="@(siteUrl + enAlternatePath)" />
+        <link rel="alternate" hreflang="x-default" href="@(siteUrl + deAlternatePath)" />
+    }
 
     <!-- Open Graph -->
     <meta property="og:title" content="@(ViewData["Title"] ?? "Endreinigung Zürich | 100% Abnahmegarantie")" />

@@ -28,6 +28,7 @@
     ViewData["Title"] = metaTitle;
     ViewData["Description"] = metaDescription;
     ViewData["Canonical"] = SITE_URL + canonicalPath;
+    ViewData["HasCustomHreflang"] = enPath != null;
     ViewData["Keywords"] = isEn
         ? $"guide cleaning Zurich, {categoryName}, end of tenancy cleaning Zurich"
         : $"Ratgeber Endreinigung, {categoryName}, Endreinigung Zürich";
