@@ -3,6 +3,7 @@
   <!-- Main pages -->
   <url>
     <loc>https://zurich-endreinigung.ch/</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -10,41 +11,49 @@
   <!-- Pillar Hubs (Topic Cluster anchors) -->
   <url>
     <loc>https://zurich-endreinigung.ch/spezialreinigung</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/gewerbereinigung</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/standorte</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/hochdruckreinigung-zuerich</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/calculator</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/extra-services</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/abnahmegarantie</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -70,71 +79,79 @@
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-kosten-zuerich</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/kaution-zurueckbekommen-abnahme</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-selber-machen-oder-firma</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/hauswart-abnahme-pruefung</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/endreinigung-tipps-expats-zuerich</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/baureinigung-zuerich-kosten</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/polsterreinigung-zuerich-preise-2026</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/fensterreinigung-zuerich-tipps-preise</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/umzug-zuerich-checkliste-2026</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ratgeber/abmeldung-gemeinde-umzug-schweiz</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/faq</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/ueber-uns</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zurich-endreinigung.ch/garantie</loc>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/lp2</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -142,6 +159,7 @@
   <!-- Umzugsreinigung -->
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-zuerich</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -149,79 +167,92 @@
   <!-- Service pages -->
   <url>
     <loc>https://zurich-endreinigung.ch/baureinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/baureinigung-calculator</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Baureinigung Bezirk landing pages -->
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/affoltern</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/andelfingen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/buelach</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/dielsdorf</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/dietikon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/hinwil</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/horgen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/meilen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/pfaeffikon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/uster</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/winterthur</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/baureinigung/zuerich</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/affoltern</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/andelfingen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/buelach</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/dielsdorf</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/dietikon</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/hinwil</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/horgen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/meilen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/pfaeffikon</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/uster</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/winterthur</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/baureinigung/zuerich</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url>
     <loc>https://zurich-endreinigung.ch/fensterreinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/polsterreinigung</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/teppichreinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/matratzenreinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/grundreinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/tapeten-entfernen</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/bueroreinigung</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/praxisreinigung-zuerich</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/airbnb-reinigung-zuerich</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/event-reinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/boot-reinigung</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -229,31 +260,34 @@
   <!-- Seasonal -->
   <url>
     <loc>https://zurich-endreinigung.ch/fruehlingsputz-zuerich</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Frühlingsputz Bezirk landing pages -->
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-affoltern</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-andelfingen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-buelach</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dielsdorf</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dietikon</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-hinwil</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-horgen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-meilen</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-pfaeffikon</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-uster</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-winterthur</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-zuerich</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-affoltern</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-andelfingen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-buelach</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dielsdorf</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-dietikon</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-hinwil</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-horgen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-meilen</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-pfaeffikon</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-uster</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-winterthur</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zurich-endreinigung.ch/fruehlingsputz-bezirk-zuerich</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- English pages -->
   <url>
     <loc>https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/en/upholstery-cleaning-zurich</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -261,61 +295,73 @@
   <!-- Bezirk landing pages -->
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-horgen</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-affoltern</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-andelfingen</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-buelach</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dielsdorf</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-dietikon</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-hinwil</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-meilen</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-pfaeffikon</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-uster</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/umzugsreinigung-bezirk-winterthur</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -323,16 +369,19 @@
   <!-- Legal -->
   <url>
     <loc>https://zurich-endreinigung.ch/agb</loc>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/datenschutz</loc>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zurich-endreinigung.ch/impressum</loc>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

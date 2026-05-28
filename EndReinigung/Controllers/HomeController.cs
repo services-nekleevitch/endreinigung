@@ -97,10 +97,7 @@ namespace EndReinigung.Controllers
         }
 
         [Route("garantie")]
-        public IActionResult Garantie()
-        {
-            return View();
-        }
+        public IActionResult Garantie() => RedirectPermanent("/abnahmegarantie");
 
         [Route("impressum")]
         public IActionResult Impressum()
@@ -516,6 +513,12 @@ namespace EndReinigung.Controllers
 
         [Route("umzugsreinigung-bezirk-horgen")]
         public IActionResult UmzugsreinigungBezirkHorgen() => View("BezirkHorgen");
+
+        [Route("preise")]
+        public IActionResult PreiseRedirect() => RedirectPermanent("/#pakete");
+
+        [Route("einsatzgebiete")]
+        public IActionResult EinsatzgebieteRedirect() => RedirectPermanent("/standorte");
 
         [Route("abgabegarantie")]
         public IActionResult AbgabegarantieRedirect() => RedirectPermanent("/abnahmegarantie");
