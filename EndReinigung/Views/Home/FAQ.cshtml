@@ -5,6 +5,50 @@
     ViewData["Keywords"] = "Endreinigung FAQ, Umzugsreinigung Fragen, Abnahmegarantie FAQ, Endreinigung Kosten Zürich";
 }
 
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "inLanguage": "de-CH",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Wie viel kostet eine Endreinigung in Zürich?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Die Kosten für eine professionelle Endreinigung in Zürich beginnen bei CHF 550 für eine 1- bis 1.5-Zimmer-Wohnung. Der Festpreis richtet sich nach Wohnungsgrösse und Zusatzleistungen."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Ist die Abnahmegarantie wirklich sicher?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Wir sind persönlich bei der Wohnungsübergabe anwesend und bessern beanstandete Reinigungspunkte kostenlos nach, bis die Abnahme unterschrieben ist."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wie kurzfristig kann ich einen Termin buchen?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "In der Regel können wir innerhalb von 48 Stunden einen Termin anbieten. Bei hoher Nachfrage empfehlen wir eine Buchung mindestens eine Woche im Voraus."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Sprechen Sie Englisch?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja. Unser Team spricht Deutsch und Englisch und unterstützt Expats in Zürich beim kompletten Endreinigungs- und Übergabeprozess."
+                }
+            }
+        ]
+    }
+    </script>
+}
+
 <div class="pt-16 md:pt-[6.25rem]">
     @await Html.PartialAsync("_LP2FAQ")
 </div>

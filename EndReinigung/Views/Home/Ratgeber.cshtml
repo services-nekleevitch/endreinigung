@@ -1,22 +1,28 @@
 @using EndReinigung.Models
+@using System.Globalization
 @{
-    ViewData["Title"] = "Ratgeber Endreinigung 2026 ✓ Übergabe, Kosten, Checklisten";
-    ViewData["Description"] = "Praktische Tipps, Checklisten und Ratgeber rund um Endreinigung, Wohnungsabgabe und Umzug im Kanton Zürich.";
+    var isEn = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    ViewData["Title"] = SharedLocalizer["ratgeber.meta_title"].Value;
+    ViewData["Description"] = SharedLocalizer["ratgeber.meta_description"].Value;
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/ratgeber";
-    ViewData["Keywords"] = "Ratgeber Endreinigung, Umzug Tipps Zürich, Checkliste Wohnungsabgabe, Endreinigung Tipps";
+    ViewData["Keywords"] = SharedLocalizer["ratgeber.meta_keywords"].Value;
 
     var articles = RatgeberArticleData.All;
     var categories = articles
-        .Select(a => new { a.CategorySlug, a.CategoryName })
+        .Select(a => new { a.CategorySlug, NameDe = a.CategoryName, NameEn = a.CategoryNameEn })
         .GroupBy(c => c.CategorySlug)
         .Select(g => g.First())
-        .OrderBy(c => c.CategoryName)
+        .Select(c => new { c.CategorySlug, Name = isEn && !string.IsNullOrEmpty(c.NameEn) ? c.NameEn : c.NameDe })
+        .OrderBy(c => c.Name)
         .ToList();
 
     int ReadingTime(RatgeberArticle a)
     {
+        if (a.ReadingTimeMinutes.HasValue && a.ReadingTimeMinutes.Value > 0)
+            return a.ReadingTimeMinutes.Value;
+        var blocks = isEn && a.BlocksEn.Count > 0 ? a.BlocksEn : a.Blocks;
         int words = 0;
-        foreach (var b in a.Blocks)
+        foreach (var b in blocks)
         {
             if (!string.IsNullOrEmpty(b.Body))
                 words += b.Body.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
@@ -25,6 +31,18 @@
         }
         return Math.Max(1, (int)Math.Round(words / 200.0));
     }
+
+    string ArticleHref(RatgeberArticle a)
+        => isEn && !string.IsNullOrEmpty(a.EnSlug) ? $"/en/guide/{a.EnSlug}" : $"/ratgeber/{a.Slug}";
+
+    string ArticleTitle(RatgeberArticle a)
+        => isEn && !string.IsNullOrEmpty(a.TitleEn) ? a.TitleEn : a.TitleDe;
+
+    string ArticleIntro(RatgeberArticle a)
+        => isEn && !string.IsNullOrEmpty(a.IntroEn) ? a.IntroEn : a.IntroDe;
+
+    string ArticleCategory(RatgeberArticle a)
+        => isEn && !string.IsNullOrEmpty(a.CategoryNameEn) ? a.CategoryNameEn : a.CategoryName;
 }
 
 <div class="min-h-screen flex flex-col">
@@ -32,10 +50,10 @@
     <section class="pt-20 md:pt-[7.75rem] pb-6 md:pb-10 bg-gradient-to-b from-secondary to-background">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
-                Reinigungsratgeber
+                @SharedLocalizer["ratgeber.h1"]
             </h1>
             <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                Professionelle Tipps &amp; Tricks für die perfekte Endreinigung in Zürich — Sichern Sie Ihre Kaution mit unserer Schritt-für-Schritt Anleitung.
+                @SharedLocalizer["ratgeber.intro"]
             </p>
         </div>
     </section>
@@ -48,7 +66,7 @@
                     data-cat=""
                     class="ratgeber-chip px-3 py-1.5 rounded-full text-sm font-medium transition-colors border bg-primary text-primary-foreground border-primary"
                     aria-pressed="true">
-                Alle
+                @SharedLocalizer["ratgeber.filter_all"]
             </button>
             @foreach (var cat in categories)
             {
@@ -56,7 +74,7 @@
                         data-cat="@cat.CategorySlug"
                         class="ratgeber-chip px-3 py-1.5 rounded-full text-sm font-medium transition-colors border bg-card text-muted-foreground border-border hover:border-primary hover:text-primary"
                         aria-pressed="false">
-                    @cat.CategoryName
+                    @cat.Name
                 </button>
             }
         </div>
@@ -65,26 +83,27 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="ratgeber-grid">
             @foreach (var article in articles)
             {
-                <a href="/ratgeber/@article.Slug"
+                var title = ArticleTitle(article);
+                <a href="@ArticleHref(article)"
                    data-cat="@article.CategorySlug"
                    class="ratgeber-card group flex flex-col bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="aspect-[16/9] bg-muted flex items-center justify-center overflow-hidden">
-                        <img src="@article.CoverImage" alt="@article.TitleDe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <img src="@article.CoverImage" alt="@title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div class="p-4 sm:p-5 flex flex-col flex-1">
                         <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                            @article.CategoryName
+                            @ArticleCategory(article)
                         </span>
                         <div class="flex items-center gap-2 text-xs text-muted-foreground mb-2">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
-                            <span>@ReadingTime(article) min Lesezeit</span>
+                            <span>@ReadingTime(article) @SharedLocalizer["ratgeber.reading_time_suffix"]</span>
                         </div>
                         <h3 class="text-base sm:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                            @article.TitleDe
+                            @title
                         </h3>
-                        <p class="text-sm text-muted-foreground line-clamp-3 flex-1">@article.IntroDe</p>
+                        <p class="text-sm text-muted-foreground line-clamp-3 flex-1">@ArticleIntro(article)</p>
                         <div class="mt-3 flex items-center text-primary text-sm font-medium">
-                            Weiterlesen
+                            @SharedLocalizer["ratgeber.read_more"]
                             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </div>
@@ -95,14 +114,14 @@
         <!-- CTA -->
         <div class="mt-10 md:mt-14 bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
             <h2 class="text-lg sm:text-xl font-bold text-foreground mb-2">
-                Professionelle Hilfe gewünscht?
+                @SharedLocalizer["ratgeber.cta_title"]
             </h2>
             <p class="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
-                Unsere Reinigungsexperten beraten Sie gerne — kostenlos und unverbindlich.
+                @SharedLocalizer["ratgeber.cta_body"]
             </p>
             <a href="tel:+41765017738" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Jetzt kontaktieren
+                @SharedLocalizer["ratgeber.cta_button"]
             </a>
         </div>
     </main>

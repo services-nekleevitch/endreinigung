@@ -1,10 +1,25 @@
 [
   {
     "slug": "wohnungsuebergabe-checkliste-zuerich-2026",
+    "enSlug": "apartment-handover-checklist-zurich-2026",
     "categorySlug": "checklisten",
     "categoryName": "Checklisten",
+    "categoryNameEn": "Checklists",
     "titleDe": "Wohnungsübergabe Checkliste Zürich 2026 — So bestehen Sie die Abnahme garantiert",
+    "titleEn": "Apartment Handover Checklist Zurich 2026 — Pass Your Inspection, Guaranteed",
     "introDe": "Die Wohnungsübergabe steht bevor — und damit die Frage: Ist meine Wohnung wirklich sauber genug? In Zürich sind Hauswarte bekannt dafür, bei der Abnahme sehr genau hinzuschauen. Kratzer am Boden, Kalkflecken im Bad oder Fettspritzer hinter dem Herd können dazu führen, dass Ihre Kaution einbehalten wird. Mit unserer bewährten Checkliste 2026 gehen Sie auf Nummer sicher und bestehen die Abnahme garantiert.",
+    "introEn": "Your apartment handover is coming up — and with it the big question: is my apartment really clean enough? In Zurich, building caretakers (Hauswarte) are notoriously thorough during the final inspection. Scratched floors, limescale in the bathroom, or grease behind the stove can all cost you part of your deposit. Use our proven 2026 checklist to walk in prepared and pass the inspection on the first try.",
+    "metaTitleDe": "Wohnungsübergabe Checkliste Zürich 2026 | Abnahme bestehen & Kaution sichern",
+    "metaTitleEn": "Apartment Handover Checklist Zurich 2026 | Pass Your Inspection",
+    "metaDescriptionDe": "Wohnungsübergabe Checkliste Zürich 2026: Küche, Bad, Fenster & Wohnräume Schritt für Schritt. Plus Profi-Tipps, FAQ und 100% Abnahmegarantie.",
+    "metaDescriptionEn": "The ultimate apartment handover checklist for Zurich expats. Kitchen, bathroom, windows & more — pass your Swiss apartment inspection and get your deposit back. Free guide.",
+    "authorBylineDe": "Von Zürich Endreinigung · Reinigungsexperten in Zürich",
+    "authorBylineEn": "By Zurich Endreinigung · Cleaning experts in Zurich",
+    "heroAltDe": "Wohnungsübergabe-Protokoll und Checkliste auf Tisch in Zürcher Wohnung",
+    "heroAltEn": "Apartment handover protocol and checklist on a table in a Zurich apartment",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-05-20",
+    "readingTimeMinutes": 6,
     "coverImage": "/img/ratgeber/wohnungsuebergabe-checkliste.jpg",
     "blocks": [
       {
@@ -74,7 +89,7 @@
       {
         "type": "text",
         "heading": "Profi oder selber reinigen?",
-        "body": "Grundsätzlich können Sie die Endreinigung selbst durchführen — vorausgesetzt, Sie haben genug Zeit, die richtigen Reinigungsmittel und ein gutes Auge für Details. Wer jedoch auf Nummer sicher gehen will, ist mit einer professionellen Endreinigung bestens beraten. Bei Zurich Endreinigung erhalten Sie eine 100% Abnahmegarantie: Sollte der Hauswart Mängel finden, kommen wir kostenlos zurück und bessern nach.",
+        "body": "Eine 3-Zimmer-Wohnung selbst zu reinigen dauert in Zürich erfahrungsgemäss 8–12 Stunden. Eine professionelle Endreinigung bei Zurich Endreinigung kostet 2026 je nach Wohnungsgrösse ab CHF 500 für eine 1-Zimmer-Wohnung bis ab CHF 1'350 für eine 6.5-Zimmer-Wohnung — eine durchschnittliche 3-Zimmer-Wohnung erhalten Sie zum Fixpreis ab CHF 800 inklusive 100% Abnahmegarantie. Grundsätzlich können Sie die Endreinigung selbst durchführen — vorausgesetzt, Sie haben genug Zeit, die richtigen Reinigungsmittel und ein gutes Auge für Details. Wer jedoch auf Nummer sicher gehen will, ist mit einer professionellen Endreinigung bestens beraten. Bei [Zürich Endreinigung](/) erhalten Sie eine 100% [Abnahmegarantie](/abnahmegarantie): Sollte der Hauswart Mängel finden, kommen wir kostenlos zurück und bessern nach.",
         "items": []
       },
       {
@@ -82,8 +97,140 @@
         "heading": "",
         "body": "Machen Sie vor und nach der Reinigung Fotos von jedem Raum — das dient als Nachweis gegenüber dem Vermieter und schützt Ihre Kaution.",
         "items": []
+      },
+      {
+        "type": "faq",
+        "heading": "Häufige Fragen zur Wohnungsübergabe in Zürich",
+        "body": "",
+        "items": [],
+        "faqs": [
+          { "q": "Wie viel Kaution darf der Vermieter in Zürich einbehalten?", "a": "Der Vermieter darf nur Kosten für Schäden einbehalten, die über die normale Abnutzung hinausgehen. Die Kaution muss in der Schweiz auf einem Sperrkonto liegen und innerhalb eines Jahres nach Auszug freigegeben werden, sofern keine berechtigten Forderungen bestehen." },
+          { "q": "Was zählt als normale Abnutzung und was als Schaden?", "a": "Normale Abnutzung sind kleine Gebrauchsspuren wie verblasste Wandfarbe nach 10 Jahren oder leichte Kratzer im Parkett. Schäden sind Bohrlöcher, Brandflecken, kaputte Fliesen oder Wasserschäden — diese muss der Mieter ersetzen." },
+          { "q": "Muss ich den Backofen pyrolytisch reinigen lassen?", "a": "Nein, eine gründliche manuelle Reinigung mit Backofenreiniger reicht aus. Wichtig ist, dass keine Fettrückstände, eingebrannten Stellen oder Verschmutzungen sichtbar sind — auch nicht an Backblechen, Gitterrost und Dichtungen." },
+          { "q": "Was kostet eine professionelle Endreinigung in Zürich 2026?", "a": "Bei Zurich Endreinigung zahlen Sie einen transparenten Fixpreis abhängig von der Wohnungsgrösse: 1-Zimmer ab CHF 500, 2-Zimmer ab CHF 600, 3-Zimmer ab CHF 800, 3.5-Zimmer ab CHF 850, 4.5-Zimmer ab CHF 970, 5.5-Zimmer ab CHF 1'150, 6.5-Zimmer ab CHF 1'350. Alle Preise verstehen sich inklusive Material, Anfahrt und 100% Abnahmegarantie — ohne versteckte Zusatzkosten." },
+          { "q": "Wie lange dauert eine Wohnungsübergabe in Zürich?", "a": "Eine durchschnittliche Wohnungsübergabe dauert 45–90 Minuten. Bei grösseren Wohnungen oder strittigen Mängeln kann sie bis zu 2 Stunden in Anspruch nehmen. Planen Sie Pufferzeit ein." },
+          { "q": "Was passiert, wenn der Hauswart Mängel findet?", "a": "Mängel werden im Übergabeprotokoll festgehalten. Der Mieter erhält in der Regel 3–7 Tage Zeit zur Nachbesserung. Bei einer professionellen Endreinigung mit [Abnahmegarantie](/abnahmegarantie) übernimmt die Firma die Nachbesserung kostenlos." },
+          { "q": "Welche Unterlagen muss ich zur Wohnungsübergabe mitbringen?", "a": "Mietvertrag, alle Schlüssel inklusive Briefkasten und Keller, Zählerstände (Strom, Wasser, Gas), ein leeres Übergabeprotokoll, Einzugsfotos falls vorhanden, und eine Taschenlampe für dunkle Ecken." },
+          { "q": "An wen wende ich mich bei Streit über die Wohnungsabnahme?", "a": "Die Schlichtungsbehörde in Mietsachen des Kantons Zürich ist die erste Anlaufstelle (Telefon 044 412 94 94). Das Verfahren ist kostenlos und meist effektiver als ein direkter Gerichtsgang." }
+        ]
       }
-    ]
+    ],
+    "blocksEn": [
+      {
+        "type": "text",
+        "heading": "What does the caretaker actually check?",
+        "body": "During an apartment handover in Zurich, the caretaker inspects six core areas in this order: floors, walls, kitchen, bathroom, windows, and sanitary fixtures — paying special attention to limescale, grease, and scratches. The Hauswart works through your apartment systematically. They check floors for scratches and stains, walls for holes and discoloration, and inspect the kitchen and bathroom for hygiene. Limescale on faucets, the condition of the oven and fridge, and the cleanliness of windows are scrutinized particularly closely. Baseboards, light switches, and power sockets are also examined. Most tenants underestimate how detailed this inspection is — and lose part of their deposit because of it. Being well-prepared saves you both stress and money.",
+        "items": []
+      },
+      {
+        "type": "checklist",
+        "heading": "Kitchen Checklist",
+        "body": "",
+        "items": [
+          "Degrease oven inside and out, including racks and trays",
+          "Clean stovetop and extractor hood (replace filter if needed)",
+          "Empty, defrost, and clean the fridge and freezer",
+          "Descale and polish sink and faucets",
+          "Wipe down cabinets inside and out",
+          "Streak-free clean of all countertops",
+          "Mop floor, including underneath appliances",
+          "Remove grease splashes from tile backsplash"
+        ]
+      },
+      {
+        "type": "checklist",
+        "heading": "Bathroom Checklist",
+        "body": "",
+        "items": [
+          "Descale and clean shower and bathtub",
+          "Thoroughly clean toilet inside and out, including the base",
+          "Polish sink and faucets",
+          "Check grout lines for mold and clean",
+          "Streak-free clean of mirrors",
+          "Wipe down all surfaces and fixtures",
+          "Mop floor thoroughly",
+          "Check drains for clogs"
+        ]
+      },
+      {
+        "type": "checklist",
+        "heading": "Living Areas Checklist",
+        "body": "",
+        "items": [
+          "Vacuum and mop all floors",
+          "Dust baseboards",
+          "Fill holes in walls and touch up paint",
+          "Clean light switches and power sockets",
+          "Dust radiators",
+          "Wipe out built-in wardrobes",
+          "Clean window frames and sills",
+          "Sweep and clean balcony or terrace"
+        ]
+      },
+      {
+        "type": "checklist",
+        "heading": "Windows & Blinds Checklist",
+        "body": "",
+        "items": [
+          "Streak-free clean of all windows, inside and out",
+          "Clean window frames and rubber seals",
+          "Wipe down window sills inside and out",
+          "Dust blinds slat by slat",
+          "Check that roller blinds operate smoothly",
+          "Clean or remove fly screens"
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Professional clean vs. DIY?",
+        "body": "Cleaning a 3-room apartment yourself in Zurich typically takes 8–12 hours. A professional end-of-tenancy clean from [Zurich Endreinigung](/) starts at CHF 500 for a 1-room apartment and goes up to CHF 1,350 for a 6.5-room apartment in 2026 — a typical 3-room apartment is a fixed price from CHF 800, including a 100% handover guarantee. You can absolutely do the final clean yourself — provided you have the time, the right products, and a sharp eye for detail. But if you want certainty, a [professional end-of-tenancy cleaning service](/umzugsreinigung-zuerich) is your safer bet. At Zurich Endreinigung we offer a [100% handover guarantee](/abnahmegarantie): if the caretaker finds any issues during the inspection, we come back and fix them at no extra cost. You only sign off when the handover protocol is signed.",
+        "items": []
+      },
+      {
+        "type": "tip",
+        "heading": "",
+        "body": "Take photos of every room before AND after cleaning. These serve as proof toward your landlord and protect your deposit if any disputes arise later.",
+        "items": []
+      },
+      {
+        "type": "faq",
+        "heading": "Frequently asked questions about apartment handover in Zurich",
+        "body": "",
+        "items": [],
+        "faqs": [
+          { "q": "How much of my deposit can the landlord keep?", "a": "Your landlord can only keep money for damage that goes beyond normal wear and tear. In Switzerland, your deposit must sit in a separate escrow account (Mietzinskaution) and must be released within one year of moving out, unless there are legitimate claims against it." },
+          { "q": "What counts as normal wear and tear versus damage?", "a": "Normal wear and tear means minor traces of use — faded wall paint after 10 years, light scuffs on parquet floors. Damage means drill holes, burn marks, broken tiles, or water damage — these are the tenant's responsibility to repair or pay for." },
+          { "q": "Do I need to use the oven's self-cleaning (pyrolytic) function?", "a": "No. A thorough manual clean with a good oven cleaner is sufficient. What matters is that no grease residue, burnt-on stains, or visible dirt remain — including on the baking trays, grill rack, and door seal." },
+          { "q": "What does a professional end-of-tenancy clean cost in Zurich in 2026?", "a": "At Zurich Endreinigung you pay a transparent fixed price based on apartment size: 1-room from CHF 500, 2-room from CHF 600, 3-room from CHF 800, 3.5-room from CHF 850, 4.5-room from CHF 970, 5.5-room from CHF 1,150, 6.5-room from CHF 1,350. All prices include cleaning supplies, travel, and a 100% handover guarantee — with no hidden fees." },
+          { "q": "How long does an apartment handover in Zurich take?", "a": "A typical handover takes 45–90 minutes. For larger apartments or when there are disputed defects, it can stretch to 2 hours. Always plan a buffer in your schedule." },
+          { "q": "What happens if the caretaker finds problems?", "a": "Any defects are recorded in the handover protocol (Übergabeprotokoll). The tenant is usually given 3–7 days to fix them. If you booked a professional clean with a [100% handover guarantee](/abnahmegarantie), the cleaning company handles these corrections at no extra cost." },
+          { "q": "What documents do I need to bring to the handover?", "a": "Bring your rental contract, all keys (including mailbox, basement, laundry room), final meter readings (electricity, water, gas), a blank copy of the handover protocol, photos from your move-in day if you have them, and a flashlight for checking dark corners." },
+          { "q": "Who do I contact if there's a dispute about the handover?", "a": "The Cantonal Conciliation Authority for Rental Matters (Schlichtungsbehörde in Mietsachen) in Zurich is your first point of contact — phone 044 412 94 94. The procedure is free of charge and usually faster and more effective than going to court." }
+        ]
+      }
+    ],
+    "howToDe": {
+      "name": "Wohnung in Zürich auf die Abnahme vorbereiten",
+      "description": "Schritt-für-Schritt-Anleitung, um die Wohnungsübergabe in Zürich erfolgreich zu bestehen.",
+      "totalTime": "PT10H",
+      "steps": [
+        { "name": "Küche reinigen", "text": "Backofen entfetten, Herdplatten und Dunstabzug reinigen, Kühlschrank ausräumen und abtauen, Spüle entkalken, Schränke auswischen, Arbeitsflächen streifenfrei reinigen, Boden wischen, Fliesenspiegel von Fettspritzern befreien." },
+        { "name": "Badezimmer reinigen", "text": "Dusche und Badewanne entkalken, Toilette putzen, Waschbecken und Armaturen polieren, Fugen auf Schimmel prüfen, Spiegel wischen, Boden wischen, Abflüsse auf Verstopfung prüfen." },
+        { "name": "Wohnräume reinigen", "text": "Alle Böden saugen und wischen, Sockelleisten abstauben, Löcher in Wänden zuspachteln, Lichtschalter und Steckdosen reinigen, Heizkörper entstauben, Einbauschränke auswischen, Fensterbänke reinigen, Balkon fegen." },
+        { "name": "Fenster und Jalousien reinigen", "text": "Alle Fenster innen und aussen streifenfrei putzen, Rahmen und Dichtungen reinigen, Fensterbänke abwischen, Jalousien Lamelle für Lamelle entstauben, Rollläden auf Funktion prüfen, Fliegengitter reinigen." }
+      ]
+    },
+    "howToEn": {
+      "name": "Prepare your Zurich apartment for the final handover inspection",
+      "description": "Step-by-step guide to passing your apartment handover in Zurich and securing your full deposit back.",
+      "totalTime": "PT10H",
+      "steps": [
+        { "name": "Clean the kitchen", "text": "Degrease the oven, clean stovetop and extractor hood, empty and defrost the fridge, descale sink and faucets, wipe cabinets inside and out, clean countertops, mop floor under appliances, remove grease from tile backsplash." },
+        { "name": "Clean the bathroom", "text": "Descale shower and bathtub, clean the toilet thoroughly, polish sink and faucets, check grout lines for mold, clean mirrors streak-free, mop the floor, check drains for clogs." },
+        { "name": "Clean living areas", "text": "Vacuum and mop all floors, dust baseboards, fill wall holes and touch up paint, clean light switches and sockets, dust radiators, wipe built-in wardrobes, clean window sills, sweep balcony or terrace." },
+        { "name": "Clean windows and blinds", "text": "Clean all windows streak-free inside and out, clean frames and rubber seals, wipe window sills, dust blinds slat by slat, check roller blind operation, clean or remove fly screens." }
+      ]
+    }
   },
   {
     "slug": "endreinigung-kosten-zuerich",

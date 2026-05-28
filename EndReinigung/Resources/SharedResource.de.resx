@@ -925,4 +925,37 @@
   <data name="cookie.more_info" xml:space="preserve">
     <value>Datenschutzerklärung lesen</value>
   </data>
+  <data name="ratgeber.meta_title" xml:space="preserve">
+    <value>Ratgeber Endreinigung 2026 ✓ Übergabe, Kosten, Checklisten</value>
+  </data>
+  <data name="ratgeber.meta_description" xml:space="preserve">
+    <value>Praktische Tipps, Checklisten und Ratgeber rund um Endreinigung, Wohnungsabgabe und Umzug im Kanton Zürich.</value>
+  </data>
+  <data name="ratgeber.meta_keywords" xml:space="preserve">
+    <value>Ratgeber Endreinigung, Umzug Tipps Zürich, Checkliste Wohnungsabgabe, Endreinigung Tipps</value>
+  </data>
+  <data name="ratgeber.h1" xml:space="preserve">
+    <value>Reinigungsratgeber</value>
+  </data>
+  <data name="ratgeber.intro" xml:space="preserve">
+    <value>Professionelle Tipps &amp; Tricks für die perfekte Endreinigung in Zürich — Sichern Sie Ihre Kaution mit unserer Schritt-für-Schritt Anleitung.</value>
+  </data>
+  <data name="ratgeber.filter_all" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="ratgeber.reading_time_suffix" xml:space="preserve">
+    <value>min Lesezeit</value>
+  </data>
+  <data name="ratgeber.read_more" xml:space="preserve">
+    <value>Weiterlesen</value>
+  </data>
+  <data name="ratgeber.cta_title" xml:space="preserve">
+    <value>Professionelle Hilfe gewünscht?</value>
+  </data>
+  <data name="ratgeber.cta_body" xml:space="preserve">
+    <value>Unsere Reinigungsexperten beraten Sie gerne — kostenlos und unverbindlich.</value>
+  </data>
+  <data name="ratgeber.cta_button" xml:space="preserve">
+    <value>Jetzt kontaktieren</value>
+  </data>
 </root>

@@ -11,7 +11,15 @@
       "Bash(dotnet build *)",
       "Bash(dotnet bin/Debug/net8.0/EndReinigung.dll)",
       "Bash(DOTNET_ROLL_FORWARD=LatestMajor dotnet bin/Debug/net8.0/EndReinigung.dll)",
-      "Bash(/opt/homebrew/Cellar/dotnet@8/8.0.125/libexec/dotnet bin/Debug/net8.0/EndReinigung.dll)"
+      "Bash(/opt/homebrew/Cellar/dotnet@8/8.0.125/libexec/dotnet bin/Debug/net8.0/EndReinigung.dll)",
+      "Bash(git stash *)",
+      "Bash(dotnet run *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:5089/)",
+      "Bash(curl -s -o /tmp/de.html -w \"HTTP: %{http_code}\\\\nSize: %{size_download}\\\\n\" http://localhost:5089/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026)",
+      "Bash(curl -s -o /tmp/en.html -w \"HTTP: %{http_code}\\\\nSize: %{size_download}\\\\n\" http://localhost:5089/en/guide/apartment-handover-checklist-zurich-2026)",
+      "Bash(grep -vE \"^\\(UpholsteryCleaning|LP2|NotFound\\)\\\\.cshtml$\")",
+      "Bash(curl -s http://localhost:5089/ratgeber -o /tmp/rat-de.html -w \"DE %{http_code} %{size_download}\\\\n\")",
+      "Bash(curl -s -b \".AspNetCore.Culture=c=en|uic=en\" http://localhost:5089/ratgeber -o /tmp/rat-en.html -w \"EN %{http_code} %{size_download}\\\\n\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\STN-Work\\source\\repos\\EndreinigungZurich\\EndReinigung\\Views\\Home"

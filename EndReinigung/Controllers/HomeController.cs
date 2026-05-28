@@ -68,7 +68,20 @@ namespace EndReinigung.Controllers
             {
                 return RedirectPermanent("/ratgeber");
             }
+            ViewData["Lang"] = "de";
             return View(article);
+        }
+
+        [Route("en/guide/{enSlug}")]
+        public IActionResult RatgeberArticleEn(string enSlug)
+        {
+            var article = RatgeberArticleData.FindByEnSlug(enSlug);
+            if (article == null)
+            {
+                return RedirectPermanent("/ratgeber");
+            }
+            ViewData["Lang"] = "en";
+            return View("RatgeberArticle", article);
         }
 
         [Route("abnahmegarantie")]

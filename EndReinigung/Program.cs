@@ -87,7 +87,18 @@ namespace EndReinigung
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             };
-            locOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider());
+            locOptions.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(context =>
+            {
+                var path = context.Request.Path.Value ?? string.Empty;
+                if (path.Equals("/en", StringComparison.OrdinalIgnoreCase) ||
+                    path.StartsWith("/en/", StringComparison.OrdinalIgnoreCase))
+                {
+                    return Task.FromResult<ProviderCultureResult?>(new ProviderCultureResult("en", "en"));
+                }
+
+                return Task.FromResult<ProviderCultureResult?>(null);
+            }));
+            locOptions.RequestCultureProviders.Insert(1, new CookieRequestCultureProvider());
             app.UseRequestLocalization(locOptions);
 
             // Configure the HTTP request pipeline.

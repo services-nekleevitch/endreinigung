@@ -1,13 +1,18 @@
+@using System.Globalization
 @{
-    ViewData["Title"] = "Airbnb Reinigung Zürich ✓ Fixpreis pro Turnover, Same-Day";
-    ViewData["Description"] = "Zuverlässige Airbnb Reinigung in Zürich zwischen Gästewechseln. Für Top-Bewertungen und zufriedene Gäste. Flexible Zeiten, faire Preise.";
-    ViewData["Canonical"] = "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich";
-    ViewData["Keywords"] = "Airbnb Reinigung Zürich, Ferienwohnung Reinigung, Gästewechsel Reinigung, Airbnb Putzdienst";
+    var isEnRoute = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en"
+        || (Context.Request.Path.Value?.StartsWith("/en", StringComparison.OrdinalIgnoreCase) == true);
+    ViewData["Title"] = isEnRoute ? "Airbnb Cleaning Zurich ✓ Fixed Turnover Prices, Same-Day" : "Airbnb Reinigung Zürich ✓ Fixpreis pro Turnover, Same-Day";
+    ViewData["Description"] = isEnRoute ? "Reliable Airbnb cleaning in Zurich between guest turnovers. Flexible scheduling, fair prices and hotel-standard cleaning for expat hosts." : "Zuverlässige Airbnb Reinigung in Zürich zwischen Gästewechseln. Für Top-Bewertungen und zufriedene Gäste. Flexible Zeiten, faire Preise.";
+    ViewData["Canonical"] = isEnRoute ? "https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich" : "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich";
+    ViewData["Keywords"] = isEnRoute ? "Airbnb cleaning Zurich, vacation rental cleaning, guest turnover cleaning" : "Airbnb Reinigung Zürich, Ferienwohnung Reinigung, Gästewechsel Reinigung, Airbnb Putzdienst";
+    ViewData["HasCustomHreflang"] = true;
 }
 
 @section Head {
-    <link rel="alternate" hreflang="de" href="https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" />
+    <link rel="alternate" hreflang="de-CH" href="https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" />
     <link rel="alternate" hreflang="en" href="https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich" />
+    <link rel="alternate" hreflang="x-default" href="https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" />
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
