@@ -2,15 +2,18 @@
 # After each migration, update the commit hash from the Lovable GitHub repo.
 # Next time, diff only what changed: git diff <hash>..lovable/main -- src/
 
-last_migrated_date=2026-05-23
-last_migrated_commit=51912b49aa84e645a870479ead9c930072e33679
+last_migrated_date=2026-10-02
+last_migrated_commit=33b568c4bbb03b3ff369c88210de40f317ede104
 lovable_repo=https://github.com/services-nekleevitch/rich-lease-shine.git
 
 # Previous baselines:
+# 2026-09-16 / b2b7d003839ed38cb28f987f0c11a6a93cf43638 (241 commits — URL moves /umzugsreinigung-zuerich→/umzugsreinigung-stadt-zuerich and /extra-services→/dienstleistungen, new /referenzen, nav rework, 20 FAQ answers rewritten for legal accuracy, site JSON-LD @graph)
+# 2026-05-23 / 51912b49aa84e645a870479ead9c930072e33679 (289 commits → Ver3 nav + mega-dropdown, footer rework, 3-card services, Abnahmegarantie rebuild, new pages Kontakt/Dienstleistungen/Gebaeudereinigung/Reinigungsfirma, Ratgeber block types + BookingCard + Wohnungsübergabe/Kaution article content, Sa 09:00)
 # 2026-05-08 / 8065952d0d47919ba9d1db340470b5869222e390 (Wohnungsübergabe article — partial migration baseline)
 # 2026-04-28 / 39a0eabf78af6ea73f0c1c7dd71ad2585ebc8e31 (21 commits — Event→Eventreinigung & Veranstaltungsreinigung rename, Boot Contact override, Polster live calculator preview + quantity discount + click-to-add)
 # 2026-04-20 / 2ff6adbb170358f7c6b9c37b7eccdcb0ee97a152 (265 commits — pillar hubs, bezirk hyper-local rewrite, Hochdruckreinigung, Bueroreinigung + Polsterreinigung rebuild, schema rollout)
 # 2026-04-15 / 4214ee6bc501971c8b914bd396138730d0df0d58
 # 2026-04-13 / 3ce27095decbab1a2bcf225ed24e8bd89be23151 (rich-lease-shine-main (4).zip)
 #
-# Next time: cd rich-lease-shine && git pull && git diff 8065952..HEAD --stat -- src/ public/
+# Next time: cd rich-lease-shine && git pull && git diff 33b568c..HEAD --stat -- src/ public/ supabase/migrations/
+# Note: Ratgeber article CONTENT lives in supabase/migrations/*.sql (not src/) — replay them against App_Data/ratgeber-articles.json.

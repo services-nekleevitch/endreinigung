@@ -1,0 +1,328 @@
+@{
+    ViewData["Title"] = "Reinigungsfirma Zürich — Fixpreis & 100% Abnahmegarantie";
+    ViewData["Description"] = "Reinigungsfirma für Zürich und den Kanton Zürich: Endreinigung, Umzugsreinigung mit 100% Abnahmegarantie, Fensterreinigung und Hochdruckreinigung.";
+    ViewData["Keywords"] = "Reinigungsfirma Zürich, Zürich Endreinigung, Reinigungsunternehmen Zürich, Gebäudereinigung Zürich";
+
+    // Lucide icon paths (inner SVG markup)
+    const string iShield = "<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/>";
+    const string iAward = "<circle cx=\"12\" cy=\"8\" r=\"6\"/><path d=\"M15.477 12.89 17 22l-5-3-5 3 1.523-9.11\"/>";
+    const string iMapPin = "<path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>";
+    const string iBadgeCheck = "<path d=\"M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z\"/><path d=\"m9 12 2 2 4-4\"/>";
+    const string iWallet = "<path d=\"M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1\"/><path d=\"M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4\"/>";
+    const string iClock = "<circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/>";
+    const string iLanguages = "<path d=\"m5 8 6 6\"/><path d=\"m4 14 6-6 2-3\"/><path d=\"M2 5h12\"/><path d=\"M7 2h1\"/><path d=\"m22 22-5-10-5 10\"/><path d=\"M14 18h6\"/>";
+    const string iUserCheck = "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><polyline points=\"16 11 18 13 22 9\"/>";
+    const string iLeaf = "<path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z\"/><path d=\"M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12\"/>";
+    const string iClipboardCheck = "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/><path d=\"m9 14 2 2 4-4\"/>";
+    const string iSparkles = "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/>";
+    const string iPhone = "<path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z\"/>";
+    const string iCalculator = "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/><line x1=\"8\" x2=\"16\" y1=\"6\" y2=\"6\"/><line x1=\"16\" x2=\"16\" y1=\"14\" y2=\"18\"/><path d=\"M16 10h.01\"/><path d=\"M12 10h.01\"/><path d=\"M8 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M8 14h.01\"/><path d=\"M12 18h.01\"/><path d=\"M8 18h.01\"/>";
+    const string iCheckCircle = "<path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><path d=\"m9 11 3 3L22 4\"/>";
+
+    var trustItems = new[] {
+        new { Icon = iAward, Title = "100% Abnahmegarantie", Subtitle = "Persönlich bei der Wohnungsübergabe dabei" },
+        new { Icon = iShield, Title = "5 Mio. CHF Haftpflicht", Subtitle = "5 Mio. CHF Betriebshaftpflichtversicherung" },
+        new { Icon = iWallet, Title = "Fixpreis ohne Zusatzkosten", Subtitle = "Inkl. Anfahrt, Material und Maschinen" },
+        new { Icon = iMapPin, Title = "12 Kreise + Kanton", Subtitle = "Stadt Zürich und der ganze Kanton" }
+    };
+
+    var kernleistungen = new[] {
+        new { Image = "/img/projects/kueche.webp", Alt = "Endreinigung einer Wohnung in Zürich", Title = "Endreinigung Zürich", Description = "Professionelle Wohnungsendreinigung zum Fixpreis mit 100% Abnahmegarantie und persönlicher Anwesenheit bei der Übergabe.", To = "/" },
+        new { Image = "/img/services/umzugsreinigung.jpg", Alt = "Umzugsreinigung nach dem Auszug in Zürich", Title = "Umzugsreinigung Zürich", Description = "Gründliche Reinigung nach dem Auszug für eine reibungslose Wohnungsabgabe an Vermieter oder Verwaltung.", To = "/umzugsreinigung-stadt-zuerich" },
+        new { Image = "/img/services/fensterreinigung.avif", Alt = "Fensterreinigung in Zürich", Title = "Fensterreinigung Zürich", Description = "Fenster innen und aussen, inklusive Rahmen sowie Storen oder Lamellen je nach Auftrag.", To = "/fensterreinigung" },
+        new { Image = "/img/services/hochdruckreinigung-zuerich.webp", Alt = "Hochdruckreinigung einer Terrasse in Zürich", Title = "Hochdruckreinigung Zürich", Description = "Reinigung von Terrassen, Balkonen, Einfahrten und anderen geeigneten Aussenflächen mit Hochdruck.", To = "/hochdruckreinigung-zuerich" }
+    };
+
+    var weitereLeistungen = new[] {
+        new { Label = "Büroreinigung", To = "/bueroreinigung" },
+        new { Label = "Praxisreinigung", To = "/praxisreinigung-zuerich" },
+        new { Label = "Baureinigung", To = "/baureinigung" },
+        new { Label = "Grundreinigung", To = "/grundreinigung" },
+        new { Label = "Frühlingsreinigung", To = "/fruehlingsputz-zuerich" },
+        new { Label = "Polsterreinigung", To = "/polsterreinigung" },
+        new { Label = "Teppichreinigung", To = "/teppichreinigung" },
+        new { Label = "Matratzenreinigung", To = "/matratzenreinigung" },
+        new { Label = "Airbnb-Reinigung", To = "/airbnb-reinigung-zuerich" }
+    };
+
+    var qualitaetspunkte = new[] {
+        new { Icon = iLeaf, Title = "Hochwertige, umweltschonende Reinigungsmittel", Text = "Wir arbeiten mit Schweizer Profi-Produkten und Maschinen. Auf Wunsch reinigen wir ausschliesslich mit ökologischen Mitteln." },
+        new { Icon = iClipboardCheck, Title = "Kontrolle nach Checkliste", Text = "Jeder Auftrag wird nach einer festen Checkliste ausgeführt und vor der Übergabe kontrolliert — nichts wird vergessen." },
+        new { Icon = iUserCheck, Title = "Erfahrenes Reinigungsteam", Text = "Erfahrene Reinigungskräfte mit sorgfältiger und zuverlässiger Arbeitsweise. Sie haben einen festen Ansprechpartner." }
+    };
+
+    var warumPunkte = new[] {
+        new { Icon = iBadgeCheck, Title = "100% Abnahmegarantie", Text = "Gibt es bei der Abnahme eine Reinigungsbeanstandung, reinigen wir kostenlos nach — bis die Verwaltung zufrieden ist." },
+        new { Icon = iWallet, Title = "Garantierter Fixpreis", Text = "Fixpreis inkl. Anfahrt und Material statt Stundentarif. Keine versteckten Zusatzkosten. Nicht mehrwertsteuerpflichtig." },
+        new { Icon = iUserCheck, Title = "Persönlich bei der Übergabe", Text = "Wir sind bei der Wohnungsübergabe vor Ort und klären Reinigungsfragen direkt mit der Verwaltung." },
+        new { Icon = iShield, Title = "5 Mio. CHF Haftpflicht", Text = "Eingetragene Schweizer Firma mit umfassender Betriebshaftpflichtversicherung." },
+        new { Icon = iClock, Title = "Kurzfristige Termine", Text = "Kurzfristige Termine sind nach Verfügbarkeit möglich — auch bei engen Abgabeterminen." },
+        new { Icon = iLanguages, Title = "Deutsch & Englisch", Text = "Zweisprachige Betreuung für Mieterinnen, Expats, Eigentümer und Liegenschaftsverwaltungen." }
+    };
+
+    var faqs = new[] {
+        new { Q = "Was kostet eine Reinigungsfirma in Zürich?", A = "Für Endreinigungen arbeiten wir mit transparenten Fixpreisen: CHF 550 für 1–1.5 Zimmer, CHF 650 für 2–2.5 Zimmer und CHF 850 für 3–3.5 Zimmer. Standardpakete reichen bis CHF 1'350 für 6–6.5 Zimmer – inklusive vereinbarter Leistungen und Abnahmegarantie. Für andere Reinigungsleistungen erstellen wir je nach Auftrag eine individuelle Offerte." },
+        new { Q = "Was beinhaltet Ihre 100% Abnahmegarantie?", A = "Wir sind bei der Wohnungsübergabe persönlich anwesend. Beanstandet die Verwaltung die Reinigung, beheben wir die Mängel kostenlos. Die Garantie bezieht sich auf unsere Reinigungsleistung, nicht auf bauliche Mängel oder die gesamte Kautionsrückzahlung." },
+        new { Q = "Wie schnell erhalte ich einen Termin?", A = "Ihren Fixpreis erhalten Sie in rund 30 Sekunden über unseren Online-Rechner. Kurzfristige Termine sind nach Verfügbarkeit möglich — melden Sie sich am besten telefonisch oder per WhatsApp." },
+        new { Q = "In welchen Gebieten ist Ihre Reinigungsfirma tätig?", A = "Wir reinigen in allen 12 Kreisen der Stadt Zürich sowie im gesamten Kanton Zürich, unter anderem in Winterthur, Uster, Dietikon, Bülach, Horgen, Meilen, Dielsdorf, Affoltern am Albis, Hinwil, Pfäffikon und Andelfingen." },
+        new { Q = "Sind Schäden während der Reinigung versichert?", A = "Ja. Wir verfügen über eine Betriebshaftpflichtversicherung mit einer Deckungssumme von CHF 5 Mio. Für eingesetzte Mitarbeitende gelten die erforderlichen Versicherungen entsprechend dem jeweiligen Arbeitsverhältnis." },
+        new { Q = "Reinigen Sie auch Büros und Geschäftsräume regelmässig?", A = "Ja. Wir übernehmen die regelmässige Unterhaltsreinigung von Büros, Arztpraxen, Ladenlokalen und Gewerbeflächen — täglich, wöchentlich oder nach individuellem Intervall, mit festem Ansprechpartner." }
+    };
+
+    var heroChecks = new[] {
+        "Umzugs- & Endreinigung mit 100% Abnahmegarantie",
+        "Fensterreinigung Zürich & Hochdruckreinigung",
+        "Haftpflichtversichert mit 5 Mio. CHF Deckung"
+    };
+
+    string Svg(string cls, string inner) => "<svg class=\"" + cls + "\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">" + inner + "</svg>";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Reinigungsfirma Zürich", "item": "https://zurich-endreinigung.ch/reinigungsfirma-zuerich" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "@@id": "https://zurich-endreinigung.ch/reinigungsfirma-zuerich#service",
+        "name": "Reinigungsfirma Zürich",
+        "serviceType": ["Endreinigung", "Umzugsreinigung", "Fensterreinigung", "Hochdruckreinigung"],
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "description": "Reinigungsfirma für Zürich und den Kanton Zürich mit Schwerpunkt auf Endreinigung, Umzugsreinigung mit 100% Abnahmegarantie, Fensterreinigung sowie Hochdruckreinigung.",
+        "url": "https://zurich-endreinigung.ch/reinigungsfirma-zuerich",
+        "areaServed": [
+            { "@@type": "City", "name": "Zürich" },
+            { "@@type": "AdministrativeArea", "name": "Kanton Zürich" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    @Html.Raw(System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object> {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "FAQPage",
+        ["mainEntity"] = faqs.Select(f => new Dictionary<string, object> {
+            ["@type"] = "Question",
+            ["name"] = f.Q,
+            ["acceptedAnswer"] = new Dictionary<string, object> { ["@type"] = "Answer", ["text"] = f.A }
+        }).ToList()
+    }, new System.Text.Json.JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping }))
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <!-- HERO -->
+    <section class="relative min-h-[48vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="/img/services/umzugsreinigung.jpg" alt="Reinigungsfirma Zürich bei der Umzugsreinigung einer Wohnung" class="w-full h-full object-cover" width="1920" height="1080" />
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-block text-white font-semibold text-sm px-4 py-1.5 rounded-full bg-primary">🏠 100% Abnahmegarantie</span>
+                    <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">🛡️ Haftpflichtversichert</span>
+                    <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">✅ Erfahrenes Reinigungsteam</span>
+                </div>
+
+                <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg">
+                    Reinigungsfirma Zürich — professionell, zuverlässig, zum Fixpreis
+                </h1>
+
+                <p class="text-base md:text-lg text-white font-medium mb-4 max-w-2xl drop-shadow-md">
+                    Zürich Endreinigung ist Ihre Reinigungsfirma für Endreinigung, Umzugsreinigung,
+                    Fensterreinigung und Hochdruckreinigung in Zürich und im Kanton Zürich. Bei
+                    Wohnungsabgaben bieten wir transparente Fixpreise, 100% Abnahmegarantie und persönliche
+                    Anwesenheit bei der Übergabe.
+                </p>
+
+                <div class="space-y-1.5 mb-5">
+                    @foreach (var item in heroChecks) {
+                        <div class="flex items-center gap-3">
+                            @Html.Raw(Svg("w-5 h-5 text-cleaning-green flex-shrink-0", iCheckCircle))
+                            <span class="text-white font-semibold text-base md:text-lg drop-shadow-md">@item</span>
+                        </div>
+                    }
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="/calculator"
+                       class="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md bg-booking-orange text-white text-lg font-bold hover:bg-booking-orange-dark shadow-button hover:shadow-hero transition-all duration-300 hover:scale-105">
+                        @Html.Raw(Svg("w-5 h-5", iCalculator))
+                        Fixpreis in 30 Sekunden berechnen
+                    </a>
+                    <a href="tel:+41765017738"
+                       class="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md border border-white bg-transparent text-white text-sm font-medium hover:bg-white/10 transition-colors">
+                        @Html.Raw(Svg("w-5 h-5", iPhone))
+                        076 501 77 38
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR (custom items, same layout as the homepage trust bar) -->
+    <section class="py-6 md:py-12 bg-background border-y border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                @foreach (var t in trustItems) {
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-10 h-10 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3 md:mb-4">
+                            @Html.Raw(Svg("w-5 h-5 md:w-7 md:h-7 text-primary", t.Icon))
+                        </div>
+                        <p class="text-sm md:text-base font-semibold text-foreground">@t.Title</p>
+                        <p class="text-xs md:text-sm text-muted-foreground mt-1">@t.Subtitle</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Kernleistungen -->
+    <section class="py-14 md:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-10">Kernleistungen</h2>
+            <div class="grid sm:grid-cols-2 gap-5">
+                @foreach (var s in kernleistungen) {
+                    <article class="flex flex-col bg-background rounded-2xl overflow-hidden border border-border shadow-sm">
+                        <div class="aspect-[16/10] overflow-hidden">
+                            <img src="@s.Image" alt="@s.Alt" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2">
+                                <a href="@s.To" class="text-foreground hover:text-swiss-blue transition-colors">@s.Title</a>
+                            </h3>
+                            <p class="text-sm text-muted-foreground leading-relaxed">@s.Description</p>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Weitere Reinigungsleistungen -->
+    <section class="py-12 md:py-16 bg-secondary/30 border-y border-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground text-center mb-6">Weitere Reinigungsleistungen</h2>
+            <ul class="flex flex-wrap justify-center gap-2">
+                @foreach (var w in weitereLeistungen) {
+                    <li>
+                        <a href="@w.To" class="inline-block text-sm px-4 py-2 rounded-full border border-border bg-background text-foreground hover:text-swiss-blue transition-colors">@w.Label</a>
+                    </li>
+                }
+            </ul>
+            <div class="text-center mt-6">
+                <a href="/dienstleistungen" class="inline-flex items-center justify-center h-10 px-4 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">Alle Dienstleistungen ansehen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualität -->
+    <section class="py-14 md:py-20 bg-secondary/30 border-y border-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-3">
+                Qualität hat bei unserer Reinigungsfirma oberste Priorität
+            </h2>
+            <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+                Wir arbeiten sorgfältig, termingerecht und nachvollziehbar — bei jedem Auftrag.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                @foreach (var q in qualitaetspunkte) {
+                    <div class="bg-background rounded-2xl border border-border p-6">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            @Html.Raw(Svg("w-6 h-6 text-primary", q.Icon))
+                        </div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">@q.Title</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed">@q.Text</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Warum wir -->
+    <section class="py-14 md:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-10">Warum Zürich Endreinigung?</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach (var p in warumPunkte) {
+                    <div class="rounded-2xl border border-border p-6 bg-background">
+                        <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            @Html.Raw(Svg("w-5 h-5 text-primary", p.Icon))
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-2">@p.Title</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed">@p.Text</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Referenzen -->
+    <section class="py-14 md:py-20 bg-secondary/30 border-y border-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-3">
+                Das sagen Kundinnen und Kunden in Zürich
+            </h2>
+            <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+                Echte Google-Bewertungen zu unseren Reinigungen im Kanton Zürich.
+            </p>
+            @{ ViewData["MaxWidth"] = "max-w-4xl"; }
+            @await Html.PartialAsync("~/Views/Shared/_GoogleReviewsCarousel.cshtml")
+            <div class="text-center mt-8">
+                <a href="/referenzen" class="inline-flex items-center justify-center h-10 px-4 rounded-md border border-input bg-background text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">Alle Referenzen ansehen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-14 md:py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-10">
+                Häufige Fragen zur Reinigungsfirma in Zürich
+            </h2>
+            <div class="w-full">
+                @foreach (var faq in faqs) {
+                    <details class="group border-b border-border">
+                        <summary class="cursor-pointer list-none flex justify-between items-center py-4 font-semibold text-left text-foreground hover:underline">
+                            <span>@faq.Q</span>
+                            <svg class="w-4 h-4 flex-shrink-0 ml-2 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                        </summary>
+                        <div class="pb-4 text-muted-foreground leading-relaxed">@faq.A</div>
+                    </details>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 md:py-20 bg-swiss-blue">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            @Html.Raw(Svg("w-10 h-10 mx-auto mb-4 text-white/80", iSparkles))
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Ihre Reinigungsfirma in Zürich — jetzt Fixpreis erhalten
+            </h2>
+            <p class="text-white/80 mb-8">
+                Preis in 30 Sekunden im Online-Rechner. Kurzfristige Termine sind nach Verfügbarkeit
+                möglich.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="/calculator" class="inline-flex items-center justify-center h-11 px-8 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors">Fixpreis berechnen</a>
+                <a href="/kontakt" class="inline-flex items-center justify-center h-11 px-8 rounded-md border border-white/40 bg-transparent text-white text-sm font-medium hover:bg-white/10 transition-colors">Offerte anfragen</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

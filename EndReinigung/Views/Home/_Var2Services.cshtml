@@ -1,34 +1,32 @@
+@using System.Globalization
+@{
+    var isDe = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName != "en";
+    var serviceCards = new[] {
+        new { Img = "/img/services/fensterreinigung.jpg", Cat = isDe ? "SPEZIALREINIGUNG" : "SPECIAL CLEANING", Name = isDe ? "Spezialreinigung" : "Special Cleaning", Desc = isDe ? "Fenster, Teppich, Polster, Matratzen und mehr" : "Windows, carpets, upholstery, mattresses and more", Href = "/spezialreinigung", Link = isDe ? "Alle Spezialreinigungen →" : "All Special Cleaning →" },
+        new { Img = "/img/services/bueroreinigung.jpg", Cat = isDe ? "GEWERBEREINIGUNG" : "COMMERCIAL CLEANING", Name = isDe ? "Gewerbereinigung" : "Commercial Cleaning", Desc = isDe ? "Büro, Praxis und Geschäftsräume" : "Offices, practices and commercial spaces", Href = "/gewerbereinigung", Link = isDe ? "Alle Gewerbereinigungen →" : "All Commercial Cleaning →" },
+        new { Img = "/img/zurich-cityscape.jpg", Cat = isDe ? "EINSATZGEBIETE" : "SERVICE AREAS", Name = isDe ? "Standorte" : "Locations", Desc = isDe ? "Alle Bezirke im Kanton Zürich" : "All districts in the Canton of Zürich", Href = "/standorte", Link = isDe ? "Alle Einsatzgebiete →" : "All Service Areas →" }
+    };
+    var directLinks = new[] {
+        new { Label = isDe ? "Umzugsreinigung Zürich" : "Move-out Cleaning Zürich", Href = "/umzugsreinigung-stadt-zuerich" },
+        new { Label = isDe ? "Grundreinigung" : "Deep Cleaning", Href = "/grundreinigung" },
+        new { Label = isDe ? "Fensterreinigung" : "Window Cleaning", Href = "/fensterreinigung" },
+        new { Label = isDe ? "Baureinigung" : "Construction Cleaning", Href = "/baureinigung" }
+    };
+}
 <!-- Additional Services -->
 <section class="py-12 md:py-24 bg-gradient-to-b from-secondary to-background">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-8 md:mb-12">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                @SharedLocalizer["services.title_1"] <span class="text-primary">@SharedLocalizer["services.title_2"]</span>
+                @(isDe ? "Weitere Reinigungsservices in Zürich" : "More Cleaning Services in Zürich")
             </h2>
-            <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">@SharedLocalizer["services.subtitle"]</p>
+            <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">@(isDe ? "Unser gesamtes Angebot, übersichtlich in drei Bereichen." : "Our complete range, clearly divided into three categories.")</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            @{
-                var services = new[] {
-                    new { Img = "/img/services/umzugsreinigung.jpg", Cat = "UMZUGSREINIGUNG", Name = "Umzugsreinigung", Desc = "Professionelle Umzugsreinigung mit Fixpreis und 100% Abnahmegarantie — Kaution zurück garantiert.", Href = "/umzugsreinigung-zuerich" },
-                    new { Img = "/img/services/baureinigung.avif", Cat = "BAUREINIGUNG", Name = "Baureinigung", Desc = "Professionelle Reinigung nach Umbau oder Renovation — staubfrei und bezugsbereit.", Href = "/baureinigung" },
-                    new { Img = "/img/services/fensterreinigung.jpg", Cat = "SPEZIALREINIGUNG", Name = "Fensterreinigung", Desc = "Streifenfreie Fenster innen & aussen, inkl. Rahmen und Fensterbänke.", Href = "/fensterreinigung" },
-                    new { Img = "/img/services/bueroreinigung.jpg", Cat = "REINIGUNG", Name = "Büroreinigung", Desc = "Regelmässige Büroreinigung für saubere Arbeitsplätze — flexibel und zuverlässig.", Href = "/bueroreinigung" },
-                    new { Img = "/img/services/tapeten-entfernen.avif", Cat = "RENOVATION", Name = "Tapeten entfernen", Desc = "Fachgerechtes Entfernen alter Tapeten — sauber und rückstandsfrei.", Href = "/tapeten-entfernen" },
-                    new { Img = "/img/services/praxisreinigung.jpg", Cat = "SPEZIALREINIGUNG", Name = "Praxisreinigung", Desc = "Hygienische Reinigung für Arztpraxen, Zahnarztpraxen und Therapieräume.", Href = "/praxisreinigung-zuerich" },
-                    new { Img = "/img/services/hochdruckreinigung-zuerich.webp", Cat = "SPEZIALREINIGUNG", Name = "Hochdruckreinigung", Desc = "Heisswasser-Hochdruck für Terrasse, Balkon, Pflaster und Einfahrt — Festpreis in 24 h.", Href = "/hochdruckreinigung-zuerich" },
-                    new { Img = "/img/services/event-reinigung.jpg", Cat = "REINIGUNG", Name = "Eventreinigung & Veranstaltungsreinigung", Desc = "After-Party Reinigung für Veranstaltungen und Feiern jeder Grösse.", Href = "/event-reinigung" },
-                    new { Img = "/img/services/polsterreinigung.avif", Cat = "SPEZIALREINIGUNG", Name = "Polsterreinigung", Desc = "Tiefenreinigung für Sofas, Sessel und Polstermöbel — hygienisch sauber.", Href = "/polsterreinigung" },
-                    new { Img = "/img/services/teppichreinigung.avif", Cat = "SPEZIALREINIGUNG", Name = "Teppichreinigung", Desc = "Professionelle Teppichreinigung mit Fleckenentfernung und Auffrischung.", Href = "/teppichreinigung" },
-                    new { Img = "/img/services/matratzenreinigung.jpg", Cat = "SPEZIALREINIGUNG", Name = "Matratzenreinigung", Desc = "Hygienische Tiefenreinigung für Matratzen — gegen Milben und Allergene.", Href = "/matratzenreinigung" },
-                    new { Img = "/img/services/grundreinigung.jpg", Cat = "REINIGUNG", Name = "Grundreinigung", Desc = "Intensive Komplettreinigung aller Räume für ein strahlendes Zuhause.", Href = "/grundreinigung" },
-                    new { Img = "/img/services/airbnb-reinigung.jpg", Cat = "REINIGUNG", Name = "Airbnb Reinigung", Desc = "Zuverlässige Reinigung zwischen Gästewechseln für Top-Bewertungen.", Href = "/airbnb-reinigung-zuerich" },
-                    new { Img = "/img/services/boot-reinigung.jpg", Cat = "SPEZIALREINIGUNG", Name = "Boot Reinigung", Desc = "Professionelle Innen- und Aussenreinigung für Boote am Zürichsee.", Href = "/boot-reinigung" }
-                };
-                var idx = 0;
-            }
-            @foreach (var svc in services) {
-                <a href="@svc.Href" class="group flex flex-col bg-card rounded-2xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-lg hover:-translate-y-1 border border-border" style="animation-delay: @(idx * 80)ms">
+            @for (var i = 0; i < serviceCards.Length; i++)
+            {
+                var svc = serviceCards[i];
+                <a href="@svc.Href" class="group flex flex-col bg-card rounded-2xl overflow-hidden transition-all duration-300 animate-slide-up hover:shadow-lg hover:-translate-y-1 border border-border" style="animation-delay: @(i * 80)ms">
                     <div class="aspect-[16/10] overflow-hidden">
                         <img src="@svc.Img" alt="@svc.Name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     </div>
@@ -36,14 +34,20 @@
                         <span class="text-xs font-bold tracking-wider text-primary mb-2">@svc.Cat</span>
                         <h3 class="text-base font-bold text-foreground mb-2 group-hover:text-primary transition-colors">@svc.Name</h3>
                         <p class="text-xs text-muted-foreground leading-relaxed mb-4 flex-1">@svc.Desc</p>
-                        <span class="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                            @SharedLocalizer["services.learn_more"]
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
+                        <span class="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">@svc.Link</span>
                     </div>
                 </a>
-                idx++;
             }
+        </div>
+
+        <div class="mt-8 md:mt-12 text-center">
+            <p class="text-sm text-muted-foreground">
+                <span class="font-medium text-foreground">@(isDe ? "Direkt zu:" : "Direct to:")</span>
+                @for (var i = 0; i < directLinks.Length; i++)
+                {
+                    <a href="@directLinks[i].Href" class="text-primary hover:underline">@directLinks[i].Label</a>@if (i < directLinks.Length - 1) {<span class="text-muted-foreground mx-1">·</span>}
+                }
+            </p>
         </div>
     </div>
 </section>

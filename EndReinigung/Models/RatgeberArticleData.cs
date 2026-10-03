@@ -12,6 +12,15 @@ namespace EndReinigung.Models
         public string A { get; set; } = "";
     }
 
+    public sealed class RatgeberLink
+    {
+        [JsonPropertyName("label")]
+        public string Label { get; set; } = "";
+
+        [JsonPropertyName("href")]
+        public string Href { get; set; } = "";
+    }
+
     public sealed class RatgeberBlock
     {
         [JsonPropertyName("type")]
@@ -28,6 +37,30 @@ namespace EndReinigung.Models
 
         [JsonPropertyName("faqs")]
         public List<RatgeberFaq> Faqs { get; set; } = new();
+
+        [JsonPropertyName("headers")]
+        public List<string> Headers { get; set; } = new();
+
+        [JsonPropertyName("rows")]
+        public List<List<string>> Rows { get; set; } = new();
+
+        [JsonPropertyName("caption")]
+        public string Caption { get; set; } = "";
+
+        [JsonPropertyName("src")]
+        public string Src { get; set; } = "";
+
+        [JsonPropertyName("alt")]
+        public string Alt { get; set; } = "";
+
+        [JsonPropertyName("width")]
+        public int? Width { get; set; }
+
+        [JsonPropertyName("height")]
+        public int? Height { get; set; }
+
+        [JsonPropertyName("links")]
+        public List<RatgeberLink> Links { get; set; } = new();
     }
 
     public sealed class RatgeberHowToStep

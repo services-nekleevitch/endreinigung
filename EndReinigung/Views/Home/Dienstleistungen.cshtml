@@ -1,0 +1,97 @@
+@{
+    ViewData["Title"] = "Dienstleistungen – Reinigungsservices in Zürich";
+    ViewData["Description"] = "Alle Reinigungsdienstleistungen von Zürich Endreinigung im Überblick: Fenster, Teppich, Polster, Grundreinigung sowie Büro-, Praxis-, Bau- und Gebäudereinigung.";
+    ViewData["Keywords"] = "Dienstleistungen, Reinigungsservices Zürich, Fensterreinigung, Teppichreinigung, Büroreinigung, Gebäudereinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Dienstleistungen", "item": "https://zurich-endreinigung.ch/dienstleistungen" }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <section class="py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Unsere Dienstleistungen
+            </h1>
+            <p class="text-lg text-muted-foreground max-w-3xl mb-12">
+                Von der Endreinigung bis zur Gebäudereinigung: Als Reinigungsfirma in Zürich bieten wir
+                das komplette Spektrum professioneller Reinigungsdienstleistungen für Private und Unternehmen.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h2 class="text-xl font-semibold text-foreground mb-5">Reinigungsservices</h2>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/fensterreinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Fensterreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Streifenfrei innen und aussen.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/teppichreinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Teppichreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Tiefenreinigung für Teppiche.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/polsterreinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Polsterreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Sofas, Sessel und Matratzen.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/grundreinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Grundreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Intensive Grundreinigung.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-semibold text-foreground mb-5">Für Unternehmen</h2>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/bueroreinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Büroreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Regelmässige Büroreinigung.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/praxisreinigung-zuerich" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Praxisreinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Hygienische Praxisreinigung.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/baureinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Baureinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Grob- und Feinreinigung nach dem Bau.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/gebaeudereinigung" class="block border border-border rounded-lg p-4 hover:border-swiss-blue transition-colors">
+                                <div class="font-semibold text-foreground">Gebäudereinigung</div>
+                                <p class="text-sm text-muted-foreground mt-1">Unterhalt für Liegenschaften.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

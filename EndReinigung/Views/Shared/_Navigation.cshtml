@@ -17,13 +17,46 @@
         ?? (currentPath.StartsWith("/en", StringComparison.OrdinalIgnoreCase)
             ? currentPath
             : "/en/guide/apartment-handover-checklist-zurich-2026");
+
+    // Services mega-dropdown (mirrors Ver3Navigation.tsx). Icon = lucide path markup.
+    var dropdownGroups = new[] {
+        new {
+            Heading = SharedLocalizer["nav.group_services"].Value,
+            Links = new[] {
+                new { Name = "Fensterreinigung", Href = "/fensterreinigung", Desc = "Streifenfrei innen und aussen.", Icon = "<line x1=\"22\" x2=\"2\" y1=\"6\" y2=\"6\"/><line x1=\"22\" x2=\"2\" y1=\"18\" y2=\"18\"/><line x1=\"6\" x2=\"6\" y1=\"2\" y2=\"22\"/><line x1=\"18\" x2=\"18\" y1=\"2\" y2=\"22\"/>" },
+                new { Name = "Teppichreinigung", Href = "/teppichreinigung", Desc = "Tiefenreinigung für Teppiche.", Icon = "<path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65\"/><path d=\"m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65\"/>" },
+                new { Name = "Polsterreinigung", Href = "/polsterreinigung", Desc = "Sofas, Sessel und Matratzen.", Icon = "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\"/><path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z\"/><path d=\"M5 18v2\"/><path d=\"M19 18v2\"/>" },
+                new { Name = "Grundreinigung", Href = "/grundreinigung", Desc = "Intensive Grundreinigung.", Icon = "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/>" }
+            }
+        },
+        new {
+            Heading = SharedLocalizer["nav.group_business"].Value,
+            Links = new[] {
+                new { Name = "Büroreinigung", Href = "/bueroreinigung", Desc = "Regelmässige Büroreinigung.", Icon = "<path d=\"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z\"/><path d=\"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2\"/><path d=\"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2\"/><path d=\"M10 6h4\"/><path d=\"M10 10h4\"/><path d=\"M10 14h4\"/><path d=\"M10 18h4\"/>" },
+                new { Name = "Praxisreinigung", Href = "/praxisreinigung-zuerich", Desc = "Hygienische Praxisreinigung.", Icon = "<path d=\"M11 2v2\"/><path d=\"M5 2v2\"/><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/>" },
+                new { Name = "Baureinigung", Href = "/baureinigung", Desc = "Grob- und Feinreinigung nach dem Bau.", Icon = "<path d=\"m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9\"/><path d=\"m18 15 4-4\"/><path d=\"m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5\"/>" },
+                new { Name = "Gebäudereinigung", Href = "/gebaeudereinigung", Desc = "Unterhalt für Liegenschaften.", Icon = "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M9 22v-4h6v4\"/><path d=\"M8 6h.01\"/><path d=\"M16 6h.01\"/><path d=\"M12 6h.01\"/><path d=\"M12 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 10h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 10h.01\"/><path d=\"M8 14h.01\"/>" }
+            }
+        }
+    };
+
+    var topLevel = new[] {
+        new { Name = SharedLocalizer["nav.umzugsreinigung"].Value, Href = "/umzugsreinigung-stadt-zuerich", Dropdown = false },
+        new { Name = SharedLocalizer["nav.guarantee"].Value, Href = "/abnahmegarantie", Dropdown = false },
+        new { Name = SharedLocalizer["nav.prices"].Value, Href = "/#pakete", Dropdown = false },
+        new { Name = SharedLocalizer["nav.company"].Value, Href = "/reinigungsfirma-zuerich", Dropdown = true },
+        new { Name = SharedLocalizer["nav.locations"].Value, Href = "/standorte", Dropdown = false },
+        new { Name = SharedLocalizer["nav.references"].Value, Href = "/referenzen", Dropdown = false },
+        new { Name = SharedLocalizer["nav.guide"].Value, Href = "/ratgeber", Dropdown = false }
+    };
+    string LinkClass(string href) => currentPath.Equals(href, StringComparison.OrdinalIgnoreCase) ? "text-swiss-blue" : "text-foreground";
 }
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16 md:h-[6.25rem]">
             <!-- Logo -->
-            <a href="/" class="flex items-center">
+            <a href="/" class="flex shrink-0 items-center">
                 <picture>
                     <source srcset="/img/endreinigung_zuerich_logo.webp" type="image/webp" />
                     <img src="/img/endreinigung_zuerich_logo.png" alt="Endreinigung Zürich Logo - Professionelle Umzugsreinigung" width="280" height="160" class="h-12 md:h-[4.8rem] w-auto" />
@@ -31,18 +64,62 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                <a href="/#pakete" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.prices"]</a>
-                <a href="/extra-services" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.extra_services"]</a>
-                <a href="/abnahmegarantie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.guarantee"]</a>
-                <a href="/faq" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.faq"]</a>
-                <a href="/#galerie" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.gallery"]</a>
-                <a href="/ratgeber" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.guide"]</a>
-                <a href="/#contact-form" class="text-sm font-medium transition-colors hover:text-swiss-blue text-foreground">@SharedLocalizer["nav.contact"]</a>
+            <div class="ml-auto hidden h-full shrink-0 items-center space-x-5 pl-6 xl:flex">
+                @foreach (var item in topLevel)
+                {
+                    if (item.Dropdown)
+                    {
+                        <div class="group relative h-full flex items-center" id="services-dropdown">
+                            <a href="@item.Href" aria-haspopup="true" class="flex items-center gap-1 text-sm font-medium transition-colors hover:text-swiss-blue @LinkClass(item.Href)">
+                                @item.Name
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+                            </a>
+                            <div class="absolute left-0 top-full z-50 hidden group-hover:block">
+                                <div class="w-[640px] bg-white border border-t-0 border-border shadow-2xl overflow-hidden ring-1 ring-black/5">
+                                    <div class="p-6 grid grid-cols-2 gap-8">
+                                        @foreach (var grp in dropdownGroups)
+                                        {
+                                            <div>
+                                                <div class="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">@grp.Heading</div>
+                                                <ul class="space-y-2">
+                                                    @foreach (var link in grp.Links)
+                                                    {
+                                                        <li>
+                                                            <a href="@link.Href" class="group/item flex items-start gap-3 p-2 -mx-2 rounded-xl transition-colors hover:bg-swiss-blue">
+                                                                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-swiss-blue/10 flex items-center justify-center text-swiss-blue group-hover/item:bg-white group-hover/item:text-swiss-blue transition-colors">
+                                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">@Html.Raw(link.Icon)</svg>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="text-sm font-semibold text-foreground group-hover/item:text-white transition-colors">@link.Name</div>
+                                                                    <p class="text-xs text-muted-foreground group-hover/item:text-white/80 mt-0.5 leading-relaxed transition-colors">@link.Desc</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="bg-muted/50 border-t border-border p-4 flex items-center justify-between">
+                                        <a href="/dienstleistungen" class="group/all text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark flex items-center gap-1">
+                                            @SharedLocalizer["nav.view_all_services"]
+                                            <svg class="w-4 h-4 group-hover/all:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                        </a>
+                                        <a href="/#contact-form" class="text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark">@SharedLocalizer["nav.contact"]</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="@item.Href" class="text-sm font-medium transition-colors hover:text-swiss-blue @LinkClass(item.Href)">@item.Name</a>
+                    }
+                }
 
                 <!-- Language Dropdown -->
                 <div class="relative ml-2" id="lang-dropdown">
-                    <button onclick="document.getElementById('lang-menu').classList.toggle('hidden')" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-foreground border border-border rounded-md hover:bg-muted transition-colors">
+                    <button onclick="document.getElementById('lang-menu').classList.toggle('hidden')" aria-haspopup="true" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-foreground border border-border rounded-md hover:bg-muted transition-colors">
                         @(currentCulture.ToUpper())
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
@@ -53,7 +130,7 @@
                 </div>
 
                 <!-- Phone Button -->
-                <a href="tel:+41765017738" class="ml-4 mr-[30px] inline-flex items-center px-4 py-2 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-sm font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105">
+                <a href="tel:+41765017738" class="ml-2 mr-[30px] inline-flex items-center px-4 py-2 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-sm font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200 hover:scale-105">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                     <span class="hidden lg:inline">+41 76 501 77 38</span>
                     <span class="lg:hidden">@SharedLocalizer["nav.call"]</span>
@@ -61,7 +138,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <div class="md:hidden">
+            <div class="xl:hidden">
                 <button id="mobile-menu-btn" type="button" aria-label="@SharedLocalizer["nav.menu_toggle"]" aria-expanded="false" class="p-2 text-foreground hover:text-swiss-blue">
                     <svg id="menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -70,7 +147,7 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden border-t border-border hidden">
+        <div id="mobile-menu" class="xl:hidden border-t border-border hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
                 <!-- Language Toggle -->
                 <div class="flex items-center justify-end px-3 py-2 border-b border-border mb-2">
@@ -79,13 +156,46 @@
                         <a href="@enHref" onclick="setLanguageCookie('en')" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</a>
                     </div>
                 </div>
-                <a href="/#pakete" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.prices"]</a>
-                <a href="/extra-services" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.extra_services"]</a>
-                <a href="/abnahmegarantie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.guarantee"]</a>
-                <a href="/faq" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.faq"]</a>
-                <a href="/#galerie" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.gallery"]</a>
-                <a href="/ratgeber" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.guide"]</a>
-                <a href="/#contact-form" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.contact"]</a>
+                @foreach (var item in topLevel)
+                {
+                    if (item.Dropdown)
+                    {
+                        <div>
+                            <div class="flex items-stretch">
+                                <a href="@item.Href" class="flex-1 px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-swiss-blue hover:bg-muted">@item.Name</a>
+                                <button type="button" id="mobile-services-btn" aria-expanded="false" aria-controls="mobile-services-panel" aria-label="@SharedLocalizer["nav.services_expand"]" class="px-3 py-2 rounded-md text-foreground hover:bg-muted">
+                                    <svg id="mobile-services-chevron" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                            </div>
+                            <div id="mobile-services-panel" class="pl-4 pb-2 space-y-3 hidden">
+                                @foreach (var grp in dropdownGroups)
+                                {
+                                    <div>
+                                        <div class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground px-3 pt-2 pb-1">@grp.Heading</div>
+                                        <ul>
+                                            @foreach (var link in grp.Links)
+                                            {
+                                                <li>
+                                                    <a href="@link.Href" class="group/m flex items-center gap-3 px-3 py-2 rounded-md text-sm text-foreground hover:bg-swiss-blue hover:text-white">
+                                                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-swiss-blue/10 flex items-center justify-center text-swiss-blue group-hover/m:bg-white group-hover/m:text-swiss-blue transition-colors">
+                                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">@Html.Raw(link.Icon)</svg>
+                                                        </div>
+                                                        <span>@link.Name</span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                                <a href="/#contact-form" class="block px-3 py-2 text-sm font-semibold text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.contact"]</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="@item.Href" class="block px-3 py-2 rounded-md text-base font-medium transition-colors @(currentPath.Equals(item.Href, StringComparison.OrdinalIgnoreCase) ? "text-swiss-blue bg-muted" : "text-foreground hover:text-swiss-blue hover:bg-muted")">@item.Name</a>
+                    }
+                }
                 <div class="px-3 py-2">
                     <a href="tel:+41765017738" class="w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white text-sm font-semibold rounded-lg">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -101,4 +211,16 @@
 function setLanguageCookie(culture) {
     document.cookie = '.AspNetCore.Culture=c=' + culture + '|uic=' + culture + ';path=/;max-age=31536000;SameSite=Lax';
 }
+document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('mobile-services-btn');
+    var panel = document.getElementById('mobile-services-panel');
+    var chevron = document.getElementById('mobile-services-chevron');
+    if (btn && panel) {
+        btn.addEventListener('click', function () {
+            var open = panel.classList.toggle('hidden') === false;
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (chevron) chevron.classList.toggle('rotate-180', open);
+        });
+    }
+});
 </script>

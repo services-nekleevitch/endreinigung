@@ -110,25 +110,56 @@
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
-        "@@type": ["LocalBusiness", "ProfessionalService"],
-        "@@id": "https://zurich-endreinigung.ch/#business",
-        "inLanguage": "de-CH",
-        "name": "Zürich Endreinigung",
-        "url": "https://zurich-endreinigung.ch",
-        "telephone": "+41765017738",
-        "email": "info@zurich-endreinigung.ch",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "Seewadelstrasse 5",
-            "addressLocality": "Affoltern am Albis",
-            "postalCode": "8910",
-            "addressCountry": "CH"
-        },
-        "areaServed": {
-            "@@type": "State",
-            "name": "Kanton Zürich"
-        },
-        "priceRange": "CHF 550 - CHF 1350+"
+        "@@graph": [
+            {
+                "@@type": ["LocalBusiness", "ProfessionalService"],
+                "@@id": "https://zurich-endreinigung.ch/#business",
+                "inLanguage": "de-CH",
+                "name": "Zürich Endreinigung",
+                "legalName": "Nekleevitch Services",
+                "alternateName": "Zurich Endreinigung",
+                "url": "https://zurich-endreinigung.ch/",
+                "logo": "https://zurich-endreinigung.ch/img/endreinigung_zuerich_logo.png",
+                "image": "https://zurich-endreinigung.ch/og-image.png",
+                "description": "Endreinigung und Umzugsreinigung im Kanton Zürich mit 100% Abnahmegarantie zum Fixpreis inkl. Anfahrt und Material – Fixpreise beginnen bei CHF 550. Persönliche Anwesenheit bei der Wohnungsübergabe und kostenlose Nachbesserung inklusive.",
+                "telephone": "+41765017738",
+                "email": "info@zurich-endreinigung.ch",
+                "priceRange": "CHF 550 – CHF 1'350",
+                "currenciesAccepted": "CHF",
+                "paymentAccepted": ["TWINT", "Bank Transfer", "Cash"],
+                "knowsLanguage": ["de", "en"],
+                "address": {
+                    "@@type": "PostalAddress",
+                    "streetAddress": "Seewadelstrasse 5",
+                    "addressLocality": "Affoltern am Albis",
+                    "postalCode": "8910",
+                    "addressRegion": "ZH",
+                    "addressCountry": "CH"
+                },
+                "geo": { "@@type": "GeoCoordinates", "latitude": 47.2785, "longitude": 8.4518 },
+                "areaServed": [
+                    { "@@type": "City", "name": "Zürich" },
+                    { "@@type": "AdministrativeArea", "name": "Kanton Zürich" }
+                ],
+                "openingHoursSpecification": [
+                    { "@@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00" },
+                    { "@@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+                ],
+                "sameAs": [
+                    "https://www.instagram.com/zurichendreinigung/",
+                    "https://www.youtube.com/channel/UCF-l86MCZdjOZrF6ph5sKIA"
+                ]
+            },
+            {
+                "@@type": "WebSite",
+                "@@id": "https://zurich-endreinigung.ch/#website",
+                "url": "https://zurich-endreinigung.ch/",
+                "name": "Zürich Endreinigung",
+                "alternateName": "Zurich Endreinigung",
+                "publisher": { "@@id": "https://zurich-endreinigung.ch/#business" },
+                "inLanguage": ["de-CH", "en"]
+            }
+        ]
     }
     </script>
 </head>

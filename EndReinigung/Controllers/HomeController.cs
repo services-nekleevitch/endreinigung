@@ -19,10 +19,7 @@ namespace EndReinigung.Controllers
         }
 
         [Route("extra-services")]
-        public IActionResult ExtraServices()
-        {
-            return View();
-        }
+        public IActionResult ExtraServicesRedirect() => RedirectPermanent("/dienstleistungen");
 
         [Route("fensterreinigung")]
         public IActionResult Fensterreinigung()
@@ -118,7 +115,32 @@ namespace EndReinigung.Controllers
         }
 
         [Route("ueber-uns")]
-        public IActionResult UeberUns()
+        public IActionResult UeberUns() => RedirectPermanent("/reinigungsfirma-zuerich");
+
+        [Route("referenzen")]
+        public IActionResult Referenzen()
+        {
+            return View();
+        }
+
+        [Route("kontakt")]
+        public IActionResult Kontakt()
+        {
+            return View();
+        }
+
+        // /dienstleistungen renders the full service catalogue (formerly /extra-services).
+        [Route("dienstleistungen")]
+        public IActionResult Dienstleistungen() => View("ExtraServices");
+
+        [Route("gebaeudereinigung")]
+        public IActionResult Gebaeudereinigung()
+        {
+            return View();
+        }
+
+        [Route("reinigungsfirma-zuerich")]
+        public IActionResult ReinigungsfirmaZuerich()
         {
             return View();
         }
@@ -203,11 +225,10 @@ namespace EndReinigung.Controllers
             return View();
         }
 
+        // The Umzugsreinigung service page moved to /umzugsreinigung-stadt-zuerich (Lovable 2026-09-29).
+        // The old URL keeps its link equity via a 301.
         [Route("umzugsreinigung-zuerich")]
-        public IActionResult Umzugsreinigung()
-        {
-            return View();
-        }
+        public IActionResult UmzugsreinigungRedirect() => RedirectPermanent("/umzugsreinigung-stadt-zuerich");
 
         [Route("fruehlingsputz-zuerich")]
         public IActionResult Fruehlingsreinigung()
@@ -227,10 +248,7 @@ namespace EndReinigung.Controllers
         }
 
         [Route("umzugsreinigung-stadt-zuerich")]
-        public IActionResult UmzugsreinigungStadtZuerich()
-        {
-            return View();
-        }
+        public IActionResult UmzugsreinigungStadtZuerich() => View("Umzugsreinigung");
 
         [Route("umzugsreinigung-bezirk-affoltern")]
         public IActionResult UmzugsreinigungBezirkAffoltern()
@@ -251,6 +269,12 @@ namespace EndReinigung.Controllers
             ViewData["HeroIntroLine"] = "Die <strong>Umzugsreinigung Bezirk Affoltern</strong> ist unser Heimspiel. Wir decken das gesamte Knonaueramt ab — <strong>von Aeugst am Albis bis Maschwanden</strong>, von Bonstetten bis Rifferswil. Unser Büro steht in 8910 Affoltern am Albis.";
             ViewData["LogisticsParagraph"] = "Wir kennen die Hausverwaltungen im Säuliamt persönlich — <strong>Genossenschaften wie die ABZ in Bonstetten, regionale Verwaltungen in Affoltern und Mettmenstetten</strong> sowie die kleineren privaten Liegenschaftsverwaltungen in den Dörfern. Logistisch hat das Knonaueramt eigene Themen: enge Innenhof-Zufahrten in den Dorfkernen von Hedingen und Mettmenstetten, schmale Erschliessungsstrassen in Kappel, und in Obfelden kommen wir mit unseren Reinigungsfahrzeugen oft direkt an die Hauseingänge — was Zeit spart und die Wohnungsabgabe entspannter macht.";
             ViewData["RegionalAvailability"] = "Im gesamten Knonaueramt bieten wir neben der Umzugsreinigung auch <strong>Abo-Reinigungen für Mehrfamilienhäuser, Fenster- und Storenreinigung sowie Spezialreinigungen</strong> nach Renovation oder Wasserschaden an. Als lokale Reinigungsfirma sind wir oft innerhalb von 30 Minuten beim Kunden.";
+            ViewData["Paragraphs"] = new[] {
+                "Als lokale Reinigungsfirma in Zürich reinigen wir Ihre Mietwohnung übergabebereit und sind bei der Wohnungsabgabe persönlich dabei — bis das Protokoll unterschrieben ist.",
+                "Das <strong>Knonaueramt</strong> wächst seit Jahren stark — junge Familien ziehen aus der Stadt zu, und Mietwohnungen wechseln entsprechend häufig den Mieter. Mit unserem Büro an der <strong>Seewadelstrasse 5 in Affoltern am Albis (8910)</strong> sind wir die naheliegende Wahl für die <strong>Umzugsreinigung Bezirk Affoltern</strong>. Wir kennen die Familienwohnungen in Bonstetten und Hedingen genauso wie die ländlicheren Liegenschaften in Kappel am Albis, Knonau und Rifferswil.",
+                "Eine <strong>Endreinigung mit Abnahmegarantie</strong> bedeutet bei uns: Wir sind bei der Wohnungsabgabe persönlich anwesend, und falls die Verwaltung Mängel festhalten will, beheben wir diese sofort vor Ort — ohne Aufpreis. Im Säuliamt prüfen viele Verwaltungen die Backöfen, Dampfabzüge, Lamellenstoren und die Innenseiten der Schränke besonders genau. Wir gehen diese Punkte standardmässig durch, bevor der Vermieter eintrifft.",
+                "Als <strong>Reinigungsfirma Bezirk Affoltern</strong> arbeiten wir mit kurzen Wegen: Mettmenstetten, Obfelden, Wettswil, Stallikon und Maschwanden erreichen wir zuverlässig und pünktlich. Fixpreise gelten für alle 14 Gemeinden im Knonaueramt — unabhängig davon, ob Sie in einer 2.5-Zimmer-Wohnung in Hausen am Albis oder einem Einfamilienhaus in Aeugst wohnen."
+            };
             ViewData["GemeindenSubtitle"] = "Wir reinigen in allen 14 Gemeinden im Knonaueramt";
             ViewData["Gemeinden"] = "Aeugst am Albis:8914,Affoltern am Albis:8910,Bonstetten:8906,Hausen am Albis:8915,Hedingen:8908,Kappel am Albis:8926,Knonau:8934,Maschwanden:8933,Mettmenstetten:8932,Obfelden:8912,Ottenbach:8913,Rifferswil:8911,Stallikon:8143,Wettswil am Albis:8907";
             return View("UmzugsreinigungBezirk");

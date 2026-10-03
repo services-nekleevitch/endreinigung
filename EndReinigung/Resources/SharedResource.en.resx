@@ -108,10 +108,10 @@
     <value>Cleaning Perfection</value>
   </data>
   <data name="hero.benefit_1" xml:space="preserve">
-    <value>Swiss Quality &amp; Fair Prices</value>
+    <value>Personal presence at the handover</value>
   </data>
   <data name="hero.benefit_2" xml:space="preserve">
-    <value>Deposit back after your move-out cleaning — guaranteed</value>
+    <value>100% handover guarantee for the cleaning service</value>
   </data>
   <data name="hero.benefit_3" xml:space="preserve">
     <value>Professional end-of-lease cleaning in Zürich &amp; surroundings</value>
@@ -335,7 +335,7 @@
     <value>Step 1: Enter Details</value>
   </data>
   <data name="how.step1_desc" xml:space="preserve">
-    <value>Enter your postal code and desired service type into our price calculator.</value>
+    <value>Enter your postal code and apartment size into our price calculator.</value>
   </data>
   <data name="how.step2_title" xml:space="preserve">
     <value>Step 2: Get Fixed Price Instantly</value>
@@ -347,18 +347,18 @@
     <value>Step 3: Book, Hand Over Keys &amp; Relax</value>
   </data>
   <data name="how.step3_desc" xml:space="preserve">
-    <value>We handle the cleaning, inspection, and handover. Sit back while we make your move stress-free.</value>
+    <value>We carry out the end-of-lease cleaning and are personally present at the apartment handover for the cleaning inspection.</value>
   </data>
 
   <!-- WhyChooseUs -->
   <data name="why.title" xml:space="preserve">
-    <value>Why</value>
+    <value>Why Zürich Endreinigung? — </value>
   </data>
   <data name="why.title_brand" xml:space="preserve">
-    <value>Zürich Endreinigung</value>
+    <value>Your specialist for end-of-lease cleaning in Zürich and across the canton</value>
   </data>
   <data name="why.subtitle" xml:space="preserve">
-    <value>Trust our expertise and get your full deposit back. We are your reliable partner for move-out cleaning in Zürich.</value>
+    <value>For a smooth cleaning handover — with a 100% acceptance guarantee and personal accompaniment at the handover.</value>
   </data>
   <data name="why.b1_title" xml:space="preserve">
     <value>Personal Inspection Attendance</value>
@@ -379,10 +379,10 @@
     <value>On-site immediately</value>
   </data>
   <data name="why.b3_title" xml:space="preserve">
-    <value>We Know Zürich</value>
+    <value>Experience in Zürich</value>
   </data>
   <data name="why.b3_desc" xml:space="preserve">
-    <value>As a local cleaning company in Zürich, we know the requirements of Zürich property managers — ensuring your handover succeeds the first time.</value>
+    <value>We are regularly active in the city and canton of Zürich and know the requirements at apartment handovers from practical experience.</value>
   </data>
   <data name="why.b3_highlight" xml:space="preserve">
     <value>Zürich Experts</value>
@@ -578,7 +578,7 @@
     <value>Address</value>
   </data>
   <data name="footer.about_text" xml:space="preserve">
-    <value>Professional end-of-lease &amp; move-out cleaning in Zürich, Winterthur, Dietikon, Schlieren, Uster and the entire Canton Zürich — broom-clean, reliable and with handover guarantee.</value>
+    <value>Your cleaning company for professional end-of-lease cleaning in Zürich, Winterthur, Dietikon, Schlieren, Uster and the entire Canton Zürich — reliable and with handover guarantee.</value>
   </data>
   <data name="footer.reviews" xml:space="preserve">
     <value>Customer Reviews</value>
@@ -617,7 +617,7 @@
     <value>Show all 160 municipalities →</value>
   </data>
   <data name="footer.service_intro" xml:space="preserve">
-    <value>Professional End of Lease Cleaning with inspection guarantee throughout Zürich and nearby districts.</value>
+    <value>Professional End-of-Lease Cleaning and Move-out Cleaning with inspection guarantee throughout the Canton of Zürich.</value>
   </data>
 
   <!-- FAQ -->
@@ -957,5 +957,38 @@
   </data>
   <data name="ratgeber.cta_button" xml:space="preserve">
     <value>Contact us</value>
+  </data>
+  <data name="nav.umzugsreinigung" xml:space="preserve">
+    <value>Move-out Cleaning</value>
+  </data>
+  <data name="nav.services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="nav.company" xml:space="preserve">
+    <value>Cleaning Company</value>
+  </data>
+  <data name="nav.locations" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="nav.all_services" xml:space="preserve">
+    <value>All services</value>
+  </data>
+  <data name="nav.view_all_services" xml:space="preserve">
+    <value>View all services</value>
+  </data>
+  <data name="nav.group_services" xml:space="preserve">
+    <value>Cleaning services</value>
+  </data>
+  <data name="nav.group_business" xml:space="preserve">
+    <value>For businesses</value>
+  </data>
+  <data name="nav.services_expand" xml:space="preserve">
+    <value>Expand services</value>
+  </data>
+  <data name="footer.more_info" xml:space="preserve">
+    <value>More info</value>
+  </data>
+  <data name="nav.references" xml:space="preserve">
+    <value>References</value>
   </data>
 </root>

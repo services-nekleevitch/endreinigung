@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Kontakt – Zürich Endreinigung";
+    ViewData["Description"] = "Kontaktieren Sie Zürich Endreinigung: Telefon +41 76 501 77 38, info@zurich-endreinigung.ch. Offerte innert 24h für Ihre Reinigung in Zürich.";
+    ViewData["Keywords"] = "Kontakt, Zürich Endreinigung, Reinigungsfirma Zürich kontaktieren";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://zurich-endreinigung.ch/kontakt" }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Kontakt
+            </h1>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Rufen Sie uns an, schreiben Sie uns per E-Mail oder nutzen Sie das Formular unten —
+                wir melden uns innert 24 Stunden mit einer Fixpreis-Offerte.
+            </p>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_Contact")
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

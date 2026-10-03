@@ -1,10 +1,16 @@
+@{
+    // Optional per-page overrides (see Abnahmegarantie.cshtml). Default to the shared resources.
+    var pricingTitle = (string?)ViewData["PricingTitle"] ?? SharedLocalizer["pricing.title"].Value;
+    var pricingSubtitle = (string?)ViewData["PricingSubtitle"] ?? SharedLocalizer["pricing.subtitle"].Value;
+    var pricingIncludedTitle = (string?)ViewData["PricingIncludedTitle"] ?? SharedLocalizer["pricing.included_title"].Value;
+}
 <!-- Fixed Pricing -->
 <section id="pakete" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 scroll-mt-16 md:scroll-mt-[6.25rem]">
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">@SharedLocalizer["pricing.title"]</h2>
-            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">@SharedLocalizer["pricing.subtitle"]</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">@pricingTitle</h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">@pricingSubtitle</p>
         </div>
 
         <!-- Pricing Grid -->
@@ -97,7 +103,7 @@
         <div class="mt-12">
             <div class="p-4 sm:p-8 bg-white border-0 shadow-lg rounded-lg">
                 <div class="text-center">
-                    <h3 class="text-2xl font-bold text-foreground mb-4">@SharedLocalizer["pricing.included_title"]</h3>
+                    <h3 class="text-2xl font-bold text-foreground mb-4">@pricingIncludedTitle</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mt-8">
                         @{
                             var includedItems = new[] {

@@ -1,3 +1,7 @@
+@{
+    var footerPath = (Context.Request.Path.Value ?? "/").TrimEnd('/');
+    var isAffoltern = footerPath.Equals("/umzugsreinigung-bezirk-affoltern", StringComparison.OrdinalIgnoreCase);
+}
 <div class="relative">
     <!-- LAYER 1 — Contact Strip -->
     <div id="contact" class="relative z-10 scroll-mt-20 md:scroll-mt-28">
@@ -29,7 +33,7 @@
                 </div>
                 <div>
                     <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.hours"]</div>
-                    <div class="text-[13px] text-muted-foreground leading-relaxed">Mo–Fr 08:00–19:00<br/>Sa 08:00–16:00</div>
+                    <div class="text-[13px] text-muted-foreground leading-relaxed">Mo–Fr 08:00–19:00<br/>Sa 09:00–16:00</div>
                 </div>
             </div>
             <!-- Address -->
@@ -55,14 +59,17 @@
                 <div>
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.company"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/#contact-form" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.contact"]</a></li>
-                        <li><a href="/ueber-uns" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.about"]</a></li>
-                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
+                        <li><a href="#contact" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.contact"]</a></li>
+                        <li><a href="/reinigungsfirma-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.about"]</a></li>
+                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Wohnungsreinigung mit Abnahmegarantie</a></li>
                     </ul>
                     <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3 mt-10">@SharedLocalizer["footer.social"]</div>
                     <div class="flex flex-wrap gap-1.5">
                         <a href="https://www.instagram.com/zurichendreinigung/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-navy-border flex items-center justify-center text-navy-light/80 hover:text-red-accent hover:bg-navy-border/80 transition-colors" aria-label="Instagram">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCF-l86MCZdjOZrF6ph5sKIA" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-navy-border flex items-center justify-center text-navy-light/80 hover:text-red-accent hover:bg-navy-border/80 transition-colors" aria-label="YouTube">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -70,13 +77,13 @@
                 <div>
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.cleaning_info"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/umzugsreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Endreinigung</a></li>
+                        <li><a href="/" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Endreinigung Zürich</a></li>
                         <li><a href="/spezialreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Spezialreinigung</a></li>
                         <li><a href="/gewerbereinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Gewerbereinigung</a></li>
                         <li><a href="/standorte" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Standorte</a></li>
                         <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
                         <li><a href="/calculator" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.calculator"]</a></li>
-                        <li><a href="/extra-services" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.extras"]</a></li>
+                        <li><a href="/dienstleistungen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.extras"]</a></li>
                     </ul>
                 </div>
                 <!-- Col 3 - Services -->
@@ -98,9 +105,17 @@
                         <li><a href="/praxisreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Praxisreinigung</a></li>
                     </ul>
                 </div>
-                <!-- Col 4 - Legal -->
+                <!-- Col 4 - Weitere Infos + Legal -->
                 <div>
-                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.legal"]</h4>
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.more_info"]</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="/#pakete" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["nav.prices"]</a></li>
+                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Wohnungsreinigung mit Abnahmegarantie</a></li>
+                        <li><a href="/faq" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">FAQ</a></li>
+                        <li><a href="/referenzen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["nav.references"]</a></li>
+                    </ul>
+
+                    <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5 mt-8">@SharedLocalizer["footer.legal"]</h4>
                     <ul class="space-y-2.5">
                         <li><a href="/agb" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">AGB</a></li>
                         <li><a href="/datenschutz" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Datenschutz</a></li>
@@ -152,7 +167,9 @@
                 </div>
             </div>
 
-            <!-- Local SEO -->
+            <!-- Local SEO — Affoltern-only -->
+            @if (isAffoltern)
+            {
             <div class="py-5 border-b border-navy-border">
                 <p class="text-[14px] text-navy-light/80 leading-[1.8]">
                     Als Ihr lokaler Reinigungsexperte sind wir im gesamten Bezirk Affoltern für Sie im Einsatz. Ob eine gründliche Umzugsreinigung in
@@ -165,6 +182,12 @@
                     <strong class="text-navy-light">Knonau</strong> sorgen wir für strahlende Sauberkeit.
                 </p>
             </div>
+            <div class="py-5 border-b border-navy-border">
+                <p class="text-[14px] text-navy-light/80 leading-[1.8]">
+                    Ob 1.5- oder 6.5-Zimmer-Wohnung: Die Endreinigung Ihrer Wohnung erfolgt nach den Anforderungen der Zürcher Verwaltungen — inklusive Küche, Bad, Fenster und Storen. Unsere Reinigung zur Wohnungsübergabe erfüllt die Anforderungen jeder Zürcher Verwaltung — vom Backofen bis zu den Storenlamellen.
+                </p>
+            </div>
+            }
 
             <!-- Service Areas -->
             <div class="pt-9 pb-2 border-b border-navy-border">
@@ -176,24 +199,24 @@
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-stadt-zuerich" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Stadt Zürich</a>
-                        <a href="/umzugsreinigung-bezirk-winterthur" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Winterthur</a>
-                        <a href="/umzugsreinigung-bezirk-uster" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Uster</a>
+                        <a href="/umzugsreinigung-stadt-zuerich" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Stadt Zürich</a>
+                        <a href="/umzugsreinigung-bezirk-winterthur" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Winterthur</a>
+                        <a href="/umzugsreinigung-bezirk-uster" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Uster</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-horgen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Horgen</a>
-                        <a href="/umzugsreinigung-bezirk-meilen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Meilen</a>
-                        <a href="/umzugsreinigung-bezirk-buelach" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Bülach</a>
+                        <a href="/umzugsreinigung-bezirk-horgen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Horgen</a>
+                        <a href="/umzugsreinigung-bezirk-meilen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Meilen</a>
+                        <a href="/umzugsreinigung-bezirk-buelach" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Bülach</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-dietikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Dietikon</a>
-                        <a href="/umzugsreinigung-bezirk-hinwil" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Hinwil</a>
-                        <a href="/umzugsreinigung-bezirk-pfaeffikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Pfäffikon</a>
+                        <a href="/umzugsreinigung-bezirk-dietikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Dietikon</a>
+                        <a href="/umzugsreinigung-bezirk-hinwil" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Hinwil</a>
+                        <a href="/umzugsreinigung-bezirk-pfaeffikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Pfäffikon</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-andelfingen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Andelfingen</a>
-                        <a href="/umzugsreinigung-bezirk-dielsdorf" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Dielsdorf</a>
-                        <a href="/umzugsreinigung-bezirk-affoltern" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Umzugsreinigung Bezirk Affoltern</a>
+                        <a href="/umzugsreinigung-bezirk-andelfingen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Andelfingen</a>
+                        <a href="/umzugsreinigung-bezirk-dielsdorf" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Dielsdorf</a>
+                        <a href="/umzugsreinigung-bezirk-affoltern" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Affoltern</a>
                     </div>
                 </div>
             </div>

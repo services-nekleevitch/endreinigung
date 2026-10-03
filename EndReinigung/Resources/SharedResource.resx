@@ -108,10 +108,10 @@
     <value>Umzugsreinigung mit 100% Abnahmegarantie</value>
   </data>
   <data name="hero.benefit_1" xml:space="preserve">
-    <value>Schweizer Qualit&#228;t &amp; faire Preise</value>
+    <value>Persönliche Anwesenheit bei der Übergabe</value>
   </data>
   <data name="hero.benefit_2" xml:space="preserve">
-    <value>Kaution zur&#252;ck nach Ihrer Umzugsreinigung &#8212; garantiert</value>
+    <value>100% Abnahmegarantie für die Reinigungsleistung</value>
   </data>
   <data name="hero.benefit_3" xml:space="preserve">
     <value>Professionelle Endreinigung in Z&#252;rich &amp; Umgebung</value>
@@ -184,7 +184,7 @@
 
   <!-- Pricing -->
   <data name="pricing.title" xml:space="preserve">
-    <value>Fixpreise Endreinigung besenrein inkl. Wohnungsabgabe</value>
+    <value>Fixpreise Endreinigung inkl. Wohnungsabgabe — grundgereinigt nach Zürcher Standard</value>
   </data>
   <data name="pricing.subtitle" xml:space="preserve">
     <value>Transparente Festpreise f&#252;r Ihre Endreinigung und Wohnungs&#252;bergabe in Z&#252;rich &#8212; alles inklusive.</value>
@@ -335,7 +335,7 @@
     <value>Schritt 1: Angaben eingeben</value>
   </data>
   <data name="how.step1_desc" xml:space="preserve">
-    <value>Geben Sie Ihre Postleitzahl und die gew&#252;nschte Serviceart in unseren Preisrechner ein.</value>
+    <value>Geben Sie Ihre Postleitzahl und Wohnungsgrösse in unseren Preisrechner ein.</value>
   </data>
   <data name="how.step2_title" xml:space="preserve">
     <value>Schritt 2: Fixpreis sofort erhalten</value>
@@ -347,18 +347,18 @@
     <value>Schritt 3: Buchen, Schl&#252;ssel abgeben &amp; entspannen</value>
   </data>
   <data name="how.step3_desc" xml:space="preserve">
-    <value>Wir k&#252;mmern uns um die Reinigung, Abnahme und &#220;bergabe. Lehnen Sie sich zur&#252;ck, w&#228;hrend wir Ihren Umzug stressfrei machen.</value>
+    <value>Wir führen die Endreinigung durch und sind bei der Wohnungsübergabe persönlich für die Reinigungsabnahme vor Ort.</value>
   </data>
 
   <!-- WhyChooseUs -->
   <data name="why.title" xml:space="preserve">
-    <value>Warum</value>
+    <value>Warum Zürich Endreinigung? — </value>
   </data>
   <data name="why.title_brand" xml:space="preserve">
-    <value>Z&#252;rich Endreinigung</value>
+    <value>Ihr Spezialist für Endreinigung in Zürich und im ganzen Kanton</value>
   </data>
   <data name="why.subtitle" xml:space="preserve">
-    <value>Vertrauen Sie auf unsere Expertise und erhalten Sie Ihre volle Kaution zur&#252;ck. Wir sind Ihr zuverl&#228;ssiger Partner f&#252;r Umzugsreinigung und Z&#252;gelreinigung in Z&#252;rich.</value>
+    <value>Für eine reibungslose Reinigungsabnahme – mit 100% Abnahmegarantie und persönlicher Begleitung bei der Übergabe.</value>
   </data>
   <data name="why.b1_title" xml:space="preserve">
     <value>Pers&#246;nliche Abnahmebegleitung</value>
@@ -379,10 +379,10 @@
     <value>Sofort vor Ort</value>
   </data>
   <data name="why.b3_title" xml:space="preserve">
-    <value>Wir kennen Z&#252;rich</value>
+    <value>Erfahrung in Zürich</value>
   </data>
   <data name="why.b3_desc" xml:space="preserve">
-    <value>Als lokale Reinigungsfirma in Z&#252;rich kennen wir die Anforderungen der Z&#252;rcher Verwaltungen &#8212; und sorgen daf&#252;r, dass Ihre &#220;bergabe beim ersten Mal klappt.</value>
+    <value>Wir sind regelmässig in Stadt und Kanton Zürich im Einsatz und kennen die Anforderungen bei Wohnungsabgaben aus der Praxis.</value>
   </data>
   <data name="why.b3_highlight" xml:space="preserve">
     <value>Z&#252;rich Experten</value>
@@ -416,7 +416,7 @@
     <value>Endreinigungen in Z&#252;rich</value>
   </data>
   <data name="gallery.subtitle" xml:space="preserve">
-    <value>Einblicke in unsere letzten Endreinigungen in Z&#252;rich, Winterthur, Dietikon, Uster und dem ganzen Kanton</value>
+    <value>Einblicke in unsere letzten Endreinigungen in der Stadt Zürich und im ganzen Kanton Zürich.</value>
   </data>
 
   <!-- Services -->
@@ -578,7 +578,7 @@
     <value>Adresse</value>
   </data>
   <data name="footer.about_text" xml:space="preserve">
-    <value>Professionelle Endreinigung &amp; Umzugsreinigung in Z&#252;rich, Winterthur, Dietikon, Schlieren, Uster und dem ganzen Kanton Z&#252;rich &#8211; besenrein, zuverl&#228;ssig und mit Abnahmegarantie.</value>
+    <value>Ihre Reinigungsfirma für professionelle Endreinigung in Zürich, Winterthur, Dietikon, Schlieren, Uster und dem ganzen Kanton Zürich — zuverlässig und mit Abnahmegarantie.</value>
   </data>
   <data name="footer.reviews" xml:space="preserve">
     <value>Kundenbewertung</value>
@@ -617,7 +617,7 @@
     <value>Alle 160 Gemeinden anzeigen &#8594;</value>
   </data>
   <data name="footer.service_intro" xml:space="preserve">
-    <value>Professional End of Lease Cleaning with inspection guarantee throughout Z&#252;rich and nearby districts.</value>
+    <value>Professionelle Endreinigung und Umzugsreinigung mit Abnahmegarantie im gesamten Kanton Zürich.</value>
   </data>
 
   <!-- FAQ -->
@@ -924,5 +924,38 @@
   </data>
   <data name="cookie.more_info" xml:space="preserve">
     <value>Datenschutzerklärung lesen</value>
+  </data>
+  <data name="nav.umzugsreinigung" xml:space="preserve">
+    <value>Umzugsreinigung</value>
+  </data>
+  <data name="nav.services" xml:space="preserve">
+    <value>Dienstleistungen</value>
+  </data>
+  <data name="nav.company" xml:space="preserve">
+    <value>Reinigungsfirma</value>
+  </data>
+  <data name="nav.locations" xml:space="preserve">
+    <value>Standorte</value>
+  </data>
+  <data name="nav.all_services" xml:space="preserve">
+    <value>Alle Services</value>
+  </data>
+  <data name="nav.view_all_services" xml:space="preserve">
+    <value>Alle Leistungen ansehen</value>
+  </data>
+  <data name="nav.group_services" xml:space="preserve">
+    <value>Reinigungsservices</value>
+  </data>
+  <data name="nav.group_business" xml:space="preserve">
+    <value>Für Unternehmen</value>
+  </data>
+  <data name="nav.services_expand" xml:space="preserve">
+    <value>Dienstleistungen erweitern</value>
+  </data>
+  <data name="footer.more_info" xml:space="preserve">
+    <value>Weitere Infos</value>
+  </data>
+  <data name="nav.references" xml:space="preserve">
+    <value>Referenzen</value>
   </data>
 </root>

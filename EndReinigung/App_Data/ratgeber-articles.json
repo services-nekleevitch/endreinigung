@@ -7,8 +7,8 @@
     "categoryNameEn": "Checklists",
     "titleDe": "Wohnungsübergabe Checkliste Zürich 2026 — So bestehen Sie die Abnahme garantiert",
     "titleEn": "Apartment Handover Checklist Zurich 2026 — Pass Your Inspection, Guaranteed",
-    "introDe": "Die Wohnungsübergabe steht bevor — und damit die Frage: Ist meine Wohnung wirklich sauber genug? In Zürich sind Hauswarte bekannt dafür, bei der Abnahme sehr genau hinzuschauen. Kratzer am Boden, Kalkflecken im Bad oder Fettspritzer hinter dem Herd können dazu führen, dass Ihre Kaution einbehalten wird. Mit unserer bewährten Checkliste 2026 gehen Sie auf Nummer sicher und bestehen die Abnahme garantiert.",
-    "introEn": "Your apartment handover is coming up — and with it the big question: is my apartment really clean enough? In Zurich, building caretakers (Hauswarte) are notoriously thorough during the final inspection. Scratched floors, limescale in the bathroom, or grease behind the stove can all cost you part of your deposit. Use our proven 2026 checklist to walk in prepared and pass the inspection on the first try.",
+    "introDe": "Die Wohnungsübergabe steht bevor — und damit die Frage, die jeden Mieter in Zürich beschäftigt: Ist meine Wohnung wirklich sauber genug?\n\nZürcher Hauswarte und Verwaltungen schauen bei der Abnahme sehr genau hin. Kalkflecken an der Dusche, Fettspritzer hinter dem Herd, ein vergessener Kellerabteil — jeder Punkt landet im Protokoll, und jeder Punkt im Protokoll kann Sie einen Teil Ihrer Kaution kosten. Bei drei Monatsmieten Kaution geht es in Zürich schnell um mehrere tausend Franken.\n\nDiese Checkliste führt Sie durch den kompletten Ablauf: den Zeitplan der letzten drei Monate, jeden einzelnen Raum, das Übergabeprotokoll und Ihre Rechte danach. Sie basiert auf den Übergaben, die wir in Zürich persönlich begleiten — und auf dem, was Hauswarte dabei tatsächlich beanstanden.",
+    "introEn": "The apartment handover is coming up — and with it the question on every tenant's mind in Zurich: is my apartment really clean enough?\n\nZurich caretakers and property managers look very closely at the handover. Limescale on the shower, grease splatter behind the stove, a forgotten basement compartment — every point ends up in the protocol, and every point in the protocol can cost you part of your deposit. With three months' rent held as a deposit, that's quickly several thousand francs in Zurich.\n\nThis checklist walks you through the entire process: the timeline for the last three months, every single room, the handover protocol, and your rights afterwards. It's based on the handovers we personally accompany in Zurich — and on what caretakers actually object to.",
     "metaTitleDe": "Wohnungsübergabe Checkliste Zürich 2026 | Abnahme bestehen & Kaution sichern",
     "metaTitleEn": "Apartment Handover Checklist Zurich 2026 | Pass Your Inspection",
     "metaDescriptionDe": "Wohnungsübergabe Checkliste Zürich 2026: Küche, Bad, Fenster & Wohnräume Schritt für Schritt. Plus Profi-Tipps, FAQ und 100% Abnahmegarantie.",
@@ -18,15 +18,73 @@
     "heroAltDe": "Wohnungsübergabe-Protokoll und Checkliste auf Tisch in Zürcher Wohnung",
     "heroAltEn": "Apartment handover protocol and checklist on a table in a Zurich apartment",
     "datePublished": "2026-01-01",
-    "dateModified": "2026-05-20",
-    "readingTimeMinutes": 6,
+    "dateModified": "2026-08-16",
+    "readingTimeMinutes": 12,
     "coverImage": "/img/ratgeber/wohnungsuebergabe-checkliste.jpg",
     "blocks": [
       {
         "type": "text",
+        "heading": "Der Zeitplan: was Sie wann erledigen",
+        "body": "Die meisten Beanstandungen entstehen nicht durch schlechtes Putzen, sondern durch Zeitdruck. Wer die Endreinigung auf die letzten zwei Tage schiebt, putzt parallel zum Zügeln — und übersieht genau die Details, auf die der Hauswart schaut.\n\nEin wichtiger Zürcher Punkt vorweg: Die ortsüblichen Kündigungstermine unterscheiden sich innerhalb des Kantons. In der **Stadt Zürich** gelten der **31. März und der 30. September**. In den **Bezirken des Kantons Zürich** kommt zusätzlich der **30. Juni** dazu. Die Kündigungsfrist für Wohnungen beträgt in der Regel drei Monate. Prüfen Sie beides in Ihrem Mietvertrag — abweichende Vereinbarungen sind möglich."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Wann",
+          "Was"
+        ],
+        "rows": [
+          [
+            "**3 Monate vorher**",
+            "Kündigung schriftlich und eingeschrieben verschicken, mit amtlichem Formular falls verlangt. Termin im Mietvertrag prüfen."
+          ],
+          [
+            "**8 Wochen vorher**",
+            "Endreinigung buchen. In den Wochen um den 31. März und 30. September sind gute Termine in Zürich früh vergeben. Wer einen Nachmieter stellen will, beginnt jetzt mit der Suche."
+          ],
+          [
+            "**4 Wochen vorher**",
+            "Abmeldung bei der Gemeinde vorbereiten, Post-Nachsendeauftrag, Strom, Internet und Versicherungen ummelden. Kleinere Reparaturen und Dübellöcher erledigen."
+          ],
+          [
+            "**2 Wochen vorher**",
+            "Keller und Estrich ausräumen — der häufigste vergessene Raum. Sperrmüll und Entsorgung organisieren."
+          ],
+          [
+            "**1 Woche vorher**",
+            "Alle Schlüssel zusammensuchen, auch Zweitschlüssel bei Familie oder Nachbarn. Einzugsprotokoll und Einzugsfotos heraussuchen."
+          ],
+          [
+            "**Tag vor der Übergabe**",
+            "Endreinigung durchführen oder durchführen lassen. Danach nichts mehr einlagern oder benutzen."
+          ],
+          [
+            "**Am Übergabetag**",
+            "Zählerstände notieren, Fotos von jedem Raum machen, Protokoll sorgfältig lesen, Kopie mitnehmen."
+          ]
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "Legen Sie die Endreinigung auf den Tag nach dem Zügeln und vor der Übergabe. Wer während des Auszugs reinigt, putzt zweimal."
+      },
+      {
+        "type": "text",
         "heading": "Was prüft der Hauswart genau?",
-        "body": "Bei der Wohnungsübergabe in Zürich geht der Hauswart systematisch durch jeden Raum. Er prüft Böden auf Kratzer und Flecken, kontrolliert Wände auf Löcher und Verfärbungen und inspiziert Küche sowie Badezimmer auf Sauberkeit. Besonders kritisch werden Kalkablagerungen an Armaturen, der Zustand von Backofen und Kühlschrank sowie die Fensterreinigung bewertet. Auch Sockelleisten, Lichtschalter und Steckdosen werden unter die Lupe genommen. Viele Mieter unterschätzen den Detailgrad dieser Prüfung — und verlieren dadurch einen Teil ihrer Kaution. Wer gut vorbereitet ist, spart sich Ärger und Geld.",
+        "body": "Bei der Wohnungsübergabe in Zürich geht der Hauswart systematisch durch jeden Raum. Er prüft Böden auf Kratzer und Flecken, kontrolliert Wände auf Löcher und Verfärbungen und inspiziert Küche sowie Badezimmer auf Sauberkeit. Besonders kritisch bewertet werden Kalkablagerungen an Armaturen, der Zustand von Backofen und Kühlschrank sowie die Fensterreinigung. Auch Sockelleisten, Lichtschalter, Steckdosen und Lüftungsgitter werden geprüft.\n\nEntscheidend ist die Unterscheidung, die dabei getroffen wird: **Sauberkeit** ist Ihre Pflicht — hier gibt es keinen Ermessensspielraum. **Abnutzung** dagegen ist normal und geht nicht zu Ihren Lasten, solange sie dem Alter der Wohnung entspricht. Ein zwölf Jahre alter Spannteppich darf abgelaufen aussehen. Er darf aber nicht ungesaugt sein.\n\nViele Mieter unterschätzen den Detailgrad dieser Prüfung — und verlieren dadurch einen Teil ihrer Kaution. Wer gut vorbereitet ist, spart sich Ärger und Geld, oder beauftragt direkt eine [professionelle Endreinigung](/umzugsreinigung-stadt-zuerich) mit [Abnahmegarantie](/abnahmegarantie).",
         "items": []
+      },
+      {
+        "type": "numbered",
+        "heading": "Die 5 häufigsten Beanstandungen — aus unseren begleiteten Abnahmen",
+        "body": "Wir sind bei der Übergabe persönlich dabei. Das heisst: Wir stehen neben dem Hauswart, wenn er die Wohnung abnimmt, und hören, was er beanstandet. Diese fünf Punkte kommen immer wieder — und vier davon lassen sich in einer Stunde vermeiden.",
+        "items": [
+          "Der Backofen, speziell Blech und Dichtung\nFast jeder reinigt die Innenwände. Vergessen werden Backblech, Gitterrost, die Gummidichtung der Tür und der Zwischenraum der Doppelscheibe. Genau dorthin schaut ein erfahrener Hauswart zuerst.",
+          "Der Dunstabzug\nDer Fettfilter ist bei den meisten Übergaben verklebt. Er lässt sich herausnehmen und in der Spülmaschine reinigen — die Aktivkohlefilter (bei Umluft) gehören ersetzt, nicht gereinigt.",
+          "Silikonfugen im Bad\nKalk lässt sich entfernen. Schwarzer Schimmel in den Fugen nicht. Wer erst am Vortag hinschaut, hat keine Zeit mehr, die Fugen erneuern zu lassen — und das landet im Protokoll.",
+          "Keller und Estrich\nDer mit Abstand häufigste vergessene Raum. Der Keller wird ausgeräumt, aber nicht gewischt, und das Estrichabteil bleibt ganz vergessen, weil man seit Jahren nicht mehr oben war.",
+          "Storen und Rollladenkästen\nLamellen werden abgestaubt, der Kasten oben nicht. Dort sammelt sich über Jahre Staub, und er ist beim Öffnen sofort sichtbar."
+        ]
       },
       {
         "type": "checklist",
@@ -42,6 +100,14 @@
           "Boden wischen inkl. unter Geräten",
           "Fliesenspiegel von Fettspritzern befreien"
         ]
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/kueche-endreinigung-zuerich.jpg",
+        "alt": "Komplett leere, frisch gereinigte Küche in einer Zürcher Mietwohnung",
+        "caption": "Die Küche ist der häufigste Grund für Beanstandungen bei der Abnahme.",
+        "width": 1280,
+        "height": 768
       },
       {
         "type": "checklist",
@@ -60,37 +126,193 @@
       },
       {
         "type": "checklist",
-        "heading": "Checkliste Wohnräume",
+        "heading": "Checkliste Wohn- und Schlafräume",
         "body": "",
         "items": [
           "Alle Böden saugen und wischen",
           "Sockelleisten abstauben",
-          "Löcher in Wänden zuspachteln und überstreichen",
+          "Dübellöcher nur nach Rücksprache mit der Verwaltung fachgerecht verschliessen.",
           "Lichtschalter und Steckdosen reinigen",
           "Heizkörper entstauben",
           "Einbauschränke innen auswischen",
-          "Fensterrahmen und -bänke reinigen",
-          "Balkon oder Terrasse fegen und reinigen"
+          "Fensterrahmen und -bänke reinigen"
         ]
       },
       {
         "type": "checklist",
-        "heading": "Checkliste Fenster & Jalousien",
+        "heading": "Checkliste Fenster, Storen und Jalousien",
         "body": "",
         "items": [
           "Alle Fenster innen und aussen streifenfrei putzen",
           "Fensterrahmen und Dichtungen reinigen",
           "Fensterbänke innen und aussen abwischen",
-          "Jalousien Lamelle für Lamelle entstauben",
+          "Jalousien / Lamellen feucht/nass reinigen",
           "Rollläden auf Funktion prüfen",
           "Fliegengitter reinigen oder entfernen"
         ]
       },
       {
         "type": "text",
-        "heading": "Profi oder selber reinigen?",
-        "body": "Eine 3-Zimmer-Wohnung selbst zu reinigen dauert in Zürich erfahrungsgemäss 8–12 Stunden. Eine professionelle Endreinigung bei Zurich Endreinigung kostet 2026 je nach Wohnungsgrösse ab CHF 500 für eine 1-Zimmer-Wohnung bis ab CHF 1'350 für eine 6.5-Zimmer-Wohnung — eine durchschnittliche 3-Zimmer-Wohnung erhalten Sie zum Fixpreis ab CHF 800 inklusive 100% Abnahmegarantie. Grundsätzlich können Sie die Endreinigung selbst durchführen — vorausgesetzt, Sie haben genug Zeit, die richtigen Reinigungsmittel und ein gutes Auge für Details. Wer jedoch auf Nummer sicher gehen will, ist mit einer professionellen Endreinigung bestens beraten. Bei [Zürich Endreinigung](/) erhalten Sie eine 100% [Abnahmegarantie](/abnahmegarantie): Sollte der Hauswart Mängel finden, kommen wir kostenlos zurück und bessern nach.",
+        "heading": "Lamellen und Rollladenkästen richtig reinigen",
+        "body": "Lamellen (Jalousien) müssen nass gereinigt werden — blosses Abstauben reicht für die Endreinigung nicht aus. Waschen Sie beide Seiten jeder Lamelle mit Wasser und einem neutralen Reinigungsmittel, um angesammelten Schmutz, Fett und Staub zu entfernen.\n\nReinigen Sie auch die Führungsschienen und Zugschnur-Mechanismen gründlich.\n\nBei Storen und Rollladenkästen werden die Lamellen zwar abgestaubt, der Kasten oben jedoch oft vergessen. Dort sammelt sich über Jahre Staub, und er ist beim Öffnen sofort sichtbar."
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/fenster-lamellen-reinigung.jpg",
+        "alt": "Sauberes Fenster mit Lamellenstoren in einer leeren Wohnung",
+        "caption": "Lamellen werden nass gereinigt — Staubwischen genügt bei der Endreinigung nicht.",
+        "width": 1280,
+        "height": 768
+      },
+      {
+        "type": "checklist",
+        "heading": "Checkliste Keller, Estrich, Balkon und Garage",
+        "items": [
+          "Kellerabteil vollständig ausräumen, Boden und Regale wischen",
+          "Estrichabteil ausräumen und ausfegen",
+          "Waschküche: Waschmaschine, Tumbler und Flusensieb reinigen, falls mitgemietet",
+          "Balkon oder Terrasse fegen, Boden reinigen, Geländer abwischen",
+          "Balkonentwässerung und Abläufe von Laub befreien",
+          "Blumenkisten, Pflanzen und Untersetzer entfernen",
+          "Garage oder Einstellhallenplatz besenrein hinterlassen, Ölflecken entfernen",
+          "Briefkasten leeren, Namensschild entfernen",
+          "Veloabstellplatz räumen"
+        ],
+        "body": "Der häufigste Grund für eine Nachbesserung nach der Abnahme: ein Raum, an den niemand gedacht hat. Fast jede Zürcher Wohnung hat ein Keller- oder Estrichabteil, und beide gehören zum Mietobjekt."
+      },
+      {
+        "type": "text",
+        "heading": "Schlüssel, Zählerstände und Unterlagen",
+        "body": "Diese drei Punkte kosten am Übergabetag die meiste Zeit, wenn sie nicht vorbereitet sind — und bei den Schlüsseln wird es teuer.\n\n**Schlüssel.** Zählen Sie im Mietvertrag nach, wie viele Schlüssel Sie erhalten haben, und legen Sie alle bereit: Wohnungstür, Haustür, Briefkasten, Keller, Estrich, Waschküche, Velokeller, Garage. Auch Zweitschlüssel bei Familie, Nachbarn oder der Putzhilfe. Ein fehlender Schlüssel bedeutet bei einer Schliessanlage im schlimmsten Fall den Austausch der gesamten Anlage — das kann mehrere tausend Franken kosten.\n\n**Zählerstände.** Notieren und fotografieren Sie am Übergabetag Strom, Wasser, Gas und falls vorhanden den Wärmezähler. Die Werte gehören ins Protokoll.\n\n**Unterlagen für den Termin.** Mietvertrag, Einzugsprotokoll und Einzugsfotos, Quittungen für Reparaturen und Serviceleistungen, Garantiescheine für Geräte, ein Stift und eine Taschenlampe für dunkle Ecken. Nehmen Sie Ihr Smartphone geladen mit — Sie werden viel fotografieren."
+      },
+      {
+        "type": "text",
+        "heading": "Das Übergabeprotokoll richtig unterschreiben",
+        "body": "Das Protokoll ist das wichtigste Dokument des ganzen Auszugs. Was dort steht, gilt — und was nicht dort steht, kann der Vermieter später nur noch in engen Grenzen geltend machen.\n\n**Sie müssen nicht unterschreiben.** Es gibt keine gesetzliche Pflicht, das Übergabeprotokoll zu unterzeichnen. Verweigern Sie die Unterschrift, muss der Vermieter die Mängel schriftlich und fristgerecht rügen — idealerweise eingeschrieben, mit Fotos und Zeugen.\n\n**Wenn Sie nicht einverstanden sind, unterschreiben Sie mit Vorbehalt.** Schreiben Sie von Hand dazu: „Unterschrift unter Vorbehalt — Position X wird bestritten.\" Eine Unterschrift ohne Vorbehalt gilt schnell als Anerkennung der aufgeführten Mängel.\n\n**Worauf Sie achten:**"
+      },
+      {
+        "type": "bulleted",
+        "items": [
+          "Jeder Mangel muss einzeln, konkret und mit Ortsangabe festgehalten sein. „Küche unsauber\" ist keine verwertbare Beanstandung, „Fettrückstände an der Dunstabzugshaube\" schon.",
+          "Kosten, die im Protokoll genannt werden, sind Schätzungen und nicht automatisch verbindlich.",
+          "Machen Sie vor Ihrer Unterschrift Fotos von jedem beanstandeten Punkt.",
+          "Lassen Sie sich eine unterschriebene Kopie aushändigen und gehen Sie nicht ohne sie.",
+          "Lassen Sie Zählerstände und Schlüsselanzahl ins Protokoll eintragen."
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "Fotografieren Sie jeden Raum vor und nach der Reinigung. Die Aufnahmen mit Zeitstempel sind Ihr bester Nachweis, falls es später zu einer Diskussion über die Kaution kommt."
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/uebergabeprotokoll-unterschreiben.jpg",
+        "alt": "Übergabeprotokoll wird bei der Wohnungsübergabe unterschrieben",
+        "caption": "Erst unterschreiben, wenn jeder Punkt im Protokoll stimmt.",
+        "width": 1280,
+        "height": 768
+      },
+      {
+        "type": "text",
+        "heading": "Normale Abnutzung oder Schaden? Die Lebensdauertabelle",
+        "body": "Das ist der Punkt, an dem die meisten Mieter zu viel bezahlen — weil sie ihn nicht kennen.\n\nNormale Abnutzung durch vertragsgemässen Gebrauch müssen Sie nicht ersetzen. Für alles darüber hinaus haften Sie — aber **nur anteilig**, entsprechend der noch verbleibenden Lebensdauer. Massgebend ist die **paritätische Lebensdauertabelle**, die der Mieterinnen- und Mieterverband gemeinsam mit dem Hauseigentümerverband herausgibt.\n\n**So wird gerechnet:**"
+      },
+      {
+        "type": "formula",
+        "body": "(Lebensdauer − Alter) ÷ Lebensdauer × Neupreis = Ihr Anteil"
+      },
+      {
+        "type": "text",
+        "body": "**Beispiel:** Ein Spannteppich mittlerer Qualität hat eine Lebensdauer von 10 Jahren. Wird er nach 6 Jahren beschädigt, sind 60 Prozent der Lebensdauer aufgebraucht. Sie zahlen die restlichen **40 Prozent** des Neupreises — nicht den vollen Betrag.\n\n**Ist die Lebensdauer vollständig abgelaufen, zahlen Sie nichts mehr.** Auch dann nicht, wenn der Gegenstand beschädigt ist."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Gegenstand",
+          "Lebensdauer"
+        ],
+        "rows": [
+          [
+            "**Wandanstrich, Dispersions- oder Leimfarbe**",
+            "8 Jahre"
+          ],
+          [
+            "**Wandanstrich, Alkydharzfarbe**",
+            "15 Jahre"
+          ],
+          [
+            "**Tapeten, mittlere Qualität**",
+            "10 Jahre"
+          ],
+          [
+            "**Spannteppich**",
+            "10 Jahre"
+          ],
+          [
+            "**Kugelgarn, Nadelfilz**",
+            "8 Jahre"
+          ],
+          [
+            "**Laminat, mittlere Qualität**",
+            "15 Jahre"
+          ],
+          [
+            "**Furnierparkett**",
+            "12 Jahre"
+          ],
+          [
+            "**Mehrschichtparkett**",
+            "30 Jahre"
+          ],
+          [
+            "**Massivholzparkett**",
+            "40 Jahre"
+          ],
+          [
+            "**Linoleum, PVC**",
+            "20 Jahre"
+          ],
+          [
+            "**Kühlschrank**",
+            "10 Jahre"
+          ],
+          [
+            "**Backofen, Kochherd**",
+            "15 Jahre"
+          ],
+          [
+            "**Geschirrspüler**",
+            "15 Jahre"
+          ],
+          [
+            "**Waschmaschine**",
+            "15 Jahre"
+          ],
+          [
+            "**Rollläden**",
+            "25–30 Jahre"
+          ]
+        ],
+        "caption": "Die Werte gelten für mittlere Material- und Arbeitsqualität bei normaler Beanspruchung. Die vollständige Tabelle finden Sie beim [Mieterinnen- und Mieterverband](https://www.mieterverband.ch/mietrecht/unterlagen-und-tools/lebensdauertabelle/)."
+      },
+      {
+        "type": "text",
+        "heading": "Nach der Übergabe: Rügefrist und Kaution",
+        "body": "**Der Vermieter muss Mängel sofort rügen.** Nach Art. 267a OR ist er verpflichtet, die Wohnung bei der Rückgabe zu prüfen und festgestellte Mängel unverzüglich zu melden. In der Praxis werden dafür etwa zwei bis drei Werktage angesetzt.\n\n**Versäumt er diese Frist, verliert er seine Ansprüche endgültig.** Das ist keine blosse Verjährung, sondern eine Verwirkung: Der Anspruch erlischt. Für offene, bei der Übergabe erkennbare Mängel kann der Vermieter danach nichts mehr fordern — unabhängig davon, wie berechtigt die Forderung gewesen wäre.\n\nEine Ausnahme gilt für **versteckte Mängel**, die bei einer normalen Prüfung nicht erkennbar waren. Auch hier muss der Vermieter aber sofort nach Entdeckung reagieren. Die oft zitierte Frist von 14 Tagen hat keine gesetzliche Grundlage.\n\n**Die Kaution.** Sie liegt in der Schweiz auf einem Sperrkonto auf Ihren Namen und darf höchstens drei Monatsmieten betragen. Die Bank gibt den Betrag frei, wenn Vermieter und Mieter gemeinsam unterschreiben — oder wenn der Vermieter innert eines Jahres nach Mietende keine rechtlichen Ansprüche geltend gemacht hat.\n\n**Bei Streit** ist die Schlichtungsbehörde in Mietsachen des Kantons Zürich die erste Anlaufstelle. Das Verfahren ist kostenlos und führt in den meisten Fällen schneller zu einer Lösung als ein Gerichtsverfahren."
+      },
+      {
+        "type": "text",
+        "heading": "Selber reinigen oder Profi beauftragen?",
+        "body": "Eine 3-Zimmer-Wohnung selbst zu reinigen dauert in Zürich erfahrungsgemäss 8–12 Stunden. Eine professionelle Endreinigung bei Zurich Endreinigung kostet 2026 je nach Wohnungsgrösse ab CHF 500 für eine 1-Zimmer-Wohnung bis ab CHF 1'350 für eine 6.5-Zimmer-Wohnung — eine durchschnittliche 3-Zimmer-Wohnung erhalten Sie zum Fixpreis ab CHF 800 inklusive 100% Abnahmegarantie. Grundsätzlich können Sie die Endreinigung selbst durchführen — vorausgesetzt, Sie haben genug Zeit, die richtigen Reinigungsmittel und ein gutes Auge für Details. Wer jedoch auf Nummer sicher gehen will, ist mit einer professionellen Endreinigung bestens beraten. Bei [Zürich Endreinigung](/) erhalten Sie eine 100% [Abnahmegarantie](/abnahmegarantie): Unser Teammitglied ist bei der Übergabe persönlich vor Ort und behebt eventuelle Mängel direkt — ohne Umstände oder Stress für Sie als Kunde.",
         "items": []
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/wohnung-uebergabebereit-gereinigt.jpg",
+        "alt": "Leere, frisch gereinigte Mietwohnung in Zürich bereit zur Wohnungsübergabe",
+        "caption": "Übergabebereit: Nach der professionellen Endreinigung glänzt die Wohnung für die Abnahme.",
+        "width": 1280,
+        "height": 768
       },
       {
         "type": "tip",
@@ -104,23 +326,131 @@
         "body": "",
         "items": [],
         "faqs": [
-          { "q": "Wie viel Kaution darf der Vermieter in Zürich einbehalten?", "a": "Der Vermieter darf nur Kosten für Schäden einbehalten, die über die normale Abnutzung hinausgehen. Die Kaution muss in der Schweiz auf einem Sperrkonto liegen und innerhalb eines Jahres nach Auszug freigegeben werden, sofern keine berechtigten Forderungen bestehen." },
-          { "q": "Was zählt als normale Abnutzung und was als Schaden?", "a": "Normale Abnutzung sind kleine Gebrauchsspuren wie verblasste Wandfarbe nach 10 Jahren oder leichte Kratzer im Parkett. Schäden sind Bohrlöcher, Brandflecken, kaputte Fliesen oder Wasserschäden — diese muss der Mieter ersetzen." },
-          { "q": "Muss ich den Backofen pyrolytisch reinigen lassen?", "a": "Nein, eine gründliche manuelle Reinigung mit Backofenreiniger reicht aus. Wichtig ist, dass keine Fettrückstände, eingebrannten Stellen oder Verschmutzungen sichtbar sind — auch nicht an Backblechen, Gitterrost und Dichtungen." },
-          { "q": "Was kostet eine professionelle Endreinigung in Zürich 2026?", "a": "Bei Zurich Endreinigung zahlen Sie einen transparenten Fixpreis abhängig von der Wohnungsgrösse: 1-Zimmer ab CHF 500, 2-Zimmer ab CHF 600, 3-Zimmer ab CHF 800, 3.5-Zimmer ab CHF 850, 4.5-Zimmer ab CHF 970, 5.5-Zimmer ab CHF 1'150, 6.5-Zimmer ab CHF 1'350. Alle Preise verstehen sich inklusive Material, Anfahrt und 100% Abnahmegarantie — ohne versteckte Zusatzkosten." },
-          { "q": "Wie lange dauert eine Wohnungsübergabe in Zürich?", "a": "Eine durchschnittliche Wohnungsübergabe dauert 45–90 Minuten. Bei grösseren Wohnungen oder strittigen Mängeln kann sie bis zu 2 Stunden in Anspruch nehmen. Planen Sie Pufferzeit ein." },
-          { "q": "Was passiert, wenn der Hauswart Mängel findet?", "a": "Mängel werden im Übergabeprotokoll festgehalten. Der Mieter erhält in der Regel 3–7 Tage Zeit zur Nachbesserung. Bei einer professionellen Endreinigung mit [Abnahmegarantie](/abnahmegarantie) übernimmt die Firma die Nachbesserung kostenlos." },
-          { "q": "Welche Unterlagen muss ich zur Wohnungsübergabe mitbringen?", "a": "Mietvertrag, alle Schlüssel inklusive Briefkasten und Keller, Zählerstände (Strom, Wasser, Gas), ein leeres Übergabeprotokoll, Einzugsfotos falls vorhanden, und eine Taschenlampe für dunkle Ecken." },
-          { "q": "An wen wende ich mich bei Streit über die Wohnungsabnahme?", "a": "Die Schlichtungsbehörde in Mietsachen des Kantons Zürich ist die erste Anlaufstelle (Telefon 044 412 94 94). Das Verfahren ist kostenlos und meist effektiver als ein direkter Gerichtsgang." }
+          {
+            "q": "Wie viel Kaution darf der Vermieter in Zürich einbehalten?",
+            "a": "Der Vermieter darf nur Kosten für Schäden einbehalten, die über die normale Abnutzung hinausgehen. Die Kaution muss in der Schweiz auf einem Sperrkonto liegen und innerhalb eines Jahres nach Auszug freigegeben werden, sofern keine berechtigten Forderungen bestehen."
+          },
+          {
+            "q": "Was zählt als normale Abnutzung und was als Schaden?",
+            "a": "Normale Abnutzung sind kleine Gebrauchsspuren wie verblasste Wandfarbe nach 10 Jahren oder leichte Kratzer im Parkett. Schäden sind Bohrlöcher, Brandflecken, kaputte Fliesen oder Wasserschäden — diese muss der Mieter ersetzen."
+          },
+          {
+            "q": "Muss ich den Backofen pyrolytisch reinigen lassen?",
+            "a": "Nein, eine gründliche manuelle Reinigung mit Backofenreiniger reicht aus. Wichtig ist, dass keine Fettrückstände, eingebrannten Stellen oder Verschmutzungen sichtbar sind — auch nicht an Backblechen, Gitterrost und Dichtungen."
+          },
+          {
+            "q": "Was kostet eine professionelle Endreinigung in Zürich 2026?",
+            "a": "Bei Zurich Endreinigung zahlen Sie einen transparenten Fixpreis abhängig von der Wohnungsgrösse: 1-Zimmer ab CHF 500, 2-Zimmer ab CHF 600, 3-Zimmer ab CHF 800, 3.5-Zimmer ab CHF 850, 4.5-Zimmer ab CHF 970, 5.5-Zimmer ab CHF 1'150, 6.5-Zimmer ab CHF 1'350. Alle Preise verstehen sich inklusive Material, Anfahrt und 100% Abnahmegarantie — ohne versteckte Zusatzkosten."
+          },
+          {
+            "q": "Wie lange dauert eine Wohnungsübergabe in Zürich?",
+            "a": "Eine durchschnittliche Wohnungsübergabe dauert 45–90 Minuten. Bei grösseren Wohnungen oder strittigen Mängeln kann sie bis zu 2 Stunden in Anspruch nehmen. Planen Sie Pufferzeit ein."
+          },
+          {
+            "q": "Was passiert, wenn der Hauswart Mängel findet?",
+            "a": "Mängel werden im Übergabeprotokoll festgehalten. Der Mieter erhält in der Regel 3–7 Tage Zeit zur Nachbesserung. Bei einer professionellen Endreinigung mit [Abnahmegarantie](/abnahmegarantie) übernimmt die Firma die Nachbesserung kostenlos."
+          },
+          {
+            "q": "Welche Unterlagen muss ich zur Wohnungsübergabe mitbringen?",
+            "a": "Mietvertrag, alle Schlüssel inklusive Briefkasten und Keller, Zählerstände (Strom, Wasser, Gas), ein leeres Übergabeprotokoll, Einzugsfotos falls vorhanden, und eine Taschenlampe für dunkle Ecken."
+          },
+          {
+            "q": "An wen wende ich mich bei Streit über die Wohnungsabnahme?",
+            "a": "Die Schlichtungsbehörde in Mietsachen des Kantons Zürich ist die erste Anlaufstelle (Telefon 044 412 94 94). Das Verfahren ist kostenlos und meist effektiver als ein direkter Gerichtsgang."
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "heading": "Das könnte Sie auch interessieren",
+        "links": [
+          {
+            "label": "Kaution zurückbekommen — so klappt die Abnahme",
+            "href": "/ratgeber/kaution-zurueckbekommen-abnahme"
+          },
+          {
+            "label": "Was kostet eine Endreinigung in Zürich?",
+            "href": "/ratgeber/endreinigung-kosten-zuerich"
+          },
+          {
+            "label": "Umzug Zürich: Checkliste 2026",
+            "href": "/ratgeber/umzug-zuerich-checkliste-2026"
+          },
+          {
+            "label": "Abmeldung bei der Gemeinde beim Auszug",
+            "href": "/ratgeber/abmeldung-gemeinde-umzug-schweiz"
+          },
+          {
+            "label": "Endreinigung Zürich mit Abnahmegarantie",
+            "href": "/umzugsreinigung-stadt-zuerich"
+          }
         ]
       }
     ],
     "blocksEn": [
       {
         "type": "text",
+        "heading": "The timeline: what to do when",
+        "body": "Most complaints do not come from poor cleaning, but from time pressure. If you postpone the final cleaning to the last two days, you clean while moving — and miss exactly the details the caretaker looks at.\n\nOne important point for Zurich: the customary termination dates differ within the canton. In the **city of Zurich**, **31 March and 30 September** apply. In the **districts of the canton of Zurich**, **30 June** is added. The notice period for apartments is usually three months. Check both in your rental contract — different agreements are possible."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "When",
+          "What"
+        ],
+        "rows": [
+          [
+            "**3 months before**",
+            "Send the termination in writing by registered mail, using the official form if required. Check the date in your rental contract."
+          ],
+          [
+            "**8 weeks before**",
+            "Book the final cleaning. Around 31 March and 30 September, good slots in Zurich are taken early. If you want to propose a successor tenant, start looking now."
+          ],
+          [
+            "**4 weeks before**",
+            "Prepare the deregistration with the municipality, set up mail forwarding, transfer electricity, internet and insurance. Handle small repairs and drill holes."
+          ],
+          [
+            "**2 weeks before**",
+            "Clear out the cellar and attic — the most frequently forgotten room. Organise bulky waste and disposal."
+          ],
+          [
+            "**1 week before**",
+            "Collect all keys, including spare keys held by family or neighbours. Find the move-in protocol and move-in photos."
+          ],
+          [
+            "**Day before the handover**",
+            "Carry out the final cleaning or have it done. After that, do not store or use anything anymore."
+          ],
+          [
+            "**Handover day**",
+            "Note the meter readings, photograph every room, read the protocol carefully and take a copy."
+          ]
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "Schedule the final cleaning for the day after the move and before the handover. Cleaning during the move-out means cleaning twice."
+      },
+      {
+        "type": "text",
         "heading": "What does the caretaker actually check?",
-        "body": "During an apartment handover in Zurich, the caretaker inspects six core areas in this order: floors, walls, kitchen, bathroom, windows, and sanitary fixtures — paying special attention to limescale, grease, and scratches. The Hauswart works through your apartment systematically. They check floors for scratches and stains, walls for holes and discoloration, and inspect the kitchen and bathroom for hygiene. Limescale on faucets, the condition of the oven and fridge, and the cleanliness of windows are scrutinized particularly closely. Baseboards, light switches, and power sockets are also examined. Most tenants underestimate how detailed this inspection is — and lose part of their deposit because of it. Being well-prepared saves you both stress and money.",
+        "body": "During an apartment handover in Zurich, the caretaker works systematically through every room. They check floors for scratches and stains, inspect walls for holes and discoloration, and examine the kitchen and bathroom for cleanliness. Limescale on faucets, the condition of the oven and fridge, and the window cleaning are judged particularly critically. Baseboards, light switches, power sockets, and ventilation grilles are also inspected.\n\nThe key distinction made during this check is this: **cleanliness** is your duty — there is no room for discretion here. **Wear and tear**, on the other hand, is normal and is not your responsibility, as long as it matches the age of the apartment. A twelve-year-old carpet may look worn. But it may not be unswept.\n\nMany tenants underestimate how detailed this inspection is — and lose part of their deposit as a result. Those who are well prepared save themselves stress and money, or commission a [professional end-of-tenancy clean](/umzugsreinigung-stadt-zuerich) with a [handover guarantee](/abnahmegarantie) directly.",
         "items": []
+      },
+      {
+        "type": "numbered",
+        "heading": "The 5 most common defects — from our accompanied handovers",
+        "body": "We are personally present at the handover. That means: we stand next to the caretaker as he inspects the apartment and hear what he objects to. These five points come up again and again — and four of them can be avoided in one hour.",
+        "items": [
+          "The oven, especially the tray and seal\nAlmost everyone cleans the interior walls. What gets forgotten are the baking tray, wire rack, rubber door seal and the gap in the double pane. That is exactly where an experienced caretaker looks first.",
+          "The extractor hood\nThe grease filter is caked on at most handovers. It can be removed and cleaned in the dishwasher — the activated carbon filters (in recirculation mode) need replacing, not cleaning.",
+          "Silicone joints in the bathroom\nLimescale can be removed. Black mould in the joints cannot. If you only check the day before, there is no time left to have the joints renewed — and it ends up in the protocol.",
+          "Cellar and attic\nBy far the most commonly forgotten space. The cellar gets cleared out but not mopped, and the attic compartment is forgotten entirely because you have not been up there in years.",
+          "Shutters and roller shutter boxes\nThe slats get dusted, the box above does not. Dust collects there over years and is immediately visible when opening."
+        ]
       },
       {
         "type": "checklist",
@@ -136,6 +466,14 @@
           "Mop floor, including underneath appliances",
           "Remove grease splashes from tile backsplash"
         ]
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/kueche-endreinigung-zuerich.jpg",
+        "alt": "Completely empty, freshly cleaned kitchen in a Zurich rental apartment",
+        "caption": "The kitchen is the most common reason for complaints at handover.",
+        "width": 1280,
+        "height": 768
       },
       {
         "type": "checklist",
@@ -154,37 +492,193 @@
       },
       {
         "type": "checklist",
-        "heading": "Living Areas Checklist",
+        "heading": "Living & Bedrooms Checklist",
         "body": "",
         "items": [
           "Vacuum and mop all floors",
           "Dust baseboards",
-          "Fill holes in walls and touch up paint",
+          "Only fill dowel holes professionally after consulting the property management.",
           "Clean light switches and power sockets",
           "Dust radiators",
           "Wipe out built-in wardrobes",
-          "Clean window frames and sills",
-          "Sweep and clean balcony or terrace"
+          "Clean window frames and sills"
         ]
       },
       {
         "type": "checklist",
-        "heading": "Windows & Blinds Checklist",
+        "heading": "Windows, Shutters & Blinds Checklist",
         "body": "",
         "items": [
           "Streak-free clean of all windows, inside and out",
           "Clean window frames and rubber seals",
           "Wipe down window sills inside and out",
-          "Dust blinds slat by slat",
+          "Wet-clean blinds / slats",
           "Check that roller blinds operate smoothly",
           "Clean or remove fly screens"
         ]
       },
       {
         "type": "text",
-        "heading": "Professional clean vs. DIY?",
-        "body": "Cleaning a 3-room apartment yourself in Zurich typically takes 8–12 hours. A professional end-of-tenancy clean from [Zurich Endreinigung](/) starts at CHF 500 for a 1-room apartment and goes up to CHF 1,350 for a 6.5-room apartment in 2026 — a typical 3-room apartment is a fixed price from CHF 800, including a 100% handover guarantee. You can absolutely do the final clean yourself — provided you have the time, the right products, and a sharp eye for detail. But if you want certainty, a [professional end-of-tenancy cleaning service](/umzugsreinigung-zuerich) is your safer bet. At Zurich Endreinigung we offer a [100% handover guarantee](/abnahmegarantie): if the caretaker finds any issues during the inspection, we come back and fix them at no extra cost. You only sign off when the handover protocol is signed.",
+        "heading": "Cleaning slat blinds and roller shutter boxes properly",
+        "body": "Slat blinds (Lamellen) must be wet-cleaned — dusting alone is not enough for a final move-out cleaning. Wash both sides of every slat using water and a neutral detergent to remove accumulated dirt, grease, and grime.\n\nClean the guide rails (Führungsschienen) and cord mechanisms thoroughly as well.\n\nFor external blinds and roller shutter boxes, the slats are dusted but the top box is often missed. Dust accumulates there over the years and is immediately visible when opening."
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/fenster-lamellen-reinigung.jpg",
+        "alt": "Clean window with slat blinds in an empty apartment",
+        "caption": "Slat blinds must be wet-cleaned — dusting is not enough for a final clean.",
+        "width": 1280,
+        "height": 768
+      },
+      {
+        "type": "checklist",
+        "heading": "Cellar, Attic, Balcony and Garage Checklist",
+        "items": [
+          "Completely clear out cellar compartment, wipe floor and shelves",
+          "Clear out and sweep attic compartment",
+          "Laundry room: clean washing machine, tumble dryer and lint filter, if rented with the apartment",
+          "Sweep balcony or terrace, clean floor, wipe railing",
+          "Clear balcony drainage and drains of leaves",
+          "Remove flower boxes, plants and saucers",
+          "Leave garage or parking space broom-clean, remove oil stains",
+          "Empty mailbox, remove name plate",
+          "Clear bicycle parking space"
+        ],
+        "body": "The most common reason for a touch-up after the handover: a room nobody thought of. Almost every Zurich apartment has a cellar or attic compartment, and both are part of the rented property."
+      },
+      {
+        "type": "text",
+        "heading": "Keys, Meter Readings and Documents",
+        "body": "These three points cost the most time on handover day if they are not prepared — and with the keys it gets expensive.\n\n**Keys.** Check your tenancy agreement to see how many keys you received and have them all ready: apartment door, building door, mailbox, cellar, attic, laundry room, bicycle cellar, garage. Also spare keys held by family, neighbours or the cleaning help. A missing key with a locking system can mean replacing the entire system in the worst case — that can cost several thousand francs.\n\n**Meter readings.** Note down and photograph electricity, water, gas and, if present, the heat meter on handover day. The values belong in the protocol.\n\n**Documents for the appointment.** Tenancy agreement, move-in protocol and move-in photos, receipts for repairs and services, warranty cards for appliances, a pen and a torch for dark corners. Take your smartphone fully charged — you will be taking a lot of photos."
+      },
+      {
+        "type": "text",
+        "heading": "Signing the handover protocol correctly",
+        "body": "The protocol is the most important document of the entire move. What is written there applies — and what is not written there, the landlord can only claim later within narrow limits.\n\n**You do not have to sign.** There is no legal obligation to sign the handover protocol. If you refuse to sign, the landlord must complain about the defects in writing and within the deadline — ideally by registered mail, with photos and witnesses.\n\n**If you do not agree, sign with reservation.** Write by hand: \"Signature under reservation — Position X is disputed.\" A signature without reservation quickly counts as recognition of the listed defects.\n\n**What to watch out for:"
+      },
+      {
+        "type": "bulleted",
+        "items": [
+          "Each defect must be recorded individually, specifically and with a location. \"Kitchen unclean\" is not a usable complaint, \"grease residues on the extractor hood\" is.",
+          "Costs mentioned in the protocol are estimates and not automatically binding.",
+          "Take photos of every complained-about point before your signature.",
+          "Have a signed copy handed to you and do not leave without it.",
+          "Have meter readings and key counts entered in the protocol."
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "Photograph every room before and after cleaning. The images with timestamps are your best evidence if a discussion about the deposit arises later."
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/uebergabeprotokoll-unterschreiben.jpg",
+        "alt": "Signing the handover protocol during an apartment handover",
+        "caption": "Only sign once every point in the protocol is correct.",
+        "width": 1280,
+        "height": 768
+      },
+      {
+        "type": "text",
+        "heading": "Normal wear or damage? The useful-life table",
+        "body": "This is the point where most tenants pay too much — because they are not aware of it.\n\nNormal wear from contractually compliant use does not have to be compensated. For anything beyond that, you are liable — but **only proportionally**, according to the remaining useful life. The authoritative reference is the **jointly published useful-life table** from the Tenants' Association and the House Owners' Association.\n\n**This is how it is calculated:**"
+      },
+      {
+        "type": "formula",
+        "body": "(Useful life − Age) ÷ Useful life × Replacement cost = Your share"
+      },
+      {
+        "type": "text",
+        "body": "**Example:** A medium-quality stretch carpet has a useful life of 10 years. If it is damaged after 6 years, 60 percent of the useful life has been used up. You pay the remaining **40 percent** of the replacement cost — not the full amount.\n\n**If the useful life has fully elapsed, you pay nothing more.** This applies even if the item is damaged."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Item",
+          "Useful life"
+        ],
+        "rows": [
+          [
+            "**Wall paint, dispersion or glue paint**",
+            "8 years"
+          ],
+          [
+            "**Wall paint, alkyd resin paint**",
+            "15 years"
+          ],
+          [
+            "**Wallpaper, medium quality**",
+            "10 years"
+          ],
+          [
+            "**Stretch carpet**",
+            "10 years"
+          ],
+          [
+            "**Bouclé, needlefelt**",
+            "8 years"
+          ],
+          [
+            "**Laminate, medium quality**",
+            "15 years"
+          ],
+          [
+            "**Veneer parquet**",
+            "12 years"
+          ],
+          [
+            "**Multi-layer parquet**",
+            "30 years"
+          ],
+          [
+            "**Solid wood parquet**",
+            "40 years"
+          ],
+          [
+            "**Linoleum, PVC**",
+            "20 years"
+          ],
+          [
+            "**Refrigerator**",
+            "10 years"
+          ],
+          [
+            "**Oven, cooker**",
+            "15 years"
+          ],
+          [
+            "**Dishwasher**",
+            "15 years"
+          ],
+          [
+            "**Washing machine**",
+            "15 years"
+          ],
+          [
+            "**Shutters**",
+            "25–30 years"
+          ]
+        ],
+        "caption": "The values apply to medium material and workmanship quality under normal use. You can find the complete table at the [Mieterverband](https://www.mieterverband.ch/mietrecht/unterlagen-und-tools/lebensdauertabelle/)."
+      },
+      {
+        "type": "text",
+        "heading": "After the handover: complaint deadline and deposit",
+        "body": "**The landlord must report defects immediately.** Under Art. 267a OR, they are obliged to inspect the apartment upon return and to notify any defects found without delay. In practice, about two to three working days are allowed for this.\n\n**If they miss this deadline, they lose their claims definitively.** This is not mere limitation, but forfeiture: the claim extinguishes. For open defects recognizable at the handover, the landlord can no longer demand anything afterwards — regardless of how justified the claim would have been.\n\nAn exception applies to **hidden defects** that were not recognizable during a normal inspection. Here too, however, the landlord must react immediately upon discovery. The often-cited 14-day period has no legal basis.\n\n**The deposit.** In Switzerland, it is held in a blocked account in your name and may not exceed three months' rent. The bank releases the amount when landlord and tenant sign jointly — or when the landlord has not asserted any legal claims within one year after the end of the tenancy.\n\n**In case of dispute**, the conciliation authority for rental matters of the Canton of Zurich is the first point of contact. The proceedings are free of charge and in most cases lead to a resolution faster than court proceedings."
+      },
+      {
+        "type": "text",
+        "heading": "DIY or hire a professional?",
+        "body": "Cleaning a 3-room apartment yourself in Zurich typically takes 8–12 hours. A professional end-of-tenancy clean from [Zurich Endreinigung](/) starts at CHF 500 for a 1-room apartment and goes up to CHF 1,350 for a 6.5-room apartment in 2026 — a typical 3-room apartment is a fixed price from CHF 800, including a 100% handover guarantee. You can absolutely do the final clean yourself — provided you have the time, the right products, and a sharp eye for detail. But if you want certainty, a [professional end-of-tenancy cleaning service](/umzugsreinigung-stadt-zuerich) is your safer bet. At Zurich Endreinigung we offer a [100% handover guarantee](/abnahmegarantie): our team member is personally present at the handover and fixes any issues on the spot — without any inconvenience or stress for you, the customer. You only sign off when the handover protocol is signed.",
         "items": []
+      },
+      {
+        "type": "image",
+        "src": "/img/ratgeber/wohnung-uebergabebereit-gereinigt.jpg",
+        "alt": "Empty freshly cleaned rental apartment in Zurich ready for handover",
+        "caption": "Handover-ready: after a professional final clean the apartment is spotless.",
+        "width": 1280,
+        "height": 768
       },
       {
         "type": "tip",
@@ -198,14 +692,64 @@
         "body": "",
         "items": [],
         "faqs": [
-          { "q": "How much of my deposit can the landlord keep?", "a": "Your landlord can only keep money for damage that goes beyond normal wear and tear. In Switzerland, your deposit must sit in a separate escrow account (Mietzinskaution) and must be released within one year of moving out, unless there are legitimate claims against it." },
-          { "q": "What counts as normal wear and tear versus damage?", "a": "Normal wear and tear means minor traces of use — faded wall paint after 10 years, light scuffs on parquet floors. Damage means drill holes, burn marks, broken tiles, or water damage — these are the tenant's responsibility to repair or pay for." },
-          { "q": "Do I need to use the oven's self-cleaning (pyrolytic) function?", "a": "No. A thorough manual clean with a good oven cleaner is sufficient. What matters is that no grease residue, burnt-on stains, or visible dirt remain — including on the baking trays, grill rack, and door seal." },
-          { "q": "What does a professional end-of-tenancy clean cost in Zurich in 2026?", "a": "At Zurich Endreinigung you pay a transparent fixed price based on apartment size: 1-room from CHF 500, 2-room from CHF 600, 3-room from CHF 800, 3.5-room from CHF 850, 4.5-room from CHF 970, 5.5-room from CHF 1,150, 6.5-room from CHF 1,350. All prices include cleaning supplies, travel, and a 100% handover guarantee — with no hidden fees." },
-          { "q": "How long does an apartment handover in Zurich take?", "a": "A typical handover takes 45–90 minutes. For larger apartments or when there are disputed defects, it can stretch to 2 hours. Always plan a buffer in your schedule." },
-          { "q": "What happens if the caretaker finds problems?", "a": "Any defects are recorded in the handover protocol (Übergabeprotokoll). The tenant is usually given 3–7 days to fix them. If you booked a professional clean with a [100% handover guarantee](/abnahmegarantie), the cleaning company handles these corrections at no extra cost." },
-          { "q": "What documents do I need to bring to the handover?", "a": "Bring your rental contract, all keys (including mailbox, basement, laundry room), final meter readings (electricity, water, gas), a blank copy of the handover protocol, photos from your move-in day if you have them, and a flashlight for checking dark corners." },
-          { "q": "Who do I contact if there's a dispute about the handover?", "a": "The Cantonal Conciliation Authority for Rental Matters (Schlichtungsbehörde in Mietsachen) in Zurich is your first point of contact — phone 044 412 94 94. The procedure is free of charge and usually faster and more effective than going to court." }
+          {
+            "q": "How much of my deposit can the landlord keep?",
+            "a": "Your landlord can only keep money for damage that goes beyond normal wear and tear. In Switzerland, your deposit must sit in a separate escrow account (Mietzinskaution) and must be released within one year of moving out, unless there are legitimate claims against it."
+          },
+          {
+            "q": "What counts as normal wear and tear versus damage?",
+            "a": "Normal wear and tear means minor traces of use — faded wall paint after 10 years, light scuffs on parquet floors. Damage means drill holes, burn marks, broken tiles, or water damage — these are the tenant's responsibility to repair or pay for."
+          },
+          {
+            "q": "Do I need to use the oven's self-cleaning (pyrolytic) function?",
+            "a": "No. A thorough manual clean with a good oven cleaner is sufficient. What matters is that no grease residue, burnt-on stains, or visible dirt remain — including on the baking trays, grill rack, and door seal."
+          },
+          {
+            "q": "What does a professional end-of-tenancy clean cost in Zurich in 2026?",
+            "a": "At Zurich Endreinigung you pay a transparent fixed price based on apartment size: 1-room from CHF 500, 2-room from CHF 600, 3-room from CHF 800, 3.5-room from CHF 850, 4.5-room from CHF 970, 5.5-room from CHF 1,150, 6.5-room from CHF 1,350. All prices include cleaning supplies, travel, and a 100% handover guarantee — with no hidden fees."
+          },
+          {
+            "q": "How long does an apartment handover in Zurich take?",
+            "a": "A typical handover takes 45–90 minutes. For larger apartments or when there are disputed defects, it can stretch to 2 hours. Always plan a buffer in your schedule."
+          },
+          {
+            "q": "What happens if the caretaker finds problems?",
+            "a": "Any defects are recorded in the handover protocol (Übergabeprotokoll). The tenant is usually given 3–7 days to fix them. If you booked a professional clean with a [100% handover guarantee](/abnahmegarantie), the cleaning company handles these corrections at no extra cost."
+          },
+          {
+            "q": "What documents do I need to bring to the handover?",
+            "a": "Bring your rental contract, all keys (including mailbox, basement, laundry room), final meter readings (electricity, water, gas), a blank copy of the handover protocol, photos from your move-in day if you have them, and a flashlight for checking dark corners."
+          },
+          {
+            "q": "Who do I contact if there's a dispute about the handover?",
+            "a": "The Cantonal Conciliation Authority for Rental Matters (Schlichtungsbehörde in Mietsachen) in Zurich is your first point of contact — phone 044 412 94 94. The procedure is free of charge and usually faster and more effective than going to court."
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "heading": "You might also find this useful",
+        "links": [
+          {
+            "label": "Getting your deposit back — passing the handover",
+            "href": "/ratgeber/kaution-zurueckbekommen-abnahme"
+          },
+          {
+            "label": "What does an end-of-lease cleaning cost in Zurich?",
+            "href": "/ratgeber/endreinigung-kosten-zuerich"
+          },
+          {
+            "label": "Moving in Zurich: checklist 2026",
+            "href": "/ratgeber/umzug-zuerich-checkliste-2026"
+          },
+          {
+            "label": "Deregistering with the municipality when moving out",
+            "href": "/ratgeber/abmeldung-gemeinde-umzug-schweiz"
+          },
+          {
+            "label": "End-of-lease cleaning Zurich with handover guarantee",
+            "href": "/umzugsreinigung-stadt-zuerich"
+          }
         ]
       }
     ],
@@ -214,10 +758,22 @@
       "description": "Schritt-für-Schritt-Anleitung, um die Wohnungsübergabe in Zürich erfolgreich zu bestehen.",
       "totalTime": "PT10H",
       "steps": [
-        { "name": "Küche reinigen", "text": "Backofen entfetten, Herdplatten und Dunstabzug reinigen, Kühlschrank ausräumen und abtauen, Spüle entkalken, Schränke auswischen, Arbeitsflächen streifenfrei reinigen, Boden wischen, Fliesenspiegel von Fettspritzern befreien." },
-        { "name": "Badezimmer reinigen", "text": "Dusche und Badewanne entkalken, Toilette putzen, Waschbecken und Armaturen polieren, Fugen auf Schimmel prüfen, Spiegel wischen, Boden wischen, Abflüsse auf Verstopfung prüfen." },
-        { "name": "Wohnräume reinigen", "text": "Alle Böden saugen und wischen, Sockelleisten abstauben, Löcher in Wänden zuspachteln, Lichtschalter und Steckdosen reinigen, Heizkörper entstauben, Einbauschränke auswischen, Fensterbänke reinigen, Balkon fegen." },
-        { "name": "Fenster und Jalousien reinigen", "text": "Alle Fenster innen und aussen streifenfrei putzen, Rahmen und Dichtungen reinigen, Fensterbänke abwischen, Jalousien Lamelle für Lamelle entstauben, Rollläden auf Funktion prüfen, Fliegengitter reinigen." }
+        {
+          "name": "Küche reinigen",
+          "text": "Backofen entfetten, Herdplatten und Dunstabzug reinigen, Kühlschrank ausräumen und abtauen, Spüle entkalken, Schränke auswischen, Arbeitsflächen streifenfrei reinigen, Boden wischen, Fliesenspiegel von Fettspritzern befreien."
+        },
+        {
+          "name": "Badezimmer reinigen",
+          "text": "Dusche und Badewanne entkalken, Toilette putzen, Waschbecken und Armaturen polieren, Fugen auf Schimmel prüfen, Spiegel wischen, Boden wischen, Abflüsse auf Verstopfung prüfen."
+        },
+        {
+          "name": "Wohnräume reinigen",
+          "text": "Alle Böden saugen und wischen, Sockelleisten abstauben, Löcher in Wänden zuspachteln, Lichtschalter und Steckdosen reinigen, Heizkörper entstauben, Einbauschränke auswischen, Fensterbänke reinigen, Balkon fegen."
+        },
+        {
+          "name": "Fenster und Jalousien reinigen",
+          "text": "Alle Fenster innen und aussen streifenfrei putzen, Rahmen und Dichtungen reinigen, Fensterbänke abwischen, Jalousien Lamelle für Lamelle entstauben, Rollläden auf Funktion prüfen, Fliegengitter reinigen."
+        }
       ]
     },
     "howToEn": {
@@ -225,10 +781,22 @@
       "description": "Step-by-step guide to passing your apartment handover in Zurich and securing your full deposit back.",
       "totalTime": "PT10H",
       "steps": [
-        { "name": "Clean the kitchen", "text": "Degrease the oven, clean stovetop and extractor hood, empty and defrost the fridge, descale sink and faucets, wipe cabinets inside and out, clean countertops, mop floor under appliances, remove grease from tile backsplash." },
-        { "name": "Clean the bathroom", "text": "Descale shower and bathtub, clean the toilet thoroughly, polish sink and faucets, check grout lines for mold, clean mirrors streak-free, mop the floor, check drains for clogs." },
-        { "name": "Clean living areas", "text": "Vacuum and mop all floors, dust baseboards, fill wall holes and touch up paint, clean light switches and sockets, dust radiators, wipe built-in wardrobes, clean window sills, sweep balcony or terrace." },
-        { "name": "Clean windows and blinds", "text": "Clean all windows streak-free inside and out, clean frames and rubber seals, wipe window sills, dust blinds slat by slat, check roller blind operation, clean or remove fly screens." }
+        {
+          "name": "Clean the kitchen",
+          "text": "Degrease the oven, clean stovetop and extractor hood, empty and defrost the fridge, descale sink and faucets, wipe cabinets inside and out, clean countertops, mop floor under appliances, remove grease from tile backsplash."
+        },
+        {
+          "name": "Clean the bathroom",
+          "text": "Descale shower and bathtub, clean the toilet thoroughly, polish sink and faucets, check grout lines for mold, clean mirrors streak-free, mop the floor, check drains for clogs."
+        },
+        {
+          "name": "Clean living areas",
+          "text": "Vacuum and mop all floors, dust baseboards, fill wall holes and touch up paint, clean light switches and sockets, dust radiators, wipe built-in wardrobes, clean window sills, sweep balcony or terrace."
+        },
+        {
+          "name": "Clean windows and blinds",
+          "text": "Clean all windows streak-free inside and out, clean frames and rubber seals, wipe window sills, dust blinds slat by slat, check roller blind operation, clean or remove fly screens."
+        }
       ]
     }
   },
@@ -269,34 +837,374 @@
     "slug": "kaution-zurueckbekommen-abnahme",
     "categorySlug": "tipps-tricks",
     "categoryName": "Tipps & Tricks",
-    "titleDe": "Kaution zurückbekommen — so klappt die Abnahme",
-    "introDe": "So sichern Sie sich Ihre Kaution zurück: Tipps und Tricks für eine erfolgreiche Wohnungsabnahme in Zürich.",
+    "titleDe": "Kaution nach dem Auszug: Welche Abzüge sind zulässig?",
+    "introDe": "Beim Auszug aus einer Mietwohnung in Zürich geht es schnell um mehrere tausend Franken: Die Mietkaution beträgt in der Schweiz bei Wohnungen bis zu drei Monatsmieten. Entsprechend gross ist die Sorge, dass am Ende nur ein Teil davon zurückfliesst.\n\nEin Vermieter darf die Kaution nicht beliebig kürzen. Abzüge sind nur möglich, wenn er eine berechtigte Forderung aus dem Mietverhältnis hat — etwa für Schäden, die über die normale Abnutzung hinausgehen, für fehlende Schlüssel, für offene Nebenkosten oder Mietzinse oder, je nach Zustand und Mietvertrag, für eine notwendige Nachreinigung.\n\nNicht jede sichtbare Gebrauchsspur ist jedoch dem Mieter anzulasten. Dieser Ratgeber erklärt, wie das Mietzinsdepot funktioniert, welche Abzüge zulässig sind, wie normale Abnutzung von einem Schaden abgegrenzt wird, wie die Lebensdauertabelle den Kostenanteil reduziert und was Sie tun können, wenn Sie mit einem Kautionsabzug nicht einverstanden sind.",
     "coverImage": "/img/ratgeber/kaution-zurueckbekommen.jpg",
     "blocks": [
       {
         "type": "text",
-        "heading": "",
-        "body": "Die Kaution beträgt in Zürich oft 3 Monatsmieten. Eine professionelle Endreinigung ist der sicherste Weg, Ihre Kaution vollständig zurückzubekommen.",
-        "items": []
+        "heading": "Wie funktioniert die Mietkaution in der Schweiz?",
+        "body": "Die Mietkaution — oft auch Mietzinsdepot oder Mietzinskaution genannt — ist eine Sicherheit für den Vermieter. Sie deckt Forderungen ab, die am Ende des Mietverhältnisses offen bleiben können: unbezahlte Mietzinse, offene Nebenkostenabrechnungen oder Schadenersatz für Schäden an der Wohnung.\n\nFür Wohnräume gilt nach Art. 257e OR: Die Kaution darf höchstens drei Monatsmieten betragen. Sie muss auf einem Konto bei einer Bank auf den Namen des Mieters hinterlegt werden — das Geld gehört weiterhin dem Mieter, der Vermieter hat lediglich ein Sperrrecht.\n\nDie Bank gibt das Depot nur frei, wenn beide Parteien zustimmen oder wenn ein rechtskräftiger Zahlungsbefehl beziehungsweise ein Gerichtsurteil vorliegt. Zusätzlich sieht das Gesetz vor: Hat der Vermieter innert eines Jahres nach Beendigung des Mietverhältnisses keinen rechtlichen Anspruch geltend gemacht, kann der Mieter von der Bank die Rückgabe des Depots verlangen."
       },
       {
-        "type": "checklist",
-        "heading": "",
-        "body": "",
+        "type": "bulleted",
+        "heading": "Welche Kosten darf der Vermieter von der Kaution abziehen?",
+        "body": "Ein Abzug setzt immer eine berechtigte Forderung voraus. Typische Positionen sind:",
         "items": [
-          "Reinigung nach Schweizer Abnahmestandard",
-          "Alle Räume fotografisch dokumentieren",
-          "Mängel vor der Abnahme beheben",
-          "Reinigungsgarantie vom Anbieter verlangen"
+          "**Schäden über die normale Abnutzung hinaus** — zum Beispiel ein Brandfleck im Parkett, eine gesprungene Ablage oder ein herausgerissener Schrank.",
+          "**Fehlende oder nicht zurückgegebene Schlüssel** — bei Schliessanlagen kann der Ersatz teuer werden.",
+          "**Offene Mietzinse und Nebenkosten** — inklusive der Schlussabrechnung für Heizung und Betriebskosten.",
+          "**Nicht erfüllte vertragliche Pflichten** — etwa nicht zurückgebaute bauliche Veränderungen, sofern nichts anderes vereinbart wurde.",
+          "**Reinigungskosten**, wenn die Wohnung bei der Rückgabe nicht in dem Zustand ist, den Mietvertrag und Übergabeprotokoll verlangen."
+        ],
+        "caption": ""
+      },
+      {
+        "type": "text",
+        "body": "Wichtig: Ein Abzug ist nicht automatisch gerechtfertigt, nur weil im Protokoll ein Punkt vermerkt ist. Der Vermieter muss die Forderung begründen und beziffern. Und er muss sich bei abnutzbaren Bauteilen den Zeitwert anrechnen lassen — dazu weiter unten mehr. Ebenso wenig führt jede kleine Verschmutzung automatisch zu einer Rechnung; entscheidend ist, ob eine Nachreinigung objektiv nötig ist."
+      },
+      {
+        "type": "text",
+        "heading": "Normale Abnutzung oder Schaden?",
+        "body": "Der wichtigste Grundsatz im Schweizer Mietrecht: Der Mieter haftet nicht für den vertragsgemässen Gebrauch der Wohnung. Was durch normales Wohnen entsteht, ist mit dem Mietzins abgegolten. Ersatzpflichtig ist nur, was auf unsorgfältigen oder übermässigen Gebrauch zurückgeht.\n\nDie Grenze verläuft nicht immer scharf. Als Faustregel gilt: Je länger die Wohndauer, desto mehr Gebrauchsspuren sind normal. Zehn Jahre alte, leicht vergilbte Wandfarbe ist Abnutzung — ein Loch in der Gipswand oder eine mit Filzstift bemalte Wand ist ein Schaden."
+      },
+      {
+        "type": "table",
+        "heading": "Beispiele aus der Praxis",
+        "headers": [
+          "Situation",
+          "Meist normale Abnutzung",
+          "Meist Schaden des Mieters"
+        ],
+        "rows": [
+          [
+            "Wände",
+            "Vergilbte oder verblasste Farbe, einzelne kleine Dübellöcher je nach Mietdauer",
+            "Grossflächige Bohrlochreihen, farbige Anstriche, Wasserflecken durch fehlendes Lüften"
+          ],
+          [
+            "Parkett und Laminat",
+            "Feine Laufspuren, matt gewordene Versiegelung",
+            "Tiefe Kratzer durch Möbelverschieben, Brandflecken, aufgequollene Stellen"
+          ],
+          [
+            "Teppichboden",
+            "Abgelaufene Stellen in Laufzonen nach Jahren",
+            "Brandloch, nicht entfernbare Farb- oder Ölflecken"
+          ],
+          [
+            "Küchengeräte",
+            "Nachlassende Leistung, altersbedingter Verschleiss",
+            "Gebrochene Glasablage, abgerissene Türdichtung, verkalkter Defekt durch Fehlbedienung"
+          ],
+          [
+            "Sanitär und Armaturen",
+            "Leichte Kalkspuren, abgenutzte Verchromung",
+            "Gesprungenes Lavabo, herausgebrochene Duschstange, Silikon mit hartnäckigem Schimmel durch fehlende Lüftung"
+          ],
+          [
+            "Storen und Fenster",
+            "Verblasste Lamellen, leichte Kratzer",
+            "Verbogene Lamellen, gerissener Gurt, gesprungene Scheibe"
+          ]
+        ],
+        "caption": "Die Einordnung hängt immer vom Einzelfall, vom Alter des Bauteils und von der Wohndauer ab."
+      },
+      {
+        "type": "formula",
+        "heading": "Die Lebensdauertabelle: Wie wird der Kostenanteil berechnet?",
+        "body": "Anteil Mieter = Neupreis x (Restlebensdauer / Gesamtlebensdauer)"
+      },
+      {
+        "type": "text",
+        "body": "Auch bei einem echten Schaden zahlt der Mieter selten den vollen Neupreis. Massgebend ist der Zeitwert: Ein Bauteil, das ohnehin bald hätte ersetzt werden müssen, hat nur noch einen Restwert. Die Paritätische Lebensdauertabelle von Mieterverband und Hauseigentümerverband gibt für die üblichen Einrichtungen eine mittlere Lebensdauer an, an der sich Verwaltungen und Gerichte orientieren.\n\nBeispiel: Ein Teppichboden mit angenommener Lebensdauer von zehn Jahren wird nach acht Jahren durch ein Brandloch unbrauchbar. Zwei Jahre Restlebensdauer bleiben, also 20 Prozent. Kostet der Ersatz CHF 2'000, trägt der Mieter rund CHF 400 — zuzüglich allfälliger Verlegekosten, je nach Vereinbarung. Ist die Lebensdauer bereits abgelaufen, entfällt der Schadenersatz für das Material in der Regel ganz.\n\nPrüfen Sie deshalb bei jeder Forderung zuerst das Alter des betroffenen Bauteils und verlangen Sie die entsprechende Angabe von der Verwaltung. Die aktuellen Werte finden Sie in der [Paritätischen Lebensdauertabelle](https://www.mieterverband.ch/mv/mietrecht-beratung/ratgeber-mietrecht/wohnungsabgabe/lebensdauertabelle.html) von Mieterinnen- und Hauseigentümerverband."
+      },
+      {
+        "type": "text",
+        "heading": "Welche Rolle spielt die Wohnungsabnahme?",
+        "body": "Der Zustand, der bei der Wohnungsübergabe dokumentiert wird, ist die zentrale Grundlage für spätere Forderungen. Was im Protokoll steht — und ebenso, was nicht darin steht — entscheidet später oft darüber, ob ein Abzug durchgesetzt werden kann.\n\nNach Art. 267a OR muss der Vermieter den Zustand bei der Rückgabe prüfen und Mängel, die er dem Mieter anlasten will, sofort melden. Unterlässt er das, sind die betreffenden Mängel grundsätzlich nicht mehr durchsetzbar — mit Ausnahme versteckter Mängel, die er nach Entdeckung ebenfalls sofort rügen muss.\n\nDokumentieren Sie den Zustand der Wohnung deshalb selbst mit datierten Fotos, lesen Sie das Protokoll vor der Unterschrift genau durch und bewahren Sie eine Kopie sowie das Antrittsprotokoll auf. Wie Sie sich konkret auf den Termin vorbereiten, zeigt unsere [Checkliste für die Wohnungsübergabe](/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026)."
+      },
+      {
+        "type": "text",
+        "heading": "Kann eine schlechte Reinigung zu einem Kautionsabzug führen?",
+        "body": "Ja — aber nicht pauschal. Die Wohnung muss bei der Rückgabe gereinigt sein, wie es Mietvertrag und ortsüblicher Standard verlangen. Bleiben nach der Abgabe Rückstände, die eine Nachreinigung nötig machen, kann die Verwaltung die Kosten dafür geltend machen und mit der Kaution verrechnen. Kleinere Punkte lassen sich dagegen häufig direkt am Übergabetermin beheben.\n\nStrittig wird es meist bei Kalk, Fettrückständen, Backofen, Storen und Fugen. Wer die Reinigung nicht selbst übernehmen möchte, kann eine [professionelle Endreinigung](/) beauftragen; verbreitet sind Angebote für eine [Endreinigung mit Abnahmegarantie](/abnahmegarantie), bei der eine Nachreinigung im Beanstandungsfall eingeschlossen ist."
+      },
+      {
+        "type": "numbered",
+        "heading": "Was tun bei einem Kautionsabzug?",
+        "body": "Reagieren Sie sachlich und schriftlich — und prüfen Sie jede Position einzeln.",
+        "items": [
+          "Forderung genau lesen\nVerschaffen Sie sich Klarheit darüber, welche Positionen geltend gemacht werden und in welcher Höhe.",
+          "Konkretisierung verlangen\nBitten Sie die Verwaltung schriftlich um eine Aufstellung: Welcher Schaden, welcher Raum, welcher Betrag?",
+          "Belege einfordern\nOfferten, Handwerkerrechnungen oder Reinigungsrechnungen zeigen, ob die Kosten tatsächlich angefallen sind.",
+          "Alter und Lebensdauer prüfen\nVergleichen Sie die Forderung mit der Lebensdauertabelle und verlangen Sie eine Zeitwertberechnung statt des Neupreises.",
+          "Protokolle vergleichen\nStellen Sie Antritts- und Rückgabeprotokoll nebeneinander — vorbestehende Mängel gehen nicht zu Ihren Lasten.",
+          "Beweise sichern\nSammeln Sie Fotos, Korrespondenz, Rechnungen und Notizen zum Übergabetermin an einem Ort.",
+          "Beratung beiziehen\nBleibt die Sache strittig, hilft eine Mieterberatung oder die Schlichtungsbehörde weiter. Unterschreiben Sie keine Verrechnungserklärung, mit der Sie nicht einverstanden sind."
         ]
       },
       {
-        "type": "tip",
-        "heading": "",
-        "body": "Mit unserer Abnahmegarantie sind Sie auf der sicheren Seite — bei Beanstandungen reinigen wir kostenlos nach.",
-        "items": []
+        "type": "text",
+        "heading": "Was passiert mit der Kaution nach dem Auszug?",
+        "body": "Nach der Wohnungsrückgabe gibt es im Wesentlichen drei Wege.\n\n**Einigung:** Sind keine Forderungen offen oder haben sich beide Seiten geeinigt, unterschreiben Vermieter und Mieter die Freigabe. Die Bank überweist das Depot samt Zins — in der Praxis meist innert weniger Tage bis Wochen nach Eingang der Freigabe.\n\n**Teilfreigabe:** Häufig wird ein unbestrittener Teilbetrag freigegeben und nur der strittige Rest zurückbehalten, bis die Schlussabrechnung der Nebenkosten vorliegt oder die Reparaturkosten feststehen.\n\n**Keine Einigung:** Bleibt die Freigabe aus, kann der Mieter nach Art. 257e Abs. 3 OR ein Jahr nach Beendigung des Mietverhältnisses von der Bank die Rückgabe verlangen, sofern der Vermieter bis dahin keinen rechtlichen Anspruch geltend gemacht hat — also weder Betreibung noch Klage eingeleitet hat. Hat er das getan, entscheidet das Verfahren über den Betrag. Die Frist beendet einen Streit also nicht automatisch; sie greift nur, wenn der Vermieter untätig geblieben ist."
+      },
+      {
+        "type": "text",
+        "heading": "Was tun, wenn Vermieter und Mieter sich nicht einig sind?",
+        "body": "Der übliche Weg beginnt mit einem sachlichen Schreiben an die Verwaltung: Positionen bestreiten, Begründung verlangen, eine Frist setzen und die Freigabe des unbestrittenen Teils fordern.\n\nFührt das nicht weiter, ist die Schlichtungsbehörde in Miet- und Pachtsachen zuständig — im Kanton Zürich für den jeweiligen Bezirk. Das Schlichtungsverfahren ist in Mietsachen grundsätzlich kostenlos, und ein grosser Teil der Fälle wird dort erledigt, ohne dass es zu einem Gerichtsverfahren kommt. Erst wenn keine Einigung zustande kommt, folgt die Klage beim Mietgericht.\n\nUnterstützung bei der Vorbereitung bieten die Mieterberatungen, zum Beispiel des [Mieterinnen- und Mieterverbands](https://www.mieterverband.ch). Dieser Beitrag ersetzt keine Rechtsberatung im Einzelfall."
+      },
+      {
+        "type": "faq",
+        "heading": "Häufige Fragen zur Mietkaution",
+        "faqs": [
+          {
+            "q": "Wie lange dauert es, bis ich meine Kaution zurückbekomme?",
+            "a": "Liegt die Freigabe beider Parteien vor, überweist die Bank das Depot in der Regel innert weniger Tage bis Wochen. Verzögerungen entstehen meist, weil die Nebenkosten-Schlussabrechnung noch aussteht. Ohne Einigung kann der Mieter ein Jahr nach Ende des Mietverhältnisses die Rückgabe verlangen, sofern der Vermieter keinen rechtlichen Anspruch geltend gemacht hat."
+          },
+          {
+            "q": "Wie viel Kaution darf der Vermieter verlangen?",
+            "a": "Bei Wohnräumen höchstens drei Monatsmieten (Art. 257e OR), hinterlegt auf einem Bankkonto, das auf den Namen des Mieters lautet. Für Geschäftsräume gilt diese Obergrenze nicht."
+          },
+          {
+            "q": "Was darf von der Kaution abgezogen werden?",
+            "a": "Nur berechtigte Forderungen aus dem Mietverhältnis: offene Mietzinse und Nebenkosten, Schadenersatz für Schäden über die normale Abnutzung hinaus, fehlende Schlüssel sowie Reinigungskosten, wenn eine Nachreinigung objektiv nötig ist. Jede Position muss begründet und beziffert werden."
+          },
+          {
+            "q": "Was gilt als normale Abnutzung?",
+            "a": "Alles, was beim vertragsgemässen Wohnen entsteht: verblasste Wandfarbe, feine Laufspuren im Parkett, abgenutzte Armaturenoberflächen, abgelaufener Teppich in Laufzonen. Diese Abnutzung ist mit dem Mietzins abgegolten und darf nicht verrechnet werden."
+          },
+          {
+            "q": "Muss ich für einen alten Teppich vollständig bezahlen?",
+            "a": "In der Regel nicht. Massgebend ist der Zeitwert: Vom Neupreis wird der bereits verbrauchte Anteil der Lebensdauer abgezogen. Ist die in der Paritätischen Lebensdauertabelle angegebene Lebensdauer abgelaufen, entfällt der Ersatz für das Material meist ganz."
+          },
+          {
+            "q": "Was kann ich bei einem Kautionsabzug tun?",
+            "a": "Verlangen Sie schriftlich eine detaillierte Aufstellung mit Belegen, prüfen Sie das Alter der betroffenen Bauteile, vergleichen Sie Antritts- und Rückgabeprotokoll und bestreiten Sie unbegründete Positionen schriftlich. Unterschreiben Sie keine Freigabe, mit der Sie nicht einverstanden sind."
+          },
+          {
+            "q": "Kann eine schlechte Endreinigung zu einem Kautionsabzug führen?",
+            "a": "Ja, wenn die Wohnung nicht im vertraglich geschuldeten Zustand zurückgegeben wird und eine Nachreinigung nötig ist. Die Kosten müssen jedoch tatsächlich anfallen und belegt werden — eine Pauschale ohne Nachweis ist angreifbar."
+          },
+          {
+            "q": "Was passiert bei Streit über die Kaution?",
+            "a": "Zuständig ist die Schlichtungsbehörde in Miet- und Pachtsachen am Ort der Liegenschaft. Das Verfahren ist in Mietsachen grundsätzlich kostenlos. Kommt keine Einigung zustande, entscheidet auf Klage hin das Mietgericht."
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "heading": "Das könnte Sie auch interessieren",
+        "links": [
+          {
+            "label": "Wohnungsübergabe Checkliste Zürich",
+            "href": "/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026"
+          },
+          {
+            "label": "Endreinigung in Zürich: Fixpreise berechnen",
+            "href": "/calculator"
+          },
+          {
+            "label": "Abnahmegarantie: so funktioniert sie",
+            "href": "/abnahmegarantie"
+          },
+          {
+            "label": "Endreinigung Kosten in Zürich",
+            "href": "/ratgeber/endreinigung-kosten-zuerich"
+          },
+          {
+            "label": "Umzug Zürich: Checkliste",
+            "href": "/ratgeber/umzug-zuerich-checkliste-2026"
+          }
+        ]
       }
-    ]
+    ],
+    "titleEn": "Rental Deposit After Moving Out: Which Deductions Are Permitted?",
+    "introEn": "When you move out of a rented apartment in Zurich, a lot of money is at stake: in Switzerland a residential rental deposit can amount to up to three months rent. So the worry that only part of it will come back is understandable.\n\nA landlord cannot reduce the deposit at will. Deductions are only possible where there is a legitimate claim arising from the tenancy — for example damage beyond normal wear and tear, missing keys, unpaid rent or service charges or, depending on the condition and the tenancy agreement, a necessary re-clean.\n\nNot every visible trace of use is chargeable to the tenant. This guide explains how the deposit account works, which deductions are permitted, how normal wear and tear is distinguished from damage, how the useful-life table reduces your share of the cost, and what you can do if you disagree with a deduction.",
+    "blocksEn": [
+      {
+        "type": "text",
+        "heading": "How does the rental deposit work in Switzerland?",
+        "body": "The rental deposit (Mietkaution or Mietzinsdepot) is security for the landlord. It covers claims that may remain open at the end of the tenancy: unpaid rent, outstanding service-charge statements, or compensation for damage to the apartment.\n\nFor residential property, Art. 257e of the Swiss Code of Obligations applies: the deposit may not exceed three months rent. It must be held in a bank account in the tenant's name — the money still belongs to the tenant; the landlord merely has a blocking right.\n\nThe bank releases the deposit only if both parties agree, or on the basis of a final payment order or court judgment. In addition, if the landlord has not asserted a legal claim within one year of the end of the tenancy, the tenant can ask the bank to release the deposit."
+      },
+      {
+        "type": "bulleted",
+        "heading": "Which costs may the landlord deduct?",
+        "body": "A deduction always requires a legitimate claim. Typical items are:",
+        "items": [
+          "**Damage beyond normal wear and tear** — a burn mark in the parquet, a cracked shelf, a torn-out cupboard.",
+          "**Missing keys** — with a master key system, replacement can be expensive.",
+          "**Unpaid rent and service charges**, including the final heating and operating cost statement.",
+          "**Unfulfilled contractual obligations**, such as alterations that were not reversed, unless agreed otherwise.",
+          "**Cleaning costs**, if the apartment is not returned in the condition required by the tenancy agreement and handover protocol."
+        ],
+        "caption": ""
+      },
+      {
+        "type": "text",
+        "body": "Important: a deduction is not automatically justified simply because an item appears in the protocol. The landlord must substantiate and quantify the claim, and for items subject to wear he must accept the depreciated value rather than the price of a new one. Likewise, not every small stain leads to an invoice — what matters is whether a re-clean is objectively necessary."
+      },
+      {
+        "type": "text",
+        "heading": "Normal wear and tear or damage?",
+        "body": "The key principle in Swiss tenancy law: the tenant is not liable for use in accordance with the contract. Whatever arises from ordinary living is covered by the rent. Only careless or excessive use gives rise to compensation.\n\nThe line is not always sharp. As a rule of thumb: the longer the tenancy, the more traces of use are normal. Ten-year-old, slightly yellowed wall paint is wear and tear — a hole in the plasterboard or a wall drawn on with marker is damage."
+      },
+      {
+        "type": "table",
+        "heading": "Practical examples",
+        "headers": [
+          "Item",
+          "Usually normal wear",
+          "Usually tenant damage"
+        ],
+        "rows": [
+          [
+            "Walls",
+            "Yellowed or faded paint, a few small plug holes depending on tenancy length",
+            "Large rows of drill holes, coloured paintwork, damp stains from lack of ventilation"
+          ],
+          [
+            "Parquet and laminate",
+            "Fine traffic marks, dulled sealant",
+            "Deep scratches from moving furniture, burn marks, swollen areas"
+          ],
+          [
+            "Carpet",
+            "Worn areas in walkways after years of use",
+            "Burn hole, permanent paint or oil stains"
+          ],
+          [
+            "Kitchen appliances",
+            "Declining performance, age-related wear",
+            "Broken glass shelf, torn door seal, defect caused by misuse"
+          ],
+          [
+            "Sanitary fittings",
+            "Light limescale traces, worn chrome",
+            "Cracked washbasin, broken shower rail, silicone with heavy mould from lack of ventilation"
+          ],
+          [
+            "Blinds and windows",
+            "Faded slats, light scratches",
+            "Bent slats, torn strap, cracked pane"
+          ]
+        ],
+        "caption": "Classification always depends on the individual case, the age of the item and the length of the tenancy."
+      },
+      {
+        "type": "formula",
+        "heading": "The useful-life table: how is the tenant's share calculated?",
+        "body": "Tenant share = replacement price x (remaining useful life / total useful life)"
+      },
+      {
+        "type": "text",
+        "body": "Even with genuine damage, the tenant rarely pays the full price of a new item. What counts is the depreciated value: something that would soon have needed replacing anyway has only a residual value. The joint useful-life table (Paritätische Lebensdauertabelle) published by the tenants and homeowners associations sets out average lifespans that managements and courts use as a reference.\n\nExample: a carpet with an assumed lifespan of ten years becomes unusable after eight years due to a burn hole. Two years of useful life remain, i.e. 20 percent. If replacement costs CHF 2,000, the tenant bears roughly CHF 400 — plus any laying costs, depending on the agreement. If the useful life has already expired, compensation for the material is usually dropped entirely.\n\nSo for every claim, first check the age of the item and ask the management to state it. Current values are in the [joint useful-life table](https://www.mieterverband.ch/mv/mietrecht-beratung/ratgeber-mietrecht/wohnungsabgabe/lebensdauertabelle.html)."
+      },
+      {
+        "type": "text",
+        "heading": "What role does the apartment handover play?",
+        "body": "The condition documented at the handover is the central basis for later claims. What is written in the protocol — and equally what is not — often decides whether a deduction can be enforced.\n\nUnder Art. 267a CO the landlord must inspect the condition on return and notify any defects he wants to charge to the tenant immediately. If he fails to do so, those defects are generally no longer enforceable — except for hidden defects, which must also be reported immediately once discovered.\n\nSo document the condition yourself with dated photos, read the protocol carefully before signing, and keep a copy along with the move-in protocol. Our [apartment handover checklist](/en/guide/apartment-handover-checklist-zurich-2026) shows how to prepare for the appointment."
+      },
+      {
+        "type": "text",
+        "heading": "Can poor cleaning lead to a deposit deduction?",
+        "body": "Yes — but not automatically. The apartment must be returned cleaned as required by the tenancy agreement and local standards. If residues remain that make a re-clean necessary, the management can claim those costs and set them off against the deposit. Smaller points can often be fixed on the spot during the handover appointment.\n\nDisputes usually revolve around limescale, grease, the oven, blinds and grout lines. If you would rather not clean yourself, you can hire a [professional end-of-tenancy clean](/); offers including a [handover guarantee](/abnahmegarantie) cover a free re-clean if the management objects."
+      },
+      {
+        "type": "numbered",
+        "heading": "What to do about a deposit deduction",
+        "body": "Respond factually and in writing — and check each item individually.",
+        "items": [
+          "Read the claim carefully\nEstablish exactly which items are claimed and for what amounts.",
+          "Ask for specifics\nRequest a written breakdown: which damage, which room, which amount?",
+          "Request supporting documents\nQuotes, tradesman invoices or cleaning invoices show whether the costs were actually incurred.",
+          "Check age and useful life\nCompare the claim against the useful-life table and ask for a depreciated-value calculation instead of the new price.",
+          "Compare the protocols\nPut the move-in and move-out protocols side by side — pre-existing defects are not your responsibility.",
+          "Secure your evidence\nCollect photos, correspondence, invoices and notes from the handover in one place.",
+          "Get advice\nIf the matter stays disputed, a tenants advice service or the conciliation authority can help. Do not sign a release you disagree with."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "What happens to the deposit after you move out?",
+        "body": "After the apartment is returned there are essentially three paths.\n\n**Agreement:** if nothing is outstanding or both sides have agreed, landlord and tenant sign the release. The bank transfers the deposit plus interest — in practice usually within days to a few weeks of receiving the release.\n\n**Partial release:** frequently an undisputed portion is released and only the contested remainder held back until the final service-charge statement or the repair costs are known.\n\n**No agreement:** if the release is withheld, under Art. 257e para. 3 CO the tenant can ask the bank for the deposit one year after the end of the tenancy, provided the landlord has not asserted a legal claim in the meantime — i.e. neither debt enforcement nor legal action. If he has, the proceedings decide the amount. The deadline therefore does not end a dispute automatically; it only applies where the landlord has remained inactive."
+      },
+      {
+        "type": "text",
+        "heading": "What if landlord and tenant disagree?",
+        "body": "The usual route starts with a factual letter to the management: contest the items, request justification, set a deadline and demand release of the undisputed portion.\n\nIf that leads nowhere, the conciliation authority for tenancy matters is responsible — in the Canton of Zurich for the relevant district. Conciliation proceedings in tenancy matters are generally free of charge, and a large share of cases are settled there without going to court. Only if no agreement is reached does an action before the rent court follow.\n\nThe tenants associations, such as the [Swiss Tenants Association](https://www.mieterverband.ch), offer support in preparing your case. This article does not replace individual legal advice."
+      },
+      {
+        "type": "faq",
+        "heading": "Frequently asked questions about the rental deposit",
+        "faqs": [
+          {
+            "q": "How long does it take to get my deposit back?",
+            "a": "Once both parties have signed the release, the bank usually transfers the deposit within days to a few weeks. Delays are mostly caused by the pending final service-charge statement. Without agreement, the tenant can request release one year after the end of the tenancy, provided the landlord has not asserted a legal claim."
+          },
+          {
+            "q": "How much deposit may the landlord ask for?",
+            "a": "For residential property, no more than three months rent (Art. 257e CO), held in a bank account in the tenant's name. This cap does not apply to commercial premises."
+          },
+          {
+            "q": "What may be deducted from the deposit?",
+            "a": "Only legitimate claims from the tenancy: unpaid rent and service charges, compensation for damage beyond normal wear, missing keys, and cleaning costs where a re-clean is objectively necessary. Each item must be justified and quantified."
+          },
+          {
+            "q": "What counts as normal wear and tear?",
+            "a": "Everything that arises from living in the apartment as intended: faded wall paint, fine traffic marks on parquet, worn tap surfaces, carpet worn in walkways. This is covered by the rent and may not be charged."
+          },
+          {
+            "q": "Do I have to pay in full for an old carpet?",
+            "a": "Usually not. What counts is the depreciated value: the used-up share of the lifespan is deducted from the replacement price. If the lifespan given in the joint useful-life table has expired, compensation for the material is usually dropped entirely."
+          },
+          {
+            "q": "What can I do about a deposit deduction?",
+            "a": "Ask in writing for a detailed breakdown with supporting documents, check the age of the items involved, compare the move-in and move-out protocols, and contest unjustified items in writing. Do not sign a release you disagree with."
+          },
+          {
+            "q": "Can a poor end-of-tenancy clean lead to a deduction?",
+            "a": "Yes, if the apartment is not returned in the contractually required condition and a re-clean is necessary. However, the costs must actually be incurred and documented — a flat fee without evidence can be challenged."
+          },
+          {
+            "q": "What happens in a dispute over the deposit?",
+            "a": "The conciliation authority for tenancy matters where the property is located is responsible. Proceedings in tenancy matters are generally free of charge. If no agreement is reached, the rent court decides upon action being filed."
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "heading": "You might also find this useful",
+        "links": [
+          {
+            "label": "Apartment handover checklist Zurich",
+            "href": "/en/guide/apartment-handover-checklist-zurich-2026"
+          },
+          {
+            "label": "End-of-tenancy cleaning: calculate your fixed price",
+            "href": "/calculator"
+          },
+          {
+            "label": "Handover guarantee explained",
+            "href": "/abnahmegarantie"
+          },
+          {
+            "label": "End-of-tenancy cleaning costs in Zurich",
+            "href": "/ratgeber/endreinigung-kosten-zuerich"
+          },
+          {
+            "label": "Moving in Zurich: checklist",
+            "href": "/ratgeber/umzug-zuerich-checkliste-2026"
+          }
+        ]
+      }
+    ],
+    "metaTitleDe": "Kaution nach dem Auszug: Welche Abzüge sind zulässig?",
+    "metaDescriptionDe": "Was darf nach dem Auszug von der Mietkaution abgezogen werden? Erfahren Sie, was als normale Abnutzung gilt, wie Kautionsabzüge berechnet werden und was Sie bei Streit tun können.",
+    "metaTitleEn": "Rental Deposit After Moving Out: Which Deductions Are Permitted?",
+    "metaDescriptionEn": "What can be deducted from your Swiss rental deposit after moving out? Learn what counts as normal wear and tear, how deductions are calculated and what to do in a dispute.",
+    "readingTimeMinutes": 8,
+    "dateModified": "2026-08-16",
+    "datePublished": "2026-08-16"
   },
   {
     "slug": "endreinigung-selber-machen-oder-firma",

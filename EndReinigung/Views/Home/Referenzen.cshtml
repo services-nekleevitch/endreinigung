@@ -1,0 +1,156 @@
+@{
+    ViewData["Title"] = "Referenzen – Endreinigungen in Zürich | Zürich Endreinigung";
+    ViewData["Description"] = "Echte Projekte aus unserem Alltag: Endreinigungen in Zürich und im ganzen Kanton – mit Bildern, Details und Google-Bewertungen unserer Kundinnen und Kunden.";
+    ViewData["Keywords"] = "Referenzen Endreinigung Zürich, Projekte, Bewertungen";
+
+    var projekte = new[] {
+        new { Img = "/img/projects/wohnkueche.jpg", Alt = "Endreinigung 5.5 Zimmer Wohnung Wollishofen", Caption = "Endreinigung 5.5 Zimmer Wohnung in Wollishofen, ZH. Erfolgreiche Wohnungsabgabe; Kaution ohne Abzüge zurückerhalten." },
+        new { Img = "/img/projects/kueche.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Oerlikon", Caption = "Endreinigung 3.5 Zimmer Wohnung in Oerlikon, Zürich. Kaution erfolgreich zurückerhalten." },
+        new { Img = "/img/projects/wohnzimmer.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Altstetten", Caption = "Endreinigung 4.5 Zimmer Wohnung in Altstetten, Zürich. Kaution erfolgreich zurückerhalten." },
+        new { Img = "/img/projects/bad-dusche.jpg", Alt = "Endreinigung 2.5 Zimmer Wohnung Wiedikon", Caption = "Endreinigung 2.5 Zimmer Wohnung in Wiedikon, Zürich. Kaution erfolgreich zurückerhalten." },
+        new { Img = "/img/projects/bad-wanne.jpg", Alt = "Endreinigung 3.5 Zimmer Wohnung Seefeld", Caption = "Endreinigung 3.5 Zimmer Wohnung in Seefeld, Zürich. Kaution erfolgreich zurückerhalten." },
+        new { Img = "/img/projects/balkon.jpg", Alt = "Endreinigung 4.5 Zimmer Wohnung Höngg", Caption = "Endreinigung 4.5 Zimmer Wohnung in Höngg, Zürich. Kaution erfolgreich zurückerhalten." }
+    };
+    var hakenItems = new[] {
+        "Dokumentierte Endreinigungen aus der Praxis",
+        "Küchen, Bäder, Wohnräume und Balkone",
+        "Fixpreis inklusive Anfahrt und Material"
+    };
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://zurich-endreinigung.ch/referenzen" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "name": "Referenzen Endreinigung Zürich",
+        "description": "Ausgewählte Referenzprojekte unserer Endreinigungen in der Stadt Zürich und im Kanton Zürich.",
+        "url": "https://zurich-endreinigung.ch/referenzen",
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "areaServed": [
+            { "@@type": "City", "name": "Zürich" },
+            { "@@type": "AdministrativeArea", "name": "Kanton Zürich" }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <!-- Header -->
+    <section class="relative flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <picture>
+                <source srcset="/img/projects/kueche.webp" type="image/webp" />
+                <img src="/img/projects/kueche.jpg" alt="Endreinigung 3.5 Zimmer Wohnung Oerlikon" class="w-full h-full object-cover" width="1920" height="1080" />
+            </picture>
+            <div class="absolute inset-0 bg-primary/70"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 w-full">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+                <div class="max-w-3xl">
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="inline-block bg-trust-gold text-primary-foreground font-semibold text-sm px-4 py-1.5 rounded-full">✓ Echte Projekte</span>
+                        <span class="inline-block border-2 border-primary-foreground text-primary-foreground font-semibold text-sm px-4 py-1.5 rounded-full">🛡️ 100% Abnahmegarantie</span>
+                        <span class="inline-block bg-cleaning-green text-primary-foreground font-semibold text-sm px-4 py-1.5 rounded-full">📍 Zürich &amp; Kanton</span>
+                        <div class="inline-flex items-center px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full border border-primary-foreground/20">
+                            <span class="text-primary-foreground/90 text-sm font-medium">🌍 Expat Friendly</span>
+                        </div>
+                    </div>
+
+                    <h1 class="text-3xl md:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+                        Referenzen Endreinigung Zürich — unsere Projekte
+                    </h1>
+
+                    <p class="text-base md:text-lg text-primary-foreground/80 mb-6 max-w-2xl">
+                        Einblicke in abgeschlossene Endreinigungen in Stadt und Kanton Zürich — übergabebereit gereinigt und persönlich begleitet.
+                    </p>
+
+                    <div class="space-y-2 mb-6">
+                        @foreach (var item in hakenItems) {
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                                <span class="text-primary-foreground text-sm md:text-base">@item</span>
+                            </div>
+                        }
+                    </div>
+
+                    <a href="#projects"
+                       class="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md bg-booking-orange text-white text-lg font-bold hover:bg-booking-orange-dark shadow-button hover:shadow-hero transition-all duration-300 hover:scale-105">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        Projekte ansehen
+                    </a>
+                </div>
+
+                <div class="md:self-end md:pb-2">
+                    <a href="https://share.google/f60Gr7soQQux5lExT" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:opacity-80 transition-opacity">
+                        @for (var i = 0; i < 5; i++) {
+                            <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        }
+                        <span class="text-primary-foreground/80 text-sm ml-2">5/5 auf Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews directly below the header -->
+    <section class="pt-6 pb-2 md:pt-12 md:pb-3 bg-muted/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            @{ ViewData["MaxWidth"] = "max-w-6xl"; }
+            @await Html.PartialAsync("~/Views/Shared/_GoogleReviewsCarousel.cshtml")
+        </div>
+    </section>
+
+    <!-- Projects grid -->
+    <section id="projects" class="pt-3 pb-12 md:pt-4 md:pb-20 scroll-mt-20 md:scroll-mt-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-8">Ausgewählte Projekte</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach (var obj in projekte) {
+                    var webp = System.IO.Path.ChangeExtension(obj.Img, ".webp");
+                    <article class="bg-card border border-border rounded-xl overflow-hidden flex flex-col">
+                        <div class="aspect-[4/3] bg-muted">
+                            <picture>
+                                <source srcset="@webp" type="image/webp" />
+                                <img src="@obj.Img" alt="@obj.Alt" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="600" />
+                            </picture>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col gap-2">
+                            <h3 class="text-base font-semibold text-foreground flex items-start gap-2">
+                                <svg class="h-4 w-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>@obj.Alt</span>
+                            </h3>
+                            <p class="text-sm text-muted-foreground leading-relaxed">@obj.Caption</p>
+                        </div>
+                    </article>
+                }
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="/calculator" class="inline-flex items-center justify-center h-11 px-8 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+                    Fixpreis in 30 Sekunden berechnen
+                    <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    @await Html.PartialAsync("_Contact")
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")

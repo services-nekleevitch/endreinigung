@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"] = "Endreinigung Zürich | Abnahmegarantie & Persönliche Übergabe";
-    ViewData["Description"] = "2,5-Zi. CHF 650 ✓ 3,5-Zi. CHF 850 ✓ Anfahrt & Material inkl. ✓ 100% Abnahmegarantie ✓ Wir begleiten Sie persönlich bei der Übergabe ✓ Online-Rechner: Fixpreis in 30 Sek.";
+    ViewData["Title"] = "Endreinigung Zürich | 100% Abnahmegarantie & Fixpreis";
+    ViewData["Description"] = "Endreinigung Zürich zum transparenten Fixpreis mit 100% Abnahmegarantie. Persönlich bei der Wohnungsübergabe vor Ort – kostenlose Nachbesserung inklusive.";
     ViewData["Keywords"] = "Endreinigung Zürich, Abnahmegarantie, Wohnungsreinigung Zürich, Endreinigung Kosten, Wohnungsübergabe Zürich";
     ViewData["HeroPreload"] = "/img/zurich-cityscape.webp";
     ViewData["HeroPreloadMobile"] = "/img/zurich-cityscape-mobile.webp";
@@ -18,7 +18,7 @@
                 "name": "Wie viel kostet eine Endreinigung in Zürich?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Die Kosten für eine professionelle Endreinigung in Zürich beginnen bei CHF 550 für eine 1- bis 1.5-Zimmer-Wohnung."
+                    "text": "Eine professionelle Endreinigung in Zürich kostet bei uns CHF 550 für 1–1.5 Zimmer, CHF 650 für 2–2.5 Zimmer und CHF 850 für 3–3.5 Zimmer. Der Fixpreis umfasst die vereinbarten Leistungen inklusive 100% Abnahmegarantie, und wir sind persönlich bei der Wohnungsübergabe vor Ort."
                 }
             },
             {
@@ -26,7 +26,7 @@
                 "name": "Ist die Abnahmegarantie wirklich sicher?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Ja, unsere 100% Abnahmegarantie bedeutet, dass wir persönlich bei der Wohnungsübergabe anwesend sind."
+                    "text": "Unsere 100% Abnahmegarantie gilt für die Reinigungsleistung: Reinigungsbezogene Beanstandungen beheben wir kostenlos und wenn möglich direkt bei der Übergabe. Die Garantie bezieht sich nicht auf Schäden oder andere mietrechtliche Themen."
                 }
             },
             {
@@ -34,9 +34,26 @@
                 "name": "Wie kurzfristig kann ich einen Termin buchen?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "In der Regel können wir innerhalb von 48 Stunden einen Termin anbieten."
+                    "text": "Kurzfristige Termine sind je nach Auslastung möglich. Für Ihren Wunschtermin empfehlen wir eine möglichst frühe Buchung, besonders zum Monatsende."
                 }
             }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Service",
+        "name": "Endreinigung Zürich – Fixpreise",
+        "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
+        "areaServed": { "@@type": "AdministrativeArea", "name": "Kanton Zürich" },
+        "offers": [
+            { "@@type": "Offer", "name": "Endreinigung 1–1.5 Zimmer", "price": "550", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
+            { "@@type": "Offer", "name": "Endreinigung 2–2.5 Zimmer", "price": "650", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
+            { "@@type": "Offer", "name": "Endreinigung 3–3.5 Zimmer", "price": "850", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
+            { "@@type": "Offer", "name": "Endreinigung 4–4.5 Zimmer", "price": "970", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
+            { "@@type": "Offer", "name": "Endreinigung 5–5.5 Zimmer", "price": "1150", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
+            { "@@type": "Offer", "name": "Endreinigung 6–6.5 Zimmer", "price": "1350", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" }
         ]
     }
     </script>
@@ -45,6 +62,11 @@
 @await Html.PartialAsync("_HeroH1")
 @await Html.PartialAsync("_TrustBar")
 @await Html.PartialAsync("_FixedPricing")
+<section class="py-6 md:py-12 bg-muted/30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        @await Html.PartialAsync("~/Views/Shared/_GoogleReviewsCarousel.cshtml", null, new ViewDataDictionary(ViewData) { ["MaxWidth"] = "max-w-5xl" })
+    </div>
+</section>
 @await Html.PartialAsync("_VideoSection")
 @await Html.PartialAsync("_HowItWorks")
 @await Html.PartialAsync("_WhyChooseUs")

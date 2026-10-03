@@ -62,6 +62,36 @@
         updatedDisplay = dm.ToString("d. MMMM yyyy", culture);
     }
 
+    // Title split on em dash or pipe: first part normal, second part rendered as a muted sub-line
+    string titleHead = title;
+    string titleTail = "";
+    if (!string.IsNullOrEmpty(title))
+    {
+        string? sep = title.Contains('—') ? "—" : title.Contains('|') ? "|" : null;
+        if (sep != null)
+        {
+            var idx = title.IndexOf(sep, StringComparison.Ordinal);
+            titleHead = title.Substring(0, idx).Trim();
+            titleTail = title.Substring(idx + sep.Length).Trim();
+        }
+    }
+
+    // Intro split on blank lines into paragraphs
+    var introParagraphs = Regex.Split(intro ?? "", @"\n{2,}").Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
+
+    // Booking card insertion points (Ratgeber "Wohnungsübergabe" article only)
+    var bookingCardAfterHeadings = new HashSet<string>();
+    var bookingCardVariants = new Dictionary<string, (string Rooms, string Price)>();
+    if (string.Equals(Model.Slug, "wohnungsuebergabe-checkliste-zuerich-2026", StringComparison.OrdinalIgnoreCase))
+    {
+        bookingCardAfterHeadings.Add("Checkliste Badezimmer");
+        bookingCardAfterHeadings.Add("Bathroom Checklist");
+        bookingCardAfterHeadings.Add("Selber reinigen oder Profi beauftragen?");
+        bookingCardAfterHeadings.Add("DIY or hire a professional?");
+        bookingCardVariants["Checkliste Badezimmer"] = ("2–2.5 Zimmer", "CHF 600");
+        bookingCardVariants["Bathroom Checklist"] = ("2–2.5 Zimmer", "CHF 600");
+    }
+
     // Collect all FAQs across blocks for FAQ JSON-LD
     var allFaqs = blocks.Where(b => b.Type == "faq").SelectMany(b => b.Faqs).ToList();
 
@@ -119,6 +149,13 @@
             sb.Append(System.Net.WebUtility.HtmlEncode(text.Substring(last)));
         }
         return sb.ToString();
+    }
+
+    // Split a block body on blank lines into paragraphs (mirrors React's body.split("\n\n"))
+    IEnumerable<string> SplitParagraphs(string text)
+    {
+        if (string.IsNullOrEmpty(text)) return Array.Empty<string>();
+        return text.Replace("\r\n", "\n").Split(new[] { "\n\n" }, StringSplitOptions.None);
     }
 
     // Strip markdown from text for use inside JSON-LD answers
@@ -257,63 +294,69 @@
     <article class="flex-1 pt-20 md:pt-[7.75rem] pb-10">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb (visible) -->
-            <nav aria-label="Breadcrumb" class="mb-3 text-xs text-muted-foreground">
-                <ol class="flex flex-wrap items-center gap-1.5">
-                    <li><a href="/" class="hover:text-primary">@(isEn ? "Home" : "Start")</a></li>
-                    <li aria-hidden="true">/</li>
-                    <li><a href="/ratgeber" class="hover:text-primary">@(isEn ? "Guide" : "Ratgeber")</a></li>
-                    <li aria-hidden="true">/</li>
-                    <li class="text-foreground/80 line-clamp-1">@title</li>
+            <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground">
+                <ol class="flex items-center gap-2 min-w-0">
+                    <li class="shrink-0"><a href="/" class="hover:text-primary transition-colors">@(isEn ? "Home" : "Start")</a></li>
+                    <li aria-hidden="true" class="shrink-0 text-border">/</li>
+                    <li class="shrink-0"><a href="/ratgeber" class="hover:text-primary transition-colors">@(isEn ? "Guide" : "Ratgeber")</a></li>
+                    <li aria-hidden="true" class="shrink-0 text-border">/</li>
+                    <li class="truncate text-foreground/70">@title</li>
                 </ol>
             </nav>
 
-            <!-- Back link -->
-            <a href="/ratgeber" class="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4 transition-colors">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                @(isEn ? "Back to guide" : "Zurück zum Ratgeber")
-            </a>
+            <header class="mt-6 pb-8 mb-8 border-b border-border">
+                <!-- Back link + category -->
+                <div class="flex flex-wrap items-center gap-3 mb-5">
+                    <a href="/ratgeber" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        @(isEn ? "Back to guide" : "Zurück zum Ratgeber")
+                    </a>
+                    @if (!string.IsNullOrEmpty(categoryName))
+                    {
+                        <span aria-hidden="true" class="h-4 w-px bg-border"></span>
+                        <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                            @categoryName
+                        </span>
+                    }
+                </div>
 
-            <!-- Category badge -->
-            @if (!string.IsNullOrEmpty(categoryName))
-            {
-                <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-                    @categoryName
-                </span>
-            }
+                <!-- Title -->
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-swiss-blue leading-[1.15] tracking-tight mb-5">
+                    @titleHead
+                    @if (!string.IsNullOrEmpty(titleTail))
+                    {
+                        <span class="block text-muted-foreground mt-1">@titleTail</span>
+                    }
+                </h1>
 
-            <!-- Reading time + last updated + author -->
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
-                <span class="inline-flex items-center gap-1.5">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
-                    @readingTime min @(isEn ? "read" : "Lesezeit")
-                </span>
-                @if (!string.IsNullOrEmpty(updatedDisplay))
-                {
+                <!-- Reading time + last updated + author -->
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
                     <span class="inline-flex items-center gap-1.5">
-                        <span aria-hidden="true">·</span>
+                        <svg class="w-4 h-4 text-primary/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+                        @readingTime min @(isEn ? "read" : "Lesezeit")
+                    </span>
+                    @if (!string.IsNullOrEmpty(updatedDisplay))
+                    {
+                        <span aria-hidden="true" class="h-3.5 w-px bg-border"></span>
                         <time datetime="@Model.DateModified">
                             @(isEn ? "Updated " : "Aktualisiert am ")@updatedDisplay
                         </time>
-                    </span>
-                }
-                @if (!string.IsNullOrEmpty(authorByline))
-                {
-                    <span class="inline-flex items-center gap-1.5">
-                        <span aria-hidden="true">·</span>
+                    }
+                    @if (!string.IsNullOrEmpty(authorByline))
+                    {
+                        <span aria-hidden="true" class="h-3.5 w-px bg-border"></span>
                         <span>@authorByline</span>
-                    </span>
-                }
-            </div>
-
-            <!-- Title -->
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-swiss-blue mb-4">
-                @title
-            </h1>
+                    }
+                </div>
+            </header>
 
             <!-- Intro -->
-            <p class="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
-                @intro
-            </p>
+            <div class="text-lg md:text-xl text-foreground/75 mb-10 leading-relaxed space-y-4">
+                @foreach (var introPara in introParagraphs)
+                {
+                    <p>@introPara</p>
+                }
+            </div>
 
             <!-- Table of contents -->
             @if (tocItems.Count >= 3)
@@ -340,7 +383,7 @@
             }
 
             <!-- Content blocks -->
-            <div class="space-y-6">
+            <div class="space-y-8">
                 @foreach (var block in blocks)
                 {
                     if (block.Type == "tip")
@@ -348,8 +391,8 @@
                         <div class="flex gap-3 bg-primary/5 border border-primary/20 rounded-lg p-4">
                             <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0012 2z"/></svg>
                             <div>
-                                <p class="text-sm font-semibold text-primary mb-1">@(isEn ? "Professional Tip" : "Profi-Tipp")</p>
-                                <p class="text-sm text-foreground">@Html.Raw(InlineMd(block.Body))</p>
+                                <p class="text-base font-semibold text-primary mb-1">@(isEn ? "Professional Tip" : "Profi-Tipp")</p>
+                                <p class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(block.Body))</p>
                             </div>
                         </div>
                     }
@@ -358,18 +401,187 @@
                         <div>
                             @if (!string.IsNullOrEmpty(block.Heading))
                             {
-                                <h2 id="@Slugify(block.Heading)" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
+                                <h2 id="@Slugify(block.Heading)" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
+                            }
+                            @if (!string.IsNullOrEmpty(block.Body))
+                            {
+                                <div class="space-y-4 mb-4">
+                                    @foreach (var para in SplitParagraphs(block.Body))
+                                    {
+                                        <p class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(para))</p>
+                                    }
+                                </div>
                             }
                             <div class="bg-muted/50 rounded-lg p-4 space-y-2">
                                 @foreach (var item in block.Items)
                                 {
                                     <div class="flex items-start gap-2">
-                                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                        <span class="text-sm text-foreground">@Html.Raw(InlineMd(item))</span>
+                                        <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <span class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(item))</span>
                                     </div>
                                 }
                             </div>
                         </div>
+                    }
+                    else if (block.Type == "table" && block.Rows.Count > 0)
+                    {
+                        <div>
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h3 class="text-xl font-bold text-foreground mb-3 mt-4">@block.Heading</h3>
+                            }
+                            <div class="overflow-x-auto rounded-lg border border-border">
+                                <table class="w-full text-sm border-collapse">
+                                    @if (block.Headers.Count > 0)
+                                    {
+                                        <thead>
+                                            <tr class="bg-muted/60">
+                                                @foreach (var h in block.Headers)
+                                                {
+                                                    <th class="text-sm font-semibold text-foreground text-left align-top px-4 py-3">@Html.Raw(InlineMd(h))</th>
+                                                }
+                                            </tr>
+                                        </thead>
+                                    }
+                                    <tbody>
+                                        @foreach (var row in block.Rows)
+                                        {
+                                            <tr class="border-t border-border">
+                                                @foreach (var cell in row)
+                                                {
+                                                    <td class="align-top text-sm px-4 py-3">@Html.Raw(InlineMd(cell))</td>
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @if (!string.IsNullOrEmpty(block.Caption))
+                            {
+                                <p class="text-sm text-muted-foreground mt-3 leading-relaxed">@Html.Raw(InlineMd(block.Caption))</p>
+                            }
+                        </div>
+                    }
+                    else if (block.Type == "image" && !string.IsNullOrEmpty(block.Src))
+                    {
+                        <figure class="my-2">
+                            <img src="@block.Src" alt="@block.Alt" width="@(block.Width ?? 1280)" height="@(block.Height ?? 768)" loading="lazy" decoding="async" class="w-full h-auto rounded-xl border border-border object-cover" />
+                            @if (!string.IsNullOrEmpty(block.Caption))
+                            {
+                                <figcaption class="text-sm text-muted-foreground mt-3 text-center italic">@block.Caption</figcaption>
+                            }
+                        </figure>
+                    }
+                    else if (block.Type == "numbered" && block.Items.Count > 0)
+                    {
+                        <div>
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h2 id="@Slugify(block.Heading)" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
+                            }
+                            @if (!string.IsNullOrEmpty(block.Body))
+                            {
+                                <div class="space-y-4 mb-4">
+                                    @foreach (var para in SplitParagraphs(block.Body))
+                                    {
+                                        <p class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(para))</p>
+                                    }
+                                </div>
+                            }
+                            <ol class="space-y-4 list-none pl-0">
+                                @{ var numIdx = 0; }
+                                @foreach (var item in block.Items)
+                                {
+                                    numIdx++;
+                                    var parts = item.Split(new[] { '\n' }, 2);
+                                    var lead = parts[0];
+                                    var rest = parts.Length > 1 ? parts[1] : "";
+                                    <li class="flex gap-3">
+                                        <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center mt-0.5">@numIdx</span>
+                                        <div>
+                                            <p class="text-base font-semibold text-foreground leading-relaxed">@Html.Raw(InlineMd(lead))</p>
+                                            @if (!string.IsNullOrEmpty(rest))
+                                            {
+                                                <p class="text-base text-foreground/90 leading-relaxed mt-1">@Html.Raw(InlineMd(rest))</p>
+                                            }
+                                        </div>
+                                    </li>
+                                }
+                            </ol>
+                        </div>
+                    }
+                    else if (block.Type == "bulleted" && block.Items.Count > 0)
+                    {
+                        <div>
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h2 id="@Slugify(block.Heading)" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
+                            }
+                            @if (!string.IsNullOrEmpty(block.Body))
+                            {
+                                <div class="space-y-4 mb-4">
+                                    @foreach (var para in SplitParagraphs(block.Body))
+                                    {
+                                        <p class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(para))</p>
+                                    }
+                                </div>
+                            }
+                            <ul class="space-y-2 list-none pl-0">
+                                @foreach (var item in block.Items)
+                                {
+                                    <li class="flex items-start gap-2.5">
+                                        <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2.5"></span>
+                                        <span class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(item))</span>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                    else if (block.Type == "formula")
+                    {
+                        <div>
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h2 id="@Slugify(block.Heading)" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
+                            }
+                            <div class="my-2 rounded-lg border border-primary/30 bg-primary/5 px-4 py-4">
+                                <p class="text-center font-mono text-base font-semibold text-foreground tracking-wide">@Html.Raw(InlineMd(block.Body))</p>
+                            </div>
+                        </div>
+                    }
+                    else if (block.Type == "links" && block.Links.Count > 0)
+                    {
+                        var sectionId = !string.IsNullOrEmpty(block.Heading) ? Slugify(block.Heading) : null;
+                        <nav aria-labelledby="@sectionId">
+                            @if (!string.IsNullOrEmpty(block.Heading))
+                            {
+                                <h2 id="@sectionId" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
+                            }
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                @foreach (var l in block.Links)
+                                {
+                                    var isExternal = l.Href.StartsWith("http", StringComparison.OrdinalIgnoreCase);
+                                    if (isExternal)
+                                    {
+                                        <a href="@l.Href" target="_blank" rel="noopener noreferrer" class="block rounded-lg border border-border bg-card hover:border-primary/50 hover:bg-primary/5 transition-colors p-4">
+                                            <span class="flex items-center justify-between gap-2 w-full">
+                                                <span class="text-base font-medium text-foreground leading-snug">@l.Label</span>
+                                                <span class="flex-shrink-0 text-primary">→</span>
+                                            </span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@l.Href" class="block rounded-lg border border-border bg-card hover:border-primary/50 hover:bg-primary/5 transition-colors p-4">
+                                            <span class="flex items-center justify-between gap-2 w-full">
+                                                <span class="text-base font-medium text-foreground leading-snug">@l.Label</span>
+                                                <span class="flex-shrink-0 text-primary">→</span>
+                                            </span>
+                                        </a>
+                                    }
+                                }
+                            </div>
+                        </nav>
                     }
                     else if (block.Type == "faq" && block.Faqs.Count > 0)
                     {
@@ -377,18 +589,18 @@
                         <section aria-labelledby="@sectionId">
                             @if (!string.IsNullOrEmpty(block.Heading))
                             {
-                                <h2 id="@sectionId" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
+                                <h2 id="@sectionId" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
                             }
                             <div class="w-full divide-y divide-border border border-border rounded-lg">
                                 @foreach (var f in block.Faqs)
                                 {
                                     <details class="group">
                                         <summary class="flex items-center justify-between cursor-pointer px-4 py-3 hover:bg-muted/30 transition-colors list-none [&::-webkit-details-marker]:hidden">
-                                            <h3 class="text-base font-semibold text-foreground m-0">@f.Q</h3>
+                                            <h3 class="text-base sm:text-lg font-semibold text-foreground m-0">@f.Q</h3>
                                             <svg class="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180 shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
                                         </summary>
                                         <div class="px-4 pb-4">
-                                            <p class="text-foreground/90 leading-relaxed">@Html.Raw(InlineMd(f.A))</p>
+                                            <p class="text-base text-foreground/90 leading-relaxed">@Html.Raw(InlineMd(f.A))</p>
                                         </div>
                                     </details>
                                 }
@@ -400,13 +612,26 @@
                         <div>
                             @if (!string.IsNullOrEmpty(block.Heading))
                             {
-                                <h2 id="@Slugify(block.Heading)" class="text-xl font-bold text-foreground mb-3 mt-2 scroll-mt-24">@block.Heading</h2>
+                                <h2 id="@Slugify(block.Heading)" class="text-2xl font-bold text-foreground mb-4 mt-4 scroll-mt-24">@block.Heading</h2>
                             }
                             @if (!string.IsNullOrEmpty(block.Body))
                             {
-                                <p class="text-foreground leading-relaxed">@Html.Raw(InlineMd(block.Body))</p>
+                                <div class="space-y-4">
+                                    @foreach (var para in SplitParagraphs(block.Body))
+                                    {
+                                        <p class="text-base text-foreground leading-relaxed">@Html.Raw(InlineMd(para))</p>
+                                    }
+                                </div>
                             }
                         </div>
+                    }
+
+                    if (!string.IsNullOrEmpty(block.Heading) && bookingCardAfterHeadings.Contains(block.Heading))
+                    {
+                        bookingCardVariants.TryGetValue(block.Heading, out var bookingVariant);
+                        ViewData["Rooms"] = bookingVariant.Rooms;
+                        ViewData["Price"] = bookingVariant.Price;
+                        @await Html.PartialAsync("_BookingCard")
                     }
                 }
             </div>
@@ -415,10 +640,10 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- CTA -->
             <div class="mt-10 bg-primary/5 border border-primary/20 rounded-xl p-5 md:p-8 text-center">
-                <h2 class="text-lg font-bold text-foreground mb-2">
+                <h2 class="text-xl font-bold text-foreground mb-2">
                     @(isEn ? "Want a professional clean?" : "Professionelle Reinigung gewünscht?")
                 </h2>
-                <p class="text-sm text-muted-foreground mb-4">
+                <p class="text-base text-muted-foreground mb-4">
                     @(isEn
                         ? "Check our fixed prices for end-of-lease cleaning in Zürich in just 30 seconds with our online calculator."
                         : "Prüfen Sie unsere Fixpreise für die Endreinigung in Zürich – in nur 30 Sekunden mit unserem Online-Kostenrechner.")

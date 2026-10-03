@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Gebäudereinigung Zürich – Unterhaltsreinigung für Liegenschaften";
+    ViewData["Description"] = "Gebäudereinigung in Zürich: Treppenhaus, Eingang, Gemeinschaftsräume und Aussenbereiche. Zuverlässiger Unterhalt für Verwaltungen und Liegenschaftsbesitzer.";
+    ViewData["Keywords"] = "Gebäudereinigung Zürich, Unterhaltsreinigung, Liegenschaftsreinigung, Treppenhausreinigung";
+}
+
+@section Head {
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
+            { "@@type": "ListItem", "position": 2, "name": "Dienstleistungen", "item": "https://zurich-endreinigung.ch/dienstleistungen" },
+            { "@@type": "ListItem", "position": 3, "name": "Gebäudereinigung", "item": "https://zurich-endreinigung.ch/gebaeudereinigung" }
+        ]
+    }
+    </script>
+}
+
+<main class="min-h-screen pt-16 md:pt-[6.25rem]">
+
+    <section class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Gebäudereinigung Zürich
+            </h1>
+            <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+                Als Ihre Reinigungsfirma für Gebäudereinigung in Zürich übernehmen wir die regelmässige
+                Unterhaltsreinigung von Treppenhäusern, Eingangsbereichen, Waschküchen, Kellergängen und
+                Aussenbereichen — zuverlässig, dokumentiert und zu klaren Konditionen.
+            </p>
+            <p class="text-lg text-muted-foreground leading-relaxed mb-10">
+                Verwaltungen und Liegenschaftsbesitzer schätzen unsere feste Ansprechperson, die
+                transparente Leistungsabrechnung und die vollständige Schweizer Haftpflichtversicherung
+                über 5 Mio. CHF.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mb-10">
+                <a href="/bueroreinigung" class="border border-border rounded-lg p-5 hover:border-swiss-blue transition-colors">
+                    <div class="font-semibold text-foreground">Büroreinigung</div>
+                    <p class="text-sm text-muted-foreground mt-1">Regelmässige Reinigung für Ihr Büro.</p>
+                </a>
+                <a href="/baureinigung" class="border border-border rounded-lg p-5 hover:border-swiss-blue transition-colors">
+                    <div class="font-semibold text-foreground">Baureinigung</div>
+                    <p class="text-sm text-muted-foreground mt-1">Grob- und Feinreinigung nach dem Bau.</p>
+                </a>
+                <a href="/fensterreinigung" class="border border-border rounded-lg p-5 hover:border-swiss-blue transition-colors">
+                    <div class="font-semibold text-foreground">Fensterreinigung</div>
+                    <p class="text-sm text-muted-foreground mt-1">Streifenfreie Fenster in Ihrer Liegenschaft.</p>
+                </a>
+                <a href="/grundreinigung" class="border border-border rounded-lg p-5 hover:border-swiss-blue transition-colors">
+                    <div class="font-semibold text-foreground">Grundreinigung</div>
+                    <p class="text-sm text-muted-foreground mt-1">Intensive Grundreinigung Ihrer Räume.</p>
+                </a>
+            </div>
+
+            <a href="/kontakt"
+               class="inline-flex items-center bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                Offerte anfragen
+            </a>
+        </div>
+    </section>
+
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
