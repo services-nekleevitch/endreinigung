@@ -12,6 +12,15 @@ namespace EndReinigung
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Persistent file log (App_Data/logs/app-YYYY-MM-DD.log). IIS on the host discards console
+            // output, so without this the booking/email diagnostics are never seen. See FileLogger.cs.
+            var fileLogging = builder.Configuration.GetSection("FileLogging").Get<FileLoggerOptions>() ?? new FileLoggerOptions();
+            var logDirectory = Path.IsPathRooted(fileLogging.Path)
+                ? fileLogging.Path
+                : Path.Combine(builder.Environment.ContentRootPath, fileLogging.Path);
+            builder.Logging.AddProvider(new FileLoggerProvider(logDirectory, fileLogging.MinLevel, fileLogging.RetainDays));
+
             // Add localization services
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
             builder.Services.AddControllersWithViews()
@@ -54,6 +63,53 @@ namespace EndReinigung
             //   7. Delete EndReinigung/DataAccess/ once everything has moved.
 
             var app = builder.Build();
+
+            // Diagnostics for the two form endpoints. Runs outside MVC so it also records failures that
+            // never reach the action: antiforgery rejections (400 from [ValidateAntiForgeryToken]),
+            // request-size limits (413), unhandled exceptions (500) and aborted connections.
+            app.Use(async (context, next) =>
+            {
+                var path = context.Request.Path;
+                var isFormPost = HttpMethods.IsPost(context.Request.Method) &&
+                                 (path.StartsWithSegments("/calculator") || path.StartsWithSegments("/contact"));
+                if (!isFormPost)
+                {
+                    await next();
+                    return;
+                }
+
+                var logger = context.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger("FormRequest");
+                var sw = System.Diagnostics.Stopwatch.StartNew();
+                var hasAntiforgeryCookie = context.Request.Cookies.Keys.Any(k => k.StartsWith(".AspNetCore.Antiforgery", StringComparison.Ordinal));
+                logger.LogInformation(
+                    "POST {Path} from {Ip} ua=\"{UserAgent}\" referer={Referer} contentType={ContentType} contentLength={ContentLength} antiforgeryCookie={HasAfCookie} traceId={TraceId}",
+                    path, context.Connection.RemoteIpAddress, context.Request.Headers.UserAgent.ToString(),
+                    context.Request.Headers.Referer.ToString(), context.Request.ContentType,
+                    context.Request.ContentLength, hasAntiforgeryCookie, context.TraceIdentifier);
+                try
+                {
+                    await next();
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "POST {Path} threw after {ElapsedMs} ms traceId={TraceId}", path, sw.ElapsedMilliseconds, context.TraceIdentifier);
+                    throw;
+                }
+
+                var status = context.Response.StatusCode;
+                if (status >= 400)
+                {
+                    logger.LogWarning("POST {Path} -> {StatusCode} after {ElapsedMs} ms traceId={TraceId}{Hint}",
+                        path, status, sw.ElapsedMilliseconds, context.TraceIdentifier,
+                        // UseStatusCodePagesWithReExecute re-executes the antiforgery 400 into the NotFound
+                        // page, so the status observed here can be 404 — check both.
+                        (status == 400 || status == 404) && !hasAntiforgeryCookie ? " (no antiforgery cookie — token validation likely failed: cookies blocked, stale page, or cross-site post)" : "");
+                }
+                else
+                {
+                    logger.LogInformation("POST {Path} -> {StatusCode} after {ElapsedMs} ms traceId={TraceId}", path, status, sw.ElapsedMilliseconds, context.TraceIdentifier);
+                }
+            });
 
             // Compression must run before static files so static assets get compressed too.
             app.UseResponseCompression();

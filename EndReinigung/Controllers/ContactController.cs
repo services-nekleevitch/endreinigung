@@ -35,6 +35,10 @@ namespace EndReinigung.Controllers
 
             if (!ModelState.IsValid)
             {
+                var errors = ModelState
+                    .Where(kv => kv.Value?.Errors.Count > 0)
+                    .Select(kv => $"{kv.Key}=[{string.Join(", ", kv.Value!.Errors.Select(e => e.ErrorMessage))}]");
+                _logger.LogWarning("Contact form rejected (validation) for <{Email}>: {Errors}", model.Email, string.Join("; ", errors));
                 TempData["Contact.Status"] = "invalid";
                 return Redirect(returnUrl + "#contact-form");
             }
@@ -56,11 +60,12 @@ namespace EndReinigung.Controllers
             try
             {
                 await _emailService.SendContactEmailAsync(recipient, subject, body, model.Email);
+                _logger.LogInformation("Contact form from <{Email}> delivered to {Recipient}", model.Email, recipient);
                 TempData["Contact.Status"] = "success";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Contact form email send failed");
+                _logger.LogError(ex, "Contact form email send failed for <{Email}> — user was shown the error message", model.Email);
                 TempData["Contact.Status"] = "error";
             }
 

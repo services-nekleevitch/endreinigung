@@ -32,6 +32,11 @@ namespace EndReinigung.Controllers
                 var errors = ModelState
                     .Where(kv => kv.Value?.Errors.Count > 0)
                     .ToDictionary(kv => kv.Key, kv => kv.Value!.Errors.Select(e => e.ErrorMessage).ToArray());
+                _logger.LogWarning(
+                    "Booking rejected (validation) for {FirstName} {LastName} <{Email}> service={Service} {Property}/{Rooms} ZIP {Zip} date={CleaningDate}: {Errors}",
+                    model.FirstName, model.LastName, model.Email, model.Service, model.PropertyType, model.RoomSize, model.ZipCode,
+                    model.CleaningDate?.ToString("yyyy-MM-dd"),
+                    string.Join("; ", errors.Select(e => $"{e.Key}=[{string.Join(", ", e.Value)}]")));
                 return BadRequest(new { ok = false, errors });
             }
 
@@ -39,6 +44,9 @@ namespace EndReinigung.Controllers
             var authoritativePrice = PriceCalculator.Compute(model);
             if (authoritativePrice <= 0m)
             {
+                _logger.LogWarning(
+                    "Booking rejected (no price) for <{Email}> service={Service} {Property}/{Rooms} — PriceCalculator returned {Price}",
+                    model.Email, model.Service, model.PropertyType, model.RoomSize, authoritativePrice);
                 return BadRequest(new { ok = false, errors = new { RoomSize = new[] { "Ungültige Wohnungsgrösse." } } });
             }
 
@@ -63,7 +71,7 @@ namespace EndReinigung.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Ops notification email failed for {BookingNumber}", bookingNumber);
+                    _logger.LogError(ex, "Ops notification email failed for {BookingNumber} — customer <{Email}> was shown an error and the booking is LOST unless retried", bookingNumber, model.Email);
                     return StatusCode(500, new { ok = false, error = "Buchung konnte nicht gesendet werden. Bitte versuchen Sie es erneut." });
                 }
             }
@@ -84,10 +92,12 @@ namespace EndReinigung.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Customer confirmation email failed for {BookingNumber}", bookingNumber);
+                    _logger.LogError(ex, "Customer confirmation email failed for {BookingNumber} (customer address {Email})", bookingNumber, model.Email);
                     // Do not fail the booking — ops already got their copy.
                 }
             }
+
+            _logger.LogInformation("Booking {BookingNumber} completed successfully", bookingNumber);
 
             return Ok(new
             {
