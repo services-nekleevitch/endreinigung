@@ -1,3 +1,11 @@
+@*
+    Homepage hero. Mirrors rich-lease-shine/src/components/HeroH1.tsx.
+
+    WARNING when migrating from Lovable: HeroH1.tsx HARDCODES the headline and the three
+    benefit strings. The hero.* keys in src/lib/translations.ts are dead code there (nothing
+    imports Hero.tsx / Index.tsx any more), so diffing translations.ts will give you strings
+    the live site never renders. Always take these values from HeroH1.tsx itself.
+*@
 <!-- Hero Section -->
 <section class="relative h-screen bg-gradient-hero overflow-hidden">
     <!-- Background Image -->
