@@ -18,6 +18,25 @@
       }
     },
     {
+      "label": "watch EndReinigung",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/EndReinigung/EndReinigung.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/EndReinigung"
+      },
+      "isBackground": true,
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
       "label": "Publish EndReinigung",
       "type": "process",
       "command": "dotnet",

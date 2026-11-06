@@ -804,32 +804,322 @@
     "slug": "endreinigung-kosten-zuerich",
     "categorySlug": "wissen",
     "categoryName": "Wissen",
-    "titleDe": "Wie viel kostet Endreinigung in Zürich?",
-    "introDe": "Was kostet eine professionelle Endreinigung in Zürich? Preisübersicht, Faktoren und Spartipps für 2026.",
+    "titleDe": "Endreinigung Wohnung Kosten Zürich 2026: Festpreise & Abnahmegarantie",
+    "introDe": "Echte Marktpreise nach Wohnungsgrösse, was den Preis beeinflusst, und warum die billigste Reinigung selten die günstigste ist. Mit konkretem Kostenvergleich mit und ohne Abnahmegarantie.",
+    "metaTitleDe": "Endreinigung Wohnung Kosten Zürich 2026 | Festpreise & Abnahmegarantie",
+    "metaDescriptionDe": "Endreinigung Wohnung Kosten Zürich 2026: Festpreise nach Wohnungsgrösse, 10 Preisfaktoren, Vergleich mit/ohne Abnahmegarantie. Inkl. 5 Mio. CHF Haftpflichtversicherung.",
+    "dateModified": "2026-05-14",
+    "readingTimeMinutes": 8,
     "coverImage": "/img/ratgeber/endreinigung-kosten.jpg",
     "blocks": [
       {
         "type": "text",
-        "heading": "",
-        "body": "Die Kosten für eine Endreinigung in Zürich variieren je nach Wohnungsgrösse, Zustand und Anbieter. Im Durchschnitt zahlen Sie zwischen CHF 250 und CHF 800.",
-        "items": []
+        "body": "Eine Endreinigung in Zürich kostet zwischen CHF 250 für die billigste 1-Zimmer-Variante und über CHF 1'800 für ein 7-Zimmer-Haus mit Abnahmegarantie. Die Spannweite ist riesig — und sie ist es aus einem Grund: Endreinigung ist nicht gleich Endreinigung."
       },
       {
-        "type": "checklist",
-        "heading": "",
-        "body": "",
-        "items": [
-          "1-Zimmer-Wohnung: CHF 250–400",
-          "2-Zimmer-Wohnung: CHF 350–500",
-          "3-Zimmer-Wohnung: CHF 450–650",
-          "4+ Zimmer: CHF 600–800+"
+        "type": "text",
+        "body": "Wer im Mai 2026 in Zürich eine Wohnung übergeben muss, steht vor einer Entscheidung, die viele Mieter überrascht: Die billigste Reinigung ist fast nie die günstigste. Eine Reinigung für CHF 300, die von der Verwaltung abgelehnt wird, kostet am Ende oft CHF 1'500 — Nachreinigung plus Kautionsabzug."
+      },
+      {
+        "type": "text",
+        "body": "In diesem Ratgeber finden Sie die echten Marktpreise für eine Endreinigung in Zürich 2026, welche Faktoren den Preis bestimmen, was in einem Festpreis enthalten sein muss, und wie Sie die typischen Fallen vermeiden. Die Zahlen basieren auf unserer täglichen Arbeit als Reinigungsfirma in Zürich und Umgebung."
+      },
+      {
+        "type": "text",
+        "body": "Die folgende Tabelle zeigt den Marktdurchschnitt in Zürich 2026 sowie unsere eigenen Festpreise inklusive 100% Abnahmegarantie:",
+        "heading": "Endreinigung Preise in Zürich — Übersicht nach Wohnungsgrösse"
+      },
+      {
+        "type": "table",
+        "rows": [
+          [
+            "1–1.5 Zimmer",
+            "CHF 350–650",
+            "CHF 550"
+          ],
+          [
+            "2–2.5 Zimmer",
+            "CHF 450–800",
+            "CHF 650"
+          ],
+          [
+            "3–3.5 Zimmer",
+            "CHF 600–1'100",
+            "CHF 850"
+          ],
+          [
+            "4–4.5 Zimmer",
+            "CHF 700–1'300",
+            "CHF 970"
+          ],
+          [
+            "5–5.5 Zimmer",
+            "CHF 900–1'500",
+            "CHF 1'150"
+          ],
+          [
+            "6–6.5 Zimmer",
+            "CHF 1'100–1'800+",
+            "CHF 1'350"
+          ]
+        ],
+        "headers": [
+          "Wohnungsgrösse",
+          "Marktdurchschnitt Zürich",
+          "Zürich Endreinigung Festpreis"
         ]
       },
       {
-        "type": "tip",
-        "heading": "",
-        "body": "Unsere Fixpreise bieten volle Transparenz — keine versteckten Kosten. Jetzt Offerte einholen!",
-        "items": []
+        "type": "text",
+        "body": "Unsere Preise liegen bewusst nicht am unteren Ende des Marktes. Der Grund ist einfach: In unseren Festpreisen sind 100% Abnahmegarantie, 5 Mio. CHF Haftpflichtversicherung und persönliche Anwesenheit bei der Wohnungsübergabe bereits enthalten — alles Leistungen, für die andere Anbieter Aufpreise verlangen oder die sie gar nicht anbieten."
+      },
+      {
+        "type": "text",
+        "body": "Wer eine Endreinigung in Zürich unter CHF 250 angeboten bekommt, sollte vorsichtig sein. Bei diesen Preisen arbeitet die Reinigungsfirma meist ohne Versicherung, ohne Abnahmegarantie, und oft schwarz — drei Faktoren, die im Ablehnungsfall direkt aufs Mieterportemonnaie durchschlagen."
+      },
+      {
+        "type": "image",
+        "alt": "Saubere Schweizer Wohnung in Zürich nach professioneller Endreinigung mit glänzendem Parkettboden",
+        "src": "/img/ratgeber/endreinigung-zuerich-saubere-wohnung.jpg",
+        "width": 1280,
+        "height": 768,
+        "caption": "Eine professionell durchgeführte Endreinigung in Zürich — übergabebereit für die Verwaltung."
+      },
+      {
+        "type": "text",
+        "body": "Der Endpreis einer Endreinigung hängt von zehn Faktoren ab, die wir bei jeder Offerte berücksichtigen:",
+        "heading": "Was beeinflusst den Preis einer Endreinigung in Zürich?"
+      },
+      {
+        "type": "text",
+        "body": "**1. Wohnungsgrösse (Zimmeranzahl und Quadratmeter).** Der wichtigste Faktor. Mehr Zimmer = mehr Zeit, mehr Putzmittel, mehr Personal. Aber Vorsicht: Eine 3.5-Zimmer-Wohnung mit 95 m² kostet weniger als eine 3-Zimmer-Maisonette mit 110 m². Quadratmeter zählen mehr als Zimmerzahl."
+      },
+      {
+        "type": "text",
+        "body": "**2. Anzahl der Bäder und Duschen.** Jedes zusätzliche Bad bedeutet ca. 60–90 Minuten Mehraufwand für Entkalkung, Silikonfugen-Reinigung und Spiegel. Bei 2 Bädern rechnen Sie CHF 80–120 Aufpreis gegenüber 1 Bad."
+      },
+      {
+        "type": "text",
+        "body": "**3. Zustand des Backofens.** Ein verkrusteter Backofen ohne Pyrolyse-Funktion ist die anstrengendste Einzelaufgabe einer Endreinigung. Bei stark verschmutzten Geräten kalkulieren wir CHF 50–100 Aufpreis. Bei Pyrolyse-Backöfen ist es im Festpreis enthalten."
+      },
+      {
+        "type": "image",
+        "alt": "Reinigungsfachkraft reinigt Backofen während einer Endreinigung in einer Zürcher Wohnung",
+        "src": "/img/ratgeber/endreinigung-zuerich-kueche-backofen.jpg",
+        "width": 1280,
+        "height": 768,
+        "caption": "Backofen und Küchengeräte gehören zu den aufwendigsten Posten einer Endreinigung."
+      },
+      {
+        "type": "text",
+        "body": "**4. Bodenart.** Parkett und Laminat sind schnell gereinigt. Plattenböden brauchen mehr Zeit wegen der Fugen. Teppichböden, die mitübergeben werden, müssen geshampooniert werden — das ist eine separate Leistung (CHF 4–8 pro m²) und keine Standard-Endreinigung."
+      },
+      {
+        "type": "text",
+        "body": "**5. Balkon oder Terrasse.** Ein Balkon mit Boden, Geländer und Fensterläden zählt in der Reinigung wie ein halbes Zimmer. Bei grösseren Dachterrassen kann der Aufpreis CHF 100–200 betragen."
+      },
+      {
+        "type": "text",
+        "body": "**6. Fenster (Anzahl, Grösse, Fensterläden).** Standardfenster sind enthalten. Aussenseitige Fenster im 3. Stock, grossflächige Schaufenster-Fenster oder zusätzliche Fensterläden können Mehrkosten verursachen."
+      },
+      {
+        "type": "text",
+        "body": "**7. Mit oder ohne Abnahmegarantie.** Eine Endreinigung ohne [Abnahmegarantie](/abnahmegarantie) ist 15–25% günstiger — Sie tragen aber das volle Risiko, wenn die Verwaltung die Wohnung nicht abnimmt. Mehr dazu im Vergleichsabschnitt unten."
+      },
+      {
+        "type": "text",
+        "body": "**8. Haustiere im Haushalt.** Tierhaare in Teppichen, Polstermöbeln und Lüftungsschlitzen erhöhen den Aufwand spürbar. Bei Wohnungen mit Hund oder Katze rechnen wir CHF 50–150 Aufpreis ein."
+      },
+      {
+        "type": "text",
+        "body": "**9. Zustand der Wohnung allgemein.** Eine gut gepflegte Wohnung wird schneller sauber als eine Raucherwohnung mit gelben Wänden oder eine Studenten-WG nach 3 Jahren. Bei starker Verschmutzung kann der Festpreis um 20–40% steigen."
+      },
+      {
+        "type": "text",
+        "body": "**10. Termindringlichkeit.** Eine Buchung 3 Wochen im Voraus ist günstiger als ein Express-Termin in 48 Stunden. Express-Aufschläge liegen üblicherweise bei CHF 100–200."
+      },
+      {
+        "type": "text",
+        "body": "Eine seriöse Endreinigung in Zürich umfasst diese Leistungen — und nichts davon sollte als Extra in Rechnung gestellt werden:",
+        "heading": "Was muss in einem Festpreis enthalten sein?"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Komplette Reinigung aller Zimmer (Böden, Wände stichprobenartig, Türen, Türrahmen)",
+          "Küche inkl. Backofen, Dampfabzug, Kühlschrank (innen + aussen), Spüle, Armaturen",
+          "Bad/Dusche inkl. Entkalkung, Silikonfugen, Spiegel, WC, Armaturen",
+          "Alle Fenster innen und aussen (Standardfenster, normale Höhe)",
+          "Balkon/Terrasse inkl. Geländer",
+          "Innenliegende Storen und Rolladen",
+          "Schränke und Ablageflächen innen und aussen abwischen",
+          "Heizkörper und Lichtschalter",
+          "Abnahmegarantie mit persönlicher Anwesenheit bei der Übergabe"
+        ],
+        "heading": "Standardmässig enthalten"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Teppichshampoonierung: CHF 4–8 pro m²",
+          "Cheminée-Reinigung: CHF 80–150",
+          "Müll-Entsorgung wenn Wohnung nicht entrümpelt: CHF 100–300",
+          "Spezialreinigungen (z. B. nach Wasserschaden, Brand): individuell"
+        ],
+        "heading": "Typische Aufpreise (transparent ausgewiesen)"
+      },
+      {
+        "type": "text",
+        "body": "Wenn ein Anbieter Standardleistungen wie Backofen oder Fenster als \"Premium-Upgrade\" anbietet, ist das Angebot kein Festpreis — es ist eine Lockoffert. Seriöse Reinigungsfirmen in Zürich bieten All-Inclusive-Festpreise."
+      },
+      {
+        "type": "text",
+        "body": "Die wichtigste Preisentscheidung bei einer Endreinigung in Zürich ist nicht \"billig oder teuer\" — sondern \"mit Abnahmegarantie oder ohne\". Hier die echte Rechnung mit zwei realen Szenarien für eine 3.5-Zimmer-Wohnung:",
+        "heading": "Mit oder ohne Abnahmegarantie? Der echte Kostenvergleich"
+      },
+      {
+        "type": "table",
+        "rows": [
+          [
+            "Billige Reinigung (ohne Garantie)",
+            "CHF 450"
+          ],
+          [
+            "Verwaltung bemängelt Backofen, Silikonfugen, Storen",
+            "–"
+          ],
+          [
+            "Notfall-Nachreinigung (anderer Anbieter, kurzfristig)",
+            "CHF 350"
+          ],
+          [
+            "Kautionsabzug für verbleibende Mängel",
+            "CHF 600"
+          ],
+          [
+            "**Total tatsächliche Kosten**",
+            "**CHF 1'400**"
+          ]
+        ],
+        "headers": [
+          "Posten",
+          "Kosten"
+        ],
+        "heading": "Szenario A: Reinigung ohne Abnahmegarantie"
+      },
+      {
+        "type": "table",
+        "rows": [
+          [
+            "Endreinigung mit 100% Abnahmegarantie",
+            "CHF 850"
+          ],
+          [
+            "Verwaltung bemängelt: sofortige Nachbesserung durch Anbieter",
+            "CHF 0"
+          ],
+          [
+            "Kautionsabzug",
+            "CHF 0"
+          ],
+          [
+            "**Total tatsächliche Kosten**",
+            "**CHF 850**"
+          ]
+        ],
+        "headers": [
+          "Posten",
+          "Kosten"
+        ],
+        "heading": "Szenario B: Reinigung mit Abnahmegarantie"
+      },
+      {
+        "type": "image",
+        "alt": "Wohnungsübergabe in Zürich mit Schlüsselübergabe und Abnahmeprotokoll dank 100% Abnahmegarantie",
+        "src": "/img/ratgeber/endreinigung-zuerich-wohnungsuebergabe-abnahmegarantie.jpg",
+        "width": 1280,
+        "height": 768,
+        "caption": "Mit 100% Abnahmegarantie verläuft die Wohnungsübergabe stressfrei — alle Mängel werden sofort behoben."
+      },
+      {
+        "type": "text",
+        "body": "Die Reinigung mit Abnahmegarantie ist auf den ersten Blick CHF 400 teurer — am Ende aber CHF 550 günstiger. Und vor allem: stressfrei. Sie müssen nicht zwei Tage vor dem Umzug einen Notfall-Reinigungstermin organisieren."
+      },
+      {
+        "type": "text",
+        "body": "Bei [Zürich Endreinigung](/abnahmegarantie) ist die Abnahmegarantie ohne Aufpreis im Festpreis enthalten. Wir sind bei jeder Übergabe persönlich dabei und bessern auf der Stelle nach, falls die Verwaltung etwas beanstandet."
+      },
+      {
+        "type": "text",
+        "body": "Sie können bei einer Endreinigung in Zürich legitim Geld sparen — ohne an der Reinigungsqualität oder Abnahmegarantie zu sparen:",
+        "heading": "Tipps zum Sparen bei der Endreinigung"
+      },
+      {
+        "type": "text",
+        "body": "**1. Früh buchen.** Eine Buchung 3–4 Wochen vor dem Übergabetermin ist günstiger als ein Express-Termin in 48 Stunden. Express-Aufschläge liegen bei CHF 100–200."
+      },
+      {
+        "type": "text",
+        "body": "**2. Selbst entrümpeln und Müll entsorgen.** Wer die Wohnung leer und müllfrei übergibt, spart CHF 100–300. Reinigungsfirmen rechnen Müllentsorgung als separate Leistung ab."
+      },
+      {
+        "type": "text",
+        "body": "**3. Kombi-Termine nutzen.** Wer gleichzeitig eine [Polsterreinigung](/polsterreinigung), [Teppichreinigung](/teppichreinigung) oder [Fensterreinigung](/fensterreinigung) im Neuobjekt bucht, erhält bei den meisten Anbietern 10–15% Mengenrabatt."
+      },
+      {
+        "type": "text",
+        "body": "**4. Auf echten Festpreis bestehen.** Lassen Sie sich keinen \"Richtpreis\" oder \"Stundensatz\" anbieten. Bei einem seriösen Anbieter steht der Endpreis vor Arbeitsbeginn fest. Lassen Sie sich den Festpreis schriftlich vor Arbeitsbeginn bestätigen."
+      },
+      {
+        "type": "text",
+        "body": "**5. Abnahmegarantie als Standard erwarten — kein Aufpreis dafür.** Anbieter, die für die Abnahmegarantie Aufpreis verlangen, geben implizit zu, dass sie ihrer eigenen Reinigung nicht trauen. Bei seriösen Reinigungsfirmen ist die Abnahmegarantie im Standardpreis enthalten."
+      },
+      {
+        "type": "text",
+        "body": "**6. Zahlung per TWINT oder Bank Überweisung.** Vermeiden Sie reine Bar-Anbieter ohne Quittung — diese arbeiten oft schwarz, haben keine Versicherung, und im Schadensfall haben Sie keine Rechtsmittel. Bei Zürich Endreinigung zahlen Sie per TWINT, Bank Überweisung oder bar mit ordentlicher Quittung."
+      },
+      {
+        "type": "text",
+        "body": "**7. Genau definieren, was zur Wohnung gehört.** Manche Mieter buchen unnötigerweise Teppichshampoonierung, obwohl der Teppich ihnen gehört und mit umzieht. Klären Sie vor der Offerte, welche Teile in der Wohnung bleiben."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          {
+            "a": "Die günstigsten Angebote starten bei CHF 250 für eine kleine 1-Zimmer-Wohnung — meist ohne Abnahmegarantie, ohne Versicherung und ohne ordentliche Rechnung. Im Risikofall (Ablehnung durch die Verwaltung) entstehen Folgekosten, die den Gesamtpreis verdoppeln oder verdreifachen können.",
+            "q": "Was kostet die günstigste Endreinigung in Zürich?"
+          },
+          {
+            "a": "Bei kleinen 1- bis 2-Zimmer-Wohnungen und entsprechender Zeit (1–2 volle Tage) kann sich Eigenleistung rechnen. Bei 3 Zimmern oder mehr ist eine professionelle Reinigung fast immer günstiger — vor allem wenn Sie berufstätig sind und die Verwaltung kein Auge zudrückt. Mehr Details in unserem Artikel [Endreinigung selber machen oder Firma beauftragen?](/ratgeber/endreinigung-selber-machen-oder-firma)",
+            "q": "Lohnt es sich, die Endreinigung selbst zu machen?"
+          },
+          {
+            "a": "Im Ablehnungsfall ohne Abnahmegarantie entstehen drei Kostenblöcke: Notfall-Nachreinigung (CHF 300–600), Kautionsabzug für verbleibende Mängel (CHF 200–1'000+), und mögliche Folgekosten bei Streit mit der Verwaltung. Mit Abnahmegarantie sind alle Nachbesserungen kostenlos.",
+            "q": "Welche Kosten entstehen, wenn die Verwaltung die Reinigung ablehnt?"
+          },
+          {
+            "a": "Für Privatpersonen in der Schweiz sind Umzugskosten inkl. Endreinigung in den meisten Kantonen nicht direkt steuerlich absetzbar — Ausnahme: Umzug aus beruflichen Gründen (z. B. neue Stelle mit zumutbarer Wegzeit). Klären Sie die Details mit Ihrem Steuerberater.",
+            "q": "Sind die Kosten der Endreinigung steuerlich absetzbar?"
+          },
+          {
+            "a": "In der Stadt Zürich liegen die Marktpreise tendenziell 10–15% höher als in den umliegenden Bezirken (Affoltern, Andelfingen, Dietikon). Bei Zürich Endreinigung verlangen wir denselben Festpreis im ganzen Kanton Zürich — egal ob Wollishofen, [Bezirk Meilen](/umzugsreinigung-bezirk-meilen) oder [Bezirk Horgen](/umzugsreinigung-bezirk-horgen).",
+            "q": "Wie unterscheiden sich Preise zwischen Stadt Zürich und Bezirken?"
+          },
+          {
+            "a": "Express-Termine innerhalb von 24–48 Stunden sind je nach Anbieter CHF 100–250 teurer. Bei Zürich Endreinigung bieten wir Express-Termine an, sofern Kapazität vorhanden ist — der Aufpreis ist transparent und wird vorab kommuniziert.",
+            "q": "Was kostet eine Express-Endreinigung in 24 Stunden?"
+          }
+        ],
+        "heading": "Häufige Fragen zu Endreinigung Kosten in Zürich"
+      },
+      {
+        "type": "text",
+        "body": "Die genauen Kosten für Ihre Endreinigung hängen von Wohnungsgrösse, Extras und Termin ab. Mit unserem [Online-Kostenrechner](/calculator) sehen Sie in unter 30 Sekunden Ihren Festpreis — inklusive 100% Abnahmegarantie, persönlicher Anwesenheit bei der Übergabe, und 5 Mio. CHF Haftpflichtversicherung.",
+        "heading": "Endpreis berechnen — in 30 Sekunden"
+      },
+      {
+        "type": "text",
+        "body": "Wenn Sie lieber direkt sprechen: [+41 76 501 77 38](tel:+41765017738) oder per [WhatsApp](https://wa.me/41765017738). Wir antworten innerhalb von 24 Stunden mit einer verbindlichen Offerte."
       }
     ]
   },
@@ -1447,98 +1737,216 @@
     "slug": "abmeldung-gemeinde-umzug-schweiz",
     "categorySlug": "checklisten",
     "categoryName": "Checklisten",
-    "titleDe": "Abmeldung bei der Gemeinde: Was du beim Auszug in der Schweiz nicht vergessen darfst",
-    "introDe": "Wer in der Schweiz umzieht, denkt an Kartons, Möbeltransport und Endreinigung — aber die Abmeldung bei der Gemeinde wird oft vergessen. Dabei ist sie Pflicht und kann bei Versäumnis teuer werden. Hier erfährst du alles, was du wissen musst.",
+    "titleDe": "Abmeldung bei der Gemeinde: Was Sie beim Auszug in der Schweiz nicht vergessen dürfen",
+    "titleEn": "Deregistering from Your Municipality: What You Must Not Forget When Moving Out in Switzerland",
+    "introDe": "Wer in der Schweiz umzieht, denkt an Kartons, Möbeltransport und Endreinigung — aber die Abmeldung bei der Gemeinde wird oft vergessen. Dabei ist sie Pflicht und kann bei Versäumnis teuer werden. Hier erfahren Sie alles, was Sie wissen müssen.",
+    "introEn": "When moving in Switzerland, people think about boxes, furniture transport and final cleaning — but deregistering from the municipality is often forgotten. Yet it is mandatory and can be costly if missed. Here is everything you need to know.",
+    "dateModified": "2026-08-15",
     "coverImage": "/img/ratgeber/abmeldung-gemeinde.jpg",
     "blocks": [
       {
-        "type": "text",
-        "heading": "Warum ist die Abmeldung Pflicht in der Schweiz?",
-        "body": "In der Schweiz ist jede Person verpflichtet, sich bei der Einwohnerkontrolle ihrer Wohngemeinde an- und abzumelden. Das ist im Bundesgesetz über die Harmonisierung der Einwohnerregister (RHG) geregelt. Die Gemeinde muss wissen, wer dort wohnt — unter anderem für Steuern, Abstimmungen und die AHV. Egal ob du innerhalb des Kantons Zürich umziehst oder in einen anderen Kanton wie Aargau, Zug, Luzern oder Schwyz wechselst: Die Abmeldung ist der erste Schritt.",
-        "items": []
+        "type": "bulleted",
+        "body": "In der Schweiz ist jede Person gesetzlich verpflichtet, ihren Wohnsitzwechsel den Behörden mitzuteilen. Die Rechtsgrundlage bildet das Bundesgesetz über die Harmonisierung der Einwohnerregister (RHG) in Kombination mit den jeweiligen kantonalen Registergesetzen.\n\nDie Einwohnerkontrolle muss jederzeit nachvollziehen können, wer in welcher Gemeinde wohnhaft ist. Diese Daten bilden die Basis für:",
+        "items": [
+          "Die korrekte Erhebung der Staats- und Gemeindesteuern",
+          "Das Stimm- und Wahlrecht auf kommunaler, kantonaler und eidgenössischer Ebene",
+          "Die Zuweisung zu Abfall- und Feuerwehrabgaben",
+          "Die Organisation von Schulplätzen und der Zivilschutzpflicht"
+        ],
+        "heading": "Warum ist die Abmeldung Pflicht?"
+      },
+      {
+        "type": "bulleted",
+        "body": "In den meisten Schweizer Gemeinden gilt die 14-Tage-Frist: Sie müssen sich spätestens 14 Tage nach dem tatsächlichen Umzug bei Ihrer bisherigen Gemeinde abgemeldet haben.",
+        "items": [
+          "**Vorabmeldung:** In vielen Kantonen (z. B. im Kanton Zürich) können Sie die Abmeldung bereits bis zu 30 Tage vor dem Auszugsdatum vornehmen.",
+          "**Verspätung:** Wer die Meldefrist ignoriert, riskiert eine Ordnungsbusse durch die Gemeinde. Zudem drohen Missverständnisse bei der Postzustellung und Doppelbesteuerungen."
+        ],
+        "heading": "Fristen: Wann muss die Abmeldung erfolgen?"
+      },
+      {
+        "type": "bulleted",
+        "body": "Mittlerweile bieten fast alle Schweizer Kantone und Gemeinden die Nutzung des Online-Portals eUmzugCH an. Mit diesem gemeinsamen Dienst der Kantone können Sie die Abmeldung in der alten Gemeinde und die Anmeldung in der neuen Gemeinde in einem einzigen Schritt erledigen.\n\n**Voraussetzungen für die Nutzung von eUmzugCH:**",
+        "items": [
+          "Volljährigkeit und Schweizer Staatsbürgerschaft oder ein gültiger Ausländerausweis (Kategorie B, C, L, Ci)",
+          "Kein Wegzug ins Ausland (bei Auslandszug ist meist der persönliche Besuch erforderlich)",
+          "Kreditkarte, TWINT oder PostFinance-Karte zur Bezahlung allfälliger Gebühren"
+        ],
+        "heading": "eUmzugCH: Der digitale Weg ohne Behördengang"
       },
       {
         "type": "text",
-        "heading": "Wann muss ich mich abmelden?",
-        "body": "Die Frist beträgt in den meisten Gemeinden 14 Tage vor oder nach dem Umzug. In Zürich kannst du die Abmeldung frühestens 30 Tage vor dem Auszug vornehmen. Wichtig: Melde dich nicht zu spät ab — sonst riskierst du doppelte Steuerveranlagungen oder Mahngebühren.",
-        "items": []
+        "body": "**Hinweis zu den Kosten:** Der Service eUmzugCH selbst ist kostenfrei. Manche Gemeinden erheben jedoch administrative Kanzleigebühren für die Ausstellung der Meldebestätigung (in der Regel zwischen CHF 20.– und CHF 50.–)."
+      },
+      {
+        "type": "bulleted",
+        "body": "Für Personen ohne Schweizer Pass gelten bei der Ab- und Anmeldung zusätzliche Bestimmungen, da die Adressänderung auch im Ausländerregister nachgeführt werden muss.",
+        "items": [
+          "**Zuständigkeit:** Neben der Einwohnerkontrolle ist das kantonale Migrationsamt involviert. Bei der Nutzung von eUmzugCH wird das Migrationsamt automatisch benachrichtigt.",
+          "**Erforderliche Dokumente:** gültiger Pass oder Personalausweis; Ausländerausweis (B, C, L oder G); neuer Mietvertrag oder Bestätigung des Logisgebers",
+          "**Bei Kantonswechsel:** Das Gesuch um Kantonswechsel wird von der neuen Gemeinde an das Migrationsamt weitergeleitet."
+        ],
+        "heading": "Besonderheiten für ausländische Staatsangehörige"
+      },
+      {
+        "type": "text",
+        "body": "Ein Umzug innerhalb der Schweiz hat direkte Auswirkungen auf Ihre Steuerpflicht. In der Schweiz gilt der Grundsatz: Sie sind für das gesamte Kalenderjahr in derjenigen Gemeinde steuerpflichtig, in der Sie am 31. Dezember Ihren Wohnsitz haben.",
+        "heading": "Steuerliche Auswirkungen beim Wohnortswechsel"
+      },
+      {
+        "type": "table",
+        "rows": [
+          [
+            "Innerhalb derselben Gemeinde",
+            "Keine Änderung des Steuerfusses. Sie zahlen die gewohnten Gemeindesteuern."
+          ],
+          [
+            "In eine andere Gemeinde (gleicher Kanton)",
+            "Sie zahlen die Steuern für das gesamte Jahr rückwirkend zum Steuerfuss der neuen Gemeinde."
+          ],
+          [
+            "In einen anderen Kanton",
+            "Der neue Kanton besteuert Ihr gesamtes Jahreseinkommen und -vermögen nach seinen Tarifen. Zu viel bezahlte Vorbezüge im alten Kanton werden zurückerstattet."
+          ]
+        ],
+        "headers": [
+          "Umzugsszenario",
+          "Steuerliche Konsequenz"
+        ]
       },
       {
         "type": "tip",
-        "heading": "",
-        "body": "Erledige die Abmeldung am besten gleich, sobald dein Umzugsdatum feststeht. Viele Gemeinden im Kanton Zürich bieten den Service inzwischen online an — das spart dir den Gang aufs Amt.",
-        "items": []
+        "body": "Wenn Sie Ende des Jahres in eine Gemeinde mit höherem oder niedrigerem Steuerfuss ziehen, passen Sie Ihre provisorischen Steuerzahlungen frühzeitig an, um Nachzahlungen oder Zinsverluste zu vermeiden."
       },
       {
-        "type": "text",
-        "heading": "Wie funktioniert die Abmeldung?",
-        "body": "Je nach Gemeinde gibt es drei Wege:",
-        "items": []
-      },
-      {
-        "type": "checklist",
-        "heading": "Möglichkeiten zur Abmeldung",
-        "body": "",
+        "type": "numbered",
+        "body": "Ziehen Sie von der Schweiz ins Ausland, gelten strenge Sonderregeln:",
         "items": [
-          "Online über die Website deiner Gemeinde (z. B. Stadt Zürich via «Mein Konto»)",
-          "Persönlich beim Einwohneramt oder Kreisbüro",
-          "Per Post mit ausgefülltem Abmeldeformular"
-        ]
+          "Persönliches Erscheinen\nEine Online-Abmeldung via eUmzugCH ist in der Regel nicht möglich. Sie müssen persönlich bei der Einwohnerkontrolle vorsprechen (meist 14 bis 30 Tage vor Abreise).",
+          "Steuererklärung für den Wegzug\nSie müssen eine unterjährige Steuererklärung bis zum Auszugsdatum ausfüllen. Das Gemeindesteueramt prüft, ob alle Steuerfaktoren geregelt sind.",
+          "Militär- und Zivilschutz\nWehrpflichtige müssen sich beim zuständigen Sektionsoffizier abmelden und den Dienstbüchleinvorweis erbringen."
+        ],
+        "heading": "Sonderfall: Definitiver Wegzug ins Ausland"
       },
       {
-        "type": "text",
-        "heading": "",
-        "body": "In der Stadt Zürich funktioniert die Online-Abmeldung über das Portal «Mein Konto» unkompliziert. Kleinere Gemeinden in Aargau oder Schwyz setzen teilweise noch auf den persönlichen Besuch.",
-        "items": []
-      },
-      {
-        "type": "text",
-        "heading": "Welche Dokumente brauche ich?",
-        "body": "Für die Abmeldung brauchst du in der Regel folgende Unterlagen:",
-        "items": []
-      },
-      {
-        "type": "checklist",
-        "heading": "",
-        "body": "",
+        "type": "bulleted",
+        "body": "Die Abmeldung bei der Gemeinde ist nur der erste Schritt. Damit wichtige Post und Verträge nahtlos mitziehen, nutzen Sie diese Übersicht für weitere Benachrichtigungen:",
         "items": [
-          "Gültiger Ausweis (ID oder Pass)",
-          "Neue Adresse (auch wenn noch provisorisch)",
-          "Bei Ausländern: Ausländerausweis (Bewilligung B/C/L)",
-          "Abmeldeformular der Gemeinde (falls nicht online)"
+          "**Strassenverkehrsamt (Motorfahrzeugamt):** Innerhalb von 14 Tagen muss die Adressänderung für den Fahrzeugausweis und den Führerausweis gemeldet werden.",
+          "**Die Post:** Nachsendeauftrag mindestens 5–10 Tage vor dem Umzug einrichten, damit Nachsendungen rechtzeitig greifen.",
+          "**Versorgungsbetriebe (Elektrizität, Gas, Wasser):** Zählerstände am Tag der Schlüsselübergabe ablesen und dem jeweiligen Werk mitteilen.",
+          "**Serafe (Radio- und Fernsehabgabe):** Die Anpassung erfolgt automatisch über die Daten der Einwohnerkontrolle.",
+          "**Krankenkasse & Versicherungen:** Adressänderung mitteilen (Achtung: Bei Kantonswechsel können sich die Krankenkassenprämien ändern).",
+          "**Banken, Arbeitgeber & Schulen:** Schriftlich oder über das Online-Banking informieren."
+        ],
+        "heading": "Administrative Checkliste: Ämter & Dienstleister informieren"
+      },
+      {
+        "type": "tip",
+        "body": "**Profi-Tipp für Ihren Umzug:** Erledigen Sie die Abmeldung idealerweise 2 Wochen vor dem Auszugstermin via eUmzugCH. Bewahren Sie den Beleg der Online-Meldung auf, da manche Vermieter oder Arbeitgeber die Abmeldebestätigung als Nachweis verlangen."
+      }
+    ],
+    "blocksEn": [
+      {
+        "type": "bulleted",
+        "body": "In Switzerland, everyone is legally required to report a change of residence to the authorities. The legal basis is the Federal Act on the Harmonisation of Residents' Registers (RHG) together with the respective cantonal register laws.\n\nThe residents' registration office must be able to track who lives in which municipality at all times. This data forms the basis for:",
+        "items": [
+          "Correct levying of cantonal and municipal taxes",
+          "Voting rights at municipal, cantonal and federal level",
+          "Allocation of waste and fire brigade levies",
+          "Organisation of school places and civil protection duty"
+        ],
+        "heading": "Why is deregistration mandatory?"
+      },
+      {
+        "type": "bulleted",
+        "body": "In most Swiss municipalities a 14-day deadline applies: you must deregister with your former municipality no later than 14 days after the actual move.",
+        "items": [
+          "**Advance notice:** In many cantons (e.g. Zurich) you can deregister up to 30 days before the move-out date.",
+          "**Late filing:** Ignoring the deadline risks a fine from the municipality, plus problems with mail delivery and double taxation."
+        ],
+        "heading": "Deadlines: when must you deregister?"
+      },
+      {
+        "type": "bulleted",
+        "body": "Almost all Swiss cantons and municipalities now offer the online portal eUmzugCH. With this joint service of the cantons you can deregister in your old municipality and register in the new one in a single step.\n\n**Requirements for using eUmzugCH:**",
+        "items": [
+          "Legal age and Swiss citizenship or a valid residence permit (category B, C, L, Ci)",
+          "No move abroad (a personal visit is usually required when leaving Switzerland)",
+          "Credit card, TWINT or PostFinance card to pay any fees"
+        ],
+        "heading": "eUmzugCH: the digital route without an office visit"
+      },
+      {
+        "type": "text",
+        "body": "**Note on costs:** The eUmzugCH service itself is free. Some municipalities do charge administrative fees for issuing the confirmation of deregistration (usually between CHF 20 and CHF 50)."
+      },
+      {
+        "type": "bulleted",
+        "body": "For people without a Swiss passport, additional rules apply, because the change of address must also be updated in the foreign nationals register.",
+        "items": [
+          "**Responsibility:** Besides the residents' registration office, the cantonal migration office is involved. When using eUmzugCH, the migration office is notified automatically.",
+          "**Required documents:** valid passport or ID card; residence permit (B, C, L or G); new rental contract or confirmation from the landlord",
+          "**When changing canton:** The application for a change of canton is forwarded by the new municipality to the migration office."
+        ],
+        "heading": "Special rules for foreign nationals"
+      },
+      {
+        "type": "text",
+        "body": "Moving within Switzerland directly affects your tax liability. The principle in Switzerland: you are taxable for the entire calendar year in the municipality where you are resident on 31 December.",
+        "heading": "Tax implications of changing residence"
+      },
+      {
+        "type": "table",
+        "rows": [
+          [
+            "Within the same municipality",
+            "No change in the tax rate. You pay the usual municipal taxes."
+          ],
+          [
+            "To another municipality (same canton)",
+            "You pay taxes for the whole year retroactively at the new municipality's tax rate."
+          ],
+          [
+            "To another canton",
+            "The new canton taxes your entire annual income and wealth at its rates. Overpaid advance payments in the old canton are refunded."
+          ]
+        ],
+        "headers": [
+          "Moving scenario",
+          "Tax consequence"
         ]
       },
       {
         "type": "tip",
-        "heading": "",
-        "body": "Falls du ins Ausland ziehst, informiere zusätzlich deine Krankenversicherung und die SVA. Die Abmeldung bei der Gemeinde allein reicht dann nicht aus.",
-        "items": []
+        "body": "If you move at the end of the year to a municipality with a higher or lower tax rate, adjust your provisional tax payments early to avoid back payments or loss of interest."
       },
       {
-        "type": "text",
-        "heading": "Was passiert, wenn ich die Abmeldung vergesse?",
-        "body": "Vergisst du die Abmeldung, bleibst du offiziell in der alten Gemeinde gemeldet. Das kann mehrere Konsequenzen haben: Du zahlst möglicherweise weiterhin Steuern am alten Wohnort, erhältst Abstimmungsunterlagen für die falsche Gemeinde und im schlimmsten Fall droht eine Ordnungsbusse. Gerade beim Umzug zwischen Kantonen — etwa von Zürich nach Zug — können die steuerlichen Auswirkungen erheblich sein.",
-        "items": []
-      },
-      {
-        "type": "checklist",
-        "heading": "Checkliste: Alles erledigen vor dem Auszug",
-        "body": "",
+        "type": "numbered",
+        "body": "If you move from Switzerland abroad, strict special rules apply:",
         "items": [
-          "Abmeldung bei der Gemeinde (14 Tage vor/nach Umzug)",
-          "Nachsendeauftrag bei der Post einrichten",
-          "Strom, Internet und Versicherungen ummelden",
-          "Endreinigung beauftragen — eine professionelle Reinigungsfirma sorgt dafür, dass bei der Wohnungsabnahme alles stimmt und ist persönlich bei der Abnahme anwesend",
-          "Wohnungsübergabe-Protokoll vorbereiten",
-          "Schlüssel vollständig bereithalten",
-          "Neue Adresse bei Arbeitgeber, Bank und Krankenkasse melden"
-        ]
+          "Personal appearance\nOnline deregistration via eUmzugCH is generally not possible. You must appear in person at the residents' registration office (usually 14 to 30 days before departure).",
+          "Tax return for the departure\nYou must complete an interim tax return up to the move-out date. The municipal tax office checks that all tax factors are settled.",
+          "Military and civil protection\nThose liable for military service must deregister with the responsible section officer and present their service booklet."
+        ],
+        "heading": "Special case: permanent move abroad"
       },
       {
-        "type": "text",
-        "heading": "",
-        "body": "Ein Umzug in der Schweiz bringt viele Aufgaben mit sich — die Abmeldung bei der Gemeinde sollte ganz oben auf deiner Liste stehen. Wenn du auch bei der Endreinigung auf der sicheren Seite sein willst, helfen wir dir gerne weiter.",
-        "items": []
+        "type": "bulleted",
+        "body": "Deregistering with the municipality is only the first step. Use this overview so that important mail and contracts move with you:",
+        "items": [
+          "**Road traffic office:** The change of address for the vehicle registration and driving licence must be reported within 14 days.",
+          "**Swiss Post:** Set up a forwarding order at least 5–10 days before the move so redirections take effect in time.",
+          "**Utilities (electricity, gas, water):** Read the meters on the day of the key handover and report them to the respective provider.",
+          "**Serafe (radio and TV levy):** The change happens automatically via the residents' register data.",
+          "**Health and other insurance:** Report the change of address (note: premiums can change when moving to another canton).",
+          "**Banks, employer & schools:** Inform them in writing or via online banking."
+        ],
+        "heading": "Administrative checklist: offices & service providers to inform"
+      },
+      {
+        "type": "tip",
+        "body": "**Pro tip for your move:** Ideally deregister two weeks before the move-out date via eUmzugCH. Keep the receipt of the online notification, as some landlords or employers ask for the deregistration confirmation as proof."
       }
     ]
   }

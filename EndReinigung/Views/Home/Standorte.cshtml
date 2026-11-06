@@ -88,33 +88,27 @@
                 Ihre Stadt oder Ihren Bezirk und sehen Sie alle Details zu unserem lokalen Service.
             </p>
 
-            <!-- TLDR box -->
-            <div class="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-5 max-w-3xl">
-                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Auf einen Blick</p>
-                <ul class="space-y-1.5 mb-4">
-                    <li class="flex items-start gap-2 text-sm text-foreground">
-                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        Stadt Zürich + 11 Bezirke abgedeckt
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-foreground">
-                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        Hauptsitz: Seewadelstrasse 5, 8910 Affoltern am Albis
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-foreground">
-                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        Anfahrt im Fixpreis enthalten — keine Distanzzuschläge
-                    </li>
-                    <li class="flex items-start gap-2 text-sm text-foreground">
-                        <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        Oft in 30 Minuten vor Ort
-                    </li>
-                </ul>
-                <p class="text-sm text-muted-foreground leading-relaxed">
-                    <strong class="text-foreground">Endreinigung im ganzen Kanton Zürich</strong> — Stadt Zürich und alle 11
+            <!-- TLDR / Kurz erklärt (mirrors rich-lease-shine/src/components/seo/TLDR.tsx) -->
+            <aside aria-label="Kurz erklärt" class="max-w-5xl mx-auto border-t border-border/60 pt-5 mt-3 md:mt-4 mb-8 md:mb-10">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="h-3.5 w-3.5 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+                    <span class="text-[11px] font-medium uppercase tracking-[0.12em] text-swiss-blue">Kurz erklärt</span>
+                </div>
+                <div class="text-sm md:text-base leading-relaxed text-swiss-blue-dark font-light">
+                    <strong>Endreinigung im ganzen Kanton Zürich</strong> — Stadt Zürich und alle 11
                     Bezirke. Unser Hauptsitz liegt zentral in Affoltern am Albis. Wir reinigen ohne Anfahrtszuschlag,
                     auch in ländlichen Gemeinden, und sind bei kurzfristigen Terminen oft in 48 Stunden verfügbar.
-                </p>
-            </div>
+                </div>
+                <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2 text-sm text-swiss-blue-dark/85 font-light list-none">
+                    @foreach (var b in new[] { "Stadt Zürich + 11 Bezirke abgedeckt", "Hauptsitz: Seewadelstrasse 5, 8910 Affoltern am Albis", "Anfahrt im Fixpreis enthalten — keine Distanzzuschläge", "Oft in 30 Minuten vor Ort" })
+                    {
+                        <li class="flex gap-2">
+                            <span class="mt-2 h-1 w-1 rounded-full bg-swiss-blue/60 shrink-0" aria-hidden="true"></span>
+                            <span>@b</span>
+                        </li>
+                    }
+                </ul>
+            </aside>
         </div>
     </section>
 

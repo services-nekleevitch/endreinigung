@@ -40,6 +40,9 @@
     <Content Update="App_Data\ratgeber-articles.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="App_Data\google-reviews.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <!-- Rebuild Tailwind CSS on every build so new classes added to .cshtml or .js files get picked up.

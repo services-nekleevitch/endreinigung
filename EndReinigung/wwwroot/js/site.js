@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Reviews Carousel
     initCarousel('reviews-carousel', { slidesPerView: { base: 1 }, autoplay: 6000 });
+
+    // Umzugsreinigung Google Reviews widget — 1 / 2 / 4 per view like the Lovable Embla widget
+    initCarousel('google-reviews-widget', { slidesPerView: { base: 1, sm: 2, lg: 4 }, autoplay: 6000 });
 });
 
 // Zurich PLZ validation
@@ -137,6 +140,7 @@ function initCarousel(id, options) {
         var w = getViewportWidth();
         if (options.slidesPerView.lg && w >= 1024) return options.slidesPerView.lg;
         if (options.slidesPerView.md && w >= 768) return options.slidesPerView.md;
+        if (options.slidesPerView.sm && w >= 640) return options.slidesPerView.sm;
         return options.slidesPerView.base || 1;
     }
 

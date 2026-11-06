@@ -67,7 +67,7 @@
         @await Html.PartialAsync("~/Views/Shared/_GoogleReviewsCarousel.cshtml", null, new ViewDataDictionary(ViewData) { ["MaxWidth"] = "max-w-5xl" })
     </div>
 </section>
-@await Html.PartialAsync("_VideoSection")
+@await Html.PartialAsync("_VideoSection", null, new ViewDataDictionary(ViewData) { ["VideoPadding"] = "pt-3 pb-12 md:pt-6 md:pb-24" })
 @await Html.PartialAsync("_HowItWorks")
 @await Html.PartialAsync("_WhyChooseUs")
 <div id="galerie" class="scroll-mt-16 md:scroll-mt-[6.25rem]">
