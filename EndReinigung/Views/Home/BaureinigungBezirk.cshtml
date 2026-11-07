@@ -9,8 +9,17 @@
     var pageUrl = $"https://zurich-endreinigung.ch/baureinigung/{slug}";
     var gemeindenNames = string.Join(", ", Model.Gemeinden.Select(g => g.Name));
 
-    ViewData["Title"] = $"Baureinigung {bezirkName} — Professionelle Bauendreinigung ab {startingPriceLabel} | Zürich Endreinigung";
-    ViewData["Description"] = $"Professionelle Baureinigung im {bezirkName} zum Fixpreis. Ab {startingPriceLabel}, inkl. Baustaub, Fenster & Böden. Jetzt buchen!";
+    if (slug == "zuerich")
+    {
+        ViewData["Title"] = $"Baureinigung Stadt Zürich | Bauendreinigung ab {startingPriceLabel}";
+        ViewData["Description"] = $"Professionelle Baureinigung in der Stadt Zürich nach Neubau, Umbau oder Renovation. Baustaub, Fenster und Böden gründlich reinigen lassen. Ab {startingPriceLabel}.";
+    }
+    else
+    {
+        var titleName = slug == "pfaeffikon" ? "Bezirk Pfäffikon ZH" : bezirkName;
+        ViewData["Title"] = $"Baureinigung {titleName} | Bauendreinigung ab {startingPriceLabel}";
+        ViewData["Description"] = $"Professionelle Baureinigung im {bezirkName}, Kanton Zürich. Nach Neubau, Umbau oder Renovation. Gründliche Reinigung zum Fixpreis inkl. Material.";
+    }
     ViewData["Canonical"] = pageUrl;
     ViewData["Keywords"] = $"Baureinigung {bezirkName}, Bauendreinigung {hauptort}, Bauschlussreinigung Zürich, Baufeinreinigung";
 }
