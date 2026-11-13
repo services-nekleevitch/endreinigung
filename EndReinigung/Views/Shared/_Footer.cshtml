@@ -1,4 +1,8 @@
+@using EndReinigung.Models
 @{
+    var footerIsEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string T(string de, string en) => footerIsEn ? en : de;
+    string L(string href) => LanguageRoutes.Localize(href, footerIsEn);
     var footerPath = (Context.Request.Path.Value ?? "/").TrimEnd('/');
     var isAffoltern = footerPath.Equals("/umzugsreinigung-bezirk-affoltern", StringComparison.OrdinalIgnoreCase);
 }
@@ -33,7 +37,7 @@
                 </div>
                 <div>
                     <div class="text-[11px] font-medium uppercase tracking-wider text-muted-foreground mb-0.5">@SharedLocalizer["footer.hours"]</div>
-                    <div class="text-[13px] text-muted-foreground leading-relaxed">Mo–Fr 08:00–19:00<br/>Sa 09:00–16:00</div>
+                    <div class="text-[13px] text-muted-foreground leading-relaxed">@T("Mo–Fr", "Mon–Fri") 08:00–19:00<br/>@T("Sa", "Sat") 09:00–16:00</div>
                 </div>
             </div>
             <!-- Address -->
@@ -61,7 +65,7 @@
                     <ul class="space-y-2.5">
                         <li><a href="#contact" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.contact"]</a></li>
                         <li><a href="/reinigungsfirma-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.about"]</a></li>
-                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Wohnungsreinigung mit Abnahmegarantie</a></li>
+                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Wohnungsreinigung mit Abnahmegarantie", "Cleaning with handover guarantee")</a></li>
                     </ul>
                     <div class="text-xs font-semibold uppercase tracking-[0.10em] text-white mb-3 mt-10">@SharedLocalizer["footer.social"]</div>
                     <div class="flex flex-wrap gap-1.5">
@@ -77,49 +81,49 @@
                 <div>
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.cleaning_info"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Endreinigung Zürich</a></li>
-                        <li><a href="/spezialreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Spezialreinigung</a></li>
-                        <li><a href="/gewerbereinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Gewerbereinigung</a></li>
-                        <li><a href="/standorte" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Standorte</a></li>
-                        <li><a href="/ratgeber" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
+                        <li><a href="@L("/")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Endreinigung Zürich", "End-of-lease cleaning Zurich")</a></li>
+                        <li><a href="/spezialreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Spezialreinigung", "Specialist cleaning")</a></li>
+                        <li><a href="/gewerbereinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Gewerbereinigung", "Commercial cleaning")</a></li>
+                        <li><a href="/standorte" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Standorte", "Locations")</a></li>
+                        <li><a href="@L("/ratgeber")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.guide"]</a></li>
                         <li><a href="/calculator" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.calculator"]</a></li>
-                        <li><a href="/dienstleistungen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.extras"]</a></li>
+                        <li><a href="@L("/dienstleistungen")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["footer.extras"]</a></li>
                     </ul>
                 </div>
                 <!-- Col 3 - Services -->
                 <div>
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.more_services"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/baureinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Baureinigung</a></li>
-                        <li><a href="/fensterreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Fensterreinigung</a></li>
-                        <li><a href="/hochdruckreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Hochdruckreinigung</a></li>
-                        <li><a href="/tapeten-entfernen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Tapeten entfernen</a></li>
-                        <li><a href="/airbnb-reinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Airbnb Reinigung</a></li>
-                        <li><a href="/event-reinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Eventreinigung & Veranstaltungsreinigung</a></li>
-                        <li><a href="/boot-reinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Boot Reinigung</a></li>
-                        <li><a href="/polsterreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Polsterreinigung</a></li>
-                        <li><a href="/teppichreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Teppichreinigung</a></li>
-                        <li><a href="/matratzenreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Matratzenreinigung</a></li>
-                        <li><a href="/grundreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Grundreinigung</a></li>
-                        <li><a href="/bueroreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Büroreinigung</a></li>
-                        <li><a href="/praxisreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Praxisreinigung</a></li>
+                        <li><a href="/baureinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Baureinigung", "Construction cleaning")</a></li>
+                        <li><a href="/fensterreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Fensterreinigung", "Window cleaning")</a></li>
+                        <li><a href="/hochdruckreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Hochdruckreinigung", "Pressure washing")</a></li>
+                        <li><a href="/tapeten-entfernen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Tapeten entfernen", "Wallpaper removal")</a></li>
+                        <li><a href="@L("/airbnb-reinigung-zuerich")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Airbnb Reinigung", "Airbnb cleaning")</a></li>
+                        <li><a href="/event-reinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Eventreinigung & Veranstaltungsreinigung", "Event cleaning")</a></li>
+                        <li><a href="/boot-reinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Boot Reinigung", "Boat cleaning")</a></li>
+                        <li><a href="@L("/polsterreinigung")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Polsterreinigung", "Upholstery cleaning")</a></li>
+                        <li><a href="/teppichreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Teppichreinigung", "Carpet cleaning")</a></li>
+                        <li><a href="/matratzenreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Matratzenreinigung", "Mattress cleaning")</a></li>
+                        <li><a href="/grundreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Grundreinigung", "Deep cleaning")</a></li>
+                        <li><a href="/bueroreinigung" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Büroreinigung", "Office cleaning")</a></li>
+                        <li><a href="/praxisreinigung-zuerich" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Praxisreinigung", "Medical practice cleaning")</a></li>
                     </ul>
                 </div>
                 <!-- Col 4 - Weitere Infos + Legal -->
                 <div>
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5">@SharedLocalizer["footer.more_info"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/#pakete" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["nav.prices"]</a></li>
-                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Wohnungsreinigung mit Abnahmegarantie</a></li>
+                        <li><a href="@L("/#pakete")" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["nav.prices"]</a></li>
+                        <li><a href="/abnahmegarantie" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Wohnungsreinigung mit Abnahmegarantie", "Cleaning with handover guarantee")</a></li>
                         <li><a href="/faq" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">FAQ</a></li>
                         <li><a href="/referenzen" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@SharedLocalizer["nav.references"]</a></li>
                     </ul>
 
                     <h4 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-white mb-5 mt-8">@SharedLocalizer["footer.legal"]</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="/agb" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">AGB</a></li>
-                        <li><a href="/datenschutz" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Datenschutz</a></li>
-                        <li><a href="/impressum" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">Impressum</a></li>
+                        <li><a href="/agb" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("AGB", "Terms")</a></li>
+                        <li><a href="/datenschutz" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Datenschutz", "Privacy")</a></li>
+                        <li><a href="/impressum" class="text-[15px] text-navy-light/80 hover:text-red-accent transition-colors">@T("Impressum", "Legal notice")</a></li>
                     </ul>
                 </div>
                 <!-- Col 5 - About -->
@@ -199,37 +203,37 @@
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-stadt-zuerich" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Stadt Zürich</a>
-                        <a href="/umzugsreinigung-bezirk-winterthur" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Winterthur</a>
-                        <a href="/umzugsreinigung-bezirk-uster" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Uster</a>
+                        <a href="/umzugsreinigung-stadt-zuerich" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Stadt Zürich", "City of Zurich")</a>
+                        <a href="/umzugsreinigung-bezirk-winterthur" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Winterthur", "Winterthur district")</a>
+                        <a href="/umzugsreinigung-bezirk-uster" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Uster", "Uster district")</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-horgen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Horgen</a>
-                        <a href="/umzugsreinigung-bezirk-meilen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Meilen</a>
-                        <a href="/umzugsreinigung-bezirk-buelach" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Bülach</a>
+                        <a href="/umzugsreinigung-bezirk-horgen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Horgen", "Horgen district")</a>
+                        <a href="/umzugsreinigung-bezirk-meilen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Meilen", "Meilen district")</a>
+                        <a href="/umzugsreinigung-bezirk-buelach" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Bülach", "Bülach district")</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-dietikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Dietikon</a>
-                        <a href="/umzugsreinigung-bezirk-hinwil" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Hinwil</a>
-                        <a href="/umzugsreinigung-bezirk-pfaeffikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Pfäffikon</a>
+                        <a href="/umzugsreinigung-bezirk-dietikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Dietikon", "Dietikon district")</a>
+                        <a href="/umzugsreinigung-bezirk-hinwil" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Hinwil", "Hinwil district")</a>
+                        <a href="/umzugsreinigung-bezirk-pfaeffikon" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Pfäffikon", "Pfäffikon district")</a>
                     </div>
                     <div class="flex flex-col gap-5">
-                        <a href="/umzugsreinigung-bezirk-andelfingen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Andelfingen</a>
-                        <a href="/umzugsreinigung-bezirk-dielsdorf" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Dielsdorf</a>
-                        <a href="/umzugsreinigung-bezirk-affoltern" class="text-sm text-navy-muted hover:text-navy-light transition-colors">Bezirk Affoltern</a>
+                        <a href="/umzugsreinigung-bezirk-andelfingen" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Andelfingen", "Andelfingen district")</a>
+                        <a href="/umzugsreinigung-bezirk-dielsdorf" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Dielsdorf", "Dielsdorf district")</a>
+                        <a href="/umzugsreinigung-bezirk-affoltern" class="text-sm text-navy-muted hover:text-navy-light transition-colors">@T("Bezirk Affoltern", "Affoltern district")</a>
                     </div>
                 </div>
             </div>
 
             <!-- Copyright -->
             <div class="flex flex-col md:flex-row justify-between items-center gap-2 py-5 text-[12.5px] text-navy-muted">
-                <span>© 2026 Endreinigung Zürich | Powered by <strong>Nekleevitch Services</strong>. Alle Rechte vorbehalten.</span>
+                <span>© 2026 Endreinigung Zürich | Powered by <strong>Nekleevitch Services</strong>. @T("Alle Rechte vorbehalten.", "All rights reserved.")</span>
                 <span class="flex gap-3">
-                    <a href="/agb" class="hover:text-red-accent transition-colors">AGB</a>
+                    <a href="/agb" class="hover:text-red-accent transition-colors">@T("AGB", "Terms")</a>
                     <span>·</span>
-                    <a href="/datenschutz" class="hover:text-red-accent transition-colors">Datenschutz</a>
+                    <a href="/datenschutz" class="hover:text-red-accent transition-colors">@T("Datenschutz", "Privacy")</a>
                     <span>·</span>
-                    <a href="/impressum" class="hover:text-red-accent transition-colors">Impressum</a>
+                    <a href="/impressum" class="hover:text-red-accent transition-colors">@T("Impressum", "Legal notice")</a>
                 </span>
             </div>
         </div>

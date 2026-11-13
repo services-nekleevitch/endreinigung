@@ -1,41 +1,39 @@
 @using System.Globalization
+@using EndReinigung.Models
 @{
     var currentCulture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var isDE = currentCulture == "de";
     var isEN = currentCulture == "en";
-    var currentPath = Context.Request.Path.Value ?? "/";
-    currentPath = currentPath.Length > 1 ? currentPath.TrimEnd('/') : "/";
-    var languageAlternates = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-    {
-        ["/airbnb-reinigung-zuerich"] = "/en/airbnb-cleaning-zurich",
-        ["/polsterreinigung"] = "/en/upholstery-cleaning-zurich",
-        ["/ratgeber/wohnungsuebergabe-checkliste-zuerich-2026"] = "/en/guide/apartment-handover-checklist-zurich-2026"
-    };
-    var reverseAlternates = languageAlternates.ToDictionary(kvp => kvp.Value, kvp => kvp.Key, StringComparer.OrdinalIgnoreCase);
-    var deHref = reverseAlternates.GetValueOrDefault(currentPath) ?? currentPath;
-    var enHref = languageAlternates.GetValueOrDefault(currentPath)
-        ?? (currentPath.StartsWith("/en", StringComparison.OrdinalIgnoreCase)
-            ? currentPath
-            : "/en/guide/apartment-handover-checklist-zurich-2026");
+    string T(string de, string en) => isEN ? en : de;
+    // On English pages, links to German pages that have an English version point to that version.
+    string L(string href) => LanguageRoutes.Localize(href, isEN);
+    var currentPath = LanguageRoutes.Normalize(Context.Request.Path.Value);
+
+    // Language switcher: the other-language version of THIS page. A page that exists in one language
+    // only falls back to the other language's home page (never to an unrelated page).
+    var pair = LanguageRoutes.FindPair(currentPath);
+    var isErrorPage = currentPath.StartsWith("/Home/", StringComparison.OrdinalIgnoreCase); // re-executed 404/500
+    var deHref = pair?.De ?? (isEN || isErrorPage ? "/" : currentPath);
+    var enHref = pair?.En ?? LanguageRoutes.EnHome;
 
     // Services mega-dropdown (mirrors Ver3Navigation.tsx). Icon = lucide path markup.
     var dropdownGroups = new[] {
         new {
             Heading = SharedLocalizer["nav.group_services"].Value,
             Links = new[] {
-                new { Name = "Fensterreinigung", Href = "/fensterreinigung", Desc = "Streifenfrei innen und aussen.", Icon = "<line x1=\"22\" x2=\"2\" y1=\"6\" y2=\"6\"/><line x1=\"22\" x2=\"2\" y1=\"18\" y2=\"18\"/><line x1=\"6\" x2=\"6\" y1=\"2\" y2=\"22\"/><line x1=\"18\" x2=\"18\" y1=\"2\" y2=\"22\"/>" },
-                new { Name = "Teppichreinigung", Href = "/teppichreinigung", Desc = "Tiefenreinigung für Teppiche.", Icon = "<path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65\"/><path d=\"m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65\"/>" },
-                new { Name = "Polsterreinigung", Href = "/polsterreinigung", Desc = "Sofas, Sessel und Matratzen.", Icon = "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\"/><path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z\"/><path d=\"M5 18v2\"/><path d=\"M19 18v2\"/>" },
-                new { Name = "Grundreinigung", Href = "/grundreinigung", Desc = "Intensive Grundreinigung.", Icon = "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/>" }
+                new { Name = T("Fensterreinigung", "Window cleaning"), Href = "/fensterreinigung", Desc = T("Streifenfrei innen und aussen.", "Streak-free, inside and out."), Icon = "<line x1=\"22\" x2=\"2\" y1=\"6\" y2=\"6\"/><line x1=\"22\" x2=\"2\" y1=\"18\" y2=\"18\"/><line x1=\"6\" x2=\"6\" y1=\"2\" y2=\"22\"/><line x1=\"18\" x2=\"18\" y1=\"2\" y2=\"22\"/>" },
+                new { Name = T("Teppichreinigung", "Carpet cleaning"), Href = "/teppichreinigung", Desc = T("Tiefenreinigung für Teppiche.", "Deep cleaning for carpets."), Icon = "<path d=\"m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z\"/><path d=\"m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65\"/><path d=\"m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65\"/>" },
+                new { Name = T("Polsterreinigung", "Upholstery cleaning"), Href = L("/polsterreinigung"), Desc = T("Sofas, Sessel und Matratzen.", "Sofas, armchairs and mattresses."), Icon = "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\"/><path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z\"/><path d=\"M5 18v2\"/><path d=\"M19 18v2\"/>" },
+                new { Name = T("Grundreinigung", "Deep cleaning"), Href = "/grundreinigung", Desc = T("Intensive Grundreinigung.", "Intensive deep cleaning."), Icon = "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/>" }
             }
         },
         new {
             Heading = SharedLocalizer["nav.group_business"].Value,
             Links = new[] {
-                new { Name = "Büroreinigung", Href = "/bueroreinigung", Desc = "Regelmässige Büroreinigung.", Icon = "<path d=\"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z\"/><path d=\"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2\"/><path d=\"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2\"/><path d=\"M10 6h4\"/><path d=\"M10 10h4\"/><path d=\"M10 14h4\"/><path d=\"M10 18h4\"/>" },
-                new { Name = "Praxisreinigung", Href = "/praxisreinigung-zuerich", Desc = "Hygienische Praxisreinigung.", Icon = "<path d=\"M11 2v2\"/><path d=\"M5 2v2\"/><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/>" },
-                new { Name = "Baureinigung", Href = "/baureinigung", Desc = "Grob- und Feinreinigung nach dem Bau.", Icon = "<path d=\"m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9\"/><path d=\"m18 15 4-4\"/><path d=\"m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5\"/>" },
-                new { Name = "Gebäudereinigung", Href = "/gebaeudereinigung", Desc = "Unterhalt für Liegenschaften.", Icon = "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M9 22v-4h6v4\"/><path d=\"M8 6h.01\"/><path d=\"M16 6h.01\"/><path d=\"M12 6h.01\"/><path d=\"M12 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 10h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 10h.01\"/><path d=\"M8 14h.01\"/>" }
+                new { Name = T("Büroreinigung", "Office cleaning"), Href = "/bueroreinigung", Desc = T("Regelmässige Büroreinigung.", "Regular office cleaning."), Icon = "<path d=\"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z\"/><path d=\"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2\"/><path d=\"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2\"/><path d=\"M10 6h4\"/><path d=\"M10 10h4\"/><path d=\"M10 14h4\"/><path d=\"M10 18h4\"/>" },
+                new { Name = T("Praxisreinigung", "Medical practice cleaning"), Href = "/praxisreinigung-zuerich", Desc = T("Hygienische Praxisreinigung.", "Hygienic cleaning for practices."), Icon = "<path d=\"M11 2v2\"/><path d=\"M5 2v2\"/><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/>" },
+                new { Name = T("Baureinigung", "Construction cleaning"), Href = "/baureinigung", Desc = T("Grob- und Feinreinigung nach dem Bau.", "Rough and fine cleaning after building work."), Icon = "<path d=\"m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9\"/><path d=\"m18 15 4-4\"/><path d=\"m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5\"/>" },
+                new { Name = T("Gebäudereinigung", "Building cleaning"), Href = "/gebaeudereinigung", Desc = T("Unterhalt für Liegenschaften.", "Maintenance cleaning for properties."), Icon = "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M9 22v-4h6v4\"/><path d=\"M8 6h.01\"/><path d=\"M16 6h.01\"/><path d=\"M12 6h.01\"/><path d=\"M12 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 10h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 10h.01\"/><path d=\"M8 14h.01\"/>" }
             }
         }
     };
@@ -43,11 +41,11 @@
     var topLevel = new[] {
         new { Name = SharedLocalizer["nav.umzugsreinigung"].Value, Href = "/umzugsreinigung-stadt-zuerich", Dropdown = false },
         new { Name = SharedLocalizer["nav.guarantee"].Value, Href = "/abnahmegarantie", Dropdown = false },
-        new { Name = SharedLocalizer["nav.prices"].Value, Href = "/#pakete", Dropdown = false },
+        new { Name = SharedLocalizer["nav.prices"].Value, Href = L("/#pakete"), Dropdown = false },
         new { Name = SharedLocalizer["nav.company"].Value, Href = "/reinigungsfirma-zuerich", Dropdown = true },
         new { Name = SharedLocalizer["nav.locations"].Value, Href = "/standorte", Dropdown = false },
         new { Name = SharedLocalizer["nav.references"].Value, Href = "/referenzen", Dropdown = false },
-        new { Name = SharedLocalizer["nav.guide"].Value, Href = "/ratgeber", Dropdown = false }
+        new { Name = SharedLocalizer["nav.guide"].Value, Href = L("/ratgeber"), Dropdown = false }
     };
     string LinkClass(string href) => currentPath.Equals(href, StringComparison.OrdinalIgnoreCase) ? "text-swiss-blue" : "text-foreground";
 }
@@ -56,10 +54,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16 md:h-[6.25rem]">
             <!-- Logo -->
-            <a href="/" class="flex shrink-0 items-center">
+            <a href="@L("/")" class="flex shrink-0 items-center">
                 <picture>
                     <source srcset="/img/endreinigung_zuerich_logo.webp" type="image/webp" />
-                    <img src="/img/endreinigung_zuerich_logo.png" alt="Endreinigung Zürich Logo - Professionelle Umzugsreinigung" width="280" height="160" class="h-12 md:h-[4.8rem] w-auto" />
+                    <img src="/img/endreinigung_zuerich_logo.png" alt="@T("Endreinigung Zürich Logo - Professionelle Umzugsreinigung", "Zürich Endreinigung logo - professional move-out cleaning")" width="280" height="160" class="h-12 md:h-[4.8rem] w-auto" />
                 </picture>
             </a>
 
@@ -101,11 +99,11 @@
                                         }
                                     </div>
                                     <div class="bg-muted/50 border-t border-border p-4 flex items-center justify-between">
-                                        <a href="/dienstleistungen" class="group/all text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark flex items-center gap-1">
+                                        <a href="@L("/dienstleistungen")" class="group/all text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark flex items-center gap-1">
                                             @SharedLocalizer["nav.view_all_services"]
                                             <svg class="w-4 h-4 group-hover/all:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                                         </a>
-                                        <a href="/#contact-form" class="text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark">@SharedLocalizer["nav.contact"]</a>
+                                        <a href="@L("/#contact-form")" class="text-sm font-bold text-swiss-blue hover:text-swiss-blue-dark">@SharedLocalizer["nav.contact"]</a>
                                     </div>
                                 </div>
                             </div>
@@ -124,8 +122,8 @@
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div id="lang-menu" class="absolute right-0 mt-1 bg-white border border-border rounded-md shadow-lg overflow-hidden z-50 hidden">
-                        <a href="@deHref" onclick="setLanguageCookie('de')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isDE ? "font-bold text-swiss-blue" : "text-foreground")">DE</a>
-                        <a href="@enHref" onclick="setLanguageCookie('en')" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isEN ? "font-bold text-swiss-blue" : "text-foreground")">EN</a>
+                        <a href="@deHref" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isDE ? "font-bold text-swiss-blue" : "text-foreground")">DE</a>
+                        <a href="@enHref" class="block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted @(isEN ? "font-bold text-swiss-blue" : "text-foreground")">EN</a>
                     </div>
                 </div>
 
@@ -152,8 +150,8 @@
                 <!-- Language Toggle -->
                 <div class="flex items-center justify-end px-3 py-2 border-b border-border mb-2">
                     <div class="flex items-center gap-2 text-sm">
-                        <a href="@deHref" onclick="setLanguageCookie('de')" class="px-3 py-1.5 rounded-md border @(isDE ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">DE</a>
-                        <a href="@enHref" onclick="setLanguageCookie('en')" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</a>
+                        <a href="@deHref" class="px-3 py-1.5 rounded-md border @(isDE ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">DE</a>
+                        <a href="@enHref" class="px-3 py-1.5 rounded-md border @(isEN ? "font-bold text-swiss-blue border-swiss-blue bg-muted" : "text-muted-foreground border-border hover:text-foreground")">EN</a>
                     </div>
                 </div>
                 @foreach (var item in topLevel)
@@ -187,7 +185,7 @@
                                         </ul>
                                     </div>
                                 }
-                                <a href="/#contact-form" class="block px-3 py-2 text-sm font-semibold text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.contact"]</a>
+                                <a href="@L("/#contact-form")" class="block px-3 py-2 text-sm font-semibold text-swiss-blue hover:bg-muted">@SharedLocalizer["nav.contact"]</a>
                             </div>
                         </div>
                     }
@@ -208,9 +206,6 @@
 </nav>
 
 <script>
-function setLanguageCookie(culture) {
-    document.cookie = '.AspNetCore.Culture=c=' + culture + '|uic=' + culture + ';path=/;max-age=31536000;SameSite=Lax';
-}
 document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('mobile-services-btn');
     var panel = document.getElementById('mobile-services-panel');

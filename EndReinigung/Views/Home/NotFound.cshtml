@@ -1,15 +1,17 @@
 @{
-    ViewData["Title"] = "Seite nicht gefunden – Zürich Endreinigung";
-    ViewData["Description"] = "Die angeforderte Seite wurde nicht gefunden.";
+    // Re-executed for 404s; under /en/... the culture is English (Program.cs).
+    var isEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    ViewData["Title"] = isEn ? "Page not found – Zürich Endreinigung" : "Seite nicht gefunden – Zürich Endreinigung";
+    ViewData["Description"] = isEn ? "The requested page could not be found." : "Die angeforderte Seite wurde nicht gefunden.";
     ViewData["Canonical"] = "https://zurich-endreinigung.ch/404";
 }
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100">
     <div class="text-center">
         <h1 class="text-4xl font-bold mb-4">404</h1>
-        <p class="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" class="text-blue-500 hover:text-blue-700 underline">
-            Return to Home
+        <p class="text-xl text-gray-600 mb-4">@(isEn ? "Oops! Page not found" : "Hoppla! Seite nicht gefunden")</p>
+        <a href="@(isEn ? "/en" : "/")" class="text-blue-500 hover:text-blue-700 underline">
+            @(isEn ? "Return to Home" : "Zur Startseite")
         </a>
     </div>
 </div>

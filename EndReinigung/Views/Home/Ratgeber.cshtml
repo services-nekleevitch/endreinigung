@@ -4,15 +4,22 @@
     var isEn = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
     ViewData["Title"] = SharedLocalizer["ratgeber.meta_title"].Value;
     ViewData["Description"] = SharedLocalizer["ratgeber.meta_description"].Value;
-    ViewData["Canonical"] = "https://zurich-endreinigung.ch/ratgeber";
+    ViewData["Canonical"] = isEn ? "https://zurich-endreinigung.ch/en/guide" : "https://zurich-endreinigung.ch/ratgeber";
     ViewData["Keywords"] = SharedLocalizer["ratgeber.meta_keywords"].Value;
 
-    var articles = RatgeberArticleData.All;
+    // The English guide lists only articles that have a full English version (an EnSlug).
+    var articles = isEn
+        ? RatgeberArticleData.All.Where(a => !string.IsNullOrEmpty(a.EnSlug)).ToList()
+        : RatgeberArticleData.All.ToList();
     var categories = articles
-        .Select(a => new { a.CategorySlug, NameDe = a.CategoryName, NameEn = a.CategoryNameEn })
-        .GroupBy(c => c.CategorySlug)
-        .Select(g => g.First())
-        .Select(c => new { c.CategorySlug, Name = isEn && !string.IsNullOrEmpty(c.NameEn) ? c.NameEn : c.NameDe })
+        .GroupBy(a => a.CategorySlug)
+        .Select(g => new
+        {
+            CategorySlug = g.Key,
+            Name = isEn
+                ? g.Select(a => a.CategoryNameEn).FirstOrDefault(n => !string.IsNullOrEmpty(n)) ?? g.First().CategoryName
+                : g.First().CategoryName
+        })
         .OrderBy(c => c.Name)
         .ToList();
 

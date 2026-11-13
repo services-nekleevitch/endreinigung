@@ -15,7 +15,7 @@
 
     var metaTitle = isEn && !string.IsNullOrEmpty(Model.MetaTitleEn) ? Model.MetaTitleEn
         : !isEn && !string.IsNullOrEmpty(Model.MetaTitleDe) ? Model.MetaTitleDe
-        : $"{title} | Ratgeber Zürich Endreinigung";
+        : isEn ? $"{title} | Guide Zürich Endreinigung" : $"{title} | Ratgeber Zürich Endreinigung";
     var metaDescription = isEn && !string.IsNullOrEmpty(Model.MetaDescriptionEn) ? Model.MetaDescriptionEn
         : !isEn && !string.IsNullOrEmpty(Model.MetaDescriptionDe) ? Model.MetaDescriptionDe
         : (intro.Length > 160 ? intro.Substring(0, 157) + "..." : intro);
@@ -28,9 +28,8 @@
     ViewData["Title"] = metaTitle;
     ViewData["Description"] = metaDescription;
     ViewData["Canonical"] = SITE_URL + canonicalPath;
-    ViewData["HasCustomHreflang"] = enPath != null;
     ViewData["Keywords"] = isEn
-        ? $"guide cleaning Zurich, {categoryName}, end of tenancy cleaning Zurich"
+        ? $"guide cleaning Zurich, {categoryName}, end-of-lease cleaning Zurich"
         : $"Ratgeber Endreinigung, {categoryName}, Endreinigung Zürich";
 
     // Reading time: use override if present, else estimate
@@ -88,8 +87,8 @@
         bookingCardAfterHeadings.Add("Bathroom Checklist");
         bookingCardAfterHeadings.Add("Selber reinigen oder Profi beauftragen?");
         bookingCardAfterHeadings.Add("DIY or hire a professional?");
-        bookingCardVariants["Checkliste Badezimmer"] = ("2–2.5 Zimmer", "CHF 600");
-        bookingCardVariants["Bathroom Checklist"] = ("2–2.5 Zimmer", "CHF 600");
+        bookingCardVariants["Checkliste Badezimmer"] = ("2–2.5 Zimmer", "CHF 650");
+        bookingCardVariants["Bathroom Checklist"] = ("2–2.5 Zimmer", "CHF 650");
     }
 
     // Collect all FAQs across blocks for FAQ JSON-LD
@@ -129,7 +128,7 @@
             else if (m.Groups[2].Success && m.Groups[3].Success)
             {
                 var label = m.Groups[2].Value;
-                var href = m.Groups[3].Value;
+                var href = EndReinigung.Models.LanguageRoutes.Localize(m.Groups[3].Value, isEn);
                 var isExternal = href.StartsWith("http");
                 var encodedHref = System.Net.WebUtility.HtmlEncode(href);
                 sb.Append("<a href=\"").Append(encodedHref).Append("\"");
@@ -210,8 +209,8 @@
         ["@type"] = "BreadcrumbList",
         ["itemListElement"] = new object[]
         {
-            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = isEn ? "Home" : "Start", ["item"] = SITE_URL + "/" },
-            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = isEn ? "Guide" : "Ratgeber", ["item"] = SITE_URL + "/ratgeber" },
+            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = isEn ? "Home" : "Start", ["item"] = SITE_URL + (isEn ? "/en" : "/") },
+            new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = isEn ? "Guide" : "Ratgeber", ["item"] = SITE_URL + (isEn ? "/en/guide" : "/ratgeber") },
             new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 3, ["name"] = title, ["item"] = SITE_URL + canonicalPath }
         }
     };
@@ -260,12 +259,7 @@
 }
 
 @section Head {
-    @if (enPath != null)
-    {
-        <link rel="alternate" hreflang="de-CH" href="@(SITE_URL + dePath)" />
-        <link rel="alternate" hreflang="en" href="@(SITE_URL + enPath)" />
-        <link rel="alternate" hreflang="x-default" href="@(SITE_URL + dePath)" />
-    }
+    @* hreflang for DE/EN pairs is emitted by _Layout from Models/LanguageRoutes.cs *@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="@(isEn ? "en_CH" : "de_CH")" />
     @if (enPath != null)
@@ -296,9 +290,9 @@
             <!-- Breadcrumb (visible) -->
             <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground">
                 <ol class="flex items-center gap-2 min-w-0">
-                    <li class="shrink-0"><a href="/" class="hover:text-primary transition-colors">@(isEn ? "Home" : "Start")</a></li>
+                    <li class="shrink-0"><a href="@(isEn ? "/en" : "/")" class="hover:text-primary transition-colors">@(isEn ? "Home" : "Start")</a></li>
                     <li aria-hidden="true" class="shrink-0 text-border">/</li>
-                    <li class="shrink-0"><a href="/ratgeber" class="hover:text-primary transition-colors">@(isEn ? "Guide" : "Ratgeber")</a></li>
+                    <li class="shrink-0"><a href="@(isEn ? "/en/guide" : "/ratgeber")" class="hover:text-primary transition-colors">@(isEn ? "Guide" : "Ratgeber")</a></li>
                     <li aria-hidden="true" class="shrink-0 text-border">/</li>
                     <li class="truncate text-foreground/70">@title</li>
                 </ol>
@@ -307,7 +301,7 @@
             <header class="mt-6 pb-8 mb-8 border-b border-border">
                 <!-- Back link + category -->
                 <div class="flex flex-wrap items-center gap-3 mb-5">
-                    <a href="/ratgeber" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <a href="@(isEn ? "/en/guide" : "/ratgeber")" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
                         @(isEn ? "Back to guide" : "Zurück zum Ratgeber")
                     </a>
@@ -572,7 +566,7 @@
                                     }
                                     else
                                     {
-                                        <a href="@l.Href" class="block rounded-lg border border-border bg-card hover:border-primary/50 hover:bg-primary/5 transition-colors p-4">
+                                        <a href="@EndReinigung.Models.LanguageRoutes.Localize(l.Href, isEn)" class="block rounded-lg border border-border bg-card hover:border-primary/50 hover:bg-primary/5 transition-colors p-4">
                                             <span class="flex items-center justify-between gap-2 w-full">
                                                 <span class="text-base font-medium text-foreground leading-snug">@l.Label</span>
                                                 <span class="flex-shrink-0 text-primary">→</span>
@@ -645,7 +639,7 @@
                 </h2>
                 <p class="text-base text-muted-foreground mb-4">
                     @(isEn
-                        ? "Check our fixed prices for end-of-lease cleaning in Zürich in just 30 seconds with our online calculator."
+                        ? "Check our fixed prices for end-of-lease cleaning in Zurich in just 30 seconds with our online calculator."
                         : "Prüfen Sie unsere Fixpreise für die Endreinigung in Zürich – in nur 30 Sekunden mit unserem Online-Kostenrechner.")
                 </p>
                 <a href="/calculator" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-booking-orange to-booking-orange-dark text-white font-semibold rounded-lg shadow-button hover:shadow-hero transition-all duration-200">

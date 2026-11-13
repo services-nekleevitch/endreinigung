@@ -1,11 +1,17 @@
 @using System.Globalization
+@using EndReinigung.Models
 @{
     var lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     string T(string de, string en) => lang == "en" ? en : de;
+    // Links to pages that have an English version go there on /en/services.
+    string L(string href) => LanguageRoutes.Localize(href, lang == "en");
+    // For JSON-LD: Razor's @T() would HTML-encode (ü -> &#xFC;), JT() emits JSON-safe raw text.
+    Microsoft.AspNetCore.Html.HtmlString JT(string de, string en) => new(System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping.Encode(T(de, en)));
+    var pageUrl = T("https://zurich-endreinigung.ch/dienstleistungen", "https://zurich-endreinigung.ch/en/services");
 
     ViewData["Title"] = T("Reinigungsservices Zürich ✓ 14 Services zum Fixpreis", "Cleaning Services Zurich ✓ 14 Services at Fixed Prices");
     ViewData["Description"] = T("Professionelle Reinigungsservices in Zürich: Baureinigung, Fensterreinigung, Teppichreinigung, Polsterreinigung, Airbnb und mehr. Jetzt Offerte anfordern.", "Professional cleaning services in Zurich: construction cleaning, window cleaning, carpet cleaning, upholstery cleaning, Airbnb and more. Request a quote now.");
-    ViewData["Canonical"] = "https://zurich-endreinigung.ch/dienstleistungen";
+    ViewData["Canonical"] = pageUrl;
     ViewData["Keywords"] = T("Reinigungsservices Zürich, Baureinigung, Fensterreinigung, Teppichreinigung, Polsterreinigung, Zusatzleistungen Reinigung", "Cleaning Services Zurich, Construction Cleaning, Window Cleaning, Carpet Cleaning, Upholstery Cleaning, Additional Services");
 }
 
@@ -15,8 +21,8 @@
         "@@context": "https://schema.org",
         "@@type": "BreadcrumbList",
         "itemListElement": [
-            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
-            { "@@type": "ListItem", "position": 2, "name": "Zusatzservices", "item": "https://zurich-endreinigung.ch/dienstleistungen" }
+            { "@@type": "ListItem", "position": 1, "name": "@JT("Start", "Home")", "item": "@JT("https://zurich-endreinigung.ch/", "https://zurich-endreinigung.ch/en")" },
+            { "@@type": "ListItem", "position": 2, "name": "@JT("Zusatzservices", "Extra services")", "item": "@pageUrl" }
         ]
     }
     </script>
@@ -24,13 +30,13 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
-        "@@id": "https://zurich-endreinigung.ch/dienstleistungen#service",
-        "url": "https://zurich-endreinigung.ch/dienstleistungen",
-        "inLanguage": "de-CH",
-        "serviceType": "Zusatzservices",
-        "name": "Zusatzservices Zürich – Komplettkatalog",
+        "@@id": "@(pageUrl)#service",
+        "url": "@pageUrl",
+        "inLanguage": "@JT("de-CH", "en")",
+        "serviceType": "@JT("Zusatzservices", "Extra services")",
+        "name": "@JT("Zusatzservices Zürich – Komplettkatalog", "Extra Cleaning Services Zurich – Full Catalogue")",
         "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
-        "areaServed": { "@@type": "State", "name": "Kanton Zürich" },
+        "areaServed": { "@@type": "State", "name": "@JT("Kanton Zürich", "Canton of Zurich")" },
         "offers": {
             "@@type": "AggregateOffer",
             "priceCurrency": "CHF",
@@ -38,17 +44,17 @@
             "highPrice": 1190,
             "offerCount": 11,
             "offers": [
-                { "@@type": "Offer", "name": "Umzugsreinigung",                          "price": 550, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
-                { "@@type": "Offer", "name": "Frühlingsreinigung",                       "price": 390, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
-                { "@@type": "Offer", "name": "Baureinigung",                             "price": 25,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/dienstleistungen" },
-                { "@@type": "Offer", "name": "Fensterreinigung",                         "price": 249, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fensterreinigung" },
-                { "@@type": "Offer", "name": "Tapeten entfernen",                        "price": 140, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/tapeten-entfernen" },
-                { "@@type": "Offer", "name": "Airbnb Reinigung",                         "price": 89,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Eventreinigung & Veranstaltungsreinigung", "price": 200, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/event-reinigung" },
-                { "@@type": "Offer", "name": "Boot Reinigung",                           "price": 250, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/boot-reinigung" },
-                { "@@type": "Offer", "name": "Polsterreinigung",                         "price": 120, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/polsterreinigung" },
-                { "@@type": "Offer", "name": "Teppichreinigung",                         "price": 18,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/teppichreinigung-zuerich" },
-                { "@@type": "Offer", "name": "Matratzenreinigung",                       "price": 150, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/matratzenreinigung-zuerich" }
+                { "@@type": "Offer", "name": "@JT("Umzugsreinigung", "Move-out cleaning")", "price": 550, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/umzugsreinigung-stadt-zuerich" },
+                { "@@type": "Offer", "name": "@JT("Frühlingsreinigung", "Spring cleaning")", "price": 390, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fruehlingsputz-zuerich" },
+                { "@@type": "Offer", "name": "@JT("Baureinigung", "Construction cleaning")", "price": 25,  "priceCurrency": "CHF", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Fensterreinigung", "Window cleaning")", "price": 249, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/fensterreinigung" },
+                { "@@type": "Offer", "name": "@JT("Tapeten entfernen", "Wallpaper removal")", "price": 140, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/tapeten-entfernen" },
+                { "@@type": "Offer", "name": "@JT("Airbnb Reinigung", "Airbnb cleaning")", "price": 89,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch@(L("/airbnb-reinigung-zuerich"))" },
+                { "@@type": "Offer", "name": "@JT("Eventreinigung & Veranstaltungsreinigung", "Event cleaning")", "price": 200, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/event-reinigung" },
+                { "@@type": "Offer", "name": "@JT("Boot Reinigung", "Boat cleaning")", "price": 250, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/boot-reinigung" },
+                { "@@type": "Offer", "name": "@JT("Polsterreinigung", "Upholstery cleaning")", "price": 120, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch@(L("/polsterreinigung"))" },
+                { "@@type": "Offer", "name": "@JT("Teppichreinigung", "Carpet cleaning")", "price": 18,  "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/teppichreinigung-zuerich" },
+                { "@@type": "Offer", "name": "@JT("Matratzenreinigung", "Mattress cleaning")", "price": 150, "priceCurrency": "CHF", "url": "https://zurich-endreinigung.ch/matratzenreinigung-zuerich" }
             ]
         }
     }
@@ -57,46 +63,46 @@
     {
         "@@context": "https://schema.org",
         "@@type": "FAQPage",
-        "inLanguage": "de-CH",
+        "inLanguage": "@JT("de-CH", "en")",
         "mainEntity": [
             {
                 "@@type": "Question",
-                "name": "Wie buche ich mehrere Services gleichzeitig?",
+                "name": "@JT("Wie buche ich mehrere Services gleichzeitig?", "How do I book several services at once?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Über den Online-Preisrechner wählen Sie alle gewünschten Services aus und erhalten in unter 60 Sekunden einen Gesamtpreis. Bei Kombi-Buchungen sparen Sie bis zu 20 %. Alternativ nutzen Sie unser Kontaktformular für eine individuelle Offerte innert 24 h."
+                    "text": "@JT("Über den Online-Preisrechner wählen Sie alle gewünschten Services aus und erhalten in unter 60 Sekunden einen Gesamtpreis. Bei Kombi-Buchungen sparen Sie bis zu 20 %. Alternativ nutzen Sie unser Kontaktformular für eine individuelle Offerte innert 24 h.", "In the online price calculator you select all the services you need and get a total price in under 60 seconds. Combined bookings save you up to 20%. Alternatively, use our contact form for an individual quote within 24 hours.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Sind alle Preise inkl. Anfahrt und Material?",
+                "name": "@JT("Sind alle Preise inkl. Anfahrt und Material?", "Do all prices include travel and materials?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Ja. Alle Fixpreise auf dieser Seite enthalten Anfahrt im gesamten Kanton Zürich, alle Reinigungsmittel, Geräte und Verbrauchsmaterial. Es gibt keine versteckten Zuschläge — der Preis im Rechner ist der Preis auf der Rechnung."
+                    "text": "@JT("Ja. Alle Fixpreise auf dieser Seite enthalten Anfahrt im gesamten Kanton Zürich, alle Reinigungsmittel, Geräte und Verbrauchsmaterial. Es gibt keine versteckten Zuschläge — der Preis im Rechner ist der Preis auf der Rechnung.", "Yes. All fixed prices on this page include travel anywhere in the Canton of Zurich, all cleaning products, equipment and consumables. There are no hidden surcharges — the price in the calculator is the price on the invoice.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Gibt es Paketrabatte bei Kombi-Buchungen?",
+                "name": "@JT("Gibt es Paketrabatte bei Kombi-Buchungen?", "Are there package discounts for combined bookings?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Ja: 10 % Rabatt bei einem Extra-Service zusätzlich zur Endreinigung, 15 % bei zwei und 20 % ab drei Extra-Services. Der Rabatt wird automatisch im Preisrechner angezeigt und gilt für alle hier gelisteten Services."
+                    "text": "@JT("Ja: 10 % Rabatt bei einem Extra-Service zusätzlich zur Endreinigung, 15 % bei zwei und 20 % ab drei Extra-Services. Der Rabatt wird automatisch im Preisrechner angezeigt und gilt für alle hier gelisteten Services.", "Yes: 10% off for one extra service on top of the end-of-lease cleaning, 15% for two and 20% for three or more extra services. The discount is shown automatically in the price calculator and applies to all services listed here.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Sind die Services MWST-frei?",
+                "name": "@JT("Sind die Services MWST-frei?", "Are the services free of VAT?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Wir sind Kleinunternehmer im Sinne des MWSTG und stellen Rechnung ohne MWST. Das spart Ihnen 8.1 % gegenüber MWST-pflichtigen Anbietern. Geschäftskunden können die Rechnung trotzdem voll als Aufwand verbuchen."
+                    "text": "@JT("Wir sind Kleinunternehmer im Sinne des MWSTG und stellen Rechnung ohne MWST. Das spart Ihnen 8.1 % gegenüber MWST-pflichtigen Anbietern. Geschäftskunden können die Rechnung trotzdem voll als Aufwand verbuchen.", "We are a small business within the meaning of the Swiss VAT Act (MWSTG) and invoice without VAT. That saves you 8.1% compared with VAT-registered providers. Business customers can still book the full invoice as an expense.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Welche Versicherung deckt eventuelle Schäden?",
+                "name": "@JT("Welche Versicherung deckt eventuelle Schäden?", "Which insurance covers any damage?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Alle Reinigungsservices sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Schäden an Mobiliar, Böden, Sanitär, Elektrogeräten oder Inventar werden vollständig ersetzt — unabhängig vom gebuchten Service."
+                    "text": "@JT("Alle Reinigungsservices sind durch unsere Betriebshaftpflicht über 5 Mio. CHF abgedeckt. Schäden an Mobiliar, Böden, Sanitär, Elektrogeräten oder Inventar werden vollständig ersetzt — unabhängig vom gebuchten Service.", "All cleaning services are covered by our CHF 5 million business liability insurance. Damage to furniture, floors, sanitary fittings, electrical appliances or fixtures is replaced in full — whichever service you booked.")"
                 }
             }
         ]
@@ -110,7 +116,7 @@
     <section class="pt-20 md:pt-[7.75rem] pb-8 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-6">
-                <a href="/" class="inline-flex items-center px-3 py-1.5 text-sm border border-swiss-blue text-swiss-blue rounded-md hover:bg-swiss-blue hover:text-white transition-colors">
+                <a href="@L("/")" class="inline-flex items-center px-3 py-1.5 text-sm border border-swiss-blue text-swiss-blue rounded-md hover:bg-swiss-blue hover:text-white transition-colors">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                     @T("Zurück", "Back")
                 </a>
@@ -125,15 +131,15 @@
                 <div class="rounded-xl border border-primary/20 bg-white/60 backdrop-blur p-5 md:p-6">
                     <div class="flex items-center gap-2 mb-3">
                         <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-                        <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">Kurz erklärt</span>
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">@T("Kurz erklärt", "In short")</span>
                     </div>
-                    <p class="text-sm md:text-[15px] text-foreground/80 leading-relaxed mb-4">Über 14 <strong>Reinigungsservices in Zürich</strong> zum Fixpreis — von Umzugs- und Frühlingsreinigung bis Hochdruck-, Polster-, Event- und Bootreinigung. Alle Preise inkl. Anfahrt und Material, mit 100 % Abnahmegarantie und 5 Mio. CHF Versicherung. Buchung in unter 60 Sekunden, Termin innert 24 h möglich.</p>
+                    <p class="text-sm md:text-[15px] text-foreground/80 leading-relaxed mb-4">@Html.Raw(T("Über 14 <strong>Reinigungsservices in Zürich</strong> zum Fixpreis — von Umzugs- und Frühlingsreinigung bis Hochdruck-, Polster-, Event- und Bootreinigung. Alle Preise inkl. Anfahrt und Material, mit 100 % Abnahmegarantie und 5 Mio. CHF Versicherung. Buchung in unter 60 Sekunden, Termin innert 24 h möglich.", "Over 14 <strong>cleaning services in Zurich</strong> at fixed prices — from move-out and spring cleaning to pressure washing, upholstery, event and boat cleaning. All prices include travel and materials, with a 100% handover guarantee and CHF 5 million insurance. Book in under 60 seconds, appointments possible within 24 hours."))</p>
                     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2 text-sm text-foreground/80">
-                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Fixpreise ab CHF 89</span></li>
-                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>100 % Abnahmegarantie</span></li>
-                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>5 Mio. CHF Versicherung</span></li>
-                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Termin innert 24 Stunden</span></li>
-                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Kombinierbar mit Endreinigung — bis 20 % Rabatt</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Fixpreise ab CHF 89", "Fixed prices from CHF 89")</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("100 % Abnahmegarantie", "100% handover guarantee")</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("5 Mio. CHF Versicherung", "CHF 5 million insurance")</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Termin innert 24 Stunden", "Appointment within 24 hours")</span></li>
+                        <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Kombinierbar mit Endreinigung — bis 20 % Rabatt", "Combine with end-of-lease cleaning — up to 20% off")</span></li>
                     </ul>
                 </div>
             </div>
@@ -338,7 +344,7 @@
                 </a>
 
                 <!-- Airbnb Reinigung -->
-                <a href="/airbnb-reinigung-zuerich#pricing" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                <a href="@L("/airbnb-reinigung-zuerich#pricing")" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
                         <div class="aspect-[16/9] overflow-hidden"><img src="/img/services/airbnb-reinigung.avif" alt="Airbnb Reinigung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
                         <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
@@ -407,7 +413,7 @@
                 </a>
 
                 <!-- Polster Reinigung (Popular) -->
-                <a href="/polsterreinigung" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
+                <a href="@L("/polsterreinigung")" class="group flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style="border: 1.5px solid #dde3ee;">
                     <div class="relative">
                         <div class="aspect-[16/9] overflow-hidden"><img src="/img/services/polsterreinigung.avif" alt="@T("Polster Reinigung", "Upholstery Cleaning")" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
                         <div class="absolute left-4 bottom-0 translate-y-1/2 z-20 bg-gradient-hero rounded-2xl p-4 w-16 h-16 flex items-center justify-center" style="border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 00-2-2H6a2 2 0 00-2 2v3"/><path d="M2 11v5a2 2 0 002 2h16a2 2 0 002-2v-5a2 2 0 00-4 0v2H6v-2a2 2 0 00-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/></svg></div>
@@ -522,8 +528,8 @@
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 bg-swiss-blue hover:bg-swiss-blue/90 text-white rounded-md transition-colors">@T("Kombi-Angebot Anfragen", "Request Combo Offer")</a>
-                            <a href="/" class="inline-flex items-center justify-center px-6 py-3 border border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white rounded-md transition-colors">@T("Zur Endreinigung", "To End-of-Lease Cleaning")</a>
+                            <a href="@L("/#contact")" class="inline-flex items-center justify-center px-6 py-3 bg-swiss-blue hover:bg-swiss-blue/90 text-white rounded-md transition-colors">@T("Kombi-Angebot Anfragen", "Request Combo Offer")</a>
+                            <a href="@L("/")" class="inline-flex items-center justify-center px-6 py-3 border border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white rounded-md transition-colors">@T("Zur Endreinigung", "To End-of-Lease Cleaning")</a>
                         </div>
                     </div>
                 </div>

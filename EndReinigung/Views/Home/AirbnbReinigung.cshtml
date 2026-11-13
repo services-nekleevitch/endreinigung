@@ -1,25 +1,48 @@
 @using System.Globalization
 @{
-    var isEnRoute = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en"
-        || (Context.Request.Path.Value?.StartsWith("/en", StringComparison.OrdinalIgnoreCase) == true);
-    ViewData["Title"] = isEnRoute ? "Airbnb Cleaning Zurich ✓ Fixed Turnover Prices, Same-Day" : "Airbnb Reinigung Zürich ✓ Fixpreis pro Turnover, Same-Day";
-    ViewData["Description"] = isEnRoute ? "Reliable Airbnb cleaning in Zurich between guest turnovers. Flexible scheduling, fair prices and hotel-standard cleaning for expat hosts." : "Zuverlässige Airbnb Reinigung in Zürich zwischen Gästewechseln. Für Top-Bewertungen und zufriedene Gäste. Flexible Zeiten, faire Preise.";
-    ViewData["Canonical"] = isEnRoute ? "https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich" : "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich";
-    ViewData["Keywords"] = isEnRoute ? "Airbnb cleaning Zurich, vacation rental cleaning, guest turnover cleaning" : "Airbnb Reinigung Zürich, Ferienwohnung Reinigung, Gästewechsel Reinigung, Airbnb Putzdienst";
-    ViewData["HasCustomHreflang"] = true;
+    var isEn = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string T(string de, string en) => isEn ? en : de;
+    Microsoft.AspNetCore.Html.HtmlString J(string s) => new(System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping.Encode(s));
+    Microsoft.AspNetCore.Html.HtmlString JT(string de, string en) => J(T(de, en));
+
+    var pageUrl = T("https://zurich-endreinigung.ch/airbnb-reinigung-zuerich", "https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich");
+    var homeUrl = T("https://zurich-endreinigung.ch/", "https://zurich-endreinigung.ch/en");
+
+    ViewData["Title"] = T("Airbnb Reinigung Zürich ✓ Fixpreis pro Turnover, Same-Day", "Airbnb Cleaning Zurich ✓ Fixed Turnover Prices, Same-Day");
+    ViewData["Description"] = T("Zuverlässige Airbnb Reinigung in Zürich zwischen Gästewechseln. Für Top-Bewertungen und zufriedene Gäste. Flexible Zeiten, faire Preise.", "Reliable Airbnb cleaning in Zurich between guest turnovers. Flexible scheduling, fair prices and hotel-standard cleaning for expat hosts.");
+    ViewData["Canonical"] = pageUrl;
+    ViewData["Keywords"] = T("Airbnb Reinigung Zürich, Ferienwohnung Reinigung, Gästewechsel Reinigung, Airbnb Putzdienst", "Airbnb cleaning Zurich, vacation rental cleaning, guest turnover cleaning");
+
+    // FAQ copy is shared by the visible accordion and the FAQPage JSON-LD so both always match.
+    var faqs = new[]
+    {
+        (Q: T("Wie kurzfristig kann ich eine Reinigung buchen?", "How short-notice can I book a clean?"),
+         A: T("Bei regelmässigen Kunden stimmen wir den Reinigungsplan fest auf Ihre Buchungen ab. Kurzfristige Einzelbuchungen sind in der Regel innerhalb von 24-48 Stunden möglich. Same-Day-Einsätze auf Anfrage.", "For regular clients, we set a fixed cleaning schedule aligned with your bookings. Short-notice one-off bookings are usually possible within 24-48 hours. Same-day jobs on request.")),
+        (Q: T("Was passiert, wenn der Gast erst am gleichen Tag auscheckt?", "What happens if the guest only checks out on the same day?"),
+         A: T("Kein Problem. Wir planen genügend Puffer ein und können flexibel reagieren. Informieren Sie uns einfach per WhatsApp über Änderungen — wir passen den Einsatz entsprechend an.", "No problem. We plan in enough buffer time and can react flexibly. Just let us know about any changes via WhatsApp — we'll adjust the job accordingly.")),
+        (Q: T("Stellen Sie die Reinigungsmittel?", "Do you provide the cleaning products?"),
+         A: T("Ja. Wir bringen alle professionellen Reinigungsmittel und Geräte mit. Sie müssen nichts bereitstellen. Falls Sie bestimmte Produkte bevorzugen (z.B. ökologische Mittel), verwenden wir gerne diese.", "Yes. We bring all professional cleaning products and equipment with us. You don't need to provide anything. If you prefer specific products (e.g. eco-friendly ones), we're happy to use them.")),
+        (Q: T("Kann ich den Reinigungsplan ändern, wenn meine Buchungslage schwankt?", "Can I change the cleaning schedule if my bookings fluctuate?"),
+         A: T("Natürlich. Wir sind flexibel. Sagen Sie uns einfach Bescheid, wenn sich Ihre Buchungen ändern — wir passen den Plan laufend an. Bei Abo-Kunden berechnen wir nur die tatsächlich durchgeführten Reinigungen.", "Of course. We're flexible. Just let us know when your bookings change — we adjust the schedule on an ongoing basis. For subscription clients, we only charge for the cleans actually carried out.")),
+        (Q: T("Bieten Sie auch Wäscheservice an?", "Do you also offer a laundry service?"),
+         A: T("Im Turnover- und Full-Service-Paket ist das Waschen und Trocknen der Bettwäsche und Handtücher vor Ort inklusive. Falls Sie einen separaten Abholservice für grössere Mengen benötigen, bieten wir das als Zusatzleistung an.", "The Turnover and Full Service packages include washing and drying the bed linen and towels on site. If you need a separate collection service for larger quantities, we offer this as an add-on service.")),
+        (Q: T("Wie funktioniert die Schlüsselübergabe?", "How does the key handover work?"),
+         A: T("Wir arbeiten mit Lockboxen, Schlüsseltresoren oder persönlicher Übergabe — ganz wie es für Ihr Objekt am besten passt. Im Full-Service-Paket übernehmen wir das komplette Schlüsselmanagement.", "We work with lockboxes, key safes or in-person handover — whatever suits your property best. With the Full Service package, we take care of the complete key management.")),
+        (Q: T("Kann ich die Reinigungskosten als Reinigungsgebühr an Gäste weitergeben?", "Can I pass the cleaning costs on to guests as a cleaning fee?"),
+         A: T("Ja, die meisten Hosts verrechnen unsere Fixpreise direkt als Reinigungsgebühr auf Airbnb. Unsere transparenten Preise machen das einfach — Sie wissen genau, was Sie pro Reinigung zahlen und was Sie dem Gast berechnen.", "Yes, most hosts charge our fixed prices directly as the cleaning fee on Airbnb. Our transparent prices make this easy — you know exactly what you pay per clean and what you charge the guest.")),
+        (Q: T("Reinigen Sie auch andere Kurzzeitvermietungen (Booking.com, VRBO)?", "Do you also clean other short-term rentals (Booking.com, VRBO)?"),
+         A: T("Ja. Unser Service funktioniert für jede Art von Kurzzeitvermietung — Airbnb, Booking.com, VRBO, oder privat vermietete Ferienwohnungen. Der Ablauf ist identisch.", "Yes. Our service works for any type of short-term rental — Airbnb, Booking.com, VRBO, or privately let holiday flats. The process is identical."))
+    };
 }
 
 @section Head {
-    <link rel="alternate" hreflang="de-CH" href="https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" />
-    <link rel="alternate" hreflang="en" href="https://zurich-endreinigung.ch/en/airbnb-cleaning-zurich" />
-    <link rel="alternate" hreflang="x-default" href="https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" />
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
         "@@type": "BreadcrumbList",
         "itemListElement": [
-            { "@@type": "ListItem", "position": 1, "name": "Start", "item": "https://zurich-endreinigung.ch/" },
-            { "@@type": "ListItem", "position": 2, "name": "Airbnb Reinigung", "item": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" }
+            { "@@type": "ListItem", "position": 1, "name": "@JT("Start", "Home")", "item": "@homeUrl" },
+            { "@@type": "ListItem", "position": 2, "name": "@JT("Airbnb Reinigung", "Airbnb Cleaning")", "item": "@pageUrl" }
         ]
     }
     </script>
@@ -27,28 +50,28 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
-        "@@id": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich#service",
-        "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich",
-        "inLanguage": "de-CH",
-        "serviceType": "Airbnb Reinigung",
-        "name": "Airbnb Reinigung Zürich – Fixpreise",
+        "@@id": "@pageUrl#service",
+        "url": "@pageUrl",
+        "inLanguage": "@T("de-CH", "en")",
+        "serviceType": "@JT("Airbnb Reinigung", "Airbnb Cleaning")",
+        "name": "@JT("Airbnb Reinigung Zürich – Fixpreise", "Airbnb Cleaning Zurich – Fixed Prices")",
         "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
-        "areaServed": { "@@type": "State", "name": "Kanton Zürich" },
+        "areaServed": { "@@type": "State", "name": "@JT("Kanton Zürich", "Canton of Zurich")" },
         "offers": {
             "@@type": "AggregateOffer",
             "priceCurrency": "CHF",
             "lowPrice": 89,
-            "highPrice": 319,
+            "highPrice": 389,
             "offerCount": 8,
             "offers": [
-                { "@@type": "Offer", "name": "Express – Studio/1 Zi", "price": 89, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Express – 2 Zi", "price": 119, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Express – 3 Zi", "price": 149, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Turnover – Studio/1 Zi", "price": 129, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Turnover – 2 Zi", "price": 159, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Turnover – 3 Zi", "price": 199, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Full Service – Studio/1 Zi", "price": 199, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" },
-                { "@@type": "Offer", "name": "Full Service – 3 Zi", "price": 319, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "https://zurich-endreinigung.ch/airbnb-reinigung-zuerich" }
+                { "@@type": "Offer", "name": "@JT("Express – Studio/1 Zi", "Express – Studio/1 room")", "price": 89, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Express – 2 Zi", "Express – 2 rooms")", "price": 119, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Express – 3 Zi", "Express – 3 rooms")", "price": 149, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Turnover – Studio/1 Zi", "Turnover – Studio/1 room")", "price": 129, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Turnover – 2 Zi", "Turnover – 2 rooms")", "price": 159, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Turnover – 3 Zi", "Turnover – 3 rooms")", "price": 199, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Full Service – Studio/1 Zi", "Full Service – Studio/1 room")", "price": 199, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" },
+                { "@@type": "Offer", "name": "@JT("Full Service – 3 Zi", "Full Service – 3 rooms")", "price": 389, "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "url": "@pageUrl" }
             ]
         }
     }
@@ -57,47 +80,47 @@
     {
         "@@context": "https://schema.org",
         "@@type": "FAQPage",
-        "inLanguage": "de-CH",
+        "inLanguage": "@T("de-CH", "en")",
         "mainEntity": [
             {
                 "@@type": "Question",
-                "name": "Wie kurzfristig kann ich eine Reinigung buchen?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Bei regelmässigen Kunden stimmen wir den Reinigungsplan fest auf Ihre Buchungen ab. Kurzfristige Einzelbuchungen sind in der Regel innerhalb von 24-48 Stunden möglich. Same-Day-Einsätze auf Anfrage." }
+                "name": "@J(faqs[0].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[0].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Was passiert, wenn der Gast erst am gleichen Tag auscheckt?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Kein Problem. Wir planen genügend Puffer ein und können flexibel reagieren. Informieren Sie uns einfach per WhatsApp über Änderungen — wir passen den Einsatz entsprechend an." }
+                "name": "@J(faqs[1].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[1].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Stellen Sie die Reinigungsmittel?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Ja. Wir bringen alle professionellen Reinigungsmittel und Geräte mit. Sie müssen nichts bereitstellen. Falls Sie bestimmte Produkte bevorzugen (z.B. ökologische Mittel), verwenden wir gerne diese." }
+                "name": "@J(faqs[2].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[2].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Kann ich den Reinigungsplan ändern, wenn meine Buchungslage schwankt?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Natürlich. Wir sind flexibel. Sagen Sie uns einfach Bescheid, wenn sich Ihre Buchungen ändern — wir passen den Plan laufend an. Bei Abo-Kunden berechnen wir nur die tatsächlich durchgeführten Reinigungen." }
+                "name": "@J(faqs[3].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[3].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Bieten Sie auch Wäscheservice an?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Im Turnover- und Full-Service-Paket ist das Waschen und Trocknen der Bettwäsche und Handtücher vor Ort inklusive. Falls Sie einen separaten Abholservice für grössere Mengen benötigen, bieten wir das als Zusatzleistung an." }
+                "name": "@J(faqs[4].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[4].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Wie funktioniert die Schlüsselübergabe?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Wir arbeiten mit Lockboxen, Schlüsseltresoren oder persönlicher Übergabe — ganz wie es für Ihr Objekt am besten passt. Im Full-Service-Paket übernehmen wir das komplette Schlüsselmanagement." }
+                "name": "@J(faqs[5].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[5].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Kann ich die Reinigungskosten als Reinigungsgebühr an Gäste weitergeben?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Ja, die meisten Hosts verrechnen unsere Fixpreise direkt als Reinigungsgebühr auf Airbnb. Unsere transparenten Preise machen das einfach — Sie wissen genau, was Sie pro Reinigung zahlen und was Sie dem Gast berechnen." }
+                "name": "@J(faqs[6].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[6].A)" }
             },
             {
                 "@@type": "Question",
-                "name": "Reinigen Sie auch andere Kurzzeitvermietungen (Booking.com, VRBO)?",
-                "acceptedAnswer": { "@@type": "Answer", "text": "Ja. Unser Service funktioniert für jede Art von Kurzzeitvermietung — Airbnb, Booking.com, VRBO, oder privat vermietete Ferienwohnungen. Der Ablauf ist identisch." }
+                "name": "@J(faqs[7].Q)",
+                "acceptedAnswer": { "@@type": "Answer", "text": "@J(faqs[7].A)" }
             }
         ]
     }
@@ -122,50 +145,50 @@
                         <span class="text-white/90 text-sm font-medium">Expat Friendly</span>
                     </div>
                     <span class="inline-block bg-trust-gold text-white font-semibold text-sm px-4 py-1.5 rounded-full">
-                        Fixpreis
+                        @T("Fixpreis", "Fixed price")
                     </span>
                     <span class="inline-block border-2 border-white text-white font-semibold text-sm px-4 py-1.5 rounded-full">
-                        7 Tage / Woche
+                        @T("7 Tage / Woche", "7 days / week")
                     </span>
                     <span class="inline-block bg-cleaning-green text-white font-semibold text-sm px-4 py-1.5 rounded-full">
-                        Hotel-Standard
+                        @T("Hotel-Standard", "Hotel standard")
                     </span>
                 </div>
 
                 <!-- H1 -->
                 <h1 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight">
-                    Airbnb Reinigung Zürich — Turnover-Reinigung zum Fixpreis
+                    @T("Airbnb Reinigung Zürich — Turnover-Reinigung zum Fixpreis", "Airbnb Cleaning Zurich — Turnover Cleaning at a Fixed Price")
                 </h1>
 
                 <!-- Subheading -->
                 <p class="text-base md:text-lg text-white/80 mb-4 max-w-2xl">
-                    Hotel-Standard Reinigung für Airbnb, Booking.com, VRBO und Ferienwohnungen in Zürich, Zug, Aargau und Umgebung. Pünktlich, gründlich, check-in ready — damit Ihre Gäste 5 Sterne vergeben.
+                    @T("Hotel-Standard Reinigung für Airbnb, Booking.com, VRBO und Ferienwohnungen in Zürich, Zug, Aargau und Umgebung. Pünktlich, gründlich, check-in ready — damit Ihre Gäste 5 Sterne vergeben.", "Hotel-standard cleaning for Airbnb, Booking.com, VRBO and holiday flats in Zurich, Zug, Aargau and the surrounding area. Punctual, thorough, check-in ready — so your guests give you 5 stars.")
                 </p>
 
                 <!-- Checkmarks -->
                 <div class="space-y-1.5 mb-5">
                     <div class="flex items-center gap-3">
                         <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span class="text-white text-base md:text-lg">Fixpreis pro Reinigung — keine versteckten Kosten</span>
+                        <span class="text-white text-base md:text-lg">@T("Fixpreis pro Reinigung — keine versteckten Kosten", "Fixed price per clean — no hidden costs")</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span class="text-white text-base md:text-lg">Bettwäsche, Handtücher, Müll — alles erledigt</span>
+                        <span class="text-white text-base md:text-lg">@T("Bettwäsche, Handtücher, Müll — alles erledigt", "Bed linen, towels, rubbish — all taken care of")</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <svg class="w-5 h-5 text-cleaning-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span class="text-white text-base md:text-lg">Haftpflichtversichert mit 5 Mio. CHF Deckung</span>
+                        <span class="text-white text-base md:text-lg">@T("Haftpflichtversichert mit 5 Mio. CHF Deckung", "Liability insured with CHF 5 million cover")</span>
                     </div>
                 </div>
 
                 <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row gap-4 mb-8 items-start">
                     <a href="#pricing" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
-                        Angebot und Preise
+                        @T("Angebot und Preise", "Packages and prices")
                     </a>
                     <a href="#service-area" class="inline-flex items-center justify-center text-lg px-6 h-12 rounded-lg border-2 border-white text-swiss-blue bg-white hover:bg-white/90 font-semibold transition-colors gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Einsatzgebiet prüfen
+                        @T("Einsatzgebiet prüfen", "Check service area")
                     </a>
                 </div>
 
@@ -177,7 +200,7 @@
                         <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                         <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                         <svg class="w-5 h-5 text-trust-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <span class="text-white/80 text-sm ml-2">5/5 Bewertung auf Google</span>
+                        <span class="text-white/80 text-sm ml-2">@T("5/5 Bewertung auf Google", "5/5 rating on Google")</span>
                     </a>
                 </div>
             </div>
@@ -190,13 +213,13 @@
             <div class="rounded-xl border border-primary/20 bg-white/60 backdrop-blur p-5 md:p-6">
                 <div class="flex items-center gap-2 mb-3">
                     <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-                    <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">Kurz erklärt</span>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">@T("Kurz erklärt", "In a nutshell")</span>
                 </div>
-                <p class="text-sm md:text-[15px] text-foreground/80 leading-relaxed mb-4"><strong>Airbnb Reinigung in Zürich</strong> zwischen Gästewechseln zum transparenten Fixpreis. Hotel-Standard-Turnover für Airbnb, Booking.com, VRBO und Ferienwohnungen — pünktlich, gründlich, check-in ready.</p>
+                <p class="text-sm md:text-[15px] text-foreground/80 leading-relaxed mb-4">@Html.Raw(T("<strong>Airbnb Reinigung in Zürich</strong> zwischen Gästewechseln zum transparenten Fixpreis. Hotel-Standard-Turnover für Airbnb, Booking.com, VRBO und Ferienwohnungen — pünktlich, gründlich, check-in ready.", "<strong>Airbnb cleaning in Zurich</strong> between guest changeovers at a transparent fixed price. Hotel-standard turnovers for Airbnb, Booking.com, VRBO and holiday flats — punctual, thorough, check-in ready."))</p>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2 text-sm text-foreground/80">
-                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Fixpreise pro Reinigung ab CHF 89 (Express) bis CHF 389 (Full Service)</span></li>
-                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Bettwäsche, Handtücher, Müll und Verbrauchsmaterial inklusive</span></li>
-                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>Versichert mit 5 Mio. CHF Haftpflichtdeckung</span></li>
+                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Fixpreise pro Reinigung ab CHF 89 (Express) bis CHF 389 (Full Service)", "Fixed prices per clean from CHF 89 (Express) to CHF 389 (Full Service)")</span></li>
+                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Bettwäsche, Handtücher, Müll und Verbrauchsmaterial inklusive", "Bed linen, towels, rubbish and consumables included")</span></li>
+                    <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span><span>@T("Versichert mit 5 Mio. CHF Haftpflichtdeckung", "Insured with CHF 5 million liability cover")</span></li>
                 </ul>
             </div>
         </div>
@@ -206,7 +229,7 @@
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-                Kennen Sie das?
+                @T("Kennen Sie das?", "Sound familiar?")
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Tight Turnover -->
@@ -214,8 +237,8 @@
                     <div class="flex justify-center mb-4">
                         <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-foreground mb-3">Knappe Turnover-Zeit</h3>
-                    <p class="text-muted-foreground">Check-out um 11, Check-in um 15 Uhr — und dazwischen muss die Wohnung makellos sein. Stress pur.</p>
+                    <h3 class="text-xl font-bold text-foreground mb-3">@T("Knappe Turnover-Zeit", "Tight turnover window")</h3>
+                    <p class="text-muted-foreground">@T("Check-out um 11, Check-in um 15 Uhr — und dazwischen muss die Wohnung makellos sein. Stress pur.", "Check-out at 11:00, check-in at 15:00 — and in between, the flat has to be spotless. Pure stress.")</p>
                 </div>
                 <!-- Inconsistent Quality -->
                 <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center border-border">
@@ -227,20 +250,20 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-foreground mb-3">Inkonsistente Qualität</h3>
-                    <p class="text-muted-foreground">Mal gut, mal nicht. Jeder vergessene Fleck kostet Sie eine Stern-Bewertung — und zukünftige Buchungen.</p>
+                    <h3 class="text-xl font-bold text-foreground mb-3">@T("Inkonsistente Qualität", "Inconsistent quality")</h3>
+                    <p class="text-muted-foreground">@T("Mal gut, mal nicht. Jeder vergessene Fleck kostet Sie eine Stern-Bewertung — und zukünftige Buchungen.", "Sometimes good, sometimes not. Every missed spot costs you a star in your reviews — and future bookings.")</p>
                 </div>
                 <!-- Endless Coordination -->
                 <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center border-border">
                     <div class="flex justify-center mb-4">
                         <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-foreground mb-3">Ständig organisieren</h3>
-                    <p class="text-muted-foreground">Reiniger koordinieren, Absagen managen, nachkontrollieren. Sie wollten passives Einkommen, nicht einen zweiten Job.</p>
+                    <h3 class="text-xl font-bold text-foreground mb-3">@T("Ständig organisieren", "Constant organising")</h3>
+                    <p class="text-muted-foreground">@T("Reiniger koordinieren, Absagen managen, nachkontrollieren. Sie wollten passives Einkommen, nicht einen zweiten Job.", "Coordinating cleaners, handling cancellations, checking their work. You wanted passive income, not a second job.")</p>
                 </div>
             </div>
             <p class="text-center text-lg md:text-xl font-semibold text-foreground mt-12 max-w-3xl mx-auto">
-                Wir lösen das. Ein Team, ein Fixpreis, Hotel-Standard — jedes Mal.
+                @T("Wir lösen das. Ein Team, ein Fixpreis, Hotel-Standard — jedes Mal.", "We solve that. One team, one fixed price, hotel standard — every time.")
             </p>
         </div>
     </section>
@@ -249,10 +272,10 @@
     <section id="pricing" class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(210 10% 93%) 60%, hsl(0 0% 100%) 100%)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
-                Reinigungspakete für Airbnb, Booking.com & Kurzzeitvermietungen
+                @T("Reinigungspakete für Airbnb, Booking.com & Kurzzeitvermietungen", "Cleaning packages for Airbnb, Booking.com & short-term rentals")
             </h2>
             <p class="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Hotel-Standard Reinigung zum transparenten Fixpreis — wählen Sie das Paket, das zu Ihrem Objekt passt.
+                @T("Hotel-Standard Reinigung zum transparenten Fixpreis — wählen Sie das Paket, das zu Ihrem Objekt passt.", "Hotel-standard cleaning at a transparent fixed price — choose the package that suits your property.")
             </p>
 
             <!-- Pricing Cards Placeholder -->
@@ -260,32 +283,32 @@
                 <!-- Express -->
                 <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center">
                     <h3 class="text-xl font-bold text-foreground mb-2">Express</h3>
-                    <p class="text-muted-foreground mb-4">Schnelle Zwischenreinigung</p>
-                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 80 CHF</div>
-                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <p class="text-muted-foreground mb-4">@T("Schnelle Zwischenreinigung", "Quick in-between clean")</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">@T("ab 89 CHF", "from 89 CHF")</div>
+                    <p class="text-sm text-muted-foreground mb-6">@T("pro Reinigung", "per clean")</p>
                     <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
-                        Jetzt anfragen
+                        @T("Jetzt anfragen", "Enquire now")
                     </a>
                 </div>
                 <!-- Turnover -->
                 <div class="rounded-lg border-2 border-swiss-blue bg-card text-card-foreground shadow-xl p-8 text-center relative">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-swiss-blue text-white text-xs font-bold px-4 py-1 rounded-full">Beliebt</div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-swiss-blue text-white text-xs font-bold px-4 py-1 rounded-full">@T("Beliebt", "Popular")</div>
                     <h3 class="text-xl font-bold text-foreground mb-2">Turnover</h3>
-                    <p class="text-muted-foreground mb-4">Komplette Gästewechsel-Reinigung</p>
-                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 159 CHF</div>
-                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <p class="text-muted-foreground mb-4">@T("Komplette Gästewechsel-Reinigung", "Complete guest changeover clean")</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">@T("ab 159 CHF", "from 159 CHF")</div>
+                    <p class="text-sm text-muted-foreground mb-6">@T("pro Reinigung", "per clean")</p>
                     <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
-                        Jetzt anfragen
+                        @T("Jetzt anfragen", "Enquire now")
                     </a>
                 </div>
                 <!-- Full Service -->
                 <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 text-center">
                     <h3 class="text-xl font-bold text-foreground mb-2">Full Service</h3>
-                    <p class="text-muted-foreground mb-4">Rundum-Sorglos-Paket</p>
-                    <div class="text-3xl font-bold text-swiss-blue mb-4">ab 249 CHF</div>
-                    <p class="text-sm text-muted-foreground mb-6">pro Reinigung</p>
+                    <p class="text-muted-foreground mb-4">@T("Rundum-Sorglos-Paket", "All-inclusive, worry-free package")</p>
+                    <div class="text-3xl font-bold text-swiss-blue mb-4">@T("ab 249 CHF", "from 249 CHF")</div>
+                    <p class="text-sm text-muted-foreground mb-6">@T("pro Reinigung", "per clean")</p>
                     <a href="tel:+41765017738" class="inline-flex items-center justify-center w-full h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
-                        Jetzt anfragen
+                        @T("Jetzt anfragen", "Enquire now")
                     </a>
                 </div>
             </div>
@@ -299,7 +322,7 @@
                 <!-- Badge -->
                 <div class="absolute top-4 right-4">
                     <div class="bg-swiss-blue text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Individuell
+                        @T("Individuell", "Custom")
                     </div>
                 </div>
 
@@ -308,13 +331,13 @@
                         <svg class="w-10 h-10 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                        Massgeschneiderte Airbnb Reinigung
+                        @T("Massgeschneiderte Airbnb Reinigung", "Tailored Airbnb Cleaning")
                     </h3>
                     <p class="text-base text-muted-foreground font-medium mb-3">
-                        Für Hosts mit besonderen Anforderungen
+                        @T("Für Hosts mit besonderen Anforderungen", "For hosts with special requirements")
                     </p>
                     <p class="text-sm text-muted-foreground max-w-2xl mx-auto">
-                        Grössere Objekte, spezielle Ausstattung, eigene Checklisten oder besondere Wünsche? Wir erstellen ein individuelles Reinigungskonzept — exakt auf Ihr Objekt und Ihre Gäste zugeschnitten.
+                        @T("Grössere Objekte, spezielle Ausstattung, eigene Checklisten oder besondere Wünsche? Wir erstellen ein individuelles Reinigungskonzept — exakt auf Ihr Objekt und Ihre Gäste zugeschnitten.", "Larger properties, special amenities, your own checklists or particular requests? We create a bespoke cleaning plan — tailored precisely to your property and your guests.")
                     </p>
                 </div>
 
@@ -322,34 +345,34 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     <div class="flex items-center gap-2 justify-center text-sm text-foreground">
                         <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span>Villen, Häuser & grosse Wohnungen</span>
+                        <span>@T("Villen, Häuser & grosse Wohnungen", "Villas, houses & large flats")</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center text-sm text-foreground">
                         <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
-                        <span>Objekte mit Pool, Sauna oder Garten</span>
+                        <span>@T("Objekte mit Pool, Sauna oder Garten", "Properties with a pool, sauna or garden")</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center text-sm text-foreground">
                         <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>Eigene Checkliste & Abläufe</span>
+                        <span>@T("Eigene Checkliste & Abläufe", "Your own checklist & procedures")</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center text-sm text-foreground">
                         <svg class="w-5 h-5 text-swiss-blue flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <span>Flexible Abrechnungsmodelle</span>
+                        <span>@T("Flexible Abrechnungsmodelle", "Flexible billing models")</span>
                     </div>
                 </div>
 
                 <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mb-3">
                     <a href="#contact" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
-                        Unverbindlich anfragen
+                        @T("Unverbindlich anfragen", "Enquire without obligation")
                     </a>
                     <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg border-2 border-swiss-blue text-swiss-blue hover:bg-swiss-blue hover:text-white transition-colors font-semibold">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        Direkt anrufen: +41 76 501 77 38
+                        @T("Direkt anrufen: +41 76 501 77 38", "Call us directly: +41 76 501 77 38")
                     </a>
                 </div>
                 <p class="text-center text-xs text-muted-foreground">
-                    Antwort innerhalb von 24 Stunden
+                    @T("Antwort innerhalb von 24 Stunden", "Reply within 24 hours")
                 </p>
             </div>
         </div>
@@ -359,62 +382,62 @@
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-                Was ist inklusive?
+                @T("Was ist inklusive?", "What's included?")
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Küche gründlich reinigen</span>
+                    <span class="text-foreground font-medium">@T("Küche gründlich reinigen", "Thorough kitchen cleaning")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Badezimmer desinfizieren</span>
+                    <span class="text-foreground font-medium">@T("Badezimmer desinfizieren", "Bathroom disinfection")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Böden saugen & wischen</span>
+                    <span class="text-foreground font-medium">@T("Böden saugen & wischen", "Floors vacuumed & mopped")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Staub wischen</span>
+                    <span class="text-foreground font-medium">@T("Staub wischen", "Dusting")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Bettwäsche wechseln</span>
+                    <span class="text-foreground font-medium">@T("Bettwäsche wechseln", "Bed linen changed")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Handtücher falten & platzieren</span>
+                    <span class="text-foreground font-medium">@T("Handtücher falten & platzieren", "Towels folded & laid out")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Müll entsorgen</span>
+                    <span class="text-foreground font-medium">@T("Müll entsorgen", "Rubbish taken out")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Amenities nachfüllen</span>
+                    <span class="text-foreground font-medium">@T("Amenities nachfüllen", "Amenities restocked")</span>
                 </div>
                 <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary/50">
                     <div class="w-8 h-8 rounded-full bg-cleaning-green/10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-5 h-5 text-cleaning-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span class="text-foreground font-medium">Qualitätskontrolle mit Fotos</span>
+                    <span class="text-foreground font-medium">@T("Qualitätskontrolle mit Fotos", "Quality check with photos")</span>
                 </div>
             </div>
         </div>
@@ -425,10 +448,10 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    Regelmässige Reinigung? Sparen Sie bis zu 15%
+                    @T("Regelmässige Reinigung? Sparen Sie bis zu 15%", "Regular cleaning? Save up to 15%")
                 </h2>
                 <p class="text-muted-foreground max-w-2xl mx-auto">
-                    Je häufiger wir kommen, desto günstiger wird es — und Sie müssen sich um nichts kümmern.
+                    @T("Je häufiger wir kommen, desto günstiger wird es — und Sie müssen sich um nichts kümmern.", "The more often we come, the cheaper it gets — and you don't have to worry about a thing.")
                 </p>
             </div>
 
@@ -438,32 +461,32 @@
                     <div class="text-2xl font-bold text-white bg-muted-foreground/40 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                         0%
                     </div>
-                    <h3 class="text-lg font-bold text-foreground mb-1">Auf Abruf</h3>
-                    <p class="text-sm text-muted-foreground mb-2">Einzelbuchungen zum regulären Preis</p>
-                    <p class="text-sm font-semibold text-foreground">0% Rabatt</p>
+                    <h3 class="text-lg font-bold text-foreground mb-1">@T("Auf Abruf", "On demand")</h3>
+                    <p class="text-sm text-muted-foreground mb-2">@T("Einzelbuchungen zum regulären Preis", "One-off bookings at the regular price")</p>
+                    <p class="text-sm font-semibold text-foreground">@T("0% Rabatt", "0% discount")</p>
                 </div>
                 <!-- 4+ per month -->
                 <div class="rounded-lg border-2 border-swiss-blue/20 bg-card text-card-foreground shadow-sm p-6 text-center transition-all duration-300 hover:shadow-lg">
                     <div class="text-2xl font-bold text-white bg-swiss-blue-light w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                         10%
                     </div>
-                    <h3 class="text-lg font-bold text-foreground mb-1">4+ pro Monat</h3>
-                    <p class="text-sm text-muted-foreground mb-2">Regelmässiger Reinigungsplan</p>
-                    <p class="text-sm font-semibold text-foreground">10% Rabatt</p>
+                    <h3 class="text-lg font-bold text-foreground mb-1">@T("4+ pro Monat", "4+ per month")</h3>
+                    <p class="text-sm text-muted-foreground mb-2">@T("Regelmässiger Reinigungsplan", "Regular cleaning schedule")</p>
+                    <p class="text-sm font-semibold text-foreground">@T("10% Rabatt", "10% discount")</p>
                 </div>
                 <!-- 8+ per month -->
                 <div class="rounded-lg border-2 border-swiss-blue/40 bg-card text-card-foreground shadow-sm p-6 text-center transition-all duration-300 hover:shadow-lg">
                     <div class="text-2xl font-bold text-white bg-swiss-blue w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                         15%
                     </div>
-                    <h3 class="text-lg font-bold text-foreground mb-1">8+ pro Monat</h3>
-                    <p class="text-sm text-muted-foreground mb-2">Mehrere Objekte oder häufige Turnovers</p>
-                    <p class="text-sm font-semibold text-foreground">15% Rabatt</p>
+                    <h3 class="text-lg font-bold text-foreground mb-1">@T("8+ pro Monat", "8+ per month")</h3>
+                    <p class="text-sm text-muted-foreground mb-2">@T("Mehrere Objekte oder häufige Turnovers", "Multiple properties or frequent turnovers")</p>
+                    <p class="text-sm font-semibold text-foreground">@T("15% Rabatt", "15% discount")</p>
                 </div>
             </div>
 
             <p class="text-center text-sm text-muted-foreground mt-8 max-w-3xl mx-auto">
-                Beispiel: Turnover-Paket, 2 Zimmer, 8x pro Monat = CHF 1'080/Monat statt CHF 1'272 (Sie sparen CHF 192)
+                @T("Beispiel: Turnover-Paket, 2 Zimmer, 8x pro Monat = CHF 1'080/Monat statt CHF 1'272 (Sie sparen CHF 192)", "Example: Turnover package, 2 rooms, 8x per month = CHF 1'080/month instead of CHF 1'272 (you save CHF 192)")
             </p>
         </div>
     </section>
@@ -471,13 +494,13 @@
     <!-- 7. Service Area -->
     <section id="service-area" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Unser Einsatzgebiet</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">@T("Unser Einsatzgebiet", "Our service area")</h2>
             <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Wir reinigen Airbnb-Wohnungen in Zürich, Zug, Aargau und Umgebung. Kontaktieren Sie uns, um zu prüfen, ob Ihr Objekt in unserem Einsatzgebiet liegt.
+                @T("Wir reinigen Airbnb-Wohnungen in Zürich, Zug, Aargau und Umgebung. Kontaktieren Sie uns, um zu prüfen, ob Ihr Objekt in unserem Einsatzgebiet liegt.", "We clean Airbnb flats in Zurich, Zug, Aargau and the surrounding area. Get in touch to check whether your property is within our service area.")
             </p>
             <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-swiss-blue text-white font-semibold hover:bg-swiss-blue-light transition-colors">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Einsatzgebiet prüfen
+                @T("Einsatzgebiet prüfen", "Check service area")
             </a>
         </div>
     </section>
@@ -486,7 +509,7 @@
     <section class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(0 0% 100%) 100%)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-                So einfach funktioniert es
+                @T("So einfach funktioniert es", "It's that simple")
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
@@ -494,27 +517,27 @@
                     <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                     </div>
-                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 1</div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">Paket & Objekt angeben</h3>
-                    <p class="text-muted-foreground">Sagen Sie uns Ihre Objektgrösse und wie oft Sie Reinigung brauchen — per Telefon, WhatsApp oder Formular.</p>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">@T("Schritt 1", "Step 1")</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">@T("Paket & Objekt angeben", "Tell us your package & property")</h3>
+                    <p class="text-muted-foreground">@T("Sagen Sie uns Ihre Objektgrösse und wie oft Sie Reinigung brauchen — per Telefon, WhatsApp oder Formular.", "Tell us the size of your property and how often you need cleaning — by phone, WhatsApp or via the form.")</p>
                 </div>
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     </div>
-                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 2</div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">Fester Reinigungsplan</h3>
-                    <p class="text-muted-foreground">Wir stimmen den Plan auf Ihre Buchungen ab. Jede Reinigung läuft nach unserer Hotel-Standard-Checkliste.</p>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">@T("Schritt 2", "Step 2")</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">@T("Fester Reinigungsplan", "Fixed cleaning schedule")</h3>
+                    <p class="text-muted-foreground">@T("Wir stimmen den Plan auf Ihre Buchungen ab. Jede Reinigung läuft nach unserer Hotel-Standard-Checkliste.", "We align the schedule with your bookings. Every clean follows our hotel-standard checklist.")</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="text-center">
                     <div class="w-16 h-16 rounded-full bg-swiss-blue text-white flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813h6.116l-4.97 3.574 1.912 5.813L12 14.626 7.03 18.2l1.912-5.813L3.972 8.813h6.116z"></path></svg>
                     </div>
-                    <div class="text-sm font-bold text-swiss-blue mb-1">Schritt 3</div>
-                    <h3 class="text-xl font-bold text-foreground mb-2">5-Sterne Check-in, jedes Mal</h3>
-                    <p class="text-muted-foreground">Ihre Gäste betreten eine makellose Wohnung. Sie lehnen sich zurück und kassieren Top-Bewertungen.</p>
+                    <div class="text-sm font-bold text-swiss-blue mb-1">@T("Schritt 3", "Step 3")</div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">@T("5-Sterne Check-in, jedes Mal", "5-star check-in, every time")</h3>
+                    <p class="text-muted-foreground">@T("Ihre Gäste betreten eine makellose Wohnung. Sie lehnen sich zurück und kassieren Top-Bewertungen.", "Your guests walk into a spotless flat. You sit back and collect top reviews.")</p>
                 </div>
             </div>
         </div>
@@ -524,7 +547,7 @@
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-                Warum Airbnb-Hosts uns vertrauen
+                @T("Warum Airbnb-Hosts uns vertrauen", "Why Airbnb hosts trust us")
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -532,8 +555,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">Haftpflichtversichert</h3>
-                        <p class="text-sm text-muted-foreground">5 Mio. CHF Deckung</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("Haftpflichtversichert", "Liability insured")</h3>
+                        <p class="text-sm text-muted-foreground">@T("5 Mio. CHF Deckung", "CHF 5 million cover")</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -541,8 +564,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">Immer das gleiche Team</h3>
-                        <p class="text-sm text-muted-foreground">Konsistenz bei jeder Reinigung</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("Immer das gleiche Team", "Always the same team")</h3>
+                        <p class="text-sm text-muted-foreground">@T("Konsistenz bei jeder Reinigung", "Consistency with every clean")</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -550,8 +573,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">7 Tage die Woche</h3>
-                        <p class="text-sm text-muted-foreground">Auch Wochenende & Feiertage</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("7 Tage die Woche", "7 days a week")</h3>
+                        <p class="text-sm text-muted-foreground">@T("Auch Wochenende & Feiertage", "Including weekends & public holidays")</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -559,8 +582,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">Kurzfristig verfügbar</h3>
-                        <p class="text-sm text-muted-foreground">Same-Day auf Anfrage</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("Kurzfristig verfügbar", "Available at short notice")</h3>
+                        <p class="text-sm text-muted-foreground">@T("Same-Day auf Anfrage", "Same-day on request")</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -568,8 +591,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">WhatsApp-Kommunikation</h3>
-                        <p class="text-sm text-muted-foreground">Direkt mit Ihrem Team</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("WhatsApp-Kommunikation", "WhatsApp communication")</h3>
+                        <p class="text-sm text-muted-foreground">@T("Direkt mit Ihrem Team", "Directly with your team")</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-5 rounded-xl bg-secondary/50">
@@ -577,8 +600,8 @@
                         <svg class="w-6 h-6 text-swiss-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-foreground mb-0.5">Fotodokumentation</h3>
-                        <p class="text-sm text-muted-foreground">Nachweis nach jeder Reinigung</p>
+                        <h3 class="font-bold text-foreground mb-0.5">@T("Fotodokumentation", "Photo documentation")</h3>
+                        <p class="text-sm text-muted-foreground">@T("Nachweis nach jeder Reinigung", "Proof after every clean")</p>
                     </div>
                 </div>
             </div>
@@ -588,8 +611,8 @@
     <!-- 9b. Request / Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-background">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Airbnb Reinigung anfragen</h2>
-            <p class="text-muted-foreground mb-8">Kontaktieren Sie uns für ein unverbindliches Angebot — wir melden uns innerhalb von 24 Stunden.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">@T("Airbnb Reinigung anfragen", "Request Airbnb cleaning")</h2>
+            <p class="text-muted-foreground mb-8">@T("Kontaktieren Sie uns für ein unverbindliches Angebot — wir melden uns innerhalb von 24 Stunden.", "Contact us for a no-obligation quote — we'll get back to you within 24 hours.")</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+41765017738" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -607,78 +630,78 @@
     <section class="py-16 md:py-24" style="background: linear-gradient(180deg, hsl(210 10% 96%) 0%, hsl(0 0% 100%) 100%)">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-foreground mb-3">
-                Häufige Fragen zur Airbnb Reinigung
+                @T("Häufige Fragen zur Airbnb Reinigung", "Frequently asked questions about Airbnb cleaning")
             </h2>
             <p class="text-center text-muted-foreground mb-12">
-                Alles, was Sie als Host wissen müssen
+                @T("Alles, was Sie als Host wissen müssen", "Everything you need to know as a host")
             </p>
 
             <div class="space-y-3">
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Wie kurzfristig kann ich eine Reinigung buchen?
+                        @faqs[0].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Bei regelmässigen Kunden stimmen wir den Reinigungsplan fest auf Ihre Buchungen ab. Kurzfristige Einzelbuchungen sind in der Regel innerhalb von 24-48 Stunden möglich. Same-Day-Einsätze auf Anfrage.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[0].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Was passiert, wenn der Gast erst am gleichen Tag auscheckt?
+                        @faqs[1].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Kein Problem. Wir planen genügend Puffer ein und können flexibel reagieren. Informieren Sie uns einfach per WhatsApp über Änderungen — wir passen den Einsatz entsprechend an.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[1].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Stellen Sie die Reinigungsmittel?
+                        @faqs[2].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Ja. Wir bringen alle professionellen Reinigungsmittel und Geräte mit. Sie müssen nichts bereitstellen. Falls Sie bestimmte Produkte bevorzugen (z.B. ökologische Mittel), verwenden wir gerne diese.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[2].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Kann ich den Reinigungsplan ändern, wenn meine Buchungslage schwankt?
+                        @faqs[3].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Natürlich. Wir sind flexibel. Sagen Sie uns einfach Bescheid, wenn sich Ihre Buchungen ändern — wir passen den Plan laufend an. Bei Abo-Kunden berechnen wir nur die tatsächlich durchgeführten Reinigungen.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[3].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Bieten Sie auch Wäscheservice an?
+                        @faqs[4].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Im Turnover- und Full-Service-Paket ist das Waschen und Trocknen der Bettwäsche und Handtücher vor Ort inklusive. Falls Sie einen separaten Abholservice für grössere Mengen benötigen, bieten wir das als Zusatzleistung an.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[4].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Wie funktioniert die Schlüsselübergabe?
+                        @faqs[5].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Wir arbeiten mit Lockboxen, Schlüsseltresoren oder persönlicher Übergabe — ganz wie es für Ihr Objekt am besten passt. Im Full-Service-Paket übernehmen wir das komplette Schlüsselmanagement.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[5].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Kann ich die Reinigungskosten als Reinigungsgebühr an Gäste weitergeben?
+                        @faqs[6].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Ja, die meisten Hosts verrechnen unsere Fixpreise direkt als Reinigungsgebühr auf Airbnb. Unsere transparenten Preise machen das einfach — Sie wissen genau, was Sie pro Reinigung zahlen und was Sie dem Gast berechnen.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[6].A</p>
                 </details>
                 <details class="group bg-swiss-blue rounded-lg open:bg-white open:shadow-md transition-all duration-300">
                     <summary class="cursor-pointer text-left text-white font-semibold px-6 py-4 group-open:text-foreground list-none flex justify-between items-center">
-                        Reinigen Sie auch andere Kurzzeitvermietungen (Booking.com, VRBO)?
+                        @faqs[7].Q
                         <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </summary>
-                    <p class="text-muted-foreground px-6 pb-4">Ja. Unser Service funktioniert für jede Art von Kurzzeitvermietung — Airbnb, Booking.com, VRBO, oder privat vermietete Ferienwohnungen. Der Ablauf ist identisch.</p>
+                    <p class="text-muted-foreground px-6 pb-4">@faqs[7].A</p>
                 </details>
             </div>
 
             <div class="text-center mt-10">
                 <p class="text-muted-foreground mb-2">
-                    Haben Sie weitere Fragen?
+                    @T("Haben Sie weitere Fragen?", "Any other questions?")
                 </p>
                 <a href="tel:+41765017738" class="inline-flex items-center gap-2 text-swiss-blue font-semibold hover:underline">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    +41 76 501 77 38 — Wir beraten Sie gerne
+                    @T("+41 76 501 77 38 — Wir beraten Sie gerne", "+41 76 501 77 38 — We're happy to advise you")
                 </a>
             </div>
         </div>
@@ -688,14 +711,14 @@
     <section class="py-16 md:py-24" style="background: linear-gradient(135deg, hsl(210 100% 15%) 0%, hsl(210 95% 25%) 50%, hsl(210 85% 35%) 100%)">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Bereit für stressfreie Gästewechsel?
+                @T("Bereit für stressfreie Gästewechsel?", "Ready for stress-free guest changeovers?")
             </h2>
             <p class="text-white/80 text-lg mb-8">
-                Wählen Sie Ihr Paket oder kontaktieren Sie uns für eine persönliche Beratung.
+                @T("Wählen Sie Ihr Paket oder kontaktieren Sie uns für eine persönliche Beratung.", "Choose your package or contact us for personal advice.")
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#pricing" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg bg-booking-orange text-white font-semibold hover:bg-booking-orange-dark transition-colors shadow-button">
-                    Jetzt Paket wählen
+                    @T("Jetzt Paket wählen", "Choose your package now")
                 </a>
                 <a href="https://wa.me/41765017738" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-lg px-8 h-12 rounded-lg border border-white text-white hover:bg-white/10 transition-colors font-semibold">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>

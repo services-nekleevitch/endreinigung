@@ -58,25 +58,27 @@ document.addEventListener('DOMContentLoaded', function () {
             roomField.classList.remove('border-booking-orange', 'border-[3px]');
             zipField.classList.remove('border-booking-orange');
             if (errorEl) errorEl.textContent = '';
+            // Page language comes from <html lang> ("en" on /en pages, "de-CH" otherwise).
+            const isEn = (document.documentElement.lang || '').toLowerCase().startsWith('en');
 
             if (!roomSize && !zipCode) {
-                if (errorEl) errorEl.textContent = 'Bitte wählen Sie die Zimmeranzahl und die Postleitzahl aus.';
+                if (errorEl) errorEl.textContent = isEn ? 'Please select the number of rooms and enter your postcode.' : 'Bitte wählen Sie die Zimmeranzahl und die Postleitzahl aus.';
                 roomField.classList.add('border-booking-orange', 'border-[3px]');
                 zipField.classList.add('border-booking-orange');
                 return;
             }
             if (!roomSize) {
-                if (errorEl) errorEl.textContent = 'Bitte wählen Sie die Zimmeranzahl aus.';
+                if (errorEl) errorEl.textContent = isEn ? 'Please select the number of rooms.' : 'Bitte wählen Sie die Zimmeranzahl aus.';
                 roomField.classList.add('border-booking-orange', 'border-[3px]');
                 return;
             }
             if (!zipCode) {
-                if (errorEl) errorEl.textContent = 'Bitte geben Sie Ihre Postleitzahl ein.';
+                if (errorEl) errorEl.textContent = isEn ? 'Please enter your postcode.' : 'Bitte geben Sie Ihre Postleitzahl ein.';
                 zipField.classList.add('border-booking-orange');
                 return;
             }
             if (!isValidZurichPlz(zipCode)) {
-                if (errorEl) errorEl.textContent = 'Diese Postleitzahl liegt nicht in unserem Servicegebiet (Kanton Zürich).';
+                if (errorEl) errorEl.textContent = isEn ? 'This postcode is outside our service area (Canton of Zurich).' : 'Diese Postleitzahl liegt nicht in unserem Servicegebiet (Kanton Zürich).';
                 zipField.classList.add('border-booking-orange');
                 return;
             }

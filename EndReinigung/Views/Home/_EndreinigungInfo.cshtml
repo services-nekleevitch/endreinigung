@@ -1,36 +1,40 @@
+@{
+    var infoIsEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string T(string de, string en) => infoIsEn ? en : de;
+}
 <!-- Endreinigung Info -->
 <div class="mb-6">
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-        Endreinigung in Zürich:<br/><span class="text-swiss-blue">Professionelle Wohnungsreinigung</span>
+        @T("Endreinigung in Zürich:", "End-of-lease cleaning in Zurich:")<br/><span class="text-swiss-blue">@T("Professionelle Wohnungsreinigung", "Professional apartment cleaning")</span>
     </h2>
 
     <p class="text-center text-muted-foreground text-base md:text-lg mb-10 max-w-4xl mx-auto">
-        Als Reinigungsfirma für Zürich und den Kanton Zürich reinigen wir Mietwohnungen nach dem Auszug übergabebereit und sind bei der Wohnungsabgabe persönlich dabei — bis das Protokoll unterschrieben ist. Mehr zur
-        <a href="/umzugsreinigung-stadt-zuerich" class="text-primary font-semibold underline underline-offset-2 hover:text-swiss-blue transition-colors">Umzugsreinigung</a>.
+        @T("Als Reinigungsfirma für Zürich und den Kanton Zürich reinigen wir Mietwohnungen nach dem Auszug übergabebereit und sind bei der Wohnungsabgabe persönlich dabei — bis das Protokoll unterschrieben ist. Mehr zur", "As a cleaning company for Zurich and the Canton of Zurich, we clean rented apartments after move-out so they are ready for handover, and we attend the handover in person — until the protocol is signed. More about")
+        <a href="/umzugsreinigung-stadt-zuerich" class="text-primary font-semibold underline underline-offset-2 hover:text-swiss-blue transition-colors">@T("Umzugsreinigung", "move-out cleaning (in German)")</a>.
     </p>
 
     <div class="space-y-5 mb-12 max-w-4xl mx-auto">
         <div class="flex items-start gap-4">
             <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">Unsere <span class="text-primary font-semibold">Endreinigung in Zürich</span> garantiert eine makellose Wohnungsreinigung und eine reibungslose Übergabe an Ihre Verwaltung.</p>
+            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">@Html.Raw(T("Unsere <span class=\"text-primary font-semibold\">Endreinigung in Zürich</span> garantiert eine makellose Wohnungsreinigung und eine reibungslose Übergabe an Ihre Verwaltung.", "Our <span class=\"text-primary font-semibold\">end-of-lease cleaning in Zurich</span> guarantees a spotless apartment and a smooth handover to your property management."))</p>
         </div>
         <div class="flex items-start gap-4">
             <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">Die Endreinigung erfolgt zum <span class="font-semibold">fairen Fixpreis</span> – so gibt es für Sie keine bösen Überraschungen bei den Kosten.</p>
+            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">@Html.Raw(T("Die Endreinigung erfolgt zum <span class=\"font-semibold\">fairen Fixpreis</span> – so gibt es für Sie keine bösen Überraschungen bei den Kosten.", "The cleaning is done at a <span class=\"font-semibold\">fair fixed price</span> – so there are no nasty surprises on cost."))</p>
         </div>
         <div class="flex items-start gap-4">
             <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">Unsere Abnahmegarantie beinhaltet, dass unser Team bei der Übergabe <span class="font-semibold">persönlich vor Ort</span> ist und reinigungsbezogene Beanstandungen der Verwaltung sofort und <span class="font-semibold">kostenlos</span> behebt.</p>
+            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">@Html.Raw(T("Unsere Abnahmegarantie beinhaltet, dass unser Team bei der Übergabe <span class=\"font-semibold\">persönlich vor Ort</span> ist und reinigungsbezogene Beanstandungen der Verwaltung sofort und <span class=\"font-semibold\">kostenlos</span> behebt.", "Our handover guarantee means our team is <span class=\"font-semibold\">there in person</span> at the handover and fixes any cleaning-related complaints from the property management immediately and <span class=\"font-semibold\">free of charge</span>."))</p>
         </div>
         <div class="flex items-start gap-4">
             <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">Als lokaler Spezialist für Zürich kennen wir die Anforderungen der Verwaltungen genau. <span class="font-semibold">Kurzfristige Termine nach Verfügbarkeit</span>.</p>
+            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">@Html.Raw(T("Als lokaler Spezialist für Zürich kennen wir die Anforderungen der Verwaltungen genau. <span class=\"font-semibold\">Kurzfristige Termine nach Verfügbarkeit</span>.", "As a local Zurich specialist, we know exactly what property managers expect. <span class=\"font-semibold\">Short-notice appointments subject to availability</span>."))</p>
         </div>
     </div>
 
     <!-- Internal link bridge to Umzugsreinigung -->
     <p class="text-center text-muted-foreground text-base md:text-lg mb-12 max-w-4xl mx-auto">
-        Planen Sie einen Umzug? Besuchen Sie unsere Dienstleistung für
-        <a href="/umzugsreinigung-stadt-zuerich" class="text-primary font-semibold underline underline-offset-2 hover:text-swiss-blue transition-colors">Umzugsreinigung Zürich</a>.
+        @T("Planen Sie einen Umzug? Besuchen Sie unsere Dienstleistung für", "Planning a move? See our service page for")
+        <a href="/umzugsreinigung-stadt-zuerich" class="text-primary font-semibold underline underline-offset-2 hover:text-swiss-blue transition-colors">@T("Umzugsreinigung Zürich", "move-out cleaning in Zurich (in German)")</a>.
     </p>
 </div>

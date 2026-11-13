@@ -1,7 +1,14 @@
 @{
-    ViewData["Title"] = "Endreinigung Zürich ab CHF 550 | 100% Abnahmegarantie";
-    ViewData["Description"] = "1–1.5 Zimmer: CHF 550, 2–2.5 Zimmer: CHF 650, 3–3.5 Zimmer: CHF 850. Transparente Fixpreise und persönliche Begleitung bei der Wohnungsübergabe.";
-    ViewData["Keywords"] = "Endreinigung Zürich, Abnahmegarantie, Wohnungsreinigung Zürich, Endreinigung Kosten, Wohnungsübergabe Zürich";
+    // Rendered at "/" (German) and "/en" (English). Language comes from the URL (Program.cs).
+    var isEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string T(string de, string en) => isEn ? en : de;
+    // For JSON-LD: Razor's @T() would HTML-encode (ü -> &#xFC;), JT() emits JSON-safe raw text.
+    Microsoft.AspNetCore.Html.HtmlString JT(string de, string en) => new(System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping.Encode(T(de, en)));
+    var calcUrl = "https://zurich-endreinigung.ch/calculator";
+
+    ViewData["Title"] = T("Endreinigung Zürich ab CHF 550 | 100% Abnahmegarantie", "End-of-Lease Cleaning Zurich from CHF 550 | 100% Guarantee");
+    ViewData["Description"] = T("1–1.5 Zimmer: CHF 550, 2–2.5 Zimmer: CHF 650, 3–3.5 Zimmer: CHF 850. Transparente Fixpreise und persönliche Begleitung bei der Wohnungsübergabe.", "1–1.5 rooms: CHF 550, 2–2.5 rooms: CHF 650, 3–3.5 rooms: CHF 850. Transparent fixed prices, and we attend your apartment handover in person.");
+    ViewData["Keywords"] = T("Endreinigung Zürich, Abnahmegarantie, Wohnungsreinigung Zürich, Endreinigung Kosten, Wohnungsübergabe Zürich", "end-of-lease cleaning Zurich, move-out cleaning Zurich, handover guarantee, apartment cleaning Zurich, cleaning company Zurich English");
     ViewData["HeroPreload"] = "/img/zurich-cityscape.webp";
     ViewData["HeroPreloadMobile"] = "/img/zurich-cityscape-mobile.webp";
 }
@@ -11,30 +18,30 @@
     {
         "@@context": "https://schema.org",
         "@@type": "FAQPage",
-        "inLanguage": "de-CH",
+        "inLanguage": "@T("de-CH", "en")",
         "mainEntity": [
             {
                 "@@type": "Question",
-                "name": "Wie viel kostet eine Endreinigung in Zürich?",
+                "name": "@JT("Wie viel kostet eine Endreinigung in Zürich?", "How much does end-of-lease cleaning in Zurich cost?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Eine professionelle Endreinigung in Zürich kostet bei uns CHF 550 für 1–1.5 Zimmer, CHF 650 für 2–2.5 Zimmer und CHF 850 für 3–3.5 Zimmer. Der Fixpreis umfasst die vereinbarten Leistungen inklusive 100% Abnahmegarantie, und wir sind persönlich bei der Wohnungsübergabe vor Ort."
+                    "text": "@JT("Eine professionelle Endreinigung in Zürich kostet bei uns CHF 550 für 1–1.5 Zimmer, CHF 650 für 2–2.5 Zimmer und CHF 850 für 3–3.5 Zimmer. Der Fixpreis umfasst die vereinbarten Leistungen inklusive 100% Abnahmegarantie, und wir sind persönlich bei der Wohnungsübergabe vor Ort.", "Professional end-of-lease cleaning in Zurich costs CHF 550 for 1–1.5 rooms, CHF 650 for 2–2.5 rooms and CHF 850 for 3–3.5 rooms. The fixed price covers the agreed services including our 100% handover guarantee, and we attend the apartment handover in person.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Ist die Abnahmegarantie wirklich sicher?",
+                "name": "@JT("Ist die Abnahmegarantie wirklich sicher?", "Is the handover guarantee really reliable?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Unsere 100% Abnahmegarantie gilt für die Reinigungsleistung: Reinigungsbezogene Beanstandungen beheben wir kostenlos und wenn möglich direkt bei der Übergabe. Die Garantie bezieht sich nicht auf Schäden oder andere mietrechtliche Themen."
+                    "text": "@JT("Unsere 100% Abnahmegarantie gilt für die Reinigungsleistung: Reinigungsbezogene Beanstandungen beheben wir kostenlos und wenn möglich direkt bei der Übergabe. Die Garantie bezieht sich nicht auf Schäden oder andere mietrechtliche Themen.", "Our 100% handover guarantee applies to the cleaning work: we fix cleaning-related complaints free of charge and, where possible, right at the handover. The guarantee does not cover damage or other tenancy-law matters.")"
                 }
             },
             {
                 "@@type": "Question",
-                "name": "Wie kurzfristig kann ich einen Termin buchen?",
+                "name": "@JT("Wie kurzfristig kann ich einen Termin buchen?", "How short-notice can I book an appointment?")",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "Kurzfristige Termine sind je nach Auslastung möglich. Für Ihren Wunschtermin empfehlen wir eine möglichst frühe Buchung, besonders zum Monatsende."
+                    "text": "@JT("Kurzfristige Termine sind je nach Auslastung möglich. Für Ihren Wunschtermin empfehlen wir eine möglichst frühe Buchung, besonders zum Monatsende.", "Short-notice appointments are possible depending on availability. To get your preferred date, we recommend booking as early as possible, especially for the end of the month.")"
                 }
             }
         ]
@@ -44,16 +51,17 @@
     {
         "@@context": "https://schema.org",
         "@@type": "Service",
-        "name": "Endreinigung Zürich – Fixpreise",
+        "name": "@JT("Endreinigung Zürich – Fixpreise", "End-of-Lease Cleaning Zurich – Fixed Prices")",
+        "inLanguage": "@T("de-CH", "en")",
         "provider": { "@@id": "https://zurich-endreinigung.ch/#business" },
-        "areaServed": { "@@type": "AdministrativeArea", "name": "Kanton Zürich" },
+        "areaServed": { "@@type": "AdministrativeArea", "name": "@JT("Kanton Zürich", "Canton of Zurich")" },
         "offers": [
-            { "@@type": "Offer", "name": "Endreinigung 1–1.5 Zimmer", "price": "550", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
-            { "@@type": "Offer", "name": "Endreinigung 2–2.5 Zimmer", "price": "650", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
-            { "@@type": "Offer", "name": "Endreinigung 3–3.5 Zimmer", "price": "850", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
-            { "@@type": "Offer", "name": "Endreinigung 4–4.5 Zimmer", "price": "970", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
-            { "@@type": "Offer", "name": "Endreinigung 5–5.5 Zimmer", "price": "1150", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" },
-            { "@@type": "Offer", "name": "Endreinigung 6–6.5 Zimmer", "price": "1350", "priceCurrency": "CHF", "description": "Fixpreis inkl. Abnahmegarantie", "url": "https://zurich-endreinigung.ch/calculator" }
+            { "@@type": "Offer", "name": "@JT("Endreinigung 1–1.5 Zimmer", "End-of-lease cleaning 1–1.5 rooms")", "price": "550", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" },
+            { "@@type": "Offer", "name": "@JT("Endreinigung 2–2.5 Zimmer", "End-of-lease cleaning 2–2.5 rooms")", "price": "650", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" },
+            { "@@type": "Offer", "name": "@JT("Endreinigung 3–3.5 Zimmer", "End-of-lease cleaning 3–3.5 rooms")", "price": "850", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" },
+            { "@@type": "Offer", "name": "@JT("Endreinigung 4–4.5 Zimmer", "End-of-lease cleaning 4–4.5 rooms")", "price": "970", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" },
+            { "@@type": "Offer", "name": "@JT("Endreinigung 5–5.5 Zimmer", "End-of-lease cleaning 5–5.5 rooms")", "price": "1150", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" },
+            { "@@type": "Offer", "name": "@JT("Endreinigung 6–6.5 Zimmer", "End-of-lease cleaning 6–6.5 rooms")", "price": "1350", "priceCurrency": "CHF", "description": "@JT("Fixpreis inkl. Abnahmegarantie", "Fixed price incl. handover guarantee")", "url": "@calcUrl" }
         ]
     }
     </script>

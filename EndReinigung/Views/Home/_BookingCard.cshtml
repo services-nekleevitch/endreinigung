@@ -5,17 +5,20 @@
     var price = ViewData["Price"] as string;
     if (string.IsNullOrEmpty(rooms)) { rooms = "3–3.5 Zimmer"; }
     if (string.IsNullOrEmpty(price)) { price = "CHF 850"; }
+    var cardIsEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string T(string de, string en) => cardIsEn ? en : de;
+    if (cardIsEn) { rooms = rooms.Replace("Zimmer", "rooms"); }
 }
 <div class="flex flex-col max-h-[420px] h-[420px] w-full bg-navy text-navy-light border border-navy-border rounded-xl overflow-hidden">
     <div class="flex flex-col flex-1 min-h-0 p-5">
         <!-- Heading -->
         <h3 class="text-lg font-bold text-white leading-tight">
-            Keine Zeit zum Putzen?
+            @T("Keine Zeit zum Putzen?", "No time to clean?")
         </h3>
 
         <!-- Subline -->
         <p class="text-sm text-navy-text mt-1.5 leading-snug">
-            Wir übernehmen die Endreinigung zum Fixpreis — mit 100% Abnahmegarantie.
+            @T("Wir übernehmen die Endreinigung zum Fixpreis — mit 100% Abnahmegarantie.", "We take care of the end-of-lease cleaning at a fixed price — with a 100% handover guarantee.")
         </p>
 
         <!-- Price block + calculator icon in the free space to the right -->
@@ -30,7 +33,7 @@
                     </span>
                 </div>
                 <p class="text-xs text-navy-muted mt-1">
-                    Anfahrt, Material und MwSt. inbegriffen
+                    @T("Anfahrt, Material und MwSt. inbegriffen", "Travel, materials and VAT included")
                 </p>
             </div>
 
@@ -44,15 +47,15 @@
         <ul class="mt-3 space-y-1.5 flex-1 min-h-0">
             <li class="flex items-start gap-2">
                 <svg class="w-4 h-4 text-booking-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span class="text-sm text-navy-light leading-snug">Abnahmegarantie — wir bessern kostenlos nach</span>
+                <span class="text-sm text-navy-light leading-snug">@T("Abnahmegarantie — wir bessern kostenlos nach", "Handover guarantee — we re-clean free of charge")</span>
             </li>
             <li class="flex items-start gap-2">
                 <svg class="w-4 h-4 text-booking-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span class="text-sm text-navy-light leading-snug">Wir sind bei der Übergabe persönlich dabei</span>
+                <span class="text-sm text-navy-light leading-snug">@T("Wir sind bei der Übergabe persönlich dabei", "We attend the handover in person")</span>
             </li>
             <li class="flex items-start gap-2">
                 <svg class="w-4 h-4 text-booking-orange mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span class="text-sm text-navy-light leading-snug">Fixpreis in 30 Sekunden, ohne Rückruf</span>
+                <span class="text-sm text-navy-light leading-snug">@T("Fixpreis in 30 Sekunden, ohne Rückruf", "Fixed price in 30 seconds, no call-back needed")</span>
             </li>
         </ul>
 
@@ -60,7 +63,7 @@
         <div class="mt-3 flex flex-col gap-2">
             <a href="/calculator" class="w-full inline-flex items-center justify-center gap-2 bg-booking-orange text-navy font-semibold text-sm rounded-lg px-4 py-2.5 hover:bg-booking-orange-dark transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/></svg>
-                Fixpreis berechnen
+                @T("Fixpreis berechnen", "Calculate fixed price")
             </a>
             <a href="tel:+41765017738" class="w-full inline-flex items-center justify-center gap-2 border border-navy-light/40 text-navy-light font-semibold text-sm rounded-lg px-4 py-2.5 hover:bg-navy-light/10 transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -70,7 +73,7 @@
 
         <!-- Footer -->
         <p class="mt-2.5 text-center text-xs text-navy-muted">
-            5.0 auf Google · Haftpflichtversichert
+            @T("5.0 auf Google · Haftpflichtversichert", "5.0 on Google · Liability insured")
         </p>
     </div>
 </div>

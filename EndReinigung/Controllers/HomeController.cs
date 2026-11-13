@@ -18,6 +18,17 @@ namespace EndReinigung.Controllers
             return View();
         }
 
+        // English pages. The culture is taken from the /en prefix (Program.cs); every German/English
+        // pair must also be listed in Models/LanguageRoutes.cs so hreflang and the DE/EN switcher work.
+        [Route("en")]
+        public IActionResult IndexEn() => View("Index");
+
+        [Route("en/services")]
+        public IActionResult DienstleistungenEn() => View("ExtraServices");
+
+        [Route("en/guide")]
+        public IActionResult RatgeberEn() => View("Ratgeber");
+
         [Route("extra-services")]
         public IActionResult ExtraServicesRedirect() => RedirectPermanent("/dienstleistungen");
 
@@ -75,7 +86,7 @@ namespace EndReinigung.Controllers
             var article = RatgeberArticleData.FindByEnSlug(enSlug);
             if (article == null)
             {
-                return RedirectPermanent("/ratgeber");
+                return RedirectPermanent("/en/guide");
             }
             ViewData["Lang"] = "en";
             return View("RatgeberArticle", article);

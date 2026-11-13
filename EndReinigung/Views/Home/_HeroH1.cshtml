@@ -6,6 +6,11 @@
     imports Hero.tsx / Index.tsx any more), so diffing translations.ts will give you strings
     the live site never renders. Always take these values from HeroH1.tsx itself.
 *@
+@{
+    var heroIsEn = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en";
+    string HT(string de, string en) => heroIsEn ? en : de;
+    var roomsWord = HT("Zimmer", "rooms");
+}
 <!-- Hero Section -->
 <section class="relative min-h-screen bg-gradient-hero overflow-hidden">
     <!-- Background Image -->
@@ -58,7 +63,7 @@
                         </li>
                         <li class="flex items-start text-white/90 text-base md:text-xl pr-28 sm:pr-0">
                             <span class="mr-3 text-lg flex-shrink-0">✅</span>
-                            <span class="font-medium">Ihre zuverlässige Reinigungsfirma in Zürich & Umgebung.<br/>Fixpreis in unter 30 Sekunden sehen.</span>
+                            <span class="font-medium">@HT("Ihre zuverlässige Reinigungsfirma in Zürich & Umgebung.", "Your reliable cleaning company in Zurich & surroundings.")<br/>@HT("Fixpreis in unter 30 Sekunden sehen.", "See your fixed price in under 30 seconds.")</span>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +77,7 @@
                             <span class="absolute inset-0 rounded-full bg-booking-orange/50 animate-pulse" style="animation-duration: 2s"></span>
                             <div class="relative w-[70px] h-[70px] sm:w-[120px] sm:h-[120px] rounded-full bg-gradient-to-br from-[hsl(25,95%,53%)] to-[hsl(21,90%,48%)] border-2 sm:border-4 border-white shadow-2xl flex flex-col items-center justify-center hover:scale-110 transition-transform duration-200">
                                 <span class="text-xl sm:text-4xl text-yellow-300 animate-pulse mb-0.5 sm:mb-1" style="animation-duration: 2s">⚡</span>
-                                <span class="text-[8px] sm:text-xs font-black text-white leading-tight text-center uppercase tracking-wide">SOFORT<br/>PREIS!</span>
+                                <span class="text-[8px] sm:text-xs font-black text-white leading-tight text-center uppercase tracking-wide">@HT("SOFORT", "INSTANT")<br/>@HT("PREIS!", "PRICE!")</span>
                             </div>
                         </a>
                     </div>
@@ -85,27 +90,27 @@
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none z-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 <select id="hero-room-size" class="w-full h-14 rounded-2xl bg-white text-foreground pl-12 pr-4 focus:ring-2 focus:ring-booking-orange focus:border-booking-orange hover:border-booking-orange/50 transition-all duration-200 outline-none appearance-none text-base cursor-pointer border-2 border-border">
                                     <option value="">@SharedLocalizer["hero.select_rooms"]</option>
-                                    <option value="1.5">1.5 Zimmer</option>
-                                    <option value="2">2 Zimmer</option>
-                                    <option value="2.5">2.5 Zimmer</option>
-                                    <option value="3">3 Zimmer</option>
-                                    <option value="3.5">3.5 Zimmer</option>
-                                    <option value="4">4 Zimmer</option>
-                                    <option value="4.5">4.5 Zimmer</option>
-                                    <option value="5">5 Zimmer</option>
-                                    <option value="5.5">5.5 Zimmer</option>
-                                    <option value="6">6 Zimmer</option>
-                                    <option value="6.5+">6.5+ Zimmer</option>
+                                    <option value="1.5">1.5 @roomsWord</option>
+                                    <option value="2">2 @roomsWord</option>
+                                    <option value="2.5">2.5 @roomsWord</option>
+                                    <option value="3">3 @roomsWord</option>
+                                    <option value="3.5">3.5 @roomsWord</option>
+                                    <option value="4">4 @roomsWord</option>
+                                    <option value="4.5">4.5 @roomsWord</option>
+                                    <option value="5">5 @roomsWord</option>
+                                    <option value="5.5">5.5 @roomsWord</option>
+                                    <option value="6">6 @roomsWord</option>
+                                    <option value="6.5+">6.5+ @roomsWord</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- PLZ Field -->
                         <div class="relative space-y-2">
-                            <label for="hero-zip-code" class="text-white/90 text-sm font-medium">PLZ</label>
+                            <label for="hero-zip-code" class="text-white/90 text-sm font-medium">@HT("PLZ", "Postcode")</label>
                             <div class="relative">
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                <input type="text" id="hero-zip-code" placeholder="z.B. 8001" maxlength="4" class="w-full h-14 rounded-2xl border-2 bg-white text-foreground pl-12 pr-4 placeholder:text-muted-foreground focus:ring-2 focus:ring-booking-orange focus:border-booking-orange hover:border-booking-orange/50 transition-all duration-200 outline-none text-base border-border" />
+                                <input type="text" id="hero-zip-code" placeholder="@HT("z.B. 8001", "e.g. 8001")" maxlength="4" class="w-full h-14 rounded-2xl border-2 bg-white text-foreground pl-12 pr-4 placeholder:text-muted-foreground focus:ring-2 focus:ring-booking-orange focus:border-booking-orange hover:border-booking-orange/50 transition-all duration-200 outline-none text-base border-border" />
                             </div>
                         </div>
 

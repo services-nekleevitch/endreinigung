@@ -143,18 +143,15 @@ namespace EndReinigung
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             };
-            locOptions.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(context =>
+            // The language is decided by the URL only: /en and /en/... are English, every other URL is
+            // German. No cookie, no ?culture= and no Accept-Language header, so a German URL always serves
+            // the same German page to every visitor and crawler (one URL = one language, needed for hreflang).
+            locOptions.RequestCultureProviders.Clear();
+            locOptions.RequestCultureProviders.Add(new CustomRequestCultureProvider(context =>
             {
-                var path = context.Request.Path.Value ?? string.Empty;
-                if (path.Equals("/en", StringComparison.OrdinalIgnoreCase) ||
-                    path.StartsWith("/en/", StringComparison.OrdinalIgnoreCase))
-                {
-                    return Task.FromResult<ProviderCultureResult?>(new ProviderCultureResult("en", "en"));
-                }
-
-                return Task.FromResult<ProviderCultureResult?>(null);
+                var culture = EndReinigung.Models.LanguageRoutes.IsEnglishPath(context.Request.Path.Value) ? "en" : "de";
+                return Task.FromResult<ProviderCultureResult?>(new ProviderCultureResult(culture, culture));
             }));
-            locOptions.RequestCultureProviders.Insert(1, new CookieRequestCultureProvider());
             app.UseRequestLocalization(locOptions);
 
             // Configure the HTTP request pipeline.
@@ -205,11 +202,9 @@ namespace EndReinigung
                 }
             }));
 
-            // Strip ?culture=... query strings with 301 redirect.
-            // The site's views are German-only — ?culture=en just flips CurrentUICulture but
-            // doesn't translate page content, so these URLs are duplicates of the clean path.
-            // The DE/EN switcher in _Navigation.cshtml uses cookies, not the query string,
-            // so removing this param does not break language switching.
+            // Strip ?culture=... query strings with 301 redirect (legacy links).
+            // The language comes from the URL path only (/en/...), so ?culture= changes nothing
+            // and these URLs are duplicates of the clean path.
             app.UseRewriter(new RewriteOptions().Add(ctx =>
             {
                 var req = ctx.HttpContext.Request;

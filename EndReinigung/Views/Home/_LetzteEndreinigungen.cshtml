@@ -62,7 +62,7 @@
                                 <div class="aspect-[4/3] overflow-hidden">
                                     <picture>
                                         <source srcset="@webp" type="image/webp" />
-                                        <img src="@item.Img" alt="@item.Alt" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="600" />
+                                        <img src="@item.Img" alt="@(lang == "en" ? item.CaptionEn : item.Alt)" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="600" />
                                     </picture>
                                 </div>
                                 <div class="p-3 sm:p-4 flex-1">
